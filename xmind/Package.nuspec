@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>xmind</id>
+    <version>3.4.0.201311050558</version>
+    <authors>XMind Ltd</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>http://www.xmind.net/license/</licenseUrl>
+    <projectUrl>http://www.xmind.net/</projectUrl>
+    <iconUrl>https://raw.github.com/dcjulian29/choco-packages/master/xmind/xmind.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>XMind is an open source project, which means it's free to download and free to use forever. XMind Plus/Pro with more professional features are also available.</description>
+    <tags>xmind mind map</tags>
+  </metadata>
+</package>
