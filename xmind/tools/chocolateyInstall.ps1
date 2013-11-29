@@ -6,7 +6,7 @@ $url64 = $url # 64bit URL here or just use the same as $url
 
 try
 {
-    Install-ChocolateyPackage $packageName $installerType $params $url
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
 
     Write-ChocolateySuccess $packageName
 }
