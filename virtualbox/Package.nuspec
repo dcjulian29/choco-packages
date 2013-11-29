@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>virtualbox</id>
+    <version>4.3.4</version>
+    <authors>Oracle</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>https://www.virtualbox.org/wiki/VirtualBox_PUEL</licenseUrl>
+    <projectUrl>https://www.virtualbox.org/</projectUrl>
+    <iconUrl>https://www.virtualbox.org/graphics/vbox_logo2_gradient.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use. Not only is VirtualBox an extremely feature rich, high performance product for enterprise customers, it is also the only professional solution that is freely available as Open Source Software under the terms of the GNU General Public License (GPL) version 2.</description>
+    <tags>virtualbox virtualization vm vbox</tags>
+  </metadata>
+</package>
