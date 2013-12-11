@@ -1,6 +1,5 @@
 ﻿$packageName = 'sysinternals'
-$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$appDir = "$(Split-Path -parent $toolsDir)\app"
+$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
 $url = 'http://download.sysinternals.com/files/SysinternalsSuite.zip'
 
 try
