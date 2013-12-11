@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>openvpn</id>
+    <version>2.3.2</version>
+    <authors>OpenVPN Technologies, Inc</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>http://openvpn.net/index.php/license.html</licenseUrl>
+    <projectUrl>http://openvpn.net/index.php/open-source.html</projectUrl>
+    <iconUrl>http://swupdate.openvpn.net/community/icons/ovpntech_key.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>OpenVPN is entirely a community-supported OSS project which uses the GPL license. The project has many developers and contributors from OpenVPN Technologies, Inc and from the broader OpenVPN community.</description>
+    <tags>openvpn vpn</tags>
+  </metadata>
+</package>
