@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dopdf</id>
+    <version>7.3.393</version>
+    <authors>S.C. SOFTLAND S.R.L.</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>http://www.dopdf.com/download/pdf/dopdf-eula.pdf</licenseUrl>
+    <projectUrl>http://www.dopdf.com/</projectUrl>
+    <iconUrl>https://raw.github.com/chocolatey/chocolatey/master/docs/logo/chocolateyicon.gif</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>doPDF is a free PDF creator that does what the name suggests, creates PDF files. Once installed it will allow you to convert any type of printable documents to PDF files. doPDF installs itself as a virtual PDF printer driver so after a successful installation will appear in your Printers and Faxes list and also in the list of All Programs.</description>
+    <tags>dopdf pdf</tags>
+  </metadata>
+</package>
