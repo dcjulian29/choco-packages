@@ -39,7 +39,8 @@ try
     Pop-Location
 
     Remove-Item "$toolDir\$packageName-$release\" -Recurse -Force
-
+    Remove-Item "$toolDir\v$release.zip" -Force
+    
     Write-ChocolateySuccess $packageName
 }
 catch
