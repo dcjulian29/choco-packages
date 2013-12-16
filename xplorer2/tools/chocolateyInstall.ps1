@@ -1,4 +1,4 @@
-﻿$packageName = "xplorer2pro"
+﻿$packageName = "xplorer2"
 $installerType = "exe"
 $installerArgs = "/S"
 $url = 'http://zabkat.com/xplorer2_setup.exe'
