@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>calibre</id>
+    <version>1.15.0</version>
+    <authors>Kovid Goyal</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://calibre-ebook.com/</projectUrl>
+    <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>calibre is a free and open source e-book library management application developed by users of e-books for users of e-books.</description>
+    <tags>calibre ebook</tags>
+  </metadata>
+</package>
