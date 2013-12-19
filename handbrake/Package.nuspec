@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>handbrake</id>
+    <version>0.9.9</version>
+    <authors>The HandBrake Team</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://handbrake.fr/</projectUrl>
+    <licenseUrl>http://en.wikipedia.org/wiki/GNU_GPLv2#Version_2</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>HandBrake is a free and open-source multithreaded transcoding app for Windows, OS X, Ubuntu. HandBrake was originally developed by Eric "titer" Petit in 2003 to make ripping a film from a DVD to a data storage device easier. </description>
+    <tags>handbrake video h264 encoder</tags>
+  </metadata>
+</package>
