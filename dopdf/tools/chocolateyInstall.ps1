@@ -1,12 +1,11 @@
-﻿$packageName = "dopdf" # arbitrary name for the package, used in messages
-$installerType = "exe" #only one of these two: exe or msi
-$installerArgs = "/SILENT"
+﻿$packageName = "dopdf"
+$installerType = "EXE"
+$installerArgs = "/SILENT /NORESTART"
 $url = "http://www.dopdf.com/download/setup/dopdf-7.exe"
-$url64 = $url
 
 try
 {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url
 
     Write-ChocolateySuccess $packageName
 }
