@@ -15,7 +15,7 @@ try {
     }
 
     Start-ChocolateyProcessAsAdmin `
-        "[Environment]::SetEnvironmentVariable('JAVA_HOME','$path', 'Machine')" -noSleep
+        "[Environment]::SetEnvironmentVariable('JAVA_HOME','$path', 'Machine')"
 
     Write-ChocolateySuccess $packageName
 }
