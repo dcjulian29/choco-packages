@@ -47,8 +47,8 @@ if (installed = 1)
     }
 }
 
-; Install WinPcap
-truecryptInstaller = %A_Temp%\chocolatey\truecrypt\TrueCrypt Setup 7.1a.exe
+; Install
+truecryptInstaller = %A_Temp%\chocolatey\truecrypt\truecryptInstall.exe
 Sleep, 1000
 Run, %truecryptInstaller%
 
