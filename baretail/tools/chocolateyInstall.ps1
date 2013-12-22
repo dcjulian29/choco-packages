@@ -1,6 +1,7 @@
 ﻿$packageName = 'baretail'
 $appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
 $url = "http://www.baremetalsoft.com/baretail/download.php?p=m"
+$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 try
 {
@@ -16,8 +17,7 @@ try
 
     Get-ChocolateyWebFile $packageName "$appDir\baretail.exe" $url 
 
-    $exe = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)\postInstall.ps1"
-    Start-ChocolateyProcessAsAdmin ". $exe"
+    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
 
     Write-ChocolateySuccess $packageName
 }
