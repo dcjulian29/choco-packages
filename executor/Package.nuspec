@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>executor</id>
+    <version>0.99.12.2</version>
+    <authors>Martin Bresson</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://executor.dk/</projectUrl>
+    <description>A multi purpose launcher and more advanced and customizable freeware windows run replacement and more...</description>
+    <tags>executor launcher</tags>
+  </metadata>
+</package>
