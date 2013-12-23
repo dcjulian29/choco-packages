@@ -1,5 +1,6 @@
 ﻿$packageName = 'baretail'
 $appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 try
 {
@@ -8,8 +9,7 @@ try
       Remove-Item "$($appDir)" -Recurse -Force
     }
 
-    $exe = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)\postUninstall.ps1"
-    Start-ChocolateyProcessAsAdmin ". $exe"
+    Start-ChocolateyProcessAsAdmin ". $toolDir\postUninstall.ps1"
 
     Write-ChocolateySuccess $packageName
 }
