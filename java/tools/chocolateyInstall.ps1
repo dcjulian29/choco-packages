@@ -1,4 +1,4 @@
-﻿$packageName = "javaruntime" # arbitrary name for the package, used in messages
+﻿$packageName = "java" # arbitrary name for the package, used in messages
 $installerType = "exe" #only one of these two: exe or msi
 $installerArgs = "/s REBOOT=Suppress WEB_JAVA=0"
 $url = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=81819"

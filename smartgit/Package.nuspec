@@ -11,7 +11,7 @@
     <description>SmartGit/Hg is a client for Git and Mercurial. It runs on Mac OS X, Windows and Linux. </description>
     <tags>smartgit git hg mecurial</tags>
     <dependencies>
-      <dependency id="javaruntime" version="7.0.45" />
+      <dependency id="java" version="7.0.45" />
       <dependency id="git" version="1.8.4" />
     </dependencies>
   </metadata>
