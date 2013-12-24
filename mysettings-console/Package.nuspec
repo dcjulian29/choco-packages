@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mysettings-console</id>
+    <version>1.0.0</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>My custom settings for fonts, colors, and windows size for console windows.</description>
+    <tags>console settings custom</tags>
+  </metadata>
+</package>
