@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>baretail</id>
+    <version>3.50.0</version>
+    <authors>Bare Metal Software,Ltd.</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>http://www.baremetalsoft.com/baretail/licence.php</licenseUrl>
+    <projectUrl>http://www.baremetalsoft.com/baretail/index.php</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A free real-time log file monitoring tool.</description>
+    <tags>tail log</tags>
+  </metadata>
+</package>

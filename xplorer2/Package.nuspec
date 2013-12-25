@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>xplorer2</id>
+    <version>2.4.0</version>
+    <authors>Zabkat</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>http://zabkat.com/x2lic.txt</licenseUrl>
+    <projectUrl>http://zabkat.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>xplorer² is a desktop file manager combining the simplicity of windows explorer with the speed and efficiency of traditional dual pane orthodox file managers, helping you be productive with your documents, pictures, music, source code and other files.</description>
+    <tags>2xExplorer xplorer2 filemanager</tags>
+  </metadata>
+</package>

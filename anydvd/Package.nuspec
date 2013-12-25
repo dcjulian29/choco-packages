@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>anydvd</id>
+    <version>7.3.8.0</version>
+    <authors>SlySoft Inc.</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>http://www.slysoft.com/en/terms.html</licenseUrl>
+    <projectUrl>http://www.slysoft.com/en/anydvd.html</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>AnyDVD works in the background to automatically and transparently enable read access of the contents of a movie DVD as soon as it's inserted into the drive.</description>
+    <tags>anydvd dvd bluray</tags>
+  </metadata>
+</package>

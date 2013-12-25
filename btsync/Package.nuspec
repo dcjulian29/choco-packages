@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>btsync</id>
+    <version>1.2.82</version>
+    <authors>BitTorrent, Inc.</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.bittorrent.com/sync</projectUrl>
+    <licenseUrl>http://www.bittorrent.com/legal/eula</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Fast, unlimited, and secure file-syncing. Free from the cloud.</description>
+    <tags>btsync file sync</tags>
+  </metadata>
+</package>

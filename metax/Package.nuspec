@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>metax</id>
+    <version>2.36</version>
+    <authors>Dan Hinsley</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.danhinsley.com/index.html</projectUrl>
+    <licenseUrl>http://www.danhinsley.com/buyconfirm.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MetaX for Windows is a meta-data tagger for MP4 files and their derivatives, as well as QuickTime
+movie files. The meta-data will be displayed in iTunes, Apple Front Row and the Apple TV. It allows you
+to search for information on the internet and then write that information into the file.</description>
+    <tags>metax h264 tagging</tags>
+  </metadata>
+</package>

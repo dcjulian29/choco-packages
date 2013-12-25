@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>notepadplusplus</id>
+    <version>6.5.2</version>
+    <authors>Don Ho</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>http://www.gnu.org/copyleft/gpl.html</licenseUrl>
+    <projectUrl>http://notepad-plus-plus.org/</projectUrl>
+    <iconUrl>http://c.fsdn.com/allura/p/notepad-plus/icon</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Notepad++ is a free (as in "free speech" and also as in "free beer") source code editor and Notepad replacement that supports several languages. Running in the MS Windows environment, its use is governed by GPL License.</description>
+    <tags>notepad++ notepadplusplus notepad-plus-plus notepad editor</tags>
+  </metadata>
+</package>

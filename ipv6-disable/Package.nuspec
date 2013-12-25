@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ipv6-disable</id>
+    <version>1.0.0</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>Disable IPv6 on all network adapters.</description>
+    <tags>ipv6</tags>
+  </metadata>
+</package>

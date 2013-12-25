@@ -1,12 +1,11 @@
-﻿$packageName = "virtualbox" # arbitrary name for the package, used in messages
-$installerType = "exe" #only one of these two: exe or msi
+﻿$packageName = "virtualbox"
+$installerType = "EXE"
 $installerArgs = "--silent"
-$url = "http://download.virtualbox.org/virtualbox/4.3.4/VirtualBox-4.3.4-91027-Win.exe"
-$url64 = $url # 64bit URL here or just use the same as $url
+$url = "http://download.virtualbox.org/virtualbox/4.3.6/VirtualBox-4.3.6-91406-Win.exe"
 
 try
 {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url
 
     Write-ChocolateySuccess $packageName
 }
