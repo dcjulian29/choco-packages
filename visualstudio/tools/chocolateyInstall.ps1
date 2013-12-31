@@ -1,4 +1,4 @@
-$packageName = "vs2013"
+$packageName = "visualstudio"
 $installerType = "EXE"
 $installerArgs = "/PASSIVE /NORESTART"
 $url = "http://download.microsoft.com/download/D/B/D/DBDEE6BB-AF28-4C76-A5F8-710F610615F7/vs_premium.exe"
