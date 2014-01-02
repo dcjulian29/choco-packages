@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>bingdesktop</id>
+    <version>1.3.347</version>
+    <authors>Microsoft</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.bing.com/explore/desktop</projectUrl>
+    <licenseUrl>http://windows.microsoft.com/en-us/windows-live/microsoft-services-agreement</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Bing Desktop delivers easy access to better search results no matter what you are doing -- inline while reading a doc or simply typing and clicking into an always present search box. And it provides the information you need to stay informed, from weather forecasts, to trending news to your Facebook content. You’ll get all this plus the beauty of the Bing homepage on your Windows desktop each day.</description>
+    <tags>bing desktop wallpaper</tags>
+  </metadata>
+</package>
