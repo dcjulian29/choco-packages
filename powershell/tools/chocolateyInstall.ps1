@@ -1,6 +1,6 @@
 $packageName = "powershell"
 $installerType = "MSU"
-$installerArgs = "/quiet"
+$installerArgs = "/quiet /norestart"
 $Win2008R232 = "http://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x86-MultiPkg.msu"
 $Win2008R264 = "http://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x64-MultiPkg.msu"
 $Win2012 = "http://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows8-RT-KB2799888-x64.msu"
@@ -26,7 +26,7 @@ try
         Write-Output "PowerShell Version 4 is installed..."
     } else {
         $OsMajor = [System.Environment]::OSVersion.Version.Major
-        $OsMinor = 
+        $OsMinor = [System.Environment]::OSVersion.Version.Minor
         if ($OsMajor -eq 6) {
             if ($OsMinor -eq 1) {
                 Install-ChocolateyPackage $packageName $installerType $installerArgs $Win2008R232 $Win2008R264
