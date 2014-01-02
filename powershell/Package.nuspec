@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>powershell</id>
+    <version>4.0.0</version>
+    <authors>Microsoft Corporation</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx</projectUrl>
+    <licenseUrl>https://www.microsoft.com/openspecifications/en/us/programs/community-promise/default.aspx</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Windows PowerShell is Microsoft's task automation and configuration management framework, consisting of a command-line shell and associated scripting language built on .NET Framework. PowerShell provides full access to COM and WMI, enabling administrators to perform administrative tasks on both local and remote Windows systems as well as WS-Management and CIM enabling management of remote Linux systems and network devices.</description>
+    <tags>powershell</tags>
+    <dependencies>
+      <dependency id="dotnet" version="4.0.0" />
+    </dependencies>
+  </metadata>
+</package>

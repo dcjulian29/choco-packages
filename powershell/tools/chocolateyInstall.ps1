@@ -1,0 +1,51 @@
+$packageName = "powershell"
+$installerType = "MSU"
+$installerArgs = "/quiet"
+$Win2008R232 = "http://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x86-MultiPkg.msu"
+$Win2008R264 = "http://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x64-MultiPkg.msu"
+$Win2012 = "http://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows8-RT-KB2799888-x64.msu"
+
+if ($psISE) {
+    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+    $ErrorActionPreference = "Stop"
+}
+
+try
+{
+    if ($PSVersionTable.psversion -ne $null) {
+        $psversion = $PSVersionTable.psversion.Major
+    } else {
+        $psversion = 0
+    }
+
+    if ($psversion -lt 3) {
+        throw "This version of Windows isn't supported by this package."
+    }
+
+    if ($psversion -eq 4) {
+        Write-Output "PowerShell Version 4 is installed..."
+    } else {
+        $OsMajor = [System.Environment]::OSVersion.Version.Major
+        $OsMinor = 
+        if ($OsMajor -eq 6) {
+            if ($OsMinor -eq 1) {
+                Install-ChocolateyPackage $packageName $installerType $installerArgs $Win2008R232 $Win2008R264
+            }
+
+            if ($OsMinor -eq 2) {
+                Install-ChocolateyPackage $packageName $installerType $installerArgs $Win2012
+            }
+        }
+    }
+
+    if ($psversion -eq 3) {
+        Write-Output "PowerShell Version 3 is installed..."
+    }
+
+    Write-ChocolateySuccess $packageName
+}
+catch
+{
+    Write-ChocolateyFailure $packageName $($_.Exception.Message)
+    throw
+}
