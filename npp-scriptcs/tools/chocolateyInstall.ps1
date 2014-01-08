@@ -1,7 +1,7 @@
 ﻿$packageName = "npp-scriptcs" # arbitrary name for the package, used in messages
 $installerType = "msi" #only one of these two: exe or msi
-$installerArgs = "/q"
-$url = "https://csscriptnpp.codeplex.com/downloads/get/766885"
+$installerArgs = "/q /NORESTART"
+$url = "https://csscriptnpp.codeplex.com/downloads/get/774670"
 $url64 = $url # 64bit URL here or just use the same as $url
 
 try
