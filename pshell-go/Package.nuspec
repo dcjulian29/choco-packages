@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>pshell-go</id>
+    <version>2013.06.25</version>
+    <authors>Cameron Harp</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://github.com/cameronharp/Go-Shell</projectUrl>
+    <licenseUrl>https://github.com/cameronharp/Go-Shell/blob/master/MIT-LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Allows powershell users to navigate to specific directory paths in a quick and easy way.</description>
+    <tags>powershell pshell go go-shell</tags>
+    <dependencies>
+      <dependency id="powershell" />
+    </dependencies>
+  </metadata>
+</package>
