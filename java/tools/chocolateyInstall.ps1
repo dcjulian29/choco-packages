@@ -1,8 +1,8 @@
-﻿$packageName = "java" # arbitrary name for the package, used in messages
-$installerType = "exe" #only one of these two: exe or msi
+﻿$packageName = "java"
+$installerType = "exe"
 $installerArgs = "/s REBOOT=Suppress WEB_JAVA=0"
-$url = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=81819"
-$url64 = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=81821"
+$url = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=83383"
+$url64 = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=83385"
 
 try {	
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url
