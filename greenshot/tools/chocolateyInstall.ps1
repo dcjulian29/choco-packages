@@ -18,7 +18,7 @@ try
 
         $dism = "$env:WinDir\sysnative\dism.exe"
         $args = "/Online /NoRestart /Enable-Feature /FeatureName:NetFx3"
-        Start-ChocolateyProcessAsAdmin "cmd /c `"$dism $param`""
+        Start-ChocolateyProcessAsAdmin "cmd /c `"$dism $args`""
     } else {
         Write-Host "Microsoft .Net 3.5 Framework is already installed on this system..."
     } 
