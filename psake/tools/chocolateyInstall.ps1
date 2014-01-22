@@ -17,10 +17,18 @@ try
       Remove-Item "$($appDir)" -Recurse -Force
     }
 
+    if (-not (Test-Path $downloadPath))
+    {
+        mkdir $downloadPath
+    }
+
     Get-ChocolateyWebFile $packageName "$downloadPath\v$release.zip" $url
     Get-ChocolateyUnzip "$downloadPath\v$release.zip" "$downloadPath\"
 
-    mkdir $appDir
+    if (-not (Test-Path $appDir))
+    {
+        mkdir $appDir
+    }
 
     Copy-Item -Path "$downloadPath\$packageName-$release\*" -Destination "$appDir"
 
