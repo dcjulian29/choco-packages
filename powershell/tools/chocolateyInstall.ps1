@@ -33,13 +33,16 @@ try
             }
 
             if ($OsMinor -eq 2) {
-                Install-ChocolateyPackage $packageName $installerType $installerArgs $Win2012
+                # WMF 4.0 doesn't run on 8.0 and Microsoft's answer is to upgrade for free to 8.1 #FAIL
+                if ((Get-CimInstance Win32_OperatingSystem | Select-Object Caption) -contains "2012") {
+                    Install-ChocolateyPackage $packageName $installerType $installerArgs $Win2012
+                }
             }
         }
     }
 
     if ($psversion -eq 3) {
-        Write-Output "PowerShell Version 3 is installed..."
+        Write-Output "PowerShell Version 3 is installed and WMF 4.0 is not supported by this OS..."
     }
 
     Write-ChocolateySuccess $packageName
