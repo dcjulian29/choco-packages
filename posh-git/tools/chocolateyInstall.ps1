@@ -13,8 +13,13 @@ try
 {
     if (Test-Path $appDir)
     {
-      Write-Output "Removing previous version of package..."
-      Remove-Item "$($appDir)" -Recurse -Force
+        Write-Output "Removing previous version of package..."
+        Remove-Item "$($appDir)" -Recurse -Force
+    }
+
+    if (-not Test-Path $downloadPath)
+    {
+        mkdir $downloadPath
     }
 
     Get-ChocolateyWebFile $packageName "$downloadPath\v$release.zip" $url
