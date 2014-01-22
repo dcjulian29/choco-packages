@@ -68,6 +68,8 @@ try
 
     cmd.exe /c "$appDir\bin\mkgroup.exe -l -d > $appDir\etc\group"
 
+    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+
     Write-ChocolateySuccess $packageName
 }
 catch
