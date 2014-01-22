@@ -3,6 +3,7 @@ $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $installerType = "EXE"
 $installerArgs = "/S /C=$downloadPath\gpg4win.ini"
 $url = "http://files.gpg4win.org/gpg4win-light-2.2.1.exe"
+$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 $install = @"
 [gpg4win]
@@ -31,6 +32,8 @@ try
     Set-Content -Value "$install" -Path $downloadPath\gpg4win.ini
 
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url
+
+    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
 
     Write-ChocolateySuccess $packageName
 }
