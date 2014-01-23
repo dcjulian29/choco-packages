@@ -1,6 +1,6 @@
 $packageName = "keepass"
 $url = "http://superb-dca2.dl.sourceforge.net/project/keepass/KeePass%202.x/2.24/KeePass-2.24.zip"
-
+$downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
 
 if ($psISE) {
@@ -18,7 +18,13 @@ try
 
     mkdir $appDir
     
-    Install-ChocolateyZipPackage $packageName $url $(Split-Path -parent $appDir)
+    if (-not (Test-Path $downloadPath))
+    {
+        mkdir $downloadPath
+    }
+
+    Get-ChocolateyWebFile $packageName "$downloadPath\keepass.zip" $url
+    Get-ChocolateyUnzip "$downloadPath\keepass.zip" "$appDir\"
 
     Write-ChocolateySuccess $packageName
 }
