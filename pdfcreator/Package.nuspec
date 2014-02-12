@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>pdfcreator</id>
+    <version>1.7.2</version>
+    <authors>pdfforge</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.pdfforge.org/</projectUrl>
+    <licenseUrl>http://www.pdfforge.org/content/aladdin-free-public-license</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>PDFCreator is an open source application that can create PDF files from just about any program that prints using windows printers. With PDFCreator you can create PDF's, Postscript and Encapsulated Postscript files, create images from your documents, combine documents and much more.</description>
+    <tags>pdf</tags>
+  </metadata>
+</package>

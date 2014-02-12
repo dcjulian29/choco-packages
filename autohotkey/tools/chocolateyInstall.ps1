@@ -1,9 +1,9 @@
 ﻿$packageName = 'autohotkey'
 $appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
-$url = "http://l.autohotkey.net/AutoHotkey_Lw.zip"
-$url64 = "http://l.autohotkey.net/AutoHotkey_Lw64.zip"
-$compiler = "http://l.autohotkey.net/Ahk2Exe_L.zip"
-$help = "http://l.autohotkey.net/AutoHotkey_L_Help.zip"
+$url = "http://ahkscript.org/download/ahk-u32.zip"
+$url64 = "http://ahkscript.org/download/ahk-u64.zip"
+$compiler = "http://ahkscript.org/download/ahk2exe.zip"
+$help = "http://ahkscript.org/download/1.1/AutoHotkeyHelp.zip"
 
 try
 {

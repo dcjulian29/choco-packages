@@ -1,12 +1,12 @@
 ﻿$packageName = "npp-scriptcs" # arbitrary name for the package, used in messages
 $installerType = "msi" #only one of these two: exe or msi
-$installerArgs = "/q"
-$url = "https://csscriptnpp.codeplex.com/downloads/get/766885"
-$url64 = $url # 64bit URL here or just use the same as $url
+$installerArgs = "/q /NORESTART"
+$url = "https://csscriptnpp.codeplex.com/downloads/get/789212"
+$validExitCodes = @(0,3010)
 
 try
 {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url -validExitCodes $validExitCodes
 
     Write-ChocolateySuccess $packageName
 }

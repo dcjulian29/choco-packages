@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>calibre</id>
-    <version>1.15.0</version>
+    <version>1.20.0</version>
     <authors>Kovid Goyal</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://calibre-ebook.com/</projectUrl>

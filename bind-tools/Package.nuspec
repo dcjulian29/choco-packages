@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>bind-tools</id>
+    <version>9.9.4</version>
+    <authors>Internet Systems Consortium, Inc.</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://www.isc.org/downloads/BIND/</projectUrl>
+    <licenseUrl>https://www.isc.org/downloads/software-support-policy/isc-license/</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>BIND is an implementation of the Domain Name System (DNS) protocols. The name BIND stands for “Berkeley Internet Name Domain”, because the software originated in the early 1980s at the University of California at Berkeley. In recent years, the word BIND has become, like “radar” and “laser”, more word than acronym.</description>
+    <tags>dns bind</tags>
+  </metadata>
+</package>

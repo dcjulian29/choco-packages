@@ -15,6 +15,8 @@ try
 {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url
 
+    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+
     Write-ChocolateySuccess $packageName
 }
 catch

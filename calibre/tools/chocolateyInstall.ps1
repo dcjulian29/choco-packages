@@ -1,8 +1,8 @@
 $packageName = "calibre"
 $installerType = "MSI"
 $installerArgs = "/quiet"
-$url = "http://download.calibre-ebook.com/1.15.0/calibre-64bit-1.15.0.msi"
-$url64 = "http://download.calibre-ebook.com/1.15.0/calibre-64bit-1.15.0.msi"
+$url = "http://download.calibre-ebook.com/1.20.0/calibre-1.20.0.msi"
+$url64 = "http://download.calibre-ebook.com/1.20.0/calibre-64bit-1.20.0.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"

@@ -1,6 +1,12 @@
 ﻿$packageName = 'sysinternals'
 $appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
 $url = 'http://download.sysinternals.com/files/SysinternalsSuite.zip'
+$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
+
+if ($psISE) {
+    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+    $ErrorActionPreference = "Stop"
+}
 
 try
 {
@@ -11,6 +17,13 @@ try
     }
 
     Install-ChocolateyZipPackage $packageName $url $appDir
+
+   $cmd = "reg.exe import $toolDir\accepteula.reg"
+    
+    if (Get-ProcessorBits -eq 64) {
+        $cmd = "$cmd /reg:64"
+    }
+    Start-ChocolateyProcessAsAdmin "$cmd"
 
     Write-ChocolateySuccess $packageName
 }

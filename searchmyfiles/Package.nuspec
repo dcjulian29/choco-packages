@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>searchmyfiles</id>
+    <version>2.46</version>
+    <authors>NirSoft</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.nirsoft.net/utils/search_my_files.html</projectUrl>
+    <licenseUrl>http://www.nirsoft.net/about_nirsoft_freeware.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SearchMyFiles is an alternative to the standard "Search For Files And Folders" module of Windows. It allows you to easily search files in your system by wildcard, by last modified/created/last accessed time, by file attributes, by file content (text or binary search), and by the file size. SearchMyFiles allows you to make a very accurate search that cannot be done with Windows search.</description>
+    <tags>file search</tags>
+  </metadata>
+</package>
