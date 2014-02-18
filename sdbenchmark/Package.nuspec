@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>sdbenchmark</id>
+    <version>1.7.4739</version>
+    <authors>Alex Schepeljanski</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://alex-is.de/</projectUrl>
+    <description>The AS SSD benchmark determines the performance of Solid State Drives (SSD). The tool contains six synthetic and three copy tests. The synthetic tests determine the sequential and random read and write performance of the SSD.</description>
+    <tags>ssd benchmark</tags>
+  </metadata>
+</package>
