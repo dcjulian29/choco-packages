@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>jperf</id>
+    <version>2.0.2</version>
+    <authors>Nicolas Richasse</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://code.google.com/p/xjperf/</projectUrl>
+    <licenseUrl>http://www.gnu.org/licenses/lgpl.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>jperf is a java-based GUI for iperf. iperf was orginally developed by NLANR/DAST as a tool for measuring maximum TCP and UDP bandwidth performance. It allows the tuning of various parameters and UDP characteristics and reports bandwidth, delay jitter, and datagram loss.</description>
+    <tags>network performance administration jperf iperf</tags>
+    <dependencies>
+      <dependency id="java" />
+    </dependencies>
+  </metadata>
+</package>
