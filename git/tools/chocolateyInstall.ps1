@@ -1,7 +1,7 @@
 $packageName = "git"
 $installerType = "EXE"
 $installerArgs = '/SILENT /COMPONENTS="!ext,!ext\cheetah,!assoc,!assoc_sh"'
-$url = "https://msysgit.googlecode.com/files/Git-1.8.4-preview20130916.exe"
+$url = "https://msysgit.googlecode.com/files/Git-1.9.0-preview20140217.exe"
 
 $appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
