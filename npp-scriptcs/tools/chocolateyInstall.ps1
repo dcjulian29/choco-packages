@@ -1,7 +1,7 @@
-﻿$packageName = "npp-scriptcs" # arbitrary name for the package, used in messages
-$installerType = "msi" #only one of these two: exe or msi
+﻿$packageName = "npp-scriptcs"
+$installerType = "msi"
 $installerArgs = "/q /NORESTART"
-$url = "https://csscriptnpp.codeplex.com/downloads/get/789212"
+$url = "https://csscriptnpp.codeplex.com/downloads/get/797842"
 $validExitCodes = @(0,3010)
 
 try
