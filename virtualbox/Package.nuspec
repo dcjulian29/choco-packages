@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>virtualbox</id>
-    <version>4.3.6</version>
+    <version>4.3.8</version>
     <authors>Oracle</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>https://www.virtualbox.org/wiki/VirtualBox_PUEL</licenseUrl>
