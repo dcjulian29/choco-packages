@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>soapui</id>
+    <version>4.6.4</version>
+    <authors>SmartBear Software</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.soapui.org/</projectUrl>
+    <licenseUrl>http://www.soapui.org/Developers-Corner/soapui-license.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SoapUI is the world leading Open Source Functional Testing Tool, mainly it is used for API Testing. SoapUI supports multiple protocols such as SOAP, REST, HTTP, JMS, AMF and JDBC. SoapUI enables you to create advanced Performance Tests very quickly and run Automated Functional Tests.</description>
+    <tags>soapui soap rest wcf</tags>
+    <dependencies>
+      <dependency id="java" />
+    </dependencies>
+  </metadata>
+</package>
