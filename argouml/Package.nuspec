@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>argouml</id>
+    <version>0.34</version>
+    <authors>ArgoUML Project</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://argouml.tigris.org/</projectUrl>
+    <licenseUrl>http://www.eclipse.org/legal/epl-v10.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ArgoUML is the leading open source UML modeling tool and includes support for all standard UML 1.4 diagrams.</description>
+    <tags>argouml uml</tags>
+    <dependencies>
+      <dependency id="java" />
+    </dependencies>
+  </metadata>
+</package>
