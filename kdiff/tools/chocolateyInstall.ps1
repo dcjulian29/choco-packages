@@ -26,12 +26,20 @@ try
 
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.7z" $url $url64
 
-    & 'C:\Program Files\7-Zip\7z.exe' x $downloadPath\$packageName.7z $downloadPath\$packageName\
+    mkdir $downloadPath\$packageName | Out-Null
+
+    Push-Location $downloadPath\$packageName
+
+    & 'C:\Program Files\7-Zip\7z.exe' x $downloadPath\$packageName.7z
+
+    Copy-Item -Path "`$_OUTDIR\*" -Destination ".\" -Recurse -Container
+    Remove-Item -Path "`$_OUTDIR" -Recurse -Force
+    Remove-Item -Path "`$APPDATA" -Recurse -Force
+    Remove-Item -Path "`$PLUGINSDIR" -Recurse -Force
 
     Pop-Location
 
-
-    Copy-Item -Path "$($downloadPath)\$($packageName)-$($version)\*" -Destination "$appDir" -Recurse -Container
+    Copy-Item -Path "$downloadPath\$packageName\*" -Destination "$appDir" -Recurse -Container
 
     Write-ChocolateySuccess $packageName
 }
