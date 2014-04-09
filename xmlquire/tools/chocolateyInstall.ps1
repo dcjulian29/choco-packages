@@ -1,7 +1,7 @@
-$packageName = "keepass"
-$url = "http://superb-dca2.dl.sourceforge.net/project/keepass/KeePass%202.x/2.25/KeePass-2.25.zip"
-$downloadPath = "$env:TEMP\chocolatey\$packageName"
+$packageName = "xmlquire"
+$url = "http://qutoric.com/coherentweb/resources/XMLQuireWin8.zip"
 $appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$downloadPath = "$env:TEMP\chocolatey\$packageName"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -16,15 +16,20 @@ try
         Remove-Item "$($appDir)" -Recurse -Force
     }
 
-    mkdir $appDir
+    mkdir $appDir | Out-Null
     
     if (-not (Test-Path $downloadPath))
     {
-        mkdir $downloadPath
+        mkdir $downloadPath | Out-Null
     }
 
-    Get-ChocolateyWebFile $packageName "$downloadPath\keepass.zip" $url
-    Get-ChocolateyUnzip "$downloadPath\keepass.zip" "$appDir\"
+    Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
+
+    Push-Location $downloadPath
+
+    & 'C:\Program Files\7-Zip\7z.exe' x $downloadPath\$packageName.zip
+
+    Copy-Item -Path "$downloadPath\Application Files\*\*" -Destination "$appDir" -Recurse -Container
 
     Write-ChocolateySuccess $packageName
 }

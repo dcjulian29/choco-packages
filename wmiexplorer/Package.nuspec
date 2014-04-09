@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>wmiexplorer</id>
+    <version>1.16</version>
+    <authors>Advanced Network Software</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.ks-soft.net/hostmon.eng/wmi/index.htm</projectUrl>
+    <description>WMI Explorer allows you to: Explore the full set of WMI management classes, objects and their properties; Browse through objects and settings on remote machines; and Execute any WQL query and view the result set.</description>
+    <tags>wmiexplorer wmi explorer</tags>
+  </metadata>
+</package>

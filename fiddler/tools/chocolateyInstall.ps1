@@ -1,8 +1,7 @@
-$packageName = "wireshark"
+$packageName = "fiddler"
 $installerType = "EXE"
 $installerArgs = "/S"
-$url = "https://2.na.dl.wireshark.org/win32/Wireshark-win32-1.10.6.exe"
-$url64 = "https://2.na.dl.wireshark.org/win64/Wireshark-win64-1.10.6.exe"
+$url = "http://www.telerik.com/docs/default-source/fiddler/fiddler4setup.exe?sfvrsn=2"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -11,7 +10,7 @@ if ($psISE) {
 
 try
 {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url
 
     Write-ChocolateySuccess $packageName
 }

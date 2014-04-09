@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>npp-scriptcs</id>
-    <version>1.0.18</version>
+    <version>1.0.20.2</version>
     <authors>Oleg Shilo</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>http://www.csscript.net/npp/license.txt</licenseUrl>

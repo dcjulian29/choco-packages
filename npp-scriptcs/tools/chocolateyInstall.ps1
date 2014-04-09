@@ -1,7 +1,7 @@
 ﻿$packageName = "npp-scriptcs"
 $installerType = "msi"
 $installerArgs = "/q /NORESTART"
-$url = "https://csscriptnpp.codeplex.com/downloads/get/797842"
+$url = "https://csscriptnpp.codeplex.com/downloads/get/821052"
 $validExitCodes = @(0,3010)
 
 try
