@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dropbox</id>
+    <version>2.6.27</version>
+    <authors>Dropbox</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://www.dropbox.com</projectUrl>
+    <licenseUrl>https://www.dropbox.com/privacy#terms</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Dropbox is a home for all your photos, docs, videos, and files. Anything you add to Dropbox will automatically show up on all your computers, phones and even the Dropbox website — so you can access your stuff from anywhere.</description>
+    <tags>file sync</tags>
+  </metadata>
+</package>
