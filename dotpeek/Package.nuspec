@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dotpeek</id>
+    <version>1.1</version>
+    <authors>JetBrains</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.jetbrains.com/decompiler/</projectUrl>
+    <licenseUrl>http://www.jetbrains.com/company/useterms.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>dotPeek is a free-of-charge .NET decompiler from JetBrains, the makers of ReSharper and more developer productivity tools.</description>
+    <tags>dotnet decomplier</tags>
+  </metadata>
+</package>
