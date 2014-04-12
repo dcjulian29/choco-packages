@@ -1,6 +1,7 @@
 $packageName = "dropbox"
 $installerType = "EXE"
 $url = "https://www.dropbox.com/download?src=index&plat=win"
+$downloadPath = "$env:TEMP\chocolatey\$packageName"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -9,7 +10,13 @@ if ($psISE) {
 
 try
 {
-    Install-ChocolateyPackage $packageName $installerType $url
+    if (-not (Test-Path $downloadPath)) {
+        mkdir $downloadPath | Out-Null
+    }
+
+    Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.$installerType" $url
+
+    Start-Process "$downloadPath\$packageName.$installerType" -NoNewWindow
 
     Write-ChocolateySuccess $packageName
 }
