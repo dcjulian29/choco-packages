@@ -2,7 +2,7 @@ $packageName = "pdfcreator"
 $installerType = "exe"
 $installerArgs = "/L=1033 /SaveINF /SILENT /NORESTART /COMPONENTS=`"program,ghostscript,languages\english`""
 $uninstallerArgs = "/SILENT /NORESTART"
-$url = "http://download.pdfforge.org/download/pdfcreator/PDFCreator-stable?download"
+$url = "http://white.download.pdfforge.org/pdfcreator/1.7.3/PDFCreator-1_7_3_setup.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
