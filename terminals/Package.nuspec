@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>terminals</id>
+    <version>3.5</version>
+    <authors>Karlos Chuar</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://terminals.codeplex.com/</projectUrl>
+    <licenseUrl>https://terminals.codeplex.com/license</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Terminals is a secure, multi tab terminal services/remote desktop client.</description>
+    <tags>rdp vnc ssh telnet mstsc</tags>
+  </metadata>
+</package>
