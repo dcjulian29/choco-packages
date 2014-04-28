@@ -1,8 +1,8 @@
-$packageName = "wireshark"
+$packageName = "sqlmanagementstudio"
 $installerType = "EXE"
-$installerArgs = "/S"
-$url = "https://2.na.dl.wireshark.org/win32/Wireshark-win32-1.10.7.exe"
-$url64 = "https://2.na.dl.wireshark.org/win64/Wireshark-win64-1.10.7.exe"
+$installerArgs = "/QUIETSIMPLE /IACCEPTSQLSERVERLICENSETERMS /ACTION=install /FEATURES=Tools"
+$url = "http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLManagementStudio_x86_ENU.exe"
+$url64 = "http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLManagementStudio_x64_ENU.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"

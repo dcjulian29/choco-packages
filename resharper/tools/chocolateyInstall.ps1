@@ -1,7 +1,7 @@
 $packageName = "resharper"
 $installerType = "MSI"
 $installerArgs = "/qb"
-$url = "http://download.jetbrains.com/resharper/ReSharperSetup.8.1.23.546.msi"
+$url = "http://download.jetbrains.com/resharper/ReSharperSetup.8.2.0.2160.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"

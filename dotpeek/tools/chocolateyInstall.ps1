@@ -1,8 +1,7 @@
-$packageName = "nodejs"
+$packageName = "dotpeek"
 $installerType = "MSI"
-$installerArgs = "/qb"
-$url = "http://nodejs.org/dist/v0.10.26/node-v0.10.26-x86.msi"
-$url64 = "http://nodejs.org/dist/v0.10.26/x64/node-v0.10.26-x64.msi"
+$installerArgs = "/qn"
+$url = "http://download.jetbrains.com/dotpeek/dotPeekSetup-1.1.1.33.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -11,7 +10,7 @@ if ($psISE) {
 
 try
 {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url
 
     Write-ChocolateySuccess $packageName
 }

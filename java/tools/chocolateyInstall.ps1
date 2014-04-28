@@ -1,8 +1,8 @@
 ﻿$packageName = "java"
 $installerType = "exe"
 $installerArgs = "/s REBOOT=Suppress WEB_JAVA=0"
-$url = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=83383"
-$url64 = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=83385"
+$url = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=86895"
+$url64 = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=87443"
 
 try {	
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url
