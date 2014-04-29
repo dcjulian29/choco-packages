@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>pshell-go</id>
+    <id>posh-go</id>
     <version>2013.06.25</version>
     <authors>Cameron Harp</authors>
     <owners>Julian Easterling</owners>
