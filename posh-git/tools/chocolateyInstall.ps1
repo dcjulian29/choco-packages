@@ -17,7 +17,7 @@ try
         Remove-Item "$($appDir)" -Recurse -Force
     }
 
-    if (-not Test-Path $downloadPath)
+    if (-not (Test-Path $downloadPath))
     {
         mkdir $downloadPath
     }
