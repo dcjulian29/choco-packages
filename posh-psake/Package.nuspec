@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>psake</id>
+    <id>posh-psake</id>
     <version>4.3.0</version>
     <authors>James Kovacs</authors>
     <owners>Julian Easterling</owners>
