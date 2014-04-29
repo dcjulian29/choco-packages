@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>pscx</id>
+    <id>posh-pscx</id>
     <version>3.1.0</version>
     <authors>PowerShell Community Extensions</authors>
     <owners>Julian Easterling</owners>
