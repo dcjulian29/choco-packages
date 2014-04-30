@@ -1,4 +1,4 @@
-$packageName = "pshell-go"
+$packageName = "posh-go"
 $url = "https://github.com/cameronharp/Go-Shell/archive/master.zip"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\Modules\go"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
@@ -14,6 +14,11 @@ try
     {
       Write-Output "Removing previous version of package..."
       Remove-Item "$($appDir)" -Recurse -Force
+    }
+
+    if (-not (Test-Path $downloadPath))
+    {
+        mkdir $downloadPath
     }
 
     Get-ChocolateyWebFile $packageName "$downloadPath\master.zip" $url

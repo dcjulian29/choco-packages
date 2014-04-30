@@ -1,4 +1,4 @@
-$packageName = "pshell-go"
+$packageName = "posh-go"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\Modules\go"
 
 try
