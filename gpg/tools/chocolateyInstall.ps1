@@ -26,7 +26,7 @@ if ($psISE) {
 try
 {
     if (-not (Test-Path $downloadPath)) {
-        mkdir $downloadPath
+        New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
     Set-Content -Value "$install" -Path $downloadPath\gpg4win.ini

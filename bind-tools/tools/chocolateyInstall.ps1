@@ -29,14 +29,14 @@ try
     }
 
     if (-not (Test-Path $downloadPath)) {
-        mkdir $downloadPath
+        New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
     Get-ChocolateyWebFile $packageName "$downloadPath\bind.zip" $url
     Get-ChocolateyUnzip "$downloadPath\bind.zip" "$downloadPath\"
 
     if (-not (Test-Path $appDir)) {
-        mkdir $appDir
+        New-Item -Type Directory -Path $appDir | Out-Null
     }
 
     Get-ChildItem -Path $downloadPath -Include $keep -Recurse | Copy-Item -Destination "$appDir"

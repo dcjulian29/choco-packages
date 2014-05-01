@@ -11,7 +11,7 @@ if ($psISE) {
 try
 {
     if (-not (Test-Path $downloadPath)) {
-        mkdir $downloadPath | Out-Null
+        New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.$installerType" $url

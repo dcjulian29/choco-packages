@@ -12,7 +12,7 @@ try
     }
 
     if (-not $(Test-Path $appDir)) {
-        mkdir $appDir
+        New-Item -Type Directory -Path $appDir | Out-Null
     }
 
     Get-ChocolateyWebFile $packageName "$appDir\baretail.exe" $url 

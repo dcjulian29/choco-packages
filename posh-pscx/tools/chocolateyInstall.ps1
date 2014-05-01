@@ -1,4 +1,4 @@
-$packageName = "pscx"
+$packageName = "posh-pscx"
 $installerType = "MSI"
 $installerArgs = "/qb"
 $url = "https://pscx.codeplex.com/downloads/get/744915"

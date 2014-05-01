@@ -15,7 +15,7 @@ try
       Remove-Item "$($appDir)" -Recurse -Force
     }
 
-    mkdir $appDir
+    New-Item -Type Directory -Path $appDir | Out-Null
     
     Install-ChocolateyZipPackage $packageName $url $appDir
 

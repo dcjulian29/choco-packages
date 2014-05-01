@@ -1,4 +1,4 @@
-$packageName = "psake"
+$packageName = "posh-psake"
 $release = "4.3.1"
 $url = "https://github.com/psake/psake/archive/v$($release).zip"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\Modules\$packageName"
@@ -19,7 +19,7 @@ try
 
     if (-not (Test-Path $downloadPath))
     {
-        mkdir $downloadPath
+        New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
     Get-ChocolateyWebFile $packageName "$downloadPath\v$release.zip" $url
@@ -27,7 +27,7 @@ try
 
     if (-not (Test-Path $appDir))
     {
-        mkdir $appDir
+        New-Item -Type Directory -Path $appDir | Out-Null
     }
 
     Copy-Item -Path "$downloadPath\$packageName-$release\*" -Destination "$appDir"

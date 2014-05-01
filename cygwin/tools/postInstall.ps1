@@ -3,11 +3,11 @@ $up = "$($env:USERPROFILE)"
 
 
 if (-not $(Test-Path $etc)) {
-    mkdir $etc
+    New-Item -Type Directory -Path $etc | Out-Null
 }
 
 if (-not $(Test-Path "$etc\ssh")) {
-    mkdir "$etc\ssh"
+    New-Item -Type Directory -Path "$etc\ssh" | Out-Null
 }
 
 if (Test-Path "$($up)\.ssh") {
@@ -18,7 +18,7 @@ cmd /c "mklink /J $($up)\.ssh $etc\ssh"
 
 
 if (-not $(Test-Path "$etc\cygwin")) {
-    mkdir "$etc\cygwin"
+    New-Item -Type Directory -Path "$etc\cygwin" | Out-Null
 }
 
 function make-filelink ($filename) {

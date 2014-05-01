@@ -17,11 +17,11 @@ try
     }
 
     if (-not (Test-Path $downloadPath)) {
-        mkdir $downloadPath | Out-Null
+        New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
     if (-not (Test-Path $appDir)) {
-        mkdir $appDir | Out-Null
+        New-Item -Type Directory -Path $appDir | Out-Null
     }
 
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url

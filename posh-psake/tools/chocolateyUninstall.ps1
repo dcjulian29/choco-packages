@@ -1,4 +1,4 @@
-$packageName = "psake"
+$packageName = "posh-psake"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\Modules\$($packageName)"
 
 try

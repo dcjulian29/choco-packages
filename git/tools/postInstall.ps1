@@ -2,11 +2,11 @@ $etc = "$($env:SYSTEMDRIVE)\etc"
 $up = "$($env:USERPROFILE)"
 
 if (-not $(Test-Path $etc)) {
-    mkdir $etc
+    New-Item -Type Directory -Path $etc | Out-Null
 }
 
 if (-not $(Test-Path "$etc\git")) {
-    mkdir "$etc\git"
+    New-Item -Type Directory -Path "$etc\git" | Out-Null
 }
 
 if (-not $(Test-Path "$etc\git\gitconfig")) {

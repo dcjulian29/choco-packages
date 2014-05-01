@@ -18,13 +18,13 @@ try
 
     if (-not (Test-Path $downloadPath))
     {
-        mkdir $downloadPath
+        New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
     Get-ChocolateyWebFile $packageName "$downloadPath\master.zip" $url
     Get-ChocolateyUnzip "$downloadPath\master.zip" "$downloadPath\"
 
-    mkdir $appDir
+    New-Item -Type Directory -Path $appDir | Out-Null
 
     Copy-Item -Path "$downloadPath\Go-Shell-master\*" -Destination "$appDir"
 

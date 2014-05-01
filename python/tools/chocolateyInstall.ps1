@@ -17,7 +17,7 @@ try
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
 
     if (-not (Test-Path $downloadPath)) {
-        mkdir $downloadPath | Out-Null
+        New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
     Push-Location $downloadPath
