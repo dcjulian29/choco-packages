@@ -10,7 +10,7 @@ if ($psISE) {
 
 try
 {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url
 
     Write-ChocolateySuccess $packageName
 }
