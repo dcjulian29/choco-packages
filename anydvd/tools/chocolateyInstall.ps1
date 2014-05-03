@@ -1,12 +1,11 @@
 ﻿$packageName = "anydvd"
 $installerType = "exe"
 $installerArgs = "/S"
-$url = "http://static.slysoft.com/SetupAnyDVD7450.exe"
-$url64 = $url
+$url = "http://static.slysoft.com/SetupAnyDVD7460.exe"
 
 try
 {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url
 
     Write-ChocolateySuccess $packageName
 }
