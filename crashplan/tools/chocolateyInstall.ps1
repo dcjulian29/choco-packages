@@ -1,8 +1,8 @@
 $packageName = "crashplan"
 $installerType = "EXE"
 $installerArgs = "/quiet /norestart"
-$url = "http://download2.us.code42.com/installs/win/install/CrashPlan/jre/CrashPlan_3.5.3_Win.exe"
-$url64 = "http://download2.us.code42.com/installs/win/install/CrashPlan/jre/CrashPlan-x64_3.5.3_Win.exe"
+$url = "http://download2.us.code42.com/installs/win/install/CrashPlan/jre/CrashPlan_3.6.3_Win.exe"
+$url64 = "http://download2.us.code42.com/installs/win/install/CrashPlan/jre/CrashPlan-x64_3.6.3_Win.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
