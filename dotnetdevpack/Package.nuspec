@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dotnetdevpack</id>
+    <version>4.5.2</version>
+    <authors>Microsoft</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.microsoft.com/net</projectUrl>
+    <description>The .NET Framework Developer Pack installs the multi-targeting pack for .NET Framework. Developers can build applications targeting the .NET Framework using either Visual Studio 2013, Visual Studio 2012 or third party IDEs.</description>
+    <tags>dotnet net build developer-pack multi-target multi-targeting</tags>
+  </metadata>
+</package>
