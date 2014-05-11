@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>octopusdeploy-tentacle</id>
+    <version>2.3.6</version>
+    <authors>OctopusDeploy</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://octopusdeploy.com/</projectUrl>
+    <licenseUrl>http://octopusdeploy.com/pricing</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Octopus Deploy is a user-friendly automated deployment tool for .NET developers.</description>
+    <tags>octopus deploy release</tags>
+  </metadata>
+</package>
