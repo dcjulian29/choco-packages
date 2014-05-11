@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mysettings-devwallpaper</id>
+    <version>2014.05.11</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>A package to set the wallpaper to a "visual studio" based background.</description>
+    <tags>developer vm wallpaper</tags>
+  </metadata>
+</package>
