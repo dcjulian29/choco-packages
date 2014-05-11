@@ -1,5 +1,5 @@
 ﻿$packageName = "scriptcs"
-$release = "0.8.1"
+$release = "0.9"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 $appDir = "$env:ChocolateyInstall\apps\$packageName"
 $url = "https://github.com/scriptcs/scriptcs/archive/v$release.zip"
