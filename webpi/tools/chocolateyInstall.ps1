@@ -31,7 +31,8 @@ try
 
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.msi" $url $url64
 
-    & $downloadPath\lessmsi.exe x "$downloadPath\$packageName.msi" "$downloadPath\"
+    Start-Process -FilePath "$($downloadPath)\lessmsi.exe" -WorkingDirectory $downloadPath `
+        -NoNewWindow -Wait -ArgumentList "x ""$($downloadPath)\$($packageName).msi"" ""$($downloadPath)\"""
 
     Copy-Item 'C:\temp\chocolatey\webpi\SourceDir\Microsoft\Web Platform Installer\*' $appDir -Recurse -Container
 
