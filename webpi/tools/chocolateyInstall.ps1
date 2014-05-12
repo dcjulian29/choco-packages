@@ -45,14 +45,3 @@ catch
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
     throw
 }
-
-
-
-
-
-  pushd "$toolsDir"
-  # the trailing backslash is required!
-  &lessmsi x "$fileName" "$installDir\"
-  popd
-
-  Write-ChocolateySuccess $packageName
