@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>php</id>
+    <version>5.5.12</version>
+    <authors>The PHP Group</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://php.net</projectUrl>
+    <licenseUrl>http://www.php.net/license/3_01.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>PHP is a popular general-purpose scripting language that is especially suited to web development.</description>
+    <tags>php</tags>
+  </metadata>
+</package>

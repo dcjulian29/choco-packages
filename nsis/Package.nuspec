@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>nsis</id>
+    <version>2.46</version>
+    <authors>NSIS Team</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://nsis.sourceforge.net/</projectUrl>
+    <licenseUrl>http://nsis.sourceforge.net/License</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NSIS (Nullsoft Scriptable Install System) is a professional open source system to create Windows installers.</description>
+    <tags>nsis build installer</tags>
+  </metadata>
+</package>

@@ -2,11 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>fiddler</id>
-    <version>4.4.6</version>
+    <version>4.4.8.0</version>
     <authors>Telerik</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.telerik.com/fiddler</projectUrl>
-    <description>Fiddler is a free web debugging proxy which logs all HTTP(s) traffic between your computer and the Internet. Use it to debug traffic from virtually any application that supports a proxy like IE, Chrome, Safari, Firefox, Opera and more.</description>
-    <tags>fiddler proxy http</tags>
+    <description>The free web debugging proxy for any browser, system or platform</description>
+    <tags>fiddler http proxy</tags>
+    <dependencies>
+      <dependency id="dotnet" version="4.0" />
+    </dependencies>
   </metadata>
 </package>

@@ -1,5 +1,5 @@
 $packageName = "keepass"
-$url = "http://superb-dca2.dl.sourceforge.net/project/keepass/KeePass%202.x/2.25/KeePass-2.25.zip"
+$url = "http://superb-dca2.dl.sourceforge.net/project/keepass/KeePass%202.x/2.26/KeePass-2.26.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
 
@@ -16,11 +16,11 @@ try
         Remove-Item "$($appDir)" -Recurse -Force
     }
 
-    mkdir $appDir
+    New-Item -Type Directory -Path $appDir | Out-Null
     
     if (-not (Test-Path $downloadPath))
     {
-        mkdir $downloadPath
+        New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
     Get-ChocolateyWebFile $packageName "$downloadPath\keepass.zip" $url

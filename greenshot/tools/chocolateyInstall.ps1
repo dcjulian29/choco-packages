@@ -1,7 +1,7 @@
 $packageName = "greenshot"
 $installerType = "EXE"
 $installerArgs = "/SILENT"
-$url = "http://downloads.sourceforge.net/project/greenshot/Greenshot/Greenshot%201.1/Greenshot-INSTALLER-1.1.7.17.exe?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fgreenshot%2Ffiles%2Flatest%2Fdownload&ts=1387226263&use_mirror=iweb"
+$url = "http://downloads.sourceforge.net/project/greenshot/Greenshot/Greenshot%201.1/Greenshot-INSTALLER-1.1.8.35.exe?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fgreenshot%2Ffiles%2Flatest%2Fdownload&ts=1387226263&use_mirror=iweb"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -10,6 +10,9 @@ if ($psISE) {
 
 try
 {
+    if (Get-Process 'Greenshot' -ea SilentlyContinue) {
+        Stop-Process -processname Greenshot
+    }
 
     if (-not (Test-Path "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5")) {
         # cinst netfx3 -source windowsfeatures
@@ -20,7 +23,7 @@ try
         $args = "/Online /NoRestart /Enable-Feature /FeatureName:NetFx3"
         Start-ChocolateyProcessAsAdmin "cmd /c `"$dism $args`""
     } else {
-        Write-Host "Microsoft .Net 3.5 Framework is already installed on this system..."
+        Write-Verbose "Microsoft .Net 3.5 Framework is already installed on this system..."
     } 
  
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url

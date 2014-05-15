@@ -17,7 +17,7 @@ try
     }
 
     if (Test-Path "${env:ProgramFiles(x86)}\PDFCreator") {
-        $uninstall = "$env:ProgramFiles\PDFCreator\unins000.exe"
+        $uninstall = "${env:ProgramFiles(x86)}\PDFCreator\unins000.exe"
     }
 
     if ($uninstall -ne $null) {
@@ -34,7 +34,9 @@ try
         $cmd = "${env:ProgramFiles(x86)}\PDFCreator\PDFCreator.exe"
     }
 
-    cmd /c "`"$cmd`" /NoStart /RemoveWindowsExplorerIntegration"
+    if ($cmd -ne $null) {
+        cmd /c "`"$cmd`" /NoStart /RemoveWindowsExplorerIntegration"
+    }
 
     Write-ChocolateySuccess $packageName
 }

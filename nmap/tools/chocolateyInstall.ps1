@@ -1,5 +1,5 @@
 $packageName = "nmap"
-$version = "6.40"
+$version = "6.46"
 $url = "http://nmap.org/dist/nmap-$($version)-win32.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
@@ -17,11 +17,11 @@ try
         Remove-Item "$($appDir)" -Recurse -Force
     }
 
-    mkdir $appDir | Out-Null
+    New-Item -Type Directory -Path $appDir | Out-Null
     
     if (-not (Test-Path $downloadPath))
     {
-        mkdir $downloadPath | Out-Null
+        New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
