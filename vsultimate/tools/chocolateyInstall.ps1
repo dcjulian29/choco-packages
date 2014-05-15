@@ -1,7 +1,7 @@
 $packageName = "vsultimate"
 $installerType = "EXE"
 $installerArgs = "/PASSIVE /NORESTART"
-$url = "http://download.microsoft.com/download/1/B/B/1BBF4A12-DDB6-427C-8B91-6D6CB8A4CDA9/VSU2/vs_ultimate.exe"
+$url = "http://download.microsoft.com/download/5/F/D/5FD90EF6-BED8-4665-9C72-16865B32F159/vs_ultimate.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
