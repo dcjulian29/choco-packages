@@ -1,8 +1,8 @@
 $packageName = "octopusdeploy-tentacle"
 $installerType = "MSI"
 $installerArgs = "/quiet"
-$url = "http://download.octopusdeploy.com/octopus/Octopus.Tentacle.2.3.6.1385.msi"
-$url64 = "http://download.octopusdeploy.com/octopus/Octopus.Tentacle.2.3.6.1385-x64.msi"
+$url = "http://download.octopusdeploy.com/octopus/Octopus.Tentacle.2.4.5.46.msi"
+$url64 = "http://download.octopusdeploy.com/octopus/Octopus.Tentacle.2.4.5.46-x64.msi"
 
 
 if ($psISE) {
