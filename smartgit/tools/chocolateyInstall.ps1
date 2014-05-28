@@ -1,7 +1,7 @@
 $packageName = "smartgit"
 $installerType = "EXE"
 $installerArgs = "/sp- /silent /norestart"
-$url = "http://www.syntevo.com/download/smartgithg/smartgithg-win32-setup-nojre-5_0_9.zip"
+$url = "http://www.syntevo.com/download/smartgithg/smartgithg-win32-setup-nojre-5_0_10.zip"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
