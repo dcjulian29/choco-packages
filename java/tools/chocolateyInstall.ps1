@@ -1,8 +1,13 @@
 ﻿$packageName = "java"
 $installerType = "exe"
 $installerArgs = "/s REBOOT=Suppress WEB_JAVA=0"
-$url = "download.oracle.com/otn-pub/java/jdk/7u60-b19/jre-7u60-windows-i586.exe"
+
+$url = "http://download.oracle.com/otn-pub/java/jdk/7u60-b19/jre-7u60-windows-i586.exe"
 $url64 = "http://download.oracle.com/otn-pub/java/jdk/7u60-b19/jre-7u60-windows-x64.exe"
+
+if ($psISE) {
+    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+}
 
 try {	
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url
