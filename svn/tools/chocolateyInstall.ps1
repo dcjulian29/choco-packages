@@ -1,5 +1,5 @@
 $packageName = "svn"
-$url = "http://www.visualsvn.com/files/Apache-Subversion-1.8.8.zip"
+$url = "http://www.visualsvn.com/files/Apache-Subversion-1.8.9.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
 
