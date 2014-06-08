@@ -1,8 +1,8 @@
 $packageName = "itunes"
 $installerArgs = "/quiet /passive /norestart"
 
-$url = "https://secure-appldnld.apple.com/iTunes11/031-2406.20140515.33RPt/iTunesSetup.exe"
-$url64 = "https://secure-appldnld.apple.com/iTunes11/031-2407.20140515.Bbh8U/iTunes64Setup.exe"
+$url = 'https://secure-appldnld.apple.com/iTunes11/031-02995.20140528.Tadim/iTunesSetup.exe'
+$url64 = 'https://secure-appldnld.apple.com/iTunes11/031-02993.20140528.Pu4r5/iTunes64Setup.exe'
 
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $errorCode = @(0, 3010)
