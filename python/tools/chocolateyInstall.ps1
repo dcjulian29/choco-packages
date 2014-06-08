@@ -1,8 +1,8 @@
 $packageName = "python"
 $installerType = "MSI"
 $installerArgs = "/qb! TARGETDIR=$env:SYSTEMDRIVE\python ALLUSERS=1"
-$url = "http://www.python.org/ftp/python/2.7.6/python-2.7.6.msi"
-$url64 = "http://www.python.org/ftp/python/2.7.6/python-2.7.6.amd64.msi"
+$url = "https://www.python.org/ftp/python/2.7.7/python-2.7.7.msi"
+$url64 = "https://www.python.org/ftp/python/2.7.7/python-2.7.7.amd64.msi"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 $ahkExe = "$env:ChocolateyInstall\apps\autohotkey\AutoHotkey.exe"
@@ -31,8 +31,8 @@ try
     cmd /c "$env:SYSTEMDRIVE\python\python.exe get-pip.py"
 
     # Install Pywin32
-    $pywin32 = "http://sourceforge.net/projects/pywin32/files/pywin32/Build%20218/pywin32-218.win32-py2.7.exe/download"
-    $pywin64 = "http://sourceforge.net/projects/pywin32/files/pywin32/Build%20218/pywin32-218.win-amd64-py2.7.exe/download"
+    $pywin32 = "http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download"
+    $pywin64 = "http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe/download"
 
     Get-ChocolateyWebFile "pywin32" "pywin32.exe" $pywin32 $pywin64 
 
@@ -41,8 +41,8 @@ try
     Start-ChocolateyProcessAsAdmin "$ahkExe $ahkScript"
 
     # Install wxPython
-    $wxpython32 = "http://sourceforge.net/projects/wxpython/files/wxPython/2.9.5.0/wxPython2.9-win32-2.9.5.0-py27.exe/download"
-    $wxpython64 = "http://sourceforge.net/projects/wxpython/files/wxPython/2.9.5.0/wxPython2.9-win64-2.9.5.0-py27.exe/download"
+    $wxpython32 = "http://sourceforge.net/projects/wxpython/files/wxPython/3.0.0.0/wxPython3.0-win32-3.0.0.0-py27.exe/download"
+    $wxpython64 = "http://sourceforge.net/projects/wxpython/files/wxPython/3.0.0.0/wxPython3.0-win64-3.0.0.0-py27.exe/download"
 
     Install-ChocolateyPackage "wxPython" "EXE" "/SP- /SILENT" $wxpython32 $wxpython64
 
