@@ -1,6 +1,6 @@
 ﻿$packageName = "npp-scriptcs"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
-$url = "http://csscriptnpp.codeplex.com/downloads/get/856523"
+$url = "https://csscriptnpp.codeplex.com/downloads/get/865641"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -20,8 +20,10 @@ try
 
     if (Test-Path "$($plugin)\CSScriptNpp")
     {
-        Remove-Item "$($plugin)\CSScriptNpp" -Recurse -Force
-        Remove-Item "$($plugin)\CSScriptNpp.dll" -Force
+        $cmd = "Remove-Item '$($plugin)\CSScriptNpp' -Recurse -Force;" `
+            + "Remove-Item '$($plugin)\CSScriptNpp.dll' -Force"
+
+        Start-ChocolateyProcessAsAdmin $cmd
     }
 
     if (-not (Test-Path $downloadPath)) {
