@@ -17,10 +17,12 @@ Windows Registry Editor Version 5.00
 "ColorTable13"=dword:00ff00ff
 "ColorTable14"=dword:0000ffff
 "ColorTable15"=dword:00ffffff
+"CurrentPage"=dword:00000003
 "CursorSize"=dword:00000019
 "EnableColorSelection"=dword:00000000
 "ExtendedEditKey"=dword:00000000
 "ExtendedEditKeyCustom"=dword:00000000
+"FaceName"="Consolas"
 "FontFamily"=dword:00000036
 "FontSize"=dword:00100000
 "FontWeight"=dword:00000190
@@ -34,14 +36,12 @@ Windows Registry Editor Version 5.00
 "QuickEdit"=dword:00000001
 "ScreenBufferSize"=dword:0bb80078
 "ScreenColors"=dword:0000000a
+"ScrollScale"=dword:00000001
 "TrimLeadingZeros"=dword:00000000
 "WindowSize"=dword:00280078
 "WordDelimiters"=dword:00000000
-"CurrentPage"=dword:00000003
-"FaceName"="Consolas"
 
+[-HKEY_CURRENT_USER\Console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powershell.exe]
 
-[-HKEY_CURRENT_USER\Console\%%SystemRoot%%_System32_WindowsPowerShell_v1.0_powershell.exe]
-
-[-HKEY_CURRENT_USER\Console\%%SystemRoot%%_SysWOW64_WindowsPowerShell_v1.0_powershell.exe]
+[-HKEY_CURRENT_USER\Console\%SystemRoot%_SysWOW64_WindowsPowerShell_v1.0_powershell.exe]
 

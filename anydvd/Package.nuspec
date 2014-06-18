@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>anydvd</id>
-    <version>7.4.6.0</version>
+    <version>7.4.7.0</version>
     <authors>SlySoft Inc.</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>http://www.slysoft.com/en/terms.html</licenseUrl>

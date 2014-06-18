@@ -1,12 +1,12 @@
-$packageName = "wireshark"
-$installerType = "EXE"
-$installerArgs = "/S"
-$url = "http://wiresharkdownloads.riverbed.com/wireshark/win32/Wireshark-win32-1.10.7.exe"
-$url64 = "http://wiresharkdownloads.riverbed.com/wireshark/win64/Wireshark-win64-1.10.7.exe"
+$packageName = "tortoisegit"
+$installerType = "MSI"
+$installerArgs = "/quiet /passive /norestart"
+$version = "1.8.9.0"
+$url = "http://download.tortoisegit.org/tgit/$version/TortoiseGit-$version-32bit.msi"
+$url64 = "http://download.tortoisegit.org/tgit/$version/TortoiseGit-$version-64bit.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

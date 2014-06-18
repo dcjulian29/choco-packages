@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>linqpad</id>
+    <version>4.48.1</version>
+    <authors>Joseph Albahari</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.linqpad.net/</projectUrl>
+    <licenseUrl>http://www.linqpad.net/#license</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>LINQPad lets you interactively query databases in a modern query language: LINQ.</description>
+    <tags>linqpad linq</tags>
+    <dependencies>
+      <dependency id="dotnet" version="4.0" />
+    </dependencies>
+  </metadata>
+</package>

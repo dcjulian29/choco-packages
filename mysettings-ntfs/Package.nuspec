@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>ipv6-disabletunnels</id>
-    <version>1.0.0</version>
+    <id>mysettings-ntfs</id>
+    <version>2014.5.17</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>Disable IPv6 Tunnels, but leave IPv6 enabled on all network adapters.</description>
-    <tags>ipv6 tunnel</tags>
+    <description>Custom Settings related to NTFS based volumes.</description>
+    <tags>settings ntfs disk</tags>
   </metadata>
 </package>

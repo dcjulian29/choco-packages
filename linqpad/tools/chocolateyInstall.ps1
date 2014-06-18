@@ -1,11 +1,10 @@
-$packageName = "svn"
-$url = "http://www.visualsvn.com/files/Apache-Subversion-1.8.9.zip"
-$downloadPath = "$env:TEMP\chocolatey\$packageName"
+$packageName = "linqpad"
+$url = "http://www.linqpad.net/GetFile.aspx?LINQPad4.zip"
 $appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$downloadPath = "$env:TEMP\chocolatey\$packageName"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try
@@ -18,15 +17,21 @@ try
 
     New-Item -Type Directory -Path $appDir | Out-Null
     
-    if (-not (Test-Path $downloadPath))
+    if (Test-Path $downloadPath)
     {
-        New-Item -Type Directory -Path $downloadPath | Out-Null
+        Remove-Item $downloadPath -Recurse -Force
     }
 
+    New-Item -Type Directory -Path $downloadPath | Out-Null
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
-    Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath\"
 
-    Copy-Item -Path "$($downloadPath)\bin\*" -Destination "$appDir" -Recurse -Container
+    Push-Location $downloadPath
+
+    & 'C:\Program Files\7-Zip\7z.exe' x $downloadPath\$packageName.zip
+
+    Pop-Location
+    
+    Copy-Item -Path "$downloadPath\LINQPad.exe*" -Destination "$appDir" -Recurse -Container
 
     Write-ChocolateySuccess $packageName
 }

@@ -2,11 +2,9 @@ $packageName = "netscan"
 $url = "http://www.softperfect.com/download/freeware/netscan.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try
@@ -24,6 +22,10 @@ try
         New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
+    # Need to "Open Web Page" since they seem to have a redirect when you go directly to URL...
+    $web = New-Object Net.WebClient
+    $web.DownloadString("http://www.softperfect.com/products/networkscanner/") | Out-Null
+
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
 
     if (Test-Path "${env:ProgramFiles}") {
@@ -36,9 +38,13 @@ try
     
     Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath\"
 
-    Get-ChildItem -Path $downloadPath\$bits -Include $keep -Recurse | Copy-Item -Destination "$appDir"
+    if (-not (Test-Path $downloadPath\$bits)) {
+        Write-ChocolateyFailure $packageName "Zip file downloaded is corrupt!"
+    } else {
+        Get-ChildItem -Path $downloadPath\$bits -Include $keep -Recurse | Copy-Item -Destination "$appDir"
 
-    Write-ChocolateySuccess $packageName
+        Write-ChocolateySuccess $packageName
+    }
 }
 catch
 {
