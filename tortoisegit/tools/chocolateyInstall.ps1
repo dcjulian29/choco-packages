@@ -1,8 +1,9 @@
 $packageName = "tortoisegit"
 $installerType = "MSI"
 $installerArgs = "/quiet /passive /norestart"
-$url = "http://download.tortoisegit.org/tgit/1.8.8.0/TortoiseGit-1.8.8.0-32bit.msi"
-$url64 = "http://download.tortoisegit.org/tgit/1.8.8.0/TortoiseGit-1.8.8.0-64bit.msi"
+$version = "1.8.9.0"
+$url = "http://download.tortoisegit.org/tgit/$version/TortoiseGit-$version-32bit.msi"
+$url64 = "http://download.tortoisegit.org/tgit/$version/TortoiseGit-$version-64bit.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
