@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ravendb-backup</id>
+    <version>2.5.2879</version>
+    <authors>Hibernating Rhinos</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://ravendb.net/</projectUrl>
+    <licenseUrl>https://ravendb.net/docs/appendixes/licensing</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Raven.Backup command line can be used to perform manual or scheduled backups.</description>
+    <tags>ravendb database</tags>
+  </metadata>
+</package>

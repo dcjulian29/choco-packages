@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ravendb-server</id>
+    <version>2.5.2879</version>
+    <authors>Hibernating Rhinos</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://ravendb.net/</projectUrl>
+    <licenseUrl>https://ravendb.net/docs/appendixes/licensing</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>RavenDB is an OSS (with a commercial option) document database for the .NET/Windows platform.</description>
+    <tags>ravendb database</tags>
+  </metadata>
+</package>
