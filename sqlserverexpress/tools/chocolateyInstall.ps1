@@ -37,7 +37,7 @@ try {
     
     Wait-Process -Name $packageName -ErrorAction Silent
 
-    Invoke-Expression "$downloadPath\$packageName\setup.exe $installerArgs"
+    Invoke-Expression "$downloadPath\setup.exe $installerArgs"
 
     Wait-Process -Name "SETUP" -ErrorAction Silent
 
