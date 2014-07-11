@@ -48,6 +48,7 @@ try
     cmd.exe /c "setup.exe $($cygwinPackage) inetutils"
     cmd.exe /c "setup.exe $($cygwinPackage) util-linux"
     cmd.exe /c "setup.exe $($cygwinPackage) unzip"
+    cmd.exe /c "setup.exe $($cygwinPackage) wget"
     cmd.exe /c "setup.exe $($cygwinPackage) zip"
 
     Pop-Location
