@@ -6,10 +6,10 @@
     <authors>Microsoft</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://msdn.microsoft.com/en-us/evalcenter/dn434042.aspx</projectUrl>
-    <description>Microsoft SQL Server 2014 Express is a free, feature-rich edition of SQL Server that is ideal for learning, developing, powering desktop, web &amp; small server applications, and for redistribution by ISVs. The SQL Server 2014 Express release includes the full version of SQL Server 2014 Management Studio instead of SQL Server 2014 Management Studio Express.</description>
+    <description>Microsoft SQL Server 2014 Express is a free, feature-rich edition of SQL Server that is ideal for learning, developing, powering desktop, web &amp; small server applications, and for redistribution by ISVs.</description>
     <tags>sqlserver sql database</tags>
     <dependencies>
-      <dependency id="dotnet" version="4.0" />
+      <dependency id="dotnet" version="3.5" />
     </dependencies>
   </metadata>
 </package>
