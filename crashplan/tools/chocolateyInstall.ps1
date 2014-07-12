@@ -6,7 +6,6 @@ $url64 = "http://download2.us.code42.com/installs/win/install/CrashPlan/jre/Cras
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

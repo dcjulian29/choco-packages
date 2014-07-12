@@ -5,7 +5,6 @@ $url = "http://www.telerik.com/docs/default-source/fiddler/fiddler4setup.exe?sfv
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

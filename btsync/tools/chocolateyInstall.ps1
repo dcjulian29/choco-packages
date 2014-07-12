@@ -5,7 +5,6 @@ $url = "http://download-lb.utorrent.com/endpoint/btsync/os/windows/track/stable"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

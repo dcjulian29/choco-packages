@@ -7,7 +7,6 @@ $Win2012 = "http://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

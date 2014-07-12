@@ -6,7 +6,6 @@ $url64 = "http://www.tightvnc.com/download/2.7.10/tightvnc-2.7.10-setup-64bit.ms
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

@@ -5,7 +5,6 @@ $url = "http://www.ultrapico.com/ExpressoSetup3.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

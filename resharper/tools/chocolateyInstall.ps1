@@ -5,7 +5,6 @@ $url = "http://download.jetbrains.com/resharper/ReSharperSetup.8.2.0.2160.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

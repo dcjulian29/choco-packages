@@ -6,7 +6,6 @@ $url = "http://white.download.pdfforge.org/pdfcreator/1.7.3/PDFCreator-1_7_3_set
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

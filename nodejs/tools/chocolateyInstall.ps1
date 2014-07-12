@@ -6,7 +6,6 @@ $url64 = "http://nodejs.org/dist/v0.10.28/x64/node-v0.10.28-x64.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

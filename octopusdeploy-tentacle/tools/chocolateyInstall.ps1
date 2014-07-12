@@ -7,7 +7,6 @@ $url64 = "http://download.octopusdeploy.com/octopus/Octopus.Tentacle.2.4.5.46-x6
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

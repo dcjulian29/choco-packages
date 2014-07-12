@@ -9,7 +9,6 @@ $ahkExe = "$env:ChocolateyInstall\apps\autohotkey\AutoHotkey.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

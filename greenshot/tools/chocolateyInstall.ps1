@@ -5,7 +5,6 @@ $url = "http://sourceforge.net/projects/greenshot/files/Greenshot/Greenshot%201.
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try
