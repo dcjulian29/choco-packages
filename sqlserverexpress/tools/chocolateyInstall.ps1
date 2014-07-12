@@ -46,4 +46,3 @@ try {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
     throw
 }
-setup.exe /ACTION=Install /INSTANCENAME=MSSQLSERVER  /QS /HIDECONSOLE /INDICATEPROGRESS="False" /IAcceptSQLServerLicenseTerms /SQLSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /SQLSYSADMINACCOUNTS="builtin\administrators" /SKIPRULES="RebootRequiredCheck"
