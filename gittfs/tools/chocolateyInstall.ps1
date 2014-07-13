@@ -1,10 +1,9 @@
 $packageName = "gittfs"
 $url = "https://github.com/git-tfs/git-tfs/releases/download/v0.19.2/GitTfs-0.19.2.zip"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

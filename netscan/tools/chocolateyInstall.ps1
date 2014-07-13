@@ -1,7 +1,7 @@
 $packageName = "netscan"
 $url = "http://www.softperfect.com/download/freeware/netscan.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"

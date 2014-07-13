@@ -2,7 +2,7 @@ $packageName = "ravendb-smuggler"
 $build = "2879"
 $url = "http://hibernatingrhinos.com/downloads/RavenDB/$build"
 
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 
 if ($psISE) {

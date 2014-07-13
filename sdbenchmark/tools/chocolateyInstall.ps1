@@ -1,11 +1,10 @@
 $packageName = "sdbenchmark"
 $url = "http://alex-is.de/PHP/fusion/downloads.php?cat_id=4&file_id=9"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

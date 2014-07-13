@@ -1,5 +1,5 @@
 $packageName = "octopusdeploy-tool"
-$appDir = "$($env:ChocolateyInstall)\apps\octopus"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\octopus"
 
 try
 {

@@ -2,11 +2,10 @@ $packageName = "searchmyfiles"
 $url = "http://www.nirsoft.net/utils/searchmyfiles.zip"
 $url64 = "http://www.nirsoft.net/utils/searchmyfiles-x64.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

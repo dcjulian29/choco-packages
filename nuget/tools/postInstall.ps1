@@ -1,4 +1,4 @@
-$app = "$($env:ChocolateyInstall)\apps\nuget\nuget.exe"
+$app = "$($env:SYSTEMDRIVE)\tools\apps\nuget\nuget.exe"
 $link = "$($env:ChocolateyInstall)\bin\nuget.exe"
 
 

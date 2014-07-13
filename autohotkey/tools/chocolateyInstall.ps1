@@ -1,5 +1,5 @@
 ﻿$packageName = 'autohotkey'
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $url = "http://ahkscript.org/download/ahk-u32.zip"
 $url64 = "http://ahkscript.org/download/ahk-u64.zip"
 $compiler = "http://ahkscript.org/download/ahk2exe.zip"

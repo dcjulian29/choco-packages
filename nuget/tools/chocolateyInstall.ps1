@@ -1,6 +1,6 @@
 $packageName = "nuget"
 $url = "https://nuget.codeplex.com/downloads/get/835802"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 $exe = "$($appDir)\$($packageName).exe"
 

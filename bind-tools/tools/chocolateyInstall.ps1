@@ -1,6 +1,6 @@
 $packageName = "bind-tools"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 $url = "http://ftp.isc.org/isc/bind9/9.9.4-P2/BIND9.9.4-P2.zip"
 
@@ -18,7 +18,6 @@ $keep = @(
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

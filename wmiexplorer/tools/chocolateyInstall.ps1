@@ -1,11 +1,10 @@
 $packageName = "wmiexplorer"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $url = "http://www.hostmonitor.biz/download/wmiexplorer.zip"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try {

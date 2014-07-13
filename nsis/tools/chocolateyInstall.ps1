@@ -1,6 +1,6 @@
 $packageName = "nsis"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $version = "2.46"
 
 $url = "http://sourceforge.net/projects/nsis/files/NSIS%202/$($version)/nsis-$($version).zip/download"
@@ -10,7 +10,6 @@ $simplefc = "http://nsis.sourceforge.net/mediawiki/images/f/f1/NSIS_Simple_Firew
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

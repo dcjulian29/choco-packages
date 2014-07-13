@@ -2,11 +2,10 @@ $packageName = "soapui"
 $version = "4.6.4"
 $url = "http://sourceforge.net/projects/soapui/files/soapui/$($version)/SoapUI-$($version)-windows-bin.zip/download"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

@@ -1,6 +1,6 @@
 $packageName = "webpi"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $lessmsi = "https://github.com/activescott/lessmsi/releases/download/v1.1.7/lessmsi-v1.1.7.zip"
 $url   = 'http://download.microsoft.com/download/7/0/4/704CEB4C-9F42-4962-A2B0-5C84B0682C7A/WebPlatformInstaller_x86_en-US.msi'
 $url64 = 'http://download.microsoft.com/download/7/0/4/704CEB4C-9F42-4962-A2B0-5C84B0682C7A/WebPlatformInstaller_amd64_en-US.msi'
@@ -8,7 +8,6 @@ $url64 = 'http://download.microsoft.com/download/7/0/4/704CEB4C-9F42-4962-A2B0-5
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

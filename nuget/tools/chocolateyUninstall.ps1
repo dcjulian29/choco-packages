@@ -1,5 +1,5 @@
 $packageName = "nuget"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $link = "$($env:ChocolateyInstall)\bin\nuget.exe"
 
 try
