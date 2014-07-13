@@ -5,7 +5,6 @@ $url = "http://update.justgetflux.com/flux-setup.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

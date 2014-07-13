@@ -1,4 +1,4 @@
-$appExe = "$($env:ChocolateyInstall)\apps\baretail\baretail.exe"
+$appExe = "$($env:SYSTEMDRIVE)\tools\apps\baretail\baretail.exe"
 
 if (-not $(Test-Path HKCR:)) {
     New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR

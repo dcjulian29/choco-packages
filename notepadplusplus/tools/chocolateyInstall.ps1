@@ -1,7 +1,7 @@
 ﻿$packageName = "notepadplusplus" # arbitrary name for the package, used in messages
 $installerType = "exe" #only one of these two: exe or msi
 $installerArgs = "/S"
-$url = "http://download.tuxfamily.org/notepadplus/6.6.6/npp.6.6.6.Installer.exe"
+$url = "http://download.tuxfamily.org/notepadplus/6.6.7/npp.6.6.7.Installer.exe"
 
 try
 {

@@ -1,11 +1,10 @@
 ﻿$packageName = 'sysinternals'
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $url = 'http://download.sysinternals.com/files/SysinternalsSuite.zip'
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

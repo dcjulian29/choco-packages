@@ -1,10 +1,9 @@
 $packageName = "wirelessnetview"
 $url = "http://www.nirsoft.net/utils/wirelessnetview.zip"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

@@ -5,7 +5,6 @@ $url = "https://kjkpub.s3.amazonaws.com/sumatrapdf/rel/SumatraPDF-2.5.1-install.
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

@@ -2,11 +2,10 @@ $packageName = "argouml"
 $version = "0.34"
 $url = "http://argouml-downloads.tigris.org/nonav/argouml-$($version)/ArgoUML-$($version).zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

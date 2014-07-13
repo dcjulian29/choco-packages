@@ -2,11 +2,10 @@ $packageName = "jperf"
 $version = "2.0.2"
 $url = "https://xjperf.googlecode.com/files/$($packageName)-$($version).zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

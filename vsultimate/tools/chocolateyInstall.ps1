@@ -5,7 +5,6 @@ $url = "http://download.microsoft.com/download/5/F/D/5FD90EF6-BED8-4665-9C72-168
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

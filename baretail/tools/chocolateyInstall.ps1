@@ -1,5 +1,5 @@
 ﻿$packageName = 'baretail'
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $url = "http://www.baremetalsoft.com/baretail/download.php?p=m"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 

@@ -4,7 +4,6 @@ $wallpaper = "$($env:PUBLIC)\Pictures\wallpaper.png"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 Add-Type @"

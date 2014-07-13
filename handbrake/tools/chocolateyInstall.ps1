@@ -6,7 +6,6 @@ $url64 = "http://handbrake.fr/rotation.php?file=HandBrake-0.9.9-1_x86_64-Win_GUI
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

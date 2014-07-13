@@ -1,6 +1,6 @@
 $packageName = "linqpad"
 $url = "http://www.linqpad.net/GetFile.aspx?LINQPad4.zip"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 
 if ($psISE) {

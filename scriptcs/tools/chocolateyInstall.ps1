@@ -1,12 +1,11 @@
 ﻿$packageName = "scriptcs"
 $release = "0.9"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
-$appDir = "$env:ChocolateyInstall\apps\$packageName"
+$appDir = "$env:SYSTEMDRIVE\tools\apps\$packageName"
 $url = "https://github.com/scriptcs/scriptcs/archive/v$release.zip"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try

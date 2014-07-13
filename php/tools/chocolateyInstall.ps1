@@ -1,11 +1,10 @@
 $packageName = "php"
 $url = "http://windows.php.net/downloads/releases/php-5.5.12-Win32-VC11-x86.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
-$appDir = "$($env:ChocolateyInstall)\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-    $ErrorActionPreference = "Stop"
 }
 
 try
