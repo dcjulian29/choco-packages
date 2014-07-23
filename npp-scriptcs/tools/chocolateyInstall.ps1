@@ -1,6 +1,6 @@
 ﻿$packageName = "npp-scriptcs"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
-$url = "https://csscriptnpp.codeplex.com/downloads/get/868909"
+$url = "https://csscriptnpp.codeplex.com/downloads/get/875859"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
