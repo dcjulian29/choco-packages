@@ -1,8 +1,8 @@
 $packageName = "python"
 $installerType = "MSI"
 $installerArgs = "/qb! TARGETDIR=$env:SYSTEMDRIVE\python ALLUSERS=1"
-$url = "https://www.python.org/ftp/python/2.7.7/python-2.7.7.msi"
-$url64 = "https://www.python.org/ftp/python/2.7.7/python-2.7.7.amd64.msi"
+$url = "https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi"
+$url64 = "https://www.python.org/ftp/python/2.7.8/python-2.7.8.amd64.msi"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 $ahkExe = "$env:ChocolateyInstall\apps\autohotkey\AutoHotkey.exe"
@@ -22,8 +22,14 @@ try
     Push-Location $downloadPath
 
     # Install ez_setup
-    Get-ChocolateyWebFile "ez_setup" "ez_setup.py" "http://peak.telecommunity.com/dist/ez_setup.py"
-    cmd /c "$env:SYSTEMDRIVE\python\python.exe ez_setup.py"
+    $version = "0.9"
+    $ezsetup = "https://pypi.python.org/packages/source/e/ez_setup/ez_setup-$version.tar.gz"
+
+    Get-ChocolateyWebFile "ez_setup" "$downloadPath\ez_setup.tar.gz" $ezsetup
+    Get-ChocolateyUnzip "$downloadPath\ez_setup.tar.gz" "$downloadPath\"
+    Get-ChocolateyUnzip "$downloadPath\dist\ez_setup-$version.tar" "$downloadPath\"
+    
+    cmd /c "$env:SYSTEMDRIVE\python\python.exe $downloadPath\ez_setup-$version\ez_setup.py"
 
     # Install pip
     Get-ChocolateyWebFile "pip" "get-pip.py" "https://raw.github.com/pypa/pip/master/contrib/get-pip.py"
