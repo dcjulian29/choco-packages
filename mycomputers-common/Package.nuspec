@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mycomputers-common</id>
+    <version>2014.7.26</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>This package gets called for the initial configuration of all of my physical machines.</description>
+    <tags>mycomputers common</tags>
+  </metadata>
+</package>
