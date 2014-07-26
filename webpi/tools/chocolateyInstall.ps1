@@ -2,9 +2,8 @@ $packageName = "webpi"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $lessmsi = "https://github.com/activescott/lessmsi/releases/download/v1.1.7/lessmsi-v1.1.7.zip"
-$url   = 'http://download.microsoft.com/download/7/0/4/704CEB4C-9F42-4962-A2B0-5C84B0682C7A/WebPlatformInstaller_x86_en-US.msi'
-$url64 = 'http://download.microsoft.com/download/7/0/4/704CEB4C-9F42-4962-A2B0-5C84B0682C7A/WebPlatformInstaller_amd64_en-US.msi'
-
+$url   = "http://download.microsoft.com/download/7/0/4/704CEB4C-9F42-4962-A2B0-5C84B0682C7A/WebPlatformInstaller_x86_en-US.msi"
+$url64 = "http://download.microsoft.com/download/7/0/4/704CEB4C-9F42-4962-A2B0-5C84B0682C7A/WebPlatformInstaller_amd64_en-US.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -12,8 +11,7 @@ if ($psISE) {
 
 try
 {
-    if (Test-Path $appDir)
-    {
+    if (Test-Path $appDir) {
       Remove-Item "$($appDir)" -Recurse -Force
     }
 
@@ -30,17 +28,17 @@ try
 
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.msi" $url $url64
 
+    Start-ChocolateyProcessAsAdmin "Enable-WindowsOptionalFeature –Online –FeatureName NetFx3 –All"
+    
     Start-Process -FilePath "$($downloadPath)\lessmsi.exe" -WorkingDirectory $downloadPath `
         -NoNewWindow -Wait -ArgumentList "x ""$($downloadPath)\$($packageName).msi"" .\"
 
-    Copy-Item 'C:\temp\chocolatey\webpi\SourceDir\Microsoft\Web Platform Installer\*' $appDir -Recurse -Container
+    Copy-Item "$downloadPath\SourceDir\Microsoft\Web Platform Installer\*" $appDir -Recurse -Container
 
-    Set-Content "$($env:SYSTEMDRIVE)\tools\bin\webpicmd.bat" "@%SYSTEMDRIVE%\tools\apps\webpi\WebpiCmd.exe %*"
+    Set-Content "$($env:ChocolateyInstall)\bin\webpicmd.bat" "@%SYSTEMDRIVE%\tools\apps\webpi\WebpiCmd.exe %*"
     
     Write-ChocolateySuccess $packageName
-}
-catch
-{
+} catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
     throw
 }
