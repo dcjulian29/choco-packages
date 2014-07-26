@@ -3,6 +3,10 @@ $appDir = "$($env:SYSTEMDRIVE)\tools\powershell"
 
 try
 {
+    if (Test-Path $appDir\Modules) {
+        Remove-Item "$appdir\Modules" -Force
+    }
+    
     if (Test-Path $appDir)
     {
       Remove-Item "$($appDir)/*" -Recurse -Force

@@ -9,6 +9,10 @@ if ($psISE) {
 }
 
 try {
+    if (Test-Path $appDir\Modules) {
+        cmd /c rmdir "$appdir\Modules"
+    }
+
     if (Test-Path $appDir)
     {
         Write-Output "Removing previous version of package..."
