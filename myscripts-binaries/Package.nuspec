@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>myscripts-binaries</id>
+    <version>2014.7.25</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>A package to download and/or update my custom binaries scripts from GitHub</description>
+    <tags>myscripts scripts binaries bin</tags>
+  </metadata>
+</package>

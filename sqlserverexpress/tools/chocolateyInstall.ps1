@@ -3,11 +3,11 @@ $installerType = "EXE"
 $url = "http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/Express%2032BIT/SQLEXPR_x86_ENU.exe"
 $url64 = "http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/Express%2064BIT/SQLEXPR_x64_ENU.exe"
 
-$downloadPath = "$env:TEMP\chocolatey\$packageName"
+$downloadPath = "$($env:TEMP)\chocolatey\$packageName"
 $dataDir = "$($env:SYSTEMDRIVE)\data"
 
 if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+    Import-Module -name "$($env:ChocolateyInstall)\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
 try {
@@ -33,11 +33,13 @@ try {
 
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.exe" $url $url64
     
+    Push-Location $downloadPath
     Invoke-Expression "$downloadPath\$packageName.exe /extract:""$downloadPath"" /Q"
+    Pop-Location
     
     Wait-Process -Name $packageName -ErrorAction Silent
 
-    Invoke-Expression "$downloadPath\setup.exe $installerArgs"
+    Invoke-Expression "$downloadPath\$packageName\setup.exe $installerArgs"
 
     Wait-Process -Name "SETUP" -ErrorAction Silent
 

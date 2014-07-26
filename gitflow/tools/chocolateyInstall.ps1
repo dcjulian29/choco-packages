@@ -24,7 +24,7 @@ try
     Start-ChocolateyProcessAsAdmin "Get-ChildItem -Path '$git' -Include 'getopt.exe','libintl3.dll','libiconv2.dll' -Recurse | Remove-Item -Recurse -Force"
 
     if (!(Test-Path $downloadPath)) {
-        New-Item -ItemType directory $downloadPath -Force
+        New-Item -ItemType directory $downloadPath -Force | Out-Null
     }
 
     # Download and copy getopt.exe & libintl3.dll & libiconv2.dll
