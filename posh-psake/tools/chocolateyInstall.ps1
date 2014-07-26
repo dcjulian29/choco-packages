@@ -1,6 +1,6 @@
 $packageName = "posh-psake"
-$release = "4.3.1"
-$url = "https://github.com/psake/psake/archive/v$($release).zip"
+$release = "4.3.2"
+$url = "https://codeload.github.com/psake/psake/zip/v$($release)"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\Modules\$packageName"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 
@@ -29,7 +29,7 @@ try
         New-Item -Type Directory -Path $appDir | Out-Null
     }
 
-    Copy-Item -Path "$downloadPath\$packageName-$release\*" -Destination "$appDir"
+    Copy-Item -Path "$downloadPath\psake-$release\*" -Destination "$appDir"
 
     Write-ChocolateySuccess $packageName
 }
