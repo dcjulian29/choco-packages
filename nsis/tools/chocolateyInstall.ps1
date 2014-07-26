@@ -42,7 +42,7 @@ try
     Get-ChocolateyWebFile $packageName "$($downloadPath)\simplefc.zip" $simplefc
     New-Item -Type Directory -Path "$($downloadPath)\SimpleFC" | Out-Null
     Get-ChocolateyUnzip "$($downloadPath)\simplefc.zip" "$($downloadPath)\SimpleFC"
-    Copy-Item -Path "$($downloadPath)\SimpleFW\SimpleFC.dll" -Destination "$($appDir)\Plugins\"
+    Copy-Item -Path "$($downloadPath)\SimpleFC\SimpleFC.dll" -Destination "$($appDir)\Plugins\"
 
     Write-ChocolateySuccess $packageName
 }
