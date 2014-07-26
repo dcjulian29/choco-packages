@@ -1,5 +1,5 @@
 $packageName = "ravendb-smuggler"
-$build = "2879"
+$build = "2908"
 $url = "http://hibernatingrhinos.com/downloads/RavenDB/$build"
 
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"

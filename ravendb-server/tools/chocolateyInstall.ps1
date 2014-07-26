@@ -1,5 +1,5 @@
 $packageName = "ravendb-server"
-$build = "2879"
+$build = "2908"
 $url = "http://hibernatingrhinos.com/downloads/RavenDB/$build"
 
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
@@ -44,21 +44,11 @@ try
     $dbDirectory = $settings.add | where { $_.Key -eq 'Raven/DataDir' }
     $dbDirectory.value = "$($dataDir)\System"
 
-    $indexStoragePath = $config.CreateElement("add")
-    $indexStoragePath.SetAttribute("key", "Raven/IndexStoragePath")
-    $indexStoragePath.SetAttribute("value", "$($dataDir)\Indexes")
-    $settings.AppendChild($indexStoragePath) | Out-Null
-
     $compiledIndexCacheDirectory = $config.CreateElement("add")
     $compiledIndexCacheDirectory.SetAttribute("key", "Raven/CompiledIndexCacheDirectory")
     $compiledIndexCacheDirectory.SetAttribute("value", "$($dataDir)\CompiledIndexCache")
     $settings.AppendChild($compiledIndexCacheDirectory) | Out-Null
 
-    $logsPath = $config.CreateElement("add")
-    $logsPath.SetAttribute("key", "Raven/Esent/LogsPath")
-    $logsPath.SetAttribute("value", "$($dataDir)\Logs")
-    $settings.AppendChild($logsPath) | Out-Null
-    
     $config.Save("$($appDir)\Raven.Server.exe.config")
     
     $cmd = "netsh.exe http add urlacl url=http://+:9020/ user=""Everyone"""
