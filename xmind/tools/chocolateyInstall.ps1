@@ -8,6 +8,7 @@ try
 {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
 
+    Remove-Item "$($env:USERPROFILE)\Desktop\XMind 2013.lnk" -force
     Write-ChocolateySuccess $packageName
 }
 catch
