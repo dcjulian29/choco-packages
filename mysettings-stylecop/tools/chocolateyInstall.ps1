@@ -1,13 +1,4 @@
 $packageName = "mysettings-stylecop"
-
-if (Test-Path "${env:ProgramFiles(x86)}\StyleCop 4.7") {
-    $appDir = "${env:ProgramFiles(x86)}\StyleCop 4.7"
-}
-
-if (Test-Path "$($env:ProgramFiles)\StyleCop 4.7") {
-    $appDir = "$($env:ProgramFiles)\StyleCop 4.7"
-}
-
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
@@ -15,13 +6,23 @@ if ($psISE) {
 }
 
 try {
-    if (Test-Path $appDir) {
-        if (Test-Path "$($appDir)\Settings.StyleCop") {
-            Remove-Item "$($appDir)\Settings.StyleCop" -Force
-        }
+    if (Test-Path "${env:ProgramFiles(x86)}\StyleCop 4.7") {
+        $appDir = "${env:ProgramFiles(x86)}\StyleCop 4.7"
     }
 
-    Start-ChocolateyProcessAsAdmin "{Copy-Item -Path ""$toolDir\Settings.StyleCop"" -Destination ""$appDir\Settings.StyleCop"" -Force}"
+    if (Test-Path "$($env:ProgramFiles)\StyleCop 4.7") {
+        $appDir = "$($env:ProgramFiles)\StyleCop 4.7"
+    }
+
+    if (Test-Path "$($appDir)\Settings.StyleCop") {
+        $cmd = "Remove-Item '$($appDir)\Settings.StyleCop' -Force"
+
+        Start-ChocolateyProcessAsAdmin $cmd
+    }
+
+    $cmd = "Copy-Item -Path '$($toolDir)\Settings.StyleCop' -Destination '$appDir\'"
+
+    Start-ChocolateyProcessAsAdmin $cmd
 
     Write-ChocolateySuccess $packageName
 } catch {
