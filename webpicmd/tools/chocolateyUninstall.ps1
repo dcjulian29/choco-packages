@@ -1,5 +1,5 @@
 $packageName = "webpicmd"
-$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\webpi"
 
 try
 {
