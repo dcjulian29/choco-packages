@@ -1,5 +1,6 @@
 $packageName = "gittfs"
-$url = "https://github.com/git-tfs/git-tfs/releases/download/v0.19.2/GitTfs-0.19.2.zip"
+$version = "0.20.0"
+$url = "https://github.com/git-tfs/git-tfs/releases/download/v$version/GitTfs-$version.zip"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {

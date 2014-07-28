@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>gittfs</id>
-    <version>0.19.2</version>
+    <version>0.20.0</version>
     <authors>Matt Burke</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://git-tfs.com/</projectUrl>
