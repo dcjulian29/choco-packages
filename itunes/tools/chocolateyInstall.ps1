@@ -1,8 +1,8 @@
 $packageName = "itunes"
 $installerArgs = "/quiet /passive /norestart"
 
-$url = 'https://secure-appldnld.apple.com/iTunes11/031-02995.20140528.Tadim/iTunesSetup.exe'
-$url64 = 'https://secure-appldnld.apple.com/iTunes11/031-02993.20140528.Pu4r5/iTunes64Setup.exe'
+$url = 'https://secure-appldnld.apple.com/iTunes11/031-01976.20140710.oP09o/iTunesSetup.exe'
+$url64 = 'https://secure-appldnld.apple.com/iTunes11/031-01977.20140710.Bhui8/iTunes64Setup.exe'
 
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $errorCode = @(0, 3010)
@@ -13,10 +13,15 @@ if ($psISE) {
 
 try
 {
-    if (Get-Process 'iTunes' -ea SilentlyContinue) {
-        Stop-Process -processname 'iTunes'
+    Start-ChocolateyProcessAsAdmin {
+        Stop-Process -processname 'iTunes' -ea SilentlyContinue -Force
+        Stop-Process -processname "iTunesHelper" -ea SilentlyContinue -Force
+        Stop-Process -processname "iPodService" -ea SilentlyContinue -Force
+        Stop-Process -processname "mDNSResponder" -ea SilentlyContinue -Force
+        Stop-Process -processname "AppleMobileDeviceHelper" -ea SilentlyContinue -Force
+        Stop-Process -processname "AppleMobileDeviceService" -ea SilentlyContinue -Force
     }
-
+    
     if (-not (Test-Path $downloadPath)) {
         New-Item -Type Directory -Path $downloadPath | Out-Null
     }
