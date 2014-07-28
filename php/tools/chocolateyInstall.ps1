@@ -1,6 +1,6 @@
 $packageName = "php"
-$url = "http://windows.php.net/downloads/releases/php-5.5.14-Win32-VC11-x86.zip"
-$url64 = 'http://windows.php.net/downloads/releases/php-5.5.14-Win32-VC11-x64.zip' 
+$url = "http://windows.php.net/downloads/releases/php-5.5.15-nts-Win32-VC11-x86.zip"
+$url64 = "http://windows.php.net/downloads/releases/php-5.5.15-nts-Win32-VC11-x64.zip" 
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
