@@ -1,5 +1,6 @@
 $packageName = "php"
-$url = "http://windows.php.net/downloads/releases/php-5.5.12-Win32-VC11-x86.zip"
+$url = "http://windows.php.net/downloads/releases/php-5.5.14-Win32-VC11-x86.zip"
+$url64 = 'http://windows.php.net/downloads/releases/php-5.5.14-Win32-VC11-x64.zip' 
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
@@ -19,7 +20,7 @@ try
         New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
-    Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
+    Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url $url64
     Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$appDir\"
 
     Write-ChocolateySuccess $packageName
