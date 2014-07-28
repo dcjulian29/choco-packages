@@ -1,5 +1,6 @@
 $packageName = "keepass"
-$url = "http://superb-dca2.dl.sourceforge.net/project/keepass/KeePass%202.x/2.26/KeePass-2.26.zip"
+$version = "2.27"
+$url = "http://superb-dca2.dl.sourceforge.net/project/keepass/KeePass%202.x/$version/KeePass-$version.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
