@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>nugetexplorer</id>
-    <version>3.7.0</version>
+    <version>3.9.0</version>
     <authors>Luan Nguyen</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://npe.codeplex.com/</projectUrl>

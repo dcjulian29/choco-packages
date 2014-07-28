@@ -1,5 +1,5 @@
 $packageName = "nugetexplorer"
-$url = "http://npe.codeplex.com/downloads/get/733933"
+$url = "http://npe.codeplex.com/downloads/get/827368"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {
