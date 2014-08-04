@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mycomputers-family</id>
+    <version>2014.7.26</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>This package gets called for the initial configuration of all of my family member machines.</description>
+    <tags>mycomputers family</tags>
+    <dependencies>
+      <dependency id="mycomputers-common" />
+    </dependencies>
+  </metadata>
+</package>

@@ -1,8 +1,8 @@
 ﻿$packageName = "scriptcs"
-$release = "0.9"
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
+$release = "0.10.2"
+$downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$env:SYSTEMDRIVE\tools\apps\$packageName"
-$url = "https://github.com/scriptcs/scriptcs/archive/v$release.zip"
+$url = "https://codeload.github.com/scriptcs/scriptcs/zip/v$release"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -13,33 +13,32 @@ try
     if (Test-Path $appDir)
     {
       Write-Output "Removing previous version of package..."
-      Remove-Item "$($appDir)\*" -Recurse -Force
+      Remove-Item "$($appDir)" -Recurse -Force
     }
 
-    if ($(Test-Path "$toolDir\$packageName-$release")) {
-        Remove-Item "$toolDir\$packageName-$release" -Recurse -Force
+    New-Item -Type Directory -Path $appDir | Out-Null
+
+    if (Test-Path $downloadPath)
+    {
+        Remove-Item $downloadPath -Recurse -Force
     }
 
-    Get-ChocolateyWebFile $packageName "$toolDir\v$release.zip" $url
-    Get-ChocolateyUnzip "$toolDir\v$release.zip" "$toolDir\"
+    New-Item -Type Directory -Path $downloadPath | Out-Null
+    
+    Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
+    Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath\"
 
-    Push-Location "$toolDir\$packageName-$release"
+    Push-Location "$downloadPath\$packageName-$release"
 
-    cmd /c "$toolDir\$packageName-$release\build.cmd"
-
-    if (-not $(Test-Path $appDir)) {
-        New-Item $appDir -ItemType Directory
-    }
+    cmd /c "$downloadPath\$packageName-$release\build.cmd"
 
     Copy-Item -Path "artifacts\Release\bin\*.dll" -Destination "$appDir"
+    Copy-Item -Path "artifacts\Release\bin\*.dll.config" -Destination "$appDir"
     Copy-Item -Path "artifacts\Release\bin\*.exe" -Destination "$appDir"
     Copy-Item -Path "artifacts\Release\bin\*.exe.config" -Destination "$appDir"
 
     Pop-Location
 
-    Remove-Item "$toolDir\$packageName-$release\" -Recurse -Force
-    Remove-Item "$toolDir\v$release.zip" -Force
-    
     Write-ChocolateySuccess $packageName
 }
 catch

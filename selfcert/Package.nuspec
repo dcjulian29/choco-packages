@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>selfcert</id>
+    <version>1.1.0</version>
+    <authors>Pluralsight</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://blog.pluralsight.com/selfcert-create-a-self-signed-certificate-interactively-gui-or-programmatically-in-net</projectUrl>
+    <description>Pluralsight's Self-Cert is a GUI-based tool that uses a combination of the .NET Framework and the CryptoAPI to create self-signed X.509 certificates.</description>
+    <tags>selfcert ssl x509 certificates</tags>
+  </metadata>
+</package>

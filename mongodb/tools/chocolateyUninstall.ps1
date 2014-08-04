@@ -1,4 +1,4 @@
-$packageName = "webpicmd"
+$packageName = "mongodb"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 try

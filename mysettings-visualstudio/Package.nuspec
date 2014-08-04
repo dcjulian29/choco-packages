@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mysettings-visualstudio</id>
+    <version>2014.7.26</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>This package contains the configuration chanages, component removals, component additions, and extensions/plugins that I use in Visual Studio</description>
+    <tags>mysettings visualstudio vstudio</tags>
+    <dependencies>
+      <dependency id="visualstudio" version="2013.2" />
+    </dependencies>
+  </metadata>
+</package>
