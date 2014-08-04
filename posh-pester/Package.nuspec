@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>posh-pester</id>
+    <version>2.1.0</version>
+    <authors>Pester Team</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://github.com/Pester/Pester</projectUrl>
+    <licenseUrl>https://github.com/Pester/Pester</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Pester provides a framework for running BDD style Tests to execute and validate PowerShell commands inside of PowerShell and offers a powerful set of Mocking Functions that allow tests to mimic and mock the functionality of any command inside of a piece of PowerShell code being tested.</description>
+    <tags>pester powershell testing</tags>
+    <dependencies>
+      <dependency id="powershell" version="4.0" />
+    </dependencies>
+  </metadata>
+</package>
