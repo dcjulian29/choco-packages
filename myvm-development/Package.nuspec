@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>myvm-development</id>
+    <version>2014.7.20</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>This package gets called for the initial configuration of my development virtual machines.</description>
+    <tags>myvm development</tags>
+    <dependencies>
+      <dependency id="myvm-workstation" />
+    </dependencies>
+  </metadata>
+</package>
