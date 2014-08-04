@@ -1,17 +1,17 @@
-﻿$packageName = "vlc" # arbitrary name for the package, used in messages
-$installerType = "exe" #only one of these two: exe or msi
+﻿$packageName = "vlc"
+$installerType = "exe"
 $installerArgs = "/L=1033 /S"
-$url = "http://get.videolan.org/vlc/2.1.3/win32/vlc-2.1.3-win32.exe"
-$url64 = $url
+$url = "http://get.videolan.org/vlc/2.1.5/win32/vlc-2.1.5-win32.exe"
 
-try
-{
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+if ($psISE) {
+    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+}
+
+try {
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url
 
     Write-ChocolateySuccess $packageName
-}
-catch
-{
+} catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
     throw
 }
