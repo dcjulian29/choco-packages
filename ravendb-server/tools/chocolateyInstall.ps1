@@ -54,6 +54,9 @@ try
     $cmd = "netsh.exe http add urlacl url=http://+:9020/ user=""Everyone"""
     Start-ChocolateyProcessAsAdmin $cmd
 
+    $cmd = "& $appDir\Raven.Server.exe /install"
+    Start-ChocolateyProcessAsAdmin $cmd
+
     Write-ChocolateySuccess $packageName
 }
 catch

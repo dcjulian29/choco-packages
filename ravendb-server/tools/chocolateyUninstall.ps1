@@ -12,6 +12,9 @@ try
       Remove-Item "$($appDir)" -Recurse -Force
     }
 
+    $cmd = "& $appDir\Raven.Server.exe /uninstall"
+    Start-ChocolateyProcessAsAdmin $cmd
+
     Write-ChocolateySuccess $packageName
 }
 catch
