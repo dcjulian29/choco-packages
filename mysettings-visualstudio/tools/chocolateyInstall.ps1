@@ -17,6 +17,7 @@ try {
         Pop-Location
     }
     
+    Remove-Item "$($env:ALLUSERSPROFILE)\Package Cache\{940596e5-652a-4970-8a5a-492e73ed0fbb}" -Force -Recurse
     # Remove Visual Studio Components that I don't want or use...
     Start-ChocolateyProcessAsAdmin "$toolDir\uninstallPhonePackages.bat"
 
@@ -24,7 +25,7 @@ try {
 
     # Download and install Components
     Install-ChocolateyPackage "VisualFSharpTools" $installerType $installerArgs `
-        http://download.microsoft.com/download/3/0/A/30A5D6DD-5B5C-4E06-B331-A88AA0B53150/FSharp_Bundle.exe"
+        "http://download.microsoft.com/download/3/0/A/30A5D6DD-5B5C-4E06-B331-A88AA0B53150/FSharp_Bundle.exe"
     Install-ChocolateyPackage "MicrosoftSQLServerDataTools" $installerType $installerArgs `
         "http://download.microsoft.com/download/F/3/0/F3065AA6-1E2D-44B7-B412-4B2F0B109177/EN/SSDTSetup.exe"
     Install-ChocolateyPackage "WindowsAzureTools" $installerType $installerArgs `
