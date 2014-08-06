@@ -28,7 +28,7 @@ try
 
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.msi" $url $url64
 
-    Start-ChocolateyProcessAsAdmin "Enable-WindowsOptionalFeature /Online /FeatureName NetFx3 /All"
+    Start-ChocolateyProcessAsAdmin "Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online"
     
     Start-Process -FilePath "$($downloadPath)\lessmsi.exe" -WorkingDirectory $downloadPath `
         -NoNewWindow -Wait -ArgumentList "x ""$($downloadPath)\$($packageName).msi"" .\"
