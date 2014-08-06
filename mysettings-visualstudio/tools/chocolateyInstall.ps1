@@ -16,6 +16,8 @@ try {
     # Remove Visual Studio Components that I don't want or use...
     Start-ChocolateyProcessAsAdmin "$toolDir\uninstallPhonePackages.bat"
 
+    Push-Location $env:TEMP\chocolatey
+
     # Download and install Components
     Install-ChocolateyPackage "Visual F# Tools" $installerType $installerArgs `
         http://download.microsoft.com/download/3/0/A/30A5D6DD-5B5C-4E06-B331-A88AA0B53150/FSharp_Bundle.exe"
@@ -37,6 +39,8 @@ try {
     Install-ChocolateyVsixPackage "JSLint.NET for Visual Studio" "http://visualstudiogallery.msdn.microsoft.com/ede12aa8-0f80-4e6f-b15c-7a8b3499370e/file/111592/15/JSLintNet.VisualStudio.1.6.3.vsix"
     Install-ChocolateyVsixPackage "Productivity Power Tools" "http://visualstudiogallery.msdn.microsoft.com/dbcb8670-889e-4a54-a226-a48a15e4cace/file/117115/4/ProPowerTools.vsix"
     Install-ChocolateyVsixPackage "SlowCheetah - XML Transforms" "http://visualstudiogallery.msdn.microsoft.com/69023d00-a4f9-4a34-a6cd-7e854ba318b5/file/55948/26/SlowCheetah.vsix"
+    
+    Pop-Location
     
 	Install-ChocolateyPinnedTaskBarItem "${env:ProgramFiles(x86)}\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe"
     
