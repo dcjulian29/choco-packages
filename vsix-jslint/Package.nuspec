@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vsix-jslint</id>
+    <version>1.6.3</version>
+    <authors>Qube</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://visualstudiogallery.msdn.microsoft.com/ede12aa8-0f80-4e6f-b15c-7a8b3499370e</projectUrl>
+    <licenseUrl>http://visualstudiogallery.msdn.microsoft.com/site/ede12aa8-0f80-4e6f-b15c-7a8b3499370e/eula?licenseType=None</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>JSLint.NET is a wrapper for Douglas Crockford's JSLint, the JavaScript code quality tool. It can validate JavaScript anywhere .NET runs.</description>
+    <tags>vsix-jslint vsix jslint</tags>
+    <dependencies>
+      <dependency id="visualstudio" version="2013.2" />
+    </dependencies>
+  </metadata>
+</package>

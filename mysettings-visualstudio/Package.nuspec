@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-visualstudio</id>
-    <version>2014.7.26</version>
+    <version>2014.8.6</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>This package contains the configuration chanages, component removals, component additions, and extensions/plugins that I use in Visual Studio</description>

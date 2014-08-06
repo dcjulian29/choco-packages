@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vsix-productivitypowertools</id>
+    <version>12.0.30519</version>
+    <authors>Visual Studio Product Team</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://visualstudiogallery.msdn.microsoft.com/dbcb8670-889e-4a54-a226-a48a15e4cace</projectUrl>
+    <licenseUrl>http://visualstudiogallery.msdn.microsoft.com/site/dbcb8670-889e-4a54-a226-a48a15e4cace/eula?licenseType=None</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Productivity Power Tools 2013 for Visual Studio 2013 is an extension pack that brings powerful tools for improved developer productivity.</description>
+    <tags>vsix-productivitypowertools vsix productivitypowertools</tags>
+    <dependencies>
+      <dependency id="visualstudio" version="2013.2" />
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vsix-slowcheetah</id>
+    <version>2.5.11</version>
+    <authors>Sayed-Ibrahim-Hashimi</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://visualstudiogallery.msdn.microsoft.com/69023d00-a4f9-4a34-a6cd-7e854ba318b5</projectUrl>
+    <licenseUrl>http://visualstudiogallery.msdn.microsoft.com/site/69023d00-a4f9-4a34-a6cd-7e854ba318b5/eula?licenseType=None</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package allows you to automatically transform your app.config (or any file) when you press F5 in Visual Studio. You can have different transformations based on the build configuration.</description>
+    <tags>vsix-slowcheetah vsix slowcheetah</tags>
+    <dependencies>
+      <dependency id="visualstudio" version="2013.2" />
+    </dependencies>
+  </metadata>
+</package>
