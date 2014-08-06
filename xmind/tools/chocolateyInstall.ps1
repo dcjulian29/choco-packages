@@ -1,14 +1,14 @@
-﻿$packageName = "xmind" # arbitrary name for the package, used in messages
-$installerType = "exe" #only one of these two: exe or msi
+﻿$packageName = "xmind"
+$installerType = "EXE"
 $installerArgs = "/SILENT"
-$url = "http://www.xmind.net/xmind/downloads/xmind-windows-3.4.0.201311050558.exe"
-$url64 = $url # 64bit URL here or just use the same as $url
+$url = "http://www.xmind.net/xmind/downloads/xmind-windows-3.4.1.201401221918.exe"
 
 try
 {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url
 
     Remove-Item "$($env:USERPROFILE)\Desktop\XMind 2013.lnk" -force
+
     Write-ChocolateySuccess $packageName
 }
 catch
