@@ -63,8 +63,6 @@ try {
     cinst nuget
     cinst nugetexplorer
     cinst baretail
-    cinst scriptcs
-    cinst npp-scriptcs
     cinst kdiff
     cinst wmiexplorer
     cinst xmlquire
@@ -81,7 +79,7 @@ try {
 
     cinst posh-go
 
-    Import-Module posh-go
+    Import-Module go
     go -key "projects" -selectedPath "C:\home\projects" -add
     go -key "etc" -selectedPath "C:\home\vm\etc" -add
     go -key "home" -selectedPath "$($env:USERPROFILE)" -add
