@@ -4,8 +4,9 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try {
+Start-Transcript "$($env:TEMP)\myvm-development-transcript.log" -Append
 
+try {
     if (-not (Test-Path $env:SYSTEMDRIVE\home\projects))
     {
         New-Item -Type Directory -Path $env:SYSTEMDRIVE\home\projects | Out-Null
@@ -122,17 +123,22 @@ try {
     cinst octopusdeploy-tool
 
     cinst ravendb-server
+    sc.exe config "RavenDb" start= demand
     cinst ravendb-backup
     cinst ravendb-smuggler
     
     cinst mongodb
+    sc.exe config "MongoDb" start= demand
     cinst robomong
     
     cinst sqlserverexpress
+    sc.exe config "MSSQL" start= demand
     cinst sqlmanagementstudio
     
     cinst mysql
+    sc.exe config "MySql" start= demand
     cinst mysqlworkbench
+
     
     cinst mysettings-devwallpaper
     
@@ -151,9 +157,11 @@ try {
     # Install Firefox
     $firefox = "https://download.mozilla.org/?product=firefox-31.0-SSL&os=win&lang=en-US"
     Install-ChocolateyPackage "Firefox" "EXE" "-ms" $firefox
-    
+
     Write-ChocolateySuccess $packageName
 } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
     throw
 }
+
+Stop-Transcript
