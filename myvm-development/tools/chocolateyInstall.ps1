@@ -42,6 +42,8 @@ try {
 
     ##############################################################################################
     
+    cinst mysettings-devwallpaper
+
     cinst myscripts-development
     cinst myscripts-powershell
     cinst mysettings-pshellhere
@@ -100,12 +102,14 @@ try {
     npm install -g jshint
     npm install -g node-inspector
     npm install -g typescript
+    cinst atom
     
     cinst vsultimate
     cinst resharper
     cinst stylecop
 
     cinst mysettings-visualstudio
+    cinst mysettings-vsix
     cinst mysettings-stylecop
     
     cinst webpi
@@ -139,16 +143,6 @@ try {
     sc.exe config "MySql" start= demand
     cinst mysqlworkbench
 
-    
-    cinst mysettings-devwallpaper
-    
-    Write-Output "Enabling Remote Desktop ..."
-    $settings = Get-WmiObject -Class "Win32_TerminalServiceSetting" `
-        -Namespace root\cimv2\terminalservices
-    $settings.SetAllowTsConnections(1)
-
-    netsh advfirewall firewall set rule group="Remote Desktop" new enable=yes
-    
     # Install Chrome    
     $chrome = "https://dl.google.com/tag/s/appguid={8A69D345-D564-463C-AFF1-A69D9E530F96}&iid={00000000-0000-0000-0000-000000000000}&lang=en&browser=3&usagestats=0&appname=Google%2520Chrome&needsadmin=prefers/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi"
     Install-ChocolateyPackage "Chrome" "MSI" "/quiet" $chrome
