@@ -6,8 +6,6 @@
     <authors>Visual Studio Product Team</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://visualstudiogallery.msdn.microsoft.com/dbcb8670-889e-4a54-a226-a48a15e4cace</projectUrl>
-    <licenseUrl>http://visualstudiogallery.msdn.microsoft.com/site/dbcb8670-889e-4a54-a226-a48a15e4cace/eula?licenseType=None</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Productivity Power Tools 2013 for Visual Studio 2013 is an extension pack that brings powerful tools for improved developer productivity.</description>
     <tags>vsix-productivitypowertools vsix productivitypowertools</tags>
     <dependencies>

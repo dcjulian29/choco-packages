@@ -6,8 +6,6 @@
     <authors>TechTalk SpecFlow Team</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://visualstudiogallery.msdn.microsoft.com/90ac3587-7466-4155-b591-2cd4cc4401bc</projectUrl>
-    <licenseUrl>http://visualstudiogallery.msdn.microsoft.com/site/90ac3587-7466-4155-b591-2cd4cc4401bc/eula?licenseType=None</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>SpecFlow aims at bridging the communication gap between domain experts and developers by binding business readable behavior specifications and examples to the underlying implementation. Our mission is to provide a pragmatic and frictionless approach to Specification-By-Example for .NET projects. SpecFlow is open source and provided under a BSD license. SpecFlow also supports the concepts of Acceptance Test Driven Development (ATDD) and Behavior Driven Development (BDD), which are often used synonymously with Specification-By-Example.</description>
     <tags>vsix-specflow vsix specflow</tags>
     <dependencies>

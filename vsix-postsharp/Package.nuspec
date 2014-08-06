@@ -6,8 +6,6 @@
     <authors>PostSharp Technologies</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://visualstudiogallery.msdn.microsoft.com/a058d5d3-e654-43f8-a308-c3bdfdd0be4a</projectUrl>
-    <licenseUrl>http://visualstudiogallery.msdn.microsoft.com/site/a058d5d3-e654-43f8-a308-c3bdfdd0be4a/eula?licenseType=None</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>PostSharp is a leading Visual Studio Extension that eradicates boilerplate code and enables application developers to automate design pattern implementation and deliver higher quality software in less time.</description>
     <tags>vsix-postsharp vsix postsharp</tags>
     <dependencies>

@@ -6,8 +6,6 @@
     <authors>Paul Harrington</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://visualstudiogallery.msdn.microsoft.com/ad0897b3-7537-4c92-a38c-104b0e005206</projectUrl>
-    <licenseUrl>http://visualstudiogallery.msdn.microsoft.com/site/ad0897b3-7537-4c92-a38c-104b0e005206/eula?licenseType=None</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Microsoft Visual Studio PerfWatson tracks the responsiveness of the Visual Studio process and collects diagnostic information when unresponsive.</description>
     <tags>vsix-perfwatson vsix perfwatson</tags>
     <dependencies>
