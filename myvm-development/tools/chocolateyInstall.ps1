@@ -135,7 +135,7 @@ try {
     cinst robomongo
     
     cinst sqlserverexpress
-    sc.exe config "MSSQL" start= demand
+    sc.exe config "MSSQLSERVER" start= demand
     cinst sqlmanagementstudio
     
     cinst mysql
@@ -145,12 +145,24 @@ try {
     # Install Chrome    
     $chrome = "https://dl.google.com/tag/s/appguid={8A69D345-D564-463C-AFF1-A69D9E530F96}&iid={00000000-0000-0000-0000-000000000000}&lang=en&browser=3&usagestats=0&appname=Google%2520Chrome&needsadmin=prefers/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi"
     Install-ChocolateyPackage "Chrome" "MSI" "/quiet" $chrome
-    
+    Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\Google Chrome.lnk' -Force"
     
     # Install Firefox
     $firefox = "https://download.mozilla.org/?product=firefox-31.0-SSL&os=win&lang=en-US"
     Install-ChocolateyPackage "Firefox" "EXE" "-ms" $firefox
+    Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\Mozilla Firefox.lnk' -Force"
 
+    Remove-Item -Path "$($env:SYSTEMDRIVE)\home\vm\*" -Recurse -Force
+    cinst btsync
+    
+    if (Get-ProcessorBits -eq 64) {
+        & "${$env:ProgramFiles(x86)}\BitTorrent Sync\BTSync.exe"
+    } else {
+        & "$($env:ProgramFiles)\BitTorrent Sync\BTSync.exe"    
+    }
+    
+    Write-Warning "After configuring BTSync, Restart-Computer to get started developing! :)"
+    
     Write-ChocolateySuccess $packageName
 } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
