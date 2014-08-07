@@ -132,7 +132,7 @@ try {
     
     cinst mongodb
     sc.exe config "MongoDb" start= demand
-    cinst robomong
+    cinst robomongo
     
     cinst sqlserverexpress
     sc.exe config "MSSQL" start= demand
