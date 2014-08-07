@@ -113,7 +113,6 @@ try {
     cinst mysettings-stylecop
     
     cinst webpi
-    cinst webpicmd
     cinst -source webpi WebMatrixWeb
     cinst -source webpi WindowsAzureXPlatCLI
     cinst -source webpi WindowsAzurePowershell
