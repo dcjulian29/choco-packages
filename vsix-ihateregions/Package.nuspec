@@ -9,7 +9,7 @@
     <description>Automatically expand regions when opening a file. Prevent regions from being closed while collapsing other code blocks, and blend the region text into the background, making it less noticable.</description>
     <tags>vsix-ihateregions vsix ihateregions</tags>
     <dependencies>
-      <dependency id="visualstudio" version="2013.2" />
+      <dependency id="visualstudio" version="[2013.0,2014.0)" />
     </dependencies>
   </metadata>
 </package>

@@ -9,7 +9,7 @@
     <description>This package allows you to automatically transform your app.config (or any file) when you press F5 in Visual Studio. You can have different transformations based on the build configuration.</description>
     <tags>vsix-slowcheetah vsix slowcheetah</tags>
     <dependencies>
-      <dependency id="visualstudio" version="2013.2" />
+      <dependency id="visualstudio" version="[2013.0,2014.0)" />
     </dependencies>
   </metadata>
 </package>

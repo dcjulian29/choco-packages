@@ -9,7 +9,7 @@
     <description>Microsoft Visual Studio PerfWatson tracks the responsiveness of the Visual Studio process and collects diagnostic information when unresponsive.</description>
     <tags>vsix-perfwatson vsix perfwatson</tags>
     <dependencies>
-      <dependency id="visualstudio" version="2013.2" />
+      <dependency id="visualstudio" version="[2013.0,2014.0)" />
     </dependencies>
   </metadata>
 </package>

@@ -9,7 +9,7 @@
     <description>VSColorOutput can change the color of a line emitted to the output window based on specified rules. The rules consist of regular expressions. Rules map to classifications which in turn map to colors.</description>
     <tags>vsix-vscoloroutput vsix vscoloroutput</tags>
     <dependencies>
-      <dependency id="visualstudio" version="2013.2" />
+      <dependency id="visualstudio" version="[2013.0,2014.0)" />
     </dependencies>
   </metadata>
 </package>
