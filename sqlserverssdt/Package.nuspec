@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>sqlserverssdt</id>
+    <version>2014.7</version>
+    <authors>SQL Server Data Tools Team</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://msdn.microsoft.com/en-us/data/hh297027</projectUrl>
+    <description>SSDT provides a modern database development experience for the SQL Server and SQL Azure Database Developer.  As the supported SQL Azure development platform, SSDT will be regularly updated online to ensure that it keeps pace with the latest SQL Azure features.</description>
+    <tags>sqlserverssdt ssdt sql server data tools</tags>
+    <dependencies>
+      <dependency id="visualstudio" version="[2013.0,2014.0)" />
+    </dependencies>
+  </metadata>
+</package>

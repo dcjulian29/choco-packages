@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vsix-perfwatson</id>
+    <version>11.0.60911</version>
+    <authors>Paul Harrington</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://visualstudiogallery.msdn.microsoft.com/ad0897b3-7537-4c92-a38c-104b0e005206</projectUrl>
+    <description>Microsoft Visual Studio PerfWatson tracks the responsiveness of the Visual Studio process and collects diagnostic information when unresponsive.</description>
+    <tags>vsix-perfwatson vsix perfwatson</tags>
+    <dependencies>
+      <dependency id="visualstudio" version="[2013.0,2014.0)" />
+    </dependencies>
+  </metadata>
+</package>

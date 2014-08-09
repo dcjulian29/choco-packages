@@ -11,6 +11,16 @@ if ($psISE) {
 try
 {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+
+    $pdir = "C:\Program Files\Microsoft\Web Platform Installer"
+    
+    if (Get-ProcessorBits -eq 64) {
+        $exe = "WebpiCmd-x64.exe"
+    } else {
+        $exe = "WebpiCmd.exe"
+    }
+    
+    Set-Content "$($env:ChocolateyInstall)\bin\webpicmd.bat" "@""$pdir\$exe"" %*"
     
     Write-ChocolateySuccess $packageName
 } catch {

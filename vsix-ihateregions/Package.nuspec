@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vsix-ihateregions</id>
+    <version>1.3.0</version>
+    <authors>Shanewho</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://visualstudiogallery.msdn.microsoft.com/0ca60d35-1e02-43b7-bf59-ac7deb9afbca</projectUrl>
+    <description>Automatically expand regions when opening a file. Prevent regions from being closed while collapsing other code blocks, and blend the region text into the background, making it less noticable.</description>
+    <tags>vsix-ihateregions vsix ihateregions</tags>
+    <dependencies>
+      <dependency id="visualstudio" version="[2013.0,2014.0)" />
+    </dependencies>
+  </metadata>
+</package>

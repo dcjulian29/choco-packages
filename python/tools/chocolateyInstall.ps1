@@ -19,6 +19,8 @@ try
         New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
+    Push-Location $downloadPath
+
     # Install ez_setup
     $version = "0.9"
     $ezsetup = "https://pypi.python.org/packages/source/e/ez_setup/ez_setup-$version.tar.gz"
@@ -50,6 +52,8 @@ try
     $wxpython64 = "http://sourceforge.net/projects/wxpython/files/wxPython/3.0.0.0/wxPython3.0-win64-3.0.0.0-py27.exe/download"
 
     Install-ChocolateyPackage "wxPython" "EXE" "/SP- /SILENT" $wxpython32 $wxpython64
+
+    Pop-Location
 
     Write-ChocolateySuccess $packageName
 }
