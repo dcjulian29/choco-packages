@@ -2,12 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-vsix</id>
-    <version>2014.8.6</version>
+    <version>2014.8.9</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>VSIX packages I like to install in Visual Studio</description>
+    <description>VS Extensions I like to install in Visual Studio</description>
     <tags>mysettings-vsix vsix</tags>
     <dependencies>
+      <dependency id="visualstudio" version="[2013.0,2014.0)" />
       <dependency id="vsix-perfwatson" />
       <dependency id="vsix-postsharp" />
       <dependency id="vsix-specflow" />
@@ -18,6 +19,9 @@
       <dependency id="vsix-jslint" />
       <dependency id="vsix-productivitypowertools" />
       <dependency id="vsix-slowcheetah" />
+      <dependency id="vsix-fsharptools" />
+      <dependency id="vsix-tfspowertools" />
+      <dependency id="sqlserverssdt" />
     </dependencies>
   </metadata>
 </package>
