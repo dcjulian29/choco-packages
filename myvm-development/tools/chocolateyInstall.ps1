@@ -107,7 +107,6 @@ Function Run-Package {
         cinst resharper
         cinst stylecop
 
-        cinst mysettings-visualstudio
         cinst mysettings-vsix
         cinst mysettings-stylecop
         
