@@ -9,6 +9,13 @@
     <tags>myvm development</tags>
     <dependencies>
       <dependency id="myvm-workstation" />
+      <dependency id="mysettings-devwallpaper" />
+      <dependency id="myscripts-development" />
+      <dependency id="devvm-powershell" />
+      <dependency id="devvm-scm" />
+      <dependency id="devvm-buildtools" />
+      <dependency id="devvm-visualstudio" />
+      <dependency id="devvm-tools" />
       <dependency id="devvm-nodejs" />
       <dependency id="devvm-database" />
       <dependency id="btsync" />

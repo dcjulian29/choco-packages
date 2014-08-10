@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>devvm-buildtools</id>
+    <version>2014.8.10</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages for build tools that I install in my DEV VMs.</description>
+    <tags>devvm-buildtools devvm build tools</tags>
+    <dependencies>
+      <dependency id="nuget" />
+      <dependency id="nugetexplorer" />
+      <dependency id="posh-psake" />
+      <dependency id="nant" />
+      <dependency id="nsis" />
+      <dependency id="octopusdeploy-tool" />
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>devvm-powershell</id>
+    <version>2014.8.10</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages for PowerShell modules and configuration for my DEV VMs.</description>
+    <tags>devvm-powershell devvm powershell</tags>
+    <dependencies>
+      <dependency id="myscripts-powershell" />
+      <dependency id="posh-go" />
+      <dependency id="posh-psake" />
+      <dependency id="nant" />
+      <dependency id="nsis" />
+      <dependency id="octopusdeploy-tool" />
+    </dependencies>
+  </metadata>
+</package>
