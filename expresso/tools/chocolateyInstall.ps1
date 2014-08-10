@@ -9,6 +9,12 @@ if ($psISE) {
 
 try
 {
+    if (-not (Test-Path "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5")) {
+        Start-ChocolateyProcessAsAdmin "Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online"
+    } else {
+        Write-Host "Microsoft .Net 3.5 Framework is already installed on this system..."
+    } 
+
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url
 
     Write-ChocolateySuccess $packageName
