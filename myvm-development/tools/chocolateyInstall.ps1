@@ -174,11 +174,12 @@ Function Run-Package {
 Start-Transcript "$($env:TEMP)\myvm-development-transcript.log" -Append
 
 $package = (Get-ChildItem "$($env:ChocolateyInstall)\lib" | Select-Object basename).basename `
-    | Where-Object { $_.StartsWith("myvm-workstation") } | Sort-Object -unique 
+    | Where-Object { $_.StartsWith("myvm-development") }
 
-if ($package.Length -gt 0) {
-    Write-Warning "$package has already been installed."
+if ($package.Length -gt 1) {
+    Write-Warning "This package has already been installed."
     Write-Warning "This package though upgraded is not designed to run multiple times."
+    Write-Warning "Please review the differences between This package though upgraded is not designed to run multiple times."
 
     Write-ChocolateySuccess $packageName
 } else {
