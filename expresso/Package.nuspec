@@ -10,8 +10,5 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Expresso the a .NET based regular expression development tool.</description>
     <tags>expresso regex</tags>
-    <dependencies>
-      <dependency id="dotnet" version="2.0" />
-    </dependencies>
   </metadata>
 </package>
