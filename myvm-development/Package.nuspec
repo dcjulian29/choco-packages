@@ -9,6 +9,9 @@
     <tags>myvm development</tags>
     <dependencies>
       <dependency id="myvm-workstation" />
+      <dependency id="devvm-nodejs" />
+      <dependency id="devvm-database" />
+      <dependency id="btsync" />
     </dependencies>
   </metadata>
 </package>

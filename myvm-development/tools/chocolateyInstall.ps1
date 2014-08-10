@@ -97,17 +97,6 @@ Function Run-Package {
         
         cinst posh-psake
 
-        cinst nodejs    
-        
-        $npm = "$($env:ProgramFiles)\nodejs\npm.cmd"
-        
-        & $npm install -g csslint
-        & $npm install -g jslint
-        & $npm install -g jshint
-        & $npm install -g node-inspector
-        & $npm install -g typescript
-
-        cinst atom
         
         cinst vsultimate
         cinst resharper
@@ -130,23 +119,6 @@ Function Run-Package {
         cinst nsis
         cinst octopusdeploy-tool
 
-        cinst ravendb-server
-        sc.exe config "RavenDb" start= demand
-        cinst ravendb-backup
-        cinst ravendb-smuggler
-        
-        cinst mongodb
-        sc.exe config "MongoDb" start= demand
-        cinst robomongo
-        
-        cinst sqlserverexpress
-        sc.exe config "MSSQLSERVER" start= demand
-        cinst sqlmanagementstudio
-        
-        cinst mysql
-        sc.exe config "MySql" start= demand
-        cinst mysqlworkbench
-
         # Install Chrome    
         $chrome = "https://dl.google.com/tag/s/appguid={8A69D345-D564-463C-AFF1-A69D9E530F96}&iid={00000000-0000-0000-0000-000000000000}&lang=en&browser=3&usagestats=0&appname=Google%2520Chrome&needsadmin=prefers/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi"
         Install-ChocolateyPackage "Chrome" "MSI" "/quiet" $chrome
@@ -157,8 +129,8 @@ Function Run-Package {
         Install-ChocolateyPackage "Firefox" "EXE" "-ms" $firefox
         Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\Mozilla Firefox.lnk' -Force"
 
+        
         Remove-Item -Path "$($env:SYSTEMDRIVE)\home\vm\*" -Recurse -Force
-        cinst btsync
         
         if (Get-ProcessorBits -eq 64) {
             & "${env:ProgramFiles(x86)}\BitTorrent Sync\BTSync.exe"
