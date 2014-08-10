@@ -10,10 +10,6 @@
     <dependencies>
       <dependency id="myscripts-powershell" />
       <dependency id="posh-go" />
-      <dependency id="posh-psake" />
-      <dependency id="nant" />
-      <dependency id="nsis" />
-      <dependency id="octopusdeploy-tool" />
     </dependencies>
   </metadata>
 </package>
