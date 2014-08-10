@@ -45,7 +45,6 @@ Function Run-Package {
 
         cinst myscripts-development
         cinst myscripts-powershell
-        cinst mysettings-pshellhere
         
         cinst java
         cinst pdfcreator
@@ -55,6 +54,9 @@ Function Run-Package {
         cinst 7zip
         cinst executor
 
+        cinst xplorer2
+        cinst mysettings-xplorer2
+        
         cinst git
         cinst gitflow
         cinst gittfs
@@ -96,11 +98,15 @@ Function Run-Package {
         cinst posh-psake
 
         cinst nodejs    
-        npm install -g csslint
-        npm install -g jslint
-        npm install -g jshint
-        npm install -g node-inspector
-        npm install -g typescript
+        
+        $npm = "$($env:ProgramFiles)\nodejs\npm.cmd"
+        
+        & $npm install -g csslint
+        & $npm install -g jslint
+        & $npm install -g jshint
+        & $npm install -g node-inspector
+        & $npm install -g typescript
+
         cinst atom
         
         cinst vsultimate
@@ -155,7 +161,7 @@ Function Run-Package {
         cinst btsync
         
         if (Get-ProcessorBits -eq 64) {
-            & "${$env:ProgramFiles(x86)}\BitTorrent Sync\BTSync.exe"
+            & "${env:ProgramFiles(x86)}\BitTorrent Sync\BTSync.exe"
         } else {
             & "$($env:ProgramFiles)\BitTorrent Sync\BTSync.exe"    
         }
