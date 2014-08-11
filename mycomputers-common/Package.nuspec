@@ -7,5 +7,12 @@
     <owners>Julian Easterling</owners>
     <description>This package gets called for the initial configuration of all of my physical machines.</description>
     <tags>mycomputers common</tags>
+    <dependencies>
+      <dependency id="mysettings-ntfs" />
+      <dependency id="mysettings-ipv6" />
+      <dependency id="dotnet" />
+      <dependency id="powershell" />
+      <dependency id="pdfcreator" />
+    </dependencies>
   </metadata>
 </package>
