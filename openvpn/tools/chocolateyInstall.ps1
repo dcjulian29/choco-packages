@@ -8,6 +8,8 @@ try
 {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
 
+    Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\OpenVPN GUI.lnk' -Force"
+
     Write-ChocolateySuccess $packageName
 }
 catch

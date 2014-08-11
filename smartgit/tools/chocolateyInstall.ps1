@@ -29,7 +29,7 @@ try
             "[Environment]::SetEnvironmentVariable('SMARTGITHG_JAVA_HOME','$java', 'Machine')"
     }
     
-    Remove-Item "$($env:PUBLIC)\Desktop\SmartGitHg 6.lnk" -Force
+    Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\SmartGitHg 6.lnk' -Force"
     
     Write-ChocolateySuccess $packageName
 }
