@@ -2,23 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>myvm-development</id>
-    <version>2014.8.10</version>
+    <version>2014.8.11</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>This package gets called for the initial configuration of my development virtual machines.</description>
     <tags>myvm development</tags>
     <dependencies>
       <dependency id="myvm-workstation" />
-      <dependency id="mysettings-devwallpaper" />
-      <dependency id="myscripts-development" />
-      <dependency id="devvm-powershell" />
-      <dependency id="devvm-scm" />
-      <dependency id="devvm-buildtools" />
-      <dependency id="devvm-visualstudio" />
-      <dependency id="devvm-tools" />
-      <dependency id="devvm-nodejs" />
-      <dependency id="devvm-database" />
-      <dependency id="btsync" />
     </dependencies>
   </metadata>
 </package>

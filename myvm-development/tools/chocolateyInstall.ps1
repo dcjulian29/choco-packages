@@ -5,6 +5,35 @@ if ($psISE) {
 }
 
 try {
+    Start-Transcript "$($env:TEMP)\myvm-development-transcript.log" -Append
+
+    $packages = @(
+        "mysettings-devwallpaper",
+        "myscripts-development",
+        "devvm-powershell",
+        "devvm-scm",
+        "devvm-buildtools",
+        "devvm-visualstudio",
+        "devvm-tools",
+        "devvm-nodejs",
+        "devvm-database",
+        "btsync")
+
+    $devvmpackage = (Get-ChildItem "$($env:ChocolateyInstall)\lib" | Select-Object basename).basename `
+        | Where-Object { $_.StartsWith("myvm-development") }
+
+    if ($package.Count -gt 1) {
+        Write-Warning "This package has already been installed, attempting to upgrade any dependent packages..."
+        foreach ($package in $packages) {
+            cup $package
+        }
+    } else {
+        Write-Warning "This is the first time this package is install so assume no other packages have been installed..."
+        foreach ($package in $packages) {
+            cinst $package
+        }
+    }
+
     if (-not (Test-Path $env:SYSTEMDRIVE\home\projects))
     {
         New-Item -Type Directory -Path $env:SYSTEMDRIVE\home\projects | Out-Null
@@ -21,8 +50,6 @@ try {
             }
         }
         
-        if (
-
         if (Test-Path $env:SYSTEMDRIVE\etc) {
             # Test if etc is already SYMLINKD to the "home" etc            
             New-Item -ItemType File -Path $env:SYSTEMDRIVE\etc\$env:COMPUTERNAME-$env:USERNAME.txt
@@ -52,6 +79,8 @@ try {
         Write-Warning "After configuring BTSync, Restart-Computer to get started developing! :)"
     }
 
+    Stop-Transcript
+  
     Write-ChocolateySuccess $packageName
 } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
