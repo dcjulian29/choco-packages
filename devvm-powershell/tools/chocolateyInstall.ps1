@@ -5,7 +5,8 @@ if ($psISE) {
 }
 
 try {
-    Import-Module go
+
+    Import-Module "$env:USERPROFILE\Documents\WindowsPowerShell\Modules\go\go.psm1"
     go -key "projects" -selectedPath "C:\home\projects" -add
     go -key "etc" -selectedPath "C:\home\vm\etc" -add
     go -key "home" -selectedPath "$($env:USERPROFILE)" -add
