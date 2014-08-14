@@ -1,4 +1,4 @@
-$packageName = "devvm-buildtools"
+$packageName = "mydev-buildtools"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"

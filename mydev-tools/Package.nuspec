@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>devvm-tools</id>
+    <id>mydev-tools</id>
     <version>2014.8.10</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>These are the application packages for my DEV VMs.</description>
-    <tags>devvm-tools devvm</tags>
+    <description>These are the application packages for my Development Environments.</description>
+    <tags>mydev-tools mydev</tags>
     <dependencies>
       <dependency id="java" />
       <dependency id="pdfcreator" />
@@ -14,7 +14,6 @@
       <dependency id="sumatrapdf" />
       <dependency id="keepass" />
       <dependency id="7zip" />
-      <dependency id="executor" />
       <dependency id="xplorer2" />
       <dependency id="mysettings-xplorer2" />
       <dependency id="baretail" />

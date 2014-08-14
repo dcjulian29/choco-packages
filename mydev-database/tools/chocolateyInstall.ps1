@@ -1,14 +1,14 @@
-$packageName = "devvm-visualstudio"
+$packageName = "mydev-database"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
 try {
-    cinst -source webpi WebMatrixWeb
-    cinst -source webpi WindowsAzureXPlatCLI
-    cinst -source webpi WindowsAzurePowershell
-    cinst -source webpi VWDOrVs2013AzurePack.2.4
+    sc.exe config "RavenDb" start= demand
+    sc.exe config "MongoDb" start= demand
+    sc.exe config "MSSQLSERVER" start= demand
+    sc.exe config "MySql" start= demand
 
     Write-ChocolateySuccess $packageName
 } catch {

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>devvm-buildtools</id>
+    <id>mydev-buildtools</id>
     <version>2014.8.10</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>These are the packages for build tools that I install in my DEV VMs.</description>
-    <tags>devvm-buildtools devvm build tools</tags>
+    <description>These are the packages for build tools that I install in my Development Environments.</description>
+    <tags>mydev-buildtools mydev build tools</tags>
     <dependencies>
       <dependency id="nuget" />
       <dependency id="nugetexplorer" />

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>devvm-visualstudio</id>
+    <id>mydev-visualstudio</id>
     <version>2014.8.10</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>These are the packages for Visual Studio Development for my DEV VMs.</description>
-    <tags>devvm-dotnet devvm dotnet</tags>
+    <description>These are the packages for Visual Studio Development for my Development Environments.</description>
+    <tags>mydev-dotnet mydev dotnet</tags>
     <dependencies>
       <dependency id="vsultimate" />
       <dependency id="resharper" />

@@ -1,17 +1,14 @@
-$packageName = "devvm-nodejs"
+$packageName = "mydev-visualstudio"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
 try {
-    $npm = "$($env:ProgramFiles)\nodejs\npm.cmd"
-    
-    & $npm install -g csslint
-    & $npm install -g jslint
-    & $npm install -g jshint
-    & $npm install -g node-inspector
-    & $npm install -g typescript
+    cinst -source webpi WebMatrixWeb
+    cinst -source webpi WindowsAzureXPlatCLI
+    cinst -source webpi WindowsAzurePowershell
+    cinst -source webpi VWDOrVs2013AzurePack.2.4
 
     Write-ChocolateySuccess $packageName
 } catch {

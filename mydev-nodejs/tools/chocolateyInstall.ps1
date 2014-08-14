@@ -1,14 +1,17 @@
-$packageName = "devvm-database"
+$packageName = "mydev-nodejs"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
 try {
-    sc.exe config "RavenDb" start= demand
-    sc.exe config "MongoDb" start= demand
-    sc.exe config "MSSQLSERVER" start= demand
-    sc.exe config "MySql" start= demand
+    $npm = "$($env:ProgramFiles)\nodejs\npm.cmd"
+    
+    & $npm install -g csslint
+    & $npm install -g jslint
+    & $npm install -g jshint
+    & $npm install -g node-inspector
+    & $npm install -g typescript
 
     Write-ChocolateySuccess $packageName
 } catch {

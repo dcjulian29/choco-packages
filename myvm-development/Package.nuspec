@@ -10,6 +10,8 @@
     <dependencies>
       <dependency id="myvm-workstation" />
       <dependency id="mysettings-devwallpaper" />
+      <dependency id="executor" />
+      <dependency id="btsync" />
     </dependencies>
   </metadata>
 </package>
