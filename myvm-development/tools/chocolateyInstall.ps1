@@ -48,6 +48,9 @@ try {
         $b = $shell.PopUp("Press the OK button when BTSync finishes synchronization.", 0, "Inital Setup Complete", 0)
     }
 
+    Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online | Out-Null
+    Get-AppxPackage | Remove-AppxPackage -ea Silent
+
     Write-ChocolateySuccess $packageName
 } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
