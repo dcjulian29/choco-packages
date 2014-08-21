@@ -16,9 +16,9 @@ try {
         "mydev-database")
 
     $devvmpackage = (Get-ChildItem "$($env:ChocolateyInstall)\lib" | Select-Object basename).basename `
-        | Where-Object { $_.StartsWith("myvm-development") }
+        | Where-Object { $_.StartsWith("mycomputers-development") }
 
-    if ($package.Count -gt 1) {
+    if ($devvmpackage.Count -gt 1) {
         Write-Warning "This package has already been installed, attempting to upgrade any dependent packages..."
         foreach ($package in $packages) {
             cup $package
