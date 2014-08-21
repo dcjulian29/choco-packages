@@ -12,7 +12,7 @@ Get-WebSite | Remove-WebSite
 
 $tfsConfig = "$env:ProgramFiles\Microsoft Team Foundation Server 12.0\Tools\TfsConfig.exe"
 
-$input1 = "WebSitePort=80,SQLInstance=MSSQLSERVER"
+$input1 = "WebSitePort=80;SQLInstance=127.0.0.1"
 $input2 = "CollectionUrl=http://localhost/tfs`;ServiceAccountName=""LOCAL SERVICE""`;ServiceAccountPassword=""pass"""
 
 & "$tfsConfig" unattend /configure /type:Basic /inputs:$input1
