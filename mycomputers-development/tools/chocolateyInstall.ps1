@@ -9,8 +9,8 @@ try {
         "myscripts-development",
         "mydev-powershell",
         "mydev-scm",
-        "mydev-buildtools",
         "mydev-visualstudio",
+        "mydev-buildtools",
         "mydev-tools",
         "mydev-nodejs",
         "mydev-database")
