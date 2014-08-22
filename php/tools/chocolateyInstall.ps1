@@ -1,6 +1,6 @@
 $packageName = "php"
-$url = "http://windows.php.net/downloads/releases/php-5.5.15-nts-Win32-VC11-x86.zip"
-$url64 = "http://windows.php.net/downloads/releases/php-5.5.15-nts-Win32-VC11-x64.zip" 
+$url = "http://windows.php.net/downloads/releases/php-5.5.16-nts-Win32-VC11-x86.zip"
+$url64 = "http://windows.php.net/downloads/releases/php-5.5.16-nts-Win32-VC11-x64.zip" 
 $installArgs = "/install /passive /norestart"
 $vcredist = "http://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe"
 $vcredist64 = "http://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x64.exe"
