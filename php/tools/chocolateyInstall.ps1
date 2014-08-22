@@ -25,7 +25,7 @@ try
     }
 
     
-    if (-not (Test-Path "HKLM:SOFTWARE\Microsoft\DevDiv\vc\Servicing\11.0") {
+    if (-not (Test-Path "HKLM:SOFTWARE\Microsoft\DevDiv\vc\Servicing\11.0")) {
         Install-ChocolateyPackage "vcredist2012" "EXE" $installerArgs $vcredist $vcredist64
     }
     
