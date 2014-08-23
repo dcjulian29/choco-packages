@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mydev-database</id>
+    <version>2014.8.10</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages for databases that I install in my Development Environments.</description>
+    <tags>mydev-database mydev database</tags>
+    <dependencies>
+      <dependency id="ravendb-server" />
+      <dependency id="ravendb-backup" />
+      <dependency id="ravendb-smuggler" />
+      <dependency id="mongodb" />
+      <dependency id="robomongo" />
+      <dependency id="sqlserverexpress" />
+      <dependency id="sqlmanagementstudio" />
+      <dependency id="mysql" />
+      <dependency id="mysqlworkbench" />
+    </dependencies>
+  </metadata>
+</package>

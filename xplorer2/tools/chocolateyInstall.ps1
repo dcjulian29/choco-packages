@@ -8,6 +8,8 @@ try
 {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
 
+    Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\xplorer2 pro x64.lnk' -Force"
+
     Write-ChocolateySuccess $packageName
 }
 catch

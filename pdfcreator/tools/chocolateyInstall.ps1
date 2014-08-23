@@ -37,7 +37,7 @@ try
         cmd /c "`"$cmd`" /NoStart /RemoveWindowsExplorerIntegration"
     }
 
-    Remove-Item "$($env:PUBLIC)\Desktop\PDFCreator.lnk" -Force
+    Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\PDFCreator.lnk' -Force"
     
     Write-ChocolateySuccess $packageName
 }

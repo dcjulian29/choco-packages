@@ -1,7 +1,7 @@
 $packageName = "tfsexpress"
 $installerType = "EXE"
 $installerArgs = "/quiet"
-$url = "http://download.microsoft.com/download/1/D/4/1D4802FE-5971-4A27-8E42-87EE5ACE8777/tfs_express.exe"
+$url = "http://download.microsoft.com/download/7/7/D/77D9E159-4CAF-4F25-A7CF-8184505A2C0D/tfs_express.exe"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {

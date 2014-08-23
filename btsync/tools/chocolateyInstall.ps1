@@ -11,7 +11,7 @@ try
 {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url -validExitCodes 1
 
-    Remove-Item "$($env:PUBLIC)\Desktop\BitTorrent Sync.lnk" -Force
+    Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\BitTorrent Sync.lnk' -Force"
 
     Write-ChocolateySuccess $packageName
 }

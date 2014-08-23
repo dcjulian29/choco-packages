@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>firefox</id>
+    <version>31.0</version>
+    <authors>Mozilla Foundation</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://www.mozilla.org/en-US/firefox/</projectUrl>
+    <licenseUrl>https://www.mozilla.org/MPL/2.0/</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A free, non-profit browser for your desktop</description>
+    <tags>firefox mozilla</tags>
+  </metadata>
+</package>

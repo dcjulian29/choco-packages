@@ -38,7 +38,7 @@ try
     New-Item -Type Directory -Path $appDir\bin | Out-Null
     Copy-Item -Path "$($downloadPath)\$($extractPath)\bin\*" -Destination "$appDir\bin" -Recurse
     New-Item -Type Directory -Path $appDir\bin\share | Out-Null
-    Copy-Item -Path "$($downloadPath)\$($extractPath)share\*" -Destination "$appDir\bin\share" -Recurse
+    Copy-Item -Path "$($downloadPath)\$($extractPath)\share\*" -Destination "$appDir\bin\share" -Recurse
 
     if (-not (Test-Path $dataDir))
     {

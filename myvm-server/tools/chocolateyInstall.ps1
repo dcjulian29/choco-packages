@@ -6,7 +6,7 @@ if ($psISE) {
 
 try {
 
-    Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online
+    Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online | Out-Null
     Get-AppxPackage | Remove-AppxPackage -ea Silent
 
     Write-Output "Enabling Remote Desktop ..."

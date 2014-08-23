@@ -10,6 +10,8 @@ if ($psISE) {
 try {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url
 
+    Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\VLC media player.lnk' -Force"
+
     Write-ChocolateySuccess $packageName
 } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)

@@ -1,8 +1,9 @@
 $packageName = "nodejs"
 $installerType = "MSI"
 $installerArgs = "/qb"
-$url = "http://nodejs.org/dist/v0.10.30/node-v0.10.30-x86.msi"
-$url64 = "http://nodejs.org/dist/v0.10.30/x64/node-v0.10.30-x64.msi"
+$version = "0.10.31"
+$url = "http://nodejs.org/dist/v$version/node-v$version-x86.msi"
+$url64 = "http://nodejs.org/dist/v$version/x64/node-v$version-x64.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"

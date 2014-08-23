@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mydev-powershell</id>
+    <version>2014.8.10</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages for PowerShell modules and configuration for my Development Environments.</description>
+    <tags>mydev-powershell mydev powershell</tags>
+    <dependencies>
+      <dependency id="myscripts-powershell" />
+      <dependency id="posh-go" />
+    </dependencies>
+  </metadata>
+</package>

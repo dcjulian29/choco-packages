@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>tfsexpress</id>
-    <version>2013.2</version>
+    <version>2013.3</version>
     <authors>Microsoft</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx</projectUrl>
@@ -10,7 +10,7 @@
     <tags>tfs scm alm</tags>
     <dependencies>
       <dependency id="dotnet" version="4.5" />
-      <dependency id="sqlserverexpress" version="[2012.1]" />
+      <dependency id="sqlserverexpress" version="[2012.2]" />
     </dependencies>
   </metadata>
 </package>
