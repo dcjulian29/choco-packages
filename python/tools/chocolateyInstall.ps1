@@ -6,6 +6,7 @@ $url64 = "https://www.python.org/ftp/python/2.7.8/python-2.7.8.amd64.msi"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 $ahkExe = "$env:SYSTEMDRIVE\tools\apps\autohotkey\AutoHotkey.exe"
+$shimgen = "$env:ChocolateyInstall\chocolateyinstall\tools\shimgen.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -14,6 +15,9 @@ if ($psISE) {
 try
 {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+
+    & $shimgen -o "$env:ChocolateyInstall\bin\python.exe" -p "$env:SYSTEMDRIVE\python\python.exe"
+    & $shimgen -o "$env:ChocolateyInstall\bin\pythonw.exe" -p "$env:SYSTEMDRIVE\python\pythonw.exe"
 
     if (-not (Test-Path $downloadPath)) {
         New-Item -Type Directory -Path $downloadPath | Out-Null
@@ -31,11 +35,15 @@ try
     
     cmd /c "$env:SYSTEMDRIVE\python\python.exe $downloadPath\ez_setup-$version\ez_setup.py"
 
+    & $shimgen -o "$env:ChocolateyInstall\bin\easy_install.exe" -p "$env:SYSTEMDRIVE\python\scripts\easy_install.exe"
+
     # Install pip
     Get-ChocolateyWebFile "pip" "$downloadPath\get-pip.py" `
         "https://raw.githubusercontent.com/pypa/pip/master/contrib/get-pip.py"
 
     cmd /c "$env:SYSTEMDRIVE\python\python.exe $downloadPath\get-pip.py"
+
+    & $shimgen -o "$env:ChocolateyInstall\bin\pip.exe" -p "$env:SYSTEMDRIVE\python\scripts\pip.exe"
 
     # Install Pywin32
     $pywin32 = "http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download"
