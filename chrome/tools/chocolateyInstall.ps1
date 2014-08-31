@@ -8,9 +8,15 @@ if ($psISE) {
 }
 
 try {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+    $app = Get-WmiObject -Class Win32_Product | Where-Object { $_.Name -eq "Google Chrome" }
+    
+    if ($app) {
+        Write-Output "Chrome is already installed and will update itself, no need to update via package..."
+    } else {
+        Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
 
-    Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\Google Chrome.lnk' -Force"
+        Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\Google Chrome.lnk' -Force"
+    }
 
     Write-ChocolateySuccess $packageName
 } catch {
