@@ -26,6 +26,7 @@ try {
             $upgrade = $true
         } else {
             throw "Cygwin appears to already be installed on this system but not by this packaging system... Removed the Cygwin directory and try again."
+        }
     }
 
     Start-ChocolateyProcessAsAdmin "setx /m TERM msys"
@@ -46,7 +47,7 @@ try {
     $cygwinSetup = "cd $cygwinSetupDir ``& setup.exe"
     $cygwinSetupArgs = "--root '$appDir' --no-shortcuts --site $cygwinMirror --quiet-mode"
 
-    Start-ChocolateyProcessAsAdmin "cmd /c $cygwinSetup $cygwinSetupArgs"
+    cmd /c $cygwinSetup $cygwinSetupArgs
 
     if (-not $upgrade) {
         $cygwinPackage = "--root $appDir --no-admin --no-shortcuts --site $cygwinMirror --quiet-mode -P "
