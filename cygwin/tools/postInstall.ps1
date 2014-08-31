@@ -40,3 +40,5 @@ make-filelink inputrc
 make-filelink minttyrc
 make-filelink profile
 make-filelink Xresources
+
+cmd /c "setx /m TERM msys"
