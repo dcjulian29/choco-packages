@@ -1,7 +1,8 @@
 $packageName = "myscripts-powershell"
 $appDir = "$($env:SYSTEMDRIVE)\tools\powershell"
-$url = "https://github.com/dcjulian29/WindowsPowerShell/archive"
-$repo = "WindowsPowerShell-master"
+$version = "2014.9.7"
+$repo = "scripts-powershell"
+$url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
@@ -24,14 +25,23 @@ try {
         New-Item -Type Directory -Path $appDir | Out-Null
     }
 
-    (New-Object System.Net.WebClient).DownloadFile("$url/master.zip", "$env:TEMP\master.zip")
-    $shell = New-Object -com Shell.Application
-    $shell.namespace($env:TEMP).CopyHere($shell.namespace("$env:TEMP\master.zip").items(), 0x10) 
-    Copy-Item -Path "$($env:TEMP)\$repo\*" -Destination $appdir -Recurse -Force
-    Remove-Item -Path "$($env:TEMP)\$repo" -Recurse -Force
-    Remove-Item -Path "$($env:TEMP)\master.zip" -Force
+    (New-Object System.Net.WebClient).DownloadFile("$url", "$env:TEMP\$file.zip")
 
-    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.bat"
+    $shell = New-Object -com Shell.Application
+    $shell.namespace($env:TEMP).CopyHere($shell.namespace("$env:TEMP\$file.zip").items(), 0x10)
+    
+    Copy-Item -Path "$($env:TEMP)\$file\*" -Destination $appdir -Recurse -Force
+
+    Remove-Item -Path "$($env:TEMP)\$file" -Recurse -Force
+    Remove-Item -Path "$($env:TEMP)\$file.zip" -Force
+
+    $cmd = ". $toolDir\postInstall.bat"
+
+    if (Test-ProcessAdminRights) {
+        Invoke-Expression $cmd
+    } else {
+        Start-ChocolateyProcessAsAdmin $cmd
+    }
 
     Write-ChocolateySuccess $packageName
 } catch {
