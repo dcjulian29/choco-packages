@@ -13,6 +13,7 @@ try {
         "mydev-buildtools",
         "mydev-tools",
         "mydev-nodejs",
+        "mydev-python",
         "mydev-database")
 
     $devvmpackage = (Get-ChildItem "$($env:ChocolateyInstall)\lib" | Select-Object basename).basename `

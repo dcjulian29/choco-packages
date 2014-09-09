@@ -1,14 +1,13 @@
 $packageName = "resharper"
 $installerType = "MSI"
-$installerArgs = "/qb"
-$url = "http://download.jetbrains.com/resharper/ReSharperSetup.8.2.0.2160.msi"
+$installerArgs = "/quiet /passive"
+$url = "http://download-cf.jetbrains.com/resharper/ReSharperSetup.8.2.2000.5102.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try
-{
+try {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
 
     Write-ChocolateySuccess $packageName

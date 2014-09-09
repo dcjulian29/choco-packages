@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>puppet</id>
+    <version>3.7.0</version>
+    <authors>Puppet Labs</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://puppetlabs.com/puppet/puppet-open-source/</projectUrl>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Open source Puppet is a flexible, customizable framework available under the Apache 2.0 license designed to help system administrators automate the many repetitive tasks they regularly perform.</description>
+    <tags>puppet devops</tags>
+  </metadata>
+</package>

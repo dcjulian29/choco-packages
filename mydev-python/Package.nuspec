@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mydev-python</id>
+    <version>2014.8.23</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages for Python development that I install in my Development Environments.</description>
+    <tags>mydev-python python pythondev mydev</tags>
+    <dependencies>
+      <dependency id="python" />
+    </dependencies>
+  </metadata>
+</package>

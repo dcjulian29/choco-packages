@@ -1,16 +1,15 @@
 $packageName = "octopusdeploy-tentacle"
 $installerType = "MSI"
 $installerArgs = "/quiet"
-$url = "http://download.octopusdeploy.com/octopus/Octopus.Tentacle.2.5.5.318.msi"
-$url64 = "http://download.octopusdeploy.com/octopus/Octopus.Tentacle.2.5.5.318-x64.msi"
-
+$version = "2.5.8.447"
+$url = "http://download.octopusdeploy.com/octopus/Octopus.Tentacle.$version.msi"
+$url64 = "http://download.octopusdeploy.com/octopus/Octopus.Tentacle.$version-x64.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try
-{
+try {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
 
     Write-ChocolateySuccess $packageName
