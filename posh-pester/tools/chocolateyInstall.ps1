@@ -1,5 +1,5 @@
 $packageName = "posh-pester"
-$version = "2.1.0"
+$version = "3.0.2"
 $url = "https://codeload.github.com/pester/Pester/zip/$version"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\Modules\pester"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
@@ -20,8 +20,8 @@ try {
         New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
-    Get-ChocolateyWebFile $packageName "$downloadPath\master.zip" $url
-    Get-ChocolateyUnzip "$downloadPath\master.zip" "$downloadPath\"
+    Get-ChocolateyWebFile $packageName "$downloadPath\$version.zip" $url
+    Get-ChocolateyUnzip "$downloadPath\$version.zip" "$downloadPath\"
 
     $source = "$downloadPath\Pester-$version"
     New-Item -Type Directory -Path $appDir | Out-Null
