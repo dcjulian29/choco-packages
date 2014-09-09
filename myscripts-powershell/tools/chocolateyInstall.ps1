@@ -25,6 +25,9 @@ try {
         New-Item -Type Directory -Path $appDir | Out-Null
     }
 
+
+    $file = "$repo-$version"
+
     (New-Object System.Net.WebClient).DownloadFile("$url", "$env:TEMP\$file.zip")
 
     $shell = New-Object -com Shell.Application
