@@ -1,15 +1,15 @@
-$packageName = "chef-client"
+$packageName = "puppet"
 $installerType = "MSI"
-$installerArgs = "/quiet"
-$version = "11.14.2-1"
-$url = "https://opscode-omnibus-packages.s3.amazonaws.com/windows/2008r2/x86_64/chef-windows-$version.windows.msi"
+$installerArgs = "/quiet /passive"
+$url = " http://downloads.puppetlabs.com/windows/puppet-3.7.0.msi"
+$url64 = "http://downloads.puppetlabs.com/windows/puppet-3.7.0-x64.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
 try {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs "" $url
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
 
     Write-ChocolateySuccess $packageName
 } catch {
