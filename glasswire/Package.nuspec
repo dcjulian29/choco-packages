@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>glasswire</id>
+    <version>1.0.24</version>
+    <authors>GlassWire</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://www.glasswire.com/</projectUrl>
+    <licenseUrl>https://www.glasswire.com/license/</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>GlassWire displays your network activity on an easy to understand graph while searching for unusual Internet behavior that could indicate malware or violations of your privacy. Once unusual network activity is discovered you're instantly alerted with detailed information so you can protect your computer, privacy, and data.</description>
+    <tags>glasswire network monitor</tags>
+  </metadata>
+</package>
