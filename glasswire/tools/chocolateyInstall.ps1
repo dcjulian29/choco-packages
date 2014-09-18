@@ -1,6 +1,6 @@
 $packageName = "glasswire"
 $installerType = "EXE"
-$installerArgs = "/quiet"
+$installerArgs = "/S"
 $url = "https://www.glasswire.com/download/GlassWireSetup.exe"
 
 if ($psISE) {
