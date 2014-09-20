@@ -21,6 +21,7 @@
       <dependency id="vsix-slowcheetah" />
       <dependency id="vsix-fsharptools" />
       <dependency id="vsix-tfspowertools" />
+      <dependency id="vsix-gitdiffmargin" />
       <dependency id="sqlserverssdt" />
     </dependencies>
   </metadata>
