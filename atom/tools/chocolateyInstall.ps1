@@ -1,5 +1,5 @@
 $packageName = "atom"
-$url = "https://github.com/atom/atom/releases/download/v0.127.0/atom-windows.zip"
+$url = "https://github.com/atom/atom/releases/download/v0.136.0/atom-windows.zip"
 
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
