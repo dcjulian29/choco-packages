@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>modelio</id>
+    <version>3.2</version>
+    <authors>ArgoUML Project</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.modelio.org/</projectUrl>
+    <licenseUrl>http://www.modelio.org/about-modelio/license.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Modelio is an open source modeling environment (UML2, BPMN2, ...). Modelio delivers a broad-focused range of standards-based functionalities for software developers, analysts, designers, business architects and system architects.</description>
+    <tags>modelio uml uml2/tags>
+  </metadata>
+</package>

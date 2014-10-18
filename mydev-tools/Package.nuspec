@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2014.8.10</version>
+    <version>2014.10.18/version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the application packages for my Development Environments.</description>
@@ -20,7 +20,7 @@
       <dependency id="kdiff" />
       <dependency id="wmiexplorer" />
       <dependency id="xmlquire" />
-      <dependency id="argouml" />
+      <dependency id="modelio" />
       <dependency id="soapui" />
       <dependency id="cygwin" />
       <dependency id="bind-tools" />

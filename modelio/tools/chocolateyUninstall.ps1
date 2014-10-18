@@ -1,4 +1,4 @@
-$packageName = "argouml"
+$packageName = "modelio"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 try
