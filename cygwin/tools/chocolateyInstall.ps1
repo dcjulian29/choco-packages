@@ -33,7 +33,7 @@ try {
         New-Item $appDir -Type Directory
         New-Item $appDir\home -Type Directory
 
-        Start-ChocolateyProcessAsAdmin "cmd /c mklink /J '$env:SYSTEMDRIVE\cygwin\home\$env:USERNAME' '$env:USERPROFILE'"
+        Start-ChocolateyProcessAsAdmin "cmd /c mklink /J '$env:SYSTEMDRIVE\cygwin\home' '$env:SYSTEMDRIVE\Users'"
     }
 
     if (-not (Test-Path $cygwinSetupDir)) {
