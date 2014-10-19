@@ -1,5 +1,5 @@
 $packageName = "php"
-$version = "5.6.1"
+$version = "5.6.2"
 $url = "http://windows.php.net/downloads/releases/php-$version-nts-Win32-VC11-x86.zip"
 $url64 = "http://windows.php.net/downloads/releases/php-$version-nts-Win32-VC11-x64.zip" 
 $installArgs = "/install /passive /norestart"
