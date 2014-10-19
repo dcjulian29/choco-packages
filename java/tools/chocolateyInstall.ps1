@@ -2,8 +2,8 @@
 $installerType = "exe"
 $installerArgs = "/s REBOOT=Suppress WEB_JAVA=0"
 
-$url = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=95123"
-$url64 = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=95125"
+$url = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=98426"
+$url64 = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=98428"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
