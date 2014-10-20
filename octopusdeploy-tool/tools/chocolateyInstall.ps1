@@ -1,7 +1,7 @@
 $packageName = "octopusdeploy-tool"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\octopus"
-$url = "http://download.octopusdeploy.com/octopus-tools/2.4.5.18/OctopusTools.2.4.5.18.zip"
+$url = "http://download.octopusdeploy.com/octopus-tools/2.5.10.39/OctopusTools.2.5.10.39.zip"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
