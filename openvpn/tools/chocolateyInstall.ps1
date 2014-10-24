@@ -1,8 +1,8 @@
 ﻿$packageName = "openvpn" # arbitrary name for the package, used in messages
 $installerType = "exe" #only one of these two: exe or msi
 $installerArgs = "/S"
-$url = "http://swupdate.openvpn.org/community/releases/openvpn-install-2.3.4-I002-i686.exe"
-$url64 = "http://swupdate.openvpn.org/community/releases/openvpn-install-2.3.4-I002-x86_64.exe"
+$url = "http://swupdate.openvpn.org/community/releases/openvpn-install-2.3.4-I605-i686.exe"
+$url64 = "http://swupdate.openvpn.org/community/releases/openvpn-install-2.3.4-I605-x86_64.exe"
 
 try
 {
