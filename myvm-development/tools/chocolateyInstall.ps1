@@ -44,8 +44,10 @@ try {
         
         Write-Warning "After configuring BTSync, The computer will need to restart..."
         
-        $shell = New-Object -ComObject WScript.Shell
-        $b = $shell.PopUp("Press the OK button when BTSync finishes synchronization.", 0, "Inital Setup Complete", 0)
+        $response = ""
+        while ($response -ne "DONE") {
+            $response = Read-Host "Type DONE when BTSync finishes synchronization."
+        }
     }
 
     Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online | Out-Null
