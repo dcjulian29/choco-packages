@@ -31,7 +31,7 @@ try {
         Push-Location "${env:SYSTEMDRIVE}\"
 
         if (Test-ProcessAdminRights) {
-            Start-Process -NoNewWindow -Wait "cmd /c mklink.exe /D etc ${env:SYSTEMDRIVE}\home\vm\etc"
+            cmd /c "mklink /D etc ${env:SYSTEMDRIVE}\home\vm\etc"
         } else {
             Start-ChocolateyProcessAsAdmin "cmd /c mklink /D etc ${env:SYSTEMDRIVE}\home\vm\etc"
         }
@@ -65,7 +65,7 @@ try {
         Start-Sleep -Seconds 30
     }
 
-    Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online
+    Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online | Out-Null
     Get-AppxPackage | Remove-AppxPackage -ErrorAction Silent
 
     Write-ChocolateySuccess $packageName
