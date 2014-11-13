@@ -56,13 +56,13 @@ try {
 
         Write-Output "Found VM BTSync directory, waiting for synchronization..."
 
-        while (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\network.cmd")) {
+        while (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\etc\executor\executor.ini")) {
             Start-Sleep -Seconds 5
         }
 
         Write-Output "Synchronization Started/Finished..."
 
-        Start-Sleep -Seconds 30
+        Stop-Process -Name BTSync -Force
     }
 
     Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online | Out-Null
