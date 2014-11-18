@@ -46,7 +46,10 @@ try {
     go -Key "desktop" -SelectedPath "${$env:USERPROFILE}\desktop" -add
     go -Key "downloads" -SelectedPath "${$env:USERPROFILE}\downloads" -add
 
-  
+    Remove-Item `
+        -Path "${env:APPDATA}\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\*.lnk" `
+        -Force
+    
     Write-ChocolateySuccess $packageName
 } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
