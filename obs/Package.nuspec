@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>obs</id>
+    <version>0.638</version>
+    <authors>Open Broadcaster Software</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://obsproject.com/</projectUrl>
+    <licenseUrl>https://github.com/jp9000/OBS/blob/master/COPYING</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Open Broadcaster Software is free and open source software for video recording and live streaming. Supported features.</description>
+    <tags>obs broadcast streaming video recording</tags>
+  </metadata>
+</package>
