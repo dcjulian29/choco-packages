@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vscommunity</id>
+    <version>2013.4</version>
+    <authors>Microsoft</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.visualstudio.com/</projectUrl>
+    <description>Visual Studio is a comprehensive collection of tools and services to help you create a wide variety of apps, both for the Microsoft platform and beyond. Visual Studio also connects all of your projects, teams, and stakeholders.</description>
+    <tags>vs2013 ide visual studio community</tags>
+    <dependencies>
+      <dependency id="visualstudio" version="[2013.4]" />
+    </dependencies>
+  </metadata>
+</package>
