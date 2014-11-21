@@ -11,11 +11,19 @@ try
     
         $cmd = "reg.exe import $toolDir\registry.reg"
         
-        Start-ChocolateyProcessAsAdmin "$cmd"
+        if (Test-ProcessAdminRights) {
+            Invoke-Expression $cmd
+        } else {
+            Start-ChocolateyProcessAsAdmin "$cmd"
+        }
 
         if (Get-ProcessorBits -eq 64) {
             $cmd = "$cmd /reg:64"
-            Start-ChocolateyProcessAsAdmin "$cmd"
+            if (Test-ProcessAdminRights) {
+                Invoke-Expression $cmd
+            } else {
+                Start-ChocolateyProcessAsAdmin "$cmd"
+            }
         }
     }
 
