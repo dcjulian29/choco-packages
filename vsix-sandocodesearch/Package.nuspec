@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>vsix-sandocodesearch</id>
-    <version>1.7.19</version>
+    <version>1.7.89</version>
     <authors>David C. Shepherd</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://visualstudiogallery.msdn.microsoft.com/06f39a31-20ce-408c-afee-8a02b484db1c</projectUrl>
