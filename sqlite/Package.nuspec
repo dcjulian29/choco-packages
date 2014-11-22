@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>sqlite</id>
+    <version>3.8.7.2</version>
+    <authors>SQLite contributors</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.sqlite.org</projectUrl>
+    <licenseUrl>http://www.sqlite.org/copyright.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SQLite is a software library that implements a self-contained, embeddable, zero-configuration, and transactional SQL database engine.</description>
+    <tags>sqlite db database</tags>
+  </metadata>
+</package>
