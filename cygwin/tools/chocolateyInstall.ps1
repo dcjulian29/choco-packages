@@ -31,9 +31,12 @@ try {
 
     if (-not $upgrade) {
         New-Item $appDir -Type Directory
-        New-Item $appDir\home -Type Directory
 
-        Start-ChocolateyProcessAsAdmin "cmd /c mklink /J '$env:SYSTEMDRIVE\cygwin\home\$env:USERNAME' '$env:USERPROFILE'"
+        if (Test-ProcessAdminRights) {
+            cmd /c mklink /J "$env:SYSTEMDRIVE\cygwin\home" "$env:SYSTEMDRIVE\Users"
+        } else {
+            Start-ChocolateyProcessAsAdmin "cmd /c mklink /J '$env:SYSTEMDRIVE\cygwin\home' '$env:SYSTEMDRIVE\Users'"
+        }
     }
 
     if (-not (Test-Path $cygwinSetupDir)) {
@@ -86,7 +89,12 @@ try {
 
     Pop-Location
 
-    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+    if (Test-ProcessAdminRights) {
+        . $toolDir\postInstall.ps1
+    } else {
+        Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+    }
+    
 
     Write-ChocolateySuccess $packageName
 }

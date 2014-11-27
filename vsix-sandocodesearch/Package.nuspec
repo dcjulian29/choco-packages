@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vsix-sandocodesearch</id>
+    <version>1.7.89</version>
+    <authors>David C. Shepherd</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://visualstudiogallery.msdn.microsoft.com/06f39a31-20ce-408c-afee-8a02b484db1c</projectUrl>
+    <description>Search your C, C++, C#, XAML, and any text file instantly. Form a better query with auto-complete. Get ranked results powered by Lucene.NET.</description>
+    <tags>vsix-sandocodesearch vsix sando search</tags>
+    <dependencies>
+      <dependency id="visualstudio" version="[2013.0,2014.0)" />
+    </dependencies>
+  </metadata>
+</package>

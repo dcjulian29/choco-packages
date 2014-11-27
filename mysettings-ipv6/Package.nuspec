@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-ipv6</id>
-    <version>2014.7.26</version>
+    <version>2014.9.20</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>Disable IPv6 and tunnels on all network adapters.</description>
+    <description>Disable IPv6 tunnels on all network adapters.</description>
     <tags>ipv6 tunnel network</tags>
   </metadata>
 </package>

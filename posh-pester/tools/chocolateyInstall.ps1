@@ -1,5 +1,5 @@
 $packageName = "posh-pester"
-$version = "3.0.2"
+$version = "3.1.1"
 $url = "https://codeload.github.com/pester/Pester/zip/$version"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\Modules\pester"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
@@ -33,8 +33,6 @@ try {
     Copy-Item -Path "$source\Examples\*" -Destination "$appDir\Examples" -Recurse
     New-Item -Type Directory -Path "$appDir\Functions" | Out-Null
     Copy-Item -Path "$source\Functions\*" -Destination "$appDir\Functions" -Recurse
-    New-Item -Type Directory -Path "$appDir\ObjectAdaptations" | Out-Null
-    Copy-Item -Path "$source\ObjectAdaptations\*" -Destination "$appDir\ObjectAdaptations"
     New-Item -Type Directory -Path "$appDir\templates" | Out-Null
     Copy-Item -Path "$source\templates\*" -Destination "$appDir\templates"
 

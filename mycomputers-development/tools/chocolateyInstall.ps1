@@ -35,7 +35,21 @@ try {
     {
         New-Item -Type Directory -Path $env:SYSTEMDRIVE\home\projects | Out-Null
     }
-  
+    
+    go -Key "projects" -SelectedPath "${$env:SYSTEMDRIVE}\home\projects" -add
+    go -Key "etc" -SelectedPath "${$env:SYSTEMDRIVE}\etc" -add
+    go -Key "documents" -SelectedPath "${$env:USERPROFILE}\documents" -add
+    go -Key "docs" -SelectedPath "${$env:USERPROFILE}\documents" -add
+    go -Key "pictures" -SelectedPath "${$env:USERPROFILE}\pictures" -add
+    go -Key "pics" -SelectedPath "${$env:USERPROFILE}\pictures" -add
+    go -Key "videos" -SelectedPath "${$env:USERPROFILE}\videos" -add
+    go -Key "desktop" -SelectedPath "${$env:USERPROFILE}\desktop" -add
+    go -Key "downloads" -SelectedPath "${$env:USERPROFILE}\downloads" -add
+
+    Remove-Item `
+        -Path "${env:APPDATA}\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\*.lnk" `
+        -Force
+    
     Write-ChocolateySuccess $packageName
 } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)

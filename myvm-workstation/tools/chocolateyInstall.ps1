@@ -25,6 +25,7 @@ FolderType=Generic
     cinst mysettings-console
     cinst mysettings-explorer
     cinst notepadplusplus
+    cinst mysettings-notepadplusplus
     cinst mysettings-pshellhere
 
     Write-ChocolateySuccess $packageName

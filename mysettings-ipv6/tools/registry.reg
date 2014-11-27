@@ -1,4 +1,4 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\TCPIP6\Parameters]
-"DisabledComponents"=dword:000000FF
+"DisabledComponents"=dword:00000001

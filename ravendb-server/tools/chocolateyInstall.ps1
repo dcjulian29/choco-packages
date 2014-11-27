@@ -1,5 +1,5 @@
 $packageName = "ravendb-server"
-$build = "2908"
+$build = "2935"
 $url = "http://hibernatingrhinos.com/downloads/RavenDB/$build"
 
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"

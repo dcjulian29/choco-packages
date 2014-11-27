@@ -8,7 +8,7 @@ try {
 
     Import-Module "$env:USERPROFILE\Documents\WindowsPowerShell\Modules\go\go.psm1"
     go -key "projects" -selectedPath "C:\home\projects" -add
-    go -key "etc" -selectedPath "C:\home\vm\etc" -add
+    go -key "etc" -selectedPath "C:\etc" -add
     go -key "home" -selectedPath "$($env:USERPROFILE)" -add
     go -key "downloads" -selectedPath "$($env:USERPROFILE)\Downloads" -add
     go -key "docs" -selectedPath "$($env:USERPROFILE)\Documents" -add

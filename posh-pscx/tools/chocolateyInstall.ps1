@@ -1,7 +1,7 @@
 $packageName = "posh-pscx"
 $installerType = "MSI"
 $installerArgs = "/qb"
-$url = "https://pscx.codeplex.com/downloads/get/744915"
+$url = "https://pscx.codeplex.com/downloads/get/923562"
 $url64 = $url
 
 if ($psISE) {

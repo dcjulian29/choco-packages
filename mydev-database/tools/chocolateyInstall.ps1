@@ -5,10 +5,8 @@ if ($psISE) {
 }
 
 try {
-    sc.exe config "RavenDb" start= demand
     sc.exe config "MongoDb" start= demand
     sc.exe config "MSSQLSERVER" start= demand
-    sc.exe config "MySql" start= demand
 
     Write-ChocolateySuccess $packageName
 } catch {
