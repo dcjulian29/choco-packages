@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>metax</id>
-    <version>2.36</version>
+    <version>2.48</version>
     <authors>Dan Hinsley</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.danhinsley.com/index.html</projectUrl>
