@@ -1,5 +1,5 @@
 $packageName = "ravendb-backup"
-$build = "2935"
+$build = "3528"
 $url = "http://hibernatingrhinos.com/downloads/RavenDB/$build"
 
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
