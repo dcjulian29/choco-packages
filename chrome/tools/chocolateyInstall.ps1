@@ -14,8 +14,15 @@ try {
         Write-Output "Chrome is already installed and will update itself, no need to update via package..."
     } else {
         Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+        
+        if (Test-ProcessAdminRights) {
+            Remove-Item "$($env:PUBLIC)\Desktop\Google Chrome.lnk" -Force
+        } else {
+            Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\Google Chrome.lnk' -Force"
+        }
 
-        Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\Google Chrome.lnk' -Force"
+        Remove-Item "$($env:USERPROFILE)\Desktop\Google Chrome.lnk" -Force
+
     }
 
     Write-ChocolateySuccess $packageName
