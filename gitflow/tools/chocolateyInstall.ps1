@@ -1,5 +1,5 @@
 $packageName = "gitflow"
-$release = "1.7.0"
+$release = "1.8.0"
 $gitflow = "https://github.com/petervanderdoes/gitflow/archive/$release.zip"
 $getoptbin = "http://sourceforge.net/projects/gnuwin32/files/util-linux/2.14.1/util-linux-ng-2.14.1-bin.zip/download"
 $getoptdll = "http://sourceforge.net/projects/gnuwin32/files/util-linux/2.14.1/util-linux-ng-2.14.1-dep.zip/download"
