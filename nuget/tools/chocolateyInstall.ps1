@@ -1,5 +1,5 @@
 $packageName = "nuget"
-$url = "https://nuget.codeplex.com/downloads/get/835802"
+$url = "http://nuget.codeplex.com/downloads/get/922467"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 $exe = "$($appDir)\$($packageName).exe"
@@ -20,7 +20,11 @@ try
     
     Get-ChocolateyWebFile $packageName $exe $url
 
-    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+    if (Test-ProcessAdminRights) {
+        . $toolDir\postInstall.ps1
+    } else {
+        Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+    }
 
     Write-ChocolateySuccess $packageName
 }
