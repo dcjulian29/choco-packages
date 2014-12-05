@@ -2,7 +2,9 @@ $packageName = "pdfcreator"
 $installerType = "exe"
 $installerArgs = "/L=1033 /SaveINF /SILENT /NORESTART /COMPONENTS=`"program,ghostscript,languages\english`""
 $uninstallerArgs = "/SILENT /NORESTART"
-$url = "http://white.download.pdfforge.org/pdfcreator/1.7.3/PDFCreator-1_7_3_setup.exe"
+$url = "http://olive.download.pdfforge.org/pdfcreator/2.0.0/PDFCreator-2_0_0-setup.exe"
+$toolDir = "$pwd" #"$(Split-Path -parent $MyInvocation.MyCommand.Path)"
+
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -25,19 +27,11 @@ try
     
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url
 
-    if (Test-Path "$env:ProgramFiles\PDFCreator") {
-        $cmd = "$env:ProgramFiles\PDFCreator\PDFCreator.exe"
+    if (Test-ProcessAdminRights) {
+        . $toolDir\postInstall.ps1
+    } else {
+        Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
     }
-
-    if (Test-Path "${env:ProgramFiles(x86)}\PDFCreator") {
-        $cmd = "${env:ProgramFiles(x86)}\PDFCreator\PDFCreator.exe"
-    }
-
-    if ($cmd -ne $null) {
-        cmd /c "`"$cmd`" /NoStart /RemoveWindowsExplorerIntegration"
-    }
-
-    Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\PDFCreator.lnk' -Force"
     
     Write-ChocolateySuccess $packageName
 }
