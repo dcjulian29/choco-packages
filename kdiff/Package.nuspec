@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>kdiff</id>
-    <version>0.9.97</version>
+    <version>0.9.98</version>
     <authors>Joachim Eibl</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://kdiff3.sourceforge.net/</projectUrl>
