@@ -3,7 +3,7 @@ $installerType = "exe"
 $installerArgs = "/L=1033 /SaveINF /SILENT /NORESTART /COMPONENTS=`"program,ghostscript,languages\english`""
 $uninstallerArgs = "/SILENT /NORESTART"
 $url = "http://olive.download.pdfforge.org/pdfcreator/2.0.0/PDFCreator-2_0_0-setup.exe"
-$toolDir = "$pwd" #"$(Split-Path -parent $MyInvocation.MyCommand.Path)"
+$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 
 if ($psISE) {
