@@ -1,5 +1,5 @@
 $packageName = "soapui"
-$version = "4.6.4"
+$version = "5.0.0"
 $url = "http://sourceforge.net/projects/soapui/files/soapui/$($version)/SoapUI-$($version)-windows-bin.zip/download"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
