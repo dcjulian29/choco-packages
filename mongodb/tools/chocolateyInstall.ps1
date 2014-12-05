@@ -1,5 +1,5 @@
 $packageName = "mongodb"
-$version = "2.6.3"
+$version = "2.6.5"
 $url = "https://fastdl.mongodb.org/win32/mongodb-win32-i386-$version.zip"
 $url64 = "https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-$version.zip"
 
