@@ -1,6 +1,6 @@
 $packageName = "modelio"
-$url = "http://www.modelio.org/modelio-122/doc_download/81-modelio-320-windows-32-bit.html"
-$url64 = "http://www.modelio.org/modelio-122/doc_download/82-modelio-320-windows-64-bit.html"
+$url = "http://www.modelio.org/modelio-122/doc_download/81-modelio-321-windows-32-bit.html"
+$url64 = "http://www.modelio.org/modelio-122/doc_download/82-modelio-321-windows-64-bit.html"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
