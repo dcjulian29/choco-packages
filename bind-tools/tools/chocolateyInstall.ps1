@@ -2,7 +2,8 @@ $packageName = "bind-tools"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
-$url = "http://ftp.isc.org/isc/bind9/9.9.4-P2/BIND9.9.4-P2.zip"
+$url = "http://ftp.isc.org/isc/bind9/9.10.1/BIND9.10.1.x86.zip"
+$url64 = "ftp://ftp.isc.org/isc/bind9/9.10.1/BIND9.10.1.x64.zip"
 
 $keep = @(
   "dig.exe",
@@ -31,7 +32,7 @@ try
         New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
-    Get-ChocolateyWebFile $packageName "$downloadPath\bind.zip" $url
+    Get-ChocolateyWebFile $packageName "$downloadPath\bind.zip" $url $url64
     Get-ChocolateyUnzip "$downloadPath\bind.zip" "$downloadPath\"
 
     if (-not (Test-Path $appDir)) {
