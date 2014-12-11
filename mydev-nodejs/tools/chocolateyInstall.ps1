@@ -7,9 +7,11 @@ if ($psISE) {
 try {
     $npm = "$($env:ProgramFiles)\nodejs\npm.cmd"
     
+    & $npm install -g bower
+    & $npm install -g gulp grunt-cli
+    & $npm install -g yo generator-hottowel
     & $npm install -g csslint
-    & $npm install -g jslint
-    & $npm install -g jshint
+    & $npm install -g jslint jshint
     & $npm install -g node-inspector
     & $npm install -g typescript
 
