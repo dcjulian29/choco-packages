@@ -1,7 +1,8 @@
 $packageName = "dotpeek"
-$installerType = "MSI"
+$installerType = "EXE"
 $installerArgs = "/qn"
-$url = "http://download.jetbrains.com/dotpeek/dotPeekSetup-1.2.1.226.msi"
+$url = "http://download.jetbrains.com/resharper/dotPeek32_1.3.exe"
+$url64 = "http://download.jetbrains.com/resharper/dotPeek64_1.3.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -9,7 +10,7 @@ if ($psISE) {
 
 try
 {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
 
     Write-ChocolateySuccess $packageName
 }
