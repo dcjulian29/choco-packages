@@ -1,6 +1,6 @@
 $packageName = "vsix-postsharp"
 $vsgallery = "http://visualstudiogallery.msdn.microsoft.com"
-$vsix = "a058d5d3-e654-43f8-a308-c3bdfdd0be4a/file/89212/47/PostSharp-4.0.36.vsix"
+$vsix = "a058d5d3-e654-43f8-a308-c3bdfdd0be4a/file/89212/49/PostSharp-4.0.38.vsix"
 $url = "$vsgallery/$vsix"
 
 if ($psISE) {
