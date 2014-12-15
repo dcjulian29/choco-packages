@@ -1,5 +1,6 @@
 $packageName = "posh-pester"
-$url = "https://codeload.github.com/pester/Pester/zip/3.2.0"
+$version = "3.2.0"
+$url = "https://codeload.github.com/pester/Pester/zip/$version"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\Modules\pester"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 
@@ -25,15 +26,11 @@ try {
     $source = "$downloadPath\Pester-$version"
     New-Item -Type Directory -Path $appDir | Out-Null
 
-    Copy-Item -Path "$source\Pester.psm1" -Destination "$appDir"
+    Copy-Item -Path "$source\Pester.ps*" -Destination "$appDir"
     New-Item -Type Directory -Path "$appDir\en-US" | Out-Null
     Copy-Item -Path "$source\en-US\*" -Destination "$appDir\en-US"
-    New-Item -Type Directory -Path "$appDir\Examples" | Out-Null
-    Copy-Item -Path "$source\Examples\*" -Destination "$appDir\Examples" -Recurse
     New-Item -Type Directory -Path "$appDir\Functions" | Out-Null
     Copy-Item -Path "$source\Functions\*" -Destination "$appDir\Functions" -Recurse
-    New-Item -Type Directory -Path "$appDir\templates" | Out-Null
-    Copy-Item -Path "$source\templates\*" -Destination "$appDir\templates"
 
     Write-ChocolateySuccess $packageName
 } catch {
