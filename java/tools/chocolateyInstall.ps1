@@ -12,15 +12,24 @@ if ($psISE) {
 try {	
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url
   
-    $path = Join-Path $env:ProgramFiles "Java\jre7"
+    $path = Join-Path $env:ProgramFiles "Java"
     
     if ((Get-WmiObject Win32_Processor).AddressWidth -eq 64) { 
         Install-ChocolateyPackage $packageName $installerType $installerArgs $url64
-        $path = Join-Path $env:ProgramW6432 "Java\jre7"
+        $path = Join-Path $env:ProgramW6432 "Java"
     }
 
-    Start-ChocolateyProcessAsAdmin `
-        "[Environment]::SetEnvironmentVariable('JAVA_HOME','$path', 'Machine')"
+    $path  = (Get-ChildItem -Path $path -Recurse -Include "bin").FullName `
+        | Sort-Object | Select-Object -Last 1
+
+    $path = Split-Path -Path $path -Parent
+    $cmd = "[Environment]::SetEnvironmentVariable('JAVA_HOME','$path', 'Machine')"
+
+    if (Test-ProcessAdminRights) {
+        Invoke-Expression $cmd
+    } else {
+        Start-ChocolateyProcessAsAdmin $cmd
+    }
 
     Write-ChocolateySuccess $packageName
 }
