@@ -12,6 +12,7 @@ try
 {
     if (!(Test-Path $downloadPath)) {
         New-Item -ItemType directory $downloadPath -Force | Out-Null
+    }
 
     Get-ChocolateyWebFile $packageName $installer $url
 
