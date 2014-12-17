@@ -9,12 +9,12 @@ try {
         "myscripts-development",
         "mydev-powershell",
         "mydev-scm",
-        "mydev-visualstudio",
-        "mydev-buildtools",
         "mydev-tools",
         "mydev-nodejs",
         "mydev-python",
-        "mydev-database")
+        "mydev-database",
+        "mydev-visualstudio",
+        "mydev-buildtools")
 
     $devvmpackage = (Get-ChildItem "$($env:ChocolateyInstall)\lib" | Select-Object basename).basename `
         | Where-Object { $_.StartsWith("mycomputers-development") }
