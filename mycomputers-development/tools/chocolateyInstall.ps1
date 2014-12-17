@@ -36,6 +36,8 @@ try {
         New-Item -Type Directory -Path $env:SYSTEMDRIVE\home\projects | Out-Null
     }
     
+    Import-Module "$env:USERPROFILE\Documents\WindowsPowerShell\Modules\go\go.psm1"
+
     go -Key "projects" -SelectedPath "${$env:SYSTEMDRIVE}\home\projects" -add
     go -Key "etc" -SelectedPath "${$env:SYSTEMDRIVE}\etc" -add
     go -Key "documents" -SelectedPath "${$env:USERPROFILE}\documents" -add

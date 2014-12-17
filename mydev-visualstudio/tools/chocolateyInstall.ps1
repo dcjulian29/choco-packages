@@ -12,7 +12,6 @@ try {
     & $webpi /Install /AcceptEula /SuppressReboot /Products:WindowsAzureXPlatCLI
     & $webpi /Install /AcceptEula /SuppressReboot /Products:WindowsAzurePowershell
     & $webpi /Install /AcceptEula /SuppressReboot /Products:VWDOrVs2013AzurePack.2.5
-    & $webpi /Install /AcceptEula /SuppressReboot /Products:OfficeToolsForVS2013Update1
 
     Write-ChocolateySuccess $packageName
 } catch {

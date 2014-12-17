@@ -2,34 +2,30 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2014.11.21</version>
+    <version>2014.12.16</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the application packages for my Development Environments.</description>
     <tags>mydev-tools mydev</tags>
     <dependencies>
+      <dependency id="7zip" />
       <dependency id="java" />
       <dependency id="pdfcreator" />
-      <dependency id="winpcap" />
       <dependency id="sumatrapdf" />
-      <dependency id="7zip" />
-      <dependency id="xplorer2" />
-      <dependency id="mysettings-xplorer2" />
+      <dependency id="winpcap" />
+      <dependency id="wireshark" />
+      <dependency id="soapui" />
+      <dependency id="bind-tools" />
       <dependency id="baretail" />
       <dependency id="kdiff" />
       <dependency id="wmiexplorer" />
       <dependency id="xmlquire" />
-      <dependency id="modelio" />
-      <dependency id="soapui" />
-      <dependency id="cygwin" />
-      <dependency id="bind-tools" />
       <dependency id="searchmyfiles" />
-      <dependency id="wireshark" />
       <dependency id="fiddler" />
       <dependency id="regexbuilder" />
       <dependency id="dotpeek" />
-      <dependency id="expresso" />
       <dependency id="linqpad" />
+      <dependency id="cygwin" />
       <dependency id="firefox" />
       <dependency id="chrome" />
     </dependencies>
