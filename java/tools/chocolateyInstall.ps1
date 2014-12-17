@@ -15,7 +15,7 @@ try {
     $path = Join-Path $env:ProgramFiles "Java"
     
     if ((Get-WmiObject Win32_Processor).AddressWidth -eq 64) { 
-        Install-ChocolateyPackage $packageName $installerType $installerArgs $url64
+        Install-ChocolateyPackage $packageName $installerType $installerArgs "" $url64
         $path = Join-Path $env:ProgramW6432 "Java"
     }
 
