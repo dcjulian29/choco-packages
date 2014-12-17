@@ -9,7 +9,6 @@ try {
     $webpi = "$($env:ChocolateyInstall)\bin\webpicmd.bat"
 
     & $webpi /Install /AcceptEula /SuppressReboot /Products:WebMatrixWeb
-    & $webpi /Install /AcceptEula /SuppressReboot /Products:WindowsAzureXPlatCLI
     & $webpi /Install /AcceptEula /SuppressReboot /Products:WindowsAzurePowershell
     & $webpi /Install /AcceptEula /SuppressReboot /Products:VWDOrVs2013AzurePack.2.5
 
