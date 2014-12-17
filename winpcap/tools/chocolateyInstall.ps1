@@ -20,7 +20,11 @@ try
         $ahkExe = "$env:ChocolateyInstall\apps\autohotkey\AutoHotkey.exe"
         $ahkScript = "$toolDir\install.ahk"
 
-        Start-ChocolateyProcessAsAdmin "$ahkExe $ahkScript" -noSleep
+        if (Test-ProcessAdminRights) {
+            Invoke-Expression "$ahkExe $ahkScript"
+        } else {
+            Start-ChocolateyProcessAsAdmin "$ahkExe $ahkScript" -noSleep
+        }
     }
 
     Write-ChocolateySuccess $packageName

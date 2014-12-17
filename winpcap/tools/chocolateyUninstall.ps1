@@ -11,7 +11,11 @@ try
         $ahkExe = "$env:ChocolateyInstall\apps\autohotkey\AutoHotkey.exe"
         $ahkScript = "$toolDir\uninstall.ahk"
 
-        Start-ChocolateyProcessAsAdmin "$ahkExe $ahkScript" -noSleep
+        if (Test-ProcessAdminRights) {
+            Invoke-Expression "$ahkExe $ahkScript"
+        } else {
+            Start-ChocolateyProcessAsAdmin "$ahkExe $ahkScript" -noSleep
+        }
     }
 
     Write-ChocolateySuccess $packageName
