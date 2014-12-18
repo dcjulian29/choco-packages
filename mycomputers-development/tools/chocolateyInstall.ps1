@@ -36,17 +36,26 @@ try {
         New-Item -Type Directory -Path $env:SYSTEMDRIVE\home\projects | Out-Null
     }
     
-    Import-Module "$env:USERPROFILE\Documents\WindowsPowerShell\Modules\go\go.psm1"
+    Import-Module "${env:USERPROFILE}\Documents\WindowsPowerShell\Modules\go\go.psm1"
 
-    go -Key "projects" -SelectedPath "${$env:SYSTEMDRIVE}\home\projects" -add
-    go -Key "etc" -SelectedPath "${$env:SYSTEMDRIVE}\etc" -add
-    go -Key "documents" -SelectedPath "${$env:USERPROFILE}\documents" -add
-    go -Key "docs" -SelectedPath "${$env:USERPROFILE}\documents" -add
-    go -Key "pictures" -SelectedPath "${$env:USERPROFILE}\pictures" -add
-    go -Key "pics" -SelectedPath "${$env:USERPROFILE}\pictures" -add
-    go -Key "videos" -SelectedPath "${$env:USERPROFILE}\videos" -add
-    go -Key "desktop" -SelectedPath "${$env:USERPROFILE}\desktop" -add
-    go -Key "downloads" -SelectedPath "${$env:USERPROFILE}\downloads" -add
+    go -Key "projects" -delete
+    go -Key "projects" -SelectedPath "${env:SYSTEMDRIVE}\home\projects" -add
+    go -Key "etc" -delete
+    go -Key "etc" -SelectedPath "${env:SYSTEMDRIVE}\etc" -add
+    go -Key "documents" -delete
+    go -Key "documents" -SelectedPath "${env:USERPROFILE}\documents" -add
+    go -Key "docs" -delete
+    go -Key "docs" -SelectedPath "${env:USERPROFILE}\documents" -add
+    go -Key "pictures" -delete
+    go -Key "pictures" -SelectedPath "${env:USERPROFILE}\pictures" -add
+    go -Key "pics" -delete
+    go -Key "pics" -SelectedPath "${env:USERPROFILE}\pictures" -add
+    go -Key "videos" -delete
+    go -Key "videos" -SelectedPath "${env:USERPROFILE}\videos" -add
+    go -Key "desktop" -delete
+    go -Key "desktop" -SelectedPath "${env:USERPROFILE}\desktop" -add
+    go -Key "downloads" -delete
+    go -Key "downloads" -SelectedPath "$env:USERPROFILE\downloads" -add
     
     Write-ChocolateySuccess $packageName
 } catch {
