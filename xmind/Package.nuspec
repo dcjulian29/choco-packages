@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>xmind</id>
-    <version>3.4.1</version>
+    <version>3.5.1</version>
     <authors>XMind Ltd</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>http://www.xmind.net/license/</licenseUrl>

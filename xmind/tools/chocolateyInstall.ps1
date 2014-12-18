@@ -1,13 +1,13 @@
 ﻿$packageName = "xmind"
 $installerType = "EXE"
 $installerArgs = "/SILENT"
-$url = "http://www.xmind.net/xmind/downloads/xmind-windows-3.4.1.201401221918.exe"
+$url = "http://dl2.xmind.net/xmind-downloads/xmind-windows-3.5.1.201411201906.exe"
 
 try
 {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url
 
-    Remove-Item "$($env:USERPROFILE)\Desktop\XMind 2013.lnk" -force
+    Remove-Item "$($env:USERPROFILE)\Desktop\XMind 6.lnk" -force
 
     Write-ChocolateySuccess $packageName
 }
