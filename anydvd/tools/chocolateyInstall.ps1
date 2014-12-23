@@ -1,7 +1,7 @@
 ﻿$packageName = "anydvd"
 $installerType = "exe"
 $installerArgs = "/S"
-$url = "http://static.slysoft.com/SetupAnyDVD7540.exe"
+$url = "http://static.slysoft.com/SetupAnyDVD750.exe"
 
 try
 {
