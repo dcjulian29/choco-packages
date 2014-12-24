@@ -15,6 +15,14 @@ try
     
     cmd /c "$cmd"
     
+    if (Test-ProcessAdminRights) {
+        . $toolDir\postInstall.ps1
+    } else {
+        Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+    }
+
+    Write-Output "You need to reboot to complete the action..."
+
     Write-ChocolateySuccess $packageName
 }
 catch
