@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>git</id>
-    <version>1.9.4</version>
+    <version>1.9.5</version>
     <authors>Linus Torvalds</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://git-scm.com/</projectUrl>
