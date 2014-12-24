@@ -1,8 +1,8 @@
 $packageName = "python"
 $installerType = "MSI"
 $installerArgs = "/qb! TARGETDIR=$env:SYSTEMDRIVE\python ALLUSERS=1"
-$url = "https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi"
-$url64 = "https://www.python.org/ftp/python/2.7.8/python-2.7.8.amd64.msi"
+$url = "https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi"
+$url64 = "https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 $ahkExe = "$env:SYSTEMDRIVE\tools\apps\autohotkey\AutoHotkey.exe"
@@ -53,11 +53,15 @@ try
 
     $ahkScript = "$toolDir\install-pywin32.ahk"
 
-    Start-ChocolateyProcessAsAdmin "$ahkExe $ahkScript"
+    if (Test-ProcessAdminRights) {
+        & "$ahkExe" $ahkScript
+    } else {
+        Start-ChocolateyProcessAsAdmin "$ahkExe $ahkScript"
+    }
 
     # Install wxPython
-    $wxpython32 = "http://sourceforge.net/projects/wxpython/files/wxPython/3.0.0.0/wxPython3.0-win32-3.0.0.0-py27.exe/download"
-    $wxpython64 = "http://sourceforge.net/projects/wxpython/files/wxPython/3.0.0.0/wxPython3.0-win64-3.0.0.0-py27.exe/download"
+    $wxpython32 = "http://sourceforge.net/projects/wxpython/files/wxPython/3.0.2.0/wxPython3.0-win32-3.0.2.0-py27.exe/download"
+    $wxpython64 = "http://sourceforge.net/projects/wxpython/files/wxPython/3.0.2.0/wxPython3.0-win64-3.0.2.0-py27.exe/download"
 
     Install-ChocolateyPackage "wxPython" "EXE" "/SP- /SILENT" $wxpython32 $wxpython64
 
