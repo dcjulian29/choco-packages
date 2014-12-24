@@ -1,7 +1,7 @@
 ﻿$packageName = "notepadplusplus"
 $installerType = "EXE"
 $installerArgs = "/S"
-$url = "http://download.tuxfamily.org/notepadplus/6.6.9/npp.6.6.9.Installer.exe"
+$url = "http://download.tuxfamily.org/notepadplus/6.7.1/npp.6.7.1.Installer.exe"
 
 try
 {
