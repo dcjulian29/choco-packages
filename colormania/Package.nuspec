@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>colormania</id>
+    <version>5.1</version>
+    <authors>Blacksun Software</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.blacksunsoftware.com/colormania.html</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ColorMania is a colorpicker for Windows. It's the perfect solution for previewing, identifying, testing and organizing color values. It can be a very difficult job to get your colors right for a unique or appealing design. ColorMania is designed specifically for this task and gives you full control over your color management. </description>
+    <tags>colormania color picker</tags>
+  </metadata>
+</package>

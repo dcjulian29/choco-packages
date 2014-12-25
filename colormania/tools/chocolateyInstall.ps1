@@ -1,7 +1,7 @@
-$packageName = "graphviz"
-$url = "http://www.graphviz.org/pub/graphviz/stable/windows/graphviz-2.38.zip"
-$downloadPath = "${env:TEMP}\chocolatey\$packageName"
-$appDir = "${env:SYSTEMDRIVE}\tools\apps\$packageName"
+$packageName = "colormania"
+$url = "http://www.blacksunsoftware.com/downloads/Colormania.zip"
+$downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -13,7 +13,7 @@ try {
     }
 
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
-    Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath\"
+    Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath\colormania"
 
     if (Test-Path $appDir) {
         Write-Output "Removing previous version of package..."
@@ -22,7 +22,7 @@ try {
 
     New-Item -Type Directory -Path $appDir | Out-Null
 
-    Copy-Item -Path "$downloadPath\Release\*" -Destination "$appDir\" -Recurse -Container
+    Copy-Item -Path "$downloadPath\colormania\*" -Destination "$appDir\" -Recurse -Container
 
     Write-ChocolateySuccess $packageName
 } catch {
