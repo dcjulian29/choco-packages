@@ -10,18 +10,12 @@ if ($psISE) {
 
 try
 {
-    if (Test-Path $appDir)
+    if (Test-Path $downloadPath)
     {
-        Write-Output "Removing previous version of package..."
-        Remove-Item "$($appDir)" -Recurse -Force
+        Remove-Item -Path $downloadPath -Recurse -Force
     }
 
-    New-Item -Type Directory -Path $appDir | Out-Null
-    
-    if (-not (Test-Path $downloadPath))
-    {
-        New-Item -Type Directory -Path $downloadPath | Out-Null
-    }
+    New-Item -Type Directory -Path $downloadPath | Out-Null
 
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.7z" $url $url64
 
@@ -38,6 +32,14 @@ try
 
     Pop-Location
 
+    if (Test-Path $appDir)
+    {
+        Write-Output "Removing previous version of package..."
+        Remove-Item "$($appDir)" -Recurse -Force
+    }
+
+    New-Item -Type Directory -Path $appDir | Out-Null
+    
     Copy-Item -Path "$downloadPath\$packageName\*" -Destination "$appDir" -Recurse -Container
 
     Set-Content -Path "$appDir\qt.conf" -Value "[Paths]"
