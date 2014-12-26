@@ -19,7 +19,7 @@ Get-Process -Name 'Windows Phone 8.1 Emulators - ENU' -ErrorAction SilentlyConti
     | Stop-Process -Force
 
 Push-Location "C:\ProgramData\Package Cache\{166a69f6-6512-47ea-a342-17d954fc059a}"
-& "MobileTools_EmulatorWP81.exe" /uninstall /quiet
+& ".\MobileTools_EmulatorWP81.exe" /uninstall /quiet
 Pop-Location
 
 "@    
