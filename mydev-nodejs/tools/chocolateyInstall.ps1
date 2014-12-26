@@ -12,7 +12,6 @@ try {
     & $npm install -g yo generator-hottowel
     & $npm install -g csslint
     & $npm install -g jslint jshint
-    & $npm install -g node-inspector
     & $npm install -g typescript
 
     Write-ChocolateySuccess $packageName
