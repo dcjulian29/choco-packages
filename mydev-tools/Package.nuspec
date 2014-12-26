@@ -29,7 +29,7 @@
       <dependency id="chrome" />
       <dependency id="colormania" />
       <dependency id="papercut" />
-      <dependency id="planuml" />
+      <dependency id="plantuml" />
     </dependencies>
   </metadata>
 </package>
