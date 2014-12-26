@@ -9,7 +9,7 @@ if ($psISE) {
 
 try
 {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url -validExitCodes @(0, 3010)
     
     Start-Sleep -Seconds 5
 
