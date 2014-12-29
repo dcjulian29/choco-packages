@@ -21,7 +21,10 @@ try {
 
 setlocal
  
-SET DIR=%~dp0%
+set DIR=%~dp0%
+
+set GRAPHVIZ_DOT=%SYSTEMDRIVE%\tools\apps\graphviz\bin\dot.exe
+
 path %SYSTEMDRIVE%\tools\apps\graphviz\bin;%JAVA_HOME%\bin;%PATH% 
 
 java -jar %DIR%\plantuml.jar %*
