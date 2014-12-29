@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>smartgit</id>
+    <version>6.5.3</version>
+    <authors>Syntevo</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.syntevo.com/smartgithg/</projectUrl>
+    <licenseUrl>http://www.syntevo.com/smartgithg/license.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SmartGit/Hg is a client for Git and Mercurial. It runs on Mac OS X, Windows and Linux. </description>
+    <tags>smartgit git hg mecurial</tags>
+    <dependencies>
+      <dependency id="java" />
+      <dependency id="git" />
+    </dependencies>
+  </metadata>
+</package>
