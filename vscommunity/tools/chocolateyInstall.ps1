@@ -15,8 +15,7 @@ try
 
     $cmd = @"
 
-Get-Process -Name 'Windows Phone 8.1 Emulators - ENU' -ErrorAction SilentlyContinue `
-    | Stop-Process -Force
+Get-Process -Name 'MobileTools_EmulatorWP81' -ErrorAction SilentlyContinue | Stop-Process
 
 Push-Location "C:\ProgramData\Package Cache\{166a69f6-6512-47ea-a342-17d954fc059a}"
 & ".\MobileTools_EmulatorWP81.exe" /uninstall /quiet
