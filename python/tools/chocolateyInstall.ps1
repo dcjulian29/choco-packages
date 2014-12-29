@@ -59,6 +59,11 @@ try
         Start-ChocolateyProcessAsAdmin "$ahkExe $ahkScript"
     }
 
+    # Uninstall any previous versions already installed.
+    if (Test-Path "C:\python\Lib\site-packages\wx-3.0-msw\unins001.exe") {
+        & "C:\python\Lib\site-packages\wx-3.0-msw\unins001.exe" /SILENT
+    }
+    
     # Install wxPython
     $wxpython32 = "http://sourceforge.net/projects/wxpython/files/wxPython/3.0.2.0/wxPython3.0-win32-3.0.2.0-py27.exe/download"
     $wxpython64 = "http://sourceforge.net/projects/wxpython/files/wxPython/3.0.2.0/wxPython3.0-win64-3.0.2.0-py27.exe/download"
