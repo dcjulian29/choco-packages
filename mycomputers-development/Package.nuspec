@@ -7,5 +7,9 @@
     <owners>Julian Easterling</owners>
     <description>This package gets called for the initial configuration of my development environments.</description>
     <tags>mycomputers development</tags>
+    <dependencies>
+      <dependency id="mycomputers-common" />
+      <dependency id="myscripts-development" />
+    </dependencies>
   </metadata>
 </package>

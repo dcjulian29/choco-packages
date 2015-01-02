@@ -6,7 +6,6 @@ if ($psISE) {
 
 try {
     $packages = @(
-        "myscripts-development",
         "mydev-powershell",
         "mydev-scm",
         "mydev-tools",
