@@ -7,5 +7,11 @@
     <owners>Julian Easterling</owners>
     <description>This package gets called for the initial configuration of all of my virtual machines.</description>
     <tags>myvm common</tags>
+    <dependencies>
+      <dependency id="mycomputers-common" />
+      <dependency id="myscripts-binaries" />
+      <dependency id="sysinternals" />
+      <dependency id="posh-pscx" />
+    </dependencies>
   </metadata>
 </package>

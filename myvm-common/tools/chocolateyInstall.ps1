@@ -10,14 +10,6 @@ try {
     {
         New-Item -Type Directory -Path $env:SYSTEMDRIVE\etc | Out-Null
     }
-
-    cinst myscripts-binaries
-    cinst mysettings-ntfs
-    cinst mysettings-ipv6
-    cinst sysinternals
-    cinst dotnet
-    cinst powershell
-    cinst posh-pscx
     
     Write-ChocolateySuccess $packageName
 } catch {
