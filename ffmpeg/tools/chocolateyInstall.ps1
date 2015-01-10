@@ -1,6 +1,6 @@
 $packageName = "ffmpeg"
-$url = "http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20140727-git-ad91bf8-win32-static.7z"
-$url64 = "http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20140727-git-ad91bf8-win64-static.7z"
+$url = "http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20150109-git-d1c6b7b-win32-static.7z"
+$url64 = "http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20150109-git-d1c6b7b-win64-static.7z"
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
