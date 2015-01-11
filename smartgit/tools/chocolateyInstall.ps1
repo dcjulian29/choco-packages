@@ -34,8 +34,13 @@ try
         Move-Item -Path "$downloadPath\.settings" -Destination "$appDir\.settings"
     }
 
-    if (Test-Path "C:\Program Files (x86)\Java\jre7") {
-        $java = "C:\Program Files (x86)\Java\jre7"
+    if (Test-Path "C:\Program Files (x86)\Java") {
+        $java = "C:\Program Files (x86)\Java"
+
+        $java  = (Get-ChildItem -Path $java -Recurse -Include "bin").FullName `
+            | Sort-Object | Select-Object -Last 1
+
+        $java = Split-Path -Path $java -Parent
 
         if (Test-ProcessAdminRights) {
             [Environment]::SetEnvironmentVariable('SMARTGIT_JAVA_HOME',"$java", 'Machine')
