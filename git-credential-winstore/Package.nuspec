@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>git-credential-winstore</id>
+    <version>1.2</version>
+    <authors>Andrew Nurse</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://gitcredentialstore.codeplex.com/</projectUrl>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Git Credential Helper which uses Windows Credential UI prompt and stores credentials in Windows Credential Store.</description>
+    <tags>git-credential-winstore git</tags>
+    <dependencies>
+      <dependency id="git" version="1.7.11" />
+    </dependencies>
+  </metadata>
+</package>
