@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vim</id>
+    <version>7.4.573</version>
+    <authors>VIM Developers</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.vim.org/</projectUrl>
+    <licenseUrl>http://vimdoc.sourceforge.net/htmldoc/uganda.html#license</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Vim is a highly configurable text editor built to enable efficient text editing. It is an improved version of the vi editor distributed with most UNIX systems.</description>
+    <tags>vim console editor</tags>
+  </metadata>
+</package>
