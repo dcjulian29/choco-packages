@@ -32,7 +32,11 @@ try {
 
     Copy-Item "$appdir\buildAgent\conf\buildAgent.dist.properties" "$appdir\buildAgent\conf\buildAgent.properties"
 
-    net start TCBuildAgent
+    (Get-Content "$appdir\buildAgent\conf\buildAgent.properties") `
+        -replace 'serverUrl=http://localhost:8111', 'serverUrl=http://localhost' `
+        | Set-Content "$appdir\buildAgent\conf\buildAgent.properties"
+
+        net start TCBuildAgent
 
     netsh advfirewall firewall add rule name="Allow HTTP Inbound" dir=in action=allow protocol=TCP localport=80
 
