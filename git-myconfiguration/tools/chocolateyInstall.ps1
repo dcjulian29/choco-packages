@@ -49,7 +49,7 @@ try {
 	& $git config --global alias.lqa "log --pretty=format:'%Cred%h%Creset %Cgreen(%an)%Creset %s'"
 	& $git config --global alias.lall "log -p"
 	& $git config --global alias.oneline "log --pretty=oneline"
-    & $git config --global alias.standup "!git log --since yesterday --author `git config user.email` --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
+    & $git config --global alias.standup "!git log --since yesterday --author ``git config user.email`` --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
     & $git config --global alias.lastcommit "log --max-count=1"
     & $git config --global alias.who "shortlog -s -e --"
 
