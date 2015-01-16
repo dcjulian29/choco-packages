@@ -1,7 +1,7 @@
 $packageName = "posh-psake"
 $release = "4.4.0"
 $url = "https://codeload.github.com/psake/psake/zip/v$($release)"
-$appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\Modules\psake"
+$appDir = "$($env:SYSTEMDRIVE)\Program Files\WindowsPowerShell\Modules\psake"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 
 if ($psISE) {
@@ -29,7 +29,13 @@ try
         New-Item -Type Directory -Path $appDir | Out-Null
     }
 
-    Copy-Item -Path "$downloadPath\psake-$release\*" -Destination "$appDir"
+    $cmd = "Copy-Item -Path `"$downloadPath\psake-$release\*`" -Destination `"$appDir`""
+
+    if (Test-ProcessAdminRights) {
+        Invoke-Expression $cmd
+    } else {
+        Start-ChocolateyProcessAsAdmin $cmd
+    }    
 
     Write-ChocolateySuccess $packageName
 }
