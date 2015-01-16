@@ -87,7 +87,7 @@ try {
     & $git config --global mergetool.prompt "false"
 
     & $git config --global difftool.kdiff3.path "C:/tools/apps/kdiff/kdiff3.exe"
-    & $git config --global difftool.kdiff3.cmd "C:/tools/apps/kdiff/kdiff3.exe '${$}LOCAL' '${$}REMOTE'"
+    & $git config --global difftool.kdiff3.cmd "C:/tools/apps/kdiff/kdiff3.exe '`$LOCAL' '`$REMOTE'"
     & $git config --global difftool.kdiff3.keepBackup "false"
     & $git config --global difftool.kdiff3.trustExitCode "false"
 
