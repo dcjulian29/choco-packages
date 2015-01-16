@@ -28,6 +28,18 @@ try {
         -replace 'Connector port="8111"', 'Connector port="80"' `
         | Set-Content "$appdir\conf\server.xml"
 
+    $datadir = "$appdir\TeamCity\.data"
+
+    $cmd = "[Environment]::SetEnvironmentVariable('TEAMCITY_DATA_PATH','$datadir', 'Machine')"
+
+    if (Test-ProcessAdminRights) {
+        Invoke-Expression $cmd
+    } else {
+        Start-ChocolateyProcessAsAdmin $cmd
+    }
+
+    $env:TEAMCITY_DATA_PATH = $datadir
+
     net start TeamCity
 
     Copy-Item "$appdir\buildAgent\conf\buildAgent.dist.properties" "$appdir\buildAgent\conf\buildAgent.properties"
@@ -36,7 +48,11 @@ try {
         -replace 'serverUrl=http://localhost:8111', 'serverUrl=http://localhost' `
         | Set-Content "$appdir\buildAgent\conf\buildAgent.properties"
 
-        net start TCBuildAgent
+    (Get-Content "$appdir\buildAgent\conf\buildAgent.properties") `
+        -replace 'name=localhost', "name=${env:COMPUTERNAME}" `
+        | Set-Content "$appdir\buildAgent\conf\buildAgent.properties"
+
+    net start TCBuildAgent
 
     netsh advfirewall firewall add rule name="Allow HTTP Inbound" dir=in action=allow protocol=TCP localport=80
 

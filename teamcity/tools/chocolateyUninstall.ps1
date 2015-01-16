@@ -17,11 +17,6 @@ try {
       Remove-Item "$($appDir)" -Recurse -Force
     }
     
-    if (Test-Path "$($env:SYSTEMDRIVE)\.BuildServer")
-    {
-      Remove-Item "$($env:SYSTEMDRIVE)\.BuildServer" -Recurse -Force
-    }
-
     Write-ChocolateySuccess $packageName
 } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
