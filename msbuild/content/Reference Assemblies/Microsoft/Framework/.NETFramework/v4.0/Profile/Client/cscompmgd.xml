@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>cscompmgd</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.CSharp.Compiler">
+      <summary>Managed wrapper for the C# compiler.</summary>
+    </member>
+    <member name="M:Microsoft.CSharp.Compiler.Compile(System.String[],System.String[],System.String,System.String[],System.Collections.IDictionary)">
+      <summary>Compiles the given C# sources to the specified destination file.</summary>
+      <returns>Returns diagnostic messages as an array of type <see cref="T:Microsoft.CSharp.CompilerError" />. If the array is empty or all elements are warnings, the compilation succeeded.</returns>
+      <param name="sourceTexts">An array of type string, each with C# code. </param>
+      <param name="sourceTextNames">An array of type string that contains the file names for each <paramref name="sourceTexts" />. </param>
+      <param name="target">The output file name. This argument is required.</param>
+      <param name="imports">An array of type string, with files to reference.</param>
+      <param name="options">An <see cref="T:System.Collections.IDictionary" /> of compiler options. </param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="sourceTexts" /> is null.-or-<paramref name="sourceTextNames" /> is null.-or-<paramref name="target" /> is null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="sourceTexts" /> is an empty array.-or-<paramref name="sourceTextNames" /> is not the same size as <paramref name="sourceTexts" />.</exception>
+    </member>
+    <member name="T:Microsoft.CSharp.CompilerError">
+      <summary>Represents an error or diagnostic message reported by the compiler.</summary>
+    </member>
+    <member name="M:Microsoft.CSharp.CompilerError.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.CSharp.CompilerError" /> class.</summary>
+    </member>
+    <member name="F:Microsoft.CSharp.CompilerError.ErrorLevel">
+      <summary>Specifies the severity of this diagnostic.</summary>
+    </member>
+    <member name="F:Microsoft.CSharp.CompilerError.ErrorMessage">
+      <summary>Specifies the diagnostic message text.</summary>
+    </member>
+    <member name="F:Microsoft.CSharp.CompilerError.ErrorNumber">
+      <summary>Specifies the diagnostic number.</summary>
+    </member>
+    <member name="F:Microsoft.CSharp.CompilerError.SourceColumn">
+      <summary>Specifies the column of the source text that caused the diagnostic (1-based), or 0 if there is no column information.</summary>
+    </member>
+    <member name="F:Microsoft.CSharp.CompilerError.SourceFile">
+      <summary>Specifies the file name of the source text that caused the diagnostic or an empty string ("").</summary>
+    </member>
+    <member name="F:Microsoft.CSharp.CompilerError.SourceLine">
+      <summary>Specifies the line of the source text that caused the diagnostic (1-based), or 0 if there is no line information.</summary>
+    </member>
+    <member name="M:Microsoft.CSharp.CompilerError.ToString">
+      <summary>Returns a <see cref="M:System.Object.ToString" /> that represents the current <see cref="T:Microsoft.CSharp.CompilerError" />.</summary>
+      <returns>A string that represents the current <see cref="T:Microsoft.CSharp.CompilerError" />.</returns>
+    </member>
+    <member name="T:Microsoft.CSharp.ErrorLevel">
+      <summary>Specifies the severity of a compiler diagnostic.</summary>
+    </member>
+    <member name="F:Microsoft.CSharp.ErrorLevel.None">
+      <summary>An unknown severity.</summary>
+    </member>
+    <member name="F:Microsoft.CSharp.ErrorLevel.Warning">
+      <summary>A warning or suggestive diagnostic.</summary>
+    </member>
+    <member name="F:Microsoft.CSharp.ErrorLevel.Error">
+      <summary>An error diagnostic.</summary>
+    </member>
+    <member name="F:Microsoft.CSharp.ErrorLevel.FatalError">
+      <summary>A noncontinuable error diagnostic.</summary>
+    </member>
+    <member name="M:Microsoft.CSharp.Compiler.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.CSharp.Compiler" /> class.</summary>
+    </member>
+  </members>
+</doc>

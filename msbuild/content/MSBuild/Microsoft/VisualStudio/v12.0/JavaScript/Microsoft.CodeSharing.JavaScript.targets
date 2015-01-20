@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)$(LangName)\ProjectItemsSchema.xaml;"/>
+
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)SCC.xaml;">
+      <Context>Invisible</Context>
+    </PropertyPageSchema>
+
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)$(LangName)\General.xaml;">
+      <Context>Project</Context>
+    </PropertyPageSchema>
+
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)$(LangName)\General.BrowseObject.xaml;">
+      <Context>BrowseObject</Context>
+    </PropertyPageSchema>
+
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)Folder.xaml;
+                                 $(MSBuildThisFileDirectory)$(LangName)\None.xaml;
+                                 $(MSBuildThisFileDirectory)$(LangName)\Content.xaml;
+                                 $(MSBuildThisFileDirectory)$(LangName)\AppxManifest.xaml;
+                                 $(MSBuildThisFileDirectory)$(LangName)\PRIResource.xaml;">
+      <Context>File;BrowseObject</Context>
+    </PropertyPageSchema>
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectCapability Include="JavaScript;JavaScriptWJProject;WindowsAppContainer;JavaScriptProject" />
+    <ProjectCapability Include="AllTargetOutputGroups;VisualStudioWellKnownOutputGroups" />
+    <ProjectCapability Include="RenameNearbySimilarlyNamedImportsWithProject" />
+  </ItemGroup>
+
+  <!-- Integrating with App Package creation task -->
+  <PropertyGroup>
+    <IncludeCopyWinMDArtifactsOutputGroup>true</IncludeCopyWinMDArtifactsOutputGroup>
+    <IncludeBuiltProjectOutputGroup>false</IncludeBuiltProjectOutputGroup>
+    <IncludeDebugSymbolsProjectOutputGroup>false</IncludeDebugSymbolsProjectOutputGroup>
+    <IncludeDocumentationProjectOutputGroup>false</IncludeDocumentationProjectOutputGroup>
+    <IncludeSatelliteDllsProjectOutputGroup>false</IncludeSatelliteDllsProjectOutputGroup>
+    <IncludeSourceFilesProjectOutputGroup>false</IncludeSourceFilesProjectOutputGroup>
+    <IncludeSGenFilesOutputGroup>false</IncludeSGenFilesOutputGroup>
+    <IncludeCopyLocalFilesOutputGroup>true</IncludeCopyLocalFilesOutputGroup>
+    <IncludeComFilesOutputGroup>false</IncludeComFilesOutputGroup>
+    <IncludeCustomOutputGroupForPackaging>false</IncludeCustomOutputGroupForPackaging>
+    <IncludeSDKRedistOutputGroup>true</IncludeSDKRedistOutputGroup>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DefaultContentType Condition="$(DefaultContentType) == ''">Default</DefaultContentType>
+    <!-- We don't target any framework, so clear what the Microsoft.Common.targets sets. -->
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+
+    <AddItemTemplatesGuid Condition=" '$(TargetPlatformVersion)' == '8.0' ">{9293fd04-bbe3-47bd-9197-774bbfade394}</AddItemTemplatesGuid>
+    <AddItemTemplatesGuid Condition=" '$(TargetPlatformVersion)' == '8.1' ">{9bc242f5-d663-4497-ac11-b6c68998175c}</AddItemTemplatesGuid>
+  </PropertyGroup>
+  
+  <!-- Enable warning when referenced ESDKs do not have MaxPlatformVersion specified for Windows Store projects -->
+  <PropertyGroup>
+     <SDKReferenceWarnOnMissingMaxPlatformVersion Condition="'$(SDKReferenceWarnOnMissingMaxPlatformVersion)' == '' and 
+                                                             '$(TargetPlatformIdentifier)' == 'Windows' and 
+                                                             '$(TargetPlatformVersion)' &gt;= '8.0'">true</SDKReferenceWarnOnMissingMaxPlatformVersion>
+     <FindInvalidProjectReferences 
+       Condition="'$(TargetPlatformIdentifier)' == 'Windows' and 
+                  '$(TargetPlatformVersion)' &gt;= '8.0'">true</FindInvalidProjectReferences>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CodeSharing\Microsoft.CodeSharing.Common.targets" />
+
+  <PropertyGroup>
+    <AvailablePlatforms>Any CPU,x86,x64,ARM</AvailablePlatforms>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AddItemTemplatesGuid>{D38D89B0-85D5-4C40-9EE2-3B2111BDE3FD}</AddItemTemplatesGuid>
+  </PropertyGroup>
+
+  <!-- Overriding targets which when absent cause warnings from common targets -->
+  <Target Name="CoreCompile" />
+  <Target Name="CreateManifestResourceNames" />
+</Project>

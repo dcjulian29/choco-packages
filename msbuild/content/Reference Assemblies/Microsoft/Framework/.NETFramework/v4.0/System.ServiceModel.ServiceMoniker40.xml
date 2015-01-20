@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.ServiceMoniker40</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.ServiceMoniker40.ServiceMoniker40"></member>
+    <member name="M:System.ServiceModel.ServiceMoniker40.ServiceMoniker40.#ctor"></member>
+  </members>
+</doc>

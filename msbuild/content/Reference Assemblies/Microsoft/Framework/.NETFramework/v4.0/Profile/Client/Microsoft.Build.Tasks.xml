@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Build.Tasks</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Build.Tasks.CreateTemporaryVCProject">
+      <summary>Creates a temporary Visual C++ project with MSBuild references replaced with file references.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.CreateTemporaryVCProject.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Build.Tasks.CreateTemporaryVCProject" /> class.</summary>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.CreateTemporaryVCProject.Configuration">
+      <summary>Gets or sets the configuration of the Visual C++ project file to process.</summary>
+      <returns>The configuration of the Visual C++ project file to process.</returns>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.CreateTemporaryVCProject.Execute">
+      <summary>Executes the CreateTemporaryVCProject task.</summary>
+      <returns>true if task execution succeeded; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.CreateTemporaryVCProject.OutputProjectFile">
+      <summary>Gets or sets the name of the temporary project file to create.</summary>
+      <returns>The name of the temporary project file to create.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.CreateTemporaryVCProject.ProjectFile">
+      <summary>Gets or sets the Visual C++ project file to process.</summary>
+      <returns>The Visual C++ project file to process.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.CreateTemporaryVCProject.ReferenceAssemblies">
+      <summary>Gets or sets pre-resolved outputs of MSBuild references.</summary>
+      <returns>Pre-resolved outputs of MSBuild references.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.CreateTemporaryVCProject.ReferenceGuids">
+      <summary>Gets or sets an array of GUIDs of referenced MSBuild projects.</summary>
+      <returns>An array of GUIDs of referenced MSBuild projects.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.CreateTemporaryVCProject.ReferenceImportLibraries">
+      <summary>Gets or sets pre-resolved import library (.lib) outputs of Visual C++ projects.</summary>
+      <returns>Pre-resolved import library (.lib) outputs of Visual C++ projects.</returns>
+    </member>
+    <member name="T:Microsoft.Build.Tasks.ResolveVCProjectOutput">
+      <summary>Determines the output files for Visual C++ project references.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.ResolveVCProjectOutput.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Build.Tasks.ResolveVCProjectOutput" /> class.</summary>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.ResolveVCProjectOutput.Configuration">
+      <summary>Gets or sets the configuration to look up for the Visual C++ project when using the Visual C++ project engine object model.</summary>
+      <returns>The configuration to look up for the Visual C++ project.</returns>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.ResolveVCProjectOutput.Execute">
+      <summary>Executes the ResolveVCProjectOutput task.</summary>
+      <returns>true if task execution succeeded; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.ResolveVCProjectOutput.Override">
+      <summary>Gets or sets the path of the override stylesheet that the ResolveVCProjectOutput task uses to change the directory of the Visual C++ built project.</summary>
+      <returns>The path of the override stylesheet.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.ResolveVCProjectOutput.ProjectReferences">
+      <summary>Gets or sets Visual C++ project references.</summary>
+      <returns>
+            Visual C++ project references.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.ResolveVCProjectOutput.ResolvedImportLibraryPaths">
+      <summary>Gets or sets resolved .LIB file paths for native Visual C++ projects and preserves the original project reference attributes.</summary>
+      <returns>The resolved .LIB file paths for native Visual C++ projects.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.ResolveVCProjectOutput.ResolvedOutputPaths">
+      <summary>Gets or sets resolved reference paths for managed Visual C++ projects. Preserves the original project reference attributes.</summary>
+      <returns>The resolved reference paths for managed Visual C++ projects.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.ResolveVCProjectOutput.SolutionFile">
+      <summary>Gets or sets the path of the solution file that is used to set the solution macros for VCBuild.</summary>
+      <returns>The path of the solution file.</returns>
+    </member>
+    <member name="T:Microsoft.Build.Tasks.VCBuild">
+      <summary>Implements the VCBuild task. Use the VCBuild element in your project file to create and execute this task. For usage and parameter information, see VCBuild Task.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.VCBuild.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Build.Tasks.VCBuild" /> class.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.VCBuild.AddCommandLineCommands(Microsoft.Build.Tasks.CommandLineBuilderExtension)">
+      <summary>Generates command line arguments that the VCBuild tool must run directly from the command line and not from a response file.</summary>
+      <param name="commandLine">Command line builder to add arguments to.</param>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.VCBuild.AdditionalLibPaths">
+      <summary>Gets or sets additional paths to append to the LIBPATH environment variable before executing vcbuild.exe.</summary>
+      <returns>The additional paths to append to the LIBPATH environment variable.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.VCBuild.AdditionalOptions">
+      <summary>Gets or sets additional options you want to specify to the VCBuild tool.</summary>
+      <returns>Additional options you want to specify to the VCBuild tool.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.VCBuild.Clean">
+      <summary>Gets or sets a Boolean value that specifies whether the VCBuild task outputs only clean build outputs. </summary>
+      <returns>true if the VCBuild task outputs only clean build outputs; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.VCBuild.Configuration">
+      <summary>Gets or sets the name of the configuration and platform to build with such as Debug|Win32.</summary>
+      <returns>The name of the configuration and platform to build with</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.VCBuild.EnvironmentOverride">
+      <summary>Overrides the LIBPATH environment variable with <see cref="P:Microsoft.Build.Tasks.VCBuild.AdditionalLibPaths" /> and returns the new environment variables.</summary>
+      <returns>Name/value pairs containing the new environment variable values.</returns>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.VCBuild.Execute">
+      <summary>Executes the VCBuild task.</summary>
+      <returns>true if task execution succeeded; otherwise, false.</returns>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.VCBuild.GenerateFullPathToTool">
+      <summary>Returns the full file path of the VCBuild tool (vcbuild.exe).</summary>
+      <returns>The full file path of the VCBuild tool (vcbuild.exe).</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.VCBuild.Override">
+      <summary>Gets or sets the location of a VCBuild property sheet file that overrides project file settings.</summary>
+      <returns>The location of a VCBuild property sheet file that overrides project file settings.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.VCBuild.Platform">
+      <summary>Gets or sets the name of the platform to build for.</summary>
+      <returns>The name of the platform to build for.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.VCBuild.Projects">
+      <summary>Gets or sets the projects to build.</summary>
+      <returns>The projects to build.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.VCBuild.Rebuild">
+      <summary>Gets or sets a Boolean value that specifies whether the task performs a clean build of outputs before performing a build.</summary>
+      <returns>true if the task performs a clean build of outputs before performing a build; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.VCBuild.SolutionFile">
+      <summary>Gets or sets the full path to the solution file when building solutions, which is used to resolve solution-related Visual C++ project macros.</summary>
+      <returns>The full path to the solution file when building solutions.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.VCBuild.ToolName">
+      <summary>Returns the name of the VCBuild tool (vcbuild.exe).</summary>
+      <returns>The name of the VCBuild tool (vcbuild.exe).</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.VCBuild.UserEnvironment">
+      <summary>This property is obsolete.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.VCBuild.ValidateParameters">
+      <summary>Validates input parameters and logs errors or warnings, if any. Returns a Boolean value that indicates whether task execution should proceed.</summary>
+      <returns>True if task execution should proceed; otherwise, false.</returns>
+    </member>
+  </members>
+</doc>

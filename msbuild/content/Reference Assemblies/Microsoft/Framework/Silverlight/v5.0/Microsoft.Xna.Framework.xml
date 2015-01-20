@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Xna.Framework</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Xna.Framework.Color">
+      <summary>Represents a four-component color using red, green, blue, and alpha data.</summary>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.#ctor(System.Int32,System.Int32,System.Int32)">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Xna.Framework.Color" /> structure using integer values.</summary>
+      <param name="r">Red component.</param>
+      <param name="g">Green component.</param>
+      <param name="b">Blue component.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Xna.Framework.Color" /> structure using integer values.</summary>
+      <param name="r">Red component.</param>
+      <param name="g">Green component.</param>
+      <param name="b">Blue component.</param>
+      <param name="a">Alpha component.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.#ctor(System.Single,System.Single,System.Single)">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Xna.Framework.Color" /> structure using floating point values.</summary>
+      <param name="r">Red component.</param>
+      <param name="g">Green component.</param>
+      <param name="b">Blue component.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.#ctor(System.Single,System.Single,System.Single,System.Single)">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Xna.Framework.Color" /> structure using floating point values.</summary>
+      <param name="r">Red component.</param>
+      <param name="g">Green component.</param>
+      <param name="b">Blue component.</param>
+      <param name="a">Alpha component.</param>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Color.A">
+      <summary>Gets or sets the alpha component value.</summary>
+      <returns>The alpha component value of this <see cref="T:Microsoft.Xna.Framework.Color" />.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Color.B">
+      <summary>Gets or sets the blue component value.</summary>
+      <returns>The blue component value of this <see cref="T:Microsoft.Xna.Framework.Color" />.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Color.Black">
+      <summary>Gets a system-defined color with the value R:0 G:0 B:0 A:255.</summary>
+      <returns>A system-defined color with the value R:0 G:0 B:0 A:255.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.Equals(Microsoft.Xna.Framework.Color)">
+      <summary>Determines whether the specified color equals this object.</summary>
+      <returns>true if the colors are equal; otherwise, false.</returns>
+      <param name="other">A four-component color to compare with this object.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.Equals(System.Object)">
+      <summary>Determines whether the specified color object equals this object.</summary>
+      <returns>true if the colors are equal; otherwise, false.</returns>
+      <param name="obj">A color object to compare with this object.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.FromNonPremultiplied(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>Converts a non-premultipled alpha color to a color that contains premultiplied alpha.</summary>
+      <returns>A four-component color that contains premultiplied alpha.</returns>
+      <param name="r">Red component.</param>
+      <param name="g">Green component.</param>
+      <param name="b">Blue component.</param>
+      <param name="a">Alpha component.</param>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Color.G">
+      <summary>Gets or sets the green component value</summary>
+      <returns>The green component value of this <see cref="T:Microsoft.Xna.Framework.Color" />.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.GetHashCode">
+      <summary>Gets the hash code for this object.</summary>
+      <returns>The hash code for this object.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)">
+      <summary>Linearly interpolate a color. </summary>
+      <returns>A four-component color.</returns>
+      <param name="value1">A four-component color.</param>
+      <param name="value2">A four-component color.</param>
+      <param name="amount">Interpolation factor.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.Multiply(Microsoft.Xna.Framework.Color,System.Single)">
+      <summary>Multiply each color component by the scale factor. </summary>
+      <returns>A four-component color.</returns>
+      <param name="value">The source, four-component color.</param>
+      <param name="scale">The scale factor.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.op_Equality(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)">
+      <summary>Determines whether the specified colors are equal.</summary>
+      <returns>true if the colors are equal; otherwise, false.</returns>
+      <param name="a">The first four-component color to compare.</param>
+      <param name="b">The second four-component color to compare.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.op_Inequality(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)">
+      <summary>Determines whether the specified colors are not equal.</summary>
+      <returns>true if the colors are not equal; otherwise, false.</returns>
+      <param name="a">The first four-component color to compare.</param>
+      <param name="b">The second four-component color to compare.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.op_Multiply(Microsoft.Xna.Framework.Color,System.Single)">
+      <summary>Multiplies the specified color and a scale factor.</summary>
+      <returns>A four-component color that has been scaled.</returns>
+      <param name="value">A four-component color to scale.</param>
+      <param name="scale">The scale factor to multiple.</param>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Color.PackedValue">
+      <summary>Gets the current color as a packed value. </summary>
+      <returns>The current color.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Color.R">
+      <summary>Gets or sets the red component value.</summary>
+      <returns>The red component value of this <see cref="T:Microsoft.Xna.Framework.Color" />.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Color.ToString">
+      <summary>Gets a string representation of this object. </summary>
+      <returns>String representation of this object.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Color.Transparent">
+      <summary>Gets a system-defined color with the value R:0 G:0 B:0 A:0.</summary>
+      <returns>A system-defined color with the value R:0 G:0 B:0 A:0.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Color.White">
+      <summary>Gets a system-defined color with the value R:255 G:255 B:255 A:255.</summary>
+      <returns>A system-defined color with the value R:255 G:255 B:255 A:255.</returns>
+    </member>
+    <member name="T:Microsoft.Xna.Framework.Rectangle">
+      <summary>Defines a rectangle.</summary>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Rectangle.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>Initializes a new instance of <see cref="T:Microsoft.Xna.Framework.Rectangle" />.</summary>
+      <param name="x">The x-coordinate of the rectangle.</param>
+      <param name="y">The y-coordinate of the rectangle.</param>
+      <param name="width">Width of the rectangle.</param>
+      <param name="height">Height of the rectangle.</param>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Rectangle.Bottom">
+      <summary>Gets the y-coordinate of the bottom of the rectangle.</summary>
+      <returns>The y-coordinate of the bottom of the rectangle.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Rectangle.Empty">
+      <summary>Gets a <see cref="T:Microsoft.Xna.Framework.Rectangle" /> with all of its values set to zero.</summary>
+      <returns>An empty <see cref="T:Microsoft.Xna.Framework.Rectangle" />.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Rectangle.Equals(Microsoft.Xna.Framework.Rectangle)">
+      <summary>Determines whether the current instance is equal to a specified object.</summary>
+      <returns>true if the current instance is equal to the specified object; otherwise, false.</returns>
+      <param name="other">The object to make the comparison with.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Rectangle.Equals(System.Object)">
+      <summary>Determines whether the specified <see cref="T:System.Object" /> is equal to the <see cref="T:Microsoft.Xna.Framework.Rectangle" />.</summary>
+      <returns>true if the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:Microsoft.Xna.Framework.Rectangle" />; otherwise, false.</returns>
+      <param name="obj">The object to compare with the current <see cref="T:Microsoft.Xna.Framework.Rectangle" />.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Rectangle.GetHashCode">
+      <summary>Gets the hash code for this object.</summary>
+      <returns>The hash code for this object.</returns>
+    </member>
+    <member name="F:Microsoft.Xna.Framework.Rectangle.Height">
+      <summary>Specifies the x-coordinate of the rectangle.</summary>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Rectangle.IsEmpty">
+      <summary>Gets a value that indicates whether the rectangle is empty.</summary>
+      <returns>true if the rectangle is empty; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Rectangle.Left">
+      <summary>Gets the x-coordinate of the left side of the rectangle.</summary>
+      <returns>The x-coordinate of the left side of the rectangle.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Rectangle.op_Equality(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle)">
+      <summary>Compares two rectangles for equality.</summary>
+      <returns>true if the rectangles are the equal; otherwise, false. </returns>
+      <param name="a">Source rectangle.</param>
+      <param name="b">Source rectangle.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Rectangle.op_Inequality(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle)">
+      <summary>Compares two rectangles for inequality.</summary>
+      <returns>true if the rectangles are not equal; otherwise, false.</returns>
+      <param name="a">Source rectangle.</param>
+      <param name="b">Source rectangle.</param>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Rectangle.Right">
+      <summary>Gets the x-coordinate of the right side of the rectangle.</summary>
+      <returns>The x-coordinate of the right side of the rectangle.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Rectangle.Top">
+      <summary>Gets the y-coordinate of the top of the rectangle.</summary>
+      <returns>The y-coordinate of the top of the rectangle.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Rectangle.ToString">
+      <summary>Retrieves a string representation of the current object. </summary>
+      <returns>String that represents the object.</returns>
+    </member>
+    <member name="F:Microsoft.Xna.Framework.Rectangle.Width">
+      <summary>Specifies the width of the rectangle.</summary>
+    </member>
+    <member name="F:Microsoft.Xna.Framework.Rectangle.X">
+      <summary>Specifies the x-coordinate of the rectangle.</summary>
+    </member>
+    <member name="F:Microsoft.Xna.Framework.Rectangle.Y">
+      <summary>Specifies the y-coordinate of the rectangle.</summary>
+    </member>
+    <member name="T:Microsoft.Xna.Framework.Audio.AudioChannels">
+      <summary>Defines the number of channels in the audio data.</summary>
+    </member>
+    <member name="F:Microsoft.Xna.Framework.Audio.AudioChannels.Mono">
+      <summary>Indicates audio data is contained in one channel.</summary>
+    </member>
+    <member name="F:Microsoft.Xna.Framework.Audio.AudioChannels.Stereo">
+      <summary>Indicates audio data contains two channels.</summary>
+    </member>
+    <member name="T:Microsoft.Xna.Framework.Audio.AudioFormat">
+      <summary>Provides specific technical information about an audio format that is used by audio capture devices.</summary>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.AudioFormat.BitsPerSample">
+      <summary>Gets the number of bits that are used to store the audio information for a single sample of an audio format.</summary>
+      <returns>The number of bits that are used to store the audio information for a single sample of an audio format.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.AudioFormat.Channels">
+      <summary>Gets the number of channels that are provided by the audio format.</summary>
+      <returns>The number of channels that are provided by the audio format.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.AudioFormat.SamplesPerSecond">
+      <summary>Gets the number of samples per second that are provided by the audio format.</summary>
+      <returns>The number of samples per second that are provided by the audio format.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.AudioFormat.WaveFormat">
+      <summary>Gets the encoding format of the audio format as a <see cref="T:Microsoft.Xna.Framework.Audio.WaveFormatType" /> value.</summary>
+      <returns>The encoding format of the audio format.</returns>
+    </member>
+    <member name="T:Microsoft.Xna.Framework.Audio.SoundEffect">
+      <summary>Provides a loaded sound resource. You can play multiple instances of the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffect" /> by calling <see cref="M:Microsoft.Xna.Framework.Audio.SoundEffect.Play" />.</summary>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffect.#ctor(System.Byte[],System.Int32,Microsoft.Xna.Framework.Audio.AudioChannels)">
+      <summary>Initializes a new instance of <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffect" /> based on an audio buffer, sample rate, and number of audio channels.</summary>
+      <param name="buffer">Buffer that contains the audio data. The audio format must be PCM wave data.</param>
+      <param name="sampleRate">Sample rate, in Hertz (Hz), of audio data.</param>
+      <param name="channels">Number of channels (mono or stereo) of audio data.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffect.#ctor(System.Byte[],System.Int32,System.Int32,System.Int32,Microsoft.Xna.Framework.Audio.AudioChannels,System.Int32,System.Int32)">
+      <summary>Initializes a new instance of <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffect" /> with specified parameters such as audio sample rate, channels, looping criteria, and a buffer to hold the audio.</summary>
+      <param name="buffer">Buffer that contains the audio data. The audio format must be PCM wave data.</param>
+      <param name="offset">Offset, in bytes, to the starting position of the audio data.</param>
+      <param name="count">Amount, in bytes, of audio data.</param>
+      <param name="sampleRate">Sample rate, in Hertz (Hz), of audio data.</param>
+      <param name="channels">Number of channels (mono or stereo) of audio data.</param>
+      <param name="loopStart">Loop start in samples.</param>
+      <param name="loopLength">Loop length in samples.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffect.CreateInstance">
+      <summary>Creates a new <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" /> for this <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffect" />.</summary>
+      <returns>A new <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" /> for this <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffect" />.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffect.Dispose">
+      <summary>Releases the resources used by the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffect" />.</summary>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.SoundEffect.Duration">
+      <summary>Gets the length of time of the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffect" />.</summary>
+      <returns>The duration of the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffect" />.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffect.FromStream(System.IO.Stream)">
+      <summary>Creates a <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffect" /> object based on the specified data stream.</summary>
+      <returns>A <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffect" /> object based on the specified data stream.</returns>
+      <param name="stream">The data for this <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffect" /> object.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffect.GetSampleDuration(System.Int32,System.Int32,Microsoft.Xna.Framework.Audio.AudioChannels)">
+      <summary>Returns the sample duration based on the specified sample size and sample rate.</summary>
+      <returns>The calculated sample duration.</returns>
+      <param name="sizeInBytes">Size, in bytes, of audio data.</param>
+      <param name="sampleRate">Sample rate, in Hertz (Hz), of audio content. The <paramref name="sampleRate" /> must be between 8000 Hz and 48000 Hz.</param>
+      <param name="channels">Number of channels in the audio data.</param>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffect.GetSampleSizeInBytes(System.TimeSpan,System.Int32,Microsoft.Xna.Framework.Audio.AudioChannels)">
+      <summary>Returns the size of the audio sample based on duration, sample rate, and audio channels.</summary>
+      <returns>Size, in bytes, of audio sample.</returns>
+      <param name="duration">The sample duration.</param>
+      <param name="sampleRate">Sample rate, in Hertz (Hz), of audio content. The <paramref name="sampleRate" /> parameter must be between 8,000 Hz and 48,000 Hz.</param>
+      <param name="channels">Number of channels in the audio data.</param>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.SoundEffect.IsDisposed">
+      <summary>Gets a value that indicates whether the object is disposed.</summary>
+      <returns>true if the object is disposed; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.SoundEffect.MasterVolume">
+      <summary>Gets or sets the master volume that affects all <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" /> sounds.</summary>
+      <returns>Volume, ranging from 0.0f (silence) to 1.0f (current device volume). 1.0f is full volume relative to the current device volume.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffect.Play">
+      <summary>Plays a sound.</summary>
+      <returns>true if the sound is playing back successfully; otherwise, false.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffect.Play(System.Single,System.Single,System.Single)">
+      <summary>Plays a sound based on specified volume, pitch, and panning.</summary>
+      <returns>true if the sound is playing back successfully; otherwise, false.</returns>
+      <param name="volume">Volume, ranging from 0.0f (silence) to 1.0f (full volume). 1.0f is full volume relative to <see cref="P:Microsoft.Xna.Framework.Audio.SoundEffect.MasterVolume" />.</param>
+      <param name="pitch">Pitch adjustment, ranging from -1.0f (down one octave) to 1.0f (up one octave). 0.0f is unity (normal) pitch.</param>
+      <param name="pan">Panning, ranging from -1.0f (full left) to 1.0f (full right). 0.0f is centered.</param>
+    </member>
+    <member name="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance">
+      <summary>Provides a single playing, paused, or stopped instance of a <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffect" /> sound.</summary>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffectInstance.Dispose">
+      <summary>Releases unmanaged resources held by this <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />.</summary>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffectInstance.Dispose(System.Boolean)">
+      <summary>Releases the unmanaged resources held by this <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />, and optionally releases the managed resources.</summary>
+      <param name="disposing">Specify true to release both the managed and unmanaged resources for this <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />. Specify false to release only the unmanaged resources.</param>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.SoundEffectInstance.IsDisposed">
+      <summary>Gets a value that indicates whether the object is disposed.</summary>
+      <returns>true if the object is disposed; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.SoundEffectInstance.IsLooped">
+      <summary>Gets a value that indicates whether looping is enabled for the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />.</summary>
+      <returns>true if the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" /> has looping enabled; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.SoundEffectInstance.Pan">
+      <summary>Gets or sets the panning for the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />.</summary>
+      <returns>Panning, ranging from -1.0f (full left) to 1.0f (full right). 0.0f is centered.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffectInstance.Pause">
+      <summary>Pauses the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />.</summary>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.SoundEffectInstance.Pitch">
+      <summary>Gets or sets the pitch adjustment for the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />.</summary>
+      <returns>Pitch adjustment, ranging from -1.0f (down one octave) to 1.0f (up one octave). 0.0f is unity (normal) pitch.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffectInstance.Play">
+      <summary>Plays or resumes playing the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />.</summary>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffectInstance.Resume">
+      <summary>Resumes playback of the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />.</summary>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.SoundEffectInstance.State">
+      <summary>Gets the current state (playing, paused, or stopped) of the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />.</summary>
+      <returns>The current state of the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />.</returns>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffectInstance.Stop">
+      <summary>Immediately stops playing the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />.</summary>
+    </member>
+    <member name="M:Microsoft.Xna.Framework.Audio.SoundEffectInstance.Stop(System.Boolean)">
+      <summary>Stops playing a <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" /> immediately or as authored.</summary>
+      <param name="immediate">Specifies whether to stop playing immediately, or to break out of the loop region and play the release. Specify true to stop playing immediately, or false to break out of the loop region and play the release phase (the remainder of the sound).</param>
+    </member>
+    <member name="P:Microsoft.Xna.Framework.Audio.SoundEffectInstance.Volume">
+      <summary>Gets or sets the volume of the <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />.</summary>
+      <returns>Volume, ranging from 0.0f (silence) to 1.0f (full volume). 1.0f is full volume relative to <see cref="P:Microsoft.Xna.Framework.Audio.SoundEffect.MasterVolume" />.</returns>
+    </member>
+    <member name="T:Microsoft.Xna.Framework.Audio.SoundState">
+      <summary>Specifies the possible states of a <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" />.</summary>
+    </member>
+    <member name="F:Microsoft.Xna.Framework.Audio.SoundState.Playing">
+      <summary>The <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" /> is playing.</summary>
+    </member>
+    <member name="F:Microsoft.Xna.Framework.Audio.SoundState.Paused">
+      <summary>The <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" /> is paused.</summary>
+    </member>
+    <member name="F:Microsoft.Xna.Framework.Audio.SoundState.Stopped">
+      <summary>The <see cref="T:Microsoft.Xna.Framework.Audio.SoundEffectInstance" /> is stopped.</summary>
+    </member>
+    <member name="T:Microsoft.Xna.Framework.Audio.WaveFormatType">
+      <summary>Reports the digital signal encoding format of an audio format.</summary>
+    </member>
+    <member name="F:Microsoft.Xna.Framework.Audio.WaveFormatType.Pcm">
+      <summary>Audio format uses pulse code modulation (PCM) encoding.</summary>
+    </member>
+  </members>
+</doc>

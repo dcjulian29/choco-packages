@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Activities.Core</name>
+  </assembly>
+  <members>
+    <member name="T:System.Activities.Core.AddToCollection`1">
+      <summary>Adds an item to a specified collection.</summary>
+      <typeparam name="T">The type of elements in the specified collection.</typeparam>
+    </member>
+    <member name="M:System.Activities.Core.AddToCollection`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.AddToCollection`1" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.AddToCollection`1.Collection">
+      <summary>The collection that receives the new item.</summary>
+      <returns>The collection.</returns>
+    </member>
+    <member name="P:System.Activities.Core.AddToCollection`1.Item">
+      <summary>The item to add to the specified collection.</summary>
+      <returns>The item.</returns>
+    </member>
+    <member name="T:System.Activities.Core.Assign">
+      <summary>Sets <see cref="T:System.Activities.Argument" /> values from within a workflow.</summary>
+    </member>
+    <member name="M:System.Activities.Core.Assign.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.Assign" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.Assign.To">
+      <summary>Specifies the <see cref="T:System.Activities.Argument" /> that the activity assigns its <see cref="P:System.Activities.Core.Assign.Value" /> to.</summary>
+      <returns>The specified <see cref="T:System.Activities.Argument" />.</returns>
+    </member>
+    <member name="P:System.Activities.Core.Assign.Value">
+      <summary>Specifies the value that is assigned.</summary>
+      <returns>The value to be assigned.</returns>
+    </member>
+    <member name="T:System.Activities.Core.Assign`1">
+      <summary>The <see cref="T:System.Activities.Core.Assign" /> activity is used to set <see cref="T:System.Activities.Argument" /> values from within a workflow.</summary>
+      <typeparam name="T">The type of the assigned value.</typeparam>
+    </member>
+    <member name="M:System.Activities.Core.Assign`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.Assign`1" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.Assign`1.To">
+      <summary>Specifies the <see cref="T:System.Activities.Argument" /> that the activity assigns its <see cref="P:System.Activities.Core.Assign.Value" /> to.</summary>
+      <returns>The specified <see cref="T:System.WorkflowModel.Argument" />.</returns>
+    </member>
+    <member name="P:System.Activities.Core.Assign`1.Value">
+      <summary>Specifies the value that is assigned.</summary>
+      <returns>The value to be assigned.</returns>
+    </member>
+    <member name="T:System.Activities.Core.CancellationScope">
+      <summary>An activity that associates cancellation logic, in the form of a <see cref="T:System.Activities.WorkflowElement" />, with a main path of execution, also expressed as a <see cref="T:System.Activities.WorkflowElement" />.</summary>
+    </member>
+    <member name="M:System.Activities.Core.CancellationScope.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.CancellationScope" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.CancellationScope.Body">
+      <summary>The <see cref="T:System.WorkflowModel.WorkflowElement" /> contained by the <see cref="T:System.Activities.Core.CancellationScope" />, which represents the main path of execution.</summary>
+      <returns>Returns the <see cref="T:System.WorkflowModel.WorkflowElement" /> contained by the <see cref="T:System.Activities.Core.CancellationScope" />.</returns>
+    </member>
+    <member name="P:System.Activities.Core.CancellationScope.CancelHandler">
+      <summary>The <see cref="T:System.WorkflowModel.WorkflowElement" /> that is executed in the event of cancellation.</summary>
+      <returns>The cancel handler.</returns>
+    </member>
+    <member name="P:System.Activities.Core.CancellationScope.Variables">
+      <summary>The collection of <see cref="T:System.WorkflowModel.Variable" /> objects associated with the <see cref="T:System.Activities.Core.CancellationScope" />.</summary>
+      <returns>The collection of <see cref="T:System.WorkflowModel.Variable" /> objects associated with the <see cref="T:System.Activities.Core.CancellationScope" />.</returns>
+    </member>
+    <member name="T:System.Activities.Core.ClearCollection`1">
+      <summary>Clears a specified collection of all items.</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.Activities.Core.ClearCollection`1.#ctor">
+      <summary>Creates a new instance of the <see cref="M:System.Activities.Core.ClearCollection`1.#ctor" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.ClearCollection`1.Collection">
+      <summary>The collection to be cleared of contents.</summary>
+      <returns>The collection.</returns>
+    </member>
+    <member name="T:System.Activities.Core.Comment">
+      <summary>Displays a comment in the workflow designer surface. This activity provides no functionality at runtime.</summary>
+    </member>
+    <member name="M:System.Activities.Core.Comment.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.Comment" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.Comment.Body">
+      <summary>The child activities of the <see cref="T:System.Activities.Core.Comment" /> activity, if any.</summary>
+      <returns>The child activities.</returns>
+    </member>
+    <member name="T:System.Activities.Core.DbConnectionContext">
+      <summary>Stores database connection information for workflow operations.</summary>
+    </member>
+    <member name="M:System.Activities.Core.DbConnectionContext.#ctor(System.String)">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.DbConnectionContext" /> class with connection information from the specified configuration section name.</summary>
+      <param name="configName">The name of the configuration section that contains connection information.</param>
+    </member>
+    <member name="M:System.Activities.Core.DbConnectionContext.#ctor(System.String,System.String)">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.DbConnectionContext" /> class with the specified provider name and connection string.</summary>
+      <param name="providerName">The name of the database provider used for the connection.</param>
+      <param name="connectionString">The connection string used to access the data store.</param>
+    </member>
+    <member name="P:System.Activities.Core.DbConnectionContext.ConfigName">
+      <summary>The name of the configuration section that contains connection information.</summary>
+      <returns>The configuration section name.</returns>
+    </member>
+    <member name="P:System.Activities.Core.DbConnectionContext.ConnectionString">
+      <summary>The connection string used to access the data store.</summary>
+      <returns>The connection string.</returns>
+    </member>
+    <member name="P:System.Activities.Core.DbConnectionContext.ProviderName">
+      <summary>The name of the database provider used to access the persistence store.</summary>
+      <returns>The database provider.</returns>
+    </member>
+    <member name="T:System.Activities.Core.DbQuery`1">
+      <summary>Executes a query against a database and populates an <see cref="T:System.WorkflowModel.OutArgument" /> with a list of the query results.</summary>
+      <typeparam name="TResult">The type of the values returned in the result set.</typeparam>
+    </member>
+    <member name="M:System.Activities.Core.DbQuery`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.DbQuery`1" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.DbQuery`1.CommandText">
+      <summary>The text of the SQL command used to execute the query.</summary>
+      <returns>The SQL command.</returns>
+    </member>
+    <member name="P:System.Activities.Core.DbQuery`1.CommandType">
+      <summary>The <see cref="T:System.Data.CommandType" /> that specifies how the <see cref="P:System.Activities.Core.DbQuery`1.CommandText" /> parameter is interpreted.</summary>
+      <returns>The command type.</returns>
+    </member>
+    <member name="P:System.Activities.Core.DbQuery`1.ConnectionContext">
+      <summary>The <see cref="T:System.Activities.Core.DbConnectionContext" /> that defines connection parameters for the query.</summary>
+      <returns>The connection context.</returns>
+    </member>
+    <member name="P:System.Activities.Core.DbQuery`1.ObjectInitializationAction">
+      <summary>The <see cref="T:System.WorkflowModel.ActivityAction" /> callback invoked when the activity body is created. This callback is used to read the value from the database reader and assign the resulting value to the <see cref="P:System.Activities.Core.DbQuery`1.Results" /> property.</summary>
+      <returns>The initialization callback.</returns>
+    </member>
+    <member name="P:System.Activities.Core.DbQuery`1.Parameters">
+      <summary>The collection of stored procedure parameters used for the query, including the stored procedure return value.</summary>
+      <returns>The stored procedure parameters.</returns>
+    </member>
+    <member name="P:System.Activities.Core.DbQuery`1.Results">
+      <summary>The list that contains the data returned by the query.</summary>
+      <returns>The returned list.</returns>
+    </member>
+    <member name="T:System.Activities.Core.DbUpdate">
+      <summary>Executes an update query against a database.</summary>
+    </member>
+    <member name="M:System.Activities.Core.DbUpdate.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.DbUpdate" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.DbUpdate.CommandText">
+      <summary>The text of the SQL command used to execute the query.</summary>
+      <returns>The text of the SQL command used to execute the query.</returns>
+    </member>
+    <member name="P:System.Activities.Core.DbUpdate.ConnectionContext">
+      <summary>The <see cref="T:System.Activities.Core.DbConnectionContext" /> that defines connection parameters for the query.</summary>
+      <returns>The <see cref="T:System.Activities.Core.DbConnectionContext" /> that defines connection parameters for the query.</returns>
+    </member>
+    <member name="P:System.Activities.Core.DbUpdate.Parameters">
+      <summary>The collection of stored procedure parameters used for the query, including the stored procedure return value.</summary>
+      <returns>The collection of stored procedure parameters used for the query, including the stored procedure return value.</returns>
+    </member>
+    <member name="P:System.Activities.Core.DbUpdate.RowsAffected">
+      <summary>The number of rows affected by the query. This value is read-only at runtime.</summary>
+      <returns>The number of rows affected by the query.</returns>
+    </member>
+    <member name="T:System.Activities.Core.Delay">
+      <summary>The <see cref="T:System.Activities.Core.Delay" /> activity creates a timer for a specified duration, using a <see cref="T:System.Activities.Statements.TimerExtension" />.</summary>
+    </member>
+    <member name="M:System.Activities.Core.Delay.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.Delay" /> activity.</summary>
+    </member>
+    <member name="P:System.Activities.Core.Delay.Duration">
+      <summary>The duration of the timer that the <see cref="T:System.Activities.Core.Delay" /> activity creates.</summary>
+      <returns>The timer duration.</returns>
+    </member>
+    <member name="M:System.Activities.Core.Delay.System#Activities#IActivityExtensionProvider#EnsureExtensions(System.ComponentModel.IExtensionHost)"></member>
+    <member name="T:System.Activities.Core.DoWhile">
+      <summary>A looping activity that executes contained activities at least once, until a condition is no longer true.</summary>
+    </member>
+    <member name="M:System.Activities.Core.DoWhile.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.DoWhile" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.DoWhile.Body">
+      <summary>The child activity to be iterated.</summary>
+      <returns>The child activity.</returns>
+    </member>
+    <member name="P:System.Activities.Core.DoWhile.Condition">
+      <summary>The <see cref="T:System.WorkflowModel.ValueExpression" /> checked at the end of the loop to determine whether the loop is executed again.</summary>
+      <returns>The condition for re-executing the loop.</returns>
+    </member>
+    <member name="P:System.Activities.Core.DoWhile.Variables">
+      <summary>The collection of <see cref="T:System.WorkflowModel.Variable" /> objects associated with the <see cref="T:System.Activities.Core.DoWhile" /> activity.</summary>
+      <returns>The collection of variables.</returns>
+    </member>
+    <member name="T:System.Activities.Core.ExistsInCollection`1">
+      <summary>Indicates whether a given item is present in a given collection.</summary>
+      <typeparam name="T">The type of elements in the specified collection.</typeparam>
+    </member>
+    <member name="M:System.Activities.Core.ExistsInCollection`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.ExistsInCollection`1" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.ExistsInCollection`1.Collection">
+      <summary>The collection to be searched for the specified element.</summary>
+      <returns>The collection.</returns>
+    </member>
+    <member name="P:System.Activities.Core.ExistsInCollection`1.Item">
+      <summary>The item to search the specified collection for.</summary>
+      <returns>The item.</returns>
+    </member>
+    <member name="T:System.Activities.Core.Flowchart">
+      <summary>Models workflows using the familiar flowchart paradigm</summary>
+    </member>
+    <member name="M:System.Activities.Core.Flowchart.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.Flowchart" /> class.</summary>
+    </member>
+    <member name="M:System.Activities.Core.Flowchart.ComputeStartNodes"></member>
+    <member name="P:System.Activities.Core.Flowchart.Nodes">
+      <summary>The collection of <see cref="T:System.Activities.Core.FlowNode" /> objects contained by the flowchart.</summary>
+      <returns>A <see cref="T:System.Collections.ObjectModel.Collection`1" />.</returns>
+    </member>
+    <member name="P:System.Activities.Core.Flowchart.StartNode">
+      <summary>The <see cref="T:System.Activities.Core.FlowNode" /> to be executed when the flowchart starts.</summary>
+      <returns>The starting node.</returns>
+    </member>
+    <member name="P:System.Activities.Core.Flowchart.Variables">
+      <summary>The collection of <see cref="T:System.WorkflowModel.Variable" /> objects associated with the <see cref="T:System.Activities.Core.Flowchart" />, which are available to share state across the child activities contained within the Flowchart.</summary>
+      <returns>The collection of variables.</returns>
+    </member>
+    <member name="T:System.Activities.Core.FlowDecision">
+      <summary>A specialized <see cref="T:System.Activities.Core.FlowNode" /> that provides the ability to model a conditional node with two outcomes.</summary>
+    </member>
+    <member name="M:System.Activities.Core.FlowDecision.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.FlowDecision" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.FlowDecision.Condition">
+      <summary>Specifies the condition the <see cref="T:System.Activities.Core.FlowDecision" /> is testing. </summary>
+      <returns>A value expression that represents the condition. </returns>
+    </member>
+    <member name="P:System.Activities.Core.FlowDecision.False">
+      <summary>Gets or sets the <see cref="T:System.Activities.Statements.FlowNode" /> that is executed when the condition evaluates to false.</summary>
+      <returns>The workflow element that is executed when the condition evaluates to false.</returns>
+    </member>
+    <member name="P:System.Activities.Core.FlowDecision.True">
+      <summary>Gets or sets the <see cref="T:System.Activities.Statements.FlowNode" /> that is executed when the condition evaluates to true.</summary>
+      <returns>The workflow element to execute when the condition evaluates to true.</returns>
+    </member>
+    <member name="T:System.Activities.Core.FlowNode">
+      <summary>The abstract base class for all the different node types that can be contained within a <see cref="T:System.Activities.Core.Flowchart" /> activity.</summary>
+    </member>
+    <member name="T:System.Activities.Core.FlowStep">
+      <summary>A <see cref="T:System.Activities.Statements.FlowNode" /> element that executes a specified <see cref="P:System.Activities.Core.FlowStep.Action" /> and has a <see cref="P:System.Activities.Core.FlowStep.Next" /> pointer. </summary>
+    </member>
+    <member name="M:System.Activities.Core.FlowStep.#ctor">
+      <summary>Returns a new instance of the <see cref="T:System.Activities.Core.FlowStep" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.FlowStep.Action">
+      <summary>The <see cref="T:System.WorkflowModel.WorkflowElement" /> that the <see cref="T:System.Activities.Core.FlowStep" /> executes.</summary>
+      <returns>The activity to be executed as part of this step of the flowchart.</returns>
+    </member>
+    <member name="P:System.Activities.Core.FlowStep.Next">
+      <summary>The next <see cref="T:System.Activities.Statements.FlowNode" /> in the flowchart to execute after executing the current <see cref="T:System.Activities.Statements.FlowStep" />.</summary>
+      <returns>The specified element.</returns>
+    </member>
+    <member name="T:System.Activities.Core.FlowSwitch"></member>
+    <member name="M:System.Activities.Core.FlowSwitch.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.FlowSwitch" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.FlowSwitch.Cases">
+      <summary>A dictionary of cases to be processed by the <see cref="T:System.Activities.Core.FlowSwitch" /> element. </summary>
+      <returns>The collection of cases.</returns>
+    </member>
+    <member name="P:System.Activities.Core.FlowSwitch.Default">
+      <summary>The <see cref="T:System.Activities.Core.FlowNode" /> to be executed if no elements in the <see cref="P:System.Activities.Core.FlowSwitch.Cases" /> collection match the <see cref="P:System.Activities.Core.FlowSwitch.Expression" />.</summary>
+      <returns>The default <see cref="T:System.Activities.Core.FlowNode" /> to execute.<see cref="" />.</returns>
+    </member>
+    <member name="P:System.Activities.Core.FlowSwitch.Expression">
+      <summary>The expression to evaluate against the collection of <see cref="P:System.Activities.Core.FlowSwitch.Cases" />.</summary>
+      <returns>The expression to evaluate.</returns>
+    </member>
+    <member name="T:System.Activities.Core.ForEach">
+      <summary>Executes an activity action once for each value provided in the <see cref="P:System.Activities.Core.ForEach.Values" /> collection.</summary>
+    </member>
+    <member name="M:System.Activities.Core.ForEach.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.ForEach" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.ForEach.Body">
+      <summary>Gets the activity action to be executed for each item in the <see cref="P:System.Activities.Core.ForEach.Values" /> collection.</summary>
+      <returns>The activity action to be executed for each item in the <see cref="P:System.Activities.Core.ForEach`1.Values" /> collection.</returns>
+    </member>
+    <member name="P:System.Activities.Core.ForEach.Values">
+      <summary>Gets or sets the activity’s collection of inputs for the execution of the <see cref="P:System.Activities.Core.ForEach`1.Body" /> activity action.</summary>
+      <returns>The collection of values.</returns>
+    </member>
+    <member name="T:System.Activities.Core.ForEach`1">
+      <summary>Executes an activity action once for each value provided in the <see cref="P:System.Activities.Core.ForEach`1.Values" /> collection.</summary>
+      <typeparam name="T">The type of the values provided in the <see cref="P:System.Activities.Core.ForEach`1.Values" /> collection.</typeparam>
+    </member>
+    <member name="M:System.Activities.Core.ForEach`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.ForEach`1" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.ForEach`1.Body">
+      <summary>Executes the <see cref="T:System.Activities.ActivityAction" /> for each item in the <see cref="P:System.Activities.Core.ForEach`1.Values" /> collection.</summary>
+      <returns>The action to be executed.</returns>
+    </member>
+    <member name="P:System.Activities.Core.ForEach`1.Values">
+      <summary>The activity’s collection of inputs for the execution of the <see cref="P:System.Activities.Core.ForEach`1.Body" /> activity action.</summary>
+      <returns>The collection of values.</returns>
+    </member>
+    <member name="T:System.Activities.Core.If">
+      <summary>Models an If-Then-Else condition.</summary>
+    </member>
+    <member name="M:System.Activities.Core.If.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.If" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.If.Condition">
+      <summary>The condition that determines which child activity to execute.  The <see cref="P:System.Activities.Core.If.Then" /> activity will execute if the condition resolves to true.</summary>
+      <returns>
+The execution condition.
+</returns>
+    </member>
+    <member name="P:System.Activities.Core.If.Else">
+      <summary>The activity to be executed if the activity’s <see cref="P:System.Activities.Core.If.Condition" /> resolves to false.</summary>
+      <returns>
+The child activity.
+</returns>
+    </member>
+    <member name="P:System.Activities.Core.If.Then">
+      <summary>The activity to be executed if the activity’s <see cref="P:System.Activities.Core.If.Condition" /> resolves to true.</summary>
+      <returns>
+The child activity.
+</returns>
+    </member>
+    <member name="T:System.Activities.Core.InitializationAction`2">
+      <typeparam name="TSource"></typeparam>
+      <typeparam name="TTarget"></typeparam>
+    </member>
+    <member name="M:System.Activities.Core.InitializationAction`2.#ctor"></member>
+    <member name="P:System.Activities.Core.InitializationAction`2.Source"></member>
+    <member name="P:System.Activities.Core.InitializationAction`2.Target"></member>
+    <member name="T:System.Activities.Core.Interop">
+      <summary>Manages the execution of an <see cref="T:System.Workflow.ComponentModel.Activity" /> within a workflow.</summary>
+    </member>
+    <member name="M:System.Activities.Core.Interop.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.Interop" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.Interop.Body">
+      <summary>The type of the activity contained by the <see cref="T:System.Activities.Core.Interop" /> activity.</summary>
+      <returns>This type must derive from <see cref="T:System.Workflow.ComponentModel.Activity" />.</returns>
+    </member>
+    <member name="M:System.Activities.Core.Interop.GetAttributes"></member>
+    <member name="M:System.Activities.Core.Interop.GetClassName"></member>
+    <member name="M:System.Activities.Core.Interop.GetComponentName"></member>
+    <member name="M:System.Activities.Core.Interop.GetConverter"></member>
+    <member name="M:System.Activities.Core.Interop.GetDefaultEvent"></member>
+    <member name="M:System.Activities.Core.Interop.GetDefaultProperty"></member>
+    <member name="M:System.Activities.Core.Interop.GetEditor(System.Type)"></member>
+    <member name="M:System.Activities.Core.Interop.GetEvents"></member>
+    <member name="M:System.Activities.Core.Interop.GetEvents(System.Attribute[])"></member>
+    <member name="M:System.Activities.Core.Interop.GetProperties"></member>
+    <member name="M:System.Activities.Core.Interop.GetProperties(System.Attribute[])"></member>
+    <member name="M:System.Activities.Core.Interop.GetPropertyOwner(System.ComponentModel.PropertyDescriptor)"></member>
+    <member name="P:System.Activities.Core.Interop.MetaProperties">
+      <summary>The collection of name-value pairs that corresponds to the metadata of the WinFX activity, such as an activity’s <see cref="T:System.Workflow.ComponentModel.Activity.Name" /> property, or a <see cref="T:System.Workflow.Activities.While" /> activity’s <see cref="M:System.Workflow.Activities.While.Condition" /> property.</summary>
+      <returns>The collection of metadata.</returns>
+    </member>
+    <member name="P:System.Activities.Core.Interop.Properties">
+      <summary>The collection of name-value pairs that corresponds to the input and output properties of the WinFX activity.</summary>
+      <returns>The collection of properties.</returns>
+    </member>
+    <member name="T:System.Activities.Core.InvokeMethod">
+      <summary>Calls a public method of a specified object or type.</summary>
+    </member>
+    <member name="M:System.Activities.Core.InvokeMethod.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.InvokeMethod" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod.GenericTypeArguments">
+      <summary>The generic type arguments of the contained method.</summary>
+      <returns>The arguments.</returns>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod.MethodName">
+      <summary>The name of the method to be invoked when the activity executes.</summary>
+      <returns>The method name.</returns>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod.Parameters">
+      <summary>The parameter collection of the method to be invoked.</summary>
+      <returns>The parameter collection.</returns>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod.Result">
+      <summary>The return value of the method operation.</summary>
+      <returns>The operation’s return value.</returns>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod.RunAsynchronously">
+      <summary> Gets or sets a value that indicates whether the activity’s method is invoked asynchronously.</summary>
+      <returns>true if the method executes asynchronously.</returns>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod.TargetObject">
+      <summary>The object that contains the method to execute.</summary>
+      <returns>The object.</returns>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod.TargetType">
+      <summary>The type of the <see cref="P:System.Activities.Core.InvokeMethod.TargetObject" />.</summary>
+      <returns>The target object type.</returns>
+    </member>
+    <member name="T:System.Activities.Core.InvokeMethod`1">
+      <summary>Calls a public method of a specified object or type.</summary>
+      <typeparam name="TResult">The value returned by the activity.</typeparam>
+    </member>
+    <member name="M:System.Activities.Core.InvokeMethod`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.InvokeMethod`1" /> object.</summary>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod`1.GenericTypeArguments">
+      <summary>The generic type arguments of the contained method.</summary>
+      <returns>The arguments.</returns>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod`1.MethodName">
+      <summary>The name of the method to be invoked when the activity executes.</summary>
+      <returns>The arguments.</returns>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod`1.Parameters">
+      <summary>The parameter collection of the method to be invoked.</summary>
+      <returns>The parameter collection.</returns>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod`1.RunAsynchronously">
+      <summary>Gets or sets a value that indicates whether the activity’s method is invoked asynchronously.</summary>
+      <returns>true if the method executes asynchronously.</returns>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod`1.TargetObject">
+      <summary>The object that contains the method to execute.</summary>
+      <returns>The object.</returns>
+    </member>
+    <member name="P:System.Activities.Core.InvokeMethod`1.TargetType">
+      <summary>Gets or sets the type of the <see cref="P:System.Activities.Core.InvokeMethod`1.TargetObject" />.</summary>
+      <returns>The target object type.</returns>
+    </member>
+    <member name="T:System.Activities.Core.Parallel">
+      <summary>A workflow element that executes all child activities simultaneously and asynchronously.</summary>
+    </member>
+    <member name="M:System.Activities.Core.Parallel.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.Parallel" /> activity.</summary>
+    </member>
+    <member name="P:System.Activities.Core.Parallel.Branches">
+      <summary>The child elements to be executed in parallel.</summary>
+      <returns>The elements.</returns>
+    </member>
+    <member name="P:System.Activities.Core.Parallel.CompletionCondition">
+      <summary>Evaluates after any branch completes. </summary>
+      <returns>The completion expression.</returns>
+    </member>
+    <member name="P:System.Activities.Core.Parallel.Variables">
+      <summary>The collection of contained variables.</summary>
+      <returns>The contained variables.</returns>
+    </member>
+    <member name="T:System.Activities.Core.ParallelForEach">
+      <summary>Enumerates the elements of a collection and executes an embedded statement for each element of the collection in parallel.</summary>
+    </member>
+    <member name="M:System.Activities.Core.ParallelForEach.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.ParallelForEach" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.ParallelForEach.Body">
+      <summary>The <see cref="T:System.Activities.ActivityAction" /> that is executed once for every value contained in the <see cref="P:System.Activities.Core.ParallelForEach`1.Values" /> collection.</summary>
+      <returns>The contained activity action.</returns>
+    </member>
+    <member name="P:System.Activities.Core.ParallelForEach.CompletionCondition">
+      <summary>Evaluated after each iteration completes. </summary>
+      <returns>The completion expression.</returns>
+    </member>
+    <member name="P:System.Activities.Core.ParallelForEach.Values">
+      <summary>The collection of values used as parameters for each iteration of the activity contained in the <see cref="P:System.Activities.Core.ParallelForEach.Body" />.</summary>
+      <returns>The collection of values.</returns>
+    </member>
+    <member name="T:System.Activities.Core.ParallelForEach`1">
+      <summary>Enumerates the elements of a collection and executes an embedded statement for each element of the collection in parallel.</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.Activities.Core.ParallelForEach`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.ParallelForEach`1" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.ParallelForEach`1.Body">
+      <summary>The <see cref="T:System.Activities.ActivityAction" /> that is executed once for every value contained in the <see cref="P:System.Activities.Core.ParallelForEach`1.Values" /> collection.</summary>
+      <returns>The contained activity action.</returns>
+    </member>
+    <member name="P:System.Activities.Core.ParallelForEach`1.CompletionCondition">
+      <summary>Evaluated after each iteration completes. If it evaluates to true, then the scheduled pending iterations are canceled. If this property is not set, all scheduled statements execute until completion.</summary>
+      <returns>The completion expression.</returns>
+    </member>
+    <member name="P:System.Activities.Core.ParallelForEach`1.Values">
+      <summary>The collection of values used as parameters for each iteration of the activity contained in the <see cref="P:System.Activities.Core.ParallelForEach`1.Body" />.</summary>
+      <returns>The collection of values.</returns>
+    </member>
+    <member name="T:System.Activities.Core.Pick">
+      <summary>Provides event-based, control flow modeling. </summary>
+    </member>
+    <member name="M:System.Activities.Core.Pick.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.Pick" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.Pick.Branches">
+      <summary>The collection of <see cref="T:System.Activities.Core.PickBranch" /> objects that the <see cref="T:System.Activities.Core.Pick" /> activity potentially executes one of, based on incoming events.</summary>
+      <returns>The branch collection.</returns>
+    </member>
+    <member name="T:System.Activities.Core.PickBranch">
+      <summary>A potential path of execution within a <see cref="T:System.Activities.Core.Pick" /> activity.</summary>
+    </member>
+    <member name="M:System.Activities.Core.PickBranch.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.PickBranch" /> activity.</summary>
+    </member>
+    <member name="P:System.Activities.Core.PickBranch.Action">
+      <summary>The <see cref="T:System.Activities.WorkflowElement" /> to execute if this branch is triggered for execution.</summary>
+      <returns>A <see cref="T:System.Activities.WorkflowElement" />.</returns>
+    </member>
+    <member name="P:System.Activities.Core.PickBranch.DisplayName">
+      <summary>The name of this branch to be displayed in the activity designer.</summary>
+      <returns>The branch name.</returns>
+    </member>
+    <member name="P:System.Activities.Core.PickBranch.Trigger">
+      <summary>The activity whose completion activates this pick branch.</summary>
+      <returns>The triggering activity.</returns>
+    </member>
+    <member name="P:System.Activities.Core.PickBranch.Variables">
+      <summary>The collection of user-defined variables associated with this activity.</summary>
+      <returns>The variable collection.</returns>
+    </member>
+    <member name="T:System.Activities.Core.RemoveFromCollection`1">
+      <summary>Removes an item from a specified collection.</summary>
+      <typeparam name="T">The type of elements in the specified collection.</typeparam>
+    </member>
+    <member name="M:System.Activities.Core.RemoveFromCollection`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.RemoveFromCollection`1" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.RemoveFromCollection`1.Collection">
+      <summary>The collection from which to remove the <see cref="P:System.Activities.Core.RemoveFromCollection`1.Item" />.</summary>
+      <returns>The collection.</returns>
+    </member>
+    <member name="P:System.Activities.Core.RemoveFromCollection`1.Item">
+      <summary>The item to remove from the specified <see cref="P:System.Activities.Core.RemoveFromCollection`1.Collection" />.</summary>
+      <returns>The item to remove.</returns>
+    </member>
+    <member name="T:System.Activities.Core.Sequence">
+      <summary>Executes a set of child activities according to a single, defined ordering.</summary>
+    </member>
+    <member name="M:System.Activities.Core.Sequence.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.Sequence" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.Sequence.Activities">
+      <summary>The collection of contained activities to be executed in sequence.</summary>
+      <returns>The activities.</returns>
+    </member>
+    <member name="M:System.Activities.Core.Sequence.Execute(System.Activities.ActivityExecutionContext)"></member>
+    <member name="M:System.Activities.Core.Sequence.OnGetArguments(System.Collections.Generic.IList{System.Activities.RuntimeArgument})"></member>
+    <member name="M:System.Activities.Core.Sequence.OnGetChildren(System.Collections.Generic.IList{System.Activities.WorkflowElement})"></member>
+    <member name="M:System.Activities.Core.Sequence.OnGetConstraints(System.Collections.Generic.IList{System.Activities.Validation.Constraint})"></member>
+    <member name="M:System.Activities.Core.Sequence.OnGetEnvironmentVariables(System.Collections.Generic.IList{System.Activities.Variable})"></member>
+    <member name="M:System.Activities.Core.Sequence.OnGetPrivateVariables(System.Collections.Generic.IList{System.Activities.Variable})"></member>
+    <member name="M:System.Activities.Core.Sequence.OnSequenceComplete(System.Activities.ActivityExecutionContext)"></member>
+    <member name="P:System.Activities.Core.Sequence.Variables">
+      <summary>The collection of contained variables.</summary>
+      <returns>The collection of variables.</returns>
+    </member>
+    <member name="T:System.Activities.Core.Switch">
+      <summary>Selects one choice from a number of activities to execute, based on the value of a given expression.</summary>
+    </member>
+    <member name="M:System.Activities.Core.Switch.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.Switch" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.Switch.Cases">
+      <summary>The dictionary of potential execution paths.</summary>
+      <returns>The execution paths.</returns>
+    </member>
+    <member name="P:System.Activities.Core.Switch.Default">
+      <summary>The activity that is executed if no keys of entries in the <see cref="P:System.Activities.Core.Switch.Cases" /> collection match the <see cref="P:System.Activities.Core.Switch.Expression" /> property.</summary>
+      <returns>The default activity to execute.</returns>
+    </member>
+    <member name="P:System.Activities.Core.Switch.Expression">
+      <summary>The object to compare to the keys in the <see cref="P:System.Activities.Core.Switch.Cases" /> collection.</summary>
+      <returns>The object to compare.</returns>
+    </member>
+    <member name="T:System.Activities.Core.Switch`1">
+      <summary>Selects one choice from a number of activities to execute, based on the value of a given expression of the type specified in this object’s type specifier.</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.Activities.Core.Switch`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.Switch`1" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.Switch`1.Cases">
+      <summary>The dictionary of potential execution paths.</summary>
+      <returns>The execution paths.</returns>
+    </member>
+    <member name="P:System.Activities.Core.Switch`1.Default">
+      <summary>The activity that is executed if no keys of entries in the <see cref="P:System.Activities.Core.Switch.Cases" /> collection match the <see cref="P:System.Activities.Core.Switch.Expression" /> property.</summary>
+      <returns>The default activity to execute.</returns>
+    </member>
+    <member name="P:System.Activities.Core.Switch`1.Expression">
+      <summary>Gets the object to compare to the keys in the <see cref="P:System.Activities.Core.Switch.Cases" /> collection.</summary>
+      <returns>The object to compare to the keys in the <see cref="P:System.Activities.Core.Switch.Cases" /> collection.</returns>
+    </member>
+    <member name="T:System.Activities.Core.Throw">
+      <summary>Throws an exception.</summary>
+    </member>
+    <member name="M:System.Activities.Core.Throw.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.Throw" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.Throw.Exception">
+      <summary>The exception thrown by the activity.</summary>
+      <returns>The exception.</returns>
+    </member>
+    <member name="T:System.Activities.Core.TimerExtension">
+      <summary>Abstract base class for timer extensions.</summary>
+    </member>
+    <member name="M:System.Activities.Core.TimerExtension.#ctor">
+      <summary>When implemented in a derived class, creates a new instance of the derived class.</summary>
+    </member>
+    <member name="M:System.Activities.Core.TimerExtension.CancelTimer(System.String)">
+      <summary>Cancels the timer with the specified identifier.</summary>
+      <param name="timerId">The identifier of the timer to cancel.</param>
+    </member>
+    <member name="M:System.Activities.Core.TimerExtension.CancelTimer(System.String,System.Activities.ActivityExecutionContext)">
+      <summary>Cancels the timer with the specified identifier.</summary>
+      <param name="timerId">The identifier of the timer to cancel.</param>
+      <param name="context">The execution context that the activity is running under.</param>
+    </member>
+    <member name="M:System.Activities.Core.TimerExtension.SetTimer(System.TimeSpan,System.Activities.ActivityExecutionContext)">
+      <summary>Creates a new timer with the specified duration.</summary>
+      <returns>The identifier of the created timer.</returns>
+      <param name="timeout">The time period before the timer expires.</param>
+      <param name="context">The execution context of the activity to be executed.</param>
+    </member>
+    <member name="M:System.Activities.Core.TimerExtension.SetTimer(System.TimeSpan,System.String)">
+      <summary>Creates a new timer with the specified duration.</summary>
+      <returns>The identifier of the new timer.</returns>
+      <param name="timeout">The duration of the timer.</param>
+      <param name="timerId">The identifier of the new timer.</param>
+    </member>
+    <member name="T:System.Activities.Core.TransactionScopeActivity">
+      <summary>An activity that demarcates a transaction boundary. </summary>
+    </member>
+    <member name="M:System.Activities.Core.TransactionScopeActivity.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Activities.Core.TransactionScopeActivity" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Core.TransactionScopeActivity.AbortInstanceOnTransactionFailure">
+      <summary>Gets or sets the value that indicates whether the workflow should be aborted if the transaction aborts.
+</summary>
+      <returns>true if the workflow should be aborted.</returns>
+    </member>
+    <member name="P:System.Activities.Core.TransactionScopeActivity.Body">
+      <summary>Gets or sets the element that is scheduled when the <see cref="T:System.Activities.Core.TransactionScopeActivity" /> executes.</summary>
+      <returns>The element that is scheduled when the <see cref="T:System.Activities.Core.TransactionScopeActivity" /> executes.</returns>
+    </member>
+    <member name="P:System.Activities.Core.TransactionScopeActivity.IsolationLevel">
+      <summary>Gets or sets the <see cref="T:System.Transactions.IsolationLevel" /> for this <see cref="T:System.Activities.Core.TransactionScopeActivity" />.</summary>
+      <returns>The <see cref="T:System.Transactions.IsolationLevel" /> for this <see cref="T:System.Activities.Core.TransactionScopeActivity" />.</returns>
+    </member>
+    <member name="M:System.Activities.Core.TransactionScopeActivity.ShouldSerializeIsolationLevel">
+      <summary>Indicates whether the <see cref="P:System.Activities.Core.TransactionScopeActivity.IsolationLevel" /> for this <see cref="T:System.Activities.Core.TransactionScopeActivity" /> should be serialized.</summary>
+      <returns>true if the <see cref="P:System.Activities.Core.TransactionScopeActivity.IsolationLevel" /> property value should be serialized; otherwise false.</returns>
+    </member>
+    <member name="M:System.Activities.Core.TransactionScopeActivity.ShouldSerializeTimeout">
+      <summary>Indicates whether the <see cref="P:System.Activities.Core.TransactionScopeActivity.Timeout" /> for this <see cref="T:System.Activities.Core.TransactionScopeActivity" /> should be serialized.</summary>
+      <returns>true if the <see cref="P:System.Activities.Core.TransactionScopeActivity.Timeout" /> property value should be serialized; otherwise false.
+</returns>
+    </member>
+    <member name="P:System.Activities.Core.TransactionScopeActivity.Timeout">
+      <summary>Gets or sets the <see cref="T:System.TimeSpan" /> that indicates the timeout period for the transaction used for this <see cref="T:System.Activities.Core.TransactionScopeActivity" />.</summary>
+      <returns>The <see cref="T:System.TimeSpan" /> that indicates the timeout period for the transaction used for this <see cref="T:System.Activities.Core.TransactionScopeActivity" />.</returns>
+    </member>
+    <member name="T:System.Activities.Core.While">
+      <summary>Executes a contained workflow element while a condition evaluates to true.</summary>
+    </member>
+    <member name="M:System.Activities.Core.While.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.While" /> activity.</summary>
+    </member>
+    <member name="P:System.Activities.Core.While.Body">
+      <summary>The element to execute in the While loop.</summary>
+      <returns>The element.</returns>
+    </member>
+    <member name="P:System.Activities.Core.While.Condition">
+      <summary>The condition to be evaluated before each iteration of the While loop.</summary>
+      <returns>The condition.</returns>
+    </member>
+    <member name="P:System.Activities.Core.While.Variables">
+      <summary>The collection of <see cref="T:System.Activities.Variable" /> objects associated with the <see cref="T:System.Activities.Core.While" /> activity.</summary>
+      <returns>The collection of variables.</returns>
+    </member>
+    <member name="T:System.Activities.Core.WriteLine">
+      <summary>Writes a specified string to a specified <see cref="T:System.IO.TextWriter" /> object.</summary>
+    </member>
+    <member name="M:System.Activities.Core.WriteLine.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.Activities.Core.WriteLine" /> class.</summary>
+    </member>
+    <member name="M:System.Activities.Core.WriteLine.System#Activities#IActivityExtensionProvider#EnsureExtensions(System.ComponentModel.IExtensionHost)"></member>
+    <member name="P:System.Activities.Core.WriteLine.Text">
+      <summary>The text to write.</summary>
+      <returns>The text.</returns>
+    </member>
+    <member name="P:System.Activities.Core.WriteLine.TextWriter">
+      <summary>The <see cref="T:System.IO.TextWriter" /> to write the <see cref="P:System.Activities.Core.WriteLine.Text" /> to.</summary>
+      <returns>The text writer.</returns>
+    </member>
+    <member name="T:System.Activities.Expressions.Add`3">
+      <summary>Computes the sum of two values.</summary>
+      <typeparam name="TLeft">The type of the left operand.</typeparam>
+      <typeparam name="TRight">The type of the right operand.</typeparam>
+      <typeparam name="TResult">The type of the result.</typeparam>
+    </member>
+    <member name="M:System.Activities.Expressions.Add`3.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Activities.Expressions.Add`3" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Expressions.Add`3.Left">
+      <summary>Gets or sets the left operand.</summary>
+      <returns>The left operand.</returns>
+    </member>
+    <member name="P:System.Activities.Expressions.Add`3.Right">
+      <summary>Gets or sets the right operand.</summary>
+      <returns>The right operand.</returns>
+    </member>
+    <member name="T:System.Activities.Expressions.AndAlso">
+      <summary>Computes the logical AND of two values. Both values are converted into Boolean, and if both are true then this expression returns true. If one or both values evaluate to false, this expression returns false. <see cref="T:System.Activities.Expressions.AndAlso" /> is the “short circuit” version of the logical AND operator, returning false as soon as one of operands is evaluated to be false.</summary>
+    </member>
+    <member name="M:System.Activities.Expressions.AndAlso.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Activities.Expressions.AndAlso" /> class. </summary>
+    </member>
+    <member name="P:System.Activities.Expressions.AndAlso.Left">
+      <summary>Gets or sets the left operand.</summary>
+      <returns>The left operand.</returns>
+    </member>
+    <member name="P:System.Activities.Expressions.AndAlso.Right">
+      <summary>Gets or sets the right operand.</summary>
+      <returns>The right operand.</returns>
+    </member>
+    <member name="T:System.Activities.Expressions.ArrayItemValue`1">
+      <summary>An item within an array.</summary>
+      <typeparam name="TItem">The type of the items within the array. </typeparam>
+    </member>
+    <member name="M:System.Activities.Expressions.ArrayItemValue`1.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Activities.Expressions.ArrayItemValue`1" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Expressions.ArrayItemValue`1.Array">
+      <summary>Gets or sets the array to which the item belongs to.</summary>
+      <returns>The array to which the item belongs to.</returns>
+    </member>
+    <member name="P:System.Activities.Expressions.ArrayItemValue`1.Index">
+      <summary>Gets or sets the array index number of the array item.</summary>
+      <returns>The array item index.</returns>
+    </member>
+    <member name="T:System.Activities.Expressions.Equal`3">
+      <summary>Performs an equality test between two values. If the two values are equal the expression returns true; otherwise, it returns false.</summary>
+      <typeparam name="TLeft">The type of the left operand.</typeparam>
+      <typeparam name="TRight">The type of the right operand. </typeparam>
+      <typeparam name="TResult">The type of the result.</typeparam>
+    </member>
+    <member name="M:System.Activities.Expressions.Equal`3.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Activities.Expressions.Equal`3" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Expressions.Equal`3.Left">
+      <summary>Gets or sets the left operand.</summary>
+      <returns>The left operand.</returns>
+    </member>
+    <member name="P:System.Activities.Expressions.Equal`3.Right">
+      <summary>Gets or sets the right operand.</summary>
+      <returns>The right operand.</returns>
+    </member>
+    <member name="T:System.Activities.Expressions.GreaterThanOrEqual`3">
+      <summary>Performs a relational test between two values. If the left operand is greater than or equal to the right operand, the expression returns true; otherwise, it returns false.</summary>
+      <typeparam name="TLeft">The type of the left operand. </typeparam>
+      <typeparam name="TRight">The type of the right operand.</typeparam>
+      <typeparam name="TResult">The type of the result. </typeparam>
+    </member>
+    <member name="M:System.Activities.Expressions.GreaterThanOrEqual`3.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Activities.Expressions.GreaterThanOrEqual`3" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Expressions.GreaterThanOrEqual`3.Left">
+      <summary>Gets or sets the left operand.</summary>
+      <returns>The left operand.</returns>
+    </member>
+    <member name="P:System.Activities.Expressions.GreaterThanOrEqual`3.Right">
+      <summary>Gets or sets the right operand.</summary>
+      <returns>The right operand.</returns>
+    </member>
+    <member name="T:System.Activities.Expressions.Multiply`3">
+      <summary>Computes the product of two values.</summary>
+      <typeparam name="TLeft">The type of the left operand.</typeparam>
+      <typeparam name="TRight">The type of the right operand.</typeparam>
+      <typeparam name="TResult">The type of the result.</typeparam>
+    </member>
+    <member name="M:System.Activities.Expressions.Multiply`3.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Activities.Expressions.Multiply`3" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Expressions.Multiply`3.Left">
+      <summary>Gets or sets the left operand.</summary>
+      <returns>The left operand.</returns>
+    </member>
+    <member name="P:System.Activities.Expressions.Multiply`3.Right">
+      <summary>Gets or sets the right operand.</summary>
+      <returns>The right operand.</returns>
+    </member>
+    <member name="T:System.Activities.Expressions.Not`2">
+      <summary>Computes the logical negation of a value expression.</summary>
+      <typeparam name="TOperand">The type of the value expression.</typeparam>
+      <typeparam name="TResult">The type of the result.</typeparam>
+    </member>
+    <member name="M:System.Activities.Expressions.Not`2.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Activities.Expressions.Not`2" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Expressions.Not`2.Operand">
+      <summary>Gets the value expression that is negated.</summary>
+      <returns>The value expression that is negated.</returns>
+    </member>
+    <member name="T:System.Activities.Expressions.Or`3">
+      <summary>Computes the bitwise logical OR of two values.</summary>
+      <typeparam name="TLeft">The type of the left operand.</typeparam>
+      <typeparam name="TRight">The type of the right operand.</typeparam>
+      <typeparam name="TResult">The type of the result.</typeparam>
+    </member>
+    <member name="M:System.Activities.Expressions.Or`3.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Activities.Expressions.Or`3" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Expressions.Or`3.Left">
+      <summary>Gets or sets the left operand.</summary>
+      <returns>The left operand.</returns>
+    </member>
+    <member name="P:System.Activities.Expressions.Or`3.Right">
+      <summary>Gets or sets the right operand.</summary>
+      <returns>The right operand.</returns>
+    </member>
+    <member name="T:System.Activities.Expressions.PropertyReference`2">
+      <summary>A reference to a property.</summary>
+      <typeparam name="TOperand">The type of the operand.</typeparam>
+      <typeparam name="TResult">The type of the result.</typeparam>
+    </member>
+    <member name="M:System.Activities.Expressions.PropertyReference`2.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Activities.Expressions.PropertyReference`2" /> class.</summary>
+    </member>
+    <member name="P:System.Activities.Expressions.PropertyReference`2.Operand">
+      <summary>Gets or sets the property reference.</summary>
+      <returns>The property reference.</returns>
+    </member>
+    <member name="P:System.Activities.Expressions.PropertyReference`2.PropertyName">
+      <summary>Gets or sets the name of the property being referenced.</summary>
+      <returns>The name of the property being referenced.</returns>
+    </member>
+    <member name="T:System.Activities.Expressions.PropertyValue`2">
+      <summary>A property value.</summary>
+      <typeparam name="TOperand">The type of the operand.</typeparam>
+      <typeparam name="TResult">The type of the result.</typeparam>
+    </member>
+    <member name="M:System.Activities.Expressions.PropertyValue`2.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Activities.Expressions.PropertyValue`2" /> class. </summary>
+    </member>
+    <member name="P:System.Activities.Expressions.PropertyValue`2.Operand">
+      <summary>Gets or sets the property value.</summary>
+      <returns>The property value.</returns>
+    </member>
+    <member name="P:System.Activities.Expressions.PropertyValue`2.PropertyName">
+      <summary>Gets or sets the property name.</summary>
+      <returns>The property name.</returns>
+    </member>
+  </members>
+</doc>

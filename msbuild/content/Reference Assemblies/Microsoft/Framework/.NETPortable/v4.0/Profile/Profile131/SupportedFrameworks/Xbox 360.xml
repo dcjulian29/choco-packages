@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Framework
+    Identifier="Xbox"
+    Profile="*"
+    MinimumVersion="4.0"
+    Family="Xbox360"
+    MinimumVisualStudioVersion="10.0"
+    MaximumVisualStudioVersion="11.0"
+    DisplayName="Xbox 360"
+    MinimumVersionDisplayName=""
+    PlatformArchitectures="AnyCPU" />

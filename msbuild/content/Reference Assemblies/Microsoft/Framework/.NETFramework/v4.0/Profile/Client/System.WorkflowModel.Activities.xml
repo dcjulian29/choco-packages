@@ -1,0 +1,1110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.WorkflowModel.Activities</name>
+  </assembly>
+  <members>
+    <member name="T:System.WorkflowModel.Activities.ActivityActionTrigger">
+      <summary>Raises <see cref="T:System.WorkflowModel.ActivityAction" /> events.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityActionTrigger.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.ActivityActionTrigger" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.ActivityActionTrigger.Handler">
+      <summary>The <see cref="T:System.WorkflowModel.WorkflowElement" /> to execute when the <see cref="T:System.WorkflowModel.ActivityAction" /> occurs.</summary>
+      <returns>The <see cref="T:System.WorkflowModel.WorkflowElement" />.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.ActivityActionTriggered">
+      <summary>An event raised when an <see cref="T:System.WorkflowModel.ActivityAction" /> occurs.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityActionTriggered.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.ActivityActionTriggered" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.ActivityActionTriggered.ActivityAction">
+      <summary>The <see cref="T:System.WorkflowModel.ActivityAction" /> that raises this event.</summary>
+      <returns>The <see cref="T:System.WorkflowModel.ActivityAction" />.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityActionTriggered.Equals(System.Object)">
+      <summary>Gets a value that indicates whether the compared object has the same <see cref="P:System.WorkflowModel.Activities.ActivityFlowEvent.Activity" /> and <see cref="P:System.WorkflowModel.Activities.ActivityActionTriggered.ActivityAction" /> properties.</summary>
+      <returns>true if the properties are equal.</returns>
+      <param name="obj"></param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityActionTriggered.GetHashCode">
+      <summary>If <see cref="P:System.WorkflowModel.Activities.ActivityActionTriggered.ActivityAction" /> has been set, returns the hash code for this object, otherwise returns 1.</summary>
+      <returns>The hash code for the object.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityActionTriggered.ToString">
+      <summary>Returns an information string that includes the values of the <see cref="P:System.WorkflowModel.Activities.ActivityFlowEvent.Activity" /> and <see cref="P:System.WorkflowModel.Activities.ActivityActionTriggered.ActivityAction" /> properties.</summary>
+      <returns>The information string.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.ActivityCompleted">
+      <summary>An event raised when an activity gracefully completes execution.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityCompleted.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.ActivityCompleted" /> class.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityCompleted.Equals(System.Object)">
+      <summary>Returns true if the compared object has the same <see cref="P:System.WorkflowModel.ActivityFlowEvent.Activity" /> property.</summary>
+      <returns>true if the property is equal.</returns>
+      <param name="obj">The object to compare.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityCompleted.GetHashCode">
+      <summary>Returns the hash code for the object if the <see cref="P:System.WorkflowModel.ActivityFlowEvent.Activity" /> property has been set, otherwise returns 1. </summary>
+      <returns>The hash code.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityCompleted.ToString">
+      <summary>Returns an information string that includes the name of the <see cref="P:System.WorkflowModel.ActivityFlowEvent.Activity" /> property.</summary>
+      <returns>The information string.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.ActivityFaulted">
+      <summary>An event raised when an activity faults.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityFaulted.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.ActivityFaulted" /> class.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityFaulted.Equals(System.Object)">
+      <summary>Returns true if the compared object has the same <see cref="P:System.WorkflowModel.ActivityFlowEvent.Activity" /> property.</summary>
+      <returns>true if the property is equal.</returns>
+      <param name="obj">The object to compare.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.ActivityFaulted.Exception">
+      <summary>The exception that caused the activity to fault.</summary>
+      <returns>The exception.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityFaulted.GetHashCode">
+      <summary>Returns the hash code for the object if the <see cref="P:System.WorkflowModel.ActivityFlowEvent.Activity" /> property has been set, otherwise returns 1.</summary>
+      <returns>The hash code.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ActivityFaulted.ToString">
+      <summary>Returns an information string that includes the name of the <see cref="P:System.WorkflowModel.ActivityFlowEvent.Activity" /> property.</summary>
+      <returns>The information string.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.ActivityFlowEvent">
+      <summary>The abstract base class for activity events.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.ActivityFlowEvent.Activity">
+      <summary>When implemented in a derived class, the activity that generated thi event.</summary>
+      <returns>The activity.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.Assign">
+      <summary>Sets <see cref="T:System.WorkflowModel.Argument" /> values from within a workflow.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Assign.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.Assign" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Assign.To">
+      <summary>Specifies the <see cref="T:System.WorkflowModel.Argument" /> that the activity assigns its <see cref="P:System.WorkflowModel.Activities.Assign.Value" /> to.</summary>
+      <returns>The specified <see cref="T:System.WorkflowModel.Argument" />.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Assign.Value">
+      <summary>Specifies the value that is assigned.</summary>
+      <returns>The value to be assigned.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.Assign`1">
+      <summary>The <see cref="T:System.WorkflowModel.Activities.Assign" /> activity is used to set <see cref="T:System.WorkflowModel.Argument" /> values from within a workflow.</summary>
+      <typeparam name="T">The type of the assigned value.</typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Assign`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.Assign`1" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Assign`1.To">
+      <summary>Specifies the <see cref="T:System.WorkflowModel.Argument" /> that the activity assigns its <see cref="P:System.WorkflowModel.Activities.Assign.Value" /> to.</summary>
+      <returns>The specified <see cref="T:System.WorkflowModel.Argument" />.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Assign`1.Value">
+      <summary>Specifies the value that is assigned.</summary>
+      <returns>The value to be assigned.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.Break">
+      <summary>The <see cref="T:System.WorkflowModel.Activities.Break" /> activity terminates execution of the innermost enclosing looping structure. Execution of the looping structure is maintained internally using a <see cref="T:System.WorkflowModel.Bookmark" />. </summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Break.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.Break" /> class.</summary>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.CancellationScope">
+      <summary>A container that defines the collection of activities affected by cancellation. Cancellation is a user-defined procedure that can be invoked (either from the activities contained by the handler, or externally) to gracefully terminate an activity’s work.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.CancellationScope.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.CancellationScope" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.CancellationScope.Body">
+      <summary>The <see cref="T:System.WorkflowModel.WorkflowElement" /> contained by the <see cref="T:System.WorkflowModel.Activities.CancellationScope" />.</summary>
+      <returns>Returns the <see cref="T:System.WorkflowModel.WorkflowElement" /> contained by the <see cref="T:System.WorkflowModel.Activities.CancellationScope" />.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.CancellationScope.CancelHandler">
+      <summary>The <see cref="T:System.WorkflowModel.WorkflowElement" /> that is executed in the event of cancellation.</summary>
+      <returns>The cancel handler.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.CancellationScope.Variables">
+      <summary>The collection of <see cref="T:System.WorkflowModel.Variable" /> objects associated with the <see cref="T:System.WorkflowModel.Activities.CancellationScope" />.</summary>
+      <returns>The collection of <see cref="T:System.WorkflowModel.Variable" /> objects associated with the <see cref="T:System.WorkflowModel.Activities.CancellationScope" />.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.Catch">
+      <summary>Contains activities to be executed after a fault in a <see cref="T:System.WorkflowModel.Activities.TryCatchFinally" /> activity.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Catch.ExceptionType">
+      <summary>The type of exception that causes the <see cref="T:System.WorkflowModel.Activities.Catch" /> activity to execute.</summary>
+      <returns>The exception type.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.Catch`1">
+      <summary>Contains activities to be executed after a fault in a <see cref="T:System.WorkflowModel.Activities.TryCatchFinally" /> activity.</summary>
+      <typeparam name="TException">The fault type to be caught.</typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Catch`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.Catch`1" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Catch`1.Action">
+      <summary>The <see cref="T:System.WorkflowModel.ActivityAction" /> handled by this activity.</summary>
+      <returns>The activity action.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Catch`1.ExceptionType">
+      <summary>The type of exception that causes the <see cref="T:System.WorkflowModel.Activities.Catch" /> activity to execute.</summary>
+      <returns>The exception type.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.Comment">
+      <summary>Displays a comment in the workflow designer surface. This activity provides no functionality at runtime.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Comment.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.Comment" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Comment.Body">
+      <summary>The child activities of the <see cref="T:System.WorkflowModel.Activities.Comment" /> activity, if any.</summary>
+      <returns>The child activities.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.Continue">
+      <summary>Bypasses the current iteration of a <see cref="T:System.WorkflowModel.Activities.Loop" /> activity. </summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Continue.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.Continue" /> class.</summary>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.CreateSharePointListItem">
+      <summary>Creates a new list item in the specified list on the specified SharePoint site.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.CreateSharePointListItem.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.CreateSharePointListItem" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.CreateSharePointListItem.Fields">
+      <summary>The collection of arguments used to create the new list. The names of these arguments are the field names, and the values of these arguments, which are evaluated at runtime, are the field values.</summary>
+      <returns>The collection of arguments used to create the new list.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.CreateSharePointListItem.ListName">
+      <summary>The name of the list to which the specified list item is added.</summary>
+      <returns>The list name.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.CreateSharePointListItem.NewItemId">
+      <summary>The item ID returned by the SharePoint server after the operation. This value is read-only at runtime.</summary>
+      <returns>The item ID.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.CreateSharePointListItem.SharePointSite">
+      <summary>The site on which to create the new list item. This value is read-only at runtime.</summary>
+      <returns>The site name.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.DbConnectionContext">
+      <summary>Stores database connection information for workflow operations.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DbConnectionContext.#ctor(System.String)">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.DbConnectionContext" /> class with connection information from the specified configuration section name.</summary>
+      <param name="configName">The name of the configuration section containing connection information.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DbConnectionContext.#ctor(System.String,System.String)">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.DbConnectionContext" /> class with theee specified provider name and connection string.</summary>
+      <param name="providerName">The name of the database provider used for the connection.</param>
+      <param name="connectionString">The connection string used to access the data store.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbConnectionContext.ConfigName">
+      <summary>The name of the configuration section containing connection information.</summary>
+      <returns>The configuration section name.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbConnectionContext.ConnectionString">
+      <summary>The connection string used to access the data store.</summary>
+      <returns>The connection string.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbConnectionContext.ProviderName">
+      <summary>The name of the database provider used to access the persistence store.</summary>
+      <returns>The database provider.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.DbQuery`1">
+      <summary>Executes a query against a database and populates an <see cref="T:System.WorkflowModel.OutArgument" /> with a list of the query results.</summary>
+      <typeparam name="TResult">The type of the values returned in the result set.</typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DbQuery`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.DbQuery`1" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbQuery`1.CommandText">
+      <summary>The text of the SQL command used to execute the query.</summary>
+      <returns>The SQL command.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbQuery`1.CommandType">
+      <summary>The <see cref="T:System.Data.CommandType" /> that specifies how the <see cref="P:System.WorkflowModel.Activities.DbQuery`1.CommandText" /> parameter is interpreted.</summary>
+      <returns>The command type.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbQuery`1.ConnectionContext">
+      <summary>The <see cref="T:System.WorkflowModel.Activities.DbConnectionContext" /> that defines connection parameters for the query.</summary>
+      <returns>The connection context.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbQuery`1.ObjectInitializationAction">
+      <summary>The <see cref="T:System.WorkflowModel.ActivityAction" /> callback invoked when the activity body is created. This callback is used to read the value from the database reader and assign the resulting value to the <see cref="P:System.WorkflowModel.Activities.DbQuery`1.Results" /> property.</summary>
+      <returns>The initialization callback.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbQuery`1.Parameters">
+      <summary>The collection of stored procedure parameters used for the query, including the stored procedure return value.</summary>
+      <returns>The stored procedure parameters.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbQuery`1.Results">
+      <summary>The list that contains the data returned by the query.</summary>
+      <returns>The returned list.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.DbUpdate">
+      <summary>Executes an update query against a database.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DbUpdate.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.DbUpdate" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbUpdate.CommandText">
+      <summary>The text of the SQL command used to execute the query.</summary>
+      <returns>The text of the SQL command used to execute the query.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbUpdate.ConnectionContext">
+      <summary>The <see cref="T:System.WorkflowModel.Activities.DbConnectionContext" /> that defines connection parameters for the query.</summary>
+      <returns>The <see cref="T:System.WorkflowModel.Activities.DbConnectionContext" /> that defines connection parameters for the query.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DbUpdate.CreateBody">
+      <summary>Creates the underlying database command used to update the database, based on the provided values.</summary>
+      <returns>The <see cref="T:System.WorkflowModel.WorkflowElement" /> that performs the update action.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DbUpdate.OnGetArguments(System.Collections.Generic.IList{System.WorkflowModel.RuntimeArgument})">
+      <summary>Returns the <see cref="P:System.WorkflowModel.Activities.DbUpdate.RowsAffected" /> and <see cref="P:System.WorkflowModel.Activities.DbUpdate.ConnectionContext" /> parameters.</summary>
+      <param name="arguments">The returned arguments.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbUpdate.Parameters">
+      <summary>The collection of stored procedure parameters used for the query, including the stored procedure return value.</summary>
+      <returns>The collection of stored procedure parameters used for the query, including the stored procedure return value.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DbUpdate.RowsAffected">
+      <summary>The number of rows affected by the query. This value is read-only at runtime.</summary>
+      <returns>The number of rows affected by the query.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.Delay">
+      <summary>The <see cref="T:System.WorkflowModel.Activities.Delay" /> activity puts one branch of workflow execution into an idle state. If the delay activity uses a durable timer, which is created if the activity is configured using a TimerExpiredNotification standard endpoint, the runtime can persist and unload the workflow. To pause the workflow without the possibility of having the workflow unload, configure the activity without adding a TimerExpiredNotification standard endpoint. </summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Delay.#ctor">
+      <summary>Creates a new instance of the<see cref="T:System.WorkflowModel.Activities.Delay" /> activity.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Delay.Duration">
+      <summary>The amount of time that the activity pauses workflow execution along the current branch.</summary>
+      <returns>The time delay.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Delay.System#WorkflowModel#IActivityExtensionProvider#EnsureExtensions(System.WorkflowModel.IExtensionCollection)">
+      <summary>Verifies that a TimerExtension exists in the current execution context. If no TimerExtension exists, this method adds a new VolatileTimerExtension to the current execution context.</summary>
+      <param name="extensions">The extensions in the current execution context.</param>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.DeleteSharePointListItem">
+      <summary>Deletes an item in the specified list on the specified SharePoint site.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DeleteSharePointListItem.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.DeleteSharePointListItem" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DeleteSharePointListItem.ListItemId">
+      <summary>The ID of the item to be deleted. This value is read-only at runtime.</summary>
+      <returns>The ID of the item to be deleted.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DeleteSharePointListItem.ListName">
+      <summary>The SharePoint list from which the specified item is deleted.</summary>
+      <returns>The list from which the item is deleted.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DeleteSharePointListItem.SharePointSite">
+      <summary>The site from which the specified list item is deleted.</summary>
+      <returns>The site from which the item is deleted.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.DoWhile">
+      <summary>A looping activity that executes contained activities at least once.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DoWhile.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.DoWhile" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DoWhile.Body">
+      <summary>The child activity to be iterated.</summary>
+      <returns>The child activity.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DoWhile.Condition">
+      <summary>The <see cref="T:System.WorkflowModel.ValueExpression" /> checked at the end of the loop to determine whether the loop is executed again.</summary>
+      <returns>The condition for re-executing the loop.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DoWhile.FindName(System.String)">
+      <summary>Locates and retrieves a name scope from the internal dictionary of names. Name scopes enable activities to share similar variable names within the same workflow.</summary>
+      <returns>The retrieved name.</returns>
+      <param name="name">The name to retrieve.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DoWhile.OnBreak(System.WorkflowModel.ActivityExecutionContext,System.WorkflowModel.Bookmark,System.Object)">
+      <summary>Cancels the remaining activities in the loop, and exits the loop.</summary>
+      <param name="context">The execution environment under which the <see cref="T:System.WorkflowModel.Activities.DoWhile" /> activity is running.</param>
+      <param name="bookmark">Not implemented. </param>
+      <param name="state">Not implemented.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DoWhile.OnContinue(System.WorkflowModel.ActivityExecutionContext,System.WorkflowModel.Bookmark,System.Object)">
+      <summary>Cancels the remaining activities in the loop, and restarts the loop.</summary>
+      <param name="context">The execution environment under which the <see cref="T:System.WorkflowModel.Activities.DoWhile" /> activity is running.</param>
+      <param name="bookmark">Not implemented.</param>
+      <param name="state">Not implemented.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DoWhile.OnExecute(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>Schedules the body of the activity to be run.</summary>
+      <param name="context">The execution environment under which the <see cref="T:System.WorkflowModel.Activities.DoWhile" /> activity is running.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DoWhile.OnGetArguments(System.Collections.Generic.IList{System.WorkflowModel.RuntimeArgument})">
+      <summary>Not implemented.</summary>
+      <param name="arguments">Not implemented.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DoWhile.OnGetChildren(System.Collections.Generic.IList{System.WorkflowModel.WorkflowElement})">
+      <summary>Returns the loop’s <see cref="P:System.WorkflowModel.Activities.DoWhile.Condition" /> and the activities in the <see cref="P:System.WorkflowModel.Activities.DoWhile.Body" />.</summary>
+      <param name="children">The list that is populated with the activity’s <see cref="P:System.WorkflowModel.Activities.DoWhile.Condition" /> and <see cref="P:System.WorkflowModel.Activities.DoWhile.Body" />.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DoWhile.OnGetEnvironmentVariables(System.Collections.Generic.IList{System.WorkflowModel.Variable})">
+      <summary>Returns the activity’s <see cref="P:System.WorkflowModel.Activities.DoWhile.Variables" /> collection and a <see cref="T:System.Boolean" /> variable that indicates whether the loop is to be continued. </summary>
+      <param name="variables">The collection to be populated with the activity’s variable list.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DoWhile.OnOpen(System.WorkflowModel.DeclaredEnvironment)">
+      <summary>Opens the activity. If the <see cref="P:System.WorkflowModel.Activities.DoWhile.Condition" /> property is not set, a ValidationException is thrown.</summary>
+      <param name="environment"></param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DoWhile.RegisterName(System.String,System.Object)">
+      <summary>Adds a name scope to the internal dictionary of name scopes. Name scopes enable activities to share similar variable names within the same workflow.</summary>
+      <param name="name">The name of the element to add.</param>
+      <param name="scopedElement">The object associated with the element to add.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.DoWhile.UnregisterName(System.String)">
+      <summary>Removes an element from the internal dictionary of name scopes. Name scopes enable activities to share similar variable names within the same workflow.</summary>
+      <param name="name">The key of the element to remove.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.DoWhile.Variables">
+      <summary>The collection of <see cref="T:System.WorkflowModel.Variable" /> objects associated with the <see cref="T:System.WorkflowModel.Activities.DoWhile" /> activity.</summary>
+      <returns>The collection of variables.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.DurableTimerExtension"></member>
+    <member name="M:System.WorkflowModel.Activities.DurableTimerExtension.#ctor(System.WorkflowModel.Activities.ITimerServiceClient)"></member>
+    <member name="M:System.WorkflowModel.Activities.DurableTimerExtension.BeginOnDelete(System.WorkflowModel.IExtensionCollection,System.TimeSpan,System.AsyncCallback,System.Object)"></member>
+    <member name="M:System.WorkflowModel.Activities.DurableTimerExtension.BeginOnSave(System.WorkflowModel.IExtensionCollection,System.TimeSpan,System.AsyncCallback,System.Object)"></member>
+    <member name="M:System.WorkflowModel.Activities.DurableTimerExtension.EndOnDelete(System.IAsyncResult)"></member>
+    <member name="M:System.WorkflowModel.Activities.DurableTimerExtension.EndOnSave(System.IAsyncResult)"></member>
+    <member name="M:System.WorkflowModel.Activities.DurableTimerExtension.OnDelete(System.WorkflowModel.IExtensionCollection,System.TimeSpan)"></member>
+    <member name="M:System.WorkflowModel.Activities.DurableTimerExtension.OnLoad(System.Object,System.WorkflowModel.IExtensionCollection)"></member>
+    <member name="M:System.WorkflowModel.Activities.DurableTimerExtension.OnSave(System.WorkflowModel.IExtensionCollection,System.TimeSpan)"></member>
+    <member name="M:System.WorkflowModel.Activities.DurableTimerExtension.RemoveTimerOnTxCompleted(System.Object,System.Transactions.TransactionEventArgs)"></member>
+    <member name="M:System.WorkflowModel.Activities.DurableTimerExtension.TimerExpiredNotification(System.Guid,System.Object)"></member>
+    <member name="T:System.WorkflowModel.Activities.DurableTimerStrings"></member>
+    <member name="F:System.WorkflowModel.Activities.DurableTimerStrings.DurableTimerNamespace"></member>
+    <member name="F:System.WorkflowModel.Activities.DurableTimerStrings.TimerExpiredNotificationContractName"></member>
+    <member name="F:System.WorkflowModel.Activities.DurableTimerStrings.TimerExpiredNotificationOperationName"></member>
+    <member name="F:System.WorkflowModel.Activities.DurableTimerStrings.TimerServiceContractName"></member>
+    <member name="F:System.WorkflowModel.Activities.DurableTimerStrings.TimerServiceEndpointConfigurationName"></member>
+    <member name="F:System.WorkflowModel.Activities.DurableTimerStrings.TimerServiceRegisterOperation"></member>
+    <member name="F:System.WorkflowModel.Activities.DurableTimerStrings.TimerServiceRemoveOperation"></member>
+    <member name="T:System.WorkflowModel.Activities.Flowchart">
+      <summary>Models workflows using the familiar Flowchart paradigm. The <see cref="T:System.WorkflowModel.Activities.Flowchart" /> activity uses directional links that derive from <see cref="T:System.WorkflowModel.Activities.FlowElement" /> to control the flow of execution of contained activities.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Flowchart.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.Flowchart" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Flowchart.Elements">
+      <summary>The contained collection of flowchart elements, including <see cref="T:System.WorkflowModel.Activities.FlowDecision" />, <see cref="T:System.WorkflowModel.Activities.FlowStep" />, and <see cref="T:System.WorkflowModel.Activities.FlowSwitch" /> elements.</summary>
+      <returns>The collection of elements.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Flowchart.Execute(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>Executes the starting element (determined during <see cref="M:System.WorkflowModel.Activities.Flowchart.OnOpen(System.WorkflowModel.DeclaredEnvironment)" />).</summary>
+      <param name="context">The environment in which the flowchart executes.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Flowchart.OnGetChildren(System.Collections.Generic.IList{System.WorkflowModel.WorkflowElement})">
+      <summary>Returns the contained activities.</summary>
+      <param name="children">The activities.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Flowchart.OnGetEnvironmentVariables(System.Collections.Generic.IList{System.WorkflowModel.Variable})">
+      <summary>Returns the collection of contained variables.</summary>
+      <param name="variables">The collection of variables.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Flowchart.OnOpen(System.WorkflowModel.DeclaredEnvironment)">
+      <summary>Builds the collection of elements and determines the starting element.</summary>
+      <param name="environment"></param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Flowchart.Variables">
+      <summary>The collection of <see cref="T:System.WorkflowModel.Variable" /> objects associated with the <see cref="T:System.WorkflowModel.Activities.Flowchart" />.</summary>
+      <returns>The collection of variables.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.FlowDecision">
+      <summary>
+        <see cref="T:System.WorkflowModel.Activities.FlowDecision" /> is a <see cref="T:System.WorkflowModel.Activities.FlowElement" /> that allows the developer to define a condition and take different actions based on the value of the condition.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.FlowDecision.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.FlowDecision" /> class. </summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.FlowDecision.Condition">
+      <summary>Specifies the condition the <see cref="T:System.WorkflowModel.Activities.FlowDecision" /> is testing. If the condition evaluates to true, the <see cref="T:System.WorkflowModel.WorkflowElement" /> in the <see cref="P:System.WorkflowModel.Activities.FlowDecision.True" /> property is executed. Otherwise the <see cref="T:System.WorkflowModel.WorkflowElement" /> in the <see cref="P:System.WorkflowModel.Activities.FlowDecision.False" /> property is executed.</summary>
+      <returns>A value expression that represents the condition. </returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.FlowDecision.False">
+      <summary>Gets or sets the <see cref="T:System.WorkflowModel.WorkflowElement" /> that is executed when the condition evaluates to false.</summary>
+      <returns>The workflow element that is executed when the condition evaluates to false.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.FlowDecision.True">
+      <summary>Gets or sets the <see cref="T:System.WorkflowModel.WorkflowElement" /> that is executed when the condition evaluates to true.</summary>
+      <returns>The workflow element to execute when the condition evaluates to true.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.FlowElement"></member>
+    <member name="M:System.WorkflowModel.Activities.FlowElement.op_Implicit(System.WorkflowModel.WorkflowElement)~System.WorkflowModel.Activities.FlowElement"></member>
+    <member name="T:System.WorkflowModel.Activities.FlowEvent"></member>
+    <member name="T:System.WorkflowModel.Activities.FlowStep"></member>
+    <member name="M:System.WorkflowModel.Activities.FlowStep.#ctor">
+      <summary>Returns a new instance of the <see cref="T:System.WorkflowModel.Activities.FlowStep" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.FlowStep.Action">
+      <summary>The <see cref="T:System.WorkflowModel.WorkflowElement" /> that the <see cref="T:System.WorkflowModel.Activities.FlowStep" /> element executes.</summary>
+      <returns>The element to be executed.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.FlowStep.Next">
+      <summary>If <see cref="P:System.WorkflowModel.Activities.FlowStep.Action" /> is null, the <see cref="T:System.WorkflowModel.Activities.FlowElement" /> that the <see cref="T:System.WorkflowModel.Activities.FlowStep" /> element executes.</summary>
+      <returns>The specified element.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.FlowSwitch"></member>
+    <member name="M:System.WorkflowModel.Activities.FlowSwitch.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.FlowSwitch" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.FlowSwitch.Cases">
+      <summary>A dictionary of cases to be processed by the <see cref="T:System.WorkflowModel.Activities.FlowSwitch" /> element. Each element in the dictionary consists of an object of a type that implements <see cref="T:System.IComparable" /> (such as <see cref="T:System.String" />) and a <see cref="T:System.WorkflowModel.Activities.FlowElement" />.</summary>
+      <returns>The collection of cases.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.FlowSwitch.Default">
+      <summary>The element to be executed if no elements in the <see cref="P:System.WorkflowModel.Activities.FlowSwitch.Cases" /> collection match the compared value.</summary>
+      <returns>The default element to execute.<see cref="" />.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.FlowSwitch.Expression">
+      <summary>The expression to evaluate against the collection of <see cref="P:System.WorkflowModel.Activities.FlowSwitch.Cases" /> elements.</summary>
+      <returns>The expression to evaluate.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.ForEach`1">
+      <summary>Executes an activity action once for each value provided in the <see cref="P:System.WorkflowModel.Activities.ForEach`1.Values" /> collection.</summary>
+      <typeparam name="T">The type of the values provided in the <see cref="P:System.WorkflowModel.Activities.ForEach`1.Values" /> collection.</typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ForEach`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.ForEach`1" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.ForEach`1.Body">
+      <summary>The activity action to be executed for each item in the <see cref="P:System.WorkflowModel.Activities.ForEach`1.Values" /> collection.</summary>
+      <returns>
+The activity action to be executed.
+</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ForEach`1.OnBreak(System.WorkflowModel.ActivityExecutionContext,System.WorkflowModel.Bookmark,System.Object)">
+      <summary>Cancels the currently executing iteration and exits the loop.</summary>
+      <param name="context">The execution environment the activity is executing under.</param>
+      <param name="bookmark">Not implemented.</param>
+      <param name="state">Not implemented.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ForEach`1.OnContinue(System.WorkflowModel.ActivityExecutionContext,System.WorkflowModel.Bookmark,System.Object)">
+      <summary>Cancels the currently executing iteration and begins the next iteration.</summary>
+      <param name="context">The execution environment the activity is executing under.</param>
+      <param name="bookmark">Not implemented.</param>
+      <param name="state">Not implemented.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ForEach`1.OnExecute(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>Begins execution of the activity iterations.</summary>
+      <param name="context">The execution environment the activity is executing under.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ForEach`1.OnGetChildren(System.Collections.Generic.IList{System.WorkflowModel.WorkflowElement})">
+      <summary>Returns the activity action specified in the <see cref="P:System.WorkflowModel.Activities.ForEach`1.Body" /> parameter.</summary>
+      <param name="children">A list that contains the body parameter.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ForEach`1.OnGetEnvironmentVariables(System.Collections.Generic.IList{System.WorkflowModel.Variable})">
+      <summary>Returns a collection of variables that describe the current execution state.</summary>
+      <param name="variables">The collection of variables.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ForEach`1.OnOpen(System.WorkflowModel.DeclaredEnvironment)">
+      <summary>Opens the activity.</summary>
+      <param name="environment">The collection of variables and arguments associated with the execution environment.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.ForEach`1.Values">
+      <summary>The activity’s collection of inputs for the execution of the <see cref="P:System.WorkflowModel.Activities.ForEach`1.Body" /> activity action.</summary>
+      <returns>
+The collection of values.
+</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.GetSharePointListItems`1">
+      <summary>Returns a collection of SharePoint list items.</summary>
+      <typeparam name="TResult">The type of the returned list values.</typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.GetSharePointListItems`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.GetSharePointListItems`1" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.GetSharePointListItems`1.FieldNames">
+      <summary>The names of the fields to query for values.</summary>
+      <returns>The collection of field names.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.GetSharePointListItems`1.ListItems">
+      <summary>The collection of list items returned by the query.</summary>
+      <returns>The returned list item objects.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.GetSharePointListItems`1.ListName">
+      <summary>The name of the list to query for values.</summary>
+      <returns>The queried list name.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.GetSharePointListItems`1.ObjectInitializationAction">
+      <summary>The <see cref="T:System.WorkflowModel.Activities.InitializationAction`2" /> callback that initializes the list item object based on the data returned by the SharePoint server.</summary>
+      <returns>The collection of initialization parameters.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.GetSharePointListItems`1.SharePointSite">
+      <summary>The SharePoint site to be queried.</summary>
+      <returns>The SharePoint site.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.If">
+      <summary>Models an If-Else condition.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.If.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.If" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.If.Condition">
+      <summary>The condition that determines which child activity to execute.  The <see cref="P:System.WorkflowModel.Activities.If.Then" /> activity will execute if the condition resolves to true.</summary>
+      <returns>
+The execution condition.
+</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.If.Else">
+      <summary>The activity to be executed if the activity’s <see cref="P:System.WorkflowModel.Activities.If.Condition" /> resolves to false.</summary>
+      <returns>
+The child activity.
+</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.If.Execute(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>Executes the <see cref="T:System.WorkflowModel.WorkflowElement" /> specified in the <see cref="P:System.WorkflowModel.Activities.If.Then" /> parameter if the  <see cref="P:System.WorkflowModel.Activities.If.Condition" /> resolves to true, otherwise, executes the <see cref="T:System.WorkflowModel.WorkflowElement" /> specified in the <see cref="P:System.WorkflowModel.Activities.If.Else" /> parameter.</summary>
+      <param name="context">The execution environment under which the activity executes.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.If.OnGetChildren(System.Collections.Generic.IList{System.WorkflowModel.WorkflowElement})">
+      <summary>Returns the <see cref="P:System.WorkflowModel.Activities.If.Then" /> and <see cref="P:System.WorkflowModel.Activities.If.Else" /> activities.</summary>
+      <param name="children">The requested activities.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.If.OnOpen(System.WorkflowModel.DeclaredEnvironment)">
+      <summary>Opens the activity.</summary>
+      <param name="environment">The collection of variables and attributes associated with the execution environment.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.If.Then">
+      <summary>The activity to be executed if the activity’s <see cref="P:System.WorkflowModel.Activities.If.Condition" /> resolves to true.</summary>
+      <returns>
+The child activity.
+</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.InitializationAction`2">
+      <summary>An event that occurs when an activity initializes.</summary>
+      <typeparam name="TSource"></typeparam>
+      <typeparam name="TTarget"></typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.InitializationAction`2.#ctor">
+      <summary>Cretaes a new instance of the <see cref="T:System.WorkflowModel.Activities.InitializationAction`2" /> class.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.InitializationAction`2.GetActionArguments">
+      <summary>Returns a collection including the <see cref="P:System.WorkflowModel.Activities.InitializationAction`2.Source" /> and <see cref="P:System.WorkflowModel.Activities.InitializationAction`2.Target" /> parameters.</summary>
+      <returns>The parameters.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.InitializationAction`2.Source">
+      <summary>The initializing activity.</summary>
+      <returns>The activity.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.InitializationAction`2.Target">
+      <summary>The initialized activity.</summary>
+      <returns>The activity.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.Interop">
+      <summary>An activity that allows for execution of (WinFX) activities within a workflow.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.Interop" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Interop.Body">
+      <summary>The type of the activity contained by the <see cref="T:System.WorkflowModel.Activities.Interop" /> activity.</summary>
+      <returns>This type must derive from <see cref="T:System.Workflow.ComponentModel.Activity" />.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.Cancel(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>Cancels the execution of the contained activity.</summary>
+      <param name="executionContext">The execution environment under which the activity executes.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.Execute(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>Executes the contained activity.</summary>
+      <param name="context">The execution environment under which the activity executes.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.GetAttributes">
+      <summary>Returns the collection of attributes for the contained WinFX activity.</summary>
+      <returns>The attribute collection.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.GetClassName">
+      <summary>Returns the name of the class of the contained WinFX activity.</summary>
+      <returns>The class name.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.GetComponentName">
+      <summary>Returns the name of the contained WinFX activity.</summary>
+      <returns>The activity name.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.GetConverter">
+      <summary>Returns the associated type converter for the contained WinFX activity.</summary>
+      <returns>The type converter.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.GetDefaultEvent">
+      <returns>Returns the default event for the contained WinFX activity.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.GetDefaultProperty">
+      <summary>Returns the default property of the contained WinFX activity.</summary>
+      <returns>The default property.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.GetEditor(System.Type)">
+      <summary>Returns the editor for the contained WinFX activity.</summary>
+      <returns>The editor.</returns>
+      <param name="editorBaseType">The type of the requested editor.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.GetEvents">
+      <summary>Returns the collection of events for the contained WinFX activity.</summary>
+      <returns>
+        <see cref="T:System.ComponentModel.EventDescriptorCollection" />.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.GetEvents(System.Attribute[])">
+      <summary>Returns the collection of events for the contained WinFX activity.</summary>
+      <returns>The events.</returns>
+      <param name="attributes"></param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.GetProperties">
+      <summary>Returns the collection of properties for the contained WinFX activity.</summary>
+      <returns>
+        <see cref="T:System.ComponentModel.PropertyDescriptorCollection" />.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.GetProperties(System.Attribute[])">
+      <summary>Returns the collection of properties for the contained WinFX activity.</summary>
+      <returns>The property collection.</returns>
+      <param name="attributes">Not implemented.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.GetPropertyOwner(System.ComponentModel.PropertyDescriptor)">
+      <summary>Returns the owner of the specified property descriptor, or the Interop activity itself if the property descriptor has no owner.</summary>
+      <returns>The owner.</returns>
+      <param name="pd"></param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Interop.MetaProperties">
+      <summary>The collection of name-value pairs that corresponds to the meta properties of the WinFX activity, such as an activity’s <see cref="T:System.Workflow.ComponentModel.Activity.Name" /> property, or a <see cref="T:System.Workflow.Activities.While" /> activity’s <see cref="M:System.Workflow.Activities.While.Condition" /> property.</summary>
+      <returns>The collection of meta-properties.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.OnGetArguments(System.Collections.Generic.IList{System.WorkflowModel.RuntimeArgument})">
+      <summary>Returns the list of arguments associated with the activity. The argument list is determined by the type of the Body property.</summary>
+      <param name="arguments">The argument list.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.OnGetEnvironmentVariables(System.Collections.Generic.IList{System.WorkflowModel.Variable})">
+      <summary>Returns the variables used by the activity.</summary>
+      <param name="variables">The list that contains the variables used by the activity.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Interop.OnOpen(System.WorkflowModel.DeclaredEnvironment)">
+      <summary>Prepares the activity for execution.</summary>
+      <param name="environment">The variable and argument collections.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Interop.Properties">
+      <summary>The collection of name-value pairs that corresponds to the input and output properties of the WinFX activity.</summary>
+      <returns>The collection of properties.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.ITimerExpiredNotification"></member>
+    <member name="M:System.WorkflowModel.Activities.ITimerExpiredNotification.TimerExpiredNotification(System.Guid,System.Object)"></member>
+    <member name="T:System.WorkflowModel.Activities.ITimerServiceClient"></member>
+    <member name="M:System.WorkflowModel.Activities.ITimerServiceClient.BeginRegisterTimer(System.TimeSpan,System.Guid,System.Object,System.TimeSpan,System.AsyncCallback,System.Object)"></member>
+    <member name="M:System.WorkflowModel.Activities.ITimerServiceClient.BeginRemoveTimer(System.Guid,System.AsyncCallback,System.Object)"></member>
+    <member name="M:System.WorkflowModel.Activities.ITimerServiceClient.EndRegisterTimer(System.IAsyncResult)"></member>
+    <member name="M:System.WorkflowModel.Activities.ITimerServiceClient.EndRemoveTimer(System.IAsyncResult)"></member>
+    <member name="M:System.WorkflowModel.Activities.ITimerServiceClient.RegisterTimer(System.TimeSpan,System.Guid,System.Object,System.TimeSpan)"></member>
+    <member name="M:System.WorkflowModel.Activities.ITimerServiceClient.RemoveTimer(System.Guid)"></member>
+    <member name="T:System.WorkflowModel.Activities.Loop">
+      <summary>The abstract base class for looping flow control activities.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Loop.#ctor">
+      <summary>When implemented in a derived class, creates a new instance of the derived class.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Loop.Execute(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>When implemented in a derived class, executes one iteration of the loop.</summary>
+      <param name="context">The runtime environment under which the activity executes.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Loop.OnBreak(System.WorkflowModel.ActivityExecutionContext,System.WorkflowModel.Bookmark,System.Object)">
+      <summary>When implemented in a derived class, an event that executes when a <see cref="T:System.WorkflowModel.Activities.Break" /> activity in the loop is encountered.</summary>
+      <param name="context">The runtime environment under which the activity executes.</param>
+      <param name="bookmark">The <see cref="T:System.WorkflowModel.Bookmark" /> used to resume the workflow after execution stops.</param>
+      <param name="state">A user-defined object to uniquely identify this instance.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Loop.OnContinue(System.WorkflowModel.ActivityExecutionContext,System.WorkflowModel.Bookmark,System.Object)">
+      <summary>When implemented in a derived class, called when a <see cref="T:System.WorkflowModel.Activities.Continue" /> activity executes within the loop.</summary>
+      <param name="context">The runtime environment under which the activity executes.</param>
+      <param name="bookmark">The <see cref="T:System.WorkflowModel.Bookmark" /> used to resume the workflow after execution stops.</param>
+      <param name="state">A user-defined object to uniquely identify this instance.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Loop.OnExecute(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>When implemented in a derived class, called when each iteration of the loop executes.</summary>
+      <param name="context">The runtime environment under which the activity executes.</param>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.Parallel">
+      <summary>A workflow element that executes all child activities simultaneously and asynchronously.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Parallel.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.Parallel" /> activity.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Parallel.Branches">
+      <summary>The child elements to be executed.</summary>
+      <returns>The elements.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Parallel.CompletionCondition">
+      <summary>If this expression is true after the completion of any elements in the <see cref="P:System.WorkflowModel.Activities.Parallel.Branches" /> collection, any remaining executing elements are cancelled.</summary>
+      <returns>The completion expression.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Parallel.Variables">
+      <summary>The collection of contained variables.</summary>
+      <returns>The contained variables.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.ParallelForEach`1">
+      <summary>An iterative activity that executes a contained activity once for each value in the <see cref="P:System.WorkflowModel.Activities.ParallelForEach`1.Values" /> collection. For example, if the contained activity writes out a message to the console, and the <see cref="P:System.WorkflowModel.Activities.ParallelForEach`1.Values" /> collection contains strings, then the contained activity is executed repeatedly with each string as input.</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.ParallelForEach`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.ParallelForEach`1" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.ParallelForEach`1.Body">
+      <summary>The workflow element that is executed once for every value contained in the <see cref="P:System.WorkflowModel.Activities.ParallelForEach`1.Values" /> collection.</summary>
+      <returns>The contained activity.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.ParallelForEach`1.CompletionCondition">
+      <summary>If this expression evaluates to true when one iteration completes, then any remaining iterations are cancelled. </summary>
+      <returns>The completion expression.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.ParallelForEach`1.Values">
+      <summary>The collection of values used as parameters for each iteration of the activity contained in the <see cref="P:System.WorkflowModel.Activities.ParallelForEach`1.Body" /> property.</summary>
+      <returns>The collection of values.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.PowerShellCommand">
+      <summary>Executes a command using PowerShell.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.PowerShellCommand.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.PowerShellCommand" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.PowerShellCommand.CommandText">
+      <summary>The command to be executed.</summary>
+      <returns>The command.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.PowerShellCommand.Errors"></member>
+    <member name="P:System.WorkflowModel.Activities.PowerShellCommand.Input">
+      <summary>The pipeline input to be provided to the executed PowerShell command.</summary>
+      <returns>The input.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.PowerShellCommand.Parameters">
+      <summary>The collection of parameters for the executed command.</summary>
+      <returns>The collection of parameters.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.PowerShellCommand`1">
+      <summary>Executes a command using PowerShell, specifying the command’s return type.</summary>
+      <typeparam name="TResult"></typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.PowerShellCommand`1.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.PowerShellCommand`1" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.PowerShellCommand`1.CommandText">
+      <summary>The command to be executed.</summary>
+      <returns>The command.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.PowerShellCommand`1.Errors"></member>
+    <member name="P:System.WorkflowModel.Activities.PowerShellCommand`1.Input">
+      <summary>The pipeline input to be provided to the executed PowerShell command.</summary>
+      <returns>The input.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.PowerShellCommand`1.ObjectInitializationAction">
+      <summary>The <see cref="T:System.WorkflowModel.Activities.ActivityAction" /> to be executed when the activity initializes. This activity action is used to initialize the parameters and pipeline input for the activity.</summary>
+      <returns>The activity action.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.PowerShellCommand`1.Output">
+      <summary>The returned output from the executed command.</summary>
+      <returns>The output.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.PowerShellCommand`1.Parameters">
+      <summary>The collection of parameters for the executed command.</summary>
+      <returns>The collection of parameters.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.PowerShellExecutionException"></member>
+    <member name="M:System.WorkflowModel.Activities.PowerShellExecutionException.#ctor"></member>
+    <member name="M:System.WorkflowModel.Activities.PowerShellExecutionException.#ctor(System.Exception,System.Collections.ObjectModel.Collection{System.Management.Automation.ErrorRecord})"></member>
+    <member name="M:System.WorkflowModel.Activities.PowerShellExecutionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"></member>
+    <member name="M:System.WorkflowModel.Activities.PowerShellExecutionException.#ctor(System.String)"></member>
+    <member name="M:System.WorkflowModel.Activities.PowerShellExecutionException.#ctor(System.String,System.Exception)"></member>
+    <member name="P:System.WorkflowModel.Activities.PowerShellExecutionException.ErrorRecords"></member>
+    <member name="P:System.WorkflowModel.Activities.PowerShellExecutionException.FailReason"></member>
+    <member name="M:System.WorkflowModel.Activities.PowerShellExecutionException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"></member>
+    <member name="T:System.WorkflowModel.Activities.Sequence">
+      <summary>Executes a set of child activities according to a single, defined ordering.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Sequence.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.Sequence" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Sequence.Activities">
+      <summary>The collection of contained activities.</summary>
+      <returns>The activities.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Sequence.Execute(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>Executes contained activities in sequence.</summary>
+      <param name="executionContext">The environment in which the activity executes.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Sequence.OnGetArguments(System.Collections.Generic.IList{System.WorkflowModel.RuntimeArgument})">
+      <summary>Not implemented.</summary>
+      <param name="arguments">Not implemented.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Sequence.OnGetChildren(System.Collections.Generic.IList{System.WorkflowModel.WorkflowElement})">
+      <summary>Retrieves the collection of child activities contained by the <see cref="T:System.WorkflowModel.Activities.Sequence" /> activity.</summary>
+      <param name="children">The child activities.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Sequence.OnGetEnvironmentVariables(System.Collections.Generic.IList{System.WorkflowModel.Variable})">
+      <summary>Retrieves the collection of variables contained by the <see cref="T:System.WorkflowModel.Activities.Sequence" /> activity.</summary>
+      <param name="variables">The collection of variables.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Sequence.OnSequenceComplete(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>Not implemented.</summary>
+      <param name="executionContext">Not implemented.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Sequence.Variables">
+      <summary>The collection of contained variables.</summary>
+      <returns>The collection of variables.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.SharePointConnectionContext"></member>
+    <member name="M:System.WorkflowModel.Activities.SharePointConnectionContext.#ctor"></member>
+    <member name="P:System.WorkflowModel.Activities.SharePointConnectionContext.SharePointSite"></member>
+    <member name="T:System.WorkflowModel.Activities.State"></member>
+    <member name="M:System.WorkflowModel.Activities.State.#ctor"></member>
+    <member name="P:System.WorkflowModel.Activities.State.Entry"></member>
+    <member name="P:System.WorkflowModel.Activities.State.Exit"></member>
+    <member name="P:System.WorkflowModel.Activities.State.IsInitial"></member>
+    <member name="P:System.WorkflowModel.Activities.State.IsTerminal"></member>
+    <member name="P:System.WorkflowModel.Activities.State.Name"></member>
+    <member name="P:System.WorkflowModel.Activities.State.States"></member>
+    <member name="M:System.WorkflowModel.Activities.State.ToString"></member>
+    <member name="T:System.WorkflowModel.Activities.StateMachine"></member>
+    <member name="M:System.WorkflowModel.Activities.StateMachine.#ctor"></member>
+    <member name="M:System.WorkflowModel.Activities.StateMachine.Execute(System.WorkflowModel.ActivityExecutionContext)"></member>
+    <member name="M:System.WorkflowModel.Activities.StateMachine.OnGetChildren(System.Collections.Generic.IList{System.WorkflowModel.WorkflowElement})"></member>
+    <member name="M:System.WorkflowModel.Activities.StateMachine.OnGetEnvironmentVariables(System.Collections.Generic.IList{System.WorkflowModel.Variable})"></member>
+    <member name="M:System.WorkflowModel.Activities.StateMachine.OnOpen(System.WorkflowModel.DeclaredEnvironment)"></member>
+    <member name="P:System.WorkflowModel.Activities.StateMachine.States"></member>
+    <member name="P:System.WorkflowModel.Activities.StateMachine.Transitions"></member>
+    <member name="P:System.WorkflowModel.Activities.StateMachine.Variables"></member>
+    <member name="T:System.WorkflowModel.Activities.StateTransition"></member>
+    <member name="M:System.WorkflowModel.Activities.StateTransition.#ctor"></member>
+    <member name="P:System.WorkflowModel.Activities.StateTransition.Action"></member>
+    <member name="P:System.WorkflowModel.Activities.StateTransition.Event"></member>
+    <member name="P:System.WorkflowModel.Activities.StateTransition.Source"></member>
+    <member name="P:System.WorkflowModel.Activities.StateTransition.Target"></member>
+    <member name="T:System.WorkflowModel.Activities.Switch`1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Switch`1.#ctor"></member>
+    <member name="P:System.WorkflowModel.Activities.Switch`1.Cases"></member>
+    <member name="P:System.WorkflowModel.Activities.Switch`1.Default"></member>
+    <member name="P:System.WorkflowModel.Activities.Switch`1.Expression"></member>
+    <member name="T:System.WorkflowModel.Activities.Throw`1">
+      <summary>Causes an exception to be thrown in a <see cref="T:System.WorkflowModel.Activities.TryCatchFinally" /> activity.</summary>
+      <typeparam name="TException">The type of the exception to be thrown.</typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Throw`1.#ctor">
+      <summary>Returns a new instance of the <see cref="T:System.WorkflowModel.Activities.Throw`1" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Throw`1.Exception">
+      <summary>The exception object to be thrown by the activity.</summary>
+      <returns>The exception.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Throw`1.Execute(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>Throws the contained exception.</summary>
+      <param name="context">The environment in which the activity executes.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Throw`1.InnerException">
+      <summary>The inner exception associated with the exception to be thrown by the activity.</summary>
+      <returns>The inner exception.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.Throw`1.Message">
+      <summary>The message associated with the exception to be thrown by the activity.</summary>
+      <returns>The message.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Throw`1.OnOpen(System.WorkflowModel.DeclaredEnvironment)"></member>
+    <member name="M:System.WorkflowModel.Activities.Throw`1.ShouldSerializeException">
+      <summary>Returns true if the <see cref="P:System.WorkflowModel.Activities.Throw`1.Exception" /> object has been set to a value.</summary>
+      <returns>true if the <see cref="P:System.WorkflowModel.Activities.Throw`1.Exception" /> object has been set to a value.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Throw`1.ShouldSerializeInnerException">
+      <summary>Returns true if the <see cref="P:System.WorkflowModel.Activities.Throw`1.InnerException" /> object has been set to a value.</summary>
+      <returns>true if the <see cref="P:System.WorkflowModel.Activities.Throw`1.InnerException" /> object has been set to a value.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.Throw`1.ShouldSerializeMessage">
+      <summary>Returns true if the <see cref="P:System.WorkflowModel.Activities.Throw`1.Message" /> object has been set to a value.</summary>
+      <returns>true if the <see cref="P:System.WorkflowModel.Activities.Throw`1.Message" /> object has been set to a value.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.TimerExtension"></member>
+    <member name="M:System.WorkflowModel.Activities.TimerExtension.#ctor(System.WorkflowModel.Activities.ITimerServiceClient)"></member>
+    <member name="M:System.WorkflowModel.Activities.TimerExtension.Attach(System.WorkflowModel.IExtensibleObject)"></member>
+    <member name="M:System.WorkflowModel.Activities.TimerExtension.CancelTimer(System.String)"></member>
+    <member name="M:System.WorkflowModel.Activities.TimerExtension.Detach(System.WorkflowModel.IExtensibleObject)"></member>
+    <member name="F:System.WorkflowModel.Activities.TimerExtension.instance"></member>
+    <member name="M:System.WorkflowModel.Activities.TimerExtension.SetTimer(System.TimeSpan,System.String)"></member>
+    <member name="M:System.WorkflowModel.Activities.TimerExtension.SetTimer(System.TimeSpan,System.WorkflowModel.ActivityExecutionContext)"></member>
+    <member name="F:System.WorkflowModel.Activities.TimerExtension.tableSaved"></member>
+    <member name="P:System.WorkflowModel.Activities.TimerExtension.ThisLock"></member>
+    <member name="M:System.WorkflowModel.Activities.TimerExtension.TimerFiredCallback(System.Object)"></member>
+    <member name="M:System.WorkflowModel.Activities.TimerExtension.TimerFiredDone(System.IAsyncResult)"></member>
+    <member name="T:System.WorkflowModel.Activities.TransactionScopeActivity">
+      <summary>An activity that demarcates a transaction boundary. A new <see cref="T:System.Transactions.Transaction" /> is started when this activity begins executing, and the transaction commits when the activity closes successfully.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.TransactionScopeActivity.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.WorkflowModel.Activities.TransactionScopeActivity" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.TransactionScopeActivity.Body">
+      <summary>Gets or sets the activity that is scheduled when the <see cref="T:System.WorkflowModel.Activities.TransactionScopeActivity" /> executes.</summary>
+      <returns>The activity that is scheduled when the <see cref="T:System.WorkflowModel.Activities.TransactionScopeActivity" /> executes.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.TransactionScopeActivity.EnlistWorkflow">
+      <summary>Gets or sets a value that indicates whether any workflow variables modified during the execution of this activity are rolled back in the event that the transaction fails to commit.</summary>
+      <returns>true if the workflow variables are rolled back in the event the transaction fails to commit; otherwise false. The default is true.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.TransactionScopeActivity.IsolationLevel">
+      <summary>Gets or sets the <see cref="T:System.Transactions.IsolationLevel" /> for this <see cref="T:System.WorkflowModel.Activities.TransactionScopeActivity" />.</summary>
+      <returns>The <see cref="T:System.Transactions.IsolationLevel" /> for this <see cref="T:System.WorkflowModel.Activities.TransactionScopeActivity" />.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.TransactionScopeActivity.ShouldSerializeIsolationLevel">
+      <summary>Indicates whether the <see cref="P:System.WorkflowModel.Activities.TransactionScopeActivity.IsolationLevel" /> for this <see cref="T:System.WorkflowModel.Activities.TransactionScopeActivity" /> should be serialized.</summary>
+      <returns>true if the <see cref="P:System.WorkflowModel.Activities.TransactionScopeActivity.IsolationLevel" /> property value should be serialized; otherwise false.
+</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.TransactionScopeActivity.ShouldSerializeTimeout">
+      <summary>Indicates whether the <see cref="P:System.WorkflowModel.Activities.TransactionScopeActivity.Timeout" /> for this <see cref="T:System.WorkflowModel.Activities.TransactionScopeActivity" /> should be serialized.</summary>
+      <returns>true if the <see cref="P:System.WorkflowModel.Activities.TransactionScopeActivity.Timeout" /> property value should be serialized; otherwise false.
+</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.TransactionScopeActivity.ShouldSerializeTransactionScopeOption">
+      <summary>Indicates whether the <see cref="P:System.WorkflowModel.Activities.TransactionScopeActivity.TransactionScopeOption" /> for this <see cref="T:System.WorkflowModel.Activities.TransactionScopeActivity" /> should be serialized.</summary>
+      <returns>true if the <see cref="P:System.WorkflowModel.Activities.TransactionScopeActivity.TransactionScopeOption" /> property value should be serialized; otherwise false.
+</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.TransactionScopeActivity.Timeout">
+      <summary>Gets or sets the <see cref="T:System.TimeSpan" /> that indicates the timeout period for the transaction used for this <see cref="T:System.WorkflowModel.Activities.TransactionScopeActivity" />.</summary>
+      <returns>The <see cref="T:System.TimeSpan" /> that indicates the timeout period for the transaction used for this <see cref="T:System.WorkflowModel.Activities.TransactionScopeActivity" />.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.TransactionScopeActivity.TransactionScopeOption">
+      <summary>Gets or sets the <see cref="T:System.Transactions. TransactionScopeOption" /> value for this <see cref="T:System.WorkflowModel.Activities.TransactionScopeActivity" />.</summary>
+      <returns>The <see cref="T:System.Transactions. TransactionScopeOption" /> value for this <see cref="T:System.WorkflowModel.Activities.TransactionScopeActivity" />.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.TryCatchFinally">
+      <summary>Executes workflow elements within an exception handling block.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.TryCatchFinally.#ctor">
+      <summary>Creates a new instance of the <see cref="M:System.WorkflowModel.Activities.TryCatchFinally.#ctor" /> class.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.TryCatchFinally.Cancel(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>Cancels the exception handling block and all contained elements.</summary>
+      <param name="context">The execution environment in which the element executes.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.TryCatchFinally.Catches">
+      <summary>The collection of Catch elements to be checked when the <see cref="P:System.WorkflowModel.Activities.TryCatchFinally.Try" /> activity throws an exception.</summary>
+      <returns>The clause collection.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.TryCatchFinally.Execute(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>Schedules the element contained in the <see cref="P:System.WorkflowModel.Activities.TryCatchFinally.Try" /> parameter for execution. The elements contained in the <see cref="P:System.WorkflowModel.Activities.TryCatchFinally.Catches" /> and <see cref="P:System.WorkflowModel.Activities.TryCatchFinally.Finally" /> parameters are scheduled for execution as determined by exceptions encountered while executing the <see cref="P:System.WorkflowModel.Activities.TryCatchFinally.Try" /> element.</summary>
+      <param name="context">The execution environment in which the element executes.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.TryCatchFinally.Finally">
+      <summary>The workflow element to be executed when the <see cref="P:System.WorkflowModel.Activities.TryCatchFinally.Try" /> and any necessary activities in the <see cref="P:System.WorkflowModel.Activities.TryCatchFinally.Catches" /> collection complete execution.</summary>
+      <returns>The workflow element.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.TryCatchFinally.OnGetArguments(System.Collections.Generic.IList{System.WorkflowModel.RuntimeArgument})">
+      <summary>Not implemented.</summary>
+      <param name="arguments">Not implemented.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.TryCatchFinally.OnGetChildren(System.Collections.Generic.IList{System.WorkflowModel.WorkflowElement})">
+      <summary>Returns the elements contained in the <see cref="P:System.WorkflowModel.Activities.TryCatchFinally.Try" />, <see cref="P:System.WorkflowModel.Activities.TryCatchFinally.Catches" />, and <see cref="P:System.WorkflowModel.Activities.TryCatchFinally.Finally" /> parameters.</summary>
+      <param name="children">The contained activities.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.TryCatchFinally.OnGetEnvironmentVariables(System.Collections.Generic.IList{System.WorkflowModel.Variable})">
+      <summary>Retrieves the collection of variables contained by the <see cref="T:System.WorkflowModel.Activities.TryCatchFinally" /> activity.</summary>
+      <param name="variables">The collection of variables.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.TryCatchFinally.OnOpen(System.WorkflowModel.DeclaredEnvironment)">
+      <summary>Prepares the <see cref="P:System.WorkflowModel.Activities.TryCatchFinally.Catches" /> collection for execution. This property is usually called by the runtime.</summary>
+      <param name="environment">The current execution environment.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.TryCatchFinally.Try">
+      <summary>The workflow element first executed when the <see cref="T:System.WorkflowModel.Activities.TryCatchFinally" /> executes.</summary>
+      <returns>The workflow element.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.TryCatchFinally.Variables">
+      <summary>The collection of contained variables.</summary>
+      <returns>The collection of variables.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.UpdateSharePointListItem"></member>
+    <member name="M:System.WorkflowModel.Activities.UpdateSharePointListItem.#ctor"></member>
+    <member name="P:System.WorkflowModel.Activities.UpdateSharePointListItem.Fields"></member>
+    <member name="P:System.WorkflowModel.Activities.UpdateSharePointListItem.ListItemId"></member>
+    <member name="P:System.WorkflowModel.Activities.UpdateSharePointListItem.ListName"></member>
+    <member name="P:System.WorkflowModel.Activities.UpdateSharePointListItem.SharePointSite"></member>
+    <member name="T:System.WorkflowModel.Activities.While">
+      <summary>Executes a contained workflow element while a condition evaluates to true.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.While.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.WorkflowModel.Activities.While" /> activity.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.While.Body">
+      <summary>The activity to execute in the While loop.</summary>
+      <returns>The activity.</returns>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.While.Condition">
+      <summary>The condition to be evaluated before each iteration of the While loop.</summary>
+      <returns>The condition.</returns>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.While.FindName(System.String)">
+      <summary>Locates a name scope in the internal dictionary. Name scopes enable activities to share similar variable names within the same workflow.</summary>
+      <returns>The retrieved name.</returns>
+      <param name="name">The name to retrieve.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.While.OnBreak(System.WorkflowModel.ActivityExecutionContext,System.WorkflowModel.Bookmark,System.Object)">
+      <summary>Exits the While loop and cancels any contained activity instances.</summary>
+      <param name="context">The environment in which the activity executes.</param>
+      <param name="bookmark">Not implemented.</param>
+      <param name="state">Not implemented.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.While.OnContinue(System.WorkflowModel.ActivityExecutionContext,System.WorkflowModel.Bookmark,System.Object)">
+      <summary>Cancels any contained activity instances.</summary>
+      <param name="context">The environment in which the activity executes.</param>
+      <param name="bookmark">Not implemented.</param>
+      <param name="state">Not implemented.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.While.OnExecute(System.WorkflowModel.ActivityExecutionContext)">
+      <summary>Executes the contained activity.</summary>
+      <param name="context">The environment in which the activity executes.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.While.OnGetArguments(System.Collections.Generic.IList{System.WorkflowModel.RuntimeArgument})">
+      <summary>Not implemented.</summary>
+      <param name="arguments">Not implemented.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.While.OnGetChildren(System.Collections.Generic.IList{System.WorkflowModel.WorkflowElement})">
+      <summary>Returns the <see cref="P:System.WorkflowModel.Activities.While.Body" /> and <see cref="P:System.WorkflowModel.Activities.While.Condition" /> properties.</summary>
+      <param name="children">The returned elements.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.While.OnGetEnvironmentVariables(System.Collections.Generic.IList{System.WorkflowModel.Variable})">
+      <summary>Retrieves the collection of variables contained by the <see cref="T:System.WorkflowModel.Activities.While" /> activity.</summary>
+      <param name="variables">The collection of variables.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.While.OnOpen(System.WorkflowModel.DeclaredEnvironment)">
+      <summary>Initializes the <see cref="P:System.WorkflowModel.Activities.While.Condition" /> property.</summary>
+      <param name="environment">The environment in which the activity executes.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.While.RegisterName(System.String,System.Object)">
+      <summary>Adds a name scope to the internal dictionary. Name scopes enable activities to share similar variable names within the same workflow.</summary>
+      <param name="name">The name of the element to add.</param>
+      <param name="scopedElement">The object associated with the element to add.</param>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.While.UnregisterName(System.String)">
+      <summary>Removes a name scope from the internal dictionary. Name scopes enable activities to share similar variable names within the same workflow.</summary>
+      <param name="name">The key of the element to remove.</param>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.While.Variables">
+      <summary>The collection of <see cref="T:System.WorkflowModel.Variable" /> objects associated with the <see cref="T:System.WorkflowModel.Activities.While" /> activity.</summary>
+      <returns>The collection of variables.</returns>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.WriteLine"></member>
+    <member name="M:System.WorkflowModel.Activities.WriteLine.#ctor"></member>
+    <member name="M:System.WorkflowModel.Activities.WriteLine.System#WorkflowModel#IActivityExtensionProvider#EnsureExtensions(System.WorkflowModel.IExtensionCollection)"></member>
+    <member name="P:System.WorkflowModel.Activities.WriteLine.Text"></member>
+    <member name="P:System.WorkflowModel.Activities.WriteLine.TextWriter"></member>
+  </members>
+</doc>

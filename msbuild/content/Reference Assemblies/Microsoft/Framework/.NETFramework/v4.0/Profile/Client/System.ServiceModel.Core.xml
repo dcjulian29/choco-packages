@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Core</name>
+  </assembly>
+  <members>
+    <member name="T:System.WorkflowModel.ExtensionCollection"></member>
+    <member name="M:System.WorkflowModel.ExtensionCollection.#ctor"></member>
+    <member name="M:System.WorkflowModel.ExtensionCollection.#ctor(System.WorkflowModel.IExtensibleObject)"></member>
+    <member name="M:System.WorkflowModel.ExtensionCollection.ClearItems"></member>
+    <member name="M:System.WorkflowModel.ExtensionCollection.Find``1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.ExtensionCollection.FindAll``1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.ExtensionCollection.InsertItem(System.Int32,System.Object)"></member>
+    <member name="M:System.WorkflowModel.ExtensionCollection.RemoveItem(System.Int32)"></member>
+    <member name="M:System.WorkflowModel.ExtensionCollection.SetItem(System.Int32,System.Object)"></member>
+    <member name="T:System.WorkflowModel.IExtensibleObject"></member>
+    <member name="P:System.WorkflowModel.IExtensibleObject.Extensions"></member>
+    <member name="T:System.WorkflowModel.IExtension"></member>
+    <member name="M:System.WorkflowModel.IExtension.Attach(System.WorkflowModel.IExtensibleObject)"></member>
+    <member name="M:System.WorkflowModel.IExtension.Detach(System.WorkflowModel.IExtensibleObject)"></member>
+    <member name="T:System.WorkflowModel.IExtensionCollection"></member>
+    <member name="M:System.WorkflowModel.IExtensionCollection.Find``1">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.WorkflowModel.IExtensionCollection.FindAll``1">
+      <typeparam name="T"></typeparam>
+    </member>
+  </members>
+</doc>

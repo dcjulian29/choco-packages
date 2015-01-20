@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Transactions.Bridge</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.Internal.TransactionBridge">
+      <summary>An internal class that is used for transactions.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Internal.TransactionBridge.#ctor">
+      <summary>Intializes a new instance of the <see cref="T:System.ServiceModel.Internal.TransactionBridge" /> class.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Internal.TransactionBridge.Init(System.Object)">
+      <summary>Intializes the <see cref="T:System.ServiceModel.Internal.TransactionBridge" /> with the specified configuration.</summary>
+      <param name="bridgeConfig">The configuration used to initialize the <see cref="T:System.ServiceModel.Internal.TransactionBridge" />.</param>
+    </member>
+    <member name="M:System.ServiceModel.Internal.TransactionBridge.Shutdown">
+      <summary>Shuts down the <see cref="T:System.ServiceModel.Internal.TransactionBridge" />.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Internal.TransactionBridge.Start">
+      <summary>Starts the <see cref="T:System.ServiceModel.Internal.TransactionBridge" />.</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Build.Utilities.v3.5</name>
+  </assembly>
+  <members>
+    <member name="M:Microsoft.Build.Utilities.CommandLineBuilder.#ctor(System.Boolean)"></member>
+    <member name="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendQuotedTextToBuffer(System.Text.StringBuilder,System.String)"></member>
+  </members>
+</doc>

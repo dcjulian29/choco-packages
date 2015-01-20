@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Compensation</name>
+  </assembly>
+  <members>
+    <member name="T:System.Compensation.CompensationCoordinatorServiceHost"></member>
+    <member name="M:System.Compensation.CompensationCoordinatorServiceHost.#ctor(System.Uri)"></member>
+    <member name="P:System.Compensation.CompensationCoordinatorServiceHost.CoordinatorActivationServiceEndpoint"></member>
+    <member name="P:System.Compensation.CompensationCoordinatorServiceHost.CoordinatorCompletionServiceEndpoint"></member>
+    <member name="T:System.Compensation.DistributedCompensationApplicationCompletionEndpoint"></member>
+    <member name="M:System.Compensation.DistributedCompensationApplicationCompletionEndpoint.#ctor"></member>
+    <member name="M:System.Compensation.DistributedCompensationApplicationCompletionEndpoint.#ctor(System.Uri)"></member>
+    <member name="P:System.Compensation.DistributedCompensationApplicationCompletionEndpoint.CoordinatorCompletionListenUri"></member>
+    <member name="T:System.Compensation.DistributedCompensationApplicationParticipationEndpoint"></member>
+    <member name="M:System.Compensation.DistributedCompensationApplicationParticipationEndpoint.#ctor"></member>
+    <member name="M:System.Compensation.DistributedCompensationApplicationParticipationEndpoint.#ctor(System.Uri)"></member>
+    <member name="P:System.Compensation.DistributedCompensationApplicationParticipationEndpoint.CoordinatorActivationListenUri"></member>
+    <member name="T:System.ServiceModel.Channels.CompensationFlowBindingElement">
+      <summary>Manages a compensation flow binding element for a configuration file.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowBindingElement.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.ServiceModel.Channels.CompensationFlowBindingElement" /> class.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowBindingElement.#ctor(System.ServiceModel.Channels.CompensationFlowBindingElement)">
+      <summary>Creates a new instanceof the <see cref="T:System.ServiceModel.Channels.CompensationFlowBindingElement" /> class initialized with a compensation flow binding element that is copied for use in setting up a flow channel.</summary>
+      <param name="elementToBeCloned">The specified binding element that is copied.</param>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Creates a new client channel factory of a specified type.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.IChannelFactory`1" />.</returns>
+      <param name="context">An object that provides custom binding, parameter, URI address, and URI mode information for the construction of a channel.</param>
+      <typeparam name="TChannel">The specified type of channel to be built (for example, input, output, request, reply, duplex, and other types of channels.)</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowBindingElement.BuildChannelListener``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Creates a new service channel listener of a specified type.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.IChannelListener`1" />.</returns>
+      <param name="context">An object that provides custom binding, parameter, URI address, and URI mode information for the construction of a channel.</param>
+      <typeparam name="TChannel">The specified type of channel to be built (for example, input, output, request, reply, duplex, and other types of channels).</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Returns a value that indicates whether the channel binding context contains the information required to build the specified type of channel factory. </summary>
+      <returns>
+        <see cref="T:System.Boolean" />.</returns>
+      <param name="context">An object that provides custom binding, parameter, URI address, and URI mode information for the construction of a channel.</param>
+      <typeparam name="TChannel">The specified type of channel to be built (for example, input, output, request, reply, duplex, and other types of channels).</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowBindingElement.CanBuildChannelListener``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Returns a value that indicates whether the channel binding context contains the information required to build the specified type of channel listener.</summary>
+      <returns>
+        <see cref="T:System.Boolean" />.</returns>
+      <param name="context">An object that provides custom binding, parameter, URI address, and URI mode information for the construction of a channel.</param>
+      <typeparam name="TChannel">The specified type of channel to be built (for example, input, output, request, reply, duplex, and other types of channels).</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowBindingElement.Clone">
+      <summary>Creates a copy of the current compensation flow binding element.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingElement" />.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Returns a generic type property from the specified binding context.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingElement" />.</returns>
+      <param name="context">An object that provides custom binding, parameter, URI address, and URI mode information for the construction of a channel.</param>
+      <typeparam name="T">The generic type.</typeparam>
+    </member>
+    <member name="T:System.ServiceModel.Channels.CompensationFlowValidationBehavior">
+      <summary>Verifies that the operation description provides data for compensation flow and an indication that compensation flow is expected.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowValidationBehavior.#ctor">
+      <summary>Creates a new instance of the <see cref="T:System.ServiceModel.Channels.CompensationFlowValidationBehavior" /> class.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowValidationBehavior.AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)">
+      <summary>Not implemented.</summary>
+      <param name="endpoint">Not implemented.</param>
+      <param name="bindingParameters">Not implemented.</param>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowValidationBehavior.ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
+      <summary>Not implemented.</summary>
+      <param name="endpoint">Not implemented.</param>
+      <param name="clientRuntime">Not implemented.</param>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowValidationBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)">
+      <summary>Not implemented.</summary>
+      <param name="endpoint">Not implemented.</param>
+      <param name="endpointDispatcher">Not implemented.</param>
+    </member>
+    <member name="M:System.ServiceModel.Channels.CompensationFlowValidationBehavior.Validate(System.ServiceModel.Description.ServiceEndpoint)">
+      <summary>Verifies that an operation description includes a compensation flow binding element and also a flow option setting that indicates compensation is required.</summary>
+      <param name="endpoint">An object that provides information that enables clients of a service to find and communicate with that service.</param>
+    </member>
+    <member name="T:System.WorkflowModel.Activities.GetFlowedCompensationContext">
+      <summary>A helper activity used within the context of <see cref="T:System.WorkflowServiceModel.Activities.ServiceOperation" /> to retrieve the flowed compensation context from the message properties to a variable.</summary>
+    </member>
+    <member name="M:System.WorkflowModel.Activities.GetFlowedCompensationContext.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.WorkflowModel.Activities.GetFlowedCompensationContext" /> class.</summary>
+    </member>
+    <member name="P:System.WorkflowModel.Activities.GetFlowedCompensationContext.CompensationContext">
+      <summary>Gets or sets the <see cref="T:System.WorkflowModel.OutArgument`1" /> that contains the <see cref="T:System.WorkflowModel.Activities.CompensationContext" /> for this <see cref="T:System.WorkflowModel.Activities.GetFlowedCompensationContext" />.</summary>
+      <returns>The <see cref="T:System.WorkflowModel.OutArgument`1" /> that contains the <see cref="T:System.WorkflowModel.Activities.CompensationContext" /> for this <see cref="T:System.WorkflowModel.Activities.GetFlowedCompensationContext" />.</returns>
+    </member>
+  </members>
+</doc>
