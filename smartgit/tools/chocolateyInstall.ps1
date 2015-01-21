@@ -1,7 +1,7 @@
 $packageName = "smartgit"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
-$url = "http://www.syntevo.com/downloads/smartgit/smartgit-portable-6_5_4.7z"
+$url = "http://www.syntevo.com/downloads/smartgit/smartgit-portable-6_5_5.7z"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
