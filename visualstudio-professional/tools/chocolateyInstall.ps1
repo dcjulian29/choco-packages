@@ -1,4 +1,4 @@
-$packageName = "vsprofessional"
+$packageName = "visualstudio-professional"
 $installerType = "EXE"
 $installerArgs = "/PASSIVE /NORESTART"
 $url = "http://download.microsoft.com/download/F/3/C/F3C109C2-8442-477A-A442-04A175870137/vs_professional.exe"

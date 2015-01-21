@@ -1,4 +1,4 @@
-$packageName = "vspremium"
+$packageName = "visualstudio-premium"
 $installerType = "EXE"
 $installerArgs = "/PASSIVE /NORESTART"
 $url = "http://download.microsoft.com/download/0/D/3/0D316453-32A1-4042-A5B6-30B14A4C24AA/vs_premium.exe"
