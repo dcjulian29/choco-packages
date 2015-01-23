@@ -53,6 +53,14 @@ try
             Start-ChocolateyProcessAsAdmin $cmd
         }
     }
+
+    $cmd = "[Environment]::SetEnvironmentVariable('VisualStudioVersion','12.0', 'Machine')"
+
+    if (Test-ProcessAdminRights) {
+        Invoke-Expression $cmd
+    } else {
+        Start-ChocolateyProcessAsAdmin $cmd
+    }
     
     Write-ChocolateySuccess $packageName
 }
