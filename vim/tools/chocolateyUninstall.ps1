@@ -23,6 +23,10 @@ try {
         & $git config --unset --global core.editor
     }
 
+    Remove-Item "$env:ChocolateyInstall\bin\vi.exe" -Force
+    Remove-Item "$env:ChocolateyInstall\bin\vim.exe" -Force
+    Remove-Item "$env:ChocolateyInstall\bin\gvim.exe" -Force
+
     Write-ChocolateySuccess $packageName
 } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)

@@ -1,6 +1,7 @@
 $packageName = "vim"
 $vim = "ftp://ftp.vim.org/pub/vim/pc/vim74w32.zip"
 $vimrt = "ftp://ftp.vim.org/pub/vim/pc/vim74rt.zip"
+$gvim = "ftp://ftp.vim.org/pub/vim/pc/gvim74.zip"
 
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
@@ -16,9 +17,11 @@ try {
 
     Get-ChocolateyWebFile $packageName "$downloadPath\vim74w32.zip" $vim
     Get-ChocolateyWebFile $packageName "$downloadPath\vim74rt.zip" $vimrt
+    Get-ChocolateyWebFile $packageName "$downloadPath\gvim74.zip" $gvim
 
     Get-ChocolateyUnzip "$downloadPath\vim74w32.zip" "$downloadPath\"
     Get-ChocolateyUnzip "$downloadPath\vim74rt.zip" "$downloadPath\"
+    Get-ChocolateyUnzip "$downloadPath\gvim74.zip" "$downloadPath\"
 
     if (Test-Path $appDir) {
         Write-Output "Removing previous version of package..."
@@ -35,7 +38,6 @@ set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 set number      " show line numbers
 set showcmd     " show command in bottom bar
-set cursorline      " highlight current line
 set wildmenu        " visual autocomplete for command menu
 set lazyredraw      " redraw only when we need to.
 set showmatch       " highlight matching [{()}]
@@ -48,6 +50,7 @@ set ignorecase      " case-insensitive search
 set ruler       " display cursor position in bottom bar
 set backspace=indent,eol,start  " make backspace work as expected on Windows.
 syntax enable
+color slate
 "@
 
     if (Test-Path "$env:ProgramFiles\Git") {
@@ -61,6 +64,12 @@ syntax enable
     if (Test-Path $git) {
         & $git config --global core.editor "'$appdir\vim.exe'"
     }
+
+    $shimgen = "$env:ChocolateyInstall\chocolateyinstall\tools\shimgen.exe"
+
+    & $shimgen -o "$env:ChocolateyInstall\bin\vi.exe" -p "$appDir\vim.exe"
+    & $shimgen -o "$env:ChocolateyInstall\bin\vim.exe" -p "$appDir\vim.exe"
+    & $shimgen -o "$env:ChocolateyInstall\bin\gvim.exe" -p "$appDir\gvim.exe"
 
     Write-ChocolateySuccess $packageName
 } catch {
