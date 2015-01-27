@@ -20,9 +20,6 @@ try {
         } else {
             Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\Google Chrome.lnk' -Force"
         }
-
-        Remove-Item "$($env:USERPROFILE)\Desktop\Google Chrome.lnk" -Force
-
     }
 
     Write-ChocolateySuccess $packageName
