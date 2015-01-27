@@ -51,6 +51,16 @@ set ruler       " display cursor position in bottom bar
 set backspace=indent,eol,start  " make backspace work as expected on Windows.
 syntax enable
 color slate
+
+if has("gui_running")
+    set lines=40 columns=120
+    set guifont=Consolas\ 16
+endif
+
+autocmd Filetype gitcommit setlocal spell textwidth=72
+hi def link gitcommitSummary Normal
+hi def link gitcommitBlank Normal 
+
 "@
 
     if (Test-Path "$env:ProgramFiles\Git") {
