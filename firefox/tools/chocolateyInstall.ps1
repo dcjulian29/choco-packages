@@ -1,7 +1,7 @@
 $packageName = "firefox"
 $installerType = "EXE"
 $installerArgs = "-ms"
-$url = "https://download.mozilla.org/?product=firefox-34.0-SSL&os=win&lang=en-US"
+$url = "https://download.mozilla.org/?product=firefox-35.0.1-SSL&os=win&lang=en-US"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
