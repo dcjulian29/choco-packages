@@ -12,7 +12,12 @@ try
     if (Get-ProcessorBits -eq 64) {
         $cmd = "$cmd /reg:64"
     }
-    Start-ChocolateyProcessAsAdmin "$cmd"
+    
+    if (Test-ProcessAdminRights) {
+        Invoke-Expression $cmd
+    } else {
+        Start-ChocolateyProcessAsAdmin "$cmd"
+    }
 
     Write-Output "You need to reboot to complete the action..."
     
