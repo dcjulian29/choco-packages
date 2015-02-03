@@ -1,6 +1,6 @@
 $packageName = "myscripts-binaries"
 $appDir = "$($env:SYSTEMDRIVE)\tools\binaries"
-$version = "2014.9.7"
+$version = "2015.2.3"
 $repo = "scripts-binaries"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 
