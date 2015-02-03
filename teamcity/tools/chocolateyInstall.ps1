@@ -28,7 +28,7 @@ try {
         -replace 'Connector port="8111"', 'Connector port="80"' `
         | Set-Content "$appdir\conf\server.xml"
 
-    $datadir = "$appdir\TeamCity\.data"
+    $datadir = "$appdir\.data"
 
     $cmd = "[Environment]::SetEnvironmentVariable('TEAMCITY_DATA_PATH','$datadir', 'Machine')"
 
