@@ -24,9 +24,9 @@ try {
 
     (New-Object System.Net.WebClient).DownloadFile("$url", "$env:TEMP\$file.zip")
 
-    $shell = New-Object -com Shell.Application
-    $shell.namespace($env:TEMP).CopyHere($shell.namespace("$env:TEMP\$file.zip").items(), 0x10)
-    
+    [System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem") | Out-Null
+    [System.IO.Compression.ZipFile]::ExtractToDirectory("$env:TEMP\$file.zip", $env:TEMP)
+
     Copy-Item -Path "$($env:TEMP)\$file\*" -Destination $appdir -Recurse -Force
 
     Remove-Item -Path "$($env:TEMP)\$file" -Recurse -Force
