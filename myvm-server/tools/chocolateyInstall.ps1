@@ -5,10 +5,13 @@ if ($psISE) {
 }
 
 try {
-
+    try {
     Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online | Out-Null
     Get-AppxPackage | Remove-AppxPackage -ea Silent
-
+    } catch {
+        Write-Warning "Are you're running Server Core..."
+    }
+    
     Write-Output "Enabling Remote Desktop ..."
     $settings = Get-WmiObject -Class "Win32_TerminalServiceSetting" `
         -Namespace root\cimv2\terminalservices
