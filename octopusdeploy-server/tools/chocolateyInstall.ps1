@@ -1,7 +1,7 @@
 $packageName = "octopusdeploy-server"
 $installerType = "MSI"
 $installerArgs = "/quiet"
-$version = "2.6.0.751"
+$version = "2.6.1.796"
 $url = "http://download.octopusdeploy.com/octopus/Octopus.$version.msi"
 $url64 = "http://download.octopusdeploy.com/octopus/Octopus.$version-x64.msi"
 
