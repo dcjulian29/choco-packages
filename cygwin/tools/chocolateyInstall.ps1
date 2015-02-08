@@ -58,6 +58,7 @@ try {
     if (-not $upgrade) {
         cmd.exe /c "setup.exe $($cygwinSetupArgs) -P bcrypt"
         cmd.exe /c "setup.exe $($cygwinSetupArgs) -P curl"
+        cmd.exe /c "setup.exe $($cygwinSetupArgs) -P dos2unix"
         cmd.exe /c "setup.exe $($cygwinSetupArgs) -P rxvt"
         cmd.exe /c "setup.exe $($cygwinSetupArgs) -P rsync"
         cmd.exe /c "setup.exe $($cygwinSetupArgs) -P openssh"
