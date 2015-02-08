@@ -11,7 +11,7 @@ if ($psISE) {
 
 try {
     if (Test-Path $appDir) {
-        $upgrade = true
+        $upgrade = $true
         Stop-Service -Name TCBuildAgent -Force
         Stop-Service -Name TeamCity -Force
     }
