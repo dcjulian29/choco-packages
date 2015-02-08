@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>teamcity</id>
-    <version>9.0.1</version>
+    <version>9.0.2</version>
     <authors> JetBrains s.r.o.</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://www.jetbrains.com/teamcity/</projectUrl>
