@@ -61,7 +61,7 @@ try {
             | Set-Content "$appdir\buildAgent\conf\buildAgent.properties"
 
         (Get-Content "$appdir\buildAgent\conf\buildAgent.properties") `
-            -replace 'name=localhost', "name=${env:COMPUTERNAME}" `
+            -replace "name=localhost", "name=${env:COMPUTERNAME}" `
             | Set-Content "$appdir\buildAgent\conf\buildAgent.properties"
     }
 
