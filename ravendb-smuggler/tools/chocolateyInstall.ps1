@@ -1,5 +1,5 @@
 $packageName = "ravendb-smuggler"
-$build = "3528"
+$build = "3599"
 $url = "http://hibernatingrhinos.com/downloads/RavenDB/$build"
 
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
@@ -9,8 +9,7 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try
-{
+try {
     if (Test-Path $appDir)
     {
         Write-Output "Removing previous version of package..."
