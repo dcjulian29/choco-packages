@@ -19,7 +19,6 @@
       <dependency id="vsix-productivitypowertools" />
       <dependency id="vsix-slowcheetah" />
       <dependency id="vsix-fsharptools" />
-      <dependency id="vsix-tfspowertools" />
       <dependency id="vsix-gitdiffmargin" />
       <dependency id="vsix-sandocodesearch" />
       <dependency id="sqlserverssdt" />
