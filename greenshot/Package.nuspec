@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>greenshot</id>
-    <version>1.2.4</version>
+    <version>1.2.4.10</version>
     <authors>Thomas Braun, Jens Klingen, Robin Krom</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://getgreenshot.org/</projectUrl>

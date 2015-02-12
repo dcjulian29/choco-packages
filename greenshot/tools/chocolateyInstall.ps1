@@ -1,7 +1,7 @@
 $packageName = "greenshot"
 $installerType = "EXE"
 $installerArgs = "/SILENT"
-$url = "http://sourceforge.net/projects/greenshot/files/Greenshot/Greenshot%201.2/Greenshot-INSTALLER-1.2.4.9-RELEASE.exe/download?use_mirror=iweb"
+$url = "http://sourceforge.net/projects/greenshot/files/Greenshot/Greenshot%201.2/Greenshot-INSTALLER-1.2.4.10-RELEASE.exe/download?use_mirror=iweb"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
