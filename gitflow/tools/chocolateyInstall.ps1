@@ -20,8 +20,13 @@ try
         $git = "${env:ProgramFiles(x86)}\Git"
     }
 
-    Start-ChocolateyProcessAsAdmin "Get-ChildItem -Path '$git' -Include 'git-flow*','gitflow-*','gitflow*' -Recurse | Remove-Item -Recurse -Force"
-    Start-ChocolateyProcessAsAdmin "Get-ChildItem -Path '$git' -Include 'getopt.exe','libintl3.dll','libiconv2.dll' -Recurse | Remove-Item -Recurse -Force"
+    if (Test-ProcessAdminRights) {
+        Get-ChildItem -Path "$git" -Include 'git-flow*','gitflow-*','gitflow*' -Recurse | Remove-Item -Recurse -Force
+        Get-ChildItem -Path "$git" -Include 'getopt.exe','libintl3.dll','libiconv2.dll' -Recurse | Remove-Item -Recurse -Force
+    } else {
+        Start-ChocolateyProcessAsAdmin "Get-ChildItem -Path '$git' -Include 'git-flow*','gitflow-*','gitflow*' -Recurse | Remove-Item -Recurse -Force"
+        Start-ChocolateyProcessAsAdmin "Get-ChildItem -Path '$git' -Include 'getopt.exe','libintl3.dll','libiconv2.dll' -Recurse | Remove-Item -Recurse -Force"
+    }
 
     if (!(Test-Path $downloadPath)) {
         New-Item -ItemType directory $downloadPath -Force | Out-Null
@@ -34,14 +39,22 @@ try
     Get-ChocolateyUnzip "$downloadPath\bin.zip" "$downloadPath\"
     Get-ChocolateyUnzip "$downloadPath\dep.zip" "$downloadPath\"
 
-    Start-ChocolateyProcessAsAdmin "Get-ChildItem -Path $downloadPath -Include 'getopt.exe','libintl3.dll','libiconv2.dll' -Recurse | Copy-Item -Destination '$git\bin' -Force"
+    if (Test-ProcessAdminRights) {
+        Get-ChildItem -Path $downloadPath -Include 'getopt.exe','libintl3.dll','libiconv2.dll' -Recurse | Copy-Item -Destination "$git\bin" -Force
+    } else {
+        Start-ChocolateyProcessAsAdmin "Get-ChildItem -Path $downloadPath -Include 'getopt.exe','libintl3.dll','libiconv2.dll' -Recurse | Copy-Item -Destination '$git\bin' -Force"
+    }
 
     Get-ChocolateyWebFile $packageName "$downloadPath\gitflow.zip" $gitflow
     Get-ChocolateyUnzip "$downloadPath\gitflow.zip" "$downloadPath\"
 
     $installGitFlow = Join-Path "$downloadPath\gitflow-$release" "contrib\msysgit-install.cmd"
     
-    Start-ChocolateyProcessAsAdmin "& '$installGitFlow' '$git'"
+    if (Test-ProcessAdminRights) {
+        & "$installGitFlow" "$git"
+    } else {
+        Start-ChocolateyProcessAsAdmin "& '$installGitFlow' '$git'"
+    }
 
     Write-ChocolateySuccess $packageName
 }
