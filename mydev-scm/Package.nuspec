@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-scm</id>
-    <version>2015.1.14</version>
+    <version>2015.2.17</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for Source Control Management for my Development Environments.</description>
@@ -15,7 +15,7 @@
       <dependency id="git-myconfiguration" />
       <dependency id="git-credential-winstore" />
       <dependency id="vim" />
-      <dependency id="smartgit" />
+      <dependency id="sourcetree" />
     </dependencies>
   </metadata>
 </package>
