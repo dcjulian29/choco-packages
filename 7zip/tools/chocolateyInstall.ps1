@@ -1,8 +1,8 @@
 $packageName = "7zip"
 $installerType = "MSI"
 $installerArgs = "/quiet"
-$url = "http://downloads.sourceforge.net/sevenzip/7z922.msi"
-$url64 = "http://downloads.sourceforge.net/sevenzip/7z922-x64.msi"
+$url = "http://www.7-zip.org/a/7z938.msi"
+$url64 = "http://www.7-zip.org/a/7z938-x64.msi"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
@@ -19,7 +19,11 @@ try
         $cmd = "$cmd /reg:64"
     }
 
-    Start-ChocolateyProcessAsAdmin "$cmd"
+    if (Test-ProcessAdminRights) {
+        Invoke-Expression $cmd
+    } else {
+        Start-ChocolateyProcessAsAdmin "$cmd"
+    }
 
     Write-ChocolateySuccess $packageName
 }
