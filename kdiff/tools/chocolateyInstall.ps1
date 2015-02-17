@@ -25,10 +25,15 @@ try
 
     & 'C:\Program Files\7-Zip\7z.exe' x $downloadPath\$packageName.7z
 
-    Copy-Item -Path "`$_OUTDIR\*" -Destination ".\" -Recurse -Container
-    Remove-Item -Path "`$_OUTDIR" -Recurse -Force
-    Remove-Item -Path "`$APPDATA" -Recurse -Force
-    Remove-Item -Path "`$PLUGINSDIR" -Recurse -Force
+    if (Test-Path "`$_OUTDIR") {
+        Copy-Item -Path "`$_OUTDIR\*" -Destination ".\" -Recurse -Container
+        Remove-Item -Path "`$_OUTDIR" -Recurse -Force
+    }
+
+    Remove-Item -Path "`$APPDATA" -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path "`$PLUGINSDIR" -Recurse -Force -ErrorAction SilentlyContinue
+
+    Remove-Item -Path "*.nsi" -Force -ErrorAction SilentlyContinue
 
     Pop-Location
 
