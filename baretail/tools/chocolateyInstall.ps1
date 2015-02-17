@@ -17,7 +17,11 @@ try
 
     Get-ChocolateyWebFile $packageName "$appDir\baretail.exe" $url 
 
-    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+    if (Test-ProcessAdminRights) {
+        . $toolDir\postInstall.ps1
+    } else {
+        Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+    }
 
     Write-ChocolateySuccess $packageName
 }
