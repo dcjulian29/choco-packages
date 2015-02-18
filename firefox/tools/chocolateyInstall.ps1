@@ -23,8 +23,6 @@ try {
         Write-Output "Firefox is already installed and will update itself, no need to update via package..."
     } else {
         Install-ChocolateyPackage $packageName $installerType $installerArgs $url
-
-        Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\Mozilla Firefox.lnk' -Force"
     }
     
     Write-ChocolateySuccess $packageName
