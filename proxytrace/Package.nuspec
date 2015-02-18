@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>proxytrace</id>
+    <version>0.1.2</version>
+    <authors>Simon Fell</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.pocketsoap.com/proxytrace/</projectUrl>
+    <description>Simply configure your SOAP client to use a HTTP proxy server, leave all the addresses as normal, and off you go. </description>
+    <tags>proxytrace</tags>
+  </metadata>
+</package>
