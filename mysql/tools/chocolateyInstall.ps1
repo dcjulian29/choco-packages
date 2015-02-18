@@ -1,6 +1,6 @@
 $packageName = "mysql"
-$url = "http://cdn.mysql.com/Downloads/MySQL-5.6/mysql-5.6.20-win32.zip"
-$url64 = "http://cdn.mysql.com/Downloads/MySQL-5.6/mysql-5.6.20-winx64.zip"
+$url = "http://cdn.mysql.com/Downloads/MySQL-5.6/mysql-5.6.23-win32.zip"
+$url64 = "http://cdn.mysql.com/Downloads/MySQL-5.6/mysql-5.6.23-winx64.zip"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $dataDir = "$($env:SYSTEMDRIVE)\data\mysql"
@@ -14,7 +14,11 @@ try
 {
     if (Get-Service | Where-Object { $_.Name -eq $sn }) {
         $cmd = "Stop-Service -ErrorAction 0 -Name $sn;sc.exe delete $sn"
-        Start-ChocolateyProcessAsAdmin $cmd
+        if (Test-ProcessAdminRights) {
+            Invoke-Expression $cmd
+        } else {
+            Start-ChocolateyProcessAsAdmin $cmd
+        }
     }
 
     if (Test-Path $appDir)
@@ -53,7 +57,11 @@ try
     Add-Content -Path $config -Encoding Ascii -Value "datadir=$($dataDir -replace '\\', '\\')"
 
     $cmd = "& $appDir\bin\mysqld.exe --install"
-    Start-ChocolateyProcessAsAdmin $cmd
+    if (Test-ProcessAdminRights) {
+        Invoke-Expression $cmd
+    } else {
+        Start-ChocolateyProcessAsAdmin $cmd
+    }
 
     Write-ChocolateySuccess $packageName
 }
