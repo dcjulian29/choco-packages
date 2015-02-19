@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>myscripts-development</id>
-    <version>2015.1.20</version>
+    <version>2015.2.19</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>A package to download and/or update my custom development scripts from GitHub</description>
