@@ -2,16 +2,20 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>myvm-common</id>
-    <version>2014.7.20</version>
+    <version>2015.2.18</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>This package gets called for the initial configuration of all of my virtual machines.</description>
     <tags>myvm common</tags>
     <dependencies>
-      <dependency id="mycomputers-common" />
+      <dependency id="mysettings-ntfs" />
+      <dependency id="mysettings-ipv6" />
+      <dependency id="dotnet" />
+      <dependency id="powershell" />
+      <dependency id="posh-pscx" />
+      <dependency id="pdfcreator" />
       <dependency id="myscripts-binaries" />
       <dependency id="sysinternals" />
-      <dependency id="posh-pscx" />
     </dependencies>
-  </metadata>
+s  </metadata>
 </package>
