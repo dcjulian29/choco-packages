@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>devenv</id>
+    <version>2015.2.19</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>This package gets called for the initial configuration of my development environments.</description>
+    <tags>mycomputers development</tags>
+    <dependencies>
+      <dependency id="dotnet" />
+      <dependency id="powershell" />
+      <dependency id="myscripts-development" />
+    </dependencies>
+  </metadata>
+</package>
