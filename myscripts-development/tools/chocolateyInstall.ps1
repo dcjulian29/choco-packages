@@ -1,6 +1,6 @@
 $packageName = "myscripts-development"
 $appDir = "$($env:SYSTEMDRIVE)\tools\development"
-$version = "2015.2.19"
+$version = "2015.2.23"
 $repo = "scripts-development"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 
