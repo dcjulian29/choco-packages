@@ -22,12 +22,6 @@ FolderType=Generic
     attrib +S +H $env:SYSTEMDRIVE\home\desktop.ini
     attrib +S $env:SYSTEMDRIVE\home
 
-    cinst mysettings-console
-    cinst mysettings-explorer
-    cinst notepadplusplus
-    cinst mysettings-notepadplusplus
-    cinst mysettings-pshellhere
-
     Write-ChocolateySuccess $packageName
 } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
