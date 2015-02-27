@@ -7,8 +7,8 @@
     <owners>Julian Easterling</owners>
     <description>My custom settings for Notepad++.</description>
     <tags>notepad++ notepadplusplus notepad-plus-plus notepad editor settings custom</tags>
-  </metadata>
     <dependencies>
       <dependency id="notepadplusplus" />
     </dependencies>
+  </metadata>
 </package>
