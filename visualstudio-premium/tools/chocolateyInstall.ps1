@@ -29,7 +29,7 @@ Pop-Location
         Start-ChocolateyProcessAsAdmin $cmd
     }    
 
-    & choco.exe install visualstudio -version 2013.4
+    & choco.exe install -y visualstudio -version 2013.4
 }
 catch
 {
