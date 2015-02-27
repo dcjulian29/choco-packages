@@ -3,7 +3,11 @@ $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 try
 {
-    Start-ChocolateyProcessAsAdmin ". $toolDir\postUninstall.ps1"
+    if (Test-ProcessAdminRights) {
+        . $toolDir\postUninstall.ps1
+    } else {
+        Start-ChocolateyProcessAsAdmin ". $toolDir\postUninstall.ps1"
+    }
 
     Write-ChocolateySuccess $packageName
 }
