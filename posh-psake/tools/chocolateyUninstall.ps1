@@ -1,5 +1,5 @@
 $packageName = "posh-psake"
-$appDir = "$($env:SYSTEMDRIVE)\Program Files\WindowsPowerShell\Modules\psake"
+$appDir = "$($env:WINDIR)\system32\WindowsPowerShell\v1.0\Modules\psake"
 
 try
 {
