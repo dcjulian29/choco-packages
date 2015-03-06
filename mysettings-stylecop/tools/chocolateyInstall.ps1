@@ -17,12 +17,20 @@ try {
     if (Test-Path "$($appDir)\Settings.StyleCop") {
         $cmd = "Remove-Item '$($appDir)\Settings.StyleCop' -Force"
 
-        Start-ChocolateyProcessAsAdmin $cmd
+        if (Test-ProcessAdminRights) {
+            Invoke-Expression $cmd
+        } else {
+            Start-ChocolateyProcessAsAdmin $cmd
+        }
     }
 
     $cmd = "Copy-Item -Path '$($toolDir)\Settings.StyleCop' -Destination '$appDir\'"
 
-    Start-ChocolateyProcessAsAdmin $cmd
+    if (Test-ProcessAdminRights) {
+        Invoke-Expression $cmd
+    } else {
+        Start-ChocolateyProcessAsAdmin $cmd
+    }
 
     Write-ChocolateySuccess $packageName
 } catch {

@@ -6,10 +6,8 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try
-{
-    if (Test-Path $appDir)
-    {
+try {
+    if (Test-Path $appDir) {
       Write-Output "Removing previous version of package..."
         Remove-Item "$($appDir)" -Recurse -Force
     }
@@ -21,15 +19,24 @@ try
         $fileType = $testType.Split("=")[1]
     } else {
         $fileType = "Nuget.Package"
-        Start-ChocolateyProcessAsAdmin "cmd /c assoc .nupkg=$fileType"
+        $cmd = "cmd /c assoc .nupkg=$fileType"
+        if (Test-ProcessAdminRights) {
+            Invoke-Expression $cmd
+        } else {
+            Start-ChocolateyProcessAsAdmin $cmd
+        }
     }
 
-    Start-ChocolateyProcessAsAdmin "cmd /c ftype $fileType=`"$($appDir)\NuGetPackageExplorer.exe`" %1"
+    $cmd = "cmd /c ftype $fileType=`"$($appDir)\NuGetPackageExplorer.exe`" %1"
+
+    if (Test-ProcessAdminRights) {
+        Invoke-Expression $cmd
+    } else {
+        Start-ChocolateyProcessAsAdmin $cmd
+    }
 
     Write-ChocolateySuccess $packageName
-}
-catch
-{
+} catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
     throw
 }
