@@ -1,7 +1,7 @@
 $packageName = "btsync"
 $installerType = "EXE"
 $installerArgs = "/PERFORMINSTALL /AUTOMATION"
-$url = "http://download.getsyncapp.com/endpoint/btsync/os/windows/track/stable"
+$url = "http://download.usyncapp.com/updates/BTSync.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
