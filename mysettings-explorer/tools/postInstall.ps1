@@ -21,13 +21,16 @@ $rule = New-Object System.Security.AccessControl.RegistryAccessRule ($env:USERNA
 $res = [Win32.Api]::RtlAdjustPrivilege(9, $true, $false, [ref]$enabled)
 
 # OneDrive
-$key = [Microsoft.Win32.Registry]::ClassesRoot.OpenSubKey( `
-    "CLSID\{8E74D236-7F35-4720-B138-1FED0B85EA75}\ShellFolder", `
-    [Microsoft.Win32.RegistryKeyPermissionCheck]::ReadWriteSubTree, `
-    [System.Security.AccessControl.RegistryRights]::takeownership)
+try {
+    $key = [Microsoft.Win32.Registry]::ClassesRoot.OpenSubKey( `
+        "CLSID\{8E74D236-7F35-4720-B138-1FED0B85EA75}\ShellFolder", `
+        [Microsoft.Win32.RegistryKeyPermissionCheck]::ReadWriteSubTree, `
+        [System.Security.AccessControl.RegistryRights]::takeownership)
+} catch {
+    Write-Warning "Unable to retrieve OneDrive registry key..."
+}
 
 if ($key) {
-
     $acl = $key.GetAccessControl()
     $acl.SetOwner([System.Security.Principal.NTAccount]$env:USERNAME)
     $key.SetAccessControl($acl)
@@ -46,10 +49,14 @@ if ($key) {
 }
 
 # HomeGroup
-$key = [Microsoft.Win32.Registry]::ClassesRoot.OpenSubKey( `
-    "CLSID\{B4FB3F98-C1EA-428D-A78A-D1F5659CBA93}\ShellFolder", `
-    [Microsoft.Win32.RegistryKeyPermissionCheck]::ReadWriteSubTree, `
-    [System.Security.AccessControl.RegistryRights]::takeownership)
+try {
+    $key = [Microsoft.Win32.Registry]::ClassesRoot.OpenSubKey( `
+        "CLSID\{B4FB3F98-C1EA-428D-A78A-D1F5659CBA93}\ShellFolder", `
+        [Microsoft.Win32.RegistryKeyPermissionCheck]::ReadWriteSubTree, `
+        [System.Security.AccessControl.RegistryRights]::takeownership)
+} catch {
+    Write-Warning "Unable to retrieve HomeGroup registry key..."
+}
 
 if ($key) {
     $acl = $key.GetAccessControl()
