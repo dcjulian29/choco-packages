@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2015.2.18</version>
+    <version>2015.3.18</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the application packages for my Development Environments.</description>
@@ -25,7 +25,6 @@
       <dependency id="dotpeek" />
       <dependency id="linqpad" />
       <dependency id="cygwin" />
-      <dependency id="firefox" />
       <dependency id="chrome" />
       <dependency id="colormania" />
       <dependency id="papercut" />
