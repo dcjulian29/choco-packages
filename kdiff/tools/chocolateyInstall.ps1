@@ -47,7 +47,7 @@ try
     
     Copy-Item -Path "$downloadPath\$packageName\*" -Destination "$appDir" -Recurse -Container
 
-    Set-Content -Path "$appDir\qt.conf" -Value "[Paths]"
+    #Set-Content -Path "$appDir\qt.conf" -Value "[Paths]"
     
     Write-ChocolateySuccess $packageName
 }
