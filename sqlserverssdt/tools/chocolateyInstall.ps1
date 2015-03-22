@@ -1,7 +1,7 @@
 $packageName = "sqlserverssdt"
 $installerType = "EXE"
 $installerArgs = "/PASSIVE /NORESTART"
-$url = "http://download.microsoft.com/download/9/5/1/9510C7E6-6AA9-442C-A168-05316C4B7E49/EN/SSDTSetup.exe"
+$url = "http://download.microsoft.com/download/6/5/8/65876378-90A7-4442-A038-6E15E675BAC8/EN/SSDTSetup.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
