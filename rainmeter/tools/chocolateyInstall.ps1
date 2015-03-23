@@ -1,7 +1,7 @@
 $packageName = "rainmeter"
 $installerType = "EXE"
 $installerArgs = "/S /STARTUP=1 /ALLUSERS=1"
-$url = "https://github.com/rainmeter/rainmeter/releases/download/v3.1.0.2290/Rainmeter-3.1.exe"
+$url = "https://github.com/rainmeter/rainmeter/releases/download/v3.2.0.2384/Rainmeter-3.2.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
