@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>sysinternals</id>
-    <version>2015.1.29</version>
+    <version>2015.3.10</version>
     <authors>Mark Russinovich</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>http://technet.microsoft.com/en-us/sysinternals/bb469936</licenseUrl>
