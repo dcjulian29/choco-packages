@@ -1,5 +1,6 @@
 $packageName = "syncthing"
-$url = "https://github.com/syncthing/syncthing/releases/download/v0.10.24/syncthing-windows-amd64-v0.10.24.zip"
+$url = "https://github.com/syncthing/syncthing/releases/download/v0.10.29/syncthing-windows-386-v0.10.29.zip"
+$url64 = "https://github.com/syncthing/syncthing/releases/download/v0.10.24/syncthing-windows-amd64-v0.10.29.zip"
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
@@ -13,7 +14,7 @@ try {
             New-Item -Type Directory -Path $downloadPath | Out-Null
         }
 
-        Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
+        Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url $url64
         Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath\"
 
         if (Test-Path $appDir) {
