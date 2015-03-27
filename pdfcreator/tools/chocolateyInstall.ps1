@@ -2,7 +2,7 @@ $packageName = "pdfcreator"
 $installerType = "exe"
 $installerArgs = "/L=1033 /SaveINF /SILENT /NORESTART /COMPONENTS=`"program,ghostscript,languages\english`""
 $uninstallerArgs = "/SILENT /NORESTART"
-$url = "http://olive.download.pdfforge.org/pdfcreator/2.0.2/PDFCreator-2_0_2-setup.exe"
+$url = "http://olive.download.pdfforge.org/pdfcreator/2.1.0/PDFCreator-2_1_0-setup.exe"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 
@@ -10,8 +10,7 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try
-{
+try {
     # Uninstall PDFCreator if older version is installed
     if (Test-Path "$env:ProgramFiles\PDFCreator") {
         $uninstall = "$env:ProgramFiles\PDFCreator\unins000.exe"
@@ -34,9 +33,7 @@ try
     }
     
     Write-ChocolateySuccess $packageName
-}
-catch
-{
+} catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
     throw
 }
