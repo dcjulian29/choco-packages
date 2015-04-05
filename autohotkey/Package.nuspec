@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>autohotkey</id>
-    <version>1.1.20</version>
+    <version>1.1.21</version>
     <authors>Chris Mallet</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>http://www.autohotkey.com/docs/license.htm</licenseUrl>
