@@ -1,31 +1,34 @@
 $packageName = "visualstudio"
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
+$installerType = "EXE"
+$installerArgs = "/PASSIVE /NORESTART"
+$url = "http://download.microsoft.com/download/1/E/0/1E0AA8D0-F5D4-45A8-9CA6-D9DC8A54DE3E/vs_ultimate.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try
-{
-    Write-Verbose "Visual Studio Virtual Package."
-    Write-Verbose "Packages depend on this package instead of the specific 'edition' package."
+try {
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url -validExitCodes @(0, 3010)
+    
+    Start-Sleep -Seconds 5
 
-    Write-Output "Checking for Visual Studio 2013..."
+    $cmd = @"
+
+Get-Process -Name 'MobileTools_EmulatorWP81' -ErrorAction SilentlyContinue | Stop-Process
+
+Push-Location "C:\ProgramData\Package Cache\{166a69f6-6512-47ea-a342-17d954fc059a}"
+& ".\MobileTools_EmulatorWP81.exe" /uninstall /quiet
+Pop-Location
+
+"@    
     
-    if (Test-Path "$env:SYSTEMDRIVE\Program Files (x86)") {
-        $pf = "$env:SYSTEMDRIVE\Program Files (x86)"
+    if (Test-ProcessAdminRights) {
+        Invoke-Expression $cmd
     } else {
-        $pf = "$env:SYSTEMDRIVE\Program Files (x86)"
-    }
-    
-    if (-not (Test-Path "$pf\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe")) {
-        throw "Visual Studio is not installed, please install one of the 'edition' packages."
-    }
-    
-    Write-ChocolateySuccess $packageName
-}
-catch
-{
+        Start-ChocolateyProcessAsAdmin $cmd
+    }    
+
+} catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
     throw
 }
