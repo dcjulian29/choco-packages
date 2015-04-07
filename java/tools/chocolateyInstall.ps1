@@ -5,11 +5,17 @@ $installerArgs = "/s REBOOT=Suppress WEB_JAVA=0"
 $url = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=104766"
 $url64 = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=104768"
 
+$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
+
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try {	
+try {
+    Write-Output "Checking for and uninstalling previous versions of Java..."
+
+    . $toolDir\chocolateyUninstall.ps1
+
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url
   
     $path = Join-Path $env:ProgramFiles "Java"
@@ -32,9 +38,7 @@ try {
     }
 
     Write-ChocolateySuccess $packageName
-}
-catch
-{
+} catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
     throw
 }
