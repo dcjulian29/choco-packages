@@ -5,5 +5,7 @@ $links = @(
 )
 
 foreach ($link in $links) {
-    (Get-Item "${env:ChocolateyInstall}\bin\$link.exe").Delete()
+    if (Test-Path "${env:ChocolateyInstall}\bin\$link.exe") {
+        (Get-Item "${env:ChocolateyInstall}\bin\$link.exe").Delete()
+    }
 }
