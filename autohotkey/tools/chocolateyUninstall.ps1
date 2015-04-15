@@ -1,17 +1,15 @@
 ﻿$packageName = 'autohotkey'
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
-try
+if (Test-Path $appDir)
 {
-    if (Test-Path $appDir)
-    {
-      Remove-Item "$($appDir)\*" -Recurse -Force
-    }
-
-    Write-ChocolateySuccess $packageName
+  Remove-Item "$($appDir)\*" -Recurse -Force
 }
-catch
-{
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
+
+$cmd = "(Get-Item `"`${env:ChocolateyInstall}\bin\ahk.exe`").Delete()"
+
+if (Test-ProcessAdminRights) {
+    Invoke-Expression $cmd
+} else {
+    Start-ChocolateyProcessAsAdmin $cmd
 }
