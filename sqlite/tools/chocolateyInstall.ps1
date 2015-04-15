@@ -1,6 +1,6 @@
 $packageName = "sqlite"
-$sqliteShell = "http://www.sqlite.org/2015/sqlite-shell-win32-x86-3080803.zip"
-$sqliteAnalyzer = "https://www.sqlite.org/2015/sqlite-analyzer-win32-x86-3080803.zip"
+$sqliteShell = "http://www.sqlite.org/2015/sqlite-shell-win32-x86-3080900.zip"
+$sqliteAnalyzer = "https://www.sqlite.org/2015/sqlite-analyzer-win32-x86-3080900.zip"
 
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
@@ -33,9 +33,18 @@ try {
 
     $shimgen = "$env:ChocolateyInstall\chocolateyinstall\tools\shimgen.exe"
 
-    & $shimgen -o "$env:ChocolateyInstall\bin\sqlite3.exe" -p "$appDir\sqlite3.exe"
-    & $shimgen -o "$env:ChocolateyInstall\bin\sqlite3_analyzer.exe" -p "$appDir\sqlite3_analyzer.exe"
-    
+    if (Test-ProcessAdminRights) {
+        cmd /c mklink "$env:ChocolateyInstall\bin\sqlite3.exe" "$appDir\sqlite3.exe"
+    } else {
+        Start-ChocolateyProcessAsAdmin "cmd /c mklink '$env:ChocolateyInstall\bin\sqlite3.exe' '$appDir\sqlite3.exe'"
+    }
+
+    if (Test-ProcessAdminRights) {
+        cmd /c mklink /J "$env:ChocolateyInstall\bin\sqlite3_analyzer.exe" "$appDir\sqlite3_analyzer.exe"
+    } else {
+        Start-ChocolateyProcessAsAdmin "cmd /c mklink /J '$env:ChocolateyInstall\bin\sqlite3_analyzer.exe' '$appDir\sqlite3_analyzer.exe'"
+    }
+
     Write-ChocolateySuccess $packageName
 } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
