@@ -37,6 +37,12 @@ try {
         Start-ChocolateyProcessAsAdmin $cmd
     }
 
+    if (Test-ProcessAdminRights) {
+        . $toolDir\postInstall.ps1
+    } else {
+        Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+    }
+
     Write-ChocolateySuccess $packageName
 } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
