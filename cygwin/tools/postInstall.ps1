@@ -9,12 +9,6 @@ if (-not $(Test-Path "$etc\ssh")) {
     New-Item -Type Directory -Path "$etc\ssh" | Out-Null
 }
 
-if (Test-Path "$($up)\.ssh") {
-    (Get-Item "$($up)\.ssh").Delete()
-}
-
-cmd /c "mklink /J $($up)\.ssh $etc\ssh"
-
 
 if (-not $(Test-Path "$etc\cygwin")) {
     New-Item -Type Directory -Path "$etc\cygwin" | Out-Null
