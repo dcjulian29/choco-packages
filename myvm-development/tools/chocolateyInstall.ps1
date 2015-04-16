@@ -42,11 +42,15 @@ try {
 
         Remove-Item -Path "${env:SYSTEMDRIVE}\home\vm\*" -Recurse -Force
         
-        if (Get-ProcessorBits -eq 64) {
-            & "${env:ProgramFiles(x86)}\BitTorrent Sync\BTSync.exe"
-        } else {
-            & "$($env:ProgramFiles)\BitTorrent Sync\BTSync.exe"    
+        if (Test-Path "$env:ProgramFiles\BitTorrent Sync") {
+            $cmd = "$env:ProgramFiles\BitTorrent Sync\BTSync.exe"
         }
+
+        if (Test-Path "${env:ProgramFiles(x86)}\BitTorrent Sync") {
+            $cmd = "${env:ProgramFiles(x86)}\\BitTorrent Sync\BTSync.exe"
+        }
+        
+        Invoke-Expression "cmd /c '$cmd'"
         
         Write-Warning "Waiting for BTSync configuration..."
 
