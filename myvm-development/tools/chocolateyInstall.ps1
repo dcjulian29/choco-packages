@@ -49,7 +49,7 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.SyncID")) {
         $cmd = "${env:ProgramFiles(x86)}\\BitTorrent Sync\BTSync.exe"
     }
     
-    Invoke-Expression "cmd /c '$cmd'"
+    Start-Process -FilePath $cmd -NoNewWindow
     
     Write-Warning "Waiting for BTSync configuration..."
 
