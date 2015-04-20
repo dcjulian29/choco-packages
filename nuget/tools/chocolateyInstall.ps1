@@ -1,5 +1,5 @@
 $packageName = "nuget"
-$url = "http://nuget.codeplex.com/downloads/get/922467"
+$url = "http://nuget.codeplex.com/downloads/get/1441482"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 $exe = "$($appDir)\$($packageName).exe"
