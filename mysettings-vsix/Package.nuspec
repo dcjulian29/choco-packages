@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-vsix</id>
-    <version>2014.10.18</version>
+    <version>2015.4.20</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>VS Extensions I like to install in Visual Studio</description>
@@ -22,6 +22,7 @@
       <dependency id="vsix-gitdiffmargin" />
       <dependency id="vsix-sandocodesearch" />
       <dependency id="sqlserverssdt" />
+      <dependency id="vsix-codemaid" />
     </dependencies>
   </metadata>
 </package>
