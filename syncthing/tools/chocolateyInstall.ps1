@@ -1,6 +1,6 @@
 $packageName = "syncthing"
-$url = "https://github.com/syncthing/syncthing/releases/download/v0.10.29/syncthing-windows-386-v0.10.29.zip"
-$url64 = "https://github.com/syncthing/syncthing/releases/download/v0.10.24/syncthing-windows-amd64-v0.10.29.zip"
+$url = "https://github.com/syncthing/syncthing/releases/download/v0.10.30/syncthing-windows-386-v0.10.30.zip"
+$url64 = "https://github.com/syncthing/syncthing/releases/download/v0.10.30/syncthing-windows-amd64-v0.10.30.zip"
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
