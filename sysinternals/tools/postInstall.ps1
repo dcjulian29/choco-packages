@@ -28,6 +28,7 @@ $links = @(
 "psservice"
 "psshutdown"
 "pssuspend"
+"regjump"
 "sdelete"
 "tcpvcon"
 "whois"
