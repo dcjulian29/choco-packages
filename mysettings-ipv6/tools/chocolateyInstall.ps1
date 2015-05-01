@@ -5,26 +5,18 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try
-{
-    $cmd = "reg.exe import $packageDir\registry.reg"
-    
-    if (Get-ProcessorBits -eq 64) {
-        $cmd = "$cmd /reg:64"
-    }
+$cmd = "reg.exe import $packageDir\registry.reg"
 
-    if (Test-ProcessAdminRights) {
-        Invoke-Expression $cmd
-    } else {
-        Start-ChocolateyProcessAsAdmin "$cmd"
-    }
+if (Get-ProcessorBits -eq 64) {
+    $cmd = "$cmd /reg:64"
+}
 
-    Write-Output "You need to reboot to complete the action..."
-    
-    Write-ChocolateySuccess $packageName
+Write-Output "Executing: $cmd"
+
+if (Test-ProcessAdminRights) {
+    Invoke-Expression $cmd
+} else {
+    Start-ChocolateyProcessAsAdmin "$cmd"
 }
-catch
-{
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
-}
+
+Write-Output "You need to reboot to complete the action..."
