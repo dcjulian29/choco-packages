@@ -1,7 +1,7 @@
 ﻿$packageName = "notepadplusplus"
 $installerType = "EXE"
 $installerArgs = "/S"
-$url = "http://download.tuxfamily.org/notepadplus/6.7.5/npp.6.7.5.Installer.exe"
+$url = "http://download.tuxfamily.org/notepadplus/6.7.7/npp.6.7.7.Installer.exe"
 
 try {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url
