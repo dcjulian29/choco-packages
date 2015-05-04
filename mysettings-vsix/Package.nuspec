@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-vsix</id>
-    <version>2015.4.20</version>
+    <version>2015.5.3</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>VS Extensions I like to install in Visual Studio</description>
@@ -10,7 +10,6 @@
     <dependencies>
       <dependency id="visualstudio" version="[2013.0,2014.0)" />
       <dependency id="vsix-perfwatson" />
-      <dependency id="vsix-postsharp" />
       <dependency id="vsix-specflow" />
       <dependency id="vsix-vscoloroutput" />
       <dependency id="vsix-webessentials" />
