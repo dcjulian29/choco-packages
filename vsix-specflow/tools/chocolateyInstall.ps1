@@ -1,6 +1,6 @@
 $packageName = "vsix-specflow"
 $vsgallery = "http://visualstudiogallery.msdn.microsoft.com"
-$vsix = "90ac3587-7466-4155-b591-2cd4cc4401bc/file/112721/3/TechTalk.SpecFlow.Vs2013Integration.vsix"
+$vsix = "90ac3587-7466-4155-b591-2cd4cc4401bc/file/112721/5/TechTalk.SpecFlow.Vs2013Integration.vsix"
 $url = "$vsgallery/$vsix"
 
 if ($psISE) {

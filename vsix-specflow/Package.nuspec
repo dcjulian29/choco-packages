@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>vsix-specflow</id>
-    <version>1.9.3</version>
+    <version>2015.1.1</version>
     <authors>TechTalk SpecFlow Team</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://visualstudiogallery.msdn.microsoft.com/90ac3587-7466-4155-b591-2cd4cc4401bc</projectUrl>
