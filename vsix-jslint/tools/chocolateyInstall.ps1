@@ -1,6 +1,6 @@
 $packageName = "vsix-jslint"
 $vsgallery = "http://visualstudiogallery.msdn.microsoft.com"
-$vsix = "ede12aa8-0f80-4e6f-b15c-7a8b3499370e/file/111592/16/JSLintNet.VisualStudio.1.8.0.vsix"
+$vsix = "ede12aa8-0f80-4e6f-b15c-7a8b3499370e/file/111592/20/JSLintNet.VisualStudio.1.8.1.vsix"
 $url = "$vsgallery/$vsix"
 
 if ($psISE) {
