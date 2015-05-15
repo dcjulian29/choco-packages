@@ -10,7 +10,7 @@ try {
 
     & $webpi /Install /AcceptEula /SuppressReboot /Products:WebMatrixWeb
     & $webpi /Install /AcceptEula /SuppressReboot /Products:WindowsAzurePowershell
-    & $webpi /Install /AcceptEula /SuppressReboot /Products:VWDOrVs2013AzurePack.2.5
+    & $webpi /Install /AcceptEula /SuppressReboot /Products:VWDOrVs2013AzurePack.2.6
 
     Write-ChocolateySuccess $packageName
 } catch {
