@@ -17,7 +17,7 @@ Install-ChocolateyZipPackage $packageName $compiler $appDir
 Install-ChocolateyZipPackage $packageName $help $appDir
 
 if (Test-Path "${env:ChocolateyInstall}\bin\ahk.exe") {
-    $cmd = "(Get-Item "${env:ChocolateyInstall}\bin\ahk.exe").Delete()"
+    $cmd = "(Get-Item '${env:ChocolateyInstall}\bin\ahk.exe').Delete()"
 
     if (Test-ProcessAdminRights) {
         Invoke-Expression $cmd
