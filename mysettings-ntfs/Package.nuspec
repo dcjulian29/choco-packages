@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-ntfs</id>
-    <version>2014.5.17</version>
+    <version>2015.6.12</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>Custom Settings related to NTFS based volumes.</description>
