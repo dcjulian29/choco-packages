@@ -26,7 +26,7 @@ if (Test-Path "${env:ChocolateyInstall}\bin\ahk.exe") {
     }
 }
 
-$cmd = "$mklink '${env:ChocolateyInstall}\bin\AutoHotkey.exe' '$appDir\ahk.exe'"
+$cmd = "$mklink '${env:ChocolateyInstall}\bin\ahk.exe' '$appDir\AutoHotkey.exe'"
 
 if (Test-ProcessAdminRights) {
     Invoke-Expression $cmd
