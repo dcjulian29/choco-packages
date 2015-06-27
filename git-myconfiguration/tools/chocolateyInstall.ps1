@@ -58,6 +58,7 @@ try {
     & $git config --global alias.gfff "flow feature finish"
     & $git config --global alias.gfrs "flow release start"
     & $git config --global alias.gfrf "flow release finish"
+    & $git config --global gitflow.feature.finish.no-ff "true"
 
     ##### Colorization
     & $git config --global color.ui "true"
