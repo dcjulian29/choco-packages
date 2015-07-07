@@ -56,7 +56,6 @@ $links = @(
 "head"
 "hexdump"
 "hostid"
-"hostname"
 "id"
 "lynx"
 "md5sum"
