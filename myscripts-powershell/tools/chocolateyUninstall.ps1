@@ -1,21 +1,11 @@
 $packageName = "myscripts-powershell"
 $appDir = "$($env:SYSTEMDRIVE)\tools\powershell"
 
-try
-{
-    if (Test-Path $appDir\Modules) {
-        Remove-Item "$appdir\Modules" -Force
-    }
-    
-    if (Test-Path $appDir)
-    {
-      Remove-Item "$($appDir)/*" -Recurse -Force
-    }
-
-    Write-ChocolateySuccess $packageName
+if (Test-Path $appDir\Modules) {
+    Remove-Item "$appdir\Modules" -Force
 }
-catch
+
+if (Test-Path $appDir)
 {
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
+  Remove-Item "$($appDir)/*" -Recurse -Force
 }
