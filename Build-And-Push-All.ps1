@@ -6,7 +6,7 @@ Load-NuGetProfile choco
 
 Get-ChildItem -Directory | foreach { 
     Push-Location $_.Name 
-    choco-make-package.bat
+    Make-ChocolateyPackage
     nuget-publish.bat *.nupkg
     Pop-Location
 }
