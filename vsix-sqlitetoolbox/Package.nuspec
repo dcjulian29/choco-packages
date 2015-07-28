@@ -2,14 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>vsix-sqlitetoolbox</id>
-    <version>4.2.0.0</version>
+    <version>4.3.0.0</version>
     <authors>Erik Ejlskov</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://visualstudiogallery.msdn.microsoft.com/0e313dfd-be80-4afb-b5e9-6e74d369f7a1</projectUrl>
     <description>SQL Server Compact/SQLite Toolbox add-in for Visual Studio. This add-in adds several features to help your embedded database development efforts: Scripting of tables and data, import from SQL Server and CSV files and much, much more.</description>
     <tags>vsix-sqlitetoolbox vsix sqlce sqlite</tags>
     <dependencies>
-      <dependency id="visualstudio" version="[2013.0,2014.0)" />
+      <dependency id="visualstudio" version="[2015.0,2016.0)" />
     </dependencies>
   </metadata>
 </package>
