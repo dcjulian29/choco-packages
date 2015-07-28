@@ -1,17 +1,10 @@
 $packageName = "vsix-specflow"
 $vsgallery = "http://visualstudiogallery.msdn.microsoft.com"
-$vsix = "90ac3587-7466-4155-b591-2cd4cc4401bc/file/112721/5/TechTalk.SpecFlow.Vs2013Integration.vsix"
+$vsix = "c74211e7-cb6e-4dfa-855d-df0ad4a37dd6/file/160542/7/TechTalk.SpecFlow.Vs2015Integration.v2015.1.2.vsix"
 $url = "$vsgallery/$vsix"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try {
-    Install-ChocolateyVsixPackage $packageName $url
-
-    Write-ChocolateySuccess $packageName
-} catch {
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
-}
+Install-ChocolateyVsixPackage $packageName $url

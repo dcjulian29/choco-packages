@@ -1,18 +1,10 @@
 $packageName = "vsix-webessentials"
 $vsgallery = "http://visualstudiogallery.msdn.microsoft.com"
-$vsix = "56633663-6799-41d7-9df7-0f2a504ca361/file/105627/37/WebEssentials2013.vsix"
+$vsix = "ee6e6d8c-c837-41fb-886a-6b50ae2d06a2/file/146119/20/WebEssentials2015.vsix"
 $url = "$vsgallery/$vsix"
-#$url = "https://github.com/madskristensen/WebEssentials2013/releases/download/v2.5/WebEssentials2013.vsix"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try {
-    Install-ChocolateyVsixPackage $packageName $url
-
-    Write-ChocolateySuccess $packageName
-} catch {
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
-}
+Install-ChocolateyVsixPackage $packageName $url

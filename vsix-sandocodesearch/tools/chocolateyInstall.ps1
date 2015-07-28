@@ -7,11 +7,4 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try {
-    Install-ChocolateyVsixPackage $packageName $url
-
-    Write-ChocolateySuccess $packageName
-} catch {
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
-}
+Install-ChocolateyVsixPackage $packageName $url

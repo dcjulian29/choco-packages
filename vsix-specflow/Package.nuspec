@@ -5,11 +5,11 @@
     <version>2015.1.2</version>
     <authors>TechTalk SpecFlow Team</authors>
     <owners>Julian Easterling</owners>
-    <projectUrl>http://visualstudiogallery.msdn.microsoft.com/90ac3587-7466-4155-b591-2cd4cc4401bc</projectUrl>
+    <projectUrl>https://visualstudiogallery.msdn.microsoft.com/c74211e7-cb6e-4dfa-855d-df0ad4a37dd6</projectUrl>
     <description>SpecFlow aims at bridging the communication gap between domain experts and developers by binding business readable behavior specifications and examples to the underlying implementation. Our mission is to provide a pragmatic and frictionless approach to Specification-By-Example for .NET projects. SpecFlow is open source and provided under a BSD license. SpecFlow also supports the concepts of Acceptance Test Driven Development (ATDD) and Behavior Driven Development (BDD), which are often used synonymously with Specification-By-Example.</description>
     <tags>vsix-specflow vsix specflow</tags>
     <dependencies>
-      <dependency id="visualstudio" version="[2013.0,2014.0)" />
+      <dependency id="visualstudio" version="[2015.0,2016.0)" />
     </dependencies>
   </metadata>
 </package>
