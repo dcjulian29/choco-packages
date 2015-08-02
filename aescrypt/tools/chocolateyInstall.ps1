@@ -1,6 +1,6 @@
 $packageName = "aescrypt"
-$url = "http://www.aescrypt.com/download/v3/windows/AESCrypt_console_v309_win32.zip"
-$url64 = "http://www.aescrypt.com/download/v3/windows/AESCrypt_console_v309_x64.zip"
+$url = "http://www.aescrypt.com/download/v3/windows/AESCrypt_console_v310_win32.zip"
+$url64 = "http://www.aescrypt.com/download/v3/windows/AESCrypt_console_v310_x64.zip"
 
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
