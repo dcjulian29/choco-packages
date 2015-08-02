@@ -1,6 +1,6 @@
 $packageName = "dotpeek"
-$url = "http://download.jetbrains.com/resharper/dotPeek32_1.4.exe"
-$url64 = "http://download.jetbrains.com/resharper/dotPeek64_1.4.exe"
+$url = "http://download.jetbrains.com/resharper/dotPeek32_1.4.3.exe"
+$url64 = "http://download.jetbrains.com/resharper/dotPeek64_1.4.3.exe"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
