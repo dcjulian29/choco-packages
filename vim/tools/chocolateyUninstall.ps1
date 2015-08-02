@@ -1,5 +1,6 @@
 $packageName = "vim"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
+$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if (Test-Path $appDir)
 {
