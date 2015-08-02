@@ -14,11 +14,12 @@ $subKey.SetValue("NtfsDisableLastAccessUpdate", 1)
 $subKey.SetValue("NtfsDisableEncryption", 1)
 $subKey.SetValue("NtfsDisableCompression", 1)
 
+if ((Get-WmiObject win32_operatingsystem).BuildNumber -lt 10240) {
+    $key = [Microsoft.Win32.RegistryKey]::OpenBaseKey([Microsoft.Win32.RegistryHive]::CurrentUser, $view)
 
-$key = [Microsoft.Win32.RegistryKey]::OpenBaseKey([Microsoft.Win32.RegistryHive]::CurrentUser, $view)
-
-$subKey =  $key.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Policies\Explorer", $true)  
-$subKey.SetValue("LinkResolveIgnoreLinkInfo", 1)
-$subKey.SetValue("NoResolveSearch", 1)
-$subKey.SetValue("NoResolveTrack", 1)
-$subKey.SetValue("NoInternetOpenWith", 1)
+    $subKey =  $key.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Policies\Explorer", $true)  
+    $subKey.SetValue("LinkResolveIgnoreLinkInfo", 1)
+    $subKey.SetValue("NoResolveSearch", 1)
+    $subKey.SetValue("NoResolveTrack", 1)
+    $subKey.SetValue("NoInternetOpenWith", 1)
+}
