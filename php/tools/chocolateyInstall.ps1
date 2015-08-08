@@ -1,5 +1,5 @@
 $packageName = "php"
-$version = "5.6.10"
+$version = "5.6.12"
 $url = "http://windows.php.net/downloads/releases/php-$version-nts-Win32-VC11-x86.zip"
 $url64 = "http://windows.php.net/downloads/releases/php-$version-nts-Win32-VC11-x64.zip" 
 $installArgs = "/install /passive /norestart"
@@ -13,30 +13,20 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try
-{
-    if (Test-Path $appDir) {
-      Remove-Item "$($appDir)" -Recurse -Force
-    }
-
-    New-Item -Type Directory -Path $appDir | Out-Null
-
-    if (-not (Test-Path $downloadPath)) {
-        New-Item -Type Directory -Path $downloadPath | Out-Null
-    }
-
-    
-    if (-not (Test-Path "HKLM:SOFTWARE\Microsoft\DevDiv\vc\Servicing\11.0")) {
-        Install-ChocolateyPackage "vcredist2012" "EXE" $installerArgs $vcredist $vcredist64
-    }
-    
-    Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url $url64
-    Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$appDir\"
-
-    Write-ChocolateySuccess $packageName
+if (Test-Path $appDir) {
+  Remove-Item "$($appDir)" -Recurse -Force
 }
-catch
-{
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
+
+New-Item -Type Directory -Path $appDir | Out-Null
+
+if (-not (Test-Path $downloadPath)) {
+    New-Item -Type Directory -Path $downloadPath | Out-Null
 }
+
+
+if (-not (Test-Path "HKLM:SOFTWARE\Microsoft\DevDiv\vc\Servicing\11.0")) {
+    Install-ChocolateyPackage "vcredist2012" "EXE" $installerArgs $vcredist $vcredist64
+}
+
+Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url $url64
+Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$appDir\"
