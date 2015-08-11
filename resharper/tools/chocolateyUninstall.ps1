@@ -1,7 +1,7 @@
 $packageName = "resharper"
 $installerType = "EXE"
 $installerArgs = "/SpecificProductNames=ReSharper /HostsToRemove=ReSharperPlatformVs12;ReSharperPlatformVs14 /Hive=* /ReSharper9PlusMsi=True"
-$url = "https://download.jetbrains.com/resharper/JetBrains.ReSharperUltimate.2015.1.1.exe"
+$url = "http://download.jetbrains.com/resharper/JetBrains.ReSharperUltimate.2015.1.3.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
