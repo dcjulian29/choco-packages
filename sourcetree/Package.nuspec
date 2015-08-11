@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>sourcetree</id>
-    <version>1.6.18</version>
+    <version>1.6.20</version>
     <authors>Atlassian</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.sourcetreeapp.com/</projectUrl>
