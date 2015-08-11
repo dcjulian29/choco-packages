@@ -2,8 +2,8 @@ $packageName = "bind-tools"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
-$url = "https://ftp.isc.org/isc/bind9/9.10.2/BIND9.10.2.x86.zip"
-$url64 = "https://ftp.isc.org/isc/bind9/9.10.2/BIND9.10.2.x64.zip"
+$url = "http://ftp.isc.org/isc/bind9/9.10.2/BIND9.10.2.x86.zip"
+$url64 = "http://ftp.isc.org/isc/bind9/9.10.2/BIND9.10.2.x64.zip"
 
 $keep = @(
   "dig.exe",
