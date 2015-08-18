@@ -1,8 +1,8 @@
 $packageName = "msbuild"
 $installerType = "EXE"
 $installerArgs = "/passive /norestart"
-$url = "http://download.microsoft.com/download/9/B/B/9BB1309E-1A8F-4A47-A6C5-ECF76672A3B3/BuildTools_Full.exe"
-$content = "https://julianscorner.com/downloads/msbuild-2013.zip"
+$url = "http://download.microsoft.com/download/E/E/D/EEDF18A8-4AED-4CE0-BEBE-70A83094FC5A/BuildTools_Full.exe"
+$content = "https://julianscorner.com/downloads/msbuild-2015.zip"
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 
 if ($psISE) {
@@ -48,8 +48,8 @@ if (Test-ProcessAdminRights) {
     Start-ChocolateyProcessAsAdmin $cmd 
 }
 
-if (!($env:PATH).Contains("$msbuild\12.0\bin")) {
-    $path = "$msbuild\12.0\bin;${env:PATH}"
+if (!($env:PATH).Contains("$msbuild\14.0\bin")) {
+    $path = "$msbuild\14.0\bin;${env:PATH}"
     $cmd = "[Environment]::SetEnvironmentVariable('PATH','$path', 'Machine')"
 
     if (Test-ProcessAdminRights) {
@@ -59,7 +59,7 @@ if (!($env:PATH).Contains("$msbuild\12.0\bin")) {
     }
 }
 
-$cmd = "[Environment]::SetEnvironmentVariable('VisualStudioVersion','12.0', 'Machine')"
+$cmd = "[Environment]::SetEnvironmentVariable('VisualStudioVersion','14.0', 'Machine')"
 
 if (Test-ProcessAdminRights) {
     Invoke-Expression $cmd
