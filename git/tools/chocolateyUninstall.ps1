@@ -1,22 +1,15 @@
-$packageName = 'git'
-
-try
-{
-    $uninstaller = Join-Path $env:ProgramFiles "Git\unins000.exe"
-    
-    if ((Get-WmiObject Win32_Processor).AddressWidth -eq 64) { 
-        $uninstaller = Join-Path $env:ProgramW6432 "Git\unins000.exe"
-    }
-
-    if (Test-Path $uninstaller)
-    {
-        Start-ChocolateyProcessAsAdmin "cmd.exe /c `"$uninstaller`" /SILENT"
-    }
-
-    Write-ChocolateySuccess $packageName
+if (Test-Path "$env:ProgramFiles\Git") {
+    $git = "$env:ProgramFiles\Git"
 }
-catch
-{
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
+
+if (Test-Path "${env:ProgramFiles(x86)}\Git") {
+    $git = "${env:ProgramFiles(x86)}\Git"
+}
+
+$uninstaller = Join-Path $git "unins000.exe"
+
+if (Test-ProcessAdminRights) {
+    Start-ChocolateyProcessAsAdmin "cmd.exe /c `"$uninstaller`" /SILENT"
+} else {
+    Invoke-Expression "cmd.exe /c `"$uninstaller`" /SILENT"
 }
