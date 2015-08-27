@@ -1,6 +1,4 @@
-﻿$packageName = "rsat8"
-
-& dism.exe /online /disable-feature `
+﻿& dism.exe /online /disable-feature `
     /featurename:RemoteServerAdministrationTools `
     /featurename:RemoteServerAdministrationTools-Roles `
     /featurename:RemoteServerAdministrationTools-Roles-CertificateServices `

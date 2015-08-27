@@ -15,6 +15,12 @@ if ($major -eq 6) {
     }
 }
 
+if ($major -eq 10) {
+    $packageName = "rsat-win10"
+    $url = "http://download.microsoft.com/download/1/D/8/1D8B5022-5477-4B9A-8104-6A71FF9D98AB/WindowsTH-KB2693643-x86.msu"
+    $url64 = "http://download.microsoft.com/download/1/D/8/1D8B5022-5477-4B9A-8104-6A71FF9D98AB/WindowsTH-KB2693643-x64.msu"
+}
+
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 
 if ($psISE) {
@@ -58,7 +64,7 @@ if ($packageName) {
             /featurename:RemoteServerAdministrationTools-Roles-HyperV `
     }
 
-    if (($major -eq 6 ) -and ($minor -eq 2)) {
+    if ((($major -eq 6 ) -and ($minor -eq 2)) -or ($major -eq 10)) {
         & dism.exe /online /enable-feature `
             /featurename:Microsoft-Hyper-V-Management-Clients `
             /featurename:Microsoft-Hyper-V-Management-PowerShell

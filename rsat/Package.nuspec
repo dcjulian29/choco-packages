@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>rsat</id>
-    <version>2015.6.1</version>
+    <version>2015.8.26</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>Remote System Administration Tools</description>
