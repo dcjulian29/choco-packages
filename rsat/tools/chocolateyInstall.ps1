@@ -38,26 +38,44 @@ if ($packageName) {
 #Wait for next process.
     & "$downloadPath\$packageName.msu" /quiet /noreboot
 
-    & dism.exe /online /enable-feature `
-        /featurename:RemoteServerAdministrationTools `
-        /featurename:RemoteServerAdministrationTools-Roles `
-        /featurename:RemoteServerAdministrationTools-Roles-CertificateServices `
-        /featurename:RemoteServerAdministrationTools-Roles-CertificateServices-CA `
-        /featurename:RemoteServerAdministrationTools-Roles-AD `
-        /featurename:RemoteServerAdministrationTools-Roles-AD-DS `
-        /featurename:RemoteServerAdministrationTools-Roles-AD-DS-SnapIns `
-        /featurename:RemoteServerAdministrationTools-Roles-AD-DS-AdministrativeCenter `
-        /featurename:RemoteServerAdministrationTools-Roles-AD-Powershell `
-        /featurename:RemoteServerAdministrationTools-Roles-DHCP `
-        /featurename:RemoteServerAdministrationTools-Roles-DNS `
-        /featurename:RemoteServerAdministrationTools-Roles-FileServices `
-        /featurename:RemoteServerAdministrationTools-Roles-FileServices-Dfs `
-        /featurename:RemoteServerAdministrationTools-Roles-FileServices-Fsrm `
-        /featurename:RemoteServerAdministrationTools-Roles-FileServices-StorageMgmt `
-        /featurename:RemoteServerAdministrationTools-Features `
-        /featurename:RemoteServerAdministrationTools-Features-Clustering `
-        /featurename:RemoteServerAdministrationTools-Features-GP `
-        /featurename:RemoteServerAdministrationTools-Features-LoadBalancing 
+    if ($major -eq 6) {
+        & dism.exe /online /enable-feature `
+            /featurename:RemoteServerAdministrationTools-Roles-CertificateServices `
+            /featurename:RemoteServerAdministrationTools-Roles-CertificateServices-CA `
+            /featurename:RemoteServerAdministrationTools-Roles-AD `
+            /featurename:RemoteServerAdministrationTools-Roles-AD-DS `
+            /featurename:RemoteServerAdministrationTools-Roles-AD-DS-SnapIns `
+            /featurename:RemoteServerAdministrationTools-Roles-AD-Powershell `
+            /featurename:RemoteServerAdministrationTools-Roles-DHCP `
+            /featurename:RemoteServerAdministrationTools-Roles-DNS `
+            /featurename:RemoteServerAdministrationTools-Roles-FileServices `
+            /featurename:RemoteServerAdministrationTools-Roles-FileServices-Dfs `
+            /featurename:RemoteServerAdministrationTools-Roles-FileServices-Fsrm `
+            /featurename:RemoteServerAdministrationTools-Roles-FileServices-StorageMgmt `
+            /featurename:RemoteServerAdministrationTools-Features-Clustering `
+            /featurename:RemoteServerAdministrationTools-Features-GP `
+            /featurename:RemoteServerAdministrationTools-Features-LoadBalancing 
+    }
+    
+    if ($major -eq 10) {
+        & dism.exe /online /enable-feature `
+            /featurename:RSATClient-Roles-CertificateServices `
+            /featurename:RSATClient-Roles-CertificateServices-CA `
+            /featurename:RSATClient-Roles-AD `
+            /featurename:RSATClient-Roles-AD-DS `
+            /featurename:RSATClient-Roles-AD-DS-SnapIns `
+            /featurename:RSATClient-Roles-AD-Powershell `
+            /featurename:RSATClient-Roles-DHCP `
+            /featurename:RSATClient-Roles-DNS `
+            /featurename:RSATClient-Roles-FileServices `
+            /featurename:RSATClient-Roles-FileServices-Dfs `
+            /featurename:RSATClient-Roles-FileServices-Fsrm-Management `
+            /featurename:RSATClient-Roles-WSUS `
+            /featurename:RSATClient-Features-Clustering `
+            /featurename:RSATClient-Features-IPAM `
+            /featurename:RSATClient-Features-GP `
+            /featurename:RSATClient-Features-LoadBalancing 
+    }
 
     if (($major -eq 6 ) -and ($minor -eq 1)) {
         & dism.exe /online /enable-feature `
