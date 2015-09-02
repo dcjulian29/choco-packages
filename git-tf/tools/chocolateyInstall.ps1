@@ -7,9 +7,12 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
+if (!(Test-Path $downloadPath)) {
+    New-Item -ItemType directory $downloadPath -Force | Out-Null
+}
+
 Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
 Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath\"
-
 
 if (Test-Path $appDir)
 {
