@@ -2,6 +2,7 @@ $packageName = "git-tf"
 $url = "http://download.microsoft.com/download/A/E/2/AE23B059-5727-445B-91CC-15B7A078A7F4/git-tf-2.0.3.20131219.zip"
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
+$mklink = "cmd.exe /c mklink"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -23,3 +24,11 @@ if (Test-Path $appDir)
 New-Item -Type Directory -Path $appDir | Out-Null
     
 Copy-Item -Path "$downloadPath\git-tf-2.0.3.20131219\*" -Destination "$appDir\" -Recurse -Container
+
+$cmd = "$mklink '${env:ChocolateyInstall}\bin\gittf.cmd' '$appDir\git-tf.cmd'"
+
+if (Test-ProcessAdminRights) {
+    Invoke-Expression $cmd
+} else {
+    Start-ChocolateyProcessAsAdmin $cmd
+}
