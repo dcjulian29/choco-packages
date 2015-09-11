@@ -25,7 +25,16 @@ New-Item -Type Directory -Path $appDir | Out-Null
     
 Copy-Item -Path "$downloadPath\git-tf-2.0.3.20131219\*" -Destination "$appDir\" -Recurse -Container
 
-$cmd = "$mklink '${env:ChocolateyInstall}\bin\gittf.cmd' '$appDir\git-tf.cmd'"
+$cmd = @"
+Set-Content ${env:ChocolateyInstall}\bin\gittf.cmd @`"
+@echo off
+setlocal
+
+call $appdir\git-tf.cmd %*
+
+endlocal
+`"@    
+"@
 
 if (Test-ProcessAdminRights) {
     Invoke-Expression $cmd
