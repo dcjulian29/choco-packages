@@ -1,7 +1,7 @@
 $packageName = "teamcity"
 $installerType = "EXE"
 $installerArgs = "/S"
-$url = "http://download-cf.jetbrains.com/teamcity/TeamCity-9.0.5.exe"
+$url = "https://download.jetbrains.com/teamcity/TeamCity-9.1.1.exe"
 $appDir = "$($env:SYSTEMDRIVE)\TeamCity"
 $upgrade = $false
 
