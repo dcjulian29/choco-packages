@@ -23,7 +23,9 @@ Windows Registry Editor Version 5.00
 "AccentColor"=dword:00000e1e
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
-"EnableAutoTray"=dword:00000000
+"EnableAutoTray"=dword:00000001
+"ShowRecent"=dword:00000000
+"ShowFrequent"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\Grid]
 "LauncherSortOption"=dword:00000002
