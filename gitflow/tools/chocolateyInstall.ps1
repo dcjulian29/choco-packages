@@ -1,6 +1,6 @@
 $packageName = "gitflow"
 $release = "1.8.0"
-$gitflow = "https://github.com/petervanderdoes/gitflow/archive/$release.zip"
+$gitflow = "https://github.com/petervanderdoes/gitflow-avh/archive/$release.zip"
 $getoptbin = "http://sourceforge.net/projects/gnuwin32/files/util-linux/2.14.1/util-linux-ng-2.14.1-bin.zip/download"
 $getoptdll = "http://sourceforge.net/projects/gnuwin32/files/util-linux/2.14.1/util-linux-ng-2.14.1-dep.zip/download"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
@@ -51,7 +51,7 @@ if (Test-ProcessAdminRights) {
 Get-ChocolateyWebFile $packageName "$downloadPath\gitflow.zip" $gitflow
 Get-ChocolateyUnzip "$downloadPath\gitflow.zip" "$downloadPath\"
 
-$downloadPath = "$downloadPath\$packageName-$release"
+$downloadPath = "$downloadPath\$packageName-avh-$release"
 
 if (Test-ProcessAdminRights) {
     Get-ChildItem -Path $downloadPath -Include 'git-flow*','gitflow-*','gitflow*' -Recurse | Copy-Item -Destination "$git" -Force
