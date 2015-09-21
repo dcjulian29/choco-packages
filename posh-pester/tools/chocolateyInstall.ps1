@@ -8,6 +8,11 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
+if (-not (Test-Path $downloadPath))
+{
+    New-Item -Type Directory -Path $downloadPath | Out-Null
+}
+
 Get-ChocolateyWebFile $packageName "$downloadPath\$version.zip" $url
 Get-ChocolateyUnzip "$downloadPath\$version.zip" "$downloadPath\"
 
@@ -15,11 +20,6 @@ if (Test-Path $appDir)
 {
   Write-Output "Removing previous version of package..."
   Remove-Item "$($appDir)" -Recurse -Force
-}
-
-if (-not (Test-Path $downloadPath))
-{
-    New-Item -Type Directory -Path $downloadPath | Out-Null
 }
 
 $source = "$downloadPath\Pester-$version"
