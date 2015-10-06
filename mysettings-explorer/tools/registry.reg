@@ -8,6 +8,7 @@ Windows Registry Editor Version 5.00
 "StartMenuInit"=dword:00000004
 "NavPaneExpandToCurrentFolder"=dword:00000001
 "DontUsePowerShellOnWinX"=dword:00000000
+"ShowTaskViewButton"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers]
 "DisableAutoplay"=dword:00000000
@@ -29,3 +30,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\Grid]
 "LauncherSortOption"=dword:00000002
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
+"SearchboxTaskbarMode"=dword:00000000
