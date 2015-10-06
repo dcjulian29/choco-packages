@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>cs-script</id>
-    <version>3.9.16.0</version>
-    <authors>Oleg Shilo</authors>
+    <id>dnscrypt-proxy</id>
+    <version>1.6.0</version>
+    <authors>Frank Denis</authors>
     <owners>Julian Easterling</owners>
-    <projectUrl>http://www.csscript.net</projectUrl>
-    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/jedisct1/dnscrypt-proxy</projectUrl>
+    <licenseUrl>https://github.com/jedisct1/dnscrypt-proxy/blob/master/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>CLR based runtime environment for executing scripts written in ECMA-compliant C#. The main idea of CS-Script is to allow "plain vanilla" C# code execution from both command-prompt and form any CLR application hosting the script engine.</description>
-    <tags>cs-script csharp script</tags>
+    <description> A tool for securing communications between a client and a DNS resolver.</description>
+    <tags>dnscrypt dns</tags>
   </metadata>
 </package>
