@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vsix-stylecop</id>
+    <version>4.7.58</version>
+    <authors>Christophe Heiser</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://visualstudiogallery.msdn.microsoft.com/cac2a05b-6eb6-4fa2-95b9-1f8d011e6cae</projectUrl>
+    <description>Updated StyleCop integration for Visual Studio including 2015.</description>
+    <tags>vsix-stylecop vsix stylecop</tags>
+    <dependencies>
+      <dependency id="visualstudio" version="[2015.0,2016.0)" />
+    </dependencies>
+  </metadata>
+</package>
