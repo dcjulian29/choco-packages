@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vscode</id>
+    <version>0.10.1</version>
+    <authors>Microsoft</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.visualstudio.com/</projectUrl>
+    <description>VS Code is a new type of tool that combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle. Code provides comprehensive editing and debugging support, an extensibility model, and lightweight integration with existing tools.</description>
+    <tags>vscode ide visual studio</tags>
+    <dependencies>
+      <dependency id="dotnet" />
+    </dependencies>
+  </metadata>
+</package>
