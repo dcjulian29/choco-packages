@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-visualstudio</id>
-    <version>2015.10.23</version>
+    <version>2015.11.19</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for Visual Studio Development for my Development Environments.</description>
@@ -12,6 +12,7 @@
       <dependency id="resharper" />
       <dependency id="mysettings-vsix" />
       <dependency id="webpi" />
+      <dependency id="vscode" />
     </dependencies>
   </metadata>
 </package>
