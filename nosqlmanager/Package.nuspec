@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>nosqlmanager</id>
+    <version>3.1.0.5</version>
+    <authors>Paralect</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://www.mongodbmanager.com/</projectUrl>
+    <licenseUrl>http://www.mongodbmanager.com/purchase</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description> NoSQL Manager for MongoDB is a desktop GUI tool for Mongo database management, administration and development.</description>
+    <tags>nosql manager mongodb</tags>
+    <dependencies>
+      <dependency id="dotnet" />
+    </dependencies>
+  </metadata>
+</package>
