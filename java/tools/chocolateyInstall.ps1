@@ -2,8 +2,8 @@
 $installerType = "exe"
 $installerArgs = "/s REBOOT=Suppress WEB_JAVA=0"
 
-$url = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=111687"
-$url64 = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=111689"
+$url = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=113217"
+$url64 = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=113219"
 
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
