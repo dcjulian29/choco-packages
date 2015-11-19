@@ -1,7 +1,7 @@
 $packageName = "sourcetree"
 $installerType = "EXE"
 $installerArgs = "/passive"
-$url = "http://downloads.atlassian.com/software/sourcetree/windows/SourceTreeSetup_1.6.22.exe"
+$url = "http://downloads.atlassian.com/software/sourcetree/windows/SourceTreeSetup_1.6.23.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
