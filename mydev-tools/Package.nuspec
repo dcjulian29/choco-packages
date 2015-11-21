@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2015.7.31</version>
+    <version>2015.11.20</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the application packages for my Development Environments.</description>
@@ -32,6 +32,9 @@
       <dependency id="tcptrace" />
       <dependency id="proxytrace" />
       <dependency id="expresso" />
+      <dependency id="cs-script" />
+      <dependency id="nsis" />
+      <dependency id="selfcert" />
     </dependencies>
   </metadata>
 </package>
