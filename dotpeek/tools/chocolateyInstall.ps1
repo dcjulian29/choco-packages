@@ -1,8 +1,9 @@
 $packageName = "dotpeek"
-$url = "http://download.jetbrains.com/resharper/dotPeek32_1.5.exe"
-$url64 = "http://download.jetbrains.com/resharper/dotPeek64_1.5.exe"
-$downloadPath = "$env:TEMP\chocolatey\$packageName"
+$url = "http://download.jetbrains.com/resharper/dotPeek32_10.0.1.exe"
+$url64 = "http://download.jetbrains.com/resharper/dotPeek64_10.0.1.exe"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
+$optPath = "$env:AppData\JetBrains\Shared\vAny"
+$optFile = "GlobalSettingsStorage.DotSettings"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -15,10 +16,13 @@ if (Test-Path $appDir) {
 
 New-Item -Type Directory -Path $appDir | Out-Null
 
-if (-not (Test-Path $downloadPath)) {
-    New-Item -Type Directory -Path $downloadPath | Out-Null
-}
-
 Get-ChocolateyWebFile $packageName "$appDir\$packageName.exe" $url $url64
 
-Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+if (Test-Path $appDir) {
+    New-Item -Type Directory -Path $optPath | Out-Null
+}
+
+@"
+<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <s:Boolean x:Key="/Default/DotPeek/DotPeekLicenseAgreement/Accepted/@EntryValue">True</s:Boolean>
+"@ > $optPath\$optFile
