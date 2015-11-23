@@ -1,6 +1,6 @@
 $packageName = "resharper"
 $installerType = "EXE"
-$installerArgs = "/SpecificProductNamesToRemove=ReSharper /Silent=True /ReSharper9PlusMsi=True"
+$installerArgs = "/SpecificProductNames=dotCover;teamCityAddin;ReSharper /Silent=True /ReSharper9PlusMsi=True"
 $url = "http://download.jetbrains.com/resharper/JetBrains.ReSharperUltimate.10.0.1.exe"
 
 if ($psISE) {

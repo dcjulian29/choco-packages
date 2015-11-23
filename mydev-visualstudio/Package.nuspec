@@ -13,7 +13,6 @@
       <dependency id="mysettings-vsix" />
       <dependency id="webpi" />
       <dependency id="vscode" />
-      <dependency id="dottrace" />
     </dependencies>
   </metadata>
 </package>
