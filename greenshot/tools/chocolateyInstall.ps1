@@ -1,7 +1,7 @@
 $packageName = "greenshot"
 $installerType = "EXE"
 $installerArgs = "/SILENT"
-$url = "http://sourceforge.net/projects/greenshot/files/Greenshot/Greenshot%201.2/Greenshot-INSTALLER-1.2.6.7-RELEASE.exe/download"
+$url = "https://github.com/greenshot/greenshot/releases/download/Greenshot-RELEASE-1.2.8.12/Greenshot-INSTALLER-1.2.8.12-RELEASE.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -25,5 +25,3 @@ if (-not (Test-Path "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5")) {
 } 
 
 Install-ChocolateyPackage $packageName $installerType $installerArgs $url
-
-Write-ChocolateySuccess $packageName
