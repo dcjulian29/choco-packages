@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2015.11.20</version>
+    <version>2015.11.22</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the application packages for my Development Environments.</description>
@@ -35,6 +35,7 @@
       <dependency id="cs-script" />
       <dependency id="nsis" />
       <dependency id="selfcert" />
+      <dependency id="markdown-edit" />
     </dependencies>
   </metadata>
 </package>
