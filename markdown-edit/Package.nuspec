@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>markdown-edit</id>
+    <version>1.16.0</version>
+    <authors>Mike Ward</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://markdownedit.com/</projectUrl>
+    <licenseUrl>https://github.com/mike-ward/Markdown-Edit/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Markdown Edit is a Windows desktop CommonMark editor.</description>
+    <tags>markdown commonmark editor text</tags>
+  </metadata>
+</package>
