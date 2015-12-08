@@ -1,34 +1,24 @@
 $packageName = "7zip"
 $installerType = "MSI"
 $installerArgs = "/quiet"
-$url = "http://www.7-zip.org/a/7z938.msi"
-$url64 = "http://www.7-zip.org/a/7z938-x64.msi"
+$url = "http://www.7-zip.org/a/7z1512.msi"
+$url64 = "http://www.7-zip.org/a/7z1512-x64.msi"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try
-{
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
 
-    $cmd = "reg.exe import $toolDir\registry.reg"
-    
-    if (Get-ProcessorBits -eq 64) {
-        $cmd = "$cmd /reg:64"
-    }
+$cmd = "reg.exe import $toolDir\registry.reg"
 
-    if (Test-ProcessAdminRights) {
-        Invoke-Expression $cmd
-    } else {
-        Start-ChocolateyProcessAsAdmin "$cmd"
-    }
-
-    Write-ChocolateySuccess $packageName
+if (Get-ProcessorBits -eq 64) {
+    $cmd = "$cmd /reg:64"
 }
-catch
-{
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
+
+if (Test-ProcessAdminRights) {
+    Invoke-Expression $cmd
+} else {
+    Start-ChocolateyProcessAsAdmin "$cmd"
 }

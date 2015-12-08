@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>7zip</id>
-    <version>9.38</version>
+    <version>15.12</version>
     <authors>Igor Pavlov</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.7-zip.org/</projectUrl>
