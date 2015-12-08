@@ -1,6 +1,7 @@
 $packageName = "nmap"
-$version = "6.49BETA4"
-$url = "http://nmap.org/dist/nmap-$($version)-win32.zip"
+$version = "7.00"
+$url = "https://nmap.org/dist/nmap-$($version)-win32.zip"
+
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
