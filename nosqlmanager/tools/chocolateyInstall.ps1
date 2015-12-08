@@ -8,3 +8,9 @@ if ($psISE) {
 }
 
 Install-ChocolateyPackage $packageName $installerType $installerArgs $url
+
+if (Test-ProcessAdminRights) {
+    Remove-Item "$($env:PUBLIC)\Desktop\NoSQL Manager for MongoDB.lnk" -Force
+} else {
+    Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\NoSQL Manager for MongoDB.lnk' -Force"
+}
