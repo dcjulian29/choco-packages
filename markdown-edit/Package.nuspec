@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>markdown-edit</id>
-    <version>1.16.0</version>
+    <version>1.17.1</version>
     <authors>Mike Ward</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://markdownedit.com/</projectUrl>

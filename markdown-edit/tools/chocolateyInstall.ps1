@@ -1,7 +1,7 @@
 $packageName = "markdown-edit"
 $installerType = "MSI"
 $installerArgs = '/qb SKIPFRAMEWORKCHECK="1"'
-$version = "v1.16.0"
+$version = "v1.17.1"
 $url = "https://github.com/mike-ward/Markdown-Edit/releases/download/$version/MarkdownEditSetup.msi"
 
 if ($psISE) {
@@ -9,3 +9,12 @@ if ($psISE) {
 }
 
 Install-ChocolateyPackage $packageName $installerType $installerArgs $url
+
+if (Test-Path "$($env:PUBLIC)\Desktop\Markdown Edit.lnk") {
+    Remove-Item "$($env:PUBLIC)\Desktop\Markdown Edit.lnk" -Force
+}
+
+
+if (Test-Path "$($env:USERPROFILE)\Desktop\Markdown Edit.lnk") {
+    Remove-Item "$($env:USERPROFILE)\Desktop\Markdown Edit.lnk" -Force
+}
