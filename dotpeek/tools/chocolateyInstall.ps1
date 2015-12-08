@@ -18,7 +18,7 @@ New-Item -Type Directory -Path $appDir | Out-Null
 
 Get-ChocolateyWebFile $packageName "$appDir\$packageName.exe" $url $url64
 
-if (Test-Path $appDir) {
+if (-not (Test-Path $optPath)) {
     New-Item -Type Directory -Path $optPath | Out-Null
 }
 
