@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-vsix</id>
-    <version>2015.10.23</version>
+    <version>2015.12.17</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>VS Extensions I like to install in Visual Studio</description>
@@ -22,6 +22,7 @@
       <dependency id="vsix-sqlitetoolbox" />
       <dependency id="vsix-nuget" />
       <dependency id="vsix-stylecop" />
+      <dependency id="vsix-aspnetwebtools" />
     </dependencies>
   </metadata>
 </package>
