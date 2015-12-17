@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>git-credential-manager</id>
+    <version>1.0.0</version>
+    <authors>Microsoft</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>https://github.com/Microsoft/Git-Credential-Manager-for-Windows/blob/master/LICENSE.TXT</licenseUrl>
+    <projectUrl>https://github.com/Microsoft/Git-Credential-Manager-for-Windows</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Git Credential Manager for Windows (GCM) provides secure Git credential storage for Windows.</description>
+    <tags>git-credential git</tags>
+    <dependencies>
+      <dependency id="git" />
+      <dependency id="dotnet" version="4.0.0" />
+    </dependencies>
+  </metadata>
+</package>
