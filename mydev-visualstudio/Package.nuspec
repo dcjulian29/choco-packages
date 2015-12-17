@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-visualstudio</id>
-    <version>2015.11.22</version>
+    <version>2015.12.16</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for Visual Studio Development for my Development Environments.</description>
