@@ -1,10 +1,10 @@
 $packageName = "php"
-$version = "5.6.15"
-$url = "http://windows.php.net/downloads/releases/php-$version-nts-Win32-VC11-x86.zip"
-$url64 = "http://windows.php.net/downloads/releases/php-$version-nts-Win32-VC11-x64.zip" 
+$version = "7.0.1"
+$url = "http://windows.php.net/downloads/releases/php-$version-nts-Win32-VC14-x86.zip"
+$url64 = "http://windows.php.net/downloads/releases/php-$version-nts-Win32-VC14-x64.zip" 
 $installArgs = "/install /passive /norestart"
-$vcredist = "http://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe"
-$vcredist64 = "http://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x64.exe"
+$vcredist = "https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x86.exe"
+$vcredist64 = "https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x64.exe"
 
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
@@ -24,8 +24,8 @@ if (-not (Test-Path $downloadPath)) {
 }
 
 
-if (-not (Test-Path "HKLM:SOFTWARE\Microsoft\DevDiv\vc\Servicing\11.0")) {
-    Install-ChocolateyPackage "vcredist2012" "EXE" $installerArgs $vcredist $vcredist64
+if (-not (Test-Path "HKLM:SOFTWARE\Microsoft\DevDiv\vc\Servicing\14.0")) {
+    Install-ChocolateyPackage "vcredist2015" "EXE" $installerArgs $vcredist $vcredist64
 }
 
 Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url $url64
