@@ -1,7 +1,7 @@
 $packageName = "nsis"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
-$version = "2.46"
+$version = "2.50"
 
 $url = "http://sourceforge.net/projects/nsis/files/NSIS%202/$($version)/nsis-$($version).zip/download"
 
@@ -17,6 +17,11 @@ try
     if (Test-Path $appDir)
     {
       Remove-Item "$($appDir)" -Recurse -Force
+    }
+
+    if (Test-Path $downloadPath)
+    {
+      Remove-Item "$($downloadPath)" -Recurse -Force
     }
 
     if (-not (Test-Path $downloadPath)) {
