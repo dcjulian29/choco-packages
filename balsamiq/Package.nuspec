@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>balsamiq</id>
+    <version>3.3.3</version>
+    <authors>Balsamiq Studios, LLC</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://balsamiq.com/</projectUrl>
+    <licenseUrl>https://balsamiq.com/buy</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Balsamiq Mockups is a rapid wireframing tool. It reproduces the experience of sketching on a whiteboard, but using a computer.</description>
+    <tags>balsamiq mockups prototyping</tags>
+  </metadata>
+</package>
