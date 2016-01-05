@@ -1,5 +1,5 @@
 $packageName = "posh-azure"
-$url = "https://github.com/Azure/azure-powershell/releases/download/0.9.1-May2015/azure-powershell.0.9.1.msi"
+$url = "https://github.com/Azure/azure-powershell/releases/download/v1.0.1-November2015/azure-powershell.1.0.1.msi"
 $installerType = "MSI"
 $installerArgs = "/qb"
 
