@@ -1,5 +1,5 @@
 $packageName = "php"
-$version = "7.0.1"
+$version = "7.0.2"
 $url = "http://windows.php.net/downloads/releases/php-$version-nts-Win32-VC14-x86.zip"
 $url64 = "http://windows.php.net/downloads/releases/php-$version-nts-Win32-VC14-x64.zip" 
 $installArgs = "/install /passive /norestart"
@@ -30,3 +30,5 @@ if (-not (Test-Path "HKLM:SOFTWARE\Microsoft\DevDiv\vc\Servicing\14.0")) {
 
 Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url $url64
 Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$appDir\"
+
+Copy-Item "$appDir\php.ini-production" "$appDir\php.ini"
