@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-visualstudio</id>
-    <version>2016.1.12</version>
+    <version>2016.2.8</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for Visual Studio Development for my Development Environments.</description>
@@ -14,6 +14,8 @@
       <dependency id="webpi" />
       <dependency id="vscode" />
       <dependency id="dnx" />
+      <dependency id="posh-azure" />
+      <dependency id="azuresdk" />
     </dependencies>
   </metadata>
 </package>
