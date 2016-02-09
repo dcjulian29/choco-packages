@@ -2,7 +2,7 @@
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
-$url = 'http://download.sysinternals.com/files/SysinternalsSuite.zip'
+$url = 'https://download.sysinternals.com/files/sysinternalssuite.zip'
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
