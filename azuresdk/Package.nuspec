@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>azuresdk</id>
+    <version>2.8.1</version>
+    <authors>Microsoft</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://azure.microsoft.com/en-us/develop/net/</projectUrl>
+    <description>The Microsoft Azure SDK for .NET allows you to build applications that take advantage of scalable cloud computing resources.</description>
+    <tags>azuresdk azure sdk</tags>
+    <dependencies>
+      <dependency id="webpi" />
+    </dependencies>
+  </metadata>
+</package>
