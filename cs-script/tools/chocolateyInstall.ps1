@@ -1,5 +1,5 @@
 $packageName = "cs-script"
-$url = "https://csscriptsource.codeplex.com/downloads/get/1528904"
+$url = "https://csscriptsource.codeplex.com/downloads/get/1544890"
 
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
