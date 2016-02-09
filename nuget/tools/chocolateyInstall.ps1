@@ -1,5 +1,5 @@
 $packageName = "nuget"
-$url = "https://az320820.vo.msecnd.net/downloads/nuget.exe"
+$url = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 $exe = "$($appDir)\$($packageName).exe"

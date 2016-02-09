@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>nuget</id>
-    <version>2.8.6</version>
+    <version>3.3.0</version>
     <authors>Outercurve Foundation</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://nuget.codeplex.com/</projectUrl>
