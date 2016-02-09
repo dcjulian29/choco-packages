@@ -12,18 +12,14 @@ if (Test-Path $appDir)
   Remove-Item "$($appDir)" -Recurse -Force
 }
 
+New-Item -Type Directory -Path $appDir | Out-Null
+
 $wc = New-Object System.Net.WebClient
 
 $wc.DownloadFile("$url/Nimble.psd1", "$appdir\Nimble.psd1")
 
-Push-Location
-
-Set-Location $appDir
-
-(Import-LocalizedData -FileName Nimble.psd1).FileList | For-EachObject {
+(Import-LocalizedData -BaseDirectory $appDir -FileName "Nimble.psd1").FileList | ForEach-Object {
     $wc.DownloadFile("$url/$_", "$appdir\$_")
 }
 
-Get-ChildItem | UnBlock-File
-
-Pop-Location
+Get-ChildItem $appDir | UnBlock-File

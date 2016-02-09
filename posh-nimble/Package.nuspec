@@ -6,7 +6,7 @@
     <authors>Justin Rich</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://github.com/jrich523/NimblePowerShell</projectUrl>
-    <description>PowerShell Module for Nimble Storage</description>
+    <description>PowerShell Module for Nimble Storage Arrays</description>
     <tags>powershell nimble</tags>
     <dependencies>
       <dependency id="powershell" />
