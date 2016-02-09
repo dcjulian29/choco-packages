@@ -1,6 +1,6 @@
 $packageName = "sqlite"
-$sqliteShell = "https://www.sqlite.org/2016/sqlite-shell-win32-x86-3100000.zip"
-$sqliteAnalyzer = "https://www.sqlite.org/2016/sqlite-analyzer-win32-x86-3100000.zip"
+$sqliteShell = "https://www.sqlite.org/2016/sqlite-shell-win32-x86-3100200.zip"
+$sqliteAnalyzer = "https://www.sqlite.org/2016/sqlite-analyzer-win32-x86-3100200.zip"
 
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
