@@ -1,5 +1,5 @@
 $packageName = "balsamiq"
-$url = "https://builds.balsamiq.com/mockups-desktop/Balsamiq_Mockups_3.3.3_bundled.zip"
+$url = "https://builds.balsamiq.com/mockups-desktop/Balsamiq_Mockups_3.3.6_bundled.zip"
 
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
