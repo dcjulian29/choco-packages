@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>sdbenchmark</id>
-    <version>1.7.4739</version>
+    <version>1.8.5636</version>
     <authors>Alex Schepeljanski</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://alex-is.de/</projectUrl>
