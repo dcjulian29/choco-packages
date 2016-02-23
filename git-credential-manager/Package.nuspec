@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>git-credential-manager</id>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <authors>Microsoft</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>https://github.com/Microsoft/Git-Credential-Manager-for-Windows/blob/master/LICENSE.TXT</licenseUrl>
