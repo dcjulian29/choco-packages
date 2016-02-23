@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>chefdk</id>
+    <version>0.10.0.1</version>
+    <authors>CHEF Software</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://downloads.chef.io/chef-dk/windows/</projectUrl>
+    <licenseUrl>https://github.com/chef/chef-dk/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Chef Development Kit contains everything you need to start using Chef.</description>
+    <tags>chefdk chef-client chef test-kitchen chefspec foodcritic knife</tags>
+  </metadata>
+</package>
