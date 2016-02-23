@@ -1,5 +1,5 @@
 $packageName = "balsamiq"
-$url = "https://builds.balsamiq.com/mockups-desktop/Balsamiq_Mockups_3.3.6_bundled.zip"
+$url = "https://build_archives.s3.amazonaws.com/mockups-desktop/Balsamiq_Mockups_3.3.9_bundled.zip"
 
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
@@ -27,4 +27,4 @@ New-Item -Type Directory -Path $appDir | Out-Null
 
 Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath\"
 
-Copy-Item -Path "$($downloadPath)\Balsamiq_Mockups_3\*" -Destination "$appDir" -Recurse
+Copy-Item -Path "$($downloadPath)\Balsamiq*\*" -Destination "$appDir" -Recurse
