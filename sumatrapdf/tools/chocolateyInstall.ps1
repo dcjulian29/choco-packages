@@ -2,6 +2,7 @@ $packageName = "sumatrapdf"
 $installerType = "exe"
 $installerArgs = "/s /register /opt plugin,pdffilter,pdfpreviewer "
 $url = "https://kjkpub.s3.amazonaws.com/sumatrapdf/rel/SumatraPDF-3.1.1-install.exe"
+$url64 = "https://kjkpub.s3.amazonaws.com/sumatrapdf/rel/SumatraPDF-3.1.1-64-install.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
