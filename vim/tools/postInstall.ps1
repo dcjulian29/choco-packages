@@ -5,7 +5,6 @@ $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 $mklink = "cmd.exe /c mklink"
 
 $links = @(
-    "vi"
     "vim"
     "gvim"
 )

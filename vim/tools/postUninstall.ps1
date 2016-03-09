@@ -1,5 +1,4 @@
 $links = @(
-"vi"
 "vim"
 "gvim"
 )
