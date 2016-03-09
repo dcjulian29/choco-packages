@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>posh-go</id>
-    <version>2013.06.25</version>
+    <version>2016.3.1</version>
     <authors>Cameron Harp</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://github.com/cameronharp/Go-Shell</projectUrl>
