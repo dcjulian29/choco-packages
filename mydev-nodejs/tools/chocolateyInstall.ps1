@@ -4,18 +4,15 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try {
-    $npm = "$($env:ProgramFiles)\nodejs\npm.cmd"
+$npm = "$($env:ProgramFiles)\nodejs\npm.cmd"
     
-    & $npm install -g bower
-    & $npm install -g gulp grunt-cli
-    & $npm install -g yo generator-hottowel
-    & $npm install -g csslint
-    & $npm install -g jslint jshint
-    & $npm install -g typescript
+& $npm install -g bower
+& $npm install -g gulp grunt-cli
+& $npm install -g yo 
+& $npm install -g generator-aspnet generator-express
+& $npm install -g generator-hottowel generator-meanjs generator-sails-rest-api
+& $npm install -g csslint
+& $npm install -g jslint jshint
+& $npm install -g typescript
+& $npm install -g pm2
 
-    Write-ChocolateySuccess $packageName
-} catch {
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
-}
