@@ -6,17 +6,16 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-try {
-    if (Test-Path $appDir) {
-        Write-Output "Removing previous version of package..."
-        Remove-Item -Path $appDir -Recurse -Force
-    }
+if (Test-Path $appDir) {
+    Write-Output "Removing previous version of package..."
+    Remove-Item -Path $appDir -Recurse -Force
+}
 
-    New-Item -Type Directory -Path $appDir | Out-Null
+New-Item -Type Directory -Path $appDir | Out-Null
 
-    Get-ChocolateyWebFile $packageName "$appDir\$packageName.jar" $url
+Get-ChocolateyWebFile $packageName "$appDir\$packageName.jar" $url
 
-    Set-Content -Path "$appDir\plantuml.bat" -Value @"
+Set-Content -Path "$appDir\plantuml.bat" -Value @"
 @echo off
 
 setlocal
@@ -32,12 +31,6 @@ java -jar %DIR%\plantuml.jar %*
 endlocal
 "@
 
-    $shimgen = "$env:ChocolateyInstall\chocolateyinstall\tools\shimgen.exe"
+$shimgen = "$env:ChocolateyInstall\chocolateyinstall\tools\shimgen.exe"
 
-    & $shimgen -o "$env:ChocolateyInstall\bin\plantuml.bat" -p "$appDir\plantuml.bat"
-
-    Write-ChocolateySuccess $packageName
-} catch {
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
-}
+& $shimgen -o "$env:ChocolateyInstall\bin\plantuml.bat" -p "$appDir\plantuml.bat"
