@@ -1,6 +1,6 @@
 $packageName = "dotpeek"
-$url = "http://download.jetbrains.com/resharper/dotPeek32_10.0.1.exe"
-$url64 = "http://download.jetbrains.com/resharper/dotPeek64_10.0.1.exe"
+$url = "http://download.jetbrains.com/resharper/dotPeek32_10.0.2.exe"
+$url64 = "http://download.jetbrains.com/resharper/dotPeek64_10.0.2.exe"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $optPath = "$env:AppData\JetBrains\Shared\vAny"
 $optFile = "GlobalSettingsStorage.DotSettings"
