@@ -31,8 +31,18 @@ if (Test-Path $downloadPath) {
 
 New-Item -Type Directory -Path $downloadPath | Out-Null
 
-if (-not (Test-Path "HKLM:SOFTWARE\Microsoft\DevDiv\vc\Servicing\11.0")) {
-    Install-ChocolateyPackage "vcredist2012" "EXE" $installArgs $vcredist $vcredist64
+if ((Get-WmiObject Win32_Processor).AddressWidth -eq 64) {
+    if (-not (Test-Path "HKLM:SOFTWARE\WOW6432Node\Microsoft\DevDiv\vc\Servicing\11.0")) {
+        Install-ChocolateyPackage "vcredist2012" "EXE" "/install /passive /norestart" $vcredist
+    }
+    
+    if (-not (Test-Path "HKLM:SOFTWARE\Microsoft\DevDiv\vc\Servicing\11.0")) {
+        Install-ChocolateyPackage "vcredist2012" "EXE" "/install /passive /norestart" "" $vcredist64
+    }
+} else {
+    if (-not (Test-Path "HKLM:SOFTWARE\Microsoft\DevDiv\vc\Servicing\11.0")) {
+        Install-ChocolateyPackage "vcredist2012" "EXE" "/install /passive /norestart" $vcredist
+    }
 }
 
 Get-ChocolateyWebFile $packageName "$downloadPath\bind.zip" $url $url64
