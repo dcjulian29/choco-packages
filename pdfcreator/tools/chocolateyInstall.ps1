@@ -2,7 +2,7 @@ $packageName = "pdfcreator"
 $installerType = "exe"
 $installerArgs = "/L=1033 /SaveINF /SILENT /NORESTART /COMPONENTS=`"program,ghostscript,languages\english`""
 $uninstallerArgs = "/SILENT /NORESTART"
-$url = "http://olive.download.pdfforge.org/pdfcreator/2.3.0/PDFCreator-2_3_0-setup.exe"
+$url = "http://orange.download.pdfforge.org/pdfcreator/2.3.0/PDFCreator-2_3_0-Setup.exe"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
