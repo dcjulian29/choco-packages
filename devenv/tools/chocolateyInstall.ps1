@@ -9,6 +9,7 @@ $packages = @(
     "mydev-visualstudio",
     "mydev-buildtools"
 )
+$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
@@ -56,3 +57,11 @@ go -Key "desktop" -delete
 go -Key "desktop" -SelectedPath "${env:USERPROFILE}\desktop" -add
 go -Key "downloads" -delete
 go -Key "downloads" -SelectedPath "$env:USERPROFILE\downloads" -add
+
+$cmd = ". $toolDir\postInstall.bat"
+
+if (Test-ProcessAdminRights) {
+    Invoke-Expression $cmd
+} else {
+    Start-ChocolateyProcessAsAdmin $cmd
+}
