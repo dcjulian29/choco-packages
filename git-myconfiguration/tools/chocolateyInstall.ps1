@@ -41,6 +41,8 @@ if (Test-Path "${env:ProgramFiles(x86)}\Git") {
 & $git config --global alias.dc "diff --cached"
 & $git config --global alias.changes "diff --stat -r"
 & $git config --global alias.sync "!git pull && git push"
+& $git config --global alias.incoming "!git remote update -p; git whatchanged ..@{u}"
+& $git config --global alias.outgoing "whatchanged ..@{u}"
 
 ##### Log Related Aliases
 & $git config --global alias.ld "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
