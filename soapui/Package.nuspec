@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>soapui</id>
-    <version>5.0.0</version>
+    <version>5.2.1</version>
     <authors>SmartBear Software</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.soapui.org/</projectUrl>

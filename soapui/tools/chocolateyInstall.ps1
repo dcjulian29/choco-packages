@@ -1,6 +1,5 @@
 $packageName = "soapui"
-$version = "5.0.0"
-$url = "http://sourceforge.net/projects/soapui/files/soapui/$($version)/SoapUI-$($version)-windows-bin.zip/download"
+$url = "http://cdn01.downloads.smartbear.com/soapui/5.2.1/SoapUI-5.2.1-windows-bin.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
@@ -18,15 +17,17 @@ try
 
     New-Item -Type Directory -Path $appDir | Out-Null
     
-    if (-not (Test-Path $downloadPath))
+    if (Test-Path $downloadPath)
     {
-        New-Item -Type Directory -Path $downloadPath | Out-Null
+        Remove-Item $downloadPath -Recurse -Force
     }
+
+    New-Item -Type Directory -Path $downloadPath | Out-Null
 
     Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
     Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath\"
 
-    Copy-Item -Path "$($downloadPath)\$($packageName)-$($version)\*" -Destination "$appDir" -Recurse -Container
+    Copy-Item -Path "$($downloadPath)\$($packageName)-*\*" -Destination "$appDir" -Recurse -Container
 
     Write-ChocolateySuccess $packageName
 }
