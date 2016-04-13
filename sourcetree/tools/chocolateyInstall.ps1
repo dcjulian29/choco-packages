@@ -10,9 +10,12 @@ if ($psISE) {
 Install-ChocolateyPackage $packageName $installerType $installerArgs $url
 
 # On my Dev VMs, I have a pre-configured folder with licensing and configuration...
-if (-not (Test-Path "$env:USERPROFILE\AppData\Local\Atlassian")) {
+if (-not (Test-Path "$env:USERPROFILE\AppData\Local\Atlassian\SourceTree\sourcetree.license")) {
     if (Test-Path "C:\etc\sourcetree") {
-        New-Item -ItemType Directory "$env:USERPROFILE\AppData\Local\Atlassian" | Out-Null
-        Copy-Item -Recurse "C:\etc\sourcetree\*" $appProfile
+        if (-not (Test-Path "$env:USERPROFILE\AppData\Local\Atlassian")) {
+            New-Item -ItemType Directory "$env:USERPROFILE\AppData\Local\Atlassian" | Out-Null
+        }
+
+        Copy-Item -Recurse -Force "C:\etc\sourcetree\*" "$env:USERPROFILE\AppData\Local\Atlassian"
     }
 }
