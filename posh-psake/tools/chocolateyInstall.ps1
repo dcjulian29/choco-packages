@@ -1,5 +1,5 @@
 $packageName = "posh-psake"
-$release = "4.5.0"
+$release = "4.6.0"
 $url = "https://codeload.github.com/psake/psake/zip/v$($release)"
 $appDir = "$($env:WINDIR)\system32\WindowsPowerShell\v1.0\Modules\psake"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
