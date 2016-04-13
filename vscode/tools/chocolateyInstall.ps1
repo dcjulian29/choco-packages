@@ -1,7 +1,7 @@
 $packageName = "vscode"
 $installerType = "EXE"
 $installerArgs = "/SILENT /NORESTART"
-$url = "https://az764295.vo.msecnd.net/stable/5b5f4db87c10345b9d5c8d0bed745bcad4533135/VSCodeSetup-stable.exe"
+$url = "https://az764295.vo.msecnd.net/stable/f291f4ad600767626b24a4b15816b04bee9a3049/VSCodeSetup-stable.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
