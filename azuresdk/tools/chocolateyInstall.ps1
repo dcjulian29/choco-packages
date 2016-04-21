@@ -5,4 +5,4 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-& $webpi /Install /AcceptEula /SuppressReboot /Products:VWDOrVs2015AzurePack.2.8
+& $webpi /Install /AcceptEula /SuppressReboot /Products:VWDOrVs2015AzurePack.2.9
