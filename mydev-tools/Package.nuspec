@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2016.1.4</version>
+    <version>2016.4.29</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the application packages for my Development Environments.</description>
@@ -10,10 +10,7 @@
     <dependencies>
       <dependency id="7zip" />
       <dependency id="java" />
-      <dependency id="pdfcreator" />
-      <dependency id="sumatrapdf" />
       <dependency id="wireshark" />
-      <dependency id="soapui" />
       <dependency id="bind-tools" />
       <dependency id="baretail" />
       <dependency id="kdiff" />
@@ -26,8 +23,6 @@
       <dependency id="linqpad" />
       <dependency id="cygwin" />
       <dependency id="chrome" />
-      <dependency id="colormania" />
-      <dependency id="papercut" />
       <dependency id="plantuml" />
       <dependency id="tcptrace" />
       <dependency id="proxytrace" />
