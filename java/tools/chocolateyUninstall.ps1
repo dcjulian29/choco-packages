@@ -11,13 +11,15 @@ $uninstallPaths = @(
     'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall') 
 
 foreach ($path in $uninstallPaths) { 
-    if (Test-Path $path) { 
-        Get-ChildItem $path | Where-Object $searchFilter | `
-            Where-Object { $_.GetValue('UninstallString') } | `
-            Foreach-Object { 
-                Start-Process -Wait `
-                    "${env:WINDIR}\System32\msiexec.exe" "/x $($_.PSChildName) /qb"
-            }
+    if ( -not ($path -like "*JavaScript*")) {
+        if (Test-Path $path) { 
+            Get-ChildItem $path | Where-Object $searchFilter | `
+                Where-Object { $_.GetValue('UninstallString') } | `
+                Foreach-Object { 
+                    Start-Process -Wait `
+                        "${env:WINDIR}\System32\msiexec.exe" "/x $($_.PSChildName) /qb"
+                }
+        }
     } 
 } 
 
