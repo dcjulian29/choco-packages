@@ -2,6 +2,8 @@ $packageName = "plantuml"
 $url = "http://sourceforge.net/projects/plantuml/files/plantuml.jar/download"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
+$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
+
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
@@ -31,6 +33,8 @@ java -jar %DIR%\plantuml.jar %*
 endlocal
 "@
 
-$shimgen = "$env:ChocolateyInstall\chocolateyinstall\tools\shimgen.exe"
-
-& $shimgen -o "$env:ChocolateyInstall\bin\plantuml.bat" -p "$appDir\plantuml.bat"
+if (Test-ProcessAdminRights) {
+    . $toolDir\postInstall.ps1
+} else {
+    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+}

@@ -1,18 +1,15 @@
 $packageName = "aescrypt"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
-try {
-    if (Test-Path $appDir)
-    {
-        Remove-Item "$($appDir)" -Recurse -Force
-    }
+$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
-    if (Test-Path "$env:ChocolateyInstall\bin\aescrypt.exe") {
-        Remove-Item "$env:ChocolateyInstall\bin\aescrypt.exe" -Force
-    }
+if (Test-Path $appDir)
+{
+    Remove-Item "$($appDir)" -Recurse -Force
+}
 
-    Write-ChocolateySuccess $packageName
-} catch {
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
+if (Test-ProcessAdminRights) {
+    . $toolDir\postUninstall.ps1
+} else {
+    Start-ChocolateyProcessAsAdmin ". $toolDir\postUninstall.ps1"
 }

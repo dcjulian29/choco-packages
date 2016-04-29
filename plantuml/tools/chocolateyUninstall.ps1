@@ -1,14 +1,15 @@
 $packageName = "plantuml"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
-try {
-    if (Test-Path $appDir)
-    {
-      Remove-Item "$($appDir)" -Recurse -Force
-    }
+$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
-    Write-ChocolateySuccess $packageName
-} catch {
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
+if (Test-Path $appDir)
+{
+  Remove-Item "$($appDir)" -Recurse -Force
+}
+
+if (Test-ProcessAdminRights) {
+    . $toolDir\postUninstall.ps1
+} else {
+    Start-ChocolateyProcessAsAdmin ". $toolDir\postUninstall.ps1"
 }
