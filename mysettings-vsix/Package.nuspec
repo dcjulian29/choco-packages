@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-vsix</id>
-    <version>2015.12.17</version>
+    <version>2016.5.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>VS Extensions I like to install in Visual Studio</description>
@@ -11,12 +11,11 @@
       <dependency id="visualstudio" version="[2015.0,2016.0)" />
       <dependency id="vsix-specflow" />
       <dependency id="vsix-vscoloroutput" />
-      <dependency id="vsix-webessentials" />
+      <dependency id="vsix-webextensionpack" />
       <dependency id="vsix-ihateregions" />
       <dependency id="vsix-jslint" />
       <dependency id="vsix-productivitypowertools" />
       <dependency id="vsix-gitdiffmargin" />
-      <dependency id="vsix-sandocodesearch" />
       <dependency id="sqlserverssdt" />
       <dependency id="vsix-codemaid" />
       <dependency id="vsix-sqlitetoolbox" />
