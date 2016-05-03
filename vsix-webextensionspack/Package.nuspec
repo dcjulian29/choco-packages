@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vsix-webextensionpack</id>
+    <version>1.3.40</version>
+    <authors>Mads Kristensen</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://visualstudiogallery.msdn.microsoft.com/f3b504c6-0095-42f1-a989-51d5fc2a8459</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A Visual Studio extension that installs a short list of highly valuable extensions targeted web development.</description>
+    <tags>vsix-webextensionpack vsix webextensionpack</tags>
+    <dependencies>
+      <dependency id="visualstudio" version="[2015.0,2016.0)" />
+    </dependencies>
+  </metadata>
+</package>
