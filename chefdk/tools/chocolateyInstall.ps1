@@ -1,7 +1,7 @@
 $packageName = "chefdk"
 $installerType = "MSI"
 $installerArgs = '/passive'
-$url = "https://opscode-omnibus-packages.s3.amazonaws.com/windows/2008r2/i386/chefdk-0.11.2-1-x86.msi"
+$url = "https://packages.chef.io/stable/windows/2012r2/chefdk-0.13.21-1-x86.msi"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
