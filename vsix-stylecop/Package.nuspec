@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>vsix-stylecop</id>
-    <version>4.7.58</version>
+    <version>4.7.59</version>
     <authors>Christophe Heiser</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://visualstudiogallery.msdn.microsoft.com/cac2a05b-6eb6-4fa2-95b9-1f8d011e6cae</projectUrl>
