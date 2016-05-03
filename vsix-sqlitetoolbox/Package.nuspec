@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>vsix-sqlitetoolbox</id>
-    <version>4.3.0.0</version>
+    <version>4.5.0.2</version>
     <authors>Erik Ejlskov</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://visualstudiogallery.msdn.microsoft.com/0e313dfd-be80-4afb-b5e9-6e74d369f7a1</projectUrl>
