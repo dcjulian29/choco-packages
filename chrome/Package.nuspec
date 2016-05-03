@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>chrome</id>
-    <version>49.0</version>
+    <version>50.0</version>
     <authors>Google</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://www.google.com/chrome/browser/</projectUrl>
