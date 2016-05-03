@@ -1,7 +1,7 @@
 $packageName = "resharper"
 $installerType = "EXE"
-$installerArgs = "/VsVersion=14 /SpecificProductNames=dotCover;teamCityAddin;ReSharper /Silent=True"
-$url = "http://download.jetbrains.com/resharper/JetBrains.ReSharperUltimate.10.0.2.exe"
+$installerArgs = "/VsVersion=14 /SpecificProductNames=ReSharper;dotCover;teamCityAddin;dotPeek /Silent=True"
+$url = "https://download.jetbrains.com/resharper/JetBrains.ReSharperUltimate.2016.1.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
