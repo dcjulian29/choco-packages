@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>netscan</id>
-    <version>6.1.4</version>
+    <version>6.1.6</version>
     <authors>SoftPerfect Research</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.softperfect.com/products/networkscanner/</projectUrl>
