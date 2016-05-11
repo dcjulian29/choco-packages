@@ -1,5 +1,5 @@
 $packageName = "keepass"
-$url = "http://pilotfiber.dl.sourceforge.net/project/keepass/KeePass%202.x/2.32/KeePass-2.32.zip"
+$url = "http://pilotfiber.dl.sourceforge.net/project/keepass/KeePass%202.x/2.33/KeePass-2.33.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
