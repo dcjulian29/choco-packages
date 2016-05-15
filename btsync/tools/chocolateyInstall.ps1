@@ -1,8 +1,8 @@
 $packageName = "btsync"
 $installerType = "EXE"
 $installerArgs = "/PERFORMINSTALL /AUTOMATION"
-$url = "http://syncapp.bittorrent.com/1.4.111/BTSync-1.4.111.exe"
-$url64 = "http://syncapp.bittorrent.com/1.4.111/BTSync_x64-1.4.111.exe"
+$url = "https://julianscorner.com/downloads/BTSync-1.4.111.exe"
+$url64 = "https://julianscorner.com/downloads/BTSync_x64-1.4.111.exe"
 
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 
