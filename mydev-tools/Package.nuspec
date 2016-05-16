@@ -19,7 +19,6 @@
       <dependency id="searchmyfiles" />
       <dependency id="fiddler" />
       <dependency id="regexbuilder" />
-      <dependency id="dotpeek" />
       <dependency id="linqpad" />
       <dependency id="cygwin" />
       <dependency id="chrome" />
