@@ -29,7 +29,6 @@
       <dependency id="nsis" />
       <dependency id="selfcert" />
       <dependency id="markdown-edit" />
-      <dependency id="balsamiq" />
       <dependency id="ldapbrowser" />
     </dependencies>
   </metadata>
