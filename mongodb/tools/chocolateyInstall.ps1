@@ -1,5 +1,5 @@
 $packageName = "mongodb"
-$url = "https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-3.2.0.zip"
+$url = "http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.2.6.zip"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $dataDir = "$($env:SYSTEMDRIVE)\data\mongo"
