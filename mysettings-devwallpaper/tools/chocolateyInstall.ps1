@@ -1,5 +1,5 @@
 $packageName = "mysettings-devwallpaper"
-$url = "http://37.media.tumblr.com/tumblr_m8337kd2eG1qbkusho1_1280.png"
+$url = "https://julianscorner.com/downloads/codebackground.jpg"
 $wallpaper = "$($env:PUBLIC)\Pictures\wallpaper.png"
 
 if ($psISE) {
