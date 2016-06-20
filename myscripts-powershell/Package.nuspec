@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>myscripts-powershell</id>
-    <version>2016.5.24</version>
+    <version>2016.6.20</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>A package to download and/or update my custom powershell scripts/modules from GitHub</description>
