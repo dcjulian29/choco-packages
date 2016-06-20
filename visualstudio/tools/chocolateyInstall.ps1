@@ -8,11 +8,18 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-$path32 = 'HKLM:\SOFTWARE\Microsoft\DevDiv\vs\Servicing\14.0'
-$path64 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\DevDiv\vs\Servicing\14.0'
-
-if (-not ((Test-Path $path32) -or (Test-Path $path64))) {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url -validExitCodes @(0, 3010)
+if (Test-Path 'HKLM:\SOFTWARE\Wow6432Node' ) {
+    $path = 'HKLM:\SOFTWARE\Wow6432Node'
 } else {
+    $path = 'HKLM:\SOFTWARE\'
+}
+
+$installDir = "$path\Microsoft\VisualStudio"
+
+if (Get-ChildItem $installDir -ErrorAction SilentlyContinue `
+        | ? { ($_.PSChildName -match "^14.0$") } `
+        | ? {$_.property -contains "InstallDir"}) {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $update -validExitCodes @(0, 3010)
+} else {
+    Install-ChocolateyPackage $packageName $installerType $installerArgs $url -validExitCodes @(0, 3010)
 }
