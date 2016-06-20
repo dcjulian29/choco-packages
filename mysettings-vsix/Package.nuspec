@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-vsix</id>
-    <version>2016.5.2</version>
+    <version>2016.6.20</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>VS Extensions I like to install in Visual Studio</description>
@@ -16,7 +16,6 @@
       <dependency id="vsix-jslint" />
       <dependency id="vsix-productivitypowertools" />
       <dependency id="vsix-gitdiffmargin" />
-      <dependency id="sqlserverssdt" />
       <dependency id="vsix-codemaid" />
       <dependency id="vsix-sqlitetoolbox" />
       <dependency id="vsix-nuget" />
