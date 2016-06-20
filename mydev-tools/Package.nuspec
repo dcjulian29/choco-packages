@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2016.5.24</version>
+    <version>2016.6.13</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the application packages for my Development Environments.</description>
@@ -10,7 +10,6 @@
     <dependencies>
       <dependency id="7zip" />
       <dependency id="java" />
-      <dependency id="wireshark" />
       <dependency id="bind-tools" />
       <dependency id="baretail" />
       <dependency id="kdiff" />
