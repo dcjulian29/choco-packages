@@ -1,6 +1,6 @@
 $packageName = "vsix-webextensionpack"
 $vsgallery = "https://visualstudiogallery.msdn.microsoft.com"
-$vsix = "f3b504c6-0095-42f1-a989-51d5fc2a8459/file/186606/17/Web%20Extension%20Pack%20v1.3.40.vsix"
+$vsix = "f3b504c6-0095-42f1-a989-51d5fc2a8459/file/186606/19/Web%20Extension%20Pack%20v1.4.43.vsix"
 $url = "$vsgallery/$vsix"
 
 if ($psISE) {
