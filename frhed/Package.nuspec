@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>frhed</id>
+    <version>1.6.0</version>
+    <authors>Kimmo Varis</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://frhed.sourceforge.net/</projectUrl>
+    <licenseUrl>https://bitbucket.org/kimmov/frhed/src/27cad23e45b5022dd92cb1aabd4eda9584080823/GPL.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Frhed is an binary file editor for Windows. It is small but has many advanced features like ability to load big files partially.</description>
+    <tags>frhed hex editor </tags>
+  </metadata>
+</package>

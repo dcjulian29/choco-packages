@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>windirstat</id>
+    <version>1.1.2</version>
+    <authors>Oliver Schneider</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://windirstat.info/</projectUrl>
+    <licenseUrl>http://www.gnu.org/licenses/gpl-2.0.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>WinDirStat is a disk usage statistics viewer and cleanup tool for Microsoft Windows.</description>
+    <tags>windirstat disk usage</tags>
+  </metadata>
+</package>

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2016.6.13</version>
+    <version>2016.6.20</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the application packages for my Development Environments.</description>
@@ -29,6 +29,12 @@
       <dependency id="selfcert" />
       <dependency id="markdown-edit" />
       <dependency id="ldapbrowser" />
+      <dependency id="paintnet" />
+      <dependency id="winmerge" />
+      <dependency id="grepwin" />
+      <dependency id="windirstat" />
+      <dependency id="frhed" />
+      <dependency id="sqlitebrowser" />
     </dependencies>
   </metadata>
 </package>
