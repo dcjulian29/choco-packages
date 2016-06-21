@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>baretail</id>
-    <version>3.50.0</version>
+    <version>3.50.1</version>
     <authors>Bare Metal Software,Ltd.</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>http://www.baremetalsoft.com/baretail/licence.php</licenseUrl>
