@@ -5,7 +5,7 @@
     <version>1.11.2</version>
     <authors>>Docker Contributors</authors>
     <owners>Julian Easterling</owners>
-    <projectUrl>https://www.docker.com</projectUrl>
+    <projectUrl>https://www.docker.com/products/docker-toolbox</projectUrl>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. This package contains the docker client for Windows and not the Docker engine to run containers on Windows hosts.</description>
