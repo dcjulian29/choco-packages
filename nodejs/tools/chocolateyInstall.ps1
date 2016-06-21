@@ -2,7 +2,7 @@ $packageName = "nodejs"
 $installerType = "MSI"
 $installerArgs = "/qb"
 
-$version = "6.2.1"
+$version = "6.2.2"
 $rootUrl = "https://nodejs.org/dist/v$version"
 
 $url = "$rootUrl/node-v$version-x86.msi"
