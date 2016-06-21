@@ -1,5 +1,5 @@
 $packageName = "posh-git"
-$release = "0.4"
+$release = "0.6.1"
 $url = "https://github.com/dahlbyk/posh-git/archive/v$($release).zip"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\Modules\$packageName"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
