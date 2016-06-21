@@ -5,7 +5,7 @@
     <version>1.27</version>
     <authors>NirSoft</authors>
     <owners>Julian Easterling</owners>
-    <projectUrl>http://www.nirsoft.net/utils/wireless_network_view.html</projectUrl>
+    <projectUrl>http://www.nirsoft.net/utils/netresview.html</projectUrl>
     <description>NetResView is a small utility that displays the list of all network resources (computers, disk shares, and printer shares) on your LAN. As opposed to "My Network Places" module of Windows, NetResView display all network resources from all domains/workgroups in one screen, and including admin/hidden shares.</description>
     <tags>netscan scanner</tags>
   </metadata>
