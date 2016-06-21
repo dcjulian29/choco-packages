@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>nosqlmanager</id>
-    <version>3.1.0.5</version>
+    <version>3.6.1.12</version>
     <authors>Paralect</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.mongodbmanager.com/</projectUrl>
