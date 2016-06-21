@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>wirelessnetview</id>
-    <version>1.70</version>
+    <version>1.71</version>
     <authors>NirSoft</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.nirsoft.net/utils/wireless_network_view.html</projectUrl>
