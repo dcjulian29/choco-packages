@@ -1,5 +1,5 @@
 $packageName = "dnscrypt-proxy"
-$version = "1.6.0"
+$version = "1.6.1"
 $url = "https://download.dnscrypt.org/dnscrypt-proxy/dnscrypt-proxy-win32-full-$version.zip"
 
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
