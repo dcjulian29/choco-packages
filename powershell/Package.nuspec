@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>powershell</id>
-    <version>4.0.0</version>
+    <version>5.0.0</version>
     <authors>Microsoft Corporation</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx</projectUrl>
