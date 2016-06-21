@@ -1,5 +1,5 @@
 $packageName = "nugetexplorer"
-$url = "http://npe.codeplex.com/downloads/get/827368"
+$url = "https://julianscorner.com/downloads/NuGetPackageExplorer.zip"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 
@@ -12,18 +12,20 @@ if (Test-Path $appDir) {
     Remove-Item "$($appDir)" -Recurse -Force
 }
 
-if (-not (Test-Path $downloadPath)) {
-    New-Item -Type Directory -Path $downloadPath | Out-Null
+if (Test-Path $downloadPath) {
+    Remove-Item $downloadPath -Recurse -Force
 }
 
+New-Item -Type Directory -Path $downloadPath | Out-Null
+
 Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url $url
-Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath\$packageName" | Out-Null
+Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath" | Out-Null
 
 if (-not (Test-Path $appDir)) {
     New-Item -Type Directory -Path $appDir | Out-Null
 }
 
-Get-ChildItem -Path $downloadPath\$packageName | Copy-Item -Destination "$appDir"
+Get-ChildItem -Path "$downloadPath\NuGetPackageExplorer" | Copy-Item -Destination "$appDir"
 
 $testType = (cmd /c assoc ".nupkg")
 if ($testType -ne $null) {
