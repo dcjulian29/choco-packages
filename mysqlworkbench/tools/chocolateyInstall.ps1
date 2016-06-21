@@ -1,7 +1,7 @@
 $packageName = "mysqlworkbench"
 $installerType = "MSI"
 $installerArgs = "/passive /norestart"
-$url = "http://cdn.mysql.com/Downloads/MySQLGUITools/mysql-workbench-community-6.3.6-win32.msi"
+$url = "http://cdn.mysql.com/Downloads/MySQLGUITools/mysql-workbench-community-6.3.7-win32.msi"
 $vcredist = "https://download.microsoft.com/download/2/E/6/2E61CFA4-993B-4DD4-91DA-3737CD5CD6E3/vcredist_x86.exe"
 $vcredist64 = "https://download.microsoft.com/download/2/E/6/2E61CFA4-993B-4DD4-91DA-3737CD5CD6E3/vcredist_x64.exe"
 
