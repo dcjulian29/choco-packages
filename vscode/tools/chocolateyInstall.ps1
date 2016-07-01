@@ -28,4 +28,5 @@ Start-Process -FilePath $code -ArgumentList "--install-extension samverschueren.
 Start-Process -FilePath $code -ArgumentList "--install-extension rprouse.theme-obsidian" -NoNewWindow -Wait
 Start-Process -FilePath $code -ArgumentList "--install-extension PeterJausovec.vscode-docker" -NoNewWindow -Wait
 Start-Process -FilePath $code -ArgumentList "--install-extension Pendrica.Chef" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension cake-build.cake-vscode" -NoNewWindow -Wait
 
