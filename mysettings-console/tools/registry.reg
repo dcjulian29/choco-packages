@@ -38,6 +38,8 @@ Windows Registry Editor Version 5.00
 "ScreenColors"=dword:0000000a
 "ScrollScale"=dword:00000001
 "TrimLeadingZeros"=dword:00000000
+"WindowAlpha"=dword:000000ff
+"WindowPosition"=dword:00000000
 "WindowSize"=dword:00280078
 "WordDelimiters"=dword:00000000
 
