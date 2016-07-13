@@ -22,13 +22,11 @@ Set-Content -Path "$appDir\plantuml.bat" -Value @"
 
 setlocal
  
-set DIR=%~dp0%
-
 set GRAPHVIZ_DOT=%SYSTEMDRIVE%\tools\apps\graphviz\bin\dot.exe
 
 path %SYSTEMDRIVE%\tools\apps\graphviz\bin;%JAVA_HOME%\bin;%PATH% 
 
-java -jar %DIR%\plantuml.jar %*
+java -jar $appDir\plantuml.jar %*
 
 endlocal
 "@
