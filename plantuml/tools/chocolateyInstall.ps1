@@ -1,5 +1,5 @@
 $packageName = "plantuml"
-$url = "http://iweb.dl.sourceforge.net/project/plantuml/plantuml.8041.jar"
+$url = "https://julianscorner.com/downloads/plantuml.8045.jar"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
