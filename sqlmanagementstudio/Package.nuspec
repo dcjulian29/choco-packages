@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>sqlmanagementstudio</id>
-    <version>2016.0</version>
+    <version>2016.7.1</version>
     <authors>Microsoft</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://technet.microsoft.com/en-us/library/ms174173.aspx</projectUrl>
