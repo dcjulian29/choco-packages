@@ -9,6 +9,6 @@ if ($psISE) {
 
 Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url
 
-if ("$env:SYSTEMDRIVE\etc\SoftwareDevelopment.flt") {
+if (Test-Path "$env:SYSTEMDRIVE\etc\SoftwareDevelopment.flt") {
     Copy-Item "$env:SYSTEMDRIVE\etc\SoftwareDevelopment.flt" "$env:PF32\WinMerge\Filters\" -Force
 }
