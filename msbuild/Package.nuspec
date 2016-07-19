@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>msbuild</id>
-    <version>2015.2</version>
+    <version>2015.3</version>
     <authors>Microsoft</authors>
     <owners>Julian Easterling</owners>
     <description>MSBuild is a build tool that helps automate the process of creating a software product, including compiling the source code, packaging, testing, deployment and creating documentations. With MSBuild, it is possible to build Visual Studio projects and solutions without the Visual Studio IDE installed. This package also includes MSBuild Targets and Reference Assemblies for the various project types that Visual Studio 2013 can build.</description>
