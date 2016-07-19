@@ -15,7 +15,7 @@
       <dependency id="git-myconfiguration" />
       <dependency id="git-credential-manager" />
       <dependency id="vim" />
-      <dependency id="sourcetree" />
+      <dependency id="smartgit" />
     </dependencies>
   </metadata>
 </package>
