@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mysql</id>
+    <version>5.3.6</version>
+    <authors>Oracle</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://mysql.com/</projectUrl>
+    <licenseUrl>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Connector/ODBC is a standardized database driver for Windows, Linux, Mac OS X, and Unix platforms.</description>
+    <tags>mysql database odbc</tags>
+  </metadata>
+</package>
