@@ -1,7 +1,7 @@
 $packageName = "msbuild"
 $installerType = "EXE"
 $installerArgs = "/passive /norestart"
-$url = "http://download.microsoft.com/download/1/f/e/1fe5d584-c5a9-4aee-907a-421abe4c74f2/buildtools_full.exe"
+$url = "http://download.microsoft.com/download/4/3/3/4330912d-79ae-4037-8a55-7a8fc6b5eb68/buildtools_full.exe"
 $content = "https://julianscorner.com/downloads/msbuild-2015-3.zip"
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 
