@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vsix-slowcheetah</id>
+    <version>2.5.11</version>
+    <authors>Will Buik</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://visualstudiogallery.msdn.microsoft.com/69023d00-a4f9-4a34-a6cd-7e854ba318b5</projectUrl>
+    <description>This package enables you to transform your app.config or any other XML file based on the build configuration. It also adds additional tooling to help you create XML transforms.</description>
+    <tags>vsix-slowcheetah vsix slowcheetah xdt transform</tags>
+    <dependencies>
+      <dependency id="visualstudio" version="[2015.0,2016.0)" />
+    </dependencies>
+  </metadata>
+</package>

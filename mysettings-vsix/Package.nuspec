@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-vsix</id>
-    <version>2016.6.20</version>
+    <version>2016.7.20</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>VS Extensions I like to install in Visual Studio</description>
@@ -21,6 +21,7 @@
       <dependency id="vsix-nuget" />
       <dependency id="vsix-stylecop" />
       <dependency id="vsix-aspnetwebtools" />
+      <dependency id="vsix-slowcheetah" />
     </dependencies>
   </metadata>
 </package>
