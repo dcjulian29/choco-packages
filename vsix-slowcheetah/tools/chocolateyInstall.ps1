@@ -1,6 +1,6 @@
 $packageName = "vsix-slowcheetah"
 $vsgallery = "https://visualstudiogallery.msdn.microsoft.com"
-$vsix = "69023d00-a4f9-4a34-a6cd-7e854ba318b5/file/55948/26/SlowCheetah.vsix"
+$vsix = "05bb50e3-c971-4613-9379-acae2cfe6f9e/file/171400/1/SlowCheetah.vsix"
 $url = "$vsgallery/$vsix"
 
 if ($psISE) {
