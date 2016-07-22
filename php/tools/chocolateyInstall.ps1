@@ -1,5 +1,5 @@
 $packageName = "php"
-$version = "7.0.8"
+$version = "7.0.9"
 $url = "http://windows.php.net/downloads/releases/php-$version-nts-Win32-VC14-x86.zip"
 $url64 = "http://windows.php.net/downloads/releases/php-$version-nts-Win32-VC14-x64.zip" 
 $installArgs = "/install /passive /norestart"
