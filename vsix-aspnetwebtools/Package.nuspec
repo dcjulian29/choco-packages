@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>vsix-aspnetwebtools</id>
-        <version>14.1.20512</version>
+        <version>14.1.20624.0</version>
         <authors>Microsoft</authors>
         <owners>Julian Easterling</owners>
         <projectUrl>https://visualstudiogallery.msdn.microsoft.com/c94a02e9-f2e9-4bad-a952-a63a967e3935/</projectUrl>
