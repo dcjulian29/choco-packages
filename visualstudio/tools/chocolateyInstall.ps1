@@ -6,7 +6,9 @@ if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
 
-$arguments = ($env:chocolateyInstallArguments).ToLower()
+if ($env:chocolateyInstallArguments) {
+    $arguments = ($env:chocolateyInstallArguments).ToLower()
+}
 
 switch ($arguments) {
     "community" {
