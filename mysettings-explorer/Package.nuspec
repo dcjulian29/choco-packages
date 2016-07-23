@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-explorer</id>
-    <version>2015.9.21</version>
+    <version>2016.7.23</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom settings for windows explorer.</description>
