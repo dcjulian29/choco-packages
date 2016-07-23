@@ -19,6 +19,9 @@ if (Test-Path "$($env:PUBLIC)\Desktop\Visual Studio Code.lnk") {
 
 Write-Output "Install some VS Code extensions..."
 
+New-Item -Type Directory -Path $env:USERPROFILE\.vscode | Out-Null
+New-Item -Type Directory -Path $env:USERPROFILE\.vscode\extensions | Out-Null
+
 $code = "$env:PF32\Microsoft VS Code\bin\code.cmd"
 
 Start-Process -FilePath $code -ArgumentList "--install-extension ms-vscode.csharp" -NoNewWindow -Wait
