@@ -1,7 +1,7 @@
 $packageName = "sqlserverexpress"
 $installerType = "EXE"
-$url = "https://download.microsoft.com/download/1/5/6/156992E6-F7C7-4E55-833D-249BD2348138/ENU/x86/SQLEXPR_x86_ENU.exe"
-$url64 = "https://download.microsoft.com/download/1/5/6/156992E6-F7C7-4E55-833D-249BD2348138/ENU/x64/SQLEXPR_x64_ENU.exe"
+
+$url64 = "https://download.microsoft.com/download/E/1/2/E12B3655-D817-49BA-B934-CEB9DAC0BAF3/SQLEXPRADV_x64_ENU.exe"
 
 $downloadPath = "$($env:TEMP)\chocolatey\$packageName"
 $dataDir = "$($env:SYSTEMDRIVE)\data"
@@ -31,7 +31,7 @@ try {
         New-Item -Type Directory -Path $downloadPath | Out-Null
     }
 
-    Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.exe" $url $url64
+    Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.exe" $null $url64
     
     Push-Location $downloadPath
     Invoke-Expression "$downloadPath\$packageName.exe /extract:""$downloadPath"" /Q"

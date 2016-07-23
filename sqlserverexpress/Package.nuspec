@@ -2,14 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>sqlserverexpress</id>
-    <version>2014.1</version>
+    <version>2016.0</version>
     <authors>Microsoft</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://msdn.microsoft.com/en-us/evalcenter/dn434042.aspx</projectUrl>
-    <description>Microsoft SQL Server 2014 Express is a free, feature-rich edition of SQL Server that is ideal for learning, developing, powering desktop, web &amp; small server applications, and for redistribution by ISVs.</description>
+    <description>Microsoft SQL Server 2016 Express is a free, feature-rich edition of SQL Server that is ideal for learning, developing, powering desktop, web &amp; small server applications, and for redistribution by ISVs.</description>
     <tags>sqlserver sql database</tags>
     <dependencies>
-      <dependency id="dotnet" version="3.5" />
+      <dependency id="dotnet" version="4.0" />
     </dependencies>
   </metadata>
 </package>
