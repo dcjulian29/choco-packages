@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>devenv</id>
-    <version>2015.2.19</version>
+    <id>devvm</id>
+    <version>2016.7.23</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>This package gets called for the initial configuration of my development environments.</description>
+    <description>This package gets called for the initial configuration of my development VM.</description>
     <tags>mycomputers development</tags>
     <dependencies>
       <dependency id="dotnet" />
