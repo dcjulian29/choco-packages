@@ -1,4 +1,4 @@
-$packageName = "devvm"
+$packageName = "myvm-devvm"
 
 $packages = @(
     "mydev-powershell",
@@ -8,8 +8,10 @@ $packages = @(
     "mydev-python",
     "mydev-database",
     "mydev-visualstudio",
-    "mydev-buildtools"
+    "mydev-buildtools",
+    "mysettings-devenv"
 )
+
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
@@ -54,16 +56,9 @@ foreach ($package in $packages) {
     }
 }
 
-if (-not (Test-Path $env:SYSTEMDRIVE\home\projects))
-{
-    New-Item -Type Directory -Path $env:SYSTEMDRIVE\home\projects | Out-Null
-}
-
 Import-Module "${env:USERPROFILE}\Documents\WindowsPowerShell\Modules\go\go.psm1"
 Set-Alias -Name go -Value gd
 
-go -Key "projects" -delete
-go -Key "projects" -SelectedPath "${env:SYSTEMDRIVE}\home\projects" -add
 go -Key "etc" -delete
 go -Key "etc" -SelectedPath "${env:SYSTEMDRIVE}\etc" -add
 go -Key "documents" -delete
@@ -80,14 +75,6 @@ go -Key "desktop" -delete
 go -Key "desktop" -SelectedPath "${env:USERPROFILE}\desktop" -add
 go -Key "downloads" -delete
 go -Key "downloads" -SelectedPath "$env:USERPROFILE\downloads" -add
-
-$cmd = ". $toolDir\postInstall.bat"
-
-if (Test-ProcessAdminRights) {
-    Invoke-Expression $cmd
-} else {
-    Start-ChocolateyProcessAsAdmin $cmd
-}
 
 $import = "Import-StartLayout -LayoutPath $env:SYSTEMDRIVE\etc\StartScreenLayout.xml -MountPath $env:SYSTEMDRIVE\"
 
