@@ -1,7 +1,7 @@
 ﻿$packageName = "xmind"
 $installerType = "EXE"
 $installerArgs = "/SILENT"
-$url = "http://dl3.xmind.net/xmind-7-update1-windows.exe"
+$url = "http://dl3.xmind.net/xmind-7.5-update1-windows.exe"
 
 Install-ChocolateyPackage $packageName $installerType $installerArgs $url
 
