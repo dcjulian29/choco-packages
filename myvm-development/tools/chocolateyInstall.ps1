@@ -182,6 +182,11 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     Write-Output "Found what I'm looking for... :)"
 }
 
+Write-Output "Installing .Net 3.x Framework..."
+
+Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online -Verbose
+
+
 Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online | Out-Null
 Get-AppxPackage | Remove-AppxPackage -ErrorAction Silent
 
