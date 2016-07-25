@@ -1,4 +1,4 @@
-$packageName = "myvm-devvm"
+$packageName = "mysettings-devvm"
 
 $packages = @(
     "mydev-powershell",
@@ -11,8 +11,6 @@ $packages = @(
     "mydev-buildtools",
     "mysettings-devenv"
 )
-
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
