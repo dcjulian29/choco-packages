@@ -1,5 +1,6 @@
 $packageName = "mysettings-devenv"
 $icon = "https://www.iconfinder.com/icons/37070/download/ico"
+$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
