@@ -2,6 +2,8 @@ $packageName = "visualstudio"
 $installerType = "EXE"
 $installerArgs = "/PASSIVE /NORESTART"
 
+$env:SEE_MASK_NOZONECHECKS = 1
+
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
 }
@@ -44,3 +46,5 @@ if (Get-ChildItem $installDir -ErrorAction SilentlyContinue `
 } else {
     Install-ChocolateyPackage $packageName $installerType $installerArgs $url -validExitCodes @(0, 3010)
 }
+
+Remove-Item env:SEE_MASK_NOZONECHECKS -Force
