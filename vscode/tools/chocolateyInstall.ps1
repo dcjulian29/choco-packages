@@ -19,8 +19,13 @@ if (Test-Path "$($env:PUBLIC)\Desktop\Visual Studio Code.lnk") {
 
 Write-Output "Install some VS Code extensions..."
 
-New-Item -Type Directory -Path $env:USERPROFILE\.vscode | Out-Null
-New-Item -Type Directory -Path $env:USERPROFILE\.vscode\extensions | Out-Null
+if (-not (Test-Path "$env:USERPROFILE\.vscode\extensions")) {
+    New-Item -Type Directory -Path "$env:USERPROFILE\.vscode\extensions" | Out-Null
+}
+
+if (-not (Test-Path "$env:APPDATA\Code\User")) {
+    New-Item -Type Directory -Path "$env:APPDATA\Code\User" | Out-Null
+}
 
 $code = "$env:PF32\Microsoft VS Code\bin\code.cmd"
 
