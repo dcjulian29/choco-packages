@@ -1,6 +1,6 @@
 $packageName = "myscripts-powershell"
 $appDir = "$($env:SYSTEMDRIVE)\tools\powershell"
-$version = "2016.6.21"
+$version = "2016.7.27"
 $repo = "scripts-powershell"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
