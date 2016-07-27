@@ -73,13 +73,3 @@ go -Key "desktop" -delete
 go -Key "desktop" -SelectedPath "${env:USERPROFILE}\desktop" -add
 go -Key "downloads" -delete
 go -Key "downloads" -SelectedPath "$env:USERPROFILE\downloads" -add
-
-$import = "Import-StartLayout -LayoutPath $env:SYSTEMDRIVE\etc\StartScreenLayout.xml -MountPath $env:SYSTEMDRIVE\"
-
-if (Test-Path "$env:SYSTEMDRIVE\etc\StartScreenLayout.xml" ) {
-    if (Test-ProcessAdminRights) {
-        Invoke-Expression $import
-    } else {
-        Start-ChocolateyProcessAsAdmin $import
-    }
-}
