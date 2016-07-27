@@ -1,7 +1,7 @@
 $packageName = "mongodb"
 $installerType = "MSI"
 $installerArgs = "/passive /norestart"
-$url = "http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.2.7-signed.msi"
+$url = "http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.2.8-signed.msi"
 $dataDir = "$($env:SYSTEMDRIVE)\data\mongo"
 
 if ($psISE) {
