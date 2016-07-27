@@ -9,7 +9,7 @@
     <description>SQL Server Management Studio is an integrated environment for accessing, configuring, managing, administering, and developing all components of SQL Server. SQL Server Management Studio combines a broad group of graphical tools with a number of rich script editors to provide access to SQL Server to developers and administrators of all skill levels.</description>
     <tags>sqlmanagementstudio sql management database</tags>
     <dependencies>
-      <dependency id="dotnet" version="4.0" />
+      <dependency id="dotnet" version="4.6" />
     </dependencies>
   </metadata>
 </package>
