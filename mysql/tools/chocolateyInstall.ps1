@@ -1,6 +1,6 @@
 $packageName = "mysql"
-$url = "http://cdn.mysql.com/Downloads/MySQL-5.7/mysql-5.7.13-win32.zip"
-$url64 = "http://cdn.mysql.com/Downloads/MySQL-5.7/mysql-5.7.13-winx64.zip"
+$url = "http://cdn.mysql.com/Downloads/MySQL-5.7/mysql-5.7.14-win32.zip"
+$url64 = "http://cdn.mysql.com/Downloads/MySQL-5.7/mysql-5.7.14-winx64.zip"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $dataDir = "$($env:SYSTEMDRIVE)\data\mysql"
