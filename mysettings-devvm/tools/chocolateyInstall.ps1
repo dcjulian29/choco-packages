@@ -45,7 +45,7 @@ foreach ($package in $packages) {
     choco.exe install $package -y | Tee-Object -FilePath $logFile
     
     # Now lets check for errors...
-    if (Get-Content $logFile | Select-String -Pattern "\[ERROR\]") {
+    if (Get-Content $logFile | Select-String -Pattern "Write-Error") {
         Write-Warning "An error occurred during the last package ($package) install..."
         Write-Warning "Review the log file: $logFile"
         Write-Warning "And then decide whether to continue..."
