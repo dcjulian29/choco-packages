@@ -1,5 +1,5 @@
 $packageName = "regexbuilder"
-$url = "http://sourceforge.net/projects/regexbuilder/files/regexbuilder/1.4.0/RegexBuilder_1.4.zip/download"
+$url = "https://julianscorner.com/downloads/RegexBuilder_1.4.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 

@@ -1,12 +1,11 @@
 $packageName = "nsis"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
-$version = "2.51"
 
-$url = "http://sourceforge.net/projects/nsis/files/NSIS%202/$($version)/nsis-$($version).zip/download"
+$url = "https://julianscorner.com/downloads/nsis-$($version).zip/download"
 
-$simplesc = "http://nsis.sourceforge.net/mediawiki/images/c/c9/NSIS_Simple_Service_Plugin_1.30.zip"
-$simplefc = "http://nsis.sourceforge.net/mediawiki/images/d/d7/NSIS_Simple_Firewall_Plugin_1.20.zip"
+$simplesc = "https://julianscorner.com/downloads/NSIS_Simple_Service_Plugin_1.30.zip"
+$simplefc = "https://julianscorner.com/downloads/NSIS_Simple_Firewall_Plugin_1.20.zip"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"

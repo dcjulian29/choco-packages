@@ -1,5 +1,5 @@
 $packageName = "cctray"
-$url = "http://iweb.dl.sourceforge.net/project/ccnet/CruiseControl.NET%20Releases/CruiseControl.NET%201.8.5/CruiseControl.NET-1.8.5.0.zip"
+$url = "https://julianscorner.com/downloads/CruiseControl.NET-1.8.5.0.zip"
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 

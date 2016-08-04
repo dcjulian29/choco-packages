@@ -1,8 +1,8 @@
 $packageName = "gitflow"
 $release = "1.9.1"
 $gitflow = "https://github.com/petervanderdoes/gitflow-avh/archive/$release.zip"
-$getoptbin = "http://sourceforge.net/projects/gnuwin32/files/util-linux/2.14.1/util-linux-ng-2.14.1-bin.zip/download"
-$getoptdll = "http://sourceforge.net/projects/gnuwin32/files/util-linux/2.14.1/util-linux-ng-2.14.1-dep.zip/download"
+$getoptbin = "https://julianscorner.com/downloads/util-linux-ng-2.14.1-bin.zip"
+$getoptdll = "https://julianscorner.com/downloads/util-linux-ng-2.14.1-dep.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 
 if ($psISE) {

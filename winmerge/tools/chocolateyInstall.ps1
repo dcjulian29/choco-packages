@@ -1,7 +1,7 @@
 $packageName = "winmerge"
 $installerType = "EXE"
 $installerArgs = "/VERYSILENT /SP- /NORESTART"
-$url = "http://downloads.sourceforge.net/winmerge/WinMerge-2.14.0-Setup.exe"
+$url = "https://julianscorner.com/downloads/WinMerge-2.14.0-Setup.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"

@@ -1,6 +1,6 @@
 $packageName = "kdiff"
-$url = "http://sourceforge.net/projects/kdiff3/files/kdiff3/0.9.98/KDiff3-32bit-Setup_0.9.98-3.exe/download"
-$url64 = "http://sourceforge.net/projects/kdiff3/files/kdiff3/0.9.98/KDiff3-64bit-Setup_0.9.98-2.exe/download"
+$url = "https://julianscorner.com/downloads/KDiff3-32bit-Setup_0.9.98-3.exe"
+$url64 = "https://julianscorner.com/downloads/KDiff3-64bit-Setup_0.9.98-2.exe"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 

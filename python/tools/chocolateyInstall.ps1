@@ -36,8 +36,8 @@ Get-ChocolateyWebFile "pip" "$downloadPath\get-pip.py" `
 cmd /c "$env:SYSTEMDRIVE\python\python.exe $downloadPath\get-pip.py"
 
 # Install Pywin32
-$pywin32 = "http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download"
-$pywin64 = "http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe/download"
+$pywin32 = "https://julianscorner.com/downloads/pywin32-219.win32-py2.7.exe"
+$pywin64 = "https://julianscorner.com/downloads/pywin32-219.win-amd64-py2.7.exe"
 
 Get-ChocolateyWebFile "pywin32" "$downloadPath\pywin32.exe" $pywin32 $pywin64 
 
@@ -55,8 +55,8 @@ if (Test-Path "C:\python\Lib\site-packages\wx-3.0-msw\unins001.exe") {
 }
     
 # Install wxPython
-$wxpython32 = "http://sourceforge.net/projects/wxpython/files/wxPython/3.0.2.0/wxPython3.0-win32-3.0.2.0-py27.exe/download"
-$wxpython64 = "http://sourceforge.net/projects/wxpython/files/wxPython/3.0.2.0/wxPython3.0-win64-3.0.2.0-py27.exe/download"
+$wxpython32 = "https://julianscorner.com/downloads/wxPython3.0-win32-3.0.2.0-py27.exe"
+$wxpython64 = "https://julianscorner.com/downloads/wxPython3.0-win64-3.0.2.0-py27.exe"
 
 Install-ChocolateyPackage "wxPython" "EXE" "/SP- /SILENT" $wxpython32 $wxpython64
 
