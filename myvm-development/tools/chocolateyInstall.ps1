@@ -186,6 +186,9 @@ Write-Output "Installing .Net 3.x Framework..."
 
 Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online -Verbose
 
+Write-Output "Installing Windows Container Support..."
+
+Enable-WindowsOptionalFeature -All -FeatureName Containers -Online -Verbose -NoRestart
 
 Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online | Out-Null
 Get-AppxPackage | Remove-AppxPackage -ErrorAction Silent
@@ -200,14 +203,16 @@ if ($SearchResult.Count -eq 0) {
     Write-Output "There are no applicable updates."
     exit
 } else {
-    $Session = New-Object -ComObject Microsoft.Update.Session
-    $Downloader = $Session.CreateUpdateDownloader()
-    $Downloader.Updates = $SearchResult
-    Write-Output "Downloading Updates..."
-    $Downloader.Download() | Out-Null
-    Write-Output "Installing Updates..."
-    $Installer = New-Object -ComObject Microsoft.Update.Installer
-    $Installer.Updates = $SearchResult
-    $Result = $Installer.Install()
+    $SearchResult | For-Each-Object { Write-Output " * $($_.Title)" }
+    
+    #$Session = New-Object -ComObject Microsoft.Update.Session
+    #$Downloader = $Session.CreateUpdateDownloader()
+    #$Downloader.Updates = $SearchResult
+    #Write-Output "Downloading Updates..."
+    #$Downloader.Download() | Out-Null
+    #Write-Output "Installing Updates..."
+    #$Installer = New-Object -ComObject Microsoft.Update.Installer
+    #$Installer.Updates = $SearchResult
+    #$Result = $Installer.Install()
 }
 
