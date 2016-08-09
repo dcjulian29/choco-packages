@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>tortoisegit</id>
+    <version>2.2.0.0</version>
+    <authors>TortoiseGit</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://gitlab.com/tortoisegit/tortoisegit/</projectUrl>
+    <licenseUrl>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Git client that adds shell integration into Windows File Explorer.</description>
+    <tags>tortoisegit git vcs dvcs</tags>
+  </metadata>
+</package>
