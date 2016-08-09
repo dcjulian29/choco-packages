@@ -10,8 +10,8 @@ if ($psISE) {
 
 $path = 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full'
 
-$release = "394271"
-$release10 = "394254"
+$release = "394806"
+$release10 = "394802"
 
 $compare = (Get-ItemProperty -LiteralPath $Path).psbase.members | `
                 ForEach-Object { $_.name } | `
@@ -22,7 +22,7 @@ if ($compare -ne $null) {
         $installed = (Get-ItemProperty $path -Name Release -ErrorAction SilentlyContinue).Release
 
         if ($release.Contains($installed) -or $release10.Contains($installed)) {
-            Write-Output ".Net Framework 4.6.1 is already installed on this system."
+            Write-Output ".Net Framework 4.6.2 is already installed on this system."
         } else {
             Install-ChocolateyPackage $packageName $installerType $installerArgs $url `
                 -ValidExitCodes $errorCode
