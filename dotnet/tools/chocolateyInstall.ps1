@@ -1,7 +1,7 @@
 $packageName = "dotnet"
 $installerType = "EXE"
 $installerArgs = "/passive /norestart"
-$url = "https://download.microsoft.com/download/E/4/1/E4173890-A24A-4936-9FC9-AF930FE3FA40/NDP461-KB3102436-x86-x64-AllOS-ENU.exe"
+$url = "https://download.microsoft.com/download/F/9/4/F942F07D-F26F-4F30-B4E3-EBD54FABA377/NDP462-KB3151800-x86-x64-AllOS-ENU.exe"
 $errorCode = @(0, 3010)
 
 if ($psISE) {
