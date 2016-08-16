@@ -1,8 +1,8 @@
 $packageName = "nsis"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
-
-$url = "https://julianscorner.com/downloads/nsis-$($version).zip/download"
+$version = "2.51"
+$url = "https://julianscorner.com/downloads/nsis-$($version).zip"
 
 $simplesc = "https://julianscorner.com/downloads/NSIS_Simple_Service_Plugin_1.30.zip"
 $simplefc = "https://julianscorner.com/downloads/NSIS_Simple_Firewall_Plugin_1.20.zip"
