@@ -1,7 +1,7 @@
 $packageName = "vscode"
 $installerType = "EXE"
-$installerArgs = "/SILENT /MERGETASKS=!runCode,addtopath,addcontextmenufolders"
-$url = "https://az764295.vo.msecnd.net/stable/e6b4afa53e9c0f54edef1673de9001e9f0f547ae/VSCodeSetup-stable.exe"
+$installerArgs = "/SILENT /MERGETASKS=!runCode,!addtopath,addcontextmenufolders"
+$url = "https://az764295.vo.msecnd.net/stable/6276dcb0ae497766056b4c09ea75be1d76a8b679/VSCodeSetup-stable.exe"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
