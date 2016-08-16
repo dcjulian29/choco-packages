@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>grepwin</id>
-    <version>1.6.13</version>
+    <version>1.6.14</version>
     <authors>Stefans Tools</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://stefanstools.sourceforge.net/grepWin.html</projectUrl>
