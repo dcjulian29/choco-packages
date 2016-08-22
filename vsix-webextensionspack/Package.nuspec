@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>vsix-webextensionpack</id>
-    <version>1.4.43</version>
+    <version>1.6.51</version>
     <authors>Mads Kristensen</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://visualstudiogallery.msdn.microsoft.com/f3b504c6-0095-42f1-a989-51d5fc2a8459</projectUrl>
