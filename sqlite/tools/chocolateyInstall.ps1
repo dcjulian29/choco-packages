@@ -1,5 +1,5 @@
 $packageName = "sqlite"
-$url = "https://www.sqlite.org/2016/sqlite-tools-win32-x86-3140000.zip"
+$url = "https://www.sqlite.org/2016/sqlite-tools-win32-x86-3140100.zip"
 
 $downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
