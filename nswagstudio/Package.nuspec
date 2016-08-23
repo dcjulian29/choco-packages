@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>nswagstudio</id>
+    <version>5.2.0</version>
+    <authors>Rico Suter</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://github.com/NSwag/NSwag</projectUrl>
+    <licenseUrl>https://github.com/NSwag/NSwag/blob/master/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NSwag is a Swagger 2.0 API (OpenAPI) toolchain for .NET, Web API, TypeScript and other platforms, written in C#.</description>
+    <tags>nswagstudio nswag web api rest</tags>
+  </metadata>
+</package>
