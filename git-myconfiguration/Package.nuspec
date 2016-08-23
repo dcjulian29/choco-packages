@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>git-myconfiguration</id>
-    <version>2016.3.22</version>
+    <version>2016.8.23</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom configuration and aliases for the Git SCM tool.</description>
@@ -12,6 +12,7 @@
       <dependency id="gitflow" />
       <dependency id="posh-git" />
       <dependency id="kdiff" />
+      <dependency id="vim" />
     </dependencies>
   </metadata>
 </package>
