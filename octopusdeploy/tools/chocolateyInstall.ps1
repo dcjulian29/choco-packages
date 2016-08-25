@@ -2,7 +2,7 @@ $packageName = "octopusdeploy"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
-$url = "https://download.octopusdeploy.com/octopus-tools/3.3.18/OctopusTools.3.3.18.zip"
+$url = "https://download.octopusdeploy.com/octopus-tools/3.4.2/OctopusTools.3.4.2.zip"
 
 $keep = @(
   "octo.exe",
