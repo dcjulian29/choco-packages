@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>smartgit</id>
-    <version>7.1.4</version>
+    <version>8.0.0</version>
     <authors>Syntevo</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.syntevo.com/smartgithg/</projectUrl>
