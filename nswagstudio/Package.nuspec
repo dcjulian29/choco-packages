@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>nswagstudio</id>
-    <version>5.2.0</version>
+    <version>5.3.0</version>
     <authors>Rico Suter</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://github.com/NSwag/NSwag</projectUrl>
