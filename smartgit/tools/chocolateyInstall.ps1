@@ -12,7 +12,7 @@ if ($psISE) {
 }
 
 if (Test-Path $downloadPath) {
-    Remove-Item -Path $downloadPath -Force | Out-Null
+    Remove-Item -Path $downloadPath -Recurse -Force | Out-Null
 }
 
 New-Item -Type Directory -Path $downloadPath | Out-Null
