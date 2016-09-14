@@ -3,7 +3,7 @@ $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 $installerType = "EXE"
 $installerArgs = '/sp- /silent /norestart'
-$version = '8_0_0'
+$version = '8_0_1'
 
 $url = 'http://www.syntevo.com/static/smart/download/smartgit/smartgit-win32-setup-nojre-{0}.zip' -f $version
 
