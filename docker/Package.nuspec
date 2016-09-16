@@ -2,13 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>docker</id>
-    <version>1.12.0</version>
+    <version>1.12.1</version>
     <authors>>Docker Contributors</authors>
     <owners>Julian Easterling</owners>
-    <projectUrl>https://www.docker.com/products/docker-toolbox</projectUrl>
+    <projectUrl>https://www.docker.com/products/docker</projectUrl>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. This package contains the docker client for Windows and not the Docker engine to run containers on Windows hosts.</description>
+    <description>An integrated, easy-to-deploy environment for building, assembling, and shipping applications from a Windows PC, Docker for Windows is a native Windows application with a native user interface and auto-update capability, deeply integrated with Windows native virtualization, Hyper-V, networking and file system, making it faster and more reliable than previous ways of getting Docker on a Windows PC.</description>
     <tags>docker containers</tags>
   </metadata>
 </package>

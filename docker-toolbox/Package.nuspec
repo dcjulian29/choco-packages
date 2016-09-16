@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>docker-toolbox</id>
+    <version>1.12.1</version>
+    <authors>>Docker Contributors</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://www.docker.com/products/docker-toolbox</projectUrl>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. This package contains the docker client for Windows and not the Docker engine to run containers on Windows hosts.</description>
+    <tags>docker containers toolbox</tags>
+  </metadata>
+</package>
