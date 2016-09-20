@@ -11,6 +11,7 @@
     <description>Wireshark is the world's foremost network protocol analyzer. It lets you see what's happening on your network at a microscopic level. It is the de facto (and often de jure) standard across many industries and educational institutions.</description>
     <tags>wireshark network sniffer</tags>
     <dependencies>
+      <dependency id="myscripts-powershell" version="2016.9.20" />
       <dependency id="winpcap" version="4.1.3" />
     </dependencies>
   </metadata>
