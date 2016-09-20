@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>nodejs</id>
-    <version>6.5.0</version>
+    <version>6.6.0</version>
     <authors>Joyent, Inc</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://nodejs.org/</projectUrl>
@@ -10,5 +10,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</description>
     <tags>javascript node js v8</tags>
+    <dependencies>
+      <dependency id="myscripts-powershell" version="2016.9.20" />
+    </dependencies>
   </metadata>
 </package>
