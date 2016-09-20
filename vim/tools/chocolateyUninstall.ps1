@@ -1,6 +1,5 @@
 $packageName = "vim"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if (Test-Path $appDir)
 {
@@ -23,8 +22,8 @@ if (Test-Path $git) {
     & $git config --unset --global core.editor
 }
 
-if (Test-ProcessAdminRights) {
+if (Test-Elevation) {
     . $toolDir\postUninstall.ps1
 } else {
-    Start-ChocolateyProcessAsAdmin ". $toolDir\postUninstall.ps1"
+    Invoke-ElevatedScript { . $PSScriptRoot\postUninstall.ps1 }
 }

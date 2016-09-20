@@ -1,27 +1,28 @@
 $packageName = "vim"
-$vim = "ftp://ftp.vim.org/pub/vim/pc/vim74w32.zip"
-$vimrt = "ftp://ftp.vim.org/pub/vim/pc/vim74rt.zip"
-$gvim = "ftp://ftp.vim.org/pub/vim/pc/gvim74.zip"
 
-$downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
+$version="vim80"
+$w32="$($version)w32.zip"
+$rt="$($version)rt.zip"
+$gv = "g$($version).zip"
+
+$vim = "ftp://ftp.vim.org/pub/vim/pc/$w32"
+$vimrt = "ftp://ftp.vim.org/pub/vim/pc/$rt"
+$gvim = "ftp://ftp.vim.org/pub/vim/pc/$gv"
+
+$downloadPath = "$($env:TEMP)\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
-
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-}
 
 if (-not (Test-Path $downloadPath)) {
     New-Item -Type Directory -Path $downloadPath | Out-Null
 }
 
-Get-ChocolateyWebFile $packageName "$downloadPath\vim74w32.zip" $vim
-Get-ChocolateyWebFile $packageName "$downloadPath\vim74rt.zip" $vimrt
-Get-ChocolateyWebFile $packageName "$downloadPath\gvim74.zip" $gvim
+Download-File $vim "$downloadPath\$w32"
+Download-File $vimrt "$downloadPath\$rt"
+Download-File $gvim "$downloadPath\$gv"
 
-Get-ChocolateyUnzip "$downloadPath\vim74w32.zip" "$downloadPath\"
-Get-ChocolateyUnzip "$downloadPath\vim74rt.zip" "$downloadPath\"
-Get-ChocolateyUnzip "$downloadPath\gvim74.zip" "$downloadPath\"
+Unzip-File "$downloadPath\$w32" $downloadPath
+Unzip-File "$downloadPath\$rt" $downloadPath
+Unzip-File "$downloadPath\$gv" $downloadPath
 
 if (Test-Path $appDir) {
     Write-Output "Removing previous version of package..."
@@ -30,7 +31,7 @@ if (Test-Path $appDir) {
 
 New-Item -Type Directory -Path $appDir | Out-Null
 
-Copy-Item -Path "$downloadPath\vim\vim74\*" -Destination "$appDir\" -Recurse -Container
+Copy-Item -Path "$downloadPath\vim\$version\*" -Destination "$appDir\" -Recurse -Container
 
 Set-Content -Path "${env:USERPROFILE}\_vimrc" -Value @"
 set tabstop=4       " number of visual spaces per TAB
@@ -75,8 +76,8 @@ if (Test-Path $git) {
     & $git config --global core.editor "'$appdir\vim.exe'"
 }
 
-if (Test-ProcessAdminRights) {
-    . $toolDir\postInstall.ps1
+if (Test-Elevation) {
+    . $PSScriptRoot\postInstall.ps1
 } else {
-    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+    Invoke-ElevatedScript { . $PSScriptRoot\postInstall.ps1 }
 }
