@@ -1,30 +1,19 @@
 $packageName = "netscan"
 $url = "http://www.softperfect.com/download/freeware/netscan.zip"
-$downloadPath = "$env:TEMP\chocolatey\$packageName"
+$downloadPath = "$env:TEMP\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+if (Test-Path $downloadPath) {
+    Remove-Item $downloadPath -Recurse -Force | Out-Null
 }
 
-if (Test-Path $appDir)
-{
-    Write-Output "Removing previous version of package..."
-    Remove-Item "$($appDir)" -Recurse -Force
-}
-
-New-Item -Type Directory -Path $appDir | Out-Null
-
-if (-not (Test-Path $downloadPath))
-{
-    New-Item -Type Directory -Path $downloadPath | Out-Null
-}
+New-Item -Type Directory -Path $downloadPath | Out-Null
 
 # Need to "Open Web Page" since they seem to have a redirect when you go directly to URL...
 $web = New-Object Net.WebClient
 $web.DownloadString("http://www.softperfect.com/products/networkscanner/") | Out-Null
 
-Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
+Download-File $url "$downloadPath\$packageName.zip"
 
 if (Test-Path "${env:ProgramFiles}") {
     $bits = "32-Bit"
@@ -34,12 +23,18 @@ if (Test-Path "${env:ProgramFiles(x86)}") {
     $bits = "64-Bit"
 }
 
-Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath\"
+Unzip-File "$downloadPath\$packageName.zip" "$downloadPath\"
 
 if (-not (Test-Path $downloadPath\$bits)) {
     Write-ChocolateyFailure $packageName "Zip file downloaded is corrupt!"
 } else {
-    Get-ChildItem -Path $downloadPath\$bits -Include $keep -Recurse | Copy-Item -Destination "$appDir"
+    if (Test-Path $appDir)
+    {
+        Write-Output "Removing previous version of package..."
+        Remove-Item "$($appDir)" -Recurse -Force
+    }
 
-    Write-ChocolateySuccess $packageName
+    New-Item -Type Directory -Path $appDir | Out-Null
+
+    Get-ChildItem -Path $downloadPath\$bits -Include $keep -Recurse | Copy-Item -Destination "$appDir"
 }
