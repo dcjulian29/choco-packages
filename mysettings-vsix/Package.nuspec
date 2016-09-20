@@ -2,14 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-vsix</id>
-    <version>2016.7.25</version>
+    <version>2016.9.20</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>VS Extensions I like to install in Visual Studio</description>
     <tags>mysettings-vsix vsix</tags>
     <dependencies>
       <dependency id="visualstudio" version="[2015.0,2016.0)" />
-      <dependency id="vsix-specflow" />
       <dependency id="vsix-vscoloroutput" />
       <dependency id="vsix-webextensionpack" />
       <dependency id="vsix-ihateregions" />
