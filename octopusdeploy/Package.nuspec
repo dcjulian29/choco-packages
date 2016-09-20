@@ -10,5 +10,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Octopus Deploy is an automated deployment tool powered by NuGet. This package contains Octo.exe, a command line tool for creating and deploying releases with Octopus Deploy.</description>
     <tags>octopusdeploy automation deployment</tags>
+    <dependencies>
+      <dependency id="myscripts-powershell" version="2016.9.20" />
+    </dependencies>
   </metadata>
 </package>
