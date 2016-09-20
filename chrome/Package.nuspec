@@ -2,11 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>chrome</id>
-    <version>52.0</version>
+    <version>53.0</version>
     <authors>Google</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://www.google.com/chrome/browser/</projectUrl>
     <description>A fast, free web browser</description>
     <tags>google</tags>
+    <dependencies>
+      <dependency id="myscripts-powershell" version="2016.9.20" />
+    </dependencies>
   </metadata>
 </package>
