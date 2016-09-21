@@ -10,5 +10,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>XMind is an open source project, which means it's free to download and free to use forever. XMind Plus/Pro with more professional features are also available.</description>
     <tags>xmind mind map</tags>
+    <dependencies>
+      <dependency id="myscripts-powershell" version="2016.9.20" />
+    </dependencies>
   </metadata>
 </package>
