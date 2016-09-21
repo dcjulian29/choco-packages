@@ -1,13 +1,7 @@
 $packageName = "resharper"
-$installerType = "EXE"
-$installerArgs = "/SpecificProductNames=ReSharper;dotCover;teamCityAddin;dotPeek /Silent=True /ReSharper9PlusMsi=True"
-$url = "https://download.jetbrains.com/resharper/JetBrains.ReSharperUltimate.2016.2.exe"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-}
+$jb = "$env:LOCALAPPDATA\JetBrains\Installations"
 
-Push-Location $env:TEMP
-Get-WebFile $url
-Uninstall-ChocolateyPackage $packageName $installerType $installerArgs "JetBrains.ReSharperUltimate.2016.2.exe"
-Pop-Location
+& $jb\dotCover06\JetBrains.Platform.Installer.exe /HostsToRemove=dotCover06 /PerMachine=False
+& $jb\dotPeek06\JetBrains.Platform.Installer.exe /HostsToRemove=dotPeek06 /PerMachine=False
+& $jb\ReSharperPlatformVs14_000\JetBrains.Platform.Installer.exe /HostsToRemove=ReSharperPlatformVs14 /PerMachine=False
