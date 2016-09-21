@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>git</id>
-    <version>2.9.3</version>
+    <version>2.10.0</version>
     <authors>Linus Torvalds</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://git-scm.com/</projectUrl>
@@ -10,5 +10,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</description>
     <tags>git vcs dvcs</tags>
+    <dependencies>
+      <dependency id="myscripts-powershell" version="2016.9.20" />
+    </dependencies>
   </metadata>
 </package>
