@@ -1,6 +1,6 @@
 $packageName = "myscripts-powershell"
 $appDir = "$($env:SYSTEMDRIVE)\tools\powershell"
-$version = "2016.9.20"
+$version = "2016.9.22"
 $repo = "scripts-powershell"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 
@@ -33,10 +33,14 @@ Remove-Item -Path "$($env:TEMP)\$file.zip" -Force
 
 $cmd = ". $PSScriptRoot\postInstall.bat"
 
-if (Test-ProcessAdminRights) {
+$user = New-Object Security.Principal.WindowsPrincipal $([Security.Principal.WindowsIdentity]::GetCurrent())
+
+if (($user.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)) -eq $false)  {
     Invoke-Expression $cmd
 } else {
-    Start-Process $PSHOME\powershell.exe `
-        -ArgumentList "-NoProfile", "-ExecutionPolicy Bypass", "-Command `"&{$cmd}`"" `
-        -Wait
+    $process = New-Object System.Diagnostics.ProcessStartInfo "$PSScriptRoot\postInstall.bat"
+    $process.Verb = "runas"
+
+    $handle = [System.Diagnostics.Process]::Start($process)
+    $handle.WaitForExit()
 }
