@@ -8,8 +8,4 @@ if (Test-Path "${env:ProgramFiles(x86)}\Git") {
 
 $uninstaller = Join-Path $git "unins000.exe"
 
-if (Test-Elevation) {
-    Invoke-Expression "cmd.exe /c `"$uninstaller`" /SILENT"
-} else {
-    Invoke-ElevatedCommand cmd.exe /c "$uninstaller" /SILENT
-}
+Invoke-ElevatedCommand $uninstaller "/SILENT" -Wait

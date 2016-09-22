@@ -1,7 +1,7 @@
 $packageName = "git"
 $installerType = "EXE"
 $installerArgs = '/SILENT /COMPONENTS="!ext,!ext\cheetah,!assoc,!assoc_sh"'
-$version = "2.9.3"
+$version = "2.10.0"
 $url = "https://github.com/git-for-windows/git/releases/download/v$version.windows.1/Git-$version-32-bit.exe"
 $url64 = "https://github.com/git-for-windows/git/releases/download/v$version.windows.1/Git-$version-64-bit.exe"
 $downloadPath = "$env:TEMP\$packageName"
@@ -18,4 +18,4 @@ New-Item -Type Directory -Path $downloadPath | Out-Null
 
 Download-File $url "$downloadPath\$packageName.$installerType"
 
-& "$downloadPath\$packageName.$installerType" $installerArgs
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait

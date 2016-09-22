@@ -11,7 +11,7 @@
     <description>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</description>
     <tags>git vcs dvcs</tags>
     <dependencies>
-      <dependency id="myscripts-powershell" version="2016.9.20" />
+      <dependency id="myscripts-powershell" version="2016.9.22" />
     </dependencies>
   </metadata>
 </package>
