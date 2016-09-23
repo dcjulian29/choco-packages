@@ -9,7 +9,6 @@
     <tags>myscripts scripts powershell pshell profile</tags>
     <dependencies>
       <dependency id="powershell" />
-      <dependency id="posh-mymodules" />
     </dependencies>
   </metadata>
 </package>
