@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>posh-myprofile</id>
+    <version>2016.9.23.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>A package to download and/or update my powershell profile from GitHub</description>
+    <tags>myscripts scripts powershell pshell profile</tags>
+    <dependencies>
+      <dependency id="posh-mymodules" />
+    </dependencies>
+  </metadata>
+</package>
