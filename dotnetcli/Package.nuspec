@@ -9,7 +9,7 @@
     <description>.NET Core is a set of runtime, library and compiler components. Microsoft uses these components in various configurations for device and cloud workloads.</description>
     <tags>dotnet net</tags>
     <dependencies>
-      <dependency id="myscripts-powershell" version="2016.9.20" />
+      <dependency id="posh-mymodules" version="2016.9.23.1" />
     </dependencies>
   </metadata>
 </package>

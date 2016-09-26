@@ -12,7 +12,7 @@ New-Item -Type Directory -Path $downloadPath | Out-Null
 
 Download-File $url "$downloadPath\$packageName.$installerType"
 
-& "$downloadPath\$packageName.$installerType" $installerArgs
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
 
 if (Test-Path "$($env:USERPROFILE)\Desktop\XMind 7.lnk") {
     Remove-Item "$($env:USERPROFILE)\Desktop\XMind 7.lnk" -force

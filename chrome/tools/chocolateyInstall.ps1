@@ -17,7 +17,7 @@ if ($app) {
 
     Download-File $url "$downloadPath\$packageName.$installerType"
 
-    & "$downloadPath\$packageName.$installerType" $installerArgs
+    Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
     
     if (Test-Elevation) {
         Remove-Item "$($env:PUBLIC)\Desktop\Google Chrome.lnk" -Force

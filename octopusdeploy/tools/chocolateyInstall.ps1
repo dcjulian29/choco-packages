@@ -32,5 +32,5 @@ Get-ChildItem -Path $downloadPath -Include $keep -Recurse | Copy-Item -Destinati
 if (Test-Elevation) {
     cmd /c mklink "$env:ChocolateyInstall\bin\octo.exe" "$appDir\octo.exe"
 } else {
-    Invoke-ElevatedCommand cmd /c mklink "$env:ChocolateyInstall\bin\octo.exe" "$appDir\octo.exe"
+    Invoke-ElevatedCommand "cmd.exe" -ArgumentList "/c mklink '$env:ChocolateyInstall\bin\octo.exe' '$appDir\octo.exe'" -Wait
 }

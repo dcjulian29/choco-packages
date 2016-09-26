@@ -9,7 +9,7 @@
     <description>A fast, free web browser</description>
     <tags>google</tags>
     <dependencies>
-      <dependency id="myscripts-powershell" version="2016.9.20" />
+      <dependency id="posh-mymodules" version="2016.9.23.1" />
     </dependencies>
   </metadata>
 </package>
