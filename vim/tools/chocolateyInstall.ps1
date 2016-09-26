@@ -12,9 +12,11 @@ $gvim = "ftp://ftp.vim.org/pub/vim/pc/$gv"
 $downloadPath = "$($env:TEMP)\$($packageName)"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
-if (-not (Test-Path $downloadPath)) {
-    New-Item -Type Directory -Path $downloadPath | Out-Null
+if (Test-Path $downloadPath) {
+    Remove-Item -Path $downloadPath -Recurse -Force
 }
+
+New-Item -Type Directory -Path $downloadPath | Out-Null
 
 Download-File $vim "$downloadPath\$w32"
 Download-File $vimrt "$downloadPath\$rt"
@@ -22,7 +24,11 @@ Download-File $gvim "$downloadPath\$gv"
 
 Unzip-File "$downloadPath\$w32" $downloadPath
 Unzip-File "$downloadPath\$rt" $downloadPath
-Unzip-File "$downloadPath\$gv" $downloadPath
+
+# GVIM has some files that are duplicate of ones from the Runtime...
+#   will extract to separate directory and the force the copy of files.
+Unzip-File "$downloadPath\$gv" "$downloadPath\gv"
+Copy-Item "$downloadPath\gv\*" $downloadPath -Force -Recurse
 
 if (Test-Path $appDir) {
     Write-Output "Removing previous version of package..."
