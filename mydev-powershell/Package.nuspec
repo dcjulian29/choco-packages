@@ -2,13 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-powershell</id>
-    <version>2014.12.16</version>
+    <version>2016.9.23</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for PowerShell modules and configuration for my Development Environments.</description>
     <tags>mydev-powershell mydev powershell</tags>
     <dependencies>
-      <dependency id="myscripts-powershell" />
+      <dependency id="posh-mymodules" />
       <dependency id="posh-go" />
       <dependency id="posh-pester" />
     </dependencies>

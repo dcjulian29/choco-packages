@@ -13,7 +13,7 @@
       <dependency id="executor" />
       <dependency id="syncthing" />
       <dependency id="myscripts-development" />
-      <dependency id="myscripts-powershell" />
+      <dependency id="posh-mymodules" />
     </dependencies>
   </metadata>
 </package>
