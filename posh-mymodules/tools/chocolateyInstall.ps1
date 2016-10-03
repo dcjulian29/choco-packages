@@ -1,7 +1,7 @@
 $packageName = "posh-mymodules"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\MyModules"
 
-$version = "2016.9.26.2"
+$version = "2016.10.3.1"
 $repo = "scripts-powershell"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 
@@ -26,3 +26,7 @@ if (-not (Test-Path $appDir)) {
 }
 
 Copy-Item -Path "$($env:TEMP)\$file\MyModules\*" -Destination $appdir -Recurse -Force
+
+# Make sure modules are loaded and available for this session...
+$env:PSModulePath = "$(Split-Path $profile)\MyModules;$($env:PSModulePath)"
+Get-Module -ListAvailable | Out-Null
