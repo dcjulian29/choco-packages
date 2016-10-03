@@ -15,7 +15,7 @@ if ($app) {
 
     New-Item -Type Directory -Path $downloadPath | Out-Null
 
-    Download-File $url "$downloadPath\$packageName.$installerType"
+    Download-File $url "$downloadPath\$packageName.$installerType" -ShowHostOnly
 
     Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
     
