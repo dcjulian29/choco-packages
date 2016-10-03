@@ -10,6 +10,6 @@ if (Test-Path $downloadPath) {
 
 New-Item -Type Directory -Path $downloadPath | Out-Null
 
-(New-Object System.Net.WebClient).DownloadFile($url, "$downloadPath\$packageName.$installerType")
+Download-File $url "$downloadPath\$packageName.$installerType"
 
-& "$downloadPath\$packageName.$installerType" $installerArgs
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
