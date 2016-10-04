@@ -18,7 +18,7 @@ New-Item -Type Directory -Path $downloadPath | Out-Null
 $file = "$downloadPath\$packageName.zip"
 
 Download-File $url $file
-Unzip-File $file $downloadPath)
+Unzip-File $file $downloadPath
 
 if (Test-Path $appDir)
 {
