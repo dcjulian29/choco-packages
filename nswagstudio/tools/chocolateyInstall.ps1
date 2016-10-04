@@ -1,11 +1,15 @@
 $packageName = "nwagstudio"
 $installerType = "MSI"
 $installerArgs = "/quiet"
+$url = "https://github.com/NSwag/NSwag/releases/download/NSwag-Build-703/NSwagStudio.msi"
+$downloadPath = "$env:TEMP\$packageName"
 
-$url = "http://rsuter.com/Projects/NSwagStudio/installer.php"
-
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+if (Test-Path $downloadPath) {
+    Remove-Item -Path $downloadPath -Recurse -Force
 }
 
-Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url
+New-Item -Type Directory -Path $downloadPath | Out-Null
+
+Download-File $url "$downloadPath\$packageName.$installerType"
+
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
