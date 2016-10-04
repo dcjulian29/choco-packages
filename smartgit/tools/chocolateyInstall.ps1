@@ -1,15 +1,9 @@
 $packageName = "smartgit"
-$downloadPath = "$env:TEMP\chocolatey\$packageName"
-$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
-$installerType = "EXE"
+$downloadPath = "$env:TEMP\$packageName"
 $installerArgs = '/sp- /silent /norestart'
-$version = '8_0_1'
+$version = '8_0_2'
 
 $url = 'http://www.syntevo.com/static/smart/download/smartgit/smartgit-win32-setup-nojre-{0}.zip' -f $version
-
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-}
 
 if (Test-Path $downloadPath) {
     Remove-Item -Path $downloadPath -Recurse -Force | Out-Null
@@ -17,25 +11,14 @@ if (Test-Path $downloadPath) {
 
 New-Item -Type Directory -Path $downloadPath | Out-Null
 
-Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
-Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$downloadPath\"
+Download-File $url "$downloadPath\$packageName.zip"
+Unzip-File "$downloadPath\$packageName.zip" "$downloadPath\"
 
 $installFileLocation = [IO.Path]::Combine($downloadPath, "setup-{0}.exe" -f $version)
 
-Install-ChocolateyInstallPackage $packageName $installerType $installerArgs $installFileLocation
+Invoke-ElevatedCommand $installFileLocation -ArgumentList $installerArgs -Wait
 
-if (Test-Path "C:\Program Files (x86)\Java") {
-    $java = "C:\Program Files (x86)\Java"
+$java = Find-JavaPath
 
-    $java  = (Get-ChildItem -Path $java -Recurse -Include "bin").FullName `
-        | Sort-Object | Select-Object -Last 1
-
-    $java = Split-Path -Path $java -Parent
-
-    if (Test-ProcessAdminRights) {
-        [Environment]::SetEnvironmentVariable('SMARTGIT_JAVA_HOME',"$java", 'Machine')
-    } else {
-        Start-ChocolateyProcessAsAdmin `
-            "[Environment]::SetEnvironmentVariable('SMARTGIT_JAVA_HOME','$java', 'Machine')"
-    }
-}
+Invoke-ElevatedExpression  `
+    "[Environment]::SetEnvironmentVariable('SMARTGIT_JAVA_HOME','$java', 'Machine')"
