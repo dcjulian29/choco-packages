@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>paintnet</id>
-    <version>4.0.10</version>
+    <version>4.0.12</version>
     <authors>Rick Brewster</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.getpaint.net/</projectUrl>
