@@ -1,26 +1,33 @@
 ﻿$packageName = "java"
 $installerType = "exe"
 $installerArgs = "/s REBOOT=Suppress WEB_JAVA=0"
+$downloadPath = "$env:TEMP\$packageName"
 
 $url = "http://javadl.oracle.com/webapps/download/AutoDL?BundleId=211997"
 $url64 = "http://javadl.oracle.com/webapps/download/AutoDL?BundleId=211999"
 
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
-
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-}
-
 Write-Output "Checking for and uninstalling previous versions of Java..."
 
-. $toolDir\chocolateyUninstall.ps1
+. $PSScriptRoot\chocolateyUninstall.ps1
 
-Install-ChocolateyPackage $packageName $installerType $installerArgs $url
+if (Test-Path $downloadPath) {
+    Remove-Item -Path $downloadPath -Recurse -Force
+}
+
+New-Item -Type Directory -Path $downloadPath | Out-Null
+
+Download-File $url "$downloadPath\$packageName.$installerType"
+
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
 
 $path = Join-Path $env:ProgramFiles "Java"
 
-if ((Get-WmiObject Win32_Processor).AddressWidth -eq 64) { 
-    Install-ChocolateyPackage $packageName $installerType $installerArgs "" $url64
+if ([System.IntPtr]::Size -ne 4) {
+    Download-File $url64 "$downloadPath\$packageName-x64.$installerType"
+
+    Invoke-ElevatedCommand "$downloadPath\$packageName-x64.$installerType" `
+        -ArgumentList $installerArgs -Wait
+
     $path = Join-Path $env:ProgramW6432 "Java"
 }
 
@@ -28,16 +35,23 @@ $path  = (Get-ChildItem -Path $path -Recurse -Include "bin").FullName `
     | Sort-Object | Select-Object -Last 1
 
 $path = Split-Path -Path $path -Parent
-$cmd = "[Environment]::SetEnvironmentVariable('JAVA_HOME','$path', 'Machine')"
 
-if (Test-ProcessAdminRights) {
-    Invoke-Expression $cmd
-} else {
-    Start-ChocolateyProcessAsAdmin $cmd
-}
+Invoke-ElevatedExpression "[Environment]::SetEnvironmentVariable('JAVA_HOME','$path', 'Machine')"
 
-if (Test-ProcessAdminRights) {
-    . $toolDir\postInstall.ps1
-} else {
-    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
+Invoke-ElevatedScript -ScriptBlock {
+    $appDir = "$($env:JAVA_HOME)\bin"
+    $mklink = "cmd.exe /c mklink"
+    $links = @(
+    "java"
+    "javaw"
+    "javaws"
+    )
+
+    foreach ($link in $links) {
+        if (Test-Path "${env:ChocolateyInstall}\bin\$link.exe") {
+            (Get-Item "${env:ChocolateyInstall}\bin\$link.exe").Delete()
+        }
+
+        Invoke-Expression "$mklink '${env:ChocolateyInstall}\bin\$link.exe' '$appDir\$link.exe'"
+    }
 }

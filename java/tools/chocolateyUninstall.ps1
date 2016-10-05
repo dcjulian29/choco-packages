@@ -1,9 +1,7 @@
-﻿$packageName = "java"
-$searchFilter = { ($_.GetValue('DisplayName') -like '*Java*') }  
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
-
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+﻿$searchFilter = {
+    (($_.GetValue('DisplayName') -like '*Java*') `
+    -and `
+    ( -not ($_.GetValue('DisplayName') -like '*JavaScript*')))
 }
 
 $uninstallPaths = @(
@@ -11,20 +9,26 @@ $uninstallPaths = @(
     'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall') 
 
 foreach ($path in $uninstallPaths) { 
-    if ( -not ($path -like "*JavaScript*")) {
-        if (Test-Path $path) { 
-            Get-ChildItem $path | Where-Object $searchFilter | `
-                Where-Object { $_.GetValue('UninstallString') } | `
-                Foreach-Object { 
-                    Start-Process -Wait `
-                        "${env:WINDIR}\System32\msiexec.exe" "/x $($_.PSChildName) /qb"
-                }
-        }
-    } 
+    if (Test-Path $path) { 
+        Get-ChildItem $path | Where-Object $searchFilter | `
+            Where-Object { $_.GetValue('UninstallString') } | `
+            Foreach-Object { 
+                Start-Process -Wait `
+                    "${env:WINDIR}\System32\msiexec.exe" "/x $($_.PSChildName) /qb"
+            }
+    }
 } 
 
-if (Test-ProcessAdminRights) {
-    . $toolDir\postUninstall.ps1
-} else {
-    Start-ChocolateyProcessAsAdmin ". $toolDir\postUninstall.ps1"
+Invoke-ElevatedScript -ScriptBlock {
+    $links = @(
+    "java"
+    "javaw"
+    "javaws"
+    )
+
+    foreach ($link in $links) {
+        if (Test-Path "${env:ChocolateyInstall}\bin\$link.exe") {
+            (Get-Item "${env:ChocolateyInstall}\bin\$link.exe").Delete()
+        }
+    }
 }
