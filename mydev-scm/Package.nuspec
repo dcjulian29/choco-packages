@@ -16,7 +16,6 @@
       <dependency id="git-credential-manager" />
       <dependency id="vim" />
       <dependency id="smartgit" />
-      <dependency id="tortoisegit" />
     </dependencies>
   </metadata>
 </package>
