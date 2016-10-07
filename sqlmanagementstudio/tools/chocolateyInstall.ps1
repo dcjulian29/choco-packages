@@ -1,12 +1,8 @@
 $packageName = "sqlmanagementstudio"
 $installerType = "EXE"
-$installerArgs = "/install /passive /norestart"
-$url = "http://download.microsoft.com/download/4/7/2/47218E85-5903-4EF4-B54E-3B71DD558017/SSMS-Setup-ENU.exe"
-$downloadPath = "$($env:TEMP)\chocolatey\$packageName"
-
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-}
+$installerArgs = "/install /quiet /norestart"
+$url = "http://download.microsoft.com/download/7/8/0/7808D223-499D-4577-812B-9A2A60048841/SSMS-Setup-ENU.exe"
+$downloadPath = "$($env:TEMP)\$packageName"
 
 if (Test-Path $downloadPath)
 {
@@ -15,4 +11,9 @@ if (Test-Path $downloadPath)
 
 New-Item -Type Directory -Path $downloadPath | Out-Null
 
-Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url
+Download-File $url "$downloadPath\$packageName.$installerType"
+
+# The new installer shows no UI in command-line installs.
+Write-Output "Installing Sql Server Management Studio Started..."
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
+Write-Output "Installing Sql Server Management Studio Finished."

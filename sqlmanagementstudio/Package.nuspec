@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>sqlmanagementstudio</id>
-    <version>13.0.15700.28</version>
+    <version>13.0.15900.1</version>
     <authors>Microsoft</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://technet.microsoft.com/en-us/library/ms174173.aspx</projectUrl>
@@ -10,6 +10,7 @@
     <tags>sqlmanagementstudio sql management database</tags>
     <dependencies>
       <dependency id="dotnet" version="4.6" />
+      <dependency id="posh-mymodules" />
     </dependencies>
   </metadata>
 </package>
