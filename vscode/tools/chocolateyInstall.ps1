@@ -1,20 +1,21 @@
 $packageName = "vscode"
 $installerType = "EXE"
 $installerArgs = "/SILENT /MERGETASKS=!runCode,!addtopath,addcontextmenufolders"
-$url = "https://az764295.vo.msecnd.net/stable/5be4091987a98e3870d89d630eb87be6d9bafd27/VSCodeSetup-stable.exe"
+$url = "https://az764295.vo.msecnd.net/stable/9e4e44c19e393803e2b05fe2323cf4ed7e36880e/VSCodeSetup-stable.exe"
+$downloadPath = "$env:TEMP\$packageName"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+if (Test-Path $downloadPath) {
+    Remove-Item -Path $downloadPath -Recurse -Force
 }
 
-Install-ChocolateyPackage $packageName $installerType $installerArgs $url
+New-Item -Type Directory -Path $downloadPath | Out-Null
+
+Download-File $url "$downloadPath\$packageName.$installerType"
+
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
 
 if (Test-Path "$($env:PUBLIC)\Desktop\Visual Studio Code.lnk") {
-    if (Test-ProcessAdminRights) {
-        Remove-Item "$($env:PUBLIC)\Desktop\Visual Studio Code.lnk" -Force
-    } else {
-        Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\Visual Studio Code.lnk' -Force"
-    }
+    Invoke-ElvatedScript { Remove-Item "$($env:PUBLIC)\Desktop\Visual Studio Code.lnk" -Force }
 }
 
 Write-Output "Install some VS Code extensions..."
