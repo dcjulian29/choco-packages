@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2016.8.22</version>
+    <version>2016.10.13</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the application packages for my Development Environments.</description>
@@ -36,7 +36,6 @@
       <dependency id="frhed" />
       <dependency id="sqlitebrowser" />
       <dependency id="postman" />
-      <dependency id="nswagstudio" />
     </dependencies>
   </metadata>
 </package>
