@@ -1,13 +1,15 @@
 ﻿$packageName = "notepadplusplus"
 $installerType = "EXE"
 $installerArgs = "/S"
-$url = "https://notepad-plus-plus.org/repository/6.x/6.9.2/npp.6.9.2.Installer.exe"
+$url = 'https://notepad-plus-plus.org/repository/7.x/7.0/npp.7.Installer.exe'
+$downloadPath = "$env:TEMP\$packageName"
 
-try {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url
-
-    Write-ChocolateySuccess $packageName
-} catch {
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
+if (Test-Path $downloadPath) {
+    Remove-Item -Path $downloadPath -Recurse -Force
 }
+
+New-Item -Type Directory -Path $downloadPath | Out-Null
+
+Download-File $url "$downloadPath\$packageName.$installerType"
+
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
