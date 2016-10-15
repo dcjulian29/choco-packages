@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysql</id>
-    <version>5.7.15</version>
+    <version>5.7.16</version>
     <authors>Oracle</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://mysql.com/</projectUrl>
@@ -10,5 +10,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>MySQL Community Edition is the freely downloadable version of the world's most popular open source database. It is available under the GPL license and is supported by a huge and active community of open source developers.</description>
     <tags>mysql database</tags>
+    <dependencies>
+      <dependency id="posh-mymodules" />
+    </dependencies>
   </metadata>
 </package>
