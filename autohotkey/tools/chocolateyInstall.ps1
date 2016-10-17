@@ -1,10 +1,26 @@
 ﻿$packageName = 'autohotkey'
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
-$url = "http://ahkscript.org/download/ahk-u32.zip"
-$url64 = "http://ahkscript.org/download/ahk-u64.zip"
-$compiler = "http://ahkscript.org/download/ahk2exe.zip"
-$help = "http://ahkscript.org/download/1.1/AutoHotkeyHelp.zip"
-$mklink = "cmd.exe /c mklink"
+$url = "https://autohotkey.com/download/1.1/AutoHotkey_1.1.24.02.zip"
+$downloadPath = "$env:TEMP\$packageName"
+
+$keep = @(
+  "AutoHotkey.chm",
+  "AutoHotkeyU32.exe",
+  "AutoHotkeyU64.exe",
+  "Ahk2Exe.exe",
+  "Unicode 32-bit.bin",
+  "Unicode 64-bit.bin"
+)
+
+if (Test-Path $downloadPath) {
+    Remove-Item -Path $downloadPath -Recurse -Force
+}
+
+New-Item -Type Directory -Path $downloadPath | Out-Null
+
+Download-File $url "$downloadPath\$packageName.zip"
+
+Unzip-File "$downloadPath\$packageName.zip" "$downloadPath\"
 
 if (Test-Path $appDir)
 {
@@ -12,24 +28,22 @@ if (Test-Path $appDir)
   Remove-Item "$($appDir)\*" -Recurse -Force
 }
 
-Install-ChocolateyZipPackage $packageName $url $appDir $url64
-Install-ChocolateyZipPackage $packageName $compiler $appDir
-Install-ChocolateyZipPackage $packageName $help $appDir
+New-Item -Type Directory -Path $appDir | Out-Null
+
+Get-ChildItem -Path $downloadPath -Include $keep -Recurse | Copy-Item -Destination $appDir
 
 if (Test-Path "${env:ChocolateyInstall}\bin\ahk.exe") {
     $cmd = "(Get-Item '${env:ChocolateyInstall}\bin\ahk.exe').Delete()"
 
-    if (Test-ProcessAdminRights) {
-        Invoke-Expression $cmd
-    } else {
-        Start-ChocolateyProcessAsAdmin $cmd
-    }
+    Invoke-ElevatedExpression $cmd
 }
 
-$cmd = "$mklink '${env:ChocolateyInstall}\bin\ahk.exe' '$appDir\AutoHotkey.exe'"
+$mklink = "cmd.exe /c mklink"
 
-if (Test-ProcessAdminRights) {
-    Invoke-Expression $cmd
-} else {
-    Start-ChocolateyProcessAsAdmin $cmd
+$cmd = "$mklink '${env:ChocolateyInstall}\bin\ahk.exe' '$appDir\AutoHotkeyU32.exe'"
+
+if ([System.IntPtr]::Size -ne 4) {
+    $cmd = "$mklink '${env:ChocolateyInstall}\bin\ahk.exe' '$appDir\AutoHotkeyU64.exe'"
 }
+
+Invoke-ElevatedExpression $cmd

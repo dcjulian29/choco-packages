@@ -8,8 +8,4 @@ if (Test-Path $appDir)
 
 $cmd = "(Get-Item `"`${env:ChocolateyInstall}\bin\ahk.exe`").Delete()"
 
-if (Test-ProcessAdminRights) {
-    Invoke-Expression $cmd
-} else {
-    Start-ChocolateyProcessAsAdmin $cmd
-}
+Invoke-ElevatedExpression $cmd
