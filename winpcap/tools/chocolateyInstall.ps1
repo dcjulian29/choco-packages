@@ -1,25 +1,16 @@
-﻿$packageName = "winpcap" # arbitrary name for the package, used in messages
+﻿$packageName = "winpcap"
 $url = "http://www.winpcap.org/install/bin/WinPcap_4_1_3.exe"
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
-$downloadPath = "$env:TEMP\chocolatey\winpcap"
-$installer = "$downloadPath\winpcapInstall.exe"
-$ahkExe = "C:\tools\apps\autohotkey\AutoHotkey.exe"
-$ahkScript = "$toolDir\install.ahk"
+$downloadPath = "$env:TEMP\winpcap"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-}
+$ahkExe = "$env:ChocolateyInstall\bin\ahk.exe"
+$ahkScript = "$PSScriptRoot\install.ahk"
 
 if (Test-Path $downloadPath) {
-    Remove-Item $downloadPath -Recurse -Force | Out-Null
+    Remove-Item -Path $downloadPath -Recurse -Force
 }
 
-New-Item -ItemType directory $downloadPath -Force | Out-Null
+New-Item -Type Directory -Path $downloadPath | Out-Null
 
-Get-ChocolateyWebFile $packageName $installer $url
+Download-File $url "$downloadPath\winpcapInstall.exe"
 
-if (Test-ProcessAdminRights) {
-    Invoke-Expression "$ahkExe $ahkScript"
-} else {
-    Start-ChocolateyProcessAsAdmin "$ahkExe $ahkScript" -noSleep
-}
+Invoke-ElevatedCommand -File $ahkExe -ArgumentList $ahkScript -Wait
