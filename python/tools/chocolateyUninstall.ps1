@@ -1,10 +1,5 @@
 ﻿$packageName = "python"
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
-$ahkExe = "$env:SYSTEMDRIVE\tools\apps\autohotkey\AutoHotkey.exe"
-
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-}
+$ahkExe = "$env:ChocolateyInstall\bin\ahk.exe"
 
 # Unistall wxPython
 $u = Get-ChildItem -Path "$env:SYSTEMDRIVE\python\Lib\site-packages\wx-*" -recurse -Filter "unins000.exe"
@@ -12,7 +7,7 @@ cmd /c "$($u.FullName) /SILENT"
 
 # Uninstall pywin32
 $ahkScript = "$toolDir\uninstall-pywin32.ahk"
-Start-ChocolateyProcessAsAdmin "$ahkExe $ahkScript"
+Invoke-ElevatedCommand -File $ahkExe -ArgumentList $ahkScript -Wait
 
 # Uninstall python
 if (Test-Path "$env:WINDIR\sysnative\WindowsPowerShell\v1.0\powershell.exe") {
@@ -28,8 +23,17 @@ cmd /c "$env:WINDIR\system32\msiexec.exe /qb /x $packageId"
 
 Remove-item "$env:SYSTEMDRIVE\python" -Recurse -Force
 
-if (Test-ProcessAdminRights) {
-    . $toolDir\postUninstall.ps1
-} else {
-    Start-ChocolateyProcessAsAdmin ". $toolDir\postUninstall.ps1"
+Invoke-ElevatedScript {
+    $links = @(
+        "python"
+        "pythonw"
+        "easy_install"
+        "pip"
+    )
+
+    foreach ($link in $links) {
+        if (Test-Path "${env:ChocolateyInstall}\bin\$link.exe") {
+            (Get-Item "${env:ChocolateyInstall}\bin\$link.exe").Delete()
+        }
+    }
 }
