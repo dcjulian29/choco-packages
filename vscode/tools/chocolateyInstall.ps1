@@ -15,7 +15,7 @@ Download-File $url "$downloadPath\$packageName.$installerType"
 Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
 
 if (Test-Path "$($env:PUBLIC)\Desktop\Visual Studio Code.lnk") {
-    Invoke-ElvatedScript { Remove-Item "$($env:PUBLIC)\Desktop\Visual Studio Code.lnk" -Force }
+    Invoke-ElevatedScript { Remove-Item "$($env:PUBLIC)\Desktop\Visual Studio Code.lnk" -Force }
 }
 
 Write-Output "Install some VS Code extensions..."
