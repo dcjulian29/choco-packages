@@ -193,26 +193,50 @@ Enable-WindowsOptionalFeature -All -FeatureName Containers -Online -Verbose -NoR
 Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online | Out-Null
 Get-AppxPackage | Remove-AppxPackage -ErrorAction Silent
 
-Write-Output "Searching for Windows Updates..."
+Write-Output "Waiting for log folder to sync..."
 
-$Criteria = "IsInstalled=0"
-$Searcher = New-Object -ComObject Microsoft.Update.Searcher
-
-$SearchResult = $Searcher.Search($Criteria).Updates
-if ($SearchResult.Count -eq 0) {
-    Write-Output "There are no applicable updates."
-    exit
-} else {
-    $SearchResult | For-Each-Object { Write-Output " * $($_.Title)" }
-    
-    #$Session = New-Object -ComObject Microsoft.Update.Session
-    #$Downloader = $Session.CreateUpdateDownloader()
-    #$Downloader.Updates = $SearchResult
-    #Write-Output "Downloading Updates..."
-    #$Downloader.Download() | Out-Null
-    #Write-Output "Installing Updates..."
-    #$Installer = New-Object -ComObject Microsoft.Update.Installer
-    #$Installer.Updates = $SearchResult
-    #$Result = $Installer.Install()
+while (-not (Test-Path "$env:SYSTEMDRIVE\etc\logs\zzz.log")) {
+    Start-Sleep -Seconds 5
 }
 
+Write-Output "Copying initial log files to sync folder..."
+
+$files = @(
+    "choco",
+    "install",
+    "SetupComplete"
+)
+
+foreach ($file in $files) {
+    if (Test-Path "$env:SYSTEMDRIVE\etc\logs\$($env:COMPUTERNAME)-$file.log") {
+        Move-Item "$env:SYSTEMDRIVE\etc\logs\$($env:COMPUTERNAME)-$file.log" `
+            "$env:SYSTEMDRIVE\etc\logs\$($env:COMPUTERNAME)-$file.old.log" -Force
+    }
+
+    if (Test-Path "$env:WINDIR\Setup\Scripts\$file.log") {
+        Copy-Item "$env:WINDIR\Setup\Scripts\$file.log" `
+            "$env:SYSTEMDRIVE\etc\logs\$($env:COMPUTERNAME)-$file.log" -Force
+    }
+}
+
+$GoFolder = "$env:LOCALAPPDATA\Go-Shell"
+
+New-Item -Type Directory -Path $GoFolder | Out-Null
+
+Set-Content -Path "$GoFolder\go-shell-remember-last.txt" -Value ""
+Set-Content -Path "$GoFolder\go-shell.txt" -Value @"
+etc|C:\etc
+documents|$env:USERPROFILE\documents
+docs|$env:USERPROFILE\documents
+pictures|$env:USERPROFILE\pictures
+pics|$env:USERPROFILE\pictures
+videos|$env:USERPROFILE\videos
+desktop|$env:USERPROFILE\desktop
+downloads|$env:USERPROFILE\downloads
+"@
+
+Write-Output "Initial Setup of Development VM Finished. Rebooting in 30 seconds..."
+
+Start-Sleep -Seconds 30
+
+Restart-Computer -Force
