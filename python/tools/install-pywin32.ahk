@@ -33,7 +33,7 @@ IfExist, %uninstaller%
 }
 
 ; Install
-installer = %A_Temp%\chocolatey\python\pywin32.exe
+installer = %A_Temp%\python\pywin32.exe
 Sleep, 1000
 Run, %installer%
 
