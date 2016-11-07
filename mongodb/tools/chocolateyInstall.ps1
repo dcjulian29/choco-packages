@@ -1,14 +1,19 @@
 $packageName = "mongodb"
 $installerType = "MSI"
 $installerArgs = "/passive /norestart"
-$url = "http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.2.9-signed.msi"
+$url = "http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.2.10-signed.msi"
+$downloadPath = "$env:TEMP\$packageName"
 $dataDir = "$($env:SYSTEMDRIVE)\data\mongo"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+if (Test-Path $downloadPath) {
+    Remove-Item -Path $downloadPath -Recurse -Force
 }
 
-Install-ChocolateyPackage $packageName $installerType $installerArgs "" $url
+New-Item -Type Directory -Path $downloadPath | Out-Null
+
+Download-File $url "$downloadPath\$packageName.$installerType"
+
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
 
 if (-not (Test-Path $dataDir)) {
     New-Item -Type Directory -Path $dataDir | Out-Null
@@ -32,10 +37,6 @@ Add-Content -Path $config -Encoding Ascii -Value "   dbPath: ""$dataDir"""
 Add-Content -Path $config -Encoding Ascii -Value "   directoryPerDB: true"
 Add-Content -Path $config -Encoding Ascii -Value "   engine: wiredTiger"
 
-$cmd = "& ""$($env:ProgramFiles)\MongoDB\Server\3.2\bin\mongod.exe"" --config ""$($env:ProgramFiles)\MongoDB\Server\3.2\bin\mongod.cfg"" --install"
-
-if (Test-ProcessAdminRights) {
-    Invoke-Expression $cmd
-} else {
-    Start-ChocolateyProcessAsAdmin $cmd
-}
+Invoke-ElevatedCommand "$($env:ProgramFiles)\MongoDB\Server\3.2\bin\mongod.exe" `
+    -ArgumentList "--config ""$($env:ProgramFiles)\MongoDB\Server\3.2\bin\mongod.cfg"" --install" `
+    -Wait
