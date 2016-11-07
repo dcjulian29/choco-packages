@@ -1,7 +1,7 @@
 $packageName = "sqlmanagementstudio"
 $installerType = "EXE"
 $installerArgs = "/install /quiet /norestart"
-$url = "http://download.microsoft.com/download/7/8/0/7808D223-499D-4577-812B-9A2A60048841/SSMS-Setup-ENU.exe"
+$url = "https://download.microsoft.com/download/C/B/C/CBCFAAD1-2348-4119-B093-199EE7AADCBC/SSMS-Setup-ENU.exe"
 $downloadPath = "$($env:TEMP)\$packageName"
 
 if (Test-Path $downloadPath)
