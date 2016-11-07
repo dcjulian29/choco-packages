@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>nodejs</id>
-    <version>6.8.0</version>
+    <version>7.0.0</version>
     <authors>Joyent, Inc</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://nodejs.org/</projectUrl>
