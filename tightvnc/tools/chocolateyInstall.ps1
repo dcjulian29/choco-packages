@@ -1,21 +1,20 @@
 $packageName = "tightvnc"
 $installerType = "MSI"
 $installerArgs = "/quiet /norestart"
-$url = "http://www.tightvnc.com/download/2.7.10/tightvnc-2.7.10-setup-32bit.msi"
-$url64 = "http://www.tightvnc.com/download/2.7.10/tightvnc-2.7.10-setup-64bit.msi"
+$url = "http://www.tightvnc.com/download/2.8.5/tightvnc-2.8.5-gpl-setup-32bit.msi"
+$url64 = "http://www.tightvnc.com/download/2.8.5/tightvnc-2.8.5-gpl-setup-64bit.msi"
+$downloadPath = "$env:TEMP\$packageName"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+if ([System.IntPtr]::Size -ne 4) {
+    $url = $url64
 }
 
-try
-{
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+if (Test-Path $downloadPath) {
+    Remove-Item -Path $downloadPath -Recurse -Force
+}
 
-    Write-ChocolateySuccess $packageName
-}
-catch
-{
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
-}
+New-Item -Type Directory -Path $downloadPath | Out-Null
+
+Download-File $url "$downloadPath\$packageName.$installerType"
+
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
