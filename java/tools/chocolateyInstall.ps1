@@ -3,8 +3,8 @@ $installerType = "exe"
 $installerArgs = "/s REBOOT=Suppress WEB_JAVA=0"
 $downloadPath = "$env:TEMP\$packageName"
 
-$url = "http://javadl.oracle.com/webapps/download/AutoDL?BundleId=211997"
-$url64 = "http://javadl.oracle.com/webapps/download/AutoDL?BundleId=211999"
+$url = "http://javadl.oracle.com/webapps/download/AutoDL?BundleId=216432"
+$url64 = "http://javadl.oracle.com/webapps/download/AutoDL?BundleId=216434"
 
 Write-Output "Checking for and uninstalling previous versions of Java..."
 
