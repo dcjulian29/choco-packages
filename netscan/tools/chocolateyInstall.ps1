@@ -26,7 +26,7 @@ if (Test-Path "${env:ProgramFiles(x86)}") {
 Unzip-File "$downloadPath\$packageName.zip" "$downloadPath\"
 
 if (-not (Test-Path $downloadPath\$bits)) {
-    Write-ChocolateyFailure $packageName "Zip file downloaded is corrupt!"
+    Write-Error "Zip file downloaded is corrupt!"
 } else {
     if (Test-Path $appDir)
     {
