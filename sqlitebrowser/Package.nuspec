@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-  <metadata>
-    <id>sqlitebrowser</id>
-    <version>3.9.0</version>
-    <authors>René Peinthor, Martin Kleusberg , Mauricio Piacentini, Justin Clift</authors>
-    <owners>Julian Easterling</owners>
-    <projectUrl>http://sqlitebrowser.org/</projectUrl>
-    <licenseUrl>https://raw.githubusercontent.com/sqlitebrowser/sqlitebrowser/master/LICENSE</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>DB Browser for SQLite is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.</description>
-    <tags>sqlite database browser editor</tags>
-  </metadata>
+    <metadata>
+        <id>sqlitebrowser</id>
+        <version>3.9.1</version>
+        <authors>René Peinthor, Martin Kleusberg , Mauricio Piacentini, Justin Clift</authors>
+        <owners>Julian Easterling</owners>
+        <projectUrl>http://sqlitebrowser.org/</projectUrl>
+        <licenseUrl>https://raw.githubusercontent.com/sqlitebrowser/sqlitebrowser/master/LICENSE</licenseUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>DB Browser for SQLite is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.</description>
+        <tags>sqlite database browser editor</tags>
+        <dependencies>
+            <dependency id="posh-mymodules" />
+        </dependencies>
+    </metadata>
 </package>
