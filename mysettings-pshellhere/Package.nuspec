@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-pshellhere</id>
-    <version>2014.2.21</version>
+    <version>2016.11.9.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>Adds a "PowerShell Here" context menu option to start a PowerShell host in the selected drive or directory.</description>
