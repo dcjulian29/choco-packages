@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>octopusdeploy</id>
-    <version>3.4.2</version>
+    <version>4.0.4</version>
     <authors>Octopus Deploy</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://octopus.com/</projectUrl>
@@ -11,7 +11,7 @@
     <description>Octopus Deploy is an automated deployment tool powered by NuGet. This package contains Octo.exe, a command line tool for creating and deploying releases with Octopus Deploy.</description>
     <tags>octopusdeploy automation deployment</tags>
     <dependencies>
-      <dependency id="posh-mymodules" version="2016.9.23.1" />
+      <dependency id="posh-mymodules" />
     </dependencies>
   </metadata>
 </package>
