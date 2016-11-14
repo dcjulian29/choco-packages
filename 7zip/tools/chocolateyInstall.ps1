@@ -1,8 +1,8 @@
 $packageName = "7zip"
 $installerType = "MSI"
 $installerArgs = "/quiet"
-$url = "http://www.7-zip.org/a/7z1603.exe"
-$url64 = "http://www.7-zip.org/a/7z1603-x64.msi"
+$url = "http://www.7-zip.org/a/7z1604.exe"
+$url64 = "http://www.7-zip.org/a/7z1604-x64.msi"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if ($psISE) {
