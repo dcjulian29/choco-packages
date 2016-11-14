@@ -1,12 +1,17 @@
 $packageName = "sqlite"
-$url = "https://www.sqlite.org/2016/sqlite-tools-win32-x86-3140100.zip"
-
-$downloadPath = "$($env:TEMP)\chocolatey\$($packageName)"
+$url = "https://www.sqlite.org/2016/sqlite-tools-win32-x86-3150100.zip"
+$downloadPath = "$env:TEMP\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+if (Test-Path $downloadPath) {
+    Remove-Item $downloadPath -Recurse -Force | Out-Null
 }
+
+New-Item -Type Directory -Path $downloadPath | Out-Null
+
+Download-File $url "$downloadPath\$packageName.zip"
+
+Unzip-File "$downloadPath\$packageName.zip" "$downloadPath\"
 
 if (Test-Path $appDir)
 {
@@ -14,35 +19,16 @@ if (Test-Path $appDir)
     Remove-Item "$($appDir)" -Recurse -Force
 }
 
-New-Item -Type Directory -Path $appDir | Out-Null
-    
-if (Test-Path $downloadPath)
-{
-    Remove-Item "$($downloadPath)" -Recurse -Force
-}
-
-New-Item -Type Directory -Path $downloadPath | Out-Null
-
-Get-ChocolateyWebFile $packageName "$downloadPath\sqlite.zip" $url
-
-Get-ChocolateyUnzip "$downloadPath\sqlite.zip" "$downloadPath"
-
 Copy-Item -Path "$($downloadPath)\sqlite*\*.exe" -Destination "$appDir" -Recurse
 
-if (Test-ProcessAdminRights) {
-    cmd /c mklink "$env:ChocolateyInstall\bin\sqlite3.exe" "$appDir\sqlite3.exe"
-} else {
-    Start-ChocolateyProcessAsAdmin "cmd /c mklink '$env:ChocolateyInstall\bin\sqlite3.exe' '$appDir\sqlite3.exe'"
-}
+Invoke-ElevatedCommand "cmd.exe" `
+    -ArgumentList "/c mklink '$env:ChocolateyInstall\bin\sqlite3.exe' '$appDir\sqlite3.exe'" `
+    -Wait
 
-if (Test-ProcessAdminRights) {
-    cmd /c mklink /J "$env:ChocolateyInstall\bin\sqlite3_analyzer.exe" "$appDir\sqlite3_analyzer.exe"
-} else {
-    Start-ChocolateyProcessAsAdmin "cmd /c mklink /J '$env:ChocolateyInstall\bin\sqlite3_analyzer.exe' '$appDir\sqlite3_analyzer.exe'"
-}
+Invoke-ElevatedCommand "cmd.exe" `
+    -ArgumentList "/c mklink '$env:ChocolateyInstall\bin\sqlite3_analyzer.exe' '$appDir\sqlite3_analyzer.exe'" `
+    -Wait
 
-if (Test-ProcessAdminRights) {
-    cmd /c mklink "$env:ChocolateyInstall\bin\sqldiff.exe" "$appDir\sqldiff.exe"
-} else {
-    Start-ChocolateyProcessAsAdmin "cmd /c mklink '$env:ChocolateyInstall\bin\sqldiff.exe' '$appDir\sqldiff.exe'"
-}
+Invoke-ElevatedCommand "cmd.exe" `
+    -ArgumentList "/c mklink '$env:ChocolateyInstall\bin\sqldiff.exe' '$appDir\sqldiff.exe'" `
+    -Wait
