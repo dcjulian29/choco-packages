@@ -1,18 +1,18 @@
 $packageName = "mysettings-pshellhere"
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
-try
-{
-    if (Test-ProcessAdminRights) {
-        . $toolDir\postUninstall.ps1
-    } else {
-        Start-ChocolateyProcessAsAdmin ". $toolDir\postUninstall.ps1"
+Invoke-ElevatedScript -ScriptBlock {
+    if (-not $(Test-Path HKCR:)) {
+        New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR
     }
 
-    Write-ChocolateySuccess $packageName
-}
-catch
-{
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
+    $directory = "HKCR:\Directory\shell\PowerShellHere"
+    $drive = "HKCR:\Drive\shell\PowerShellHere"
+
+    if ($(Test-Path $directory)) {
+        Remove-Item -Path $directory -Recurse
+    }
+
+    if ($(Test-Path $drive)) {
+        Remove-Item -Path $drive -Recurse
+    }
 }
