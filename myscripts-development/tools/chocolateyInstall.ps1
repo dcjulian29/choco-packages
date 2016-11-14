@@ -11,7 +11,7 @@ Unzip-File -File "$env:TEMP\$file.zip" -Destination $env:TEMP
 
 if (Test-Path $appDir) {
     Write-Output "Removing previous version of package..."
-    Remove-Item "$($appDir)\*" -Recurse -Force
+    Remove-Item $appDir -Recurse -Force
 }
 
 New-Item -Type Directory -Path $appDir | Out-Null

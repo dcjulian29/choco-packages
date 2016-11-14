@@ -3,5 +3,5 @@ $appDir = "$($env:SYSTEMDRIVE)\tools\binaries"
 
 if (Test-Path $appDir)
 {
-  Remove-Item "$($appDir)/*" -Recurse -Force
+  Remove-Item $appDir -Recurse -Force
 }
