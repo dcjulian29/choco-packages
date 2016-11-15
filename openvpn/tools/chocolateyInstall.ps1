@@ -1,5 +1,5 @@
-﻿$packageName = "openvpn" # arbitrary name for the package, used in messages
-$installerType = "exe" #only one of these two: exe or msi
+﻿$packageName = "openvpn"
+$installerType = "exe"
 $installerArgs = "/S"
 $url = "https://swupdate.openvpn.org/community/releases/openvpn-install-2.3.13-I601-i686.exe"
 $url64 = "https://swupdate.openvpn.org/community/releases/openvpn-install-2.3.13-I601-x86_64.exe"
@@ -14,8 +14,6 @@ if (Test-Path $downloadPath) {
 }
 
 New-Item -Type Directory -Path $downloadPath | Out-Null
-
-$install = "$($packageName)Install"
 
 Download-File $url "$downloadPath\$($packageName)Install.$installerType"
 
