@@ -15,9 +15,11 @@ if (Test-Path $downloadPath) {
 
 New-Item -Type Directory -Path $downloadPath | Out-Null
 
-Download-File $url "$downloadPath\$packageName.$installerType"
+$install = "$($packageName)Install"
 
-Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
+Download-File $url "$downloadPath\$($packageName)Install.$installerType"
+
+Invoke-ElevatedCommand "$downloadPath\$($packageName)Install.$installerType" -ArgumentList $installerArgs -Wait
 
 Invoke-ElevatedCommand "Remove-Item" -ArgumentList "'$($env:PUBLIC)\Desktop\OpenVPN GUI.lnk' -Force" -Wait
 
