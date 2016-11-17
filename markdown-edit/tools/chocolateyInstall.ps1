@@ -1,7 +1,7 @@
 $packageName = "markdown-edit"
 $installerType = "MSI"
 $installerArgs = '/qb SKIPFRAMEWORKCHECK="1"'
-$version = "v1.28"
+$version = "v1.31"
 $url = "https://github.com/mike-ward/Markdown-Edit/releases/download/$version/MarkdownEditSetup.msi"
 
 if ($psISE) {
