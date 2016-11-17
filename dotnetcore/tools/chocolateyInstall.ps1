@@ -1,8 +1,8 @@
-$packageName = "dotnetcli"
+$packageName = "dotnetcore"
 $installerType = 'exe'
 $installerArgs = '/passive'
-$url = 'https://download.microsoft.com/download/0/A/3/0A372822-205D-4A86-BFA7-084D2CBE9EDF/DotNetCore.1.0.1-SDK.1.0.0.Preview2-003131-x86.exe'
-$url64 = 'https://download.microsoft.com/download/0/A/3/0A372822-205D-4A86-BFA7-084D2CBE9EDF/DotNetCore.1.0.1-SDK.1.0.0.Preview2-003131-x64.exe'
+$url = 'https://download.microsoft.com/download/1/4/1/141760B3-805B-4583-B17C-8C5BC5A876AB/Installers/dotnet-dev-win-x86.1.0.0-preview2-1-003177.exe'
+$url64 = 'https://download.microsoft.com/download/1/4/1/141760B3-805B-4583-B17C-8C5BC5A876AB/Installers/dotnet-dev-win-x64.1.0.0-preview2-1-003177.exe'
 $downloadPath = "$env:TEMP\$packageName\"
 
 if ([System.IntPtr]::Size -ne 4) {
