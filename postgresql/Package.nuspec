@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>postgresql</id>
+    <version>9.6.1</version>
+    <authors>The PostgreSQL Global Development Group</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://www.postgresql.org/</projectUrl>
+    <licenseUrl>https://opensource.org/licenses/postgresql</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>PostgreSQL is a powerful, open source object-relational database system. It has more than 15 years of active development and a proven architecture that has earned it a strong reputation for reliability, data integrity, and correctness.</description>
+    <tags>postgresql database</tags>
+    <dependencies>
+      <dependency id="posh-mymodules" />
+    </dependencies>
+  </metadata>
+</package>

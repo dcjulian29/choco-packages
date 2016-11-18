@@ -1,15 +1,7 @@
 $packageName = "mydev-database"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-}
+Invoke-ElevatedCommand "sc.exe" -ArgumentList "config MongoDb start= demand" -Wait
+Invoke-ElevatedCommand "sc.exe" -ArgumentList "config MSSQLSERVER start= demand" -Wait
 
-try {
-    sc.exe config "MongoDb" start= demand
-    sc.exe config "MSSQLSERVER" start= demand
-
-    Write-ChocolateySuccess $packageName
-} catch {
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
-}
+$service = Get-Service | Where-Object { $_.Name -like "postgresql*" }
+Invoke-ElevatedCommand "sc.exe" -ArgumentList "config $($service.Name) start= demand" -Wait
