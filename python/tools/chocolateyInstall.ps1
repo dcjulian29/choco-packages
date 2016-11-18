@@ -40,8 +40,8 @@ Download-File "https://bootstrap.pypa.io/get-pip.py" "$downloadPath\get-pip.py"
 cmd /c "$env:SYSTEMDRIVE\python\python.exe $downloadPath\get-pip.py"
 
 # Install Pywin32
-$pywin = "https://julianscorner.com/downloads/pywin32-219.win32-py2.7.exe"
-$pywin64 = "https://julianscorner.com/downloads/pywin32-219.win-amd64-py2.7.exe"
+$pywin = "https://julianscorner.com/downloads/pywin32-220.win32-py2.7.exe"
+$pywin64 = "https://julianscorner.com/downloads/pywin32-220.win-amd64-py2.7.exe"
 
 if ([System.IntPtr]::Size -ne 4) {
     $pywin = $pywin64
