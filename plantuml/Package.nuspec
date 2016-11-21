@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>plantuml</id>
-    <version>1.8045</version>
+    <version>1.8050</version>
     <authors>PlantUML</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://plantuml.sourceforge.net/</projectUrl>
@@ -11,6 +11,7 @@
     <description>PlantUML is used to draw UML diagram, using a simple and human readable text description.</description>
     <tags>plantuml uml diagram</tags>
     <dependencies>
+      <dependency id="posh-mymodules" />
       <dependency id="graphviz" />
       <dependency id="java" />
     </dependencies>

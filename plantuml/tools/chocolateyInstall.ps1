@@ -1,12 +1,7 @@
 $packageName = "plantuml"
-$url = "https://julianscorner.com/downloads/plantuml.8045.jar"
+$version = "8050"
+$url = "https://julianscorner.com/downloads/plantuml.$version.jar"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
-
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
-
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-}
 
 if (Test-Path $appDir) {
     Write-Output "Removing previous version of package..."
@@ -15,9 +10,9 @@ if (Test-Path $appDir) {
 
 New-Item -Type Directory -Path $appDir | Out-Null
 
-Get-ChocolateyWebFile $packageName "$appDir\$packageName.jar" $url
+Download-File $url "$appDir\$packageName.jar"
 
-Set-Content -Path "$appDir\plantuml.bat" -Value @"
+Set-Content -Path "$env:ChocolateyInstall\bin\plantuml.bat" -Value @"
 @echo off
 
 setlocal
@@ -26,13 +21,7 @@ set GRAPHVIZ_DOT=%SYSTEMDRIVE%\tools\apps\graphviz\bin\dot.exe
 
 path %SYSTEMDRIVE%\tools\apps\graphviz\bin;%JAVA_HOME%\bin;%PATH% 
 
-java -jar $appDir\plantuml.jar %*
+java -jar $appDir\plantuml.$version.jar %*
 
 endlocal
 "@
-
-if (Test-ProcessAdminRights) {
-    . $toolDir\postInstall.ps1
-} else {
-    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
-}
