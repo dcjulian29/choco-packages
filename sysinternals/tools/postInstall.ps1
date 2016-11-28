@@ -2,8 +2,8 @@ $appDir = "$($env:SYSTEMDRIVE)\tools\apps\sysinternals"
 $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 $cmd = "reg.exe import '$toolDir\accepteula.reg'"
-    
-if (Get-ProcessorBits -eq 64) {
+
+if ([System.IntPtr]::Size -ne 4) {
     $cmd = "$cmd /reg:64"
 }
     
