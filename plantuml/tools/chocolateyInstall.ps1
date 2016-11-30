@@ -10,6 +10,10 @@ if (Test-Path $appDir) {
 
 New-Item -Type Directory -Path $appDir | Out-Null
 
+if (Test-Path "$env:ChocolateyInstall\bin\plantuml.bat") {
+    Remove-Item -Path "$env:ChocolateyInstall\bin\plantuml.bat" -Force
+}
+
 Download-File $url "$appDir\$packageName.jar"
 
 Set-Content -Path "$env:ChocolateyInstall\bin\plantuml.bat" -Value @"
