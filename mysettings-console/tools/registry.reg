@@ -22,9 +22,9 @@ Windows Registry Editor Version 5.00
 "EnableColorSelection"=dword:00000000
 "ExtendedEditKey"=dword:00000000
 "ExtendedEditKeyCustom"=dword:00000000
-"FaceName"="Consolas"
+"FaceName"="Lucida Console"
 "FontFamily"=dword:00000036
-"FontSize"=dword:00100000
+"FontSize"=dword:000C0000
 "FontWeight"=dword:00000190
 "FullScreen"=dword:00000000
 "HistoryBufferSize"=dword:00000032
@@ -40,6 +40,6 @@ Windows Registry Editor Version 5.00
 "TrimLeadingZeros"=dword:00000000
 "WindowAlpha"=dword:000000ff
 "WindowPosition"=dword:00000000
-"WindowSize"=dword:00280078
+"WindowSize"=dword:00320078
 "WordDelimiters"=dword:00000000
 
