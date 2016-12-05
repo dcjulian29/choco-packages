@@ -1,7 +1,7 @@
 $packageName = "posh-myprofile"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell"
 
-$version = "2016.9.26.2"
+$version = "2016.12.4.1"
 $repo = "scripts-powershell"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 
