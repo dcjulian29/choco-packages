@@ -1,7 +1,7 @@
 $packageName = "posh-mymodules"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\MyModules"
 
-$version = "2016.11.28.1"
+$version = "2016.12.4.1"
 $repo = "scripts-powershell"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 
@@ -27,6 +27,17 @@ if (-not (Test-Path $appDir)) {
 
 Copy-Item -Path "$($env:TEMP)\$file\MyModules\*" -Destination $appdir -Recurse -Force
 
-# Make sure modules are loaded and available for this session...
-$env:PSModulePath = "$(Split-Path $profile)\MyModules;$($env:PSModulePath)"
-Get-Module -ListAvailable | Out-Null
+# Make sure modules are loaded and available for this and future sessions...
+$PSModulePath = "$(Split-Path $profile)\Modules"
+$PSModulePath = "$(Split-Path $profile)\MyModules;$PSModulePath"
+
+if ((-not ($env:PSModulePath).Contains("$(Split-Path $profile)\MyModules")) -or `
+    (-not ($env:PSModulePath).Contains("$(Split-Path $profile)\Modules"))) {
+    $env:PSModulePath = "$(Split-Path $profile)\MyModules;$($env:PSModulePath)"
+
+    Get-Module -ListAvailable | Out-Null
+
+    Invoke-ElevatedExpression "[Environment]::SetEnvironmentVariable('PSModulePath', '$PSModulePath', 'User')"
+
+    $env:PSModulePath = "$PSModulePath;$($env:PSModulePath)"
+} 
