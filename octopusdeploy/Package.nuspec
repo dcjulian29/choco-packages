@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>octopusdeploy</id>
-    <version>4.0.7</version>
+    <version>4.2.2</version>
     <authors>Octopus Deploy</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://octopus.com/</projectUrl>
