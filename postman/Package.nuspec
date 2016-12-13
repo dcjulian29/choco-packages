@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>postman</id>
-    <version>4.7.2</version>
+    <version>4.9.1</version>
     <authors>Postdot Technologies, Inc.</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://www.getpostman.com/</projectUrl>

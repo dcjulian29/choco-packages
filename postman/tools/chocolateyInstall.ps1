@@ -1,11 +1,20 @@
 $packageName = "postman"
 $installerType = "EXE"
 $installerArgs = '-s'
-$url = "https://dl.pstmn.io/download/latest/win?arch=32"
-$url64 = "https://dl.pstmn.io/download/latest/win?arch=64"
+$url = "https://dl.pstmn.io/download/latest/win32"
+$url64 = "https://dl.pstmn.io/download/latest/win64"
+$downloadPath = "$env:TEMP\$packageName"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+if ([System.IntPtr]::Size -ne 4) {
+    $url = $url64
 }
 
-Install-ChocolateyPackage $packageName $installerType $installerArgs $url $url64
+if (Test-Path $downloadPath) {
+    Remove-Item -Path $downloadPath -Recurse -Force
+}
+
+New-Item -Type Directory -Path $downloadPath | Out-Null
+
+Download-File $url "$downloadPath\$packageName.$installerType"
+
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
