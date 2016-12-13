@@ -1,7 +1,7 @@
 $packageName = "mongodb"
 $installerType = "MSI"
 $installerArgs = "/passive /norestart"
-$url = "http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.2.10-signed.msi"
+$url = "https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.4.0-signed.msi"
 $downloadPath = "$env:TEMP\$packageName"
 $dataDir = "$($env:SYSTEMDRIVE)\data\mongo"
 
@@ -19,7 +19,7 @@ if (-not (Test-Path $dataDir)) {
     New-Item -Type Directory -Path $dataDir | Out-Null
 }
 
-$config = "$($env:ProgramFiles)\MongoDB\Server\3.2\bin\mongod.cfg"
+$config = "$($env:ProgramFiles)\MongoDB\Server\3.4\bin\mongod.cfg"
 
 $dataDir = $dataDir -replace '\\', '/'
 
@@ -37,6 +37,6 @@ Add-Content -Path $config -Encoding Ascii -Value "   dbPath: ""$dataDir"""
 Add-Content -Path $config -Encoding Ascii -Value "   directoryPerDB: true"
 Add-Content -Path $config -Encoding Ascii -Value "   engine: wiredTiger"
 
-Invoke-ElevatedCommand "$($env:ProgramFiles)\MongoDB\Server\3.2\bin\mongod.exe" `
-    -ArgumentList "--config ""$($env:ProgramFiles)\MongoDB\Server\3.2\bin\mongod.cfg"" --install" `
+Invoke-ElevatedCommand "$($env:ProgramFiles)\MongoDB\Server\3.4\bin\mongod.exe" `
+    -ArgumentList "--config ""$($env:ProgramFiles)\MongoDB\Server\3.4\bin\mongod.cfg"" --install" `
     -Wait
