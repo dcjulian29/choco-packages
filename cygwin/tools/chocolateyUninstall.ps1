@@ -4,24 +4,16 @@ $toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
 
 if (Test-Path $appDir)
 {
-    $remove = "Remove-Item '$($appDir)' -Recurse -Force"
-    Start-ChocolateyProcessAsAdmin $remove
+    Remove-Item '$($appDir)' -Recurse -Force
 
-    $cmd = "reg.exe import $toolDir\registry.reg"
-    
-    if (Test-ProcessAdminRights) {
-        Invoke-Expression $cmd
-    } else {
-        Start-ChocolateyProcessAsAdmin "$cmd"
-    }
+    Invoke-ElevatedCommand "reg.exe"
+        -ArgumentList "import $toolDir\registry.reg" `
+        -Wait
 
-    if (Get-ProcessorBits -eq 64) {
-        $cmd = "$cmd /reg:64"
-        if (Test-ProcessAdminRights) {
-            Invoke-Expression $cmd
-        } else {
-            Start-ChocolateyProcessAsAdmin "$cmd"
-        }
+    if ([System.IntPtr]::Size -ne 4) {
+        Invoke-ElevatedCommand "reg.exe"
+            -ArgumentList "import $toolDir\registry.reg /reg:64" `
+            -Wait
     }
 }
 

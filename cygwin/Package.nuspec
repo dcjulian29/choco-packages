@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>cygwin</id>
-    <version>2.5.2</version>
+    <version>2.6.0</version>
     <authors>Red Hat, Inc.</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.cygwin.com/</projectUrl>
@@ -10,5 +10,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Cygwin is a collection of tools which provide a Linux look and feel environment for Windows. It is also a DLL (cygwin1.dll) which acts as a Linux API layer providing substantial Linux API functionality.</description>
     <tags>cygwin</tags>
+    <dependencies>
+      <dependency id="posh-mymodules" />
+    </dependencies>
   </metadata>
 </package>
