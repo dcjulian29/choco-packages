@@ -1,8 +1,8 @@
 $packageName = "python"
 $installerType = "MSI"
 $installerArgs = "/qb! TARGETDIR=$env:SYSTEMDRIVE\python ALLUSERS=1"
-$url = "https://www.python.org/ftp/python/2.7.12/python-2.7.12.amd64.msi"
-$url64 = "https://www.python.org/ftp/python/2.7.12/python-2.7.12.msi"
+$url = "https://www.python.org/ftp/python/2.7.12/python-2.7.12.msi"
+$url64 = "https://www.python.org/ftp/python/2.7.12/python-2.7.12.amd64.msi"
 $downloadPath = "$env:TEMP\$packageName"
 $ahkExe = "$env:ChocolateyInstall\bin\ahk.exe"
 
