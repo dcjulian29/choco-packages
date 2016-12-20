@@ -18,3 +18,6 @@ New-Item -Type Directory -Path $downloadPath | Out-Null
 Download-File $url "$downloadPath\$packageName.$installerType"
 
 Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
+
+Invoke-ElevatedExpression `
+    "[Environment]::SetEnvironmentVariable('DOTNET_CLI_TELEMETRY_OPTOUT','1', 'Machine')"
