@@ -1,17 +1,12 @@
 $packageName = "mysettings-devenv"
 $icon = "https://www.iconfinder.com/icons/37070/download/ico"
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
-
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-}
 
 if (-not (Test-Path $env:SYSTEMDRIVE\code))
 {
     New-Item -Type Directory -Path $env:SYSTEMDRIVE\code | Out-Null
 }
 
-Get-ChocolateyWebFile $packageName $env:SYSTEMDRIVE\code\code.ico $icon
+Download-File $icon $env:SYSTEMDRIVE\code\code.ico
 
 Set-Content $env:SYSTEMDRIVE\code\desktop.ini @"
 [.ShellClassInfo]
@@ -33,10 +28,24 @@ go -Key "code" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
 go -Key "projects" -delete
 go -Key "projects" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
 
-$cmd = "cmd.exe /c '$toolDir\postInstall.bat'"
+Invoke-ElevatedScript {
+    Function Check-MakeSymLinks($folder, $target) {
+        if (Test-Path $folder) {
+            if (-not ((Get-Item $folder).Attributes.ToString() -match "ReparsePoint")) {
+                Remove-Item $folder -Recurse -Force
+                
+                "mklink /J `"$folder`" `"$target`""
+                cmd.exe /c "mklink /J `"$folder`" `"$target`""
+            }
+        }
+    }
 
-if (Test-ProcessAdminRights) {
-    Invoke-Expression $cmd
-} else {
-    Start-ChocolateyProcessAsAdmin $cmd
+    Check-MakeSymLinks "${env:USERPROFILE}\Documents\Visual Studio 2013\Projects" `
+        "${env:SYSTEMDRIVE}\code"
+    Check-MakeSymLinks "${env:USERPROFILE}\Documents\Visual Studio 2015\Projects" `
+        "${env:SYSTEMDRIVE}\code"
+    Check-MakeSymLinks "${env:USERPROFILE}\Documents\Visual Studio 2017\Projects" `
+        "${env:SYSTEMDRIVE}\code"
+    Check-MakeSymLinks "${env:USERPROFILE}\Documents\SQL Server Management Studio" `
+        "${env:SYSTEMDRIVE}\code"
 }
