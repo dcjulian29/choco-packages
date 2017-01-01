@@ -1,5 +1,5 @@
 $packageName = "nmap"
-$version = "7.31"
+$version = "7.40"
 $url = "https://nmap.org/dist/nmap-$($version)-win32.zip"
 $downloadPath = "$env:TEMP\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
