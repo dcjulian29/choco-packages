@@ -1,7 +1,6 @@
 $packageName = "paintnet"
-$installerType = "EXE"
 $installerArgs = "/auto DESKTOPSHORTCUT=0"
-$version = "4.0.12"
+$version = "4.0.13"
 $url = "http://www.dotpdn.com/files/paint.net.$version.install.zip"
 $downloadPath = "$env:TEMP\$packageName"
 
@@ -11,7 +10,9 @@ if (Test-Path $downloadPath) {
 
 New-Item -Type Directory -Path $downloadPath | Out-Null
 
-Download-File $url "$downloadPath\$packageName.$installerType"
-Unzip-File "$downloadPath\$packageName.$installerType" $downloadPath
+Download-File $url "$downloadPath\$packageName.zip"
 
-Invoke-ElevatedCommand "$downloadPath\paint.net.$version.install.exe" -ArgumentList $installerArgs -Wait
+Unzip-File "$downloadPath\$packageName.zip" $downloadPath
+
+Invoke-ElevatedCommand "$downloadPath\paint.net.$version.install.exe" `
+    -ArgumentList $installerArgs -Wait
