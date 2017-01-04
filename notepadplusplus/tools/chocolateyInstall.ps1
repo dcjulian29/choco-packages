@@ -1,7 +1,7 @@
 ﻿$packageName = "notepadplusplus"
 $installerType = "EXE"
 $installerArgs = "/S"
-$url = 'https://notepad-plus-plus.org/repository/7.x/7.2.2/npp.7.2.2.Installer.exe'
+$url = 'https://notepad-plus-plus.org/repository/7.x/7.3/npp.7.3.Installer.exe'
 $downloadPath = "$env:TEMP\$packageName"
 
 if (Test-Path $downloadPath) {
