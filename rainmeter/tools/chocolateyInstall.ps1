@@ -1,17 +1,13 @@
 $packageName = "rainmeter"
-$installerType = "EXE"
 $installerArgs = "/S /STARTUP=1 /ALLUSERS=1"
-$url = "https://github.com/rainmeter/rainmeter/releases/download/v3.3.2.2609/Rainmeter-3.3.2.exe"
+$url = "https://github.com/rainmeter/rainmeter/releases/download/v4.0.0.2746/Rainmeter-4.0.exe"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+if (Test-Path $downloadPath) {
+    Remove-Item -Path $downloadPath -Recurse -Force
 }
 
-try {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url
+New-Item -Type Directory -Path $downloadPath | Out-Null
 
-    Write-ChocolateySuccess $packageName
-} catch {
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
-}
+Download-File $url "$downloadPath\$packageName.exe"
+
+Invoke-ElevatedCommand "$downloadPath\$packageName.exe" -ArgumentList $installerArgs -Wait
