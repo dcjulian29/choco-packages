@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ruby</id>
+    <version>2.3.3</version>
+    <authors>Ruby Community</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://www.ruby-lang.org/en/</projectUrl>
+    <licenseUrl>https://www.ruby-lang.org/en/about/license.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</description>
+    <tags>ruby gem</tags>
+    <dependencies>
+      <dependency id="posh-mymodules" />
+    </dependencies>
+  </metadata>
+</package>
