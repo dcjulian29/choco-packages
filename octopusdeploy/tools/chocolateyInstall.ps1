@@ -2,7 +2,7 @@ $packageName = "octopusdeploy"
 $downloadPath = "$env:TEMP\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
-$url = "https://download.octopusdeploy.com/octopus-tools/4.5.0/OctopusTools.4.5.0.zip"
+$url = "https://download.octopusdeploy.com/octopus-tools/4.5.1/OctopusTools.4.5.1.zip"
 
 if (Test-Path $downloadPath) {
     Remove-Item $downloadPath -Recurse -Force | Out-Null
