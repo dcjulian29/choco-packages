@@ -2,7 +2,7 @@ $packageName = "docker-toolbox"
 $installerType = "EXE"
 $installerArgs = "/SILENT /COMPONENTS=docker,dockermachine,dockercompose"
 
-$url = "https://github.com/docker/toolbox/releases/download/v1.12.5/DockerToolbox-1.12.5.exe"
+$url = "https://github.com/docker/toolbox/releases/download/v1.12.6/DockerToolbox-1.12.6.exe"
 
 $downloadPath = "$env:TEMP\$packageName\"
 
