@@ -1,6 +1,6 @@
 $packageName = "rainmeter"
 $installerArgs = "/S /STARTUP=1 /ALLUSERS=1"
-$url = "https://github.com/rainmeter/rainmeter/releases/download/v4.0.0.2746/Rainmeter-4.0.exe"
+$url = "https://github.com/rainmeter/rainmeter/releases/download/v3.3.2.2609/Rainmeter-3.3.2.exe"
 $downloadPath = "$env:TEMP\$packageName"
 
 if (Test-Path $downloadPath) {
