@@ -1,5 +1,5 @@
 $packageName = "keepass"
-$url = "https://julianscorner.com/downloads/KeePass-2.34.zip"
+$url = "https://julianscorner.com/downloads/KeePass-2.35.zip"
 $downloadPath = "$env:TEMP\chocolatey\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
