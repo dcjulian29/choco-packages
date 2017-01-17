@@ -1,5 +1,5 @@
 $packageName = "posh-pester"
-$version = "3.4.3"
+$version = "3.4.6"
 $url = "https://codeload.github.com/pester/Pester/zip/$version"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\Modules\pester"
 $downloadPath = "$env:TEMP\$packageName"
