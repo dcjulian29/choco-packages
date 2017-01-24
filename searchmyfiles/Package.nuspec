@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>searchmyfiles</id>
-    <version>2.74</version>
+    <version>2.78</version>
     <authors>NirSoft</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.nirsoft.net/utils/search_my_files.html</projectUrl>
