@@ -14,7 +14,7 @@ New-Item -Type Directory -Path $downloadPath | Out-Null
 Download-File $url "$downloadPath\$packageName.zip"
 Unzip-File "$downloadPath\$packageName.zip" "$downloadPath\"
 
-$installFileLocation = [IO.Path]::Combine($downloadPath, "setup-{0}.exe" -f $version)
+$installFileLocation = [IO.Path]::Combine($downloadPath, "setup-{0}-jre.exe" -f $version)
 
 Invoke-ElevatedCommand $installFileLocation -ArgumentList $installerArgs -Wait
 
