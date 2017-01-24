@@ -1,5 +1,5 @@
 $packageName = "git-credential-manager"
-$url = "https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/download/v1.7.0/GCMW-1.7.0.exe"
+$url = "https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/download/v1.8.0/GCMW-1.8.0.exe"
 $installerType = "exe"
 $installerArgs = "/SILENT /NORESTART"
 $downloadPath = "$env:TEMP\$packageName"
