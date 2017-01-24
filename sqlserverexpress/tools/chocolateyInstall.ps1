@@ -1,5 +1,5 @@
 $packageName = "sqlserverexpress"
-$url = "https://julianscorner.com/downloads/sql2016.1.zip"
+$url = "https://download.microsoft.com/download/9/0/7/907AD35F-9F9C-43A5-9789-52470555DB90/ENU/SQLEXPR_x64_ENU.exe"
 $downloadPath = "$($env:TEMP)\$packageName"
 $dataDir = "$($env:SYSTEMDRIVE)\data"
 
@@ -23,9 +23,10 @@ if (Test-Path $downloadPath) {
 
 New-Item -Type Directory -Path $downloadPath | Out-Null
 
-Download-File $url "$downloadPath\$packageName.zip"
-Unzip-File "$downloadPath\$packageName.zip" "$downloadPath\"
+Download-File $url "$downloadPath\$packageName.exe"
 
-Invoke-Expression "$downloadPath\setup.exe $installerArgs"
+Start-Process "$downloadPath\$packageName.exe" "/Q /x:`"$downloadPath\sql`"" -Wait
+
+Start-Process "$downloadPath\sql\setup.exe" "$installerArgs" -Wait
 
 Wait-Process -Name "SETUP" -ErrorAction Silent
