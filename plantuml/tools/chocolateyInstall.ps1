@@ -1,5 +1,5 @@
 $packageName = "plantuml"
-$version = "8050"
+$version = "8054"
 $url = "https://julianscorner.com/downloads/plantuml.$version.jar"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
