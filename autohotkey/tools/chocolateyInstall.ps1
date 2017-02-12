@@ -1,6 +1,6 @@
 ﻿$packageName = 'autohotkey'
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
-$url = "https://autohotkey.com/download/1.1/AutoHotkey_1.1.24.02.zip"
+$url = "https://autohotkey.com/download/1.1/AutoHotkey_1.1.24.05.zip"
 $downloadPath = "$env:TEMP\$packageName"
 
 $keep = @(
