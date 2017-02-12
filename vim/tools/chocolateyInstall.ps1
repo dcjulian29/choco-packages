@@ -1,9 +1,10 @@
 $packageName = "vim"
 
 $version="vim80"
-$w32="$($version)w32.zip"
-$rt="$($version)rt.zip"
-$gv = "g$($version).zip"
+$subversion = "069"
+$w32="$($version)-$($subversion)w32.zip"
+$rt="$($version)-$($subversion)rt.zip"
+$gv = "g$($version)-$($subversion).zip"
 
 $vim = "ftp://ftp.vim.org/pub/vim/pc/$w32"
 $vimrt = "ftp://ftp.vim.org/pub/vim/pc/$rt"
