@@ -42,6 +42,8 @@ if (Test-Path "${env:ProgramFiles(x86)}\Git") {
 & $git config --global alias.visual "!gitk"
 & $git config --global alias.packageid "rev-parse --short=12 HEAD"
 & $git config --global alias.release "!f() { git log $1..$2 --pretty=format:`"%s`" --no-merges; }; f"
+& $git config --global alias.open "!explorer ``git config remote.origin.url``"
+& $git config --global alias.browse "!git open"
 
 ##### Log Related Aliases
 & $git config --global alias.ld "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
