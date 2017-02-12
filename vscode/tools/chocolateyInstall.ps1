@@ -1,7 +1,7 @@
 $packageName = "vscode"
 $installerType = "EXE"
 $installerArgs = "/SILENT /MERGETASKS=!runCode,!addtopath,addcontextmenufolders"
-$url = "https://az764295.vo.msecnd.net/stable/ee428b0eead68bf0fb99ab5fdc4439be227b6281/VSCodeSetup-1.8.1.exe"
+$url = "https://az764295.vo.msecnd.net/stable/27240e71ef390bf2d66307e677c2a333cebf75af/VSCodeSetup-1.9.0.exe"
 $downloadPath = "$env:TEMP\$packageName"
 
 if (Test-Path $downloadPath) {
