@@ -1,25 +1,15 @@
 $packageName = "executor"
 $packageWildCard = "*$($package)*";
-$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\$($packageName)"
 
-try
+if (Test-Path $appDir)
 {
-    if (Test-Path $appDir)
-    {
-      Remove-Item "$($appDir)" -Recurse -Force
-    }
-
-    $location = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
-
-    $key = Get-Item $location
-    if ($key.GetValue("Executor", $null) -ne $null) {
-        Remove-ItemProperty -Path $location -Name "Executor"
-    }
-
-    Write-ChocolateySuccess $packageName
+    Remove-Item "$($appDir)" -Recurse -Force
 }
-catch
-{
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
+
+$location = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
+
+$key = Get-Item $location
+if ($key.GetValue("Executor", $null) -ne $null) {
+    Remove-ItemProperty -Path $location -Name "Executor"
 }
