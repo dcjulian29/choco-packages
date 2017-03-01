@@ -27,25 +27,3 @@ go -Key "code" -delete
 go -Key "code" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
 go -Key "projects" -delete
 go -Key "projects" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
-
-Invoke-ElevatedScript {
-    Function Check-MakeSymLinks($folder, $target) {
-        if (Test-Path $folder) {
-            if (-not ((Get-Item $folder).Attributes.ToString() -match "ReparsePoint")) {
-                Remove-Item $folder -Recurse -Force
-                
-                "mklink /J `"$folder`" `"$target`""
-                cmd.exe /c "mklink /J `"$folder`" `"$target`""
-            }
-        }
-    }
-
-    Check-MakeSymLinks "${env:USERPROFILE}\Documents\Visual Studio 2013\Projects" `
-        "${env:SYSTEMDRIVE}\code"
-    Check-MakeSymLinks "${env:USERPROFILE}\Documents\Visual Studio 2015\Projects" `
-        "${env:SYSTEMDRIVE}\code"
-    Check-MakeSymLinks "${env:USERPROFILE}\Documents\Visual Studio 2017\Projects" `
-        "${env:SYSTEMDRIVE}\code"
-    Check-MakeSymLinks "${env:USERPROFILE}\Documents\SQL Server Management Studio" `
-        "${env:SYSTEMDRIVE}\code"
-}
