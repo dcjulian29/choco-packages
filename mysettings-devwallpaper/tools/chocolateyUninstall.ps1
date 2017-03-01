@@ -11,18 +11,9 @@ public class Win32Api {
 }
 "@
 
-try
-{
-    if (Test-Path $wallpaper) {
-        Remove-Item -Path $wallpaper -Force
-    }
-
-    [Win32Api]::SystemParametersInfo(20, 0, "", 3);
-
-    Write-ChocolateySuccess $packageName
+if (Test-Path $wallpaper) {
+    Remove-Item -Path $wallpaper -Force
 }
-catch
-{
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
-}
+
+[Win32Api]::SystemParametersInfo(20, 0, "", 3);
+
