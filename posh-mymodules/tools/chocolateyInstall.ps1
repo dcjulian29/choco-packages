@@ -1,7 +1,7 @@
 $packageName = "posh-mymodules"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\MyModules"
 
-$version = "2017.1.18.1"
+$version = "2017.3.3.1"
 $repo = "scripts-powershell"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 
@@ -31,8 +31,7 @@ Copy-Item -Path "$($env:TEMP)\$file\MyModules\*" -Destination $appdir -Recurse -
 $PSModulePath = "$(Split-Path $profile)\Modules"
 $PSModulePath = "$(Split-Path $profile)\MyModules;$PSModulePath"
 
-if ((-not ($env:PSModulePath).Contains("$(Split-Path $profile)\MyModules")) -or `
-    (-not ($env:PSModulePath).Contains("$(Split-Path $profile)\Modules"))) {
+if ((-not ($env:PSModulePath).Contains("$(Split-Path $profile)\MyModules"))) {
     $env:PSModulePath = "$(Split-Path $profile)\MyModules;$($env:PSModulePath)"
 
     Get-Module -ListAvailable | Out-Null
