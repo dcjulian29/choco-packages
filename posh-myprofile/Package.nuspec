@@ -7,8 +7,5 @@
     <owners>Julian Easterling</owners>
     <description>A package to download and/or update my powershell profile from GitHub</description>
     <tags>myscripts scripts powershell pshell profile</tags>
-    <dependencies>
-      <dependency id="powershell" />
-    </dependencies>
   </metadata>
 </package>

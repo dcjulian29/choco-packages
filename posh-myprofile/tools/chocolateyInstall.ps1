@@ -37,9 +37,3 @@ Get-ChildItem -Path "$($env:TEMP)\$file" -Recurse |
     Where-Object { $_.FullName -notlike "*Test-Scripts.ps1" } |
     Where-Object { $_.FullName -notlike "*README.md" } |
     Copy-Item -Force -Destination { $_.FullName -replace [regex]::Escape("$($env:TEMP)\$file"), $appdir }
-
-if (Test-Path "$env:APPDATA\PowerShellModules") {
-    # Previous versions of my powershell profile/module would store modules here.
-    # This is no longer the correct location so modules here need to be moved.
-    Move-Item -Path "$env:APPDATA\PowerShellModules" -Destination "$appdir\Modules"
-}
