@@ -1,7 +1,7 @@
 $packageName = "posh-mymodules"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\MyModules"
 
-$version = "2017.3.3.1"
+$version = "2017.3.25.1"
 $repo = "scripts-powershell"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 
