@@ -1,9 +1,5 @@
 $packageName = "myvm-development"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-}
-
 Function Read-MultiLineInput([string]$Message) {
     Add-Type -AssemblyName System.Drawing
     Add-Type -AssemblyName System.Windows.Forms
@@ -83,13 +79,23 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     cmd /c "attrib +S ${env:SYSTEMDRIVE}\home"
 
     Remove-Item -Path "${env:SYSTEMDRIVE}\home\vm\*" -Recurse -Force
-    
-    # I don't want to put my "SyncThing IDs" in a public source control, so prompt for them.
-    $ClientID = Read-Host "Enter the ID for this client"
-    $ServerID = Read-Host "Enter the ID for this server"
-    $Server = Read-Host "Enter the name of the central server"
-    $Key = Read-MultiLineInput "Enter the certificate key"
-    $Cert = Read-MultiLineInput "Enter the certificate"
+
+    $rootPath = "${env:SystemRoot}\Setup\Scripts"
+    $c = "$rootPath\${env:COMPUTERNAME}"
+    if (Test-Path "$rootPath\server.id") {
+        $ClientID = Get-Content "$c.id"
+        $ServerID = Get-Content "$rootPath\server.id"
+        $Server = Get-Content "$rootPath\server.name"
+        $Key = Get-Content "$c.key"
+        $Cert = Get-Content "$c.cert"
+    } else {    
+        $ClientID = Read-MultiLineInput "Enter the ID for this client"
+        $ServerID = Read-MultiLineInput "Enter the ID for this server"
+        $Server = Read-MultiLineInput "Enter the name of the central server"
+        $Key = Read-MultiLineInput "Enter the certificate key"
+        $Cert = Read-MultiLineInput "Enter the certificate"
+    }
+
     $ApiKey = -join ((48..57) + (65..90) + (97..122) | Get-Random -Count 32 | % {[char]$_})
 
     if (-not (Test-Path "$env:LOCALAPPDATA\Syncthing")) {
