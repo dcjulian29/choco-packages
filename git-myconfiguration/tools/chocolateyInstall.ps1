@@ -41,9 +41,22 @@ if (Test-Path "${env:ProgramFiles(x86)}\Git") {
 & $git config --global alias.outgoing "whatchanged ..@{u}"
 & $git config --global alias.visual "!gitk"
 & $git config --global alias.packageid "rev-parse --short=12 HEAD"
-& $git config --global alias.release "!f() { git log $1..$2 --pretty=format:`"%s`" --no-merges; }; f"
+& $git config --global alias.release "!f() { git log $1..$2 --pretty=format:""%s"" --no-merges; }; f"
 & $git config --global alias.open "!explorer ``git config remote.origin.url``"
 & $git config --global alias.browse "!git open"
+& $git config --global alias.aliases "!git config --get-regexp 'alias.*' | sort"
+& $git config --global alias.topic-start "'!branch=`$1; git pull; git checkout -b ""`$branch""; git push -u origin ""`$branch""'"
+& $git config --global alias.cm "commit --message"
+& $git config --global alias.cleanest "clean -ffdx"
+& $git config --global alias.refs-by-date "for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'"
+& $git config --global alias.orphans "fsck --full"
+& $git config --global alias.whorank "shortlog --summary --numbered --no-merges"
+& $git config --global alias.undo-commit "reset --soft HEAD~1"
+& $git config --global alias.root "rev-parse --show-toplevel"
+& $git config --global alias.prune-all "!""git prune --expire=now; git reflog expire --expire-unreachable=now --rewrite --all"""
+& $git config --global alias.repack-all "repack -a -d -f --depth=300 --window=300 --window-memory=1g"
+& $git config --global alias.optimize "!""git prune-all; git repack-all"""
+& $git config --global alias.clean-merged "!git remote | xargs -n 1 git remote prune"
 
 ##### Log Related Aliases
 & $git config --global alias.ld "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
@@ -55,7 +68,9 @@ if (Test-Path "${env:ProgramFiles(x86)}\Git") {
 & $git config --global alias.standup "!git log --since yesterday --author ``git config user.email`` --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
 & $git config --global alias.lastcommit "log --max-count=1"
 & $git config --global alias.who "shortlog -s -e --"
-
+& $git config --global alias.log-refs "log --all --graph --decorate --oneline --simplify-by-decoration --no-merges"
+& $git config --global alias.log-fetched "log --oneline HEAD..origin/master"
+    
 ##### Git Flow Aliases
 & $git config --global alias.gffs "flow feature start"
 & $git config --global alias.gfff "flow feature finish"
