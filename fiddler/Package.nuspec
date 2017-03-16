@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>fiddler</id>
-    <version>4.6.20171.7553</version>
+    <version>4.6.20171.9220</version>
     <authors>Telerik</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.telerik.com/fiddler</projectUrl>
