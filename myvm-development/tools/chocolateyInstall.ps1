@@ -66,15 +66,14 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     }
 
     cmd /c "attrib -S ${env:SYSTEMDRIVE}\home"
-    Push-Location "${env:SYSTEMDRIVE}\"
 
-    if (Test-ProcessAdminRights) {
+    if (Test-Elevation) {
         cmd /c "mklink /D etc ${env:SYSTEMDRIVE}\home\vm\etc"
     } else {
-        Start-ChocolateyProcessAsAdmin "cmd /c mklink /D etc ${env:SYSTEMDRIVE}\home\vm\etc"
+        Invoke-ElevatedCommand -File "cmd.exe" `
+            -ArgumentList "/c mklink /D etc ${env:SYSTEMDRIVE}\home\vm\etc" `
+            -Wait
     }
-
-    Pop-Location
 
     cmd /c "attrib +S ${env:SYSTEMDRIVE}\home"
 
