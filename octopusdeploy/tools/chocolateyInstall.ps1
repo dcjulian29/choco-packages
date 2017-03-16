@@ -2,7 +2,7 @@ $packageName = "octopusdeploy"
 $downloadPath = "$env:TEMP\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
-$url = "https://download.octopusdeploy.com/octopus-tools/4.5.3/OctopusTools.4.5.3.zip"
+$url = "https://download.octopusdeploy.com/octopus-tools/4.10.2/OctopusTools.4.10.2.zip"
 
 if (Test-Path $downloadPath) {
     Remove-Item $downloadPath -Recurse -Force | Out-Null
@@ -15,14 +15,13 @@ $file = "$downloadPath\$packageName.zip"
 Download-File $url $file
 Unzip-File $file $downloadPath
 
-if (Test-Path $appDir)
-{
-  Remove-Item "$($appDir)" -Recurse -Force
+if (Test-Path $appDir) {
+  Remove-Item $appDir -Recurse -Force
 }
 
 New-Item -Type Directory -Path $appDir | Out-Null
 
-Copy-Item -Path $downloadPath -Destination "$appDir"
+Copy-Item -Path "$downloadPath\octo.exe" -Destination "$appDir\"
 
 Invoke-ElevatedCommand "cmd.exe" `
     -ArgumentList "/c mklink '$env:ChocolateyInstall\bin\octo.exe' '$appDir\octo.exe'" -Wait
