@@ -1,6 +1,6 @@
 $packageName = "greenshot"
 $installerArgs = "/SILENT /NORESTART"
-$url = "https://github.com/greenshot/greenshot/releases/download/Greenshot-RELEASE-1.2.9.104/Greenshot-INSTALLER-1.2.9.104-RELEASE.exe"
+$url = "https://github.com/greenshot/greenshot/releases/download/Greenshot-RELEASE-1.2.9.129/Greenshot-INSTALLER-1.2.9.104-RELEASE.exe"
 $downloadPath = "$env:TEMP\$packageName"
 
 if (Test-Path $downloadPath) {
