@@ -1,6 +1,6 @@
 $packageName = "ipscan"
-$url = "https://github.com/angryziber/ipscan/releases/download/3.5/ipscan-win32-3.5.exe"
-$url64 = "https://github.com/angryziber/ipscan/releases/download/3.5/ipscan-win64-3.5.exe"
+$url = "https://github.com/angryziber/ipscan/releases/download/3.5.1/ipscan-win32-3.5.1.exe"
+$url64 = "https://github.com/angryziber/ipscan/releases/download/3.5.1/ipscan-win64-3.5.1.exe"
 $downloadPath = "$env:TEMP\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
 
