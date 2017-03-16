@@ -1,7 +1,7 @@
 $packageName = "executor"
 $url = "http://www.1space.dk/executor/Executor.zip"
 $appDir = "$($env:SYSTEMDRIVE)\tools\$($packageName)"
-$downloadPath = "$env:TEMP\$packageName"
+$downloadPath = "$env:TEMP\$($packageName)Download"
 
 if (Test-Path $downloadPath) {
     Remove-Item $downloadPath -Recurse -Force | Out-Null
@@ -18,8 +18,8 @@ if (Test-Path $appDir) {
 
 New-Item -Type Directory -Path $appDir | Out-Null
 
-Unzip-File "$downloadPath\$packageName.zip" "$appdir"
-
+Unzip-File "$downloadPath\$packageName.zip" "$downloadPath"
+Copy-Item -Path "$downloadPath\Executor\*" $appDir
 Copy-Item -Path "$PSScriptRoot\*.cmd" $appDir
 
 $location = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
