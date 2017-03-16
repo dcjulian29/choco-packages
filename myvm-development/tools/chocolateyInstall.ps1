@@ -1,5 +1,7 @@
 $packageName = "myvm-development"
 
+$ErrorActionPreference = "Stop"
+
 Function Read-MultiLineInput([string]$Message) {
     Add-Type -AssemblyName System.Drawing
     Add-Type -AssemblyName System.Windows.Forms
@@ -44,40 +46,9 @@ Function Read-MultiLineInput([string]$Message) {
 }
 
 if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
-    if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm"))
-    {
+    if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm")) {
         New-Item -Type Directory -Path "${env:SYSTEMDRIVE}\home\vm" | Out-Null
-
-        if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\etc"))
-        {
-            New-Item -Type Directory -Path "${env:SYSTEMDRIVE}\home\vm\etc" | Out-Null
-        }
     }
-    
-    if (Test-Path "${env:SYSTEMDRIVE}\etc") {
-        # Test if etc is already SYMLINKD to the "home" etc            
-        New-Item -ItemType File -Path "${env:SYSTEMDRIVE}\etc\${env:COMPUTERNAME}-${env:USERNAME}.txt"
-        
-        if (Test-Path "${env:SYSTEMDRIVE}\home\vm\etc\${env:COMPUTERNAME}-${env:USERNAME}.txt") {
-            cmd /c "rmdir ${env:SYSTEMDRIVE}\etc"
-        } else {
-            Remove-Item "${env:SYSTEMDRIVE}\etc" -Recurse -Force
-        }
-    }
-
-    cmd /c "attrib -S ${env:SYSTEMDRIVE}\home"
-
-    if (Test-Elevation) {
-        cmd /c "mklink /D etc ${env:SYSTEMDRIVE}\home\vm\etc"
-    } else {
-        Invoke-ElevatedCommand -File "cmd.exe" `
-            -ArgumentList "/c mklink /D etc ${env:SYSTEMDRIVE}\home\vm\etc" `
-            -Wait
-    }
-
-    cmd /c "attrib +S ${env:SYSTEMDRIVE}\home"
-
-    Remove-Item -Path "${env:SYSTEMDRIVE}\home\vm\*" -Recurse -Force
 
     $rootPath = "${env:SystemRoot}\Setup\Scripts"
     $c = "$rootPath\${env:COMPUTERNAME}"
@@ -175,7 +146,7 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     Set-Content -Path "$env:LOCALAPPDATA\Syncthing\cert.pem" -Value $Cert
     Set-Content -Path "$env:LOCALAPPDATA\Syncthing\key.pem" -Value $Key
 
-    Start-Process -FilePath "$env:SYSTEMDRIVE\tools\apps\syncthing\syncthing.exe" `
+    Start-Process -FilePath "$env:ChocolateyInstall\bin\syncthing.exe" `
         -ArgumentList "-no-console -no-browser"
     
     Write-Output "Waiting for enough of the initial synchronization to occur..."
@@ -185,6 +156,14 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     }
     
     Write-Output "Found what I'm looking for... :)"
+
+    if (Test-Elevation) {
+        cmd /c "mklink /D  ${env:SYSTEMDRIVE}\etc ${env:SYSTEMDRIVE}\home\vm\etc"
+    } else {
+        Invoke-ElevatedCommand -File "cmd.exe" `
+            -ArgumentList "/c mklink /D  ${env:SYSTEMDRIVE}\etc ${env:SYSTEMDRIVE}\home\vm\etc" `
+            -Wait
+    }
 }
 
 Write-Output "Installing .Net 3.x Framework..."
