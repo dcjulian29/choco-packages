@@ -1,8 +1,8 @@
 $packageName = "wireshark"
 $installerType = "EXE"
 $installerArgs = "/S /quicklaunchicon=no"
-$url = "https://www.wireshark.org/download/win32/all-versions/Wireshark-win32-2.2.3.exe"
-$url64 = "https://www.wireshark.org/download/win64/all-versions/Wireshark-win64-2.2.3.exe"
+$url = "https://www.wireshark.org/download/win32/all-versions/Wireshark-win32-2.2.4.exe"
+$url64 = "https://www.wireshark.org/download/win64/all-versions/Wireshark-win64-2.2.4.exe"
 $downloadPath = "$env:TEMP\$packageName"
 
 if ([System.IntPtr]::Size -ne 4) {
