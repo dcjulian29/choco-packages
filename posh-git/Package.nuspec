@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>posh-git</id>
-    <version>0.6.1</version>
+    <version>0.7.0.1</version>
     <authors>Keith Dahlby</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://github.com/dahlbyk/posh-git</projectUrl>
@@ -11,8 +11,8 @@
     <description>posh-git is a PowerShell module which provides Git/PowerShell integration.</description>
     <tags>git powershell</tags>
     <dependencies>
-      <dependency id="powershell" />
-      <dependency id="git" version="1.8.4" />
+      <dependency id="posh-mymodules" />
+      <dependency id="git" />
     </dependencies>
   </metadata>
 </package>
