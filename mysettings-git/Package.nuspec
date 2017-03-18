@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mysettings-git</id>
+    <version>2017.3.17.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>My custom configuration and aliases for the Git SCM tool.</description>
+    <tags>git configuration custom</tags>
+    <dependencies>
+      <dependency id="git" />
+      <dependency id="gitflow" />
+      <dependency id="poshgit" />
+      <dependency id="kdiff3" />
+      <dependency id="vim" />
+    </dependencies>
+  </metadata>
+</package>
