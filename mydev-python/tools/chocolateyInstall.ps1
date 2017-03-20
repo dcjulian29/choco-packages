@@ -1,20 +1,36 @@
 $packageName = "mydev-python"
+$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
 
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
-
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+if (Test-Path $downloadPath) {
+    Remove-Item $downloadPath -Recurse -Force | Out-Null
 }
 
-& C:\python\scripts\pip.exe install pylint
-& C:\python\scripts\pip.exe install pep8
+New-Item -Type Directory -Path $downloadPath | Out-Null
 
-& C:\python\scripts\easy_install.exe -U sqlalchemy
-& C:\python\scripts\easy_install.exe -U pymongo
-& C:\python\scripts\easy_install.exe -U winpdb
+Push-Location $downloadPath
 
-if (Test-ProcessAdminRights) {
-    . $toolDir\postInstall.ps1
-} else {
-    Start-ChocolateyProcessAsAdmin ". $toolDir\postInstall.ps1"
-}
+# Install ez_setup
+$version = "0.9"
+$ezsetup = "https://pypi.python.org/packages/source/e/ez_setup/ez_setup-$version.tar.gz"
+
+Download-File $ezsetup "ez_setup.tar.gz"
+
+& 'C:\Program Files\7-Zip\7z.exe' e "ez_setup.tar.gz"
+& 'C:\Program Files\7-Zip\7z.exe' x "ez_setup-$version.tar"
+
+
+& python.exe "ez_setup-$version\ez_setup.py"
+
+# Install pip
+Download-File "https://bootstrap.pypa.io/get-pip.py" "get-pip.py"
+
+Pop-Location
+
+& python.exe get-pip.py
+
+& pip.exe install pylint
+& pip.exe install pep8
+
+& easy_install.exe -U sqlalchemy
+& easy_install.exe -U pymongo
+& easy_install.exe -U winpdb
