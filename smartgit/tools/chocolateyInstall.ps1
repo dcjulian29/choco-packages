@@ -1,5 +1,5 @@
 $packageName = "smartgit"
-$downloadPath = "$env:TEMP\$packageName"
+$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
 $installerArgs = '/sp- /silent /norestart'
 $version = '17_0_2'
 
