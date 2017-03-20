@@ -13,13 +13,13 @@
       <dependency id="mysettings-ipv6" />
       <dependency id="dotnet4.6.2" />
       <dependency id="powershell" />
-      <dependency id="posh-pscx" />
+      <dependency id="pscx" />
       <dependency id="myscripts-binaries" />
       <dependency id="sysinternals" />
       <dependency id="mysettings-console" />
       <dependency id="mysettings-explorer" />
       <dependency id="mysettings-notepadplusplus" />
-      <dependency id="mysettings-pshellhere" />
+      <dependency id="powershellhere" />
     </dependencies>
   </metadata>
 </package>
