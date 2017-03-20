@@ -1,7 +1,7 @@
 $packageName = "sqlite"
 $url = "https://www.sqlite.org/2017/sqlite-tools-win32-x86-3170000.zip"
-$downloadPath = "$env:TEMP\$packageName"
-$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
+$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
+$appDir = "$($env:SYSTEMDRIVE)\tools\$($packageName)"
 
 if (Test-Path $downloadPath) {
     Remove-Item $downloadPath -Recurse -Force | Out-Null

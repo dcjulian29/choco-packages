@@ -1,7 +1,7 @@
 $packageName = "regexbuilder"
 $url = "https://julianscorner.com/downloads/RegexBuilder_1.4.zip"
-$downloadPath = "$env:TEMP\chocolatey\$packageName"
-$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
+$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
+$appDir = "$($env:SYSTEMDRIVE)\tools\$($packageName)"
 
 if ($psISE) {
     Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"

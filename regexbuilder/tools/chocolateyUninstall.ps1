@@ -1,5 +1,5 @@
 $packageName = "regexbuilder"
-$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
+$appDir = "$($env:SYSTEMDRIVE)\tools\$($packageName)"
 
 try
 {
