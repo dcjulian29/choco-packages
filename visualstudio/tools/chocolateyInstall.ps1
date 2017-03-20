@@ -1,12 +1,9 @@
 $packageName = "visualstudio"
 $installerType = "EXE"
 $installerArgs = "/PASSIVE /NORESTART"
+$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
 
 $env:SEE_MASK_NOZONECHECKS = 1
-
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
-}
 
 if ($env:chocolateyInstallArguments) {
     $arguments = ($env:chocolateyInstallArguments).ToLower()
@@ -29,22 +26,14 @@ switch ($arguments) {
     }
 }
 
-$update = "http://download.microsoft.com/download/4/8/f/48f0645f-51b6-4733-b808-63e640cddaec/vs2015.3.exe"
-
-if (Test-Path 'HKLM:\SOFTWARE\Wow6432Node' ) {
-    $path = 'HKLM:\SOFTWARE\Wow6432Node'
-} else {
-    $path = 'HKLM:\SOFTWARE\'
+if (Test-Path $downloadPath) {
+    Remove-Item -Path $downloadPath -Recurse -Force
 }
 
-$installDir = "$path\Microsoft\VisualStudio"
+New-Item -Type Directory -Path $downloadPath | Out-Null
 
-if (Get-ChildItem $installDir -ErrorAction SilentlyContinue `
-        | ? { ($_.PSChildName -match "^14.0$") } `
-        | ? {$_.property -contains "InstallDir"}) {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $update -validExitCodes @(0, 3010)
-} else {
-    Install-ChocolateyPackage $packageName $installerType $installerArgs $url -validExitCodes @(0, 3010)
-}
+Download-File $url "$downloadPath\$packageName.$installerType"
+
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
 
 Remove-Item env:SEE_MASK_NOZONECHECKS -Force
