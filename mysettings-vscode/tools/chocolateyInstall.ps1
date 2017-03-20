@@ -1,24 +1,6 @@
-$packageName = "vscode"
-$installerType = "EXE"
-$installerArgs = "/SILENT /MERGETASKS=!runCode,!addtopath,addcontextmenufolders"
-$url = "https://az764295.vo.msecnd.net/stable/27240e71ef390bf2d66307e677c2a333cebf75af/VSCodeSetup-1.9.0.exe"
-$downloadPath = "$env:TEMP\$packageName"
+$packageName = "mysettings-vscode"
 
-if (Test-Path $downloadPath) {
-    Remove-Item -Path $downloadPath -Recurse -Force
-}
-
-New-Item -Type Directory -Path $downloadPath | Out-Null
-
-Download-File $url "$downloadPath\$packageName.$installerType"
-
-Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
-
-if (Test-Path "$($env:PUBLIC)\Desktop\Visual Studio Code.lnk") {
-    Invoke-ElevatedScript { Remove-Item "$($env:PUBLIC)\Desktop\Visual Studio Code.lnk" -Force }
-}
-
-Write-Output "Install some VS Code extensions..."
+Write-Output "Installing some VS Code extensions..."
 
 if (-not (Test-Path "$env:USERPROFILE\.vscode\extensions")) {
     New-Item -Type Directory -Path "$env:USERPROFILE\.vscode\extensions" | Out-Null
@@ -37,4 +19,3 @@ Start-Process -FilePath $code -ArgumentList "--install-extension msjsdiag.debugg
 Start-Process -FilePath $code -ArgumentList "--install-extension samverschueren.yo" -NoNewWindow -Wait
 Start-Process -FilePath $code -ArgumentList "--install-extension rprouse.theme-obsidian" -NoNewWindow -Wait
 Start-Process -FilePath $code -ArgumentList "--install-extension cake-build.cake-vscode" -NoNewWindow -Wait
-
