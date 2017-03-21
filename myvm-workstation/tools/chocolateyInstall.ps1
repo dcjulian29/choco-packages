@@ -1,9 +1,5 @@
 $packageName = "myvm-workstation"
 
-if (-not (Test-Path $env:SYSTEMDRIVE\etc)) {
-    New-Item -Type Directory -Path $env:SYSTEMDRIVE\etc | Out-Null
-}
-
 if (-not (Test-Path $env:SYSTEMDRIVE\tools)) {
     New-Item -Type Directory -Path $env:SYSTEMDRIVE\tools | Out-Null
     if (-not (Test-Path $env:SYSTEMDRIVE\tools\apps))
