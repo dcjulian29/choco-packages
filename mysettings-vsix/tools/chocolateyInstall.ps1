@@ -30,3 +30,6 @@ Install-ChocolateyVsixPackage "SlowCheetah - XML Transforms" `
 
 Install-ChocolateyVsixPackage "powershelltools" `
     "$vsgallery/c9eb3ba8-0c59-4944-9a62-6eee37294597/file/199313/3/PowerShellTools.14.0.vsix"
+
+Install-ChocolateyVsixPackage "EditorConfig" `
+    "$vsgallery/c8bccfe2-650c-4b42-bc5c-845e21f96328/file/75539/12/EditorConfigPlugin.vsix"
