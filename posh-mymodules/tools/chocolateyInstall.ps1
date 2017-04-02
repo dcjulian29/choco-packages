@@ -1,6 +1,6 @@
 $packageName = "posh-mymodules"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\MyModules"
-$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
+$downloadPath = "$env:LOCALAPPDATA\Temp"
 
 $version = "${env:ChocolateyPackageVersion}"
 $repo = "scripts-powershell"
@@ -8,8 +8,8 @@ $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 
 $file = "$repo-$version"
 
-if (Test-Path "$downloadPath") {
-    Remove-Item "$downloadPath" -Recurse -Force
+if (Test-Path "$downloadPath\$file") {
+    Remove-Item "$downloadPath\$file" -Recurse -Force
 }
 
 (New-Object System.Net.WebClient).DownloadFile("$url", "$downloadPath\$file.zip")
@@ -30,9 +30,11 @@ Copy-Item -Path "$downloadPath\$file\MyModules\*" -Destination $appdir -Recurse 
 
 # Make sure modules are loaded and available for this and future sessions...
 if ((-not ($env:PSModulePath).Contains("$(Split-Path $profile)\MyModules"))) {
-    $env:PSModulePath = "$(Split-Path $profile)\MyModules;$($env:PSModulePath)"
+    $PSModulePath = "$(Split-Path $profile)\MyModules;$($env:PSModulePath)"
 
+    $env:PSModulePath = $PSModulePath
+    
     Get-Module -ListAvailable | Out-Null
-
-    Invoke-ElevatedExpression "[Environment]::SetEnvironmentVariable('PSModulePath', '$PSModulePath', 'User')"
+    
+    Invoke-Expression "[Environment]::SetEnvironmentVariable('PSModulePath', '$PSModulePath', 'User')"
 } 
