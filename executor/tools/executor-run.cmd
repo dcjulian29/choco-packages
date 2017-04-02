@@ -8,7 +8,9 @@ set EXDST=%TEMP%\executor
 
 if exist %EXDST% (
   echo Stopping the running Executor process...
-  %EXDST%\executor.exe -exit
+  if exist %EXDST%\executor.exe (
+    %EXDST%\executor.exe -exit
+  )
   
   ping 1.1.1.1 -n 1 -w 5000 >NUL
 
