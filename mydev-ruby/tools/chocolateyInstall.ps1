@@ -13,4 +13,4 @@ gem install --local "$downloadPath\rubygems.gem"
 
 update_rubygems
 
-& gem.exe install jekyll
+gem install jekyll
