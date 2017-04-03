@@ -10,8 +10,6 @@
     <dependencies>
       <dependency id="visualstudio" />
       <dependency id="resharper" />
-      <dependency id="dotpeek" />
-      <dependency id="dotcover" />
       <dependency id="mysettings-vsix" />
       <dependency id="webpi" />
       <dependency id="mysettings-vscode" />
