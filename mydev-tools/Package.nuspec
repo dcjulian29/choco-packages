@@ -32,7 +32,6 @@
       <dependency id="grepwin" />
       <dependency id="windirstat" />
       <dependency id="frhed" />
-      <dependency id="sqlitebrowser" />
       <dependency id="postman" />
     </dependencies>
   </metadata>
