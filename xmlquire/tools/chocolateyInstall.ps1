@@ -18,6 +18,6 @@ New-Item -Type Directory -Path $appDir | Out-Null
     
 Push-Location $downloadPath
 
-& 'C:\Program Files\7-Zip\7z.exe' x $downloadPath\$packageName.zip
+& 7z.exe x $downloadPath\$packageName.zip
 
 Copy-Item -Path "$downloadPath\Application Files\*\*" -Destination "$appDir" -Recurse -Container

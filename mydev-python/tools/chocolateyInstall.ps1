@@ -15,8 +15,8 @@ $ezsetup = "https://pypi.python.org/packages/source/e/ez_setup/ez_setup-$version
 
 Download-File $ezsetup "ez_setup.tar.gz"
 
-& 'C:\Program Files\7-Zip\7z.exe' e "ez_setup.tar.gz"
-& 'C:\Program Files\7-Zip\7z.exe' x "ez_setup-$version.tar"
+& 7z.exe e "ez_setup.tar.gz"
+& 7z.exe x "ez_setup-$version.tar"
 
 
 & python.exe "ez_setup-$version\ez_setup.py"
