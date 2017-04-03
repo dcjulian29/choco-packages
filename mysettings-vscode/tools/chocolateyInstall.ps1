@@ -19,3 +19,10 @@ Start-Process -FilePath $code -ArgumentList "--install-extension msjsdiag.debugg
 Start-Process -FilePath $code -ArgumentList "--install-extension samverschueren.yo" -NoNewWindow -Wait
 Start-Process -FilePath $code -ArgumentList "--install-extension rprouse.theme-obsidian" -NoNewWindow -Wait
 Start-Process -FilePath $code -ArgumentList "--install-extension cake-build.cake-vscode" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension DotJoshJohnson-xml" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension EditorConfig-EditorConfig" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension eg2-tslint" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension haaaad-ansible" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension kisstkondoros-vscode-codemetrics" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension ms-vscode-PowerShell" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension thomas-baumgaertner-vcl" -NoNewWindow -Wait
