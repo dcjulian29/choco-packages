@@ -9,4 +9,11 @@ if ($key.GetValue($packageName, $null) -ne $null) {
 }
 
 New-ItemProperty -Path $location -Name "syncthing" `
-    -Value "$env:ChocolateyInstall/bin/syncthing.exe -no-console -no-browser"
+    -Value "$env:SYSTEMDRIVE\Tools\start-syncthing.cmd"
+
+Set-Content -Path "$env:SYSTEMDRIVE\Tools\start-syncthing.cmd" -Value @"
+@echo off
+
+echo Starting Syncthing...
+start $env:ChocolateyInstall/bin/syncthing.exe -no-console -no-browser
+"@
