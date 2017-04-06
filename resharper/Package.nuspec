@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>resharper</id>
-    <version>2016.3.2</version>
+    <version>2017.1.0</version>
     <authors>JetBrains</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.jetbrains.com/resharper/index.html</projectUrl>
