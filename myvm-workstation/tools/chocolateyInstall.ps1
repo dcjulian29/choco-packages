@@ -2,10 +2,6 @@ $packageName = "myvm-workstation"
 
 if (-not (Test-Path $env:SYSTEMDRIVE\tools)) {
     New-Item -Type Directory -Path $env:SYSTEMDRIVE\tools | Out-Null
-    if (-not (Test-Path $env:SYSTEMDRIVE\tools\apps))
-    {
-        New-Item -Type Directory -Path $env:SYSTEMDRIVE\tools\apps | Out-Null
-    }
 }
 
 Set-Content $env:SYSTEMDRIVE\tools\desktop.ini @"
