@@ -2,20 +2,20 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-scm</id>
-    <version>2016.7.18</version>
+    <version>2017.3.16.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for Source Control Management for my Development Environments.</description>
     <tags>mydev-scm mydev scm</tags>
     <dependencies>
-      <dependency id="kdiff" />
+      <dependency id="kdiff3" />
       <dependency id="git" />
-      <dependency id="posh-git" />
+      <dependency id="poshgit" />
       <dependency id="gitflow" />
-      <dependency id="git-myconfiguration" />
-      <dependency id="git-credential-manager" />
+      <dependency id="git-credential-manager-for-windows" />
       <dependency id="vim" />
       <dependency id="smartgit" />
+      <dependency id="mysettings-git" />
     </dependencies>
   </metadata>
 </package>

@@ -1,13 +1,18 @@
 $packageName = "myscripts-binaries"
 $appDir = "$($env:SYSTEMDRIVE)\tools\binaries"
-$version = "2016.11.4.1"
+$version = "${env:ChocolateyPackageVersion}"
 $repo = "scripts-binaries"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 $file = "$repo-$version"
+$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
 
-Download-File -Url $url -Destination "$env:TEMP\$file.zip"
+if (-not (Test-Path $downloadPath)) {
+    New-Item -Type Directory -Path $downloadPath | Out-Null
+}
 
-Unzip-File -File "$env:TEMP\$file.zip" -Destination $env:TEMP
+Download-File -Url $url -Destination "$downloadPath\$file.zip"
+
+Unzip-File -File "$downloadPath\$file.zip" -Destination $downloadPath
 
 if (Test-Path $appDir) {
     Write-Output "Removing previous version of package..."
@@ -16,10 +21,10 @@ if (Test-Path $appDir) {
 
 New-Item -Type Directory -Path $appDir | Out-Null
 
-Copy-Item -Path "$($env:TEMP)\$file\*" -Destination $appdir -Recurse -Force
+Copy-Item -Path "$($downloadPath)\$file\*" -Destination $appdir -Recurse -Force
 
-Remove-Item -Path "$($env:TEMP)\$file" -Recurse -Force
-Remove-Item -Path "$($env:TEMP)\$file.zip" -Force
+Remove-Item -Path "$($downloadPath)\$file" -Recurse -Force
+Remove-Item -Path "$($downloadPath)\$file.zip" -Force
 
 if (-not ($($env:PATH).ToLowerInvariant().Contains("$($env:SYSTEMDRIVE)\tools\binaries".ToLowerInvariant()))) {
     Invoke-ElevatedExpression "cmd.exe /c 'setx /m PATH $($env:SYSTEMDRIVE)\tools\binaries;$($env:PATH)'"

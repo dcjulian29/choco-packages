@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mysettings-vim</id>
+    <version>2017.4.6.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>My custom settings for VIM.</description>
+    <tags>vim editor settings custom</tags>
+    <dependencies>
+      <dependency id="vim" />
+    </dependencies>
+  </metadata>
+</package>

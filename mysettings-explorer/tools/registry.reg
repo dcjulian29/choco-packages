@@ -3,7 +3,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Hidden"=dword:00000001
 "HideFileExt"=dword:00000000
-"HideIcons"=dword:00000000
 "SeparateProcess"=dword:00000001
 "StartMenuInit"=dword:00000004
 "NavPaneExpandToCurrentFolder"=dword:00000001
@@ -11,9 +10,6 @@ Windows Registry Editor Version 5.00
 "ShowTaskViewButton"=dword:00000000
 "LaunchTo"=dword:00000001
 "HideIcons"=dword:00000001
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers]
-"DisableAutoplay"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
 "OpenAtLogon"=dword:00000000

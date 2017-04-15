@@ -2,39 +2,36 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2016.10.13</version>
+    <version>2017.3.17.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the application packages for my Development Environments.</description>
     <tags>mydev-tools mydev</tags>
     <dependencies>
       <dependency id="7zip" />
-      <dependency id="java" />
-      <dependency id="bind-tools" />
+      <dependency id="javaruntime" />
+      <dependency id="bind-toolsonly" />
       <dependency id="baretail" />
-      <dependency id="kdiff" />
       <dependency id="wmiexplorer" />
       <dependency id="xmlquire" />
       <dependency id="searchmyfiles" />
-      <dependency id="fiddler" />
+      <dependency id="fiddler4" />
       <dependency id="regexbuilder" />
       <dependency id="linqpad" />
-      <dependency id="cygwin" />
-      <dependency id="chrome" />
+      <dependency id="mysettings-cygwin" />
+      <dependency id="googlechrome" />
       <dependency id="plantuml" />
       <dependency id="tcptrace" />
       <dependency id="proxytrace" />
       <dependency id="expresso" />
-      <dependency id="nsis" />
       <dependency id="selfcert" />
-      <dependency id="markdown-edit" />
-      <dependency id="ldapbrowser" />
-      <dependency id="paintnet" />
+      <dependency id="markdownmonster" />
+      <dependency id="softerraldapbrowser" />
+      <dependency id="paint.net" />
       <dependency id="winmerge" />
       <dependency id="grepwin" />
       <dependency id="windirstat" />
       <dependency id="frhed" />
-      <dependency id="sqlitebrowser" />
       <dependency id="postman" />
     </dependencies>
   </metadata>

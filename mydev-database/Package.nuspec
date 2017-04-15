@@ -2,17 +2,18 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-database</id>
-    <version>2016.11.18</version>
+    <version>2017.4.6.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for databases that I install in my Development Environments by default. Other database platforms are loaded as needed...</description>
     <tags>mydev-database mydev database</tags>
     <dependencies>
       <dependency id="sqlite" />
+      <dependency id="sqlitebrowser" />
       <dependency id="mongodb" />
       <dependency id="nosqlmanager" />
-      <dependency id="sqlserverexpress" />
-      <dependency id="sqlmanagementstudio" />
+      <dependency id="sql-server-express" />
+      <dependency id="sql-server-management-studio" />
       <dependency id="postgresql" />
     </dependencies>
   </metadata>

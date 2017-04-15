@@ -1,39 +1,23 @@
 $packageName = "xmlquire"
 $url = "http://qutoric.com/coherentweb/resources/XMLQuireWin8.zip"
-$appDir = "$($env:SYSTEMDRIVE)\tools\apps\$($packageName)"
-$downloadPath = "$env:TEMP\chocolatey\$packageName"
+$appDir = "$($env:SYSTEMDRIVE)\tools\$($packageName)"
+$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+if (-not (Test-Path $downloadPath)) {
+    New-Item -Type Directory -Path $downloadPath | Out-Null
 }
 
-try
-{
-    if (Test-Path $appDir)
-    {
-        Write-Output "Removing previous version of package..."
-        Remove-Item "$($appDir)" -Recurse -Force
-    }
+Download-File $url "$downloadPath\$packageName.zip"
 
-    New-Item -Type Directory -Path $appDir | Out-Null
+if (Test-Path $appDir) {
+    Write-Output "Removing previous version of package..."
+    Remove-Item "$($appDir)" -Recurse -Force
+}
+
+New-Item -Type Directory -Path $appDir | Out-Null
     
-    if (-not (Test-Path $downloadPath))
-    {
-        New-Item -Type Directory -Path $downloadPath | Out-Null
-    }
+Push-Location $downloadPath
 
-    Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
+& 7z.exe x $downloadPath\$packageName.zip
 
-    Push-Location $downloadPath
-
-    & 'C:\Program Files\7-Zip\7z.exe' x $downloadPath\$packageName.zip
-
-    Copy-Item -Path "$downloadPath\Application Files\*\*" -Destination "$appDir" -Recurse -Container
-
-    Write-ChocolateySuccess $packageName
-}
-catch
-{
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
-}
+Copy-Item -Path "$downloadPath\Application Files\*\*" -Destination "$appDir" -Recurse -Container

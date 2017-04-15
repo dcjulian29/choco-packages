@@ -2,7 +2,7 @@ $packageName = "gitflow"
 $gitflow = "https://github.com/petervanderdoes/gitflow-avh/archive/1.10.1.zip"
 $getoptbin = "https://julianscorner.com/downloads/util-linux-ng-2.14.1-bin.zip"
 $getoptdll = "https://julianscorner.com/downloads/util-linux-ng-2.14.1-dep.zip"
-$downloadPath = "$env:TEMP\$packageName"
+$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
 
 if (Test-Path $downloadPath) {
     Remove-Item -Path $downloadPath -Recurse -Force

@@ -11,8 +11,7 @@
     <description>AVH Edition of the git extensions to provide high-level repository operations for Vincent Driessen's branching model http://nvie.com/posts/a-successful-git-branching-model/</description>
     <tags>git gitflow git-flow avh scm vcs dvcs</tags>
     <dependencies>
-      <dependency id="posh-mymodules" />
-      <dependency id="git" version="2.11.0" />
+      <dependency id="git" />
     </dependencies>
   </metadata>
 </package>

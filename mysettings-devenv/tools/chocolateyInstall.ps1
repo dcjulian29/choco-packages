@@ -21,9 +21,8 @@ attrib.exe +S +H $env:SYSTEMDRIVE\code\desktop.ini
 attrib.exe +S $env:SYSTEMDRIVE\code
 
 Import-Module "${env:USERPROFILE}\Documents\WindowsPowerShell\Modules\go\go.psm1"
-Set-Alias -Name go -Value gd
 
-go -Key "code" -delete
-go -Key "code" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
-go -Key "projects" -delete
-go -Key "projects" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
+gd -Key "code" -delete
+gd -Key "code" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
+gd -Key "projects" -delete
+gd -Key "projects" -SelectedPath "${env:SYSTEMDRIVE}\code" -add

@@ -2,17 +2,21 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-buildtools</id>
-    <version>2016.11.17</version>
+    <version>2017.3.21.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for build tools that I install in my Development Environments.</description>
     <tags>mydev-buildtools mydev build tools</tags>
     <dependencies>
-      <dependency id="nuget" />
-      <dependency id="nugetexplorer" />
-      <dependency id="docker-toolbox" />
+      <dependency id="nuget.commandline" />
+      <dependency id="nugetpackageexplorer" />
+      <dependency id="docker" />
+      <dependency id="docker-compose" />
+      <dependency id="docker-kitematic" />
+      <dependency id="kubernetes-cli" />
       <dependency id="posh-docker" />
-      <dependency id="octopusdeploy" />
+      <dependency id="octopustools" />
+      <dependency id="scriptcs" />
     </dependencies>
   </metadata>
 </package>

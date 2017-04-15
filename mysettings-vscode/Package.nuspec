@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mysettings-vscode</id>
+    <version>2017.3.20.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>My custom configuration and extension I like to use in VS Code.</description>
+    <tags>vscode ide visual studio</tags>
+    <dependencies>
+      <dependency id="visualstudiocode" />
+    </dependencies>
+  </metadata>
+</package>

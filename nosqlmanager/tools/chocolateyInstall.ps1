@@ -2,15 +2,15 @@ $packageName = "nosqlmanager"
 $installerType = "EXE"
 $installerArgs = "/SILENT /NORESTART"
 $url = "http://www.mongodbmanager.com/files/mongodbmanagerpro_inst.exe"
+$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+if (Test-Path $downloadPath) {
+    Remove-Item -Path $downloadPath -Recurse -Force
 }
 
-Install-ChocolateyPackage $packageName $installerType $installerArgs $url
+New-Item -Type Directory -Path $downloadPath | Out-Null
 
-if (Test-ProcessAdminRights) {
-    Remove-Item "$($env:PUBLIC)\Desktop\NoSQL Manager for MongoDB.lnk" -Force
-} else {
-    Start-ChocolateyProcessAsAdmin "Remove-Item '$($env:PUBLIC)\Desktop\NoSQL Manager for MongoDB.lnk' -Force"
-}
+Download-File $url "$downloadPath\$packageName.$installerType"
+
+Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
+
