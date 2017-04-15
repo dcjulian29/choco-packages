@@ -2,9 +2,11 @@ $packageName = "mysettings-cygwin"
 
 $cygwin_root = (Get-ItemProperty 'HKLM:\SOFTWARE\Cygwin\setup' -ea 0).rootdir
 
-Invoke-ElevatedCommand "cmd.exe" `
-    -ArgumentList "/c mklink /J '$cygwin_root\home' '$env:SYSTEMDRIVE\Users'" `
-    -Wait
+if (Test-Path $cygwin_root\home) {
+    Remove-Item $cygwin_root\home -Force
+}
+
+New-Junction -LiteralPath "$cygwin_root\home" -TargetPath "$env:SYSTEMDRIVE\Users"
 
 Push-Location "$cygwin_root"
 
@@ -108,8 +110,6 @@ Invoke-ElevatedScript {
     "wget"
     "xargs"
     "zip")
-
-    $cygwin_root = (Get-ItemProperty 'HKLM:\SOFTWARE\Cygwin\setup' -ea 0).rootdir
 
     foreach ($link in $links) {
         if (Test-Path "${env:ChocolateyInstall}\bin\$link.bat") {
