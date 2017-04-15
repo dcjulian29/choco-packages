@@ -6,10 +6,7 @@
     <authors>Microsoft</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://msdn.microsoft.com/en-us/evalcenter/dn434042.aspx</projectUrl>
-    <description>Microsoft SQL Server 2016 Express is a free, feature-rich edition of SQL Server that is ideal for learning, developing, powering desktop, web &amp; small server applications, and for redistribution by ISVs.</description>
+    <description>Microsoft SQL Server 2016 Express is a free, feature-rich edition of SQL Server that is ideal for learning, developing, powering desktop, web and small server applications.</description>
     <tags>sqlserver sql database</tags>
-    <dependencies>
-      <dependency id="dotnet4.6.2" />
-    </dependencies>
   </metadata>
 </package>
