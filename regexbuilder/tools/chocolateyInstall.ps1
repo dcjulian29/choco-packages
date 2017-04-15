@@ -1,35 +1,21 @@
 $packageName = "regexbuilder"
 $url = "https://julianscorner.com/downloads/RegexBuilder_1.4.zip"
-$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
+$downloadPath = "$env:TEMP\$packageName"
 $appDir = "$($env:SYSTEMDRIVE)\tools\$($packageName)"
 
-if ($psISE) {
-    Import-Module -name "$env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1"
+if (Test-Path $downloadPath) {
+    Remove-Item $downloadPath -Recurse -Force
 }
 
-try
-{
-    if (Test-Path $appDir)
-    {
-      Write-Output "Removing previous version of package..."
-      Remove-Item "$($appDir)\*" -Recurse -Force
-    }
+New-Item -Type Directory -Path $downloadPath | Out-Null
 
-    if (-not (Test-Path $downloadPath)) {
-        New-Item -Type Directory -Path $downloadPath | Out-Null
-    }
+Download-File -Url $url -Destination "$downloadPath\$packageName.zip"
 
-    if (-not (Test-Path $appDir)) {
-        New-Item -Type Directory -Path $appDir | Out-Null
-    }
-
-    Get-ChocolateyWebFile $packageName "$downloadPath\$packageName.zip" $url
-    Get-ChocolateyUnzip "$downloadPath\$packageName.zip" "$appDir\"
-
-    Write-ChocolateySuccess $packageName
+if (Test-Path $appDir) {
+    Write-Output "Removing previous version of package..."
+    Remove-Item $appDir -Recurse -Force
 }
-catch
-{
-    Write-ChocolateyFailure $packageName $($_.Exception.Message)
-    throw
-}
+
+New-Item -Type Directory -Path $appDir | Out-Null
+
+Unzip-File "$downloadPath\$packageName.zip" "$appDir\"
