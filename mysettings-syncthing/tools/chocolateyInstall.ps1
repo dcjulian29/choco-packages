@@ -15,5 +15,5 @@ Set-Content -Path "$env:SYSTEMDRIVE\Tools\start-syncthing.cmd" -Value @"
 @echo off
 
 echo Starting Syncthing...
-start $env:ChocolateyInstall/bin/syncthing.exe -no-console -no-browser
+start $env:ChocolateyInstall\bin\syncthing.exe -no-console -no-browser
 "@
