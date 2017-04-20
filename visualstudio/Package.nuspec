@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>visualstudio</id>
-    <version>2015.3</version>
+    <version>2017.0</version>
     <authors>Microsoft</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.visualstudio.com/</projectUrl>
     <description>Visual Studio is a comprehensive collection of tools and services to help you create a wide variety of apps, both for the Microsoft platform and beyond. Visual Studio also connects all of your projects, teams, and stakeholders.</description>
-    <tags>vs2015 ide visual studio</tags>
+    <tags>vs2017 ide visual studio</tags>
   </metadata>
 </package>

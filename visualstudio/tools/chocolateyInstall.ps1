@@ -1,11 +1,7 @@
 $packageName = "visualstudio"
-$installerType = "EXE"
-$installerArgs = "/PASSIVE /NORESTART"
-$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
+$downloadPath = "$env:TEMP\$packageName"
 
-$env:SEE_MASK_NOZONECHECKS = 1
-
-$url = "http://download.microsoft.com/download/C/7/8/C789377D-7D49-4331-8728-6CED518956A0/vs_enterprise_ENU.exe"
+$url = "https://download.microsoft.com/download/A/A/3/AA372A6A-C137-474D-95B6-865AF23DF0E1/vs_enterprise.exe"
 
 if (Test-Path $downloadPath) {
     Remove-Item -Path $downloadPath -Recurse -Force
@@ -13,8 +9,25 @@ if (Test-Path $downloadPath) {
 
 New-Item -Type Directory -Path $downloadPath | Out-Null
 
-Download-File $url "$downloadPath\$packageName.$installerType"
+Download-File $url "$downloadPath\vs_enterprise.exe"
 
-Invoke-ElevatedCommand "$downloadPath\$packageName.$installerType" -ArgumentList $installerArgs -Wait
+$installerArgs = "--norestart --passive"
 
-Remove-Item env:SEE_MASK_NOZONECHECKS -Force
+$Workloads = @(
+    "Microsoft.VisualStudio.Workload.Data"
+    "Microsoft.VisualStudio.Workload.ManagedDesktop"
+    "Microsoft.VisualStudio.Workload.NetCoreTools"
+    "Microsoft.VisualStudio.Workload.NetWeb"
+    "Component.Redgate.ReadyRoll"
+    "Component.Redgate.SQLPrompt.VsPackage"
+    "Microsoft.Net.Component.4.6.2.TargetingPack"
+    "Microsoft.Net.ComponentGroup.4.6.2.DeveloperTools"
+    "Microsoft.VisualStudio.Component.IntelliTrace.FrontEnd"
+    "Microsoft.VisualStudio.Component.DockerTools"
+)
+
+$Workloads | foreach { $installerArgs += " --add $_" }
+
+$installerArgs += " --wait"
+
+Invoke-ElevatedCommand "$downloadPath\vs_enterprise.exe" -ArgumentList $installerArgs -Wait
