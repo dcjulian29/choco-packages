@@ -21,12 +21,6 @@ Download-File $ezsetup "ez_setup.tar.gz"
 
 & python.exe "ez_setup-$version\ez_setup.py"
 
-# Install pip
-Download-File "https://bootstrap.pypa.io/get-pip.py" "get-pip.py"
-
-Pop-Location
-
-& python.exe get-pip.py
 
 & pip.exe install pylint
 & pip.exe install pep8
