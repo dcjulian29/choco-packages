@@ -83,3 +83,7 @@ Install-VSIX "ReAttach" "8cccc206-b9de-42ef-8f5a-160ad0f017ae/file/86492/14/ReAt
 Install-VSIX "Disable No Source Available Tab" "fdbb2036-471e-40a7-b20e-31f8fd5578fa/file/39083/13/DisableNoSourceAvailableTab%20(2.0%20vs%202017%20support).vsix"
 Install-VSIX "SpecFlow for Visual Studio 2017" "47ad86e2-d0a0-46f0-8746-ad7fe06df6b6/file/242540/3/TechTalk.SpecFlow.VsIntegration.2017-2017.1.6.vsix"
 Install-VSIX "PerfWatson Monitor" "ad0897b3-7537-4c92-a38c-104b0e005206/file/75983/9/PerfWatsonMonitor.vsix"
+
+
+Install-VSIX "SQL Prompt Core" "eb068180-8c2a-4fe8-842f-5af3f0ffddcb/file/249238/9/RedGate.SQLPrompt.VsPackage.vsix"
+Install-VSIX "ReadyRoll for VS2017" "09df02c0-da63-453e-92ed-4dbb738598ac/file/249888/7/ReadyRollSQLServer.vsix"

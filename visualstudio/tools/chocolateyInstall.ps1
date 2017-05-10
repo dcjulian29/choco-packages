@@ -18,8 +18,6 @@ $Workloads = @(
     "Microsoft.VisualStudio.Workload.ManagedDesktop"
     "Microsoft.VisualStudio.Workload.NetCoreTools"
     "Microsoft.VisualStudio.Workload.NetWeb"
-    "Component.Redgate.ReadyRoll"
-    "Component.Redgate.SQLPrompt.VsPackage"
     "Microsoft.Net.Component.4.6.2.TargetingPack"
     "Microsoft.Net.ComponentGroup.4.6.2.DeveloperTools"
     "Microsoft.VisualStudio.Component.IntelliTrace.FrontEnd"
