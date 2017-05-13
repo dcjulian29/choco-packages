@@ -11,7 +11,7 @@ Push-Location $downloadPath
 
 # Install ez_setup
 $version = "0.9"
-$ezsetup = "https://pypi.python.org/packages/source/e/ez_setup/ez_setup-$version.tar.gz"
+$ezsetup = "https://codeload.github.com/ActiveState/ez_setup/tar.gz/v$version"
 
 Download-File $ezsetup "ez_setup.tar.gz"
 
