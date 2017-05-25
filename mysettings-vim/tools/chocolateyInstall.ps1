@@ -32,16 +32,9 @@ hi def link gitcommitSummary Normal
 hi def link gitcommitBlank Normal 
 "@
 
-if (Test-Path "$env:ProgramFiles\Git") {
-    $git = "$env:ProgramFiles\Git\bin\git.exe"
-    if (Test-Path $git) {
-        & $git config --global core.editor "'C:\Program Files\vim\vim80\vim.exe'"
-    }
-}
+$vim = $(Find-ProgramFiles 'vim\vim80\vim.exe') -replace '\\','/'
+$git = Find-ProgramFiles 'Git\bin\git.exe'
 
-if (Test-Path "${env:ProgramFiles(x86)}\Git") {
-    $git = "${env:ProgramFiles(x86)}\Git\bin\git.exe"
-    if (Test-Path $git) {
-        & $git config --global core.editor "'C:\Program Files (x86)\vim\vim80\vim.exe'"
-    }
+if ((Test-Path "$env:ProgramFiles\Git") -or (Test-Path "${env:ProgramFiles(x86)}\Git")) {
+    & $git config --global core.editor "'$vim'"
 }
