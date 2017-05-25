@@ -157,12 +157,8 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     
     Write-Output "Found what I'm looking for... :)"
 
-    if (Test-Elevation) {
-        cmd /c "mklink /D  ${env:SYSTEMDRIVE}\etc ${env:SYSTEMDRIVE}\home\vm\etc"
-    } else {
-        Invoke-ElevatedCommand -File "cmd.exe" `
-            -ArgumentList "/c mklink /D  ${env:SYSTEMDRIVE}\etc ${env:SYSTEMDRIVE}\home\vm\etc" `
-            -Wait
+    if (-not ((Get-Item ${env:SYSTEMDRIVE}\etc).Attributes -band [IO.FileAttributes]::ReparsePoint)) {
+        New-Item -ItemType Junction -Path ${env:SYSTEMDRIVE}\etc -Value ${env:SYSTEMDRIVE}\home\vm\etc
     }
 }
 
