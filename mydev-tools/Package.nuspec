@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2017.3.17.1</version>
+    <version>2017.5.15.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the application packages for my Development Environments.</description>
@@ -27,7 +27,7 @@
       <dependency id="selfcert" />
       <dependency id="markdownmonster" />
       <dependency id="softerraldapbrowser" />
-      <dependency id="paint.net" />
+      <dependency id="gimp" />
       <dependency id="winmerge" />
       <dependency id="grepwin" />
       <dependency id="windirstat" />
