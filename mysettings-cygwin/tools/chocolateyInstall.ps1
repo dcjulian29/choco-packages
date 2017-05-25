@@ -2,11 +2,17 @@ $packageName = "mysettings-cygwin"
 
 $cygwin_root = (Get-ItemProperty 'HKLM:\SOFTWARE\Cygwin\setup' -ea 0).rootdir
 
-if (Test-Path $cygwin_root\home) {
-    Remove-Item $cygwin_root\home -Force
+if ($cygwin_root -eq $null) {
+    throw "Unable to find Cygwin root."
 }
 
-New-Junction -LiteralPath "$cygwin_root\home" -TargetPath "$env:SYSTEMDRIVE\Users"
+if (-not ((Get-Item $cygwin_root\home).Attributes -band [IO.FileAttributes]::ReparsePoint)) {
+    if (Test-Path $cygwin_root\home) {
+        Remove-Item $cygwin_root\home -Force
+    }
+
+    New-Item -ItemType Junction -Path $cygwin_root\home -Value $env:SYSTEMDRIVE\Users
+}
 
 Push-Location "$cygwin_root"
 
@@ -43,32 +49,29 @@ cmd.exe /c "$cygwin_root\bin\mkgroup.exe -l -d > $cygwin_root\etc\group"
 
 Pop-Location
 
-Invoke-ElevatedScript {
-    $etc = "$($env:SYSTEMDRIVE)\etc"
-    $up = "$($env:USERPROFILE)"
+$etc = "$($env:SYSTEMDRIVE)\etc"
+$up = "$($env:USERPROFILE)"
 
-    Function make-filelink ($filename) {
-        if (Test-Path "$($up)\.$filename") {
-            (Get-Item "$($up)\.$filename").Delete()
-        }
-
-        cmd /c "mklink $($up)\.$filename $etc\cygwin\$filename"
+Function make-filelink ($filename) {
+    if (Test-Path "$($up)\.$filename") {
+        (Get-Item "$($up)\.$filename").Delete()
     }
 
-    make-filelink bash_logout
-    make-filelink bash_profile
-    make-filelink bashrc
-    make-filelink inputrc
-    make-filelink minttyrc
-    make-filelink profile
-    make-filelink Xresources
+        New-Item -ItemType SymbolicLink -Path "$up\.$filename" -Value $etc\cygwin\$filename
+    }
 
-    cmd /c "setx /m TERM msys"
-    cmd /c "setx /m CYGWIN nodosfilewarning"
+make-filelink bash_logout
+make-filelink bash_profile
+make-filelink bashrc
+make-filelink inputrc
+make-filelink minttyrc
+make-filelink profile
+make-filelink Xresources
 
-    $mklink = "cmd.exe /c mklink"
+cmd /c "setx /m TERM msys"
+cmd /c "setx /m CYGWIN nodosfilewarning"
 
-    $links = @(
+$links = @(
     "base64"
     "bcrypt"
     "bunzip2"
@@ -109,14 +112,15 @@ Invoke-ElevatedScript {
     "uuidgen"
     "wget"
     "xargs"
-    "zip")
+    "zip"
+)
 
-    foreach ($link in $links) {
-        if (Test-Path "${env:ChocolateyInstall}\bin\$link.bat") {
-            (Get-Item "${env:ChocolateyInstall}\bin\$link.bat").Delete()
-        }
+foreach ($link in $links) {
+    if (Test-Path "${env:ChocolateyInstall}\bin\$link.bat") {
+        (Get-Item "${env:ChocolateyInstall}\bin\$link.bat").Delete()
+    }
 
-        Set-Content ${env:ChocolateyInstall}\bin\$link.bat @"
+    Set-Content ${env:ChocolateyInstall}\bin\$link.bat @"
 @echo off
 setlocal
 SET CYGWIN=%CYGWIN% nodosfilewarning
@@ -125,5 +129,4 @@ $cygwin_root\bin\$link.exe %*
 
 endlocal
 "@            
-    }
 }

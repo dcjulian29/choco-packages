@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-cygwin</id>
-    <version>2017.3.18.1</version>
+    <version>2017.5.13.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom set-up of Cygwin and additional packages that I like to have installed....</description>
