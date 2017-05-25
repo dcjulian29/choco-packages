@@ -9,19 +9,6 @@ New-Item -Type Directory -Path $downloadPath | Out-Null
 
 Push-Location $downloadPath
 
-# Install ez_setup
-$version = "0.9"
-$ezsetup = "https://codeload.github.com/ActiveState/ez_setup/tar.gz/v$version"
-
-Download-File $ezsetup "ez_setup.tar.gz"
-
-& 7z.exe e "ez_setup.tar.gz"
-& 7z.exe x "ez_setup-$version.tar"
-
-
-& python.exe "ez_setup-$version\ez_setup.py"
-
-
 & pip.exe install pylint
 & pip.exe install pep8
 
