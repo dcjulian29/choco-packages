@@ -1,9 +1,11 @@
 $packageName = "smartgit"
 $downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
 $installerArgs = '/sp- /silent /norestart'
-$version = '17_0_2'
+$version = '17_0_4'
 
-$url = 'https://www.syntevo.com/static/smart/download/smartgit/smartgit-win32-setup-jre-{0}.zip' -f $version
+$url = `
+    'https://www.syntevo.com/static/smart/download/smartgit/smartgit-win32-setup-jre-{0}.zip' `
+    -f $version
 
 if (Test-Path $downloadPath) {
     Remove-Item -Path $downloadPath -Recurse -Force | Out-Null
