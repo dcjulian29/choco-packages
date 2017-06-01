@@ -57,10 +57,12 @@ if (Test-Path "${env:ProgramFiles(x86)}\Git") {
 & $git config --global --replace-all alias.sync "!git pull && git push"
 & $git config --global --replace-all alias.summary "status -u -s"
 & $git config --global --replace-all alias.tags "tag"
-& $git config --global --replace-all alias.topic-start "git pull; git checkout -b `$1; git push -u origin `$1"
+& $git config --global --replace-all alias.topic-start "git up; git checkout -b `$1; git push -u origin `$1"
 & $git config --global --replace-all alias.undo-commit "reset --soft HEAD~1"
 & $git config --global --replace-all alias.unmerged "diff --name-only --diff-filter=U"
+& $git config --global --replace-all alias.up "!git pull --rebase --prune $@ && git submodule update --init --recursive"
 & $git config --global --replace-all alias.visual "!gitk"
+& $git config --global --replace-all alias.wipe "!git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard"
 
 ##### Log Related Aliases
 & $git config --global --replace-all alias.la "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an)%Creset' --date=short"
