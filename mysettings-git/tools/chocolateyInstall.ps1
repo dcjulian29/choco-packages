@@ -45,7 +45,7 @@ if (Test-Path "${env:ProgramFiles(x86)}\Git") {
 & $git config --global --replace-all alias.open "!explorer ``git config remote.origin.url``"
 & $git config --global --replace-all alias.browse "!git open"
 & $git config --global --replace-all alias.aliases "!git config --get-regexp 'alias.*' | sort"
-& $git config --global --replace-all alias.topic-start "'!branch=`$1; git pull; git checkout -b ""`$branch""; git push -u origin ""`$branch""'"
+& $git config --global --replace-all alias.topic-start "git pull; git checkout -b `$1; git push -u origin `$1"
 & $git config --global --replace-all alias.cm "commit --message"
 & $git config --global --replace-all alias.cleanest "clean -ffdx"
 & $git config --global --replace-all alias.refs-by-date "for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'"
