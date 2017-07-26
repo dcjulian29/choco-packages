@@ -147,7 +147,7 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     Set-Content -Path "$env:LOCALAPPDATA\Syncthing\key.pem" -Value $Key
 
     Start-Process -FilePath "$env:ChocolateyInstall\bin\syncthing.exe" `
-        -ArgumentList "-no-console -no-browser"
+        -ArgumentList "-no-restart -no-browser"
     
     Write-Output "Waiting for enough of the initial synchronization to occur..."
 
@@ -156,10 +156,15 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     }
     
     Write-Output "Found what I'm looking for... :)"
+}
 
-    if (-not ((Get-Item ${env:SYSTEMDRIVE}\etc).Attributes -band [IO.FileAttributes]::ReparsePoint)) {
-        New-Item -ItemType Junction -Path ${env:SYSTEMDRIVE}\etc -Value ${env:SYSTEMDRIVE}\home\vm\etc
-    }
+if (-not (Test-Path ${env:SYSTEMDRIVE}\etc)) {
+    New-Item -ItemType Junction -Path ${env:SYSTEMDRIVE}\etc -Value ${env:SYSTEMDRIVE}\home\vm\etc
+}
+
+if (-not ((Get-Item ${env:SYSTEMDRIVE}\etc).Attributes -band [IO.FileAttributes]::ReparsePoint)) {
+    Move-Item ${env:SYSTEMDRIVE}\etc ${env:SYSTEMDRIVE}\etc.bak
+    New-Item -ItemType Junction -Path ${env:SYSTEMDRIVE}\etc -Value ${env:SYSTEMDRIVE}\home\vm\etc
 }
 
 Write-Output "Installing .Net 3.x Framework..."
