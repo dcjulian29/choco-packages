@@ -1,7 +1,7 @@
 $packageName = "visualstudio"
 $downloadPath = "$env:TEMP\$packageName"
 
-$url = "https://download.microsoft.com/download/A/A/3/AA372A6A-C137-474D-95B6-865AF23DF0E1/vs_enterprise.exe"
+$url = "https://download.visualstudio.microsoft.com/download/pr/10753574/52257ee3e96d6e07313e41ad155b155a/vs_Enterprise.exe"
 
 if (Test-Path $downloadPath) {
     Remove-Item -Path $downloadPath -Recurse -Force
