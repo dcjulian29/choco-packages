@@ -2,16 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-visualstudio</id>
-    <version>2017.3.20.1</version>
+    <version>2017.8.30.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for Visual Studio Development for my Development Environments.</description>
     <tags>mydev-dotnet mydev dotnet</tags>
     <dependencies>
       <dependency id="visualstudio" />
-      <dependency id="resharper" />
-      <dependency id="dotcover" />
-      <dependency id="dotpeek" />
+      <dependency id="resharper" version="[2017.2]" />
+      <dependency id="dotcover" version="[2017.2]" />
+      <dependency id="dotpeek" version="[2017.2]" />
       <dependency id="mysettings-vsix" />
       <dependency id="webpi" />
       <dependency id="mysettings-vscode" />
