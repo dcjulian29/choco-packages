@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>myvm-workstation</id>
-    <version>2017.3.15.1</version>
+    <version>2017.9.2.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>This package gets called for the initial configuration of my workstation virtual machines.</description>
@@ -11,7 +11,7 @@
       <dependency id="chocolatey" />
       <dependency id="mysettings-ntfs" />
       <dependency id="mysettings-ipv6" />
-      <dependency id="dotnet4.6.2" />
+      <dependency id="dotnet4.7" />
       <dependency id="powershell" />
       <dependency id="pscx" />
       <dependency id="myscripts-binaries" />
