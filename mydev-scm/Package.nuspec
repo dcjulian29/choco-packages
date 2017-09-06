@@ -2,10 +2,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-scm</id>
-    <version>2017.3.16.1</version>
+    <version>2017.9.4.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>These are the packages for Source Control Management for my Development Environments.</description>
     <tags>mydev-scm mydev scm</tags>
     <dependencies>
       <dependency id="kdiff3" />
@@ -16,6 +15,7 @@
       <dependency id="vim" />
       <dependency id="smartgit" />
       <dependency id="mysettings-git" />
+      <dependency id="deepgit" />
     </dependencies>
   </metadata>
 </package>
