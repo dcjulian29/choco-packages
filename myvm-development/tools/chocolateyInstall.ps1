@@ -178,6 +178,14 @@ Enable-WindowsOptionalFeature -All -FeatureName Containers -Online -Verbose -NoR
 Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online | Out-Null
 Get-AppxPackage | Remove-AppxPackage -ErrorAction Silent
 
+
+# Sometimes, Syncthing upgrades but does not restart...
+if (-not (Get-Process -Name "syncthing" -ea 0)) {
+    Write-Output "Syncthing isn't currently running, starting the process..."
+    
+    Start-Process "${env:SYSTEMDRIVE}\tools\start-syncthing.cmd"
+}
+
 Write-Output "Waiting for log folder to sync..."
 
 while (-not (Test-Path "$env:SYSTEMDRIVE\etc\logs\zzz.log")) {
