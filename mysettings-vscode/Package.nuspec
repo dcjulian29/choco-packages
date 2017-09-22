@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-vscode</id>
-    <version>2017.4.16.1</version>
+    <version>2017.9.8.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom configuration and extension I like to use in VS Code.</description>
