@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-resharper</id>
-    <version>2017.9.2.1</version>
+    <version>2017.9.8.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom configuration for JetBrain's Resharper products.</description>
