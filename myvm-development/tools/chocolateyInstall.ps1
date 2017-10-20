@@ -153,6 +153,13 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
 
     while (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\etc\executor\executor.ini")) {
         Start-Sleep -Seconds 5
+        
+        # Sometimes, Syncthing upgrades but does not restart...
+        if (-not (Get-Process -Name "syncthing" -ea 0)) {
+            Write-Output "Syncthing isn't currently running, starting the process..."
+            
+            Start-Process "${env:SYSTEMDRIVE}\tools\start-syncthing.cmd"
+        }
     }
     
     Write-Output "Found what I'm looking for... :)"
