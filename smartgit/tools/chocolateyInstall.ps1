@@ -1,7 +1,7 @@
 $packageName = "smartgit"
 $downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
 $installerArgs = '/sp- /silent /norestart'
-$version = '17_0_4'
+$version = '17_1_0'
 
 $url = `
     'https://www.syntevo.com/static/smart/download/smartgit/smartgit-win32-setup-jre-{0}.zip' `
