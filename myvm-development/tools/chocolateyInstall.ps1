@@ -208,14 +208,11 @@ $files = @(
 )
 
 foreach ($file in $files) {
-    if (Test-Path "$env:SYSTEMDRIVE\etc\logs\$($env:COMPUTERNAME)-$file.log") {
-        Move-Item "$env:SYSTEMDRIVE\etc\logs\$($env:COMPUTERNAME)-$file.log" `
-            "$env:SYSTEMDRIVE\etc\logs\$($env:COMPUTERNAME)-$file.old.log" -Force
-    }
+    $date = Get-Date -Format "yyyyMMdd-hhmm"
 
     if (Test-Path "$env:WINDIR\Setup\Scripts\$file.log") {
         Copy-Item "$env:WINDIR\Setup\Scripts\$file.log" `
-            "$env:SYSTEMDRIVE\etc\logs\$($env:COMPUTERNAME)-$file.log" -Force
+            "$env:SYSTEMDRIVE\etc\logs\$($env:COMPUTERNAME)-$file.$date.log" -Force
     }
 }
 
