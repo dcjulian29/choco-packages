@@ -75,7 +75,7 @@ Install-VSIX "Region Expander" "2484a0ee-ed76-46d8-85e1-a0514d295b61/file/256415
 Install-VSIX "Git Diff Margin" "cf49cf30-2ca6-4ea0-b7cc-6a8e0dadc1a8/file/101267/14/GitDiffMargin.vsix"
 Install-VSIX "CodeMaid" "76293c4d-8c16-4f4a-aee6-21f83a571496/file/9356/38/CodeMaid%20v10.2.7.vsix"
 Install-VSIX "SQLite / SQL Server Compact Toolbox" "0e313dfd-be80-4afb-b5e9-6e74d369f7a1/file/29445/85/SqlCeToolbox.4.5.0.3.vsix"
-Install-VSIX "Visual StyleCop" "cac2a05b-6eb6-4fa2-95b9-1f8d011e6cae/file/173746/14/VSIXPackage.vsix"
+Install-VSIX "StyleCop" "5441d959-387f-4cb2-a8c0-9998dd1fa49f/file/231103/4/StyleCop.vsix"
 Install-VSIX "SlowCheetah - XML Transforms" "/69023d00-a4f9-4a34-a6cd-7e854ba318b5/file/55948/27/SlowCheetah.VisualStudio.vsix"
 Install-VSIX "PowerShell Tools for Visual Studio" "8389e80d-9e40-4fc1-907c-a07f7842edf2/file/257196/1/PowerShellTools.15.0.vsix"
 Install-VSIX "GhostDoc" "46a20578-f0d5-4b1e-b55d-f001a6345748/file/5074/1/GhostDoc.v5.5.17070.VS2017.Extension.vsix"
@@ -83,3 +83,6 @@ Install-VSIX "ReAttach" "8cccc206-b9de-42ef-8f5a-160ad0f017ae/file/86492/14/ReAt
 Install-VSIX "Disable No Source Available Tab" "fdbb2036-471e-40a7-b20e-31f8fd5578fa/file/39083/13/DisableNoSourceAvailableTab%20(2.0%20vs%202017%20support).vsix"
 Install-VSIX "SpecFlow for Visual Studio 2017" "47ad86e2-d0a0-46f0-8746-ad7fe06df6b6/file/242540/3/TechTalk.SpecFlow.VsIntegration.2017-2017.1.6.vsix"
 Install-VSIX "PerfWatson Monitor" "ad0897b3-7537-4c92-a38c-104b0e005206/file/75983/9/PerfWatsonMonitor.vsix"
+
+Install-VSIX "Roslyn Security Guard" "28033821-c053-4652-b529-0bad9c0feba4/file/232680/3/RoslynSecurityGuard.Vsix.vsix"
+Install-VSIX "Puma Scan" "80206c43-348b-4a21-9f84-a4d4f0d85007/file/230031/7/Puma.Security.Rules.Vsix.1.0.6.vsix"
