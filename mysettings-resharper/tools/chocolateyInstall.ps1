@@ -4,6 +4,6 @@ $installPath = $(Split-Path -parent ($(Split-Path -parent $PSscriptRoot)))
 $installPath = $(Join-Path $installPath 'resharper-platform')
 $installPath = $(Get-ChildItem $installPath -Filter "*.exe").FullName
 
-$installArgs = '/SpecificProductNames=ReSharper;dotCover;dotPeek /Silent=True'
+$installArgs = '/SpecificProductNames=ReSharper;dotCover;dotPeek'
 
 Invoke-ElevatedCommand $installPath -ArgumentList $installArgs -Wait
