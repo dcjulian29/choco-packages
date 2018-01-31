@@ -2,13 +2,15 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-scm</id>
-    <version>2017.9.4.1</version>
+    <version>2018.1.31.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
+    <description>These are the packages for Source Control that I install in my Development Environments.</description>
     <tags>mydev-scm mydev scm</tags>
     <dependencies>
       <dependency id="kdiff3" />
       <dependency id="git" />
+      <dependency id="git-lfs" />
       <dependency id="poshgit" />
       <dependency id="gitflow" />
       <dependency id="git-credential-manager-for-windows" />
