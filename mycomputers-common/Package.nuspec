@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mycomputers-common</id>
+    <version>2018.2.2.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages that are common to all of my physical computer configurations.</description>
+    <tags>mycomputers-common mycomputers common</tags>
+    <dependencies>
+      <dependency id="mysettings-ntfs" />
+      <dependency id="mysettings-ipv6" />
+      <dependency id="dotnet4.7" />
+      <dependency id="powershell" />
+      <dependency id="javaruntime" />
+      <dependency id="7zip" />
+      <dependency id="notepadplusplus" />
+      <dependency id="chocolatey" />
+    </dependencies>
+  </metadata>
+</package>

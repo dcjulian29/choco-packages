@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mycomputers-workstation</id>
+    <version>2018.2.2.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages that I install on my workstation computer configurations.</description>
+    <tags>mycomputers-workstation mycomputers workstation</tags>
+    <dependencies>
+      <dependency id="mycomputers-common" />
+      <dependency id="mysettings-console" />
+      <dependency id="mysettings-explorer" />
+      <dependency id="mysettings-notepadplusplus" />
+      <dependency id="powershellhere" />
+      <dependency id="posh-mymodules" />
+      <dependency id="posh-go" />
+      <dependency id="myscripts-binaries" />
+      <dependency id="winpcap" />
+      <dependency id="sumatrapdf.install" />
+      <dependency id="keepass" />
+      <dependency id="sysinternals" />
+      <dependency id="executor" />
+      <dependency id="bind-toolsonly" />
+      <dependency id="mysettings-cygwin" />
+      <dependency id="gpg" />
+      <dependency id="python" />
+      <dependency id="pscx" />
+      <dependency id="xmind" />
+      <dependency id="searchmyfiles" />
+      <dependency id="angryip" />
+      <dependency id="wireshark" />
+      <dependency id="iperf" />
+      <dependency id="regexbuilder" />
+      <dependency id="xmlquire" />
+      <dependency id="gimp" />
+      <dependency id="grepwin" />
+      <dependency id="windirstat" />
+      <dependency id="winmerge" />
+      <dependency id="frhed" />
+      <dependency id="vlc" />
+      <dependency id="googlechrome" />
+      <dependency id="tomighty" />
+      <dependency id="aescrypt" />
+      <dependency id="mysettings-git" />
+      <dependency id="git-credential-manager-for-windows" />
+      <dependency id="mysettings-vim" />
+    </dependencies>
+  </metadata>
+</package>

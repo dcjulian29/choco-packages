@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mycomputers-workstation-personal</id>
+    <version>2018.2.2.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages that I install on my personal workstation computer configurations.</description>
+    <tags>mycomputers-workstation-personal mycomputers workstation personal</tags>
+    <dependencies>
+      <dependency id="mycomputers-workstation" />
+      <dependency id="tightvnc" />
+      <dependency id="nmap" />
+      <dependency id="smartgit" />
+      <dependency id="nuget.commandline" />
+      <dependency id="nugetpackageexplorer" />
+      <dependency id="netresview" />
+      <dependency id="php" />
+      <dependency id="posh-go" />
+      <dependency id="rainmeter" />
+      <dependency id="googledrive" />
+      <dependency id="bind-toolsonly" />
+      <dependency id="greenshot" />
+      <dependency id="kubernetes-cli" />
+    </dependencies>
+  </metadata>
+</package>
