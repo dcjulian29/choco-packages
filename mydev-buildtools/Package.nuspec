@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-buildtools</id>
-    <version>2017.3.21.1</version>
+    <version>2018.2.3.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for build tools that I install in my Development Environments.</description>
@@ -14,9 +14,11 @@
       <dependency id="docker-compose" />
       <dependency id="docker-kitematic" />
       <dependency id="kubernetes-cli" />
+      <dependency id="kubernetes-kompose" />
       <dependency id="posh-docker" />
       <dependency id="octopustools" />
       <dependency id="scriptcs" />
+      <dependency id="faas-cli" />
     </dependencies>
   </metadata>
 </package>
