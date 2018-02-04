@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-database</id>
-    <version>2017.4.6.1</version>
+    <version>2018.2.3.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for databases that I install in my Development Environments by default. Other database platforms are loaded as needed...</description>
@@ -15,6 +15,7 @@
       <dependency id="sql-server-express" />
       <dependency id="sql-server-management-studio" />
       <dependency id="postgresql" />
+      <dependency id="datagrip" />
     </dependencies>
   </metadata>
 </package>
