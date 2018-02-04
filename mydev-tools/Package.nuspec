@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2018.1.10.1</version>
+    <version>2018.2.3.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the application packages for my Development Environments.</description>
@@ -33,6 +33,7 @@
       <dependency id="windirstat" />
       <dependency id="frhed" />
       <dependency id="postman" />
+      <dependency id="redis-desktop-manager" />
     </dependencies>
   </metadata>
 </package>
