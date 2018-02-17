@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2018.2.3.1</version>
+    <version>2018.2.13.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>These are the application packages for my Development Environments.</description>
+    <description>These are the tools packages for my Development Environments.</description>
     <tags>mydev-tools mydev</tags>
     <dependencies>
       <dependency id="7zip" />
@@ -34,6 +34,19 @@
       <dependency id="frhed" />
       <dependency id="postman" />
       <dependency id="redis-desktop-manager" />
+      <dependency id="ruby" />
+      <dependency id="nodejs" />
+      <dependency id="golang" />
+      <dependency id="nuget.commandline" />
+      <dependency id="nugetpackageexplorer" />
+      <dependency id="docker" />
+      <dependency id="docker-compose" />
+      <dependency id="docker-kitematic" />
+      <dependency id="kubernetes-cli" />
+      <dependency id="kubernetes-kompose" />
+      <dependency id="octopustools" />
+      <dependency id="scriptcs" />
+      <dependency id="faas-cli" />
     </dependencies>
   </metadata>
 </package>
