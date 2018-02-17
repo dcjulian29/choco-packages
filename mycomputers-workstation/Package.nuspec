@@ -25,7 +25,6 @@
       <dependency id="mysettings-cygwin" />
       <dependency id="gpg" />
       <dependency id="python" />
-      <dependency id="pscx" />
       <dependency id="xmind" />
       <dependency id="searchmyfiles" />
       <dependency id="angryip" />
