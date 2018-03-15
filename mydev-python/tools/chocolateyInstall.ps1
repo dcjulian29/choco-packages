@@ -11,7 +11,15 @@ Push-Location $downloadPath
 
 & pip.exe install pylint
 & pip.exe install pep8
+& pip.exe install httpie
 
-& easy_install.exe -U sqlalchemy
-& easy_install.exe -U pymongo
-& easy_install.exe -U winpdb
+& pip.exe install pymongo
+& pip.exe install pymysql
+& pip.exe install pyodbc
+& pip.exe install psycopg2
+& pip.exe install tinydb
+
+& pip.exe install redis
+
+& pip.exe install sqlalchemy
+& pip.exe install winpdb
