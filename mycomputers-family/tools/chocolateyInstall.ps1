@@ -10,4 +10,7 @@ if (Test-Path $env:SYSTEMDRIVE\tools)
     Remove-Item -Path $env:SYSTEMDRIVE\tools
 }
 
-Enable-PSRemoting -Force
+if (-not ([bool](Invoke-Command -ComputerName $env:COMPUTERNAME `
+    -ScriptBlock {"IPConfig"} -ErrorAction SilentlyContinue))) {
+    Enable-PSRemoting -Force
+}
