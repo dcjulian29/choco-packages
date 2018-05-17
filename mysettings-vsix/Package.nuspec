@@ -8,7 +8,7 @@
     <description>VS Extensions I like to install in Visual Studio</description>
     <tags>mysettings-vsix vsix</tags>
     <dependencies>
-      <dependency id="visualstudio" version="[2017.0,2018.0)" />
+      <dependency id="visualstudio" version="[15.0,16.0)" />
     </dependencies>
   </metadata>
 </package>
