@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>visualstudio</id>
-    <version>2017.2</version>
+    <version>15.7.1</version>
     <authors>Microsoft</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://www.visualstudio.com/</projectUrl>

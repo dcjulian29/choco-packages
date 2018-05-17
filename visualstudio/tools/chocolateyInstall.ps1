@@ -18,8 +18,9 @@ $Workloads = @(
     "Microsoft.VisualStudio.Workload.ManagedDesktop"
     "Microsoft.VisualStudio.Workload.NetCoreTools"
     "Microsoft.VisualStudio.Workload.NetWeb"
-    "Microsoft.Net.Component.4.6.2.TargetingPack"
-    "Microsoft.Net.ComponentGroup.4.6.2.DeveloperTools"
+    "Microsoft.VisualStudio.Workload.Azure"
+    "Microsoft.Net.Component.4.7.1.TargetingPack"
+    "Microsoft.Net.ComponentGroup.4.7.1.DeveloperTools"
     "Microsoft.VisualStudio.Component.IntelliTrace.FrontEnd"
     "Microsoft.VisualStudio.Component.DockerTools"
 )
@@ -49,7 +50,8 @@ foreach ($feature in $features) {
     $enabled = (Get-WindowsOptionalFeature -Online `
         | where { $_.FeatureName -eq $feature -and $_.State -eq "Disabled" }).State
     if ($enabled -eq "Disabled") {
-        Enable-WindowsOptionalFeature -Online -FeatureName $feature
+        Write-Output "Enabling $feature..."
+        Enable-WindowsOptionalFeature -Online -FeatureName $feature | Out-Null
     }
 }
 
