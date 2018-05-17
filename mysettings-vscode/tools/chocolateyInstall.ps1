@@ -26,3 +26,4 @@ Start-Process -FilePath $code -ArgumentList "--install-extension haaaad.ansible"
 Start-Process -FilePath $code -ArgumentList "--install-extension kisstkondoros.vscode-codemetrics" -NoNewWindow -Wait
 Start-Process -FilePath $code -ArgumentList "--install-extension ms-vscode.PowerShell" -NoNewWindow -Wait
 Start-Process -FilePath $code -ArgumentList "--install-extension thomas-baumgaertner.vcl" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension eamodio.gitlens" -NoNewWindow -Wait
