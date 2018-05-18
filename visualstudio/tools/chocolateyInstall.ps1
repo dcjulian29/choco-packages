@@ -30,29 +30,3 @@ $Workloads | foreach { $installerArgs += " --add $_" }
 $installerArgs += " --wait"
 
 Invoke-ElevatedCommand "$downloadPath\vs_enterprise.exe" -ArgumentList $installerArgs -Wait
-
-Write-Output "Installing IIS Server..."
-
-$features = @(
-    "IIS-WebServerRole",
-    "IIS-NetFxExtensibility45",
-    "IIS-LoggingLibraries",
-    "IIS-RequestMonitor",
-    "IIS-HttpTracing",
-    "IIS-ISAPIExtensions",
-    "IIS-ISAPIFilter",
-    "IIS-CustomLogging",
-    "IIS-ASPNET45",
-    "IIS-ManagementScriptingTools"
-)
-
-foreach ($feature in $features) {
-    $enabled = (Get-WindowsOptionalFeature -Online `
-        | where { $_.FeatureName -eq $feature -and $_.State -eq "Disabled" }).State
-    if ($enabled -eq "Disabled") {
-        Write-Output "Enabling $feature..."
-        Enable-WindowsOptionalFeature -Online -FeatureName $feature | Out-Null
-    }
-}
-
-& $env:WINDIR\system32\iisreset.exe
