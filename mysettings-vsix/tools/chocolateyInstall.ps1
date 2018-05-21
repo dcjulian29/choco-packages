@@ -76,7 +76,8 @@ Install-VSIX "SlowCheetah - XML Transforms" "https://visualstudioproductteam.gal
 Install-VSIX "GhostDoc" "https://sergeb.gallerycdn.vsassets.io/extensions/sergeb/ghostdoc/5.8.17335/1512671123261/5074/6/GhostDoc.v5.8.17335.VS2017.Extension.vsix"
 Install-VSIX "ReAttach" "https://erlandr.gallerycdn.vsassets.io/extensions/erlandr/reattach/2.2/1490598305903/86492/14/ReAttach.vsix"
 Install-VSIX "Disable No Source Available Tab" "https://mayerwin.gallerycdn.vsassets.io/extensions/mayerwin/disablenosourceavailabletab/2.0/1488372019971/39083/13/DisableNoSourceAvailableTab%20(2.0%20vs%202017%20support).vsix"
-Install-VSIX "SpecFlow for Visual Studio 2017" "https://techtalkspecflowteam.gallerycdn.vsassets.io/extensions/techtalkspecflowteam/specflowforvisualstudio2017/2017.1.10/1513092790065/TechTalk.SpecFlow.Vs2017Integration-2017.1.10.vsix"
 Install-VSIX "PerfWatson Monitor" "https://paulharrington.gallerycdn.vsassets.io/extensions/paulharrington/perfwatsonmonitor-9621/11.17.414.0/1492179304031/75983/9/PerfWatsonMonitor.vsix"
 Install-VSIX "Roslyn Security Guard" "https://philippearteau.gallerycdn.vsassets.io/extensions/philippearteau/roslynsecurityguard/2.3.0/1499148905608/232680/3/RoslynSecurityGuard.Vsix.vsix"
 Install-VSIX "Puma Scan" "https://pumasecurity.gallerycdn.vsassets.io/extensions/pumasecurity/pumascan/1.0.6/1501039205850/230031/7/Puma.Security.Rules.Vsix.1.0.6.vsix"
+Install-VSIX "SonarLint for Visual Studio 2017" "https://sonarsource.gallerycdn.vsassets.io/extensions/sonarsource/sonarlintforvisualstudio2017/4.0.0.3479/1525365347294/SonarLint.VSIX-4.0.0.3479-2017.vsix"
+
