@@ -26,3 +26,9 @@ gd -Key "code" -delete
 gd -Key "code" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
 gd -Key "projects" -delete
 gd -Key "projects" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
+
+if (Test-Path $env:SYSTEMDRIVE\etc\SoftwareDevelopment.flt)
+{
+    Copy-Item $env:SYSTEMDRIVE\etc\SoftwareDevelopment.flt `
+        $env:USERPROFILE\Documents\WinMerge\Filters\SoftwareDevelopment.flt | Out-Null
+}
