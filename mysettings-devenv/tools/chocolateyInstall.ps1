@@ -29,6 +29,8 @@ gd -Key "projects" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
 
 if (Test-Path $env:SYSTEMDRIVE\etc\SoftwareDevelopment.flt)
 {
+    New-Item $env:USERPROFILE\Documents\WinMerge -ItemType Directory | Out-Null
+    New-Item $env:USERPROFILE\Documents\WinMerge\Filters -ItemType Directory | Out-Null
     Copy-Item $env:SYSTEMDRIVE\etc\SoftwareDevelopment.flt `
         $env:USERPROFILE\Documents\WinMerge\Filters\SoftwareDevelopment.flt | Out-Null
 }
