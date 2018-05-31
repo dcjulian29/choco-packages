@@ -2,6 +2,11 @@ $packageName = "myvm-development"
 
 $ErrorActionPreference = "Stop"
 
+if (Test-Path "$env:SYSTEMDRIVE\etc\logs\zzz.log") {
+    write-Warning "Package already installed, no need to upgrade..."
+    exit
+}
+
 Function Read-MultiLineInput([string]$Message) {
     Add-Type -AssemblyName System.Drawing
     Add-Type -AssemblyName System.Windows.Forms
@@ -177,14 +182,15 @@ if (-not ((Get-Item ${env:SYSTEMDRIVE}\etc).Attributes -band [IO.FileAttributes]
 
 Write-Output "Installing .Net 3.x Framework..."
 
-Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online -Verbose
+Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online
 
 Write-Output "Installing Windows Container Support..."
 
-Enable-WindowsOptionalFeature -All -FeatureName Containers -Online -Verbose -NoRestart
+Enable-WindowsOptionalFeature -All -FeatureName Containers -Online -NoRestart
 
-Get-AppxProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online | Out-Null
-Get-AppxPackage | Remove-AppxPackage -ErrorAction Silent
+Write-Output "Installing Windows Hyper-V Support..."
+
+Enable-WindowsOptionalFeature -All -FeatureName Microsoft-Hyper-V-All -Online -NoRestart
 
 # Sometimes, Syncthing upgrades but does not restart...
 if (-not (Get-Process -Name "syncthing" -ea 0)) {
