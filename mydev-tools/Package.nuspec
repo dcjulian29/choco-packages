@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2018.4.3.1</version>
+    <version>2018.6.1.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for my Development Environments.</description>
@@ -14,7 +14,6 @@
       <dependency id="baretail" />
       <dependency id="wmiexplorer" />
       <dependency id="xmlquire" />
-      <dependency id="searchmyfiles" />
       <dependency id="westwindwebsurge" />
       <dependency id="regexbuilder" />
       <dependency id="linqpad" />
@@ -39,7 +38,7 @@
       <dependency id="golang" />
       <dependency id="nuget.commandline" />
       <dependency id="nugetpackageexplorer" />
-      <dependency id="docker" />
+      <dependency id="docker-for-windows" />
       <dependency id="docker-compose" />
       <dependency id="docker-kitematic" />
       <dependency id="kubernetes-cli" />
