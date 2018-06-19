@@ -81,3 +81,7 @@ Install-VSIX "Roslyn Security Guard" "https://philippearteau.gallerycdn.vsassets
 Install-VSIX "Puma Scan" "https://pumasecurity.gallerycdn.vsassets.io/extensions/pumasecurity/pumascan/1.0.6/1501039205850/230031/7/Puma.Security.Rules.Vsix.1.0.6.vsix"
 Install-VSIX "SonarLint for Visual Studio 2017" "https://sonarsource.gallerycdn.vsassets.io/extensions/sonarsource/sonarlintforvisualstudio2017/4.0.0.3479/1525365347294/SonarLint.VSIX-4.0.0.3479-2017.vsix"
 
+
+Install-VSIX "Hot Source" "https://justinclareburtmsft.gallerycdn.vsassets.io/extensions/justinclareburtmsft/hotsource/0.1.2/1526810909635/HotSource.vsix"
+Install-VSIX "Whack Whack Terminal" "https://danielgriffen.gallerycdn.vsassets.io/extensions/danielgriffen/whackwhackterminal/1.0.14.35683/1520634760590/WhackWhackTerminal.vsix"
+
