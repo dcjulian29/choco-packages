@@ -13,7 +13,7 @@ if (Test-Path "C:\Program Files (x86)") {
     $vsix = "C:\Program Files (x86)"
 }
 
-$vsix = "$vsix\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VSIXInstaller.exe"
+$vsix = "$vsix\Microsoft Visual Studio\2017\Professional\Common7\IDE\VSIXInstaller.exe"
 
 Function Install-VSIX {
     param (
@@ -38,7 +38,7 @@ Function Install-VSIX {
     Start-Process -FilePath $vsix -NoNewWindow -Wait `
         -ArgumentList "/quiet /logFile:""$downloadPath\$Name.log"" ""$downloadPath\$Name.vsix"""
 
-    if (-not (Get-Content "$downloadPath\$Name.log" | Select-String -Pattern "Install to Visual Studio Enterprise 2017 completed successfully.")) {
+    if (-not (Get-Content "$downloadPath\$Name.log" | Select-String -Pattern "Install to Visual Studio Professional 2017 completed successfully.")) {
         Write-Warning "An error occurred Installing $Name Extension..."
         Write-Warning "Review the log file: $logFile"
         throw
