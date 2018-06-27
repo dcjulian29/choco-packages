@@ -1,5 +1,5 @@
 $packageName = "sql-server-express"
-$url = "https://download.microsoft.com/download/9/0/7/907AD35F-9F9C-43A5-9789-52470555DB90/ENU/SQLEXPR_x64_ENU.exe"
+$url = "https://download.microsoft.com/download/E/F/2/EF23C21D-7860-4F05-88CE-39AA114B014B/SQLEXPR_x64_ENU.exe"
 $downloadPath = "$env:TEMP\$packageName"
 
 $sid = New-Object Security.Principal.SecurityIdentifier 'S-1-5-32-544'
@@ -23,3 +23,5 @@ Download-File $url "$downloadPath\$packageName.exe"
 Start-Process "$downloadPath\$packageName.exe" "/Q /x:`"$downloadPath\sql`"" -Wait
 
 Start-Process "$downloadPath\sql\setup.exe" "$installerArgs" -Wait
+
+Install-Module -Name SqlServer -AllowClobber
