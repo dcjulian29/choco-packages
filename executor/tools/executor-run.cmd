@@ -29,15 +29,11 @@ mkdir %EXDST%
 
 if exist %EXETC%\executor.ini (
     copy /Y %EXETC%\executor.ini %EXDST% >nul
-    copy /Y %EXETC%\*.wav %EXDST% >nul
 )
 
 copy %EXSRC%\executor.exe %EXDST% >nul
 copy %EXSRC%\defaulticon.ico %EXDST% >nul
 copy %EXSRC%\hookwinr.dll %EXDST% >nul
-
-mkdir %EXDST%\skins
-copy %EXSRC%\skins\*.* %EXDST%\skins >nul
 
 pushd %EXDST%
 
