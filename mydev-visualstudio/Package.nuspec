@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-visualstudio</id>
-    <version>2018.6.20.1</version>
+    <version>2018.6.27.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for Visual Studio Development for my Development Environments.</description>
@@ -21,6 +21,9 @@
       <dependency id="mysettings-vscode" />
       <dependency id="dotnetcore-sdk" />
       <dependency id="azurepowershell" />
+      <dependency id="azure-cli" />
+      <dependency id="microsoftazurestorageexplorer" />
+      <dependency id="netfx-4.7.2-devpack" />
     </dependencies>
   </metadata>
 </package>
