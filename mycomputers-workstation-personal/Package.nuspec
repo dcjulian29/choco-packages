@@ -28,6 +28,7 @@
       <dependency id="kubernetes-kompose" />
       <dependency id="octopustools" />
       <dependency id="scriptcs" />
+      <dependency id="kodi" />
     </dependencies>
   </metadata>
 </package>
