@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2018.3.21.1</version>
+    <version>2018.7.25.3</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -17,7 +17,7 @@
       <dependency id="netresview" />
       <dependency id="php" />
       <dependency id="posh-go" />
-      <dependency id="rainmeter" />
+      <dependency id="mysettings-rainmeter" />
       <dependency id="googledrive" />
       <dependency id="bind-toolsonly" />
       <dependency id="greenshot" />
