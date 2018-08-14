@@ -58,4 +58,8 @@ KeepOnScreen=1
 AlwaysOnTop=0
 "@
 
+if (Test-Path $env:USERPROFILE\Documents\Rainmeter) {
+    Remove-Item -Path $env:USERPROFILE\Documents\Rainmeter -Recurse -Force
+}
+
 Start-Process -FilePath $env:APPDATA\Rainmeter\Rainmeter.exe
