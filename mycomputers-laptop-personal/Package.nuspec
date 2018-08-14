@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mycomputers-laptop-personal</id>
+    <version>2018.7.25.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages that I install on my personal laptop computer configurations.</description>
+    <tags>mycomputers-laptop-personal mycomputers laptop personal</tags>
+    <dependencies>
+      <dependency id="mycomputers-workstation-personal" />
+      <dependency id="wirelessnetview" />
+      <dependency id="bingdesktop" />
+      <dependency id="mysettings-openvpn" />
+    </dependencies>
+  </metadata>
+</package>
