@@ -1,5 +1,5 @@
 $packageName = "executor"
-$url = "http://www.1space.dk/executor/Executor.zip"
+$url = "http://www.1space.dk/executor/Executor64bit.zip"
 $appDir = "$($env:SYSTEMDRIVE)\tools\$($packageName)"
 $downloadPath = "$env:LOCALAPPDATA\Temp\$packageName\DownLoad"
 
@@ -19,7 +19,7 @@ if (Test-Path $appDir) {
 New-Item -Type Directory -Path $appDir | Out-Null
 
 Unzip-File "$downloadPath\$packageName.zip" "$downloadPath"
-Copy-Item -Path "$downloadPath\Executor\*" $appDir -Recurse
+Copy-Item -Path "$downloadPath\Executor64\*" $appDir -Recurse
 Copy-Item -Path "$PSScriptRoot\*.cmd" $appDir
 
 $location = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
