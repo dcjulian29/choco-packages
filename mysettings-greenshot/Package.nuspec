@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mysettings-greenshot</id>
+    <version>2017.7.25.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>My custom set-up of GreenShot.</description>
+    <tags>greenshot mysettings</tags>
+    <dependencies>
+      <dependency id="greenshot" />
+    </dependencies>
+  </metadata>
+</package>

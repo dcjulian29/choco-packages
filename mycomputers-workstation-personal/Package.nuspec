@@ -20,7 +20,7 @@
       <dependency id="mysettings-rainmeter" />
       <dependency id="googledrive" />
       <dependency id="bind-toolsonly" />
-      <dependency id="greenshot" />
+      <dependency id="mysettings-greenshot" />
       <dependency id="docker-for-windows" />
       <dependency id="docker-compose" />
       <dependency id="docker-kitematic" />
