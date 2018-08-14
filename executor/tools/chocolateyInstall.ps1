@@ -1,7 +1,7 @@
 $packageName = "executor"
 $url = "http://www.1space.dk/executor/Executor64bit.zip"
 $appDir = "$($env:SYSTEMDRIVE)\tools\$($packageName)"
-$downloadPath = "$env:LOCALAPPDATA\Temp\$packageName\DownLoad"
+$downloadPath = "$env:TEMP\$packageName"
 
 if (Test-Path $downloadPath) {
     Remove-Item $downloadPath -Recurse -Force | Out-Null
@@ -13,13 +13,13 @@ Download-File $url "$downloadPath\$packageName.zip"
 
 if (Test-Path $appDir) {
   Write-Output "Removing previous version of package..."
-  Remove-Item "$($appDir)\*" -Recurse -Force
+  Remove-Item "$($appDir)" -Recurse -Force
 }
 
 New-Item -Type Directory -Path $appDir | Out-Null
 
 Unzip-File "$downloadPath\$packageName.zip" "$downloadPath"
-Copy-Item -Path "$downloadPath\Executor64\*" $appDir -Recurse
+Copy-Item -Path "$downloadPath\Executor64bit\*" $appDir -Recurse
 Copy-Item -Path "$PSScriptRoot\*.cmd" $appDir
 
 $location = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
