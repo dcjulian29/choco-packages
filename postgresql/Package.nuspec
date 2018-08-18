@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>postgresql</id>
-    <version>9.6.1</version>
+    <version>10.4</version>
     <authors>The PostgreSQL Global Development Group</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://www.postgresql.org/</projectUrl>

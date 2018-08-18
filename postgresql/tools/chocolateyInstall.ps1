@@ -1,6 +1,6 @@
 $packageName = "postgresql"
-$url = 'http://get.enterprisedb.com/postgresql/postgresql-9.6.1-1-windows.exe'
-$url64 = 'http://get.enterprisedb.com/postgresql/postgresql-9.6.1-1-windows-x64.exe'
+$url = 'https://get.enterprisedb.com/postgresql/postgresql-10.4-1-windows.exe'
+$url64 = 'https://get.enterprisedb.com/postgresql/postgresql-10.4-1-windows-x64.exe'
 $installerType = "EXE"
 $password = "$env:COMPUTERNAME"
 $installerArgs = "--mode unattended --superpassword $password --disable-stackbuilder 1"
