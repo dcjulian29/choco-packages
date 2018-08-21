@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>gitflow</id>
-    <version>1.10.2</version>
+    <version>1.11.0</version>
     <authors>Peter van der Does, Vincent Driessen</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://github.com/petervanderdoes/gitflow</projectUrl>

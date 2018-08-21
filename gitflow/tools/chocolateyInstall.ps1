@@ -1,5 +1,5 @@
 $packageName = "gitflow"
-$gitflow = "https://github.com/petervanderdoes/gitflow-avh/archive/1.10.2.zip"
+$gitflow = "https://github.com/petervanderdoes/gitflow-avh/archive/1.11.0.zip"
 $getoptbin = "https://julianscorner.com/downloads/util-linux-ng-2.14.1-bin.zip"
 $getoptdll = "https://julianscorner.com/downloads/util-linux-ng-2.14.1-dep.zip"
 $downloadPath = "$env:LOCALAPPDATA\Temp\$packageName"
