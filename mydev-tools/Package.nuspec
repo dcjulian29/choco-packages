@@ -32,7 +32,6 @@
       <dependency id="windirstat" />
       <dependency id="frhed" />
       <dependency id="postman" />
-      <dependency id="redis-desktop-manager" />
       <dependency id="ruby" />
       <dependency id="nodejs" />
       <dependency id="golang" />
