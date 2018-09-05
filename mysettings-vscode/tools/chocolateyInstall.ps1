@@ -27,3 +27,7 @@ Start-Process -FilePath $code -ArgumentList "--install-extension kisstkondoros.v
 Start-Process -FilePath $code -ArgumentList "--install-extension ms-vscode.PowerShell" -NoNewWindow -Wait
 Start-Process -FilePath $code -ArgumentList "--install-extension thomas-baumgaertner.vcl" -NoNewWindow -Wait
 Start-Process -FilePath $code -ArgumentList "--install-extension eamodio.gitlens" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension ms-kubernetes-tools.vscode-kubernetes-tools" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension mkaufman.htmlhint" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension jebbs.plantuml" -NoNewWindow -Wait
+Start-Process -FilePath $code -ArgumentList "--install-extension redhat.vscode-yaml" -NoNewWindow -Wait
