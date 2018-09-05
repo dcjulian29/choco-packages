@@ -15,9 +15,8 @@
       <dependency id="gitflow" />
       <dependency id="git-credential-manager-for-windows" />
       <dependency id="vim" />
-      <dependency id="smartgit" />
+      <dependency id="sourcetree" />
       <dependency id="mysettings-git" />
-      <dependency id="deepgit" />
     </dependencies>
   </metadata>
 </package>
