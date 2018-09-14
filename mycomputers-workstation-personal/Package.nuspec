@@ -2,13 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2018.7.25.3</version>
+    <version>2018.9.13.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
     <tags>mycomputers-workstation-personal mycomputers workstation personal</tags>
     <dependencies>
       <dependency id="mycomputers-workstation" />
+      <dependency id="wireshark" />
       <dependency id="tightvnc" />
       <dependency id="nmap" />
       <dependency id="smartgit" />
@@ -29,6 +30,10 @@
       <dependency id="octopustools" />
       <dependency id="scriptcs" />
       <dependency id="kodi" />
+      <dependency id="mysettings-synthing" />
+      <dependency id="microsoft-message-analyzer" />
+      <dependency id="teracopy" />
+      <dependency id="vagrant" />
     </dependencies>
   </metadata>
 </package>
