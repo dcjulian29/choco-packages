@@ -5,3 +5,7 @@ Invoke-ElevatedCommand "sc.exe" -ArgumentList "config MSSQLSERVER start= demand"
 
 $service = Get-Service | Where-Object { $_.Name -like "postgresql*" }
 Invoke-ElevatedCommand "sc.exe" -ArgumentList "config $($service.Name) start= demand" -Wait
+
+Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+
+Install-Module SqlServer -Force -AllowClobber
