@@ -10,6 +10,7 @@
     <dependencies>
       <dependency id="git" />
       <dependency id="gitflow" />
+      <dependency id="git-lfs" />
       <dependency id="poshgit" />
       <dependency id="kdiff3" />
       <dependency id="mysettings-vim" />
