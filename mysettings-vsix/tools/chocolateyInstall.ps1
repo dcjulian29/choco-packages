@@ -85,3 +85,4 @@ Install-VSIX "SonarLint for Visual Studio 2017" "https://sonarsource.gallerycdn.
 Install-VSIX "Hot Source" "https://justinclareburtmsft.gallerycdn.vsassets.io/extensions/justinclareburtmsft/hotsource/0.1.2/1526810909635/HotSource.vsix"
 Install-VSIX "Whack Whack Terminal" "https://danielgriffen.gallerycdn.vsassets.io/extensions/danielgriffen/whackwhackterminal/1.0.14.35683/1520634760590/WhackWhackTerminal.vsix"
 
+Install-VSIX "Visual Studio IntelliCode" "https://visualstudioexptteam.gallerycdn.vsassets.io/extensions/visualstudioexptteam/vsintellicode/1.3.8.60621/1536614597513/Microsoft.VisualStudio.IntelliCode.vsix"
