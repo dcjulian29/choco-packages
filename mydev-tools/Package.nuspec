@@ -22,10 +22,8 @@
       <dependency id="plantuml" />
       <dependency id="tcptrace" />
       <dependency id="proxytrace" />
-      <dependency id="expresso" />
       <dependency id="selfcert" />
       <dependency id="markdownmonster" />
-      <dependency id="softerraldapbrowser" />
       <dependency id="gimp" />
       <dependency id="winmerge" />
       <dependency id="grepwin" />
