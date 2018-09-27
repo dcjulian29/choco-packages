@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2018.6.1.1</version>
+    <version>2018.9.26.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for my Development Environments.</description>
@@ -40,6 +40,7 @@
       <dependency id="docker-kitematic" />
       <dependency id="kubernetes-cli" />
       <dependency id="kubernetes-kompose" />
+      <dependency id="kubernetes-helm" />
       <dependency id="octopustools" />
       <dependency id="scriptcs" />
       <dependency id="faas-cli" />
