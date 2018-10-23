@@ -7,7 +7,7 @@ $hyperv = (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V).St
 
 $containers = (Get-WindowsOptionalFeature -Online -FeatureName Containers).State -eq "Enabled"
     
-    if (-not $psremote) {
+if (-not $psremote) {
     Enable-PSRemoting -Force
 }
 
