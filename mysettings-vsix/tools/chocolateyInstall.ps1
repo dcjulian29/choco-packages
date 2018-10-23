@@ -35,13 +35,23 @@ Function Install-VSIX {
 
     Download-File "$Url" "$downloadPath\$Name.vsix"
 
-    Start-Process -FilePath $vsix -NoNewWindow -Wait `
-        -ArgumentList "/quiet /logFile:""$downloadPath\$Name.log"" ""$downloadPath\$Name.vsix"""
+    $process = New-Object System.Diagnostics.ProcessStartInfo
+    $process.FileName = $vsix
+    $process.Arguments = "/quiet /logFile:""$downloadPath\$Name.log"" ""$downloadPath\$Name.vsix"""
 
-    if (-not (Get-Content "$downloadPath\$Name.log" | Select-String -Pattern "Install to Visual Studio Professional 2017 completed successfully.")) {
-        Write-Warning "An error occurred Installing $Name Extension..."
-        Write-Warning "Review the log file: $logFile"
-        throw
+    $run = [System.Diagnostics.Process]::Start($process)
+    $run.WaitForExit()
+
+    $exitCode = $run.ExitCode
+
+    if ($exitCode -eq 1001) {
+        Write-Information "The $Name Extension is already installed."   
+    } else {
+        if ($exitCode -gt 0) {
+            Write-Warning "An error occurred Installing $Name Extension..."
+            Write-Warning "Review the log file: $logFile"
+            throw
+        }
     }
 }
 
