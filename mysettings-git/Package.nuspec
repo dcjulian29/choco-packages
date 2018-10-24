@@ -2,15 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-git</id>
-    <version>2017.7.21.1</version>
+    <version>2018.10.23.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom configuration and aliases for the Git SCM tool.</description>
     <tags>git configuration custom</tags>
     <dependencies>
       <dependency id="git" />
-      <dependency id="gitflow" />
-      <dependency id="git-lfs" />
+      <dependency id="git-credential-manager-for-windows" />
       <dependency id="poshgit" />
       <dependency id="kdiff3" />
       <dependency id="mysettings-vim" />
