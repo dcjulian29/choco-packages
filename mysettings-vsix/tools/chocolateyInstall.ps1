@@ -45,7 +45,7 @@ Function Install-VSIX {
     $exitCode = $run.ExitCode
 
     if ($exitCode -eq 1001) {
-        Write-Information "The $Name Extension is already installed."   
+        Write-Information "The $Name Extension is already installed."
     } else {
         if ($exitCode -gt 0) {
             Write-Warning "An error occurred Installing $Name Extension..."
