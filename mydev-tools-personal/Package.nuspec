@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mydev-tools-personal</id>
+    <version>2018.10.25.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the tools packages for my Personal Development Environments.</description>
+    <tags>mydev-tools mydev</tags>
+    <dependencies>
+      <dependency id="mydev-tools" />
+      <dependency id="bind-toolsonly" />
+      <dependency id="baretail" />
+      <dependency id="wmiexplorer" />
+      <dependency id="xmlquire" />
+      <dependency id="westwindwebsurge" />
+      <dependency id="regexbuilder" />
+      <dependency id="linqpad" />
+      <dependency id="plantuml" />
+      <dependency id="tcptrace" />
+      <dependency id="proxytrace" />
+      <dependency id="selfcert" />
+      <dependency id="gimp" />
+      <dependency id="ruby" />
+      <dependency id="golang" />
+      <dependency id="docker-kitematic" />
+      <dependency id="kubernetes-helm" />
+      <dependency id="faas-cli" />
+      <dependency id="heroku-cli" />
+      <dependency id="scriptcs" />
+    </dependencies>
+  </metadata>
+</package>

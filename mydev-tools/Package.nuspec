@@ -2,49 +2,29 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2018.9.26.1</version>
+    <version>2018.10.25.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>These are the tools packages for my Development Environments.</description>
+    <description>These are the tools packages for all of my Development Environments.</description>
     <tags>mydev-tools mydev</tags>
     <dependencies>
       <dependency id="7zip" />
       <dependency id="javaruntime" />
-      <dependency id="bind-toolsonly" />
-      <dependency id="baretail" />
-      <dependency id="wmiexplorer" />
-      <dependency id="xmlquire" />
-      <dependency id="westwindwebsurge" />
-      <dependency id="regexbuilder" />
-      <dependency id="linqpad" />
       <dependency id="mysettings-cygwin" />
       <dependency id="googlechrome" />
-      <dependency id="plantuml" />
-      <dependency id="tcptrace" />
-      <dependency id="proxytrace" />
-      <dependency id="selfcert" />
-      <dependency id="markdownmonster" />
-      <dependency id="gimp" />
       <dependency id="winmerge" />
       <dependency id="grepwin" />
       <dependency id="windirstat" />
       <dependency id="frhed" />
       <dependency id="postman" />
-      <dependency id="ruby" />
       <dependency id="nodejs" />
-      <dependency id="golang" />
       <dependency id="nuget.commandline" />
       <dependency id="nugetpackageexplorer" />
       <dependency id="docker-for-windows" />
       <dependency id="docker-compose" />
-      <dependency id="docker-kitematic" />
       <dependency id="kubernetes-cli" />
       <dependency id="kubernetes-kompose" />
-      <dependency id="kubernetes-helm" />
       <dependency id="octopustools" />
-      <dependency id="scriptcs" />
-      <dependency id="faas-cli" />
-      <dependency id="heroku-cli" />
     </dependencies>
   </metadata>
 </package>
