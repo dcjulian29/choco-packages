@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation</id>
-    <version>2018.9.13.1</version>
+    <version>2018.10.25.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my workstation computer configurations.</description>
@@ -16,34 +16,21 @@
       <dependency id="posh-mymodules" />
       <dependency id="posh-go" />
       <dependency id="myscripts-binaries" />
-      <dependency id="winpcap" />
       <dependency id="sumatrapdf.install" />
       <dependency id="keepass" />
       <dependency id="sysinternals" />
       <dependency id="executor" />
-      <dependency id="bind-toolsonly" />
       <dependency id="mysettings-cygwin" />
-      <dependency id="mysettings-gpg4win" />
       <dependency id="python" />
-      <dependency id="xmind" />
-      <dependency id="angryip" />
-      <dependency id="iperf" />
-      <dependency id="regexbuilder" />
-      <dependency id="xmlquire" />
-      <dependency id="gimp" />
       <dependency id="grepwin" />
       <dependency id="windirstat" />
       <dependency id="winmerge" />
       <dependency id="frhed" />
-      <dependency id="vlc" />
       <dependency id="googlechrome" />
       <dependency id="tomighty" />
-      <dependency id="aescrypt" />
       <dependency id="mysettings-git" />
       <dependency id="git-credential-manager-for-windows" />
       <dependency id="mysettings-vim" />
-      <dependency id="markdownmonster" />
-      <dependency id="mysettings=vscode" />
     </dependencies>
   </metadata>
 </package>
