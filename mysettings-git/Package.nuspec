@@ -9,7 +9,6 @@
     <tags>git configuration custom</tags>
     <dependencies>
       <dependency id="git" />
-      <dependency id="git-credential-manager-for-windows" />
       <dependency id="poshgit" />
       <dependency id="kdiff3" />
       <dependency id="mysettings-vim" />
