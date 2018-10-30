@@ -1,4 +1,3 @@
-$packageName = "posh-mymodules"
 $appDir = "$($env:UserProfile)\Documents\WindowsPowerShell\MyModules"
 $downloadPath = "$env:LOCALAPPDATA\Temp"
 
@@ -33,8 +32,8 @@ if ((-not ($env:PSModulePath).Contains("$(Split-Path $profile)\MyModules"))) {
     $PSModulePath = "$(Split-Path $profile)\MyModules;$($env:PSModulePath)"
 
     $env:PSModulePath = $PSModulePath
-    
+
     Get-Module -ListAvailable | Out-Null
-    
+
     Invoke-Expression "[Environment]::SetEnvironmentVariable('PSModulePath', '$PSModulePath', 'User')"
-} 
+}
