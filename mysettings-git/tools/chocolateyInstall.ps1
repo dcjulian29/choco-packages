@@ -97,18 +97,3 @@ if (Test-Path "${env:ProgramFiles(x86)}\Git") {
 & $git config --global color.status.added "green"
 & $git config --global color.status.changed "red"
 & $git config --global color.status.untracked "cyan"
-
-##### Diff/Merge Tools
-& $git config --global diff.renamelimit "0"
-& $git config --global diff.tool "kdiff3"
-& $git config --global merge.tool "kdiff3"
-& $git config --global difftool.prompt "false"
-& $git config --global mergetool.prompt "false"
-
-& $git config --global difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"
-& $git config --global difftool.kdiff3.keepBackup "false"
-& $git config --global difftool.kdiff3.trustExitCode "false"
-
-& $git config --global mergetool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"
-& $git config --global mergetool.kdiff3.keepBackup "false"
-& $git config --global mergetool.kdiff3.trustExitCode "false"
