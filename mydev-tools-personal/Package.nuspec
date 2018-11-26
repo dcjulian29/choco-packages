@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools-personal</id>
-    <version>2018.10.25.1</version>
+    <version>2018.11.7.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for my Personal Development Environments.</description>
@@ -23,7 +23,7 @@
       <dependency id="gimp" />
       <dependency id="ruby" />
       <dependency id="golang" />
-      <dependency id="docker-kitematic" />
+      <dependency id="kubernetes-kompose" />
       <dependency id="kubernetes-helm" />
       <dependency id="faas-cli" />
       <dependency id="heroku-cli" />
