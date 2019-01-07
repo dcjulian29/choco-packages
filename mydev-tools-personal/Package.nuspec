@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools-personal</id>
-    <version>2018.11.7.1</version>
+    <version>2019.1.7.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for my Personal Development Environments.</description>
@@ -17,10 +17,8 @@
       <dependency id="regexbuilder" />
       <dependency id="linqpad" />
       <dependency id="plantuml" />
-      <dependency id="tcptrace" />
-      <dependency id="proxytrace" />
+      <dependency id="fiddler" />
       <dependency id="selfcert" />
-      <dependency id="gimp" />
       <dependency id="ruby" />
       <dependency id="golang" />
       <dependency id="kubernetes-kompose" />
