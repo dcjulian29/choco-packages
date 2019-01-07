@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools</id>
-    <version>2018.11.25.1</version>
+    <version>2019.1.7.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for all of my Development Environments.</description>
@@ -24,6 +24,7 @@
       <dependency id="docker-compose" />
       <dependency id="kubernetes-cli" />
       <dependency id="octopustools" />
+      <dependency id="pester" />
     </dependencies>
   </metadata>
 </package>
