@@ -40,6 +40,6 @@ Windows Registry Editor Version 5.00
 "TrimLeadingZeros"=dword:00000000
 "WindowAlpha"=dword:000000ff
 "WindowPosition"=dword:00000000
-"WindowSize"=dword:00320078
+"WindowSize"=dword:002d0078
 "WordDelimiters"=dword:00000000
 
