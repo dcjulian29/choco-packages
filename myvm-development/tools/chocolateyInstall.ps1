@@ -184,14 +184,6 @@ Write-Output "Installing .Net 3.x Framework..."
 
 Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online
 
-Write-Output "Installing Windows Container Support..."
-
-Enable-WindowsOptionalFeature -All -FeatureName Containers -Online -NoRestart
-
-Write-Output "Installing Windows Hyper-V Support..."
-
-Enable-WindowsOptionalFeature -All -FeatureName Microsoft-Hyper-V-All -Online -NoRestart
-
 # Sometimes, Syncthing upgrades but does not restart...
 if (-not (Get-Process -Name "syncthing" -ea 0)) {
     Write-Output "Syncthing isn't currently running, starting the process..."
