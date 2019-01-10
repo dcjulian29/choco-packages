@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mysettings-linuxsubsystem</id>
+    <version>2018.11.1.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>My custom set-up of Windows Subsystem for Linux</description>
+    <tags>linux ubuntu</tags>
+  </metadata>
+</package>
