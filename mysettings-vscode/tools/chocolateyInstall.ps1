@@ -47,6 +47,9 @@ $packages = @(
     "dbaeumer.jshint"
     "msazurermtools.azurerm-vscode-tools"
     "ms-mssql.mssql"
+    "ms-vscode.go"
+    "idleberg.nsis"
+    "bbenoist.vagrant"
 )
 
 foreach ($package in $packages) {
