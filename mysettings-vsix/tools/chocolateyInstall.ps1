@@ -68,12 +68,11 @@ Install-VSIX "Syntax Highlighting Pack" "https://madskristensen.gallerycdn.vsass
 Install-VSIX "Web Compiler" "https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/webcompiler/1.11.326/1482141920258/164873/42/Web%20Compiler%20v1.11.326.vsix"
 Install-VSIX "Trailing Whitespace Visualizer" "https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/trailingwhitespacevisualizer/2.5.90/1535142616954/Trailing_Whitespace_Visualizer_v2.5.90.vsix"
 Install-VSIX ".ignore" "https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/ignore/1.2.77/1535142107247/.ignore_v1.2.77.vsix"
-Install-VSIX "EditorConfig Language Service" "https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/editorenhancements/1.0.30/1535134387263/Editor_Enhancements_v1.0.30.vsix"
+Install-VSIX "EditorConfig Language Service" "https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/editorconfig/1.17.246/1535731435315/EditorConfig_Language_Service_v1.17.246.vsix"
 Install-VSIX "Web Accessibility Checker" "https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/webaccessibilitychecker/1.5.58/1535134672243/Web_Accessibility_Checker_v1.5.58.vsix"
 Install-VSIX "Package Security Alerts" "https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/packagesecurityalerts/1.0.22/1536787178851/Package_Security_Alerts_v1.0.22.vsix"
 Install-VSIX "Markdown Editor" "https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/markdowneditor/1.12.236/1535134643679/Markdown_Editor_v1.12.236.vsix"
 Install-VSIX "Vue.js Pack" "https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/vuejspack-18329/1.1.8/1490717404120/250225/5/Vue.js%20Pack%202017%20v1.1.8.vsix"
-Install-VSIX "Image Sprites" "https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/imagesprites/1.4.58/1535134613204/Image_Sprites_v1.4.58.vsix"
 Install-VSIX "CSS Sorter" "https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/csssorter/0.8.7/1538079473632/CSS_Sorter_v0.8.7.vsix"
 
 #### Productivity Power Tools 2017
@@ -97,7 +96,6 @@ Install-VSIX "Disable No Source Available Tab" "https://mayerwin.gallerycdn.vsas
 Install-VSIX "PerfWatson Monitor" "https://paulharrington.gallerycdn.vsassets.io/extensions/paulharrington/perfwatsonmonitor-9621/11.17.414.0/1492179304031/75983/9/PerfWatsonMonitor.vsix"
 Install-VSIX "Roslyn Security Guard" "https://philippearteau.gallerycdn.vsassets.io/extensions/philippearteau/roslynsecurityguard/2.3.0/1519069597068/232680/3/RoslynSecurityGuard.Vsix.vsix"
 Install-VSIX "Puma Scan" "https://pumasecurity.gallerycdn.vsassets.io/extensions/pumasecurity/pumascan/2.0.0.1/1533875976755/Puma.Security.Rules.Vsix.2.0.0.1.vsix"
-Install-VSIX "SonarLint" "https://sonarsource.gallerycdn.vsassets.io/extensions/sonarsource/sonarlintforvisualstudio2017/4.4.0.3745/1536052203864/SonarLint.VSIX-4.4.0.3745-2017.vsix"
-Install-VSIX "Whack Whack Terminal" "https://danielgriffen.gallerycdn.vsassets.io/extensions/danielgriffen/whackwhackterminal/1.1.3.25906/1530136152443/WhackWhackTerminal.vsix"
+Install-VSIX "SonarLint" "https://sonarsource.gallerycdn.vsassets.io/extensions/sonarsource/sonarlintforvisualstudio2017/4.4.0.3745/1536052203864/SonarLint.VSIX-4.4.0.3745-2017.vsix"Install-VSIX "Whack Whack Terminal" "https://danielgriffen.gallerycdn.vsassets.io/extensions/danielgriffen/whackwhackterminal/1.1.3.25906/1530136152443/WhackWhackTerminal.vsix"
 Install-VSIX "Visual Studio IntelliCode" "https://visualstudioexptteam.gallerycdn.vsassets.io/extensions/visualstudioexptteam/vsintellicode/1.3.8.60621/1536614597513/Microsoft.VisualStudio.IntelliCode.vsix"
 Install-VSIX "Visual Studio Spell Checker" "https://ewoodruff.gallerycdn.vsassets.io/extensions/ewoodruff/visualstudiospellcheckervs2017andlater/2018.8.25.0/1535239788431/VisualStudio.SpellChecker.VS2017AndLater.vsix"
