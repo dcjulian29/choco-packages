@@ -25,6 +25,7 @@
       <dependency id="kubernetes-cli" />
       <dependency id="octopustools" />
       <dependency id="pester" />
+      <dependency id="python" />
     </dependencies>
   </metadata>
 </package>

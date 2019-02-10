@@ -18,3 +18,22 @@ $modules | ForEach-Object {
         & $npmPath install -g $_
     }
 }
+
+
+$python = @(
+    "pylint"
+    "pep8"
+    "httpie"
+    "pymongo"
+    "pymysql"
+    "pyodbc"
+    "psycopg2"
+    "tinydb"
+    "redis"
+    "sqlalchemy"
+    "winpdb"
+)
+
+$python | ForEach-Object {
+    & pip.exe install $_
+}
