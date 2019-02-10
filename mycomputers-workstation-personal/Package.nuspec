@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2018.11.20.1</version>
+    <version>2019.2.10.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -26,7 +26,6 @@
       <dependency id="xmind" />
       <dependency id="angryip" />
       <dependency id="iperf" />
-      <dependency id="regexbuilder" />
       <dependency id="xmlquire" />
       <dependency id="docker-for-windows" />
       <dependency id="docker-compose" />

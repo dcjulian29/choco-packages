@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools-personal</id>
-    <version>2019.1.7.1</version>
+    <version>2019.2.10.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for my Personal Development Environments.</description>
@@ -14,7 +14,6 @@
       <dependency id="wmiexplorer" />
       <dependency id="xmlquire" />
       <dependency id="westwindwebsurge" />
-      <dependency id="regexbuilder" />
       <dependency id="linqpad" />
       <dependency id="plantuml" />
       <dependency id="fiddler" />
