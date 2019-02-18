@@ -1,5 +1,3 @@
-Write-Output "Installing some VS Code extensions..."
-
 if (-not (Test-Path "$env:USERPROFILE\.vscode\extensions")) {
     New-Item -Type Directory -Path "$env:USERPROFILE\.vscode\extensions" | Out-Null
 }
@@ -51,14 +49,14 @@ $devpackages = @(
     "streetsidesoftware.code-spell-checker"
 )
 
-Write-Information "Install VS Code extensions for all installations..."
+Write-Output "Install VS Code extensions for all installations..."
 
 foreach ($package in $packages) {
     Start-Process -FilePath $code -ArgumentList "--install-extension $package --force" -NoNewWindow -Wait
 }
 
 if ($env:COMPUTERNAME.ToUpper().EndsWith("DEV")) {
-    Write-Information "Install VS Code extensions for Development VM installations..."
+    Write-Output "Install VS Code extensions for Development VM installations..."
 
     foreach ($package in $devpackages) {
         Start-Process -FilePath $code -ArgumentList "--install-extension $package --force" -NoNewWindow -Wait
@@ -75,7 +73,8 @@ if (-not (Test-Path $settingsFile)) {
         "update.channel" = "none"
     }
 } else {
-    $content = ConvertFrom-Json -InputObject $(Get-Content $settingsFile -Encoding UTF8)
+    $file = Get-Content $settingsFile -Encoding UTF8 | Out-String
+    $content = ConvertFrom-Json -InputObject $file
 
     try {
       $content."update.channel" = "none"
