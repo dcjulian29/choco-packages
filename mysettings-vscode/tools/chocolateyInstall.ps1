@@ -9,51 +9,60 @@ if (-not (Test-Path "$env:APPDATA\Code\User")) {
 }
 
 $code = "C:\Program Files\Microsoft VS Code\bin\code.cmd"
+
 $packages = @(
-    "ms-vscode.csharp"
-    "PeterJausovec.vscode-docker"
-    "ms-python.python"
-    "msjsdiag.debugger-for-chrome"
-    "samverschueren.yo"
-    "rprouse.theme-obsidian"
-    "cake-build.cake-vscode"
-    "DotJoshJohnson.xml"
-    "EditorConfig.EditorConfig"
-    "eg2.tslint"
-    "haaaad.ansible"
-    "kisstkondoros.vscode-codemetrics"
-    "ms-vscode.powershell"
-    "thomas-baumgaertner.vcl"
-    "eamodio.gitlens"
-    "ms-kubernetes-tools.vscode-kubernetes-tools"
-    "mkaufman.htmlhint"
-    "jebbs.plantuml"
-    "redhat.vscode-yaml"
-    "DavidAnson.vscode-markdownlint"
-    "ms-vscode.go"
-    "sonarsource.sonarlint-vscode"
-    "idleberg.nsis"
-    "marcostazi.vs-code-vagrantfile"
-    "dbaeumer.vscode-eslint"
-    "shardulm94.trailing-spaces"
-    "mauve.terraform"
-    "mkaufman.htmlhint"
-    "slevesque.vscode-autohotkey"
-    "robertohuertasm.vscode-icons"
-    "dbaeumer.jshint"
-    "shinnn.stylelint"
-    "streetsidesoftware.code-spell-checker"
-    "ms-vscode.jscs"
-    "dbaeumer.jshint"
-    "msazurermtools.azurerm-vscode-tools"
-    "ms-mssql.mssql"
-    "ms-vscode.go"
-    "idleberg.nsis"
     "bbenoist.vagrant"
+    "DotJoshJohnson.xml"
+    "eamodio.gitlens"
+    "haaaad.ansible"
+    "marcostazi.vs-code-vagrantfile"
+    "mauve.terraform"
+    "ms-kubernetes-tools.vscode-kubernetes-tools"
+    "ms-vscode.powershell"
+    "PeterJausovec.vscode-docker"
+    "redhat.vscode-yaml"
+    "robertohuertasm.vscode-icons"
+    "rprouse.theme-obsidian"
+    "shardulm94.trailing-spaces"
+    "slevesque.vscode-autohotkey"
+    "thomas-baumgaertner.vcl"
 )
 
+$devpackages = @(
+    "cake-build.cake-vscode"
+    "DavidAnson.vscode-markdownlint"
+    "dbaeumer.jshint"
+    "dbaeumer.vscode-eslint"
+    "EditorConfig.EditorConfig"
+    "eg2.tslint"
+    "idleberg.nsis"
+    "jebbs.plantuml"
+    "kisstkondoros.vscode-codemetrics"
+    "mkaufman.htmlhint"
+    "ms-mssql.mssql"
+    "ms-python.python"
+    "ms-vscode.csharp"
+    "ms-vscode.go"
+    "ms-vscode.jscs"
+    "msjsdiag.debugger-for-chrome"
+    "samverschueren.yo"
+    "shinnn.stylelint"
+    "sonarsource.sonarlint-vscode"
+    "streetsidesoftware.code-spell-checker"
+)
+
+Write-Information "Install VS Code extensions for all installations..."
+
 foreach ($package in $packages) {
-    Start-Process -FilePath $code -ArgumentList "--install-extension $package" -NoNewWindow -Wait
+    Start-Process -FilePath $code -ArgumentList "--install-extension $package --force" -NoNewWindow -Wait
+}
+
+if ($env:COMPUTERNAME.ToUpper().EndsWith("DEV")) {
+    Write-Information "Install VS Code extensions for Development VM installations..."
+
+    foreach ($package in $devpackages) {
+        Start-Process -FilePath $code -ArgumentList "--install-extension $package --force" -NoNewWindow -Wait
+    }
 }
 
 # Disable Auto Update
