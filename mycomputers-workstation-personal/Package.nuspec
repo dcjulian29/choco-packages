@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2019.2.10.1</version>
+    <version>2019.2.19.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -35,7 +35,7 @@
       <dependency id="octopustools" />
       <dependency id="scriptcs" />
       <dependency id="kodi" />
-      <dependency id="mysettings-synthing" />
+      <dependency id="mysettings-syncthing" />
       <dependency id="microsoft-message-analyzer" />
       <dependency id="teracopy" />
       <dependency id="vagrant" />
