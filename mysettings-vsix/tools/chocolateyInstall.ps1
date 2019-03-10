@@ -85,7 +85,7 @@ Install-VSIX "Solution Error Visualizer" "https://visualstudioproductteam.galler
 #### Others
 Install-VSIX "VSColorOutput" "https://mikeward-annarbor.gallerycdn.vsassets.io/extensions/mikeward-annarbor/vscoloroutput/2.6.3/1543972507000/VSColorOutput.vsix" 
 Install-VSIX "Region Expander" "https://davidperfors.gallerycdn.vsassets.io/extensions/davidperfors/regionexpander/0.4/1521454529241/RegionExpander.vsix"
-Install-VSIX "Git Diff Margin" "https://laurentkempe.gallerycdn.vsassets.io/extensions/laurentkempe/gitdiffmargin/3.8.1.163/1535476221415/GitDiffMargin.vsix"
+Install-VSIX "Git Diff Margin" "https://laurentkempe.gallerycdn.vsassets.io/extensions/laurentkempe/gitdiffmargin/3.9.3.49/1551515359174/GitDiffMargin.vsix"
 Install-VSIX "CodeMaid" "https://stevecadwallader.gallerycdn.vsassets.io/extensions/stevecadwallader/codemaid/10.5.119/1528571016929/CodeMaid_v10.5.119.vsix"
 Install-VSIX "SQLite / SQL Server Compact Toolbox" "https://erikej.gallerycdn.vsassets.io/extensions/erikej/sqlservercompactsqlitetoolbox/4.7.534/1518354313794/SqlCeVsToolbox.4.7.534.vsix"
 Install-VSIX "StyleCop" "https://chrisdahlberg.gallerycdn.vsassets.io/extensions/chrisdahlberg/stylecop/5.0.6419.0/1501345807969/231103/4/StyleCop.vsix"
