@@ -2,18 +2,22 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-visualstudio</id>
-    <version>2019.1.8.1</version>
+    <version>2019.4.5.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for Visual Studio Development for my Development Environments.</description>
     <tags>mydev-dotnet mydev dotnet</tags>
     <dependencies>
-      <dependency id="visualstudio2017professional" />
-      <dependency id="visualstudio2017-workload-azure" />
-      <dependency id="visualstudio2017-workload-data" />
-      <dependency id="visualstudio2017-workload-manageddesktop" />
-      <dependency id="visualstudio2017-workload-netcoretools" />
-      <dependency id="visualstudio2017-workload-netweb" />
+      <dependency id="visualstudio2019professional" />
+      <dependency id="visualstudio2019-workload-azure" />
+      <dependency id="visualstudio2019-workload-data" />
+      <dependency id="visualstudio2019-workload-manageddesktop" />
+      <dependency id="visualstudio2019-workload-netcoretools" />
+      <dependency id="visualstudio2019-workload-netweb" />
+      <dependency id="visualstudio2019-workload-python" />
+      <dependency id="visualstudio2019-workload-node" />
+      <dependency id="visualstudio2019-workload-netcrossplat" />
+      <dependency id="ncrunch-vs2019" />
       <dependency id="resharper" />
       <dependency id="dotpeek" />
       <dependency id="mysettings-vsix" />
