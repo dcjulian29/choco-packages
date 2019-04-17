@@ -43,3 +43,11 @@ if (!(Test-Path $registryPath)) {
 } else {
     Set-ItemProperty -Path $registryPath -Name $name -Value $value `
         -PropertyType DWORD -Force | Out-Null}
+
+$url = "http://www.nirsoft.net/utils/searchmyfiles.zip"
+$url64 = "http://www.nirsoft.net/utils/searchmyfiles-x64.zip"
+$installFile = Join-Path $PSScriptRoot "searchmyfiles.exe"
+
+Install-ChocolateyZipPackage -PackageName "searchmyfiles" -Url $url -url64 $url64 -UnzipLocation $PSScriptRoot
+
+Set-Content -Path "$installFile.gui" -Value $null
