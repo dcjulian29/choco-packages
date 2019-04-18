@@ -1,5 +1,3 @@
-$packageName = "myvm-workstation"
-
 if (-not (Test-Path $env:SYSTEMDRIVE\tools)) {
     New-Item -Type Directory -Path $env:SYSTEMDRIVE\tools | Out-Null
 }
@@ -32,17 +30,19 @@ attrib +S +H $env:SYSTEMDRIVE\home\desktop.ini
 attrib +S $env:SYSTEMDRIVE\home
 
 # Disable OneDrive inside my VMs
-$registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive"
+$registryPath = "SOFTWARE\Policies\Microsoft\Windows\OneDrive"
 $Name = "DisableFileSyncNGSC"
 $value = "1"
 
-if (!(Test-Path $registryPath)) {
-    New-Item -Path $registryPath -Force | Out-Null
-    New-ItemProperty -Path $registryPath -Name $name -Value $value `
+if (!(Test-Path "HKLM:\$registryPath")) {
+    New-Item -Path "HKLM:\$registryPath" -Force | Out-Null
+    New-ItemProperty -Path "HKLM:\$registryPath" -Name $name -Value $value `
         -PropertyType DWORD -Force | Out-Null
 } else {
-    Set-ItemProperty -Path $registryPath -Name $name -Value $value `
-        -PropertyType DWORD -Force | Out-Null}
+    [Microsoft.Win32.Registry]::SetValue( `
+        "HKEY_LOCAL_MACHINE\$RegistryPath", $name, $value, `
+        [Microsoft.Win32.RegistryValueKind]::DWord)
+}
 
 $url = "http://www.nirsoft.net/utils/searchmyfiles.zip"
 $url64 = "http://www.nirsoft.net/utils/searchmyfiles-x64.zip"
