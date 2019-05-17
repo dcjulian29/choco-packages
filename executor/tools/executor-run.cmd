@@ -9,10 +9,15 @@ if exist %EXDST% (
     echo Stopping the running Executor process...
     taskkill /IM executor.exe
   
-    ping 127.0.0.1 -n 5 >NUL
+    ping 127.0.0.1 -n 2 >NUL
 
     echo Removing existing temporary files...
     rmdir /s /q %EXDST% >nul
+    ping 127.0.0.1 -n 2 >NUL
+    if exist %EXDST% (
+        echo ...
+        rmdir /s /q %EXDST% >nul
+    )
 
     if exist %EXDST% (
         echo A process has a lock on the directory, please remove it manually.
