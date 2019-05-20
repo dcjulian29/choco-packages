@@ -10,7 +10,6 @@
     <dependencies>
       <dependency id="7zip" />
       <dependency id="javaruntime" />
-      <dependency id="mysettings-cygwin" />
       <dependency id="googlechrome" />
       <dependency id="winmerge" />
       <dependency id="grepwin" />

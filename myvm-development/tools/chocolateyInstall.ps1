@@ -184,6 +184,10 @@ Write-Output "Installing .Net 3.x Framework..."
 
 Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online
 
+Write-Output "Installing Windows Subsystem for Linux..."
+
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
+
 # Sometimes, Syncthing upgrades but does not restart...
 if (-not (Get-Process -Name "syncthing" -ea 0)) {
     Write-Output "Syncthing isn't currently running, starting the process..."

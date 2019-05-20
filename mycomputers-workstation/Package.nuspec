@@ -20,7 +20,6 @@
       <dependency id="keepass" />
       <dependency id="sysinternals" />
       <dependency id="executor" />
-      <dependency id="mysettings-cygwin" />
       <dependency id="python" />
       <dependency id="grepwin" />
       <dependency id="windirstat" />
