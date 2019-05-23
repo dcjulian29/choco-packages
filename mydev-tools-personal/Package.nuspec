@@ -23,7 +23,6 @@
       <dependency id="kubernetes-kompose" />
       <dependency id="kubernetes-helm" />
       <dependency id="faas-cli" />
-      <dependency id="heroku-cli" />
       <dependency id="scriptcs" />
     </dependencies>
   </metadata>
