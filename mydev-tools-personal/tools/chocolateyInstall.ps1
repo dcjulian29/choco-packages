@@ -60,4 +60,19 @@ Pop-Location
 Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
 
 Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu$Script:UbuntuVersion.exe `
-    -ArgumentList "--root" -NoNewWindow -Wait
+    -ArgumentList "install --root" -NoNewWindow -Wait
+
+Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu$Script:UbuntuVersion.exe `
+    -ArgumentList "run adduser $($env:USERNAME) --gecos ""First,Last,RoomNumber,WorkPhone,HomePhone"" --disabled-password" -NoNewWindow -Wait
+
+Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu$Script:UbuntuVersion.exe `
+    -ArgumentList "run usermod -aG sudo $($env:USERNAME)" -NoNewWindow -Wait
+
+Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu$Script:UbuntuVersion.exe `
+    -ArgumentList "run echo '$($env:USERNAME) ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo" -NoNewWindow -Wait
+
+Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu$Script:UbuntuVersion.exe `
+    -ArgumentList "config --default-user $($env:USERNAME)" -NoNewWindow -Wait
+
+Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu$Script:UbuntuVersion.exe `
+    -ArgumentList "run curl -sSL https://julianscorner.com/downloads/init_wsl.sh | bash" -NoNewWindow -Wait
