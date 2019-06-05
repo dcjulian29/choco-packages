@@ -7,8 +7,6 @@ $containers = (Get-WindowsOptionalFeature -Online -FeatureName Containers).State
 
 $wsl = (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux).State -eq "Enabled"
 
-| Where-Object { $_.FeatureName -eq 'Microsoft-Windows-Subsystem-Linux' }).State)
-
 if (-not $psremote) {
     Enable-PSRemoting -Force
 }
