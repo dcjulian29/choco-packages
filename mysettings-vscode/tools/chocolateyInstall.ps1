@@ -63,26 +63,11 @@ if ($env:COMPUTERNAME.ToUpper().EndsWith("DEV")) {
     }
 }
 
-# Disable Auto Update
+# Copy my preferred settings to the installed installation of VS Code
 $settingsFile = "$env:APPDATA\Code\User\settings.json"
 
-if (-not (Test-Path $settingsFile)) {
-    New-Item -ItemType File -Path $settingsFile | Out-Null
-
-    $content = ConvertTo-Json @{
-        "update.channel" = "none"
-    }
-} else {
-    $file = Get-Content $settingsFile -Encoding UTF8 | Out-String
-    $content = ConvertFrom-Json -InputObject $file
-
-    try {
-      $content."update.channel" = "none"
-    } catch {
-      $content | Add-Member -Name "update.channel" -value "none" -MemberType NoteProperty
-    }
-
-    $content = ConvertTo-Json $content -Depth 100
+if (Test-Path $settingsFile) {
+    Remove-Item -Path $settingsFile -Force
 }
 
-$content | Set-Content $settingsFile
+Copy-Item -Path "$PSScriptRoot\vscode.json" -Destination $settingsFile -Force #| Out-Null

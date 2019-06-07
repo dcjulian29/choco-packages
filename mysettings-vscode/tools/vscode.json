@@ -1,0 +1,38 @@
+{
+    "update.mode":  "none",
+    "workbench.iconTheme":  "vscode-icons",
+    "editor.minimap.enabled":  false,
+    "editor.renderWhitespace":  "all",
+    "window.zoomLevel":  0,
+    "editor.smoothScrolling":  true,
+    "workbench.editor.restoreViewState":  false,
+    "editor.autoIndent":  false,
+    "editor.links":  false,
+    "editor.snippetSuggestions":  "top",
+    "editor.wordWrap":  "on",
+    "workbench.editor.enablePreview":  false,
+    "workbench.editor.enablePreviewFromQuickOpen":  false,
+    "workbench.statusBar.feedback.visible":  false,
+    "window.restoreWindows":  "none",
+    "files.hotExit":  "off",
+    "files.insertFinalNewline":  true,
+    "files.trimFinalNewlines":  true,
+    "files.trimTrailingWhitespace":  true,
+    "explorer.autoReveal":  false,
+    "debug.openExplorerOnEnd":  true,
+    "git.autofetch":  true,
+    "git.enableCommitSigning":  true,
+    "[typescript]":  {
+                         "editor.formatOnSave":  true,
+                         "editor.formatOnPaste":  true
+                     },
+    "[markdown]":  {
+                       "editor.formatOnSave":  true,
+                       "editor.renderWhitespace":  "boundary",
+                       "editor.acceptSuggestionOnEnter":  "off"
+                   },
+    "[yaml]":  {
+                   "editor.tabSize":  4,
+                   "editor.autoIndent":  true
+               }
+}
