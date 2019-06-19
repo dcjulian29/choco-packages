@@ -21,7 +21,7 @@ if (-not $containers) {
 
 if (-not $wsl) {
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
-    
+
     Write-Warning "You must reboot before using the Linux Subsystem..."
 }
 
