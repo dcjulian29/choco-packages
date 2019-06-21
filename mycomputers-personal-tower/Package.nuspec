@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mycomputers-personal-tower</id>
+    <version>2019.6.21.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>
+        These are the packages that I install on my personal tower computer.
+    </description>
+    <tags>mycomputers-personal-tower mycomputers tower personal</tags>
+    <dependencies>
+      <dependency id="mycomputers-workstation-personal" />
+      <dependency id="handbrake" />
+      <dependency id="itunes" />
+      <dependency id="anydvd" />
+    </dependencies>
+  </metadata>
+</package>
