@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-personal-tower</id>
-    <version>2019.6.21.1</version>
+    <version>2019.6.24.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -14,6 +14,7 @@
       <dependency id="handbrake" />
       <dependency id="itunes" />
       <dependency id="anydvd" />
+      <dependency id="outlookstatview" />
     </dependencies>
   </metadata>
 </package>
