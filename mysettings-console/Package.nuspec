@@ -2,10 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-console</id>
-    <version>2018.12.25.1</version>
+    <version>2019.6.21.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom settings for fonts, colors, and windows size for console windows.</description>
     <tags>console settings custom</tags>
+    <dependencies>
+      <dependency id="colortool" />
+    </dependencies>
   </metadata>
 </package>
