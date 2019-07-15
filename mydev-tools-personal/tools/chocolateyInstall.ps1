@@ -75,4 +75,4 @@ Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu$Script:UbuntuVersion.exe 
     -ArgumentList "config --default-user $($env:USERNAME)" -NoNewWindow -Wait
 
 Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu$Script:UbuntuVersion.exe `
-    -ArgumentList "run curl -sSL https://julianscorner.com/downloads/init_wsl.sh | bash" -NoNewWindow -Wait
+    -ArgumentList "run curl -sSL http://dl.julianscorner.com/l/init.sh | bash" -NoNewWindow -Wait
