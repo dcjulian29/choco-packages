@@ -32,3 +32,11 @@ $installFile = Join-Path $PSScriptRoot "searchmyfiles.exe"
 Install-ChocolateyZipPackage -PackageName "searchmyfiles" -Url $url -url64 $url64 -UnzipLocation $PSScriptRoot
 
 Set-Content -Path "$installFile.gui" -Value $null
+
+# Initialize MiniKube and configure VM
+& minikube.exe config set vm-driver hyperv
+& minikube.exe config set hyperv-virtual-switch "Default Switch"
+& minikube.exe start
+& minikube.exe ssh 'sudo poweroff'
+
+Set-VMMemory -VMName "minikube" -DynamicMemoryEnabled $false
