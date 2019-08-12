@@ -25,15 +25,68 @@ if (-not $wsl) {
     Write-Warning "You must reboot before using the Linux Subsystem..."
 }
 
-$url = "http://www.nirsoft.net/utils/searchmyfiles.zip"
-$url64 = "http://www.nirsoft.net/utils/searchmyfiles-x64.zip"
-$installFile = Join-Path $PSScriptRoot "searchmyfiles.exe"
+Write-Output " Installing SearchMyFiles manually since the community package hasn't been updated..."
 
-Install-ChocolateyZipPackage -PackageName "searchmyfiles" -Url $url -url64 $url64 -UnzipLocation $PSScriptRoot
+$url = 'http://www.nirsoft.net/utils/searchmyfiles-x64.zip'
+$url64 = 'http://www.nirsoft.net/utils/searchmyfiles-x64.zip'
 
 Set-Content -Path "$installFile.gui" -Value $null
 
-# Initialize MiniKube and configure VM
+$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$installFile = Join-Path $toolsDir "searchmyfiles.exe"
+
+Install-ChocolateyZipPackage -PackageName "searchmyfiles" `
+                             -Url "$url" `
+                             -UnzipLocation "$toolsDir" `
+                             -Url64bit "$url64"
+
+if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
+    Write-Output "Downloading and installing Ubuntu 18.04 ..."
+
+    Remove-Item -Path $env:TEMP\ubuntu.appx -Force | Out-Null
+    Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
+
+    Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile $env:TEMP\Ubuntu.appx -UseBasicParsing
+
+    Rename-Item $env:TEMP\Ubuntu.appx $env:TEMP\Ubuntu.zip
+
+    New-Item -Type Directory -Path $env:SYSTEMDRIVE\Ubuntu | Out-Null
+
+    Expand-Archive $env:TEMP\Ubuntu.zip $env:SYSTEMDRIVE\Ubuntu
+
+    Set-Content $env:SYSTEMDRIVE\Ubuntu\desktop.ini @"
+    [.ShellClassInfo]
+    IconResource=$env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe,0
+"@
+
+    attrib +S +H $env:SYSTEMDRIVE\Ubuntu\desktop.ini
+    attrib +S $env:SYSTEMDRIVE\Ubuntu
+
+    Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
+
+    Write-Output "Ubuntu Linux has been installed...  Starting final install."
+
+    Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe `
+        -ArgumentList "install --root" -NoNewWindow -Wait
+
+    Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe `
+        -ArgumentList "run adduser $($env:USERNAME) --gecos ""First,Last,RoomNumber,WorkPhone,HomePhone"" --disabled-password" -NoNewWindow -Wait
+
+    Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe `
+        -ArgumentList "run usermod -aG sudo $($env:USERNAME)" -NoNewWindow -Wait
+
+    Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe `
+        -ArgumentList "run echo '$($env:USERNAME) ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo" -NoNewWindow -Wait
+
+    Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe `
+        -ArgumentList "config --default-user $($env:USERNAME)" -NoNewWindow -Wait
+
+    Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe `
+        -ArgumentList "run curl -sSL http://dl.julianscorner.com/l/init.sh | bash" -NoNewWindow -Wait
+}
+
+Write-Output "Initialize MiniKube and configure its VM ..."
+
 & minikube.exe config set vm-driver hyperv
 & minikube.exe config set hyperv-virtual-switch "Default Switch"
 & minikube.exe start
