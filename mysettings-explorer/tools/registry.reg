@@ -85,12 +85,14 @@ Windows Registry Editor Version 5.00
 "SeparateProcess"=dword:00000001
 "StartMenuInit"=dword:00000004
 "NavPaneExpandToCurrentFolder"=dword:00000001
+"NavPaneShowAllFolders"=dword:00000001
 "DontUsePowerShellOnWinX"=dword:00000000
 "ShowTaskViewButton"=dword:00000000
 "LaunchTo"=dword:00000001
 "HideIcons"=dword:00000001
 "AutoCheckSelect"=dword:00000000
-"IconsOnly"=dword:00000001
+"IconsOnly"=dword:00000000
+"ShowTypeOverlay"=dword:00000001
 "ShowEncryptCompressedColor"=dword:00000001
 "SharingWizardOn"=dword:00000000
 "MMTaskbarEnabled"=dword:00000001
