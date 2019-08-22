@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-family</id>
-    <version>2018.3.21.1</version>
+    <version>2018.8.20.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my family computer configurations.</description>
@@ -10,7 +10,13 @@
     <dependencies>
       <dependency id="mycomputers-common" />
       <dependency id="tightvnc" />
+      <dependency id="teamviewer" />
       <dependency id="python" />
+      <dependency id="vlc" />
+      <dependency id="googlechrome" />
+      <dependency id="lastpass"> />
+      <dependency id="https-everywhere-chrome" />
+      <dependency id="ublockorigin-chrome" />
     </dependencies>
   </metadata>
 </package>
