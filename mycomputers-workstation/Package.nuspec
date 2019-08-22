@@ -28,7 +28,6 @@
       <dependency id="googlechrome" />
       <dependency id="tomighty" />
       <dependency id="mysettings-git" />
-      <dependency id="git-credential-manager-for-windows" />
     </dependencies>
   </metadata>
 </package>
