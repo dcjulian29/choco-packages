@@ -34,7 +34,6 @@
       <dependency id="kubernetes-kompose" />
       <dependency id="octopustools" />
       <dependency id="scriptcs" />
-      <dependency id="kodi" />
       <dependency id="mysettings-syncthing" />
       <dependency id="teracopy" />
       <dependency id="vagrant" />
