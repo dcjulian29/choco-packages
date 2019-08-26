@@ -16,7 +16,7 @@ if (-not $hyperv) {
 }
 
 if (-not $containers) {
-    Enable-WindowsOptionalFeature -Online -FeatureName Containers -All
+    Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
 }
 
 if (-not $wsl) {
@@ -43,8 +43,13 @@ Install-ChocolateyZipPackage -PackageName "searchmyfiles" `
 if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
     Write-Output "Downloading and installing Ubuntu 18.04 ..."
 
-    Remove-Item -Path $env:TEMP\ubuntu.appx -Force | Out-Null
-    Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
+    if (Test-Path $env:TEMP\ubuntu.appx) {
+        Remove-Item -Path $env:TEMP\ubuntu.appx -Force | Out-Null
+    }
+    
+    if (Test-Path $env:TEMP\ubuntu.zip) {
+        Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
+    }
 
     Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile $env:TEMP\Ubuntu.appx -UseBasicParsing
 
@@ -63,33 +68,4 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
     attrib +S $env:SYSTEMDRIVE\Ubuntu
 
     Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
-
-    Write-Output "Ubuntu Linux has been installed...  Starting final install."
-
-    Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe `
-        -ArgumentList "install --root" -NoNewWindow -Wait
-
-    Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe `
-        -ArgumentList "run adduser $($env:USERNAME) --gecos ""First,Last,RoomNumber,WorkPhone,HomePhone"" --disabled-password" -NoNewWindow -Wait
-
-    Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe `
-        -ArgumentList "run usermod -aG sudo $($env:USERNAME)" -NoNewWindow -Wait
-
-    Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe `
-        -ArgumentList "run echo '$($env:USERNAME) ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo" -NoNewWindow -Wait
-
-    Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe `
-        -ArgumentList "config --default-user $($env:USERNAME)" -NoNewWindow -Wait
-
-    Start-Process -FilePath $env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe `
-        -ArgumentList "run curl -sSL http://dl.julianscorner.com/l/init.sh | bash" -NoNewWindow -Wait
 }
-
-Write-Output "Initialize MiniKube and configure its VM ..."
-
-& minikube.exe config set vm-driver hyperv
-& minikube.exe config set hyperv-virtual-switch "Default Switch"
-& minikube.exe start
-& minikube.exe ssh 'sudo poweroff'
-
-Set-VMMemory -VMName "minikube" -DynamicMemoryEnabled $false
