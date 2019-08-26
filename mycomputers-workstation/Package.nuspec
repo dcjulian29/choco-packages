@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation</id>
-    <version>2019.8.24.1</version>
+    <version>2019.8.25.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my workstation computer configurations.</description>
@@ -26,6 +26,7 @@
       <dependency id="winmerge" />
       <dependency id="frhed" />
       <dependency id="googlechrome" />
+      <dependency id="lastpass" />
       <dependency id="tomighty" />
       <dependency id="mydev-scm" />
     </dependencies>
