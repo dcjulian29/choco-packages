@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mycomputers-personal-tower</id>
-    <version>2019.8.20.1</version>
+    <id>mycomputers-personal-workstation</id>
+    <version>2019.8.26.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
-        These are the packages that I install on my personal tower computer.
+        These are the packages that I install on my personal tower workstation computer.
     </description>
-    <tags>mycomputers-personal-tower mycomputers tower personal</tags>
+    <tags>mycomputers-personal-workstation mycomputers tower workstation personal</tags>
     <dependencies>
       <dependency id="mycomputers-workstation-personal" />
       <dependency id="handbrake" />
@@ -18,4 +18,6 @@
       <dependency id="slack" />
     </dependencies>
   </metadata>
-</package>
+  <files>
+    <file src="..\mycomputers-personal-laptop\tools\chocolateyInstall.ps1" />
+  </files></package>
