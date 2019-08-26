@@ -24,6 +24,7 @@ $packages = @(
     "shardulm94.trailing-spaces"
     "slevesque.vscode-autohotkey"
     "thomas-baumgaertner.vcl"
+    "ms-vscode-remote.remote-wsl"
 )
 
 $devpackages = @(
