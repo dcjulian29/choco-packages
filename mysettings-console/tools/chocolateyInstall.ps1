@@ -4,13 +4,14 @@ if (Test-Path $env:TEMP\iTerm2-Color-Schemes.zip) {
     Remove-Item $env:TEMP\iTerm2-Color-Schemes.zip -Force
 }
 
-Download-File $url $env:TEMP\iTerm2-Color-Schemes.zip
+(New-Object System.Net.WebClient).DownloadFile("$url", "${env:TEMP}\iTerm2-Color-Schemes.zip")
 
 if (Test-Path $env:TEMP\iTerm2-Color-Schemes-master) {
     Remove-Item $env:TEMP\iTerm2-Color-Schemes-master -Recurse -Force
 }
 
-Unzip-File $env:TEMP\iTerm2-Color-Schemes.zip $env:TEMP\
+[System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem") | Out-Null
+[System.IO.Compression.ZipFile]::ExtractToDirectory("${env:TEMP}\iTerm2-Color-Schemes.zip", $env:TEMP)
 
 Copy-Item -Path $env:TEMP\iTerm2-Color-Schemes-master\schemes\* `
     -Destination $env:ChocolateyInstall\lib\colortool\content\schemes\ `
