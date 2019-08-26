@@ -1,65 +1,27 @@
-$packageName = "mysettings-rainmeter"
-
 if (Get-Process -Name Rainmeter) {
     Stop-Process -Name Rainmeter -Force
 }
 
-$drives = (Get-Disk | Where-Object { $_.BusType -ne "USB" } `
-    | ForEach-Object { Get-Partition -DiskNumber $_.Number  `
-    | Where-Object { $_.DriveLetter } }).PartitionNumber.Count
+if (-not (Test-Path $env:APPDATA\Rainmeter)) {
+    New-Item -Path $env:APPDATA\Rainmeter -ItemType Directory | Out-Null
+}
 
 if (Test-Path $env:APPDATA\Rainmeter\Rainmeter.ini) {
     Remove-Item -Path $env:APPDATA\Rainmeter\Rainmeter.ini -Force
 }
 
-Set-Content -Path $env:APPDATA\Rainmeter\Rainmeter.ini -Value @"
-[Rainmeter]
-Logging=0
-SkinPath=C:\etc\Rainmeter\Skins\
+if (Test-Path $env:SystemDrive\etc\rainmeter\Rainmeter_$($env:COMPUTERNAME).ini) {
+    Copy-Item "${env:SystemDrive}\etc\rainmeter\Rainmeter_$($env:COMPUTERNAME).ini" `
+        "${env:APPDATA}\Rainmeter\Rainmeter.ini"
+}
 
-[Julian\Disk]
-Active=$drives
-WindowX=1710
-WindowY=248
-ClickThrough=0
-Draggable=1
-SnapEdges=1
-KeepOnScreen=1
-AlwaysOnTop=0
-
-[Julian\Network]
-Active=1
-WindowX=1660
-WindowY=100
-ClickThrough=0
-Draggable=1
-SnapEdges=1
-KeepOnScreen=1
-AlwaysOnTop=0
-
-[Julian\System]
-Active=1
-WindowX=1323
-WindowY=656
-ClickThrough=0
-Draggable=1
-SnapEdges=1
-KeepOnScreen=1
-AlwaysOnTop=0
-
-[Julian\Weather]
-Active=1
-WindowX=-1920
-WindowY=0
-ClickThrough=0
-Draggable=1
-SnapEdges=1
-KeepOnScreen=1
-AlwaysOnTop=0
-"@
+if (Test-Path $env:SystemDrive\etc\rainmeter\Layouts_$($env:COMPUTERNAME)) {
+    Copy-Item "${env:SystemDrive}\etc\rainmeter\Layouts_$($env:COMPUTERNAME)/" `
+        "${env:APPDATA}\Rainmeter\Layouts" -Recurse
+}
 
 if (Test-Path $env:USERPROFILE\Documents\Rainmeter) {
     Remove-Item -Path $env:USERPROFILE\Documents\Rainmeter -Recurse -Force
 }
 
-Start-Process -FilePath $env:APPDATA\Rainmeter\Rainmeter.exe
+Start-Process -FilePath "${env:ProgramFiles}\Rainmeter\Rainmeter.exe"
