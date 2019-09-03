@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-personal-workstation</id>
-    <version>2019.8.26.1</version>
+    <version>2019.8.26.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -19,5 +19,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\mycomputers-personal-laptop\tools\chocolateyInstall.ps1" />
+    <file src="..\mycomputers-personal-laptop\tools\chocolateyInstall.ps1"
+          target="tools" />
   </files></package>
