@@ -14,7 +14,7 @@
       <dependency id="python" />
       <dependency id="vlc" />
       <dependency id="googlechrome" />
-      <dependency id="lastpass"> />
+      <dependency id="lastpass" />
       <dependency id="https-everywhere-chrome" />
       <dependency id="ublockorigin-chrome" />
     </dependencies>
