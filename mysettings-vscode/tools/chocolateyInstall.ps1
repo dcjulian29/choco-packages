@@ -8,60 +8,15 @@ if (-not (Test-Path "$env:APPDATA\Code\User")) {
 
 $code = "C:\Program Files\Microsoft VS Code\bin\code.cmd"
 
-$packages = @(
-    "bbenoist.vagrant"
-    "DotJoshJohnson.xml"
-    "eamodio.gitlens"
-    "haaaad.ansible"
-    "marcostazi.vs-code-vagrantfile"
-    "mauve.terraform"
-    "ms-kubernetes-tools.vscode-kubernetes-tools"
-    "ms-vscode.powershell"
-    "PeterJausovec.vscode-docker"
-    "redhat.vscode-yaml"
-    "robertohuertasm.vscode-icons"
-    "rprouse.theme-obsidian"
-    "shardulm94.trailing-spaces"
-    "slevesque.vscode-autohotkey"
-    "thomas-baumgaertner.vcl"
-    "ms-vscode-remote.remote-wsl"
-)
+$packages  = [string[]](Get-Content extensions.default)
+$packages += [string[]](Get-Content extensions.windows)
 
-$devpackages = @(
-    "cake-build.cake-vscode"
-    "DavidAnson.vscode-markdownlint"
-    "dbaeumer.jshint"
-    "dbaeumer.vscode-eslint"
-    "EditorConfig.EditorConfig"
-    "idleberg.nsis"
-    "jebbs.plantuml"
-    "kisstkondoros.vscode-codemetrics"
-    "mkaufman.htmlhint"
-    "ms-mssql.mssql"
-    "ms-python.python"
-    "ms-vscode.csharp"
-    "ms-vscode.go"
-    "ms-vscode.jscs"
-    "ms-vscode.vscode-typescript-tslint-plugin"
-    "msjsdiag.debugger-for-chrome"
-    "samverschueren.yo"
-    "shinnn.stylelint"
-    "sonarsource.sonarlint-vscode"
-    "streetsidesoftware.code-spell-checker"
-)
-
-Write-Output "Install VS Code extensions for all installations..."
+if ($env:COMPUTERNAME.ToUpper().EndsWith("DEV")) {
+    $packages += [string[]](Get-Content .\extensions.development)
+}
 
 foreach ($package in $packages) {
     Start-Process -FilePath $code -ArgumentList "--install-extension $package --force" -NoNewWindow -Wait
-}
-
-if ($env:COMPUTERNAME.ToUpper().EndsWith("DEV")) {
-    Write-Output "Install VS Code extensions for Development VM installations..."
-
-    foreach ($package in $devpackages) {
-        Start-Process -FilePath $code -ArgumentList "--install-extension $package --force" -NoNewWindow -Wait
-    }
 }
 
 # Copy my preferred settings to the installed installation of VS Code
