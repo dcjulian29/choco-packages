@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools-personal</id>
-    <version>2019.5.20.1</version>
+    <version>2019.9.3.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for my Personal Development Environments.</description>
@@ -24,6 +24,7 @@
       <dependency id="kubernetes-helm" />
       <dependency id="faas-cli" />
       <dependency id="scriptcs" />
+      <dependency id="searchmyfiles" />
     </dependencies>
   </metadata>
 </package>

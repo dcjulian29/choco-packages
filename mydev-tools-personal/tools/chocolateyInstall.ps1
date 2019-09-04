@@ -16,19 +16,6 @@ update_rubygems
 
 gem install jekyll
 
-Write-Output " Installing SearchMyFiles manually since the community package hasn't been updated..."
-
-$url = 'http://www.nirsoft.net/utils/searchmyfiles-x64.zip'
-$url64 = 'http://www.nirsoft.net/utils/searchmyfiles-x64.zip'
-
-$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$installFile = Join-Path $toolsDir "searchmyfiles.exe"
-
-Install-ChocolateyZipPackage -PackageName "searchmyfiles" `
-                             -Url "$url" `
-                             -UnzipLocation "$toolsDir" `
-                             -Url64bit "$url64"
-
 Write-Output "Downloading and installing Ubuntu $($Script:UbuntuVersion)..."
 
 Push-Location -Path $env:TEMP

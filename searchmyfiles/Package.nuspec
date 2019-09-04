@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>searchmyfiles</id>
+    <version>3.1.4</version>
+    <authors>Nir Sofer</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>http://www.nirsoft.net/utils/search_my_files.html</licenseUrl>
+    <projectUrl>http://www.nirsoft.net/utils/search_my_files.html</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/dtgm/chocolatey-packages/2697586f564894b3346352497da46f320a02e725/icons/searchmyfiles.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>TSearchMyFiles is an alternative to the standard "Search For Files And Folders" module of Windows.</description>
+    <tags>searchmyfiles files folders</tags>
+  </metadata>
+</package>
