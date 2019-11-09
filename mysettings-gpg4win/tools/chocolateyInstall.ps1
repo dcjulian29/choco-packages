@@ -1,5 +1,3 @@
-$packageName = "mysettings-gpg4win"
-
 $etc = "$($env:SYSTEMDRIVE)\etc"
 $up = "$($env:USERPROFILE)"
 

@@ -2,13 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-gpg4win</id>
-    <version>2018.7.25.1</version>
+    <version>2019.11.8.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
    <description>My custom configuration and setup for Gpg4win.</description>
     <tags>gpg pgp gnupg</tags>
     <dependencies>
-      <dependency id="gpg4win-light" />
+      <dependency id="gpg4win" />
     </dependencies>
   </metadata>
 </package>
