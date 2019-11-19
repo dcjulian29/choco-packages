@@ -57,7 +57,7 @@ for /R "." %%G in (.) do (
 
 echo Starting Executor
 
-runas /trustlevel:0x20000 "%EXDST%\Executor.exe -s"
+start %EXDST%\Executor.exe -s
 
 popd
 
