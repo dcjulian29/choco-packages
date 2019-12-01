@@ -10,28 +10,28 @@ if (Test-Path "$env:SYSTEMDRIVE\etc\logs\zzz.log") {
 Function Read-MultiLineInput([string]$Message) {
     Add-Type -AssemblyName System.Drawing
     Add-Type -AssemblyName System.Windows.Forms
-     
+
     $label = New-Object System.Windows.Forms.Label
-    $label.Location = New-Object System.Drawing.Size(10,10) 
+    $label.Location = New-Object System.Drawing.Size(10,10)
     $label.Size = New-Object System.Drawing.Size(280,20)
     $label.AutoSize = $true
     $label.Text = $Message
-     
-    $textBox = New-Object System.Windows.Forms.TextBox 
-    $textBox.Location = New-Object System.Drawing.Size(10,40) 
+
+    $textBox = New-Object System.Windows.Forms.TextBox
+    $textBox.Location = New-Object System.Drawing.Size(10,40)
     $textBox.Size = New-Object System.Drawing.Size(575,200)
     $textBox.AcceptsReturn = $true
     $textBox.AcceptsTab = $false
     $textBox.Multiline = $true
     $textBox.ScrollBars = 'Both'
-     
+
     $okButton = New-Object System.Windows.Forms.Button
     $okButton.Location = New-Object System.Drawing.Size(415,250)
     $okButton.Size = New-Object System.Drawing.Size(75,25)
     $okButton.Text = "OK"
     $okButton.Add_Click({ $form.Tag = $textBox.Text; $form.Close() })
-     
-    $form = New-Object System.Windows.Forms.Form 
+
+    $form = New-Object System.Windows.Forms.Form
     $form.Size = New-Object System.Drawing.Size(610,320)
     $form.FormBorderStyle = 'FixedSingle'
     $form.StartPosition = "CenterScreen"
@@ -39,11 +39,11 @@ Function Read-MultiLineInput([string]$Message) {
     $form.Topmost = $True
     $form.AcceptButton = $okButton
     $form.ShowInTaskbar = $false
-     
+
     $form.Controls.Add($label)
     $form.Controls.Add($textBox)
     $form.Controls.Add($okButton)
-     
+
     $form.Add_Shown({$form.Activate()})
     $form.ShowDialog() > $null
 
@@ -63,7 +63,7 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
         $Server = Get-Content "$rootPath\server.name"
         $Key = Get-Content "$c.key"
         $Cert = Get-Content "$c.cert"
-    } else {    
+    } else {
         $ClientID = Read-MultiLineInput "Enter the ID for this client"
         $ServerID = Read-MultiLineInput "Enter the ID for this server"
         $Server = Read-MultiLineInput "Enter the name of the central server"
@@ -153,21 +153,21 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
 
     Start-Process -FilePath "$env:ChocolateyInstall\bin\syncthing.exe" `
         -ArgumentList "-no-restart -no-browser"
-    
+
     Write-Output "Waiting for enough of the initial synchronization to occur..."
 
     while (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\etc\executor\executor.ini")) {
         Start-Sleep -Seconds 5
-        
+
         # Sometimes, Syncthing upgrades but does not restart...
         if (-not (Get-Process -Name "syncthing" -ea 0)) {
             Write-Output "Syncthing isn't currently running, starting the process..."
-            
+
             Start-Process -FilePath "$env:ChocolateyInstall\bin\syncthing.exe" `
                 -ArgumentList "-no-restart -no-browser"
         }
     }
-    
+
     Write-Output "Found what I'm looking for... :)"
 }
 
@@ -182,7 +182,7 @@ if (-not ((Get-Item ${env:SYSTEMDRIVE}\etc).Attributes -band [IO.FileAttributes]
 
 Write-Output "Installing .Net 3.x Framework..."
 
-Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online
+Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online -NoRestart
 
 Write-Output "Installing Windows Subsystem for Linux..."
 
@@ -191,7 +191,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 # Sometimes, Syncthing upgrades but does not restart...
 if (-not (Get-Process -Name "syncthing" -ea 0)) {
     Write-Output "Syncthing isn't currently running, starting the process..."
-    
+
     Start-Process -FilePath "$env:ChocolateyInstall\bin\syncthing.exe" `
         -ArgumentList "-no-restart -no-browser"
 }
