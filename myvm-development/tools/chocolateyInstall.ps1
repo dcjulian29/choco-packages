@@ -1,5 +1,3 @@
-$packageName = "myvm-development"
-
 $ErrorActionPreference = "Stop"
 
 if (Test-Path "$env:SYSTEMDRIVE\etc\logs\zzz.log") {
@@ -180,9 +178,9 @@ if (-not ((Get-Item ${env:SYSTEMDRIVE}\etc).Attributes -band [IO.FileAttributes]
     New-Item -ItemType Junction -Path ${env:SYSTEMDRIVE}\etc -Value ${env:SYSTEMDRIVE}\home\vm\etc
 }
 
-Write-Output "Installing .Net 3.x Framework..."
+# Write-Output "Installing .Net 3.x Framework..."
 
-Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online -NoRestart
+# Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online -NoRestart
 
 Write-Output "Installing Windows Subsystem for Linux..."
 
