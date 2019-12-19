@@ -5,6 +5,13 @@ $re = "[{0} ]" -f [RegEx]::Escape($invalidChars)
 $date = Get-Date -Format "yyyyMMdd_HHmmss"
 $packages = @{}
 
+Write-Output "Downloading Extensions..."
+
+Download-File -Url "http://dl.julianscorner.com/vsixpackages.zip" `
+    -Destination $env:TEMP\vsixpackages.zip
+
+Expand-Archive -Path $env:TEMP\vsixpackages.zip -DestinationPath "vsix"
+
 Write-Output "Preparing VSIX Extensions for Install..."
 
 if (Test-Path $downloadPath) {
