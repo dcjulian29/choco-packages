@@ -13,14 +13,14 @@ New-Item -Path $downloadPath -ItemType Directory | Out-Null
 
 Write-Output "Downloading Extensions..."
 
-if (Test-Path "$env:TEMP\vsixpackages.zip" ) {
-    Remove-Item -Path "$env:TEMP\vsixpackages.zip" -Force
+if (Test-Path "$downloadPath\vsixpackages.zip" ) {
+    Remove-Item -Path "$downloadPath\vsixpackages.zip" -Force
 }
 
 Download-File -Url "http://dl.julianscorner.com/vsixpackages.zip" `
     -Destination $downloadPath\vsixpackages.zip
 
-Expand-Archive -Path "$env:TEMP\vsixpackages.zip" -DestinationPath $downloadPath
+Expand-Archive -Path "$downloadPath\vsixpackages.zip" -DestinationPath $downloadPath
 
 Write-Output "Preparing VSIX Extensions for Install..."
 
