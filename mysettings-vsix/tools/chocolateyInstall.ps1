@@ -5,22 +5,26 @@ $re = "[{0} ]" -f [RegEx]::Escape($invalidChars)
 $date = Get-Date -Format "yyyyMMdd_HHmmss"
 $packages = @{}
 
-Write-Output "Downloading Extensions..."
-
-Download-File -Url "http://dl.julianscorner.com/vsixpackages.zip" `
-    -Destination $env:TEMP\vsixpackages.zip
-
-Expand-Archive -Path $env:TEMP\vsixpackages.zip -DestinationPath "vsix"
-
-Write-Output "Preparing VSIX Extensions for Install..."
-
 if (Test-Path $downloadPath) {
    Remove-Item -Path $downloadPath -Force -Recurse
 }
 
 New-Item -Path $downloadPath -ItemType Directory | Out-Null
 
-$packageFiles = Get-ChildItem -Path . -Filter *.vsix -Recurse
+Write-Output "Downloading Extensions..."
+
+if (Test-Path "$env:TEMP\vsixpackages.zip" ) {
+    Remove-Item -Path "$env:TEMP\vsixpackages.zip" -Force
+}
+
+Download-File -Url "http://dl.julianscorner.com/vsixpackages.zip" `
+    -Destination $downloadPath\vsixpackages.zip
+
+Expand-Archive -Path "$env:TEMP\vsixpackages.zip" -DestinationPath $downloadPath
+
+Write-Output "Preparing VSIX Extensions for Install..."
+
+$packageFiles = Get-ChildItem -Path $downloadPath -Filter *.vsix -Recurse
 
 foreach ($package in $packageFiles) {
     $zipFile = "$downloadPath\$($package.BaseName).zip"
