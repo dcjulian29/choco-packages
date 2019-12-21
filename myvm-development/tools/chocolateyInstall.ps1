@@ -150,7 +150,7 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     Set-Content -Path "$env:LOCALAPPDATA\Syncthing\key.pem" -Value $Key
 
     Start-Process -FilePath "$env:ChocolateyInstall\bin\syncthing.exe" `
-        -ArgumentList "-no-restart -no-browser"
+        -ArgumentList "-no-restart -no-browser" -WindowStyle Minimized
 
     Write-Output "Waiting for enough of the initial synchronization to occur..."
 
@@ -162,7 +162,7 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
             Write-Output "Syncthing isn't currently running, starting the process..."
 
             Start-Process -FilePath "$env:ChocolateyInstall\bin\syncthing.exe" `
-                -ArgumentList "-no-restart -no-browser"
+                -ArgumentList "-no-restart -no-browser" -WindowStyle Minimized
         }
     }
 
@@ -191,7 +191,7 @@ if (-not (Get-Process -Name "syncthing" -ea 0)) {
     Write-Output "Syncthing isn't currently running, starting the process..."
 
     Start-Process -FilePath "$env:ChocolateyInstall\bin\syncthing.exe" `
-        -ArgumentList "-no-restart -no-browser"
+        -ArgumentList "-no-restart -no-browser" -WindowStyle Minimized
 }
 
 Write-Output "Waiting for log folder to sync..."
