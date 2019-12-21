@@ -20,7 +20,8 @@ if (Test-Path "$downloadPath\vsixpackages.zip" ) {
 Download-File -Url "http://dl.julianscorner.com/vsixpackages.zip" `
     -Destination $downloadPath\vsixpackages.zip
 
-Expand-Archive -Path "$downloadPath\vsixpackages.zip" -DestinationPath $downloadPath
+Expand-Archive -Path "$downloadPath\vsixpackages.zip" -DestinationPath $downloadPath `
+    Out-Null
 
 Write-Output "Preparing VSIX Extensions for Install..."
 
@@ -33,7 +34,7 @@ foreach ($package in $packageFiles) {
 
     $extractDirectory = "$downloadPath\$($package.BaseName)\"
 
-    Expand-Archive -Path $zipFile -DestinationPath $extractDirectory -Force
+    Expand-Archive -Path $zipFile -DestinationPath $extractDirectory -Force | Out-Null
 
     $xml = [xml](Get-Content -Path "$extractDirectory\extension.vsixmanifest")
 
