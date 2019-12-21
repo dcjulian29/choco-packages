@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-if (Test-Path "$env:SYSTEMDRIVE\etc\logs\zzz.log") {
+if (Test-Path "$env:SYSTEMDRIVE\etc\log\zzz.log") {
     write-Warning "Package already installed, no need to upgrade..."
     exit
 }
@@ -196,7 +196,7 @@ if (-not (Get-Process -Name "syncthing" -ea 0)) {
 
 Write-Output "Waiting for log folder to sync..."
 
-while (-not (Test-Path "$env:SYSTEMDRIVE\etc\logs\zzz.log")) {
+while (-not (Test-Path "$env:SYSTEMDRIVE\etc\log\zzz.log")) {
     Start-Sleep -Seconds 5
 }
 
@@ -208,12 +208,11 @@ $files = @(
     "SetupComplete"
 )
 
+$date = Get-Date -Format "yyyyMMdd_hhmmss"
 foreach ($file in $files) {
-    $date = Get-Date -Format "yyyyMMdd-hhmm"
-
     if (Test-Path "$env:WINDIR\Setup\Scripts\$file.log") {
         Copy-Item "$env:WINDIR\Setup\Scripts\$file.log" `
-            "$env:SYSTEMDRIVE\etc\logs\$($env:COMPUTERNAME)-$file.$date.log" -Force
+            "$env:SYSTEMDRIVE\etc\log\$date-$file-$($env:COMPUTERNAME).log" -Force
     }
 }
 
