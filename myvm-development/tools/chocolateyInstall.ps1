@@ -1,12 +1,15 @@
 $ErrorActionPreference = "Stop"
 
-if (Test-Path "$env:SYSTEMDRIVE\etc\log\zzz.log") {
-    write-Warning "Package already installed, no need to upgrade..."
-    exit
+if (Get-Command "Get-LogFolder") {
+    if (Test-Path "$(Get-LogFolder)\zzz.log") {
+        write-Warning "Package already installed, no need to upgrade..."
+        exit
+    }
 }
 
 # This scripts that depends on functions that are installed via package depencies:
 Import-Module UI.psd1 -Force -Verbose
+Import-Module Logging.psd1 -Force -Verbose
 
 if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm")) {
@@ -156,7 +159,7 @@ if (-not (Get-Process -Name "syncthing" -ea 0)) {
 
 Write-Output "Waiting for log folder to sync..."
 
-while (-not (Test-Path "$env:SYSTEMDRIVE\etc\log\zzz.log")) {
+while (-not (Test-Path "$(Get-LogFolder)\zzz.log")) {
     Start-Sleep -Seconds 5
 }
 
@@ -168,11 +171,12 @@ $files = @(
     "SetupComplete"
 )
 
-$date = Get-Date -Format "yyyyMMdd_hhmmss"
+$date = Get-Date
+
 foreach ($file in $files) {
     if (Test-Path "$env:WINDIR\Setup\Scripts\$file.log") {
-        Copy-Item "$env:WINDIR\Setup\Scripts\$file.log" `
-            "$env:SYSTEMDRIVE\etc\log\$date-$file-$($env:COMPUTERNAME).log" -Force
+        $logFile = Get-LogFileName -Date $date -Suffix "$env:COMPUTERNAME-$file"
+        Copy-Item "$env:WINDIR\Setup\Scripts\$file.log" $logFile -Force
     }
 }
 
