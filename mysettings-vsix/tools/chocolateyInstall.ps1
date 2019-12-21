@@ -21,7 +21,7 @@ Download-File -Url "http://dl.julianscorner.com/vsixpackages.zip" `
     -Destination $downloadPath\vsixpackages.zip
 
 Expand-Archive -Path "$downloadPath\vsixpackages.zip" -DestinationPath $downloadPath `
-    Out-Null
+    | Out-Null
 
 Write-Output "Preparing VSIX Extensions for Install..."
 
