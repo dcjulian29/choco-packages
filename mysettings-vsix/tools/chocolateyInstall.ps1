@@ -52,14 +52,14 @@ foreach ($package in $packages.Keys) {
 
     $ErrorActionPreference = 'Stop'
 
-    $logFile = "$env:SystemDrive\etc\log\{1}-vsix-{0}.log" -f ($package -replace $re), $date
+    $logFile = "{1}-vsix-{0}.log" -f ($package -replace $re), $date
     $vsixFile = $packages[$package]
 
     Write-Output " "
     Write-Output "=========================================================="
     Write-Output "Installing $package Extension"
     Write-Output "    VSIX File: $vsixFile"
-    Write-Output "    Log File: $logFile"
+    Write-Output "    Log File: $(Get-LogFolder)\$logFile"
     Write-Output " "
 
     try {
@@ -71,25 +71,21 @@ foreach ($package in $packages.Keys) {
 
         $run = Start-Process -FilePath $vsix -ArgumentList $arguments -PassThru -Wait -NoNewWindow -Verbose
 
+        Move-Item -Path $env:TEMP\$logFile -Destination "$(Get-LogFolder)\$logFile"
+
         $exitCode = [Int32]$run.ExitCode
 
         if ($exitCode -eq 1001) {
             Write-Output "INFORMATION: The $package Extension is already installed."
         } else {
-            if ($exitCode -gt 0) {
-                Write-Output " "
-                Write-Output "An error occurred installing $package Extension..."
-                Write-Output "Exit Code: *$exitCode*"
-                Write-Output "Review the log file: $logFile"
-                $script:errorInstalling = $true
-            }
+            if ($exitCode -gt 0) { throw }
         }
     } catch {
         $errorMessage = $_.Exception.Message
         Write-Output " "
         Write-Output "An error occurred during installation of the $package Extension..."
         Write-Output "Error: $errorMessage"
-        Write-Output "Review the log file: $logFile"
+        Write-Output "Review the log file: $(Get-LogFolder)\$logFile"
         $script:errorInstalling = $true
     }
 
