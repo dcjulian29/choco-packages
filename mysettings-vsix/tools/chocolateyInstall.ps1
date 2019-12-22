@@ -3,6 +3,7 @@ $vsix = Find-VSIX
 $invalidChars = [IO.Path]::GetInvalidFileNameChars() -join ''
 $re = "[{0} ]" -f [RegEx]::Escape($invalidChars)
 $date = Get-Date -Format "yyyyMMdd_HHmmss"
+$checksum = "52E4DB239FEC80E4FA906E4545309FC93D4A6357"
 $packages = @{}
 
 if (Test-Path $downloadPath) {
@@ -19,6 +20,11 @@ if (Test-Path "$downloadPath\vsixpackages.zip" ) {
 
 Download-File -Url "http://dl.julianscorner.com/vsixpackages.zip" `
     -Destination $downloadPath\vsixpackages.zip
+
+if ($(Get-Sha1 $downloadPath\vsixpackages.zip) -ne $checksum) {
+    throw "Checksum of downloaded extensions does not match!"
+    exit
+}
 
 Expand-Archive -Path "$downloadPath\vsixpackages.zip" -DestinationPath $downloadPath `
     | Out-Null
