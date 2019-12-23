@@ -33,7 +33,6 @@ $python = @(
     "httpie"
     "pymongo"
     "pymysql"
-    "pyodbc"
     "psycopg2"
     "tinydb"
     "redis"
