@@ -40,7 +40,7 @@ foreach ($package in $packageFiles) {
 
     $extractDirectory = "$downloadPath\$($package.BaseName)\"
 
-    Expand-Archive -Path $zipFile -DestinationPath $extractDirectory -Force | Out-Null
+    Expand-Archive -Path $zipFile -DestinationPath $extractDirectory | Out-Null
 
     $xml = [xml](Get-Content -Path "$extractDirectory\extension.vsixmanifest")
 
