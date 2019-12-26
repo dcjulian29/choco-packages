@@ -24,7 +24,7 @@
       <dependency id="kubernetes-helm" />
       <dependency id="faas-cli" />
       <dependency id="scriptcs" />
-      <dependency id="searchmyfiles" />
+      <dependency id="searchmyfiles" version="3.0.7" />
     </dependencies>
   </metadata>
 </package>

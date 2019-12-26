@@ -43,7 +43,7 @@
       <dependency id="firefox" />
       <dependency id="vnc-viewer" />
       <dependency id="rsat" />
-      <dependency id="searchmyfiles" />
+      <dependency id="searchmyfiles" version="3.0.7" />
     </dependencies>
   </metadata>
 </package>

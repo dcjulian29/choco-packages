@@ -19,7 +19,7 @@
       <dependency id="mysettings-explorer" />
       <dependency id="mysettings-notepadplusplus" />
       <dependency id="powershellhere" />
-      <dependency id="searchmyfiles" />
+      <dependency id="searchmyfiles" version="3.0.7" />
     </dependencies>
   </metadata>
 </package>
