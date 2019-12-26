@@ -25,4 +25,4 @@ if ([System.IntPtr]::Size -ne 4) {
 
 cmd /c "$cmd"
 
-ColorTool.exe -b purplepeter.itermcolors
+cmd /c "ColorTool.exe -b purplepeter.itermcolors"
