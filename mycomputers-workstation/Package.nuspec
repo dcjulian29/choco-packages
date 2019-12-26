@@ -19,7 +19,7 @@
       <dependency id="sumatrapdf.install" />
       <dependency id="keepass" />
       <dependency id="sysinternals" />
-      <dependency id="executor" />
+      <dependency id="executor" version="1.0.0.2" />
       <dependency id="python" />
       <dependency id="grepwin" />
       <dependency id="windirstat" />

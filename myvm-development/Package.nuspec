@@ -10,7 +10,7 @@
     <dependencies>
       <dependency id="myvm-workstation" />
       <dependency id="mysettings-devwallpaper" />
-      <dependency id="executor" />
+      <dependency id="executor" version="1.0.0.2" />
       <dependency id="mysettings-syncthing" />
       <dependency id="posh-mymodules" />
       <dependency id="powershell-core" />
