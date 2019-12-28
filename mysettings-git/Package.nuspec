@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-git</id>
-    <version>2019.7.5.1</version>
+    <version>2019.12.27.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom configuration and aliases for the Git SCM tool.</description>
@@ -11,6 +11,7 @@
       <dependency id="git" />
       <dependency id="git-credential-manager-for-windows" />
       <dependency id="poshgit" />
+      <dependency id="mysettings-winmerge" />
     </dependencies>
   </metadata>
 </package>
