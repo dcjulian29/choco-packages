@@ -26,9 +26,4 @@ gd -Key "code" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
 gd -Key "projects" -delete
 gd -Key "projects" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
 
-if (Test-Path "$env:SYSTEMDRIVE\etc\WinMerge") {
-    Copy-Item -Path "$env:SYSTEMDRIVE\etc\WinMerge" `
-        -Destination "$env:USERPROFILE\Documents" -Recurse -Force
-}
-
 [System.Environment]::SetEnvironmentVariable('CAKE_SETTINGS_SKIPPACKAGEVERSIONCHECK', 'true',[System.EnvironmentVariableTarget]::User)

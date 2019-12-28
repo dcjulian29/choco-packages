@@ -9,9 +9,7 @@
     <tags>mydev-tools mydev</tags>
     <dependencies>
       <dependency id="7zip" />
-      <dependency id="javaruntime" />
       <dependency id="googlechrome" />
-      <dependency id="winmerge" />
       <dependency id="grepwin" />
       <dependency id="windirstat" />
       <dependency id="frhed" />
