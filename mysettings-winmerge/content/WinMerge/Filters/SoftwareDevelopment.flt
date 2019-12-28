@@ -1,0 +1,29 @@
+name: Software Development
+desc: This filter lets through only files software developers care about
+def: include
+
+## Filters for filenames begin with f:
+## Filters for directories begin with d:
+## (Inline comments begin with " ##" and extend to the end of the line)
+
+f: \.gitignore$
+f: \.hgignore$
+f: \.svnignore$
+f: \.(vs[sp])?scc$
+f: \.user$
+f: \.bak$
+f: StyleCop\.Cache$
+
+d: \\\.vs$
+d: \\\.svn$
+d: \\_svn$
+d: \\\.git$
+d: \\\.hg$
+d: \\Debug$
+d: \\Release$
+d: \\bin$
+d: \\obj$
+d: \\.build$
+d: \\build$
+d: \\tools$
+d: \\packages$
