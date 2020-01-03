@@ -9,7 +9,12 @@ if (Get-ProcessorBits -eq 64) {
 
 cmd /c "$cmd"
 
-powercfg.exe /change monitor-timeout-ac 10
+if ($env:COMPUTERNAME -like "RMT*") {
+    powercfg.exe /change monitor-timeout-ac 30 # For Work Computer, 30 minutes
+} else {
+    powercfg.exe /change monitor-timeout-ac 0
+}
+
 powercfg.exe /change standby-timeout-ac 0
 powercfg.exe /change hibernate-timeout-ac 0
 
