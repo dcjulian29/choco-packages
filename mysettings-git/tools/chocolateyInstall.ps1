@@ -111,7 +111,7 @@ $config = @{
 
     "mergetool.winmerge.name" = "WinMerge"
     "mergetool.winmerge.trustExitCode" = "true"
-    "mergetool.winmerge.cmd" = "/c/Program\ Files/WinMerge/WinMergeU.exe -u -e -dl \""Local\"" -dr \""Remote\"" -dm \"" \"" `$LOCAL `$REMOTE `$MERGED"
+    "mergetool.winmerge.cmd" = "/c/Program\ Files/WinMerge/WinMergeU.exe -u -e -dl \""Local\"" -dr \""Remote\"" -dm \""Merged\"" `$LOCAL `$MERGED `$REMOTE"
 
     "diff.tool" = "winmerge"
 
