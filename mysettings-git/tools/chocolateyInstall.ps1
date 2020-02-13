@@ -93,7 +93,7 @@ $config = @{
     "alias.plog" = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s' --abbrev-commit --date=relative --branches"
     "alias.ploa" = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an)%Creset' --date=short --branches"
     "alias.plod" = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --date=relative --branches"
-    "today" = "log --stat --since='1 day ago' --graph --pretty=oneline --abbrev-commit --date=relative"
+    "alias.today" = "log --stat --since='1 day ago' --graph --pretty=oneline --abbrev-commit --date=relative"
 
 ##### Git Flow Aliases and Settings
     "alias.gffs" = "flow feature start"
