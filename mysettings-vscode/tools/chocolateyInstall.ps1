@@ -8,11 +8,11 @@ if (-not (Test-Path "$env:APPDATA\Code\User")) {
 
 $code = "C:\Program Files\Microsoft VS Code\bin\code.cmd"
 
-$packages  = [string[]](Get-Content extensions.default)
-$packages += [string[]](Get-Content extensions.windows)
+$packages  = [string[]](Get-Content "$PSScriptRoot\extensions.default")
+$packages += [string[]](Get-Content "$PSScriptRoot\extensions.windows")
 
 if ($env:COMPUTERNAME.ToUpper().EndsWith("DEV")) {
-    $packages += [string[]](Get-Content .\extensions.development)
+    $packages += [string[]](Get-Content "$PSScriptRoot\extensions.development")
 }
 
 foreach ($package in $packages) {

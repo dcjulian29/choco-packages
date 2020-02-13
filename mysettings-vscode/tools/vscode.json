@@ -21,7 +21,7 @@
     "explorer.autoReveal":  false,
     "debug.openExplorerOnEnd":  true,
     "git.autofetch":  true,
-    "git.enableCommitSigning":  true,
+    "git.enableCommitSigning":  false,
     "[typescript]":  {
                          "editor.formatOnSave":  true,
                          "editor.formatOnPaste":  true
