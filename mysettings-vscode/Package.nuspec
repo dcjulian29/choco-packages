@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-vscode</id>
-    <version>2019.8.25.1</version>
+    <version>2020.2.12.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom configuration and extension I like to use in VS Code.</description>
@@ -14,5 +14,8 @@
   <files>
     <file src="tools\chocolateyInstall.ps1" />
     <file src="tools\vscode.json" />
+    <file src="tools\extensions.default" />
+    <file src="tools\extensions.windows" />
+    <file src="tools\extensions.development" />
   </files>
 </package>
