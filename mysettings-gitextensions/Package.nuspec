@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mysettings-gitextensions</id>
+    <version>2020.2.12.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+   <description>My custom configuration and setup for GitExtensions.</description>
+    <tags>gitextensions</tags>
+    <dependencies>
+      <dependency id="gitextensions" />
+    </dependencies>
+  </metadata>
+</package>
