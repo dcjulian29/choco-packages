@@ -114,6 +114,14 @@
   </item>
   <item>
     <key>
+      <string>closecommitdialogaftercommit</string>
+    </key>
+    <value>
+      <string>false</string>
+    </value>
+  </item>
+  <item>
+    <key>
       <string>closeprocessdialog</string>
     </key>
     <value>
@@ -138,6 +146,14 @@
   </item>
   <item>
     <key>
+      <string>commitDialogShowOnlyMyMessages</string>
+    </key>
+    <value>
+      <string>false</string>
+    </value>
+  </item>
+  <item>
+    <key>
       <string>commitfont</string>
     </key>
     <value>
@@ -149,7 +165,7 @@
       <string>defaultclonedestinationpath</string>
     </key>
     <value>
-      <string>c:\code</string>
+      <string>C:\code</string>
     </value>
   </item>
   <item>
@@ -389,7 +405,7 @@
       <string>FormBrowse.DiffSplitContainer_Size</string>
     </key>
     <value>
-      <string>651</string>
+      <string>1094</string>
     </value>
   </item>
   <item>
@@ -429,7 +445,7 @@
       <string>FormBrowse.FileTreeSplitContainer_Size</string>
     </key>
     <value>
-      <string>651</string>
+      <string>1094</string>
     </value>
   </item>
   <item>
@@ -469,7 +485,7 @@
       <string>FormBrowse.MainSplitContainer_Size</string>
     </key>
     <value>
-      <string>1185</string>
+      <string>1366</string>
     </value>
   </item>
   <item>
@@ -509,7 +525,7 @@
       <string>FormBrowse.RevisionsSplitContainer_Size</string>
     </key>
     <value>
-      <string>917</string>
+      <string>1098</string>
     </value>
   </item>
   <item>
@@ -517,7 +533,7 @@
       <string>FormBrowse.RightSplitContainer_Distance</string>
     </key>
     <value>
-      <string>277</string>
+      <string>269</string>
     </value>
   </item>
   <item>
@@ -549,7 +565,7 @@
       <string>FormBrowse.RightSplitContainer_Size</string>
     </key>
     <value>
-      <string>668</string>
+      <string>647</string>
     </value>
   </item>
   <item>
@@ -625,7 +641,7 @@
       <string>LastUpdateCheck</string>
     </key>
     <value>
-      <string>2020/2/12</string>
+      <string>2020/4/07</string>
     </value>
   </item>
   <item>
@@ -796,7 +812,7 @@
       <string>relativedate</string>
     </key>
     <value>
-      <string>false</string>
+      <string>true</string>
     </value>
   </item>
   <item>
@@ -1227,6 +1243,14 @@
     </key>
     <value>
       <string>true</string>
+    </value>
+  </item>
+  <item>
+    <key>
+      <string>stashkeepindex</string>
+    </key>
+    <value>
+      <string>false</string>
     </value>
   </item>
   <item>
