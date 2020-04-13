@@ -17,7 +17,7 @@ do
     value=${value:1}
     value=${value:0:-2}
 
-    echo "git config --global --replace-all $key $value"
+    git config --global --replace-all $key $value
 done < $INPUT
 
 IFS=$OLDIFS
