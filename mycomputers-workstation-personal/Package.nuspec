@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2019.9.3.1</version>
+    <version>2020.4.22.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -35,7 +35,6 @@
       <dependency id="scriptcs" />
       <dependency id="mysettings-syncthing" />
       <dependency id="teracopy" />
-      <dependency id="vagrant" />
       <dependency id="minikube" />
       <dependency id="vlc" />
       <dependency id="aescrypt" />
