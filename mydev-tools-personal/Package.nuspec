@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools-personal</id>
-    <version>2019.12.26.1</version>
+    <version>2020.4.28.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for my Personal Development Environments.</description>
@@ -22,6 +22,7 @@
       <dependency id="kubernetes-kompose" />
       <dependency id="kubernetes-helm" />
       <dependency id="searchmyfiles" version="3.0.7" />
+      <dependency id="ubuntu-wsl" />
     </dependencies>
   </metadata>
 </package>
