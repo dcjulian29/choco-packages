@@ -25,5 +25,5 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu\rootfs)) {
     Start-Process -FilePath $ubuntu `
         -ArgumentList "run curl -sSL http://dl.julianscorner.com/l/init.sh | bash" -NoNewWindow -Wait
 } else {
-    Write-Output "Ubuutu is already installed and configured. Not overwriting the installed version..."
+    Write-Output "Ubuntu is already installed and configured. Not overwriting the installed version..."
 }
