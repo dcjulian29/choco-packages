@@ -22,7 +22,7 @@
       <dependency id="kubernetes-kompose" />
       <dependency id="kubernetes-helm" />
       <dependency id="searchmyfiles" version="3.0.7" />
-      <dependency id="ubuntu-wsl" />
+      <dependency id="mysettings-ubuntu-wsl" />
     </dependencies>
   </metadata>
 </package>

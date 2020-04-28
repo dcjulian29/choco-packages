@@ -16,7 +16,7 @@
       <dependency id="anydvd" />
       <dependency id="outlookstatview" />
       <dependency id="slack" />
-      <dependency id="ubuntu-wsl" />
+      <dependency id="mysettings-ubuntu-wsl" />
     </dependencies>
   </metadata>
   <files>
