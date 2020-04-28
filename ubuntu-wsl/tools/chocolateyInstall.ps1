@@ -27,5 +27,5 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
 
     Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
 } else {
-    Write-Output "A version of Ubunutu is already installed. Not overwriting the installed version..."
+    Write-Output "A version of Ubuntu is already installed. Not overwriting the installed version..."
 }
