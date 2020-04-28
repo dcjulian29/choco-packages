@@ -13,9 +13,7 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
 
     Rename-Item $env:TEMP\Ubuntu.appx $env:TEMP\Ubuntu.zip
 
-    if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {}
-        New-Item -Type Directory -Path $env:SYSTEMDRIVE\Ubuntu | Out-Null
-    }
+    New-Item -Type Directory -Path $env:SYSTEMDRIVE\Ubuntu | Out-Null
 
     Expand-Archive $env:TEMP\Ubuntu.zip $env:SYSTEMDRIVE\Ubuntu
 
@@ -28,4 +26,6 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
     attrib +S $env:SYSTEMDRIVE\Ubuntu
 
     Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
+} else {
+    Write-Output "A version of Ubunutu is already installed. Not overwriting the installed version..."
 }
