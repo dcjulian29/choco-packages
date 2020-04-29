@@ -15,7 +15,7 @@ do
     key=${key:0:-1}
 
     value=${value:1}
-    value=${value:0:-2}
+    value=${value:0:-1}
 
     git config --global --replace-all $key $value
 done < $INPUT
