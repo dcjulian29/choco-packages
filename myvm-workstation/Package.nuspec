@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>myvm-workstation</id>
-    <version>2019.12.25.1</version>
+    <version>2020.4.28.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>This package gets called for the initial configuration of my workstation virtual machines.</description>
@@ -13,6 +13,7 @@
       <dependency id="mysettings-ipv6" />
       <dependency id="dotnet4.7" />
       <dependency id="powershell" />
+      <dependency id="powershell-core" />
       <dependency id="myscripts-binaries" />
       <dependency id="sysinternals" />
       <dependency id="mysettings-console" />
@@ -20,6 +21,7 @@
       <dependency id="mysettings-notepadplusplus" />
       <dependency id="powershellhere" />
       <dependency id="searchmyfiles" version="3.0.7" />
+      <dependency id="microsoft-windows-terminal" />
     </dependencies>
   </metadata>
 </package>
