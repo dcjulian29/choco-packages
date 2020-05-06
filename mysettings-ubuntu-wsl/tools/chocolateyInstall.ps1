@@ -1,10 +1,10 @@
 if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu\rootfs)) {
     Write-Output "Ubuntu Linux has been installed...  Starting final install."
 
-    $ubuntu = Get-ChildItem -Path $env:SYSTEMDRIVE\Ubuntu `
+    $ubuntu = (Get-ChildItem -Path $env:SYSTEMDRIVE\Ubuntu `
         | Where-Object { $_.Name -match "^ubuntu\d+\.exe$" } `
         | Sort-Object Name -Descending `
-        | Select-Object -First 1
+        | Select-Object -First 1).FullName
 
     Start-Process -FilePath $ubuntu -ArgumentList "install --root" -NoNewWindow -Wait
 
