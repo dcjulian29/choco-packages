@@ -149,6 +149,11 @@ Write-Output "Installing Windows Subsystem for Linux..."
 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
 
+if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
+    Write-Output "Installing Virtual Machine Platform..."
+    Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
+}
+
 # Sometimes, Syncthing upgrades but does not restart...
 if (-not (Get-Process -Name "syncthing" -ea 0)) {
     Write-Output "Syncthing isn't currently running, starting the process..."

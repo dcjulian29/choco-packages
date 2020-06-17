@@ -24,3 +24,13 @@ if (-not $wsl) {
 
     Write-Warning "You must reboot before using the Linux Subsystem..."
 }
+
+if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
+    $vmp = (Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform).State -eq "Enabled"
+
+    if (-not $vmp) {
+        Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
+
+        Write-Warning "You must reboot before using the Virtual Machine Platform..."
+    }
+}
