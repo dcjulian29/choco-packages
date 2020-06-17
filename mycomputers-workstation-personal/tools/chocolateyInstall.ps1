@@ -31,6 +31,12 @@ if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
     if (-not $vmp) {
         Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
 
-        Write-Warning "You must reboot before using the Virtual Machine Platform..."
+        Write-Output "Downloading WSL 2 Kernel Update..."
+        Invoke-WebRequest -Uri "https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi" `
+            -OutFile "$env:TEMP\wsl_update_x64.msi"
+
+        Start-Process "$env:TEMP\wsl_update_x64.msi" "/passive" -Wait
+
+        Write-Warning "You may need to reboot before using the Virtual Machine Platform..."
     }
 }

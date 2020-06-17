@@ -152,6 +152,12 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
     Write-Output "Installing Virtual Machine Platform..."
     Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
+
+    Write-Output "Downloading WSL 2 Kernel Update..."
+    Invoke-WebRequest -Uri "https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi" `
+        -OutFile "$env:TEMP\wsl_update_x64.msi"
+
+    Start-Process "$env:TEMP\wsl_update_x64.msi" "/passive" -Wait
 }
 
 # Sometimes, Syncthing upgrades but does not restart...
