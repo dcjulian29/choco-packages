@@ -1,5 +1,9 @@
 if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
-    Write-Output "Downloading and installing Ubuntu 18.04 ..."
+    if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
+        wsl.exe --set-default-version 2
+    }
+
+    Write-Output "Downloading and installing Ubuntu 20.04 ..."
 
     if (Test-Path $env:TEMP\ubuntu.appx) {
         Remove-Item -Path $env:TEMP\ubuntu.appx -Force | Out-Null
@@ -9,7 +13,7 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
         Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
     }
 
-    Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile $env:TEMP\Ubuntu.appx -UseBasicParsing
+    Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile $env:TEMP\Ubuntu.appx -UseBasicParsing
 
     Rename-Item $env:TEMP\Ubuntu.appx $env:TEMP\Ubuntu.zip
 
@@ -19,7 +23,7 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
 
     Set-Content $env:SYSTEMDRIVE\Ubuntu\desktop.ini @"
     [.ShellClassInfo]
-    IconResource=$env:SYSTEMDRIVE\Ubuntu\ubuntu1804.exe,0
+    IconResource=$env:SYSTEMDRIVE\Ubuntu\ubuntu2004.exe,0
 "@
 
     attrib +S +H $env:SYSTEMDRIVE\Ubuntu\desktop.ini
