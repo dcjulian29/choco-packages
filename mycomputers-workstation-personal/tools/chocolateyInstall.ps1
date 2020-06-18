@@ -8,7 +8,12 @@ $containers = (Get-WindowsOptionalFeature -Online -FeatureName Containers).State
 $wsl = (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux).State -eq "Enabled"
 
 if (-not $psremote) {
-    Enable-PSRemoting -Force
+    Write-Output "Enabling Remote Management..."
+
+    Enable-PSRemoting -Force -SkipNetworkProfileCheck
+
+    Set-NetFirewallRule -Name 'WINRM-HTTP-In-TCP'  -Enabled True -Profile Domain
+    Set-NetFirewallRule -Name 'WINRM-HTTP-In-TCP'  -Enabled True -Profile Private
 }
 
 if (-not $hyperv) {
