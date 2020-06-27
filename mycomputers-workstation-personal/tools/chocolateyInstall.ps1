@@ -44,4 +44,6 @@ if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
 
         Write-Warning "You may need to reboot before using the Virtual Machine Platform..."
     }
+} else {
+    Write-Output "WSL 2 is not available on this build of Windows: $([System.Environment]::OSVersion.Version.Build) "
 }
