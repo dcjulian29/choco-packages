@@ -1,4 +1,8 @@
-if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu\rootfs)) {
+$wsl1 = (Test-Path $env:SYSTEMDRIVE\Ubuntu\rootfs)
+$wsl2 = (Test-Path $env:SYSTEMDRIVE\Ubuntu\ext4.vhdx)
+$configured = ($wsl1 -or $wsl2)
+
+if (-not $configured) {
     Write-Output "Ubuntu Linux has been installed...  Starting final install."
 
     $ubuntu = (Get-ChildItem -Path $env:SYSTEMDRIVE\Ubuntu `
@@ -9,8 +13,7 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu\rootfs)) {
     Start-Process -FilePath $ubuntu -ArgumentList "install --root" -NoNewWindow -Wait
 
     Start-Process -FilePath $ubuntu `
-        -ArgumentList "run adduser $($env:USERNAME) --gecos ""First,Last,RoomNumber,WorkPhone,HomePhone"" `
-        --disabled-password" -NoNewWindow -Wait
+        -ArgumentList "run adduser $($env:USERNAME) --gecos ""First,Last,RoomNumber,WorkPhone,HomePhone"" --disabled-password" -NoNewWindow -Wait
 
     Start-Process -FilePath $ubuntu `
         -ArgumentList "run usermod -aG sudo $($env:USERNAME)" -NoNewWindow -Wait
