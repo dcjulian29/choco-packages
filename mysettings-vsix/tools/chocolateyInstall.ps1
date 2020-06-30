@@ -1,44 +1,20 @@
-$downloadPath = "$env:TEMP\vsix"
+$vsixPath = "$env:SystemDrive\etc\visualstudio\vsix"
 $vsix = Find-VSIX
 $invalidChars = [IO.Path]::GetInvalidFileNameChars() -join ''
 $re = "[{0} ]" -f [RegEx]::Escape($invalidChars)
 $date = Get-Date -Format "yyyyMMdd_HHmmss"
-$checksum = "52E4DB239FEC80E4FA906E4545309FC93D4A6357"
 $packages = @{}
-
-if (Test-Path $downloadPath) {
-   Remove-Item -Path $downloadPath -Force -Recurse
-}
-
-New-Item -Path $downloadPath -ItemType Directory | Out-Null
-
-Write-Output "Downloading Extensions..."
-
-if (Test-Path "$downloadPath\vsixpackages.zip" ) {
-    Remove-Item -Path "$downloadPath\vsixpackages.zip" -Force
-}
-
-Download-File -Url "http://dl.julianscorner.com/vsixpackages.zip" `
-    -Destination $downloadPath\vsixpackages.zip
-
-if ($(Get-Sha1 $downloadPath\vsixpackages.zip) -ne $checksum) {
-    throw "Checksum of downloaded extensions does not match!"
-    exit
-}
-
-Expand-Archive -Path "$downloadPath\vsixpackages.zip" -DestinationPath $downloadPath `
-    | Out-Null
 
 Write-Output "Preparing VSIX Extensions for Install..."
 
-$packageFiles = Get-ChildItem -Path $downloadPath -Filter *.vsix -Recurse
+$packageFiles = Get-ChildItem -Path $vsixPath -Filter *.vsix -Recurse
 
 foreach ($package in $packageFiles) {
-    $zipFile = "$downloadPath\$($package.BaseName).zip"
+    $zipFile = "$env:TEMP\$($package.BaseName).zip"
 
     Copy-Item -Path $package.FullName -Destination $zipFile -Force
 
-    $extractDirectory = "$downloadPath\$($package.BaseName)\"
+    $extractDirectory = "$env:TEMP\$($package.BaseName)\"
 
     Expand-Archive -Path $zipFile -DestinationPath $extractDirectory | Out-Null
 
@@ -52,6 +28,8 @@ foreach ($package in $packageFiles) {
 }
 
 $script:errorInstalling = $false
+
+Write-Output "Installing VSIX Extensions..."
 
 foreach ($package in $packages.Keys) {
     $originalErrorAction = $ErrorActionPreference

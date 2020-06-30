@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-vsix</id>
-    <version>2019.12.21.2</version>
+    <version>2020.6.29.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>VSIX Extensions I like to install in Visual Studio 2019</description>
+    <description>VSIX Extensions I like to install in Visual Studio</description>
     <tags>mysettings-vsix vsix</tags>
     <dependencies>
       <dependency id="visualstudio-installer" version="[2.0,3.0)" />
