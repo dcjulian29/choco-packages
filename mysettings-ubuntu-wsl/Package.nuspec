@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-ubuntu-wsl</id>
-    <version>2020.5.6.1</version>
+    <version>2020.7.1.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My "final" install of Ubuntu WSL</description>

@@ -12,8 +12,8 @@ if (-not $configured) {
 
     Start-Process -FilePath $ubuntu -ArgumentList "install --root" -NoNewWindow -Wait
 
-    Start-Process -FilePath $ubuntu `
-        -ArgumentList "run adduser $($env:USERNAME) --gecos ""First,Last,RoomNumber,WorkPhone,HomePhone"" --disabled-password" -NoNewWindow -Wait
+    $argument = "run adduser $($env:USERNAME) --gecos `"First,Last,RoomNumber,WorkPhone,HomePhone`" --disabled-password"
+    Start-Process -FilePath $ubuntu -ArgumentList $argument -NoNewWindow -Wait
 
     Start-Process -FilePath $ubuntu `
         -ArgumentList "run usermod -aG sudo $($env:USERNAME)" -NoNewWindow -Wait
