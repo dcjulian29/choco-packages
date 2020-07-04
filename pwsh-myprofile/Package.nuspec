@@ -8,6 +8,7 @@
     <description>A package to configure my powershell core profile to use my desktop powershell profile</description>
     <tags>myscripts scripts powershell pshell profile pwsh</tags>
     <dependencies>
+      <dependency id="powershell-core" />
       <dependency id="posh-myprofile" />
     </dependencies>
   </metadata>
