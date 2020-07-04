@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>pwsh-myprofile</id>
+    <version>2020.7.3.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>A package to configure my powershell core profile to use my desktop powershell profile</description>
+    <tags>myscripts scripts powershell pshell profile pwsh</tags>
+    <dependencies>
+      <dependency id="posh-myprofile" />
+    </dependencies>
+  </metadata>
+</package>
