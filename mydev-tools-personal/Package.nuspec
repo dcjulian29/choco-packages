@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-tools-personal</id>
-    <version>2020.4.28.1</version>
+    <version>2020.7.20.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for my Personal Development Environments.</description>
@@ -18,6 +18,7 @@
       <dependency id="fiddler" />
       <dependency id="selfcert" />
       <dependency id="ruby" />
+      <dependency id="msys2" />
       <dependency id="golang" />
       <dependency id="kubernetes-kompose" />
       <dependency id="kubernetes-helm" />
