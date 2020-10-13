@@ -14,6 +14,11 @@ New-ItemProperty -Path $location -Name "syncthing" `
 Set-Content -Path "$env:SYSTEMDRIVE\Tools\start-syncthing.cmd" -Value @"
 @echo off
 
-echo Starting Syncthing...
-start $env:ChocolateyInstall\bin\syncthing.exe -no-console -no-browser
+FOR /F "delims=" %%i IN ('dir "%ChocolateyInstall%\lib\syncthing\tools" /b /ad-h /t:c /o-d') DO (
+SET a=%%i
+)
+
+echo Starting Syncthing in %a%...
+
+start %a%\syncthing.exe -no-console -no-browser
 "@
