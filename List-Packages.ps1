@@ -1,14 +1,17 @@
 ﻿
 $packages = Get-ChildItem  | ?{ $_.PSIsContainer } | Select-Object FullName
 
+$packageList = @()
+
 foreach ($package in $packages) {
     $file = $package.FullName
     $nuspec = [xml](Get-Content "$file\Package.nuspec")
 
-    $packageName = $nuspec.package.metadata.id
-    $version = $nuspec.package.metadata.version
-    $website = $nuspec.package.metadata.projectUrl
+    $detail = New-Object PSObject
+    $detail | Add-Member -Type NoteProperty -Name 'Package Name' -Value $nuspec.package.metadata.id
+    $detail | Add-Member -Type NoteProperty -Name 'Version' -Value $nuspec.package.metadata.version
 
-    Write-Output "$packageName [$version]  $website"
-
+    $packageList += $detail
 }
+
+$packageList
