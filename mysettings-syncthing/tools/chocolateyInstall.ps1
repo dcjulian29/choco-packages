@@ -20,5 +20,5 @@ SET a=%%i
 
 echo Starting Syncthing in %a%...
 
-start %a%\syncthing.exe -no-console -no-browser
+start %ChocolateyInstall%\lib\syncthing\tools\%a%\syncthing.exe -no-console -no-browser
 "@
