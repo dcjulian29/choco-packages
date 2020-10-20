@@ -1,10 +1,8 @@
 $url = "https://codeload.github.com/mbadolato/iTerm2-Color-Schemes/zip/master"
 
-if (Test-Path $env:TEMP\iTerm2-Color-Schemes.zip) {
-    Remove-Item $env:TEMP\iTerm2-Color-Schemes.zip -Force
+if (-not (Test-Path $env:TEMP\iTerm2-Color-Schemes.zip)) {
+    (New-Object System.Net.WebClient).DownloadFile("$url", "${env:TEMP}\iTerm2-Color-Schemes.zip")
 }
-
-(New-Object System.Net.WebClient).DownloadFile("$url", "${env:TEMP}\iTerm2-Color-Schemes.zip")
 
 if (Test-Path $env:TEMP\iTerm2-Color-Schemes-master) {
     Remove-Item $env:TEMP\iTerm2-Color-Schemes-master -Recurse -Force
