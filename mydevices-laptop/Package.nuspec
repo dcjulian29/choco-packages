@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mycomputers-personal-laptop</id>
+    <id>mydevices-laptop</id>
     <version>2020.4.28.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal laptop computer configurations.</description>
-    <tags>mycomputers-personal-laptop mycomputers laptop personal</tags>
+    <tags>mydevices mycomputers laptop personal</tags>
     <dependencies>
       <dependency id="mycomputers-workstation-personal" />
       <dependency id="wirelessnetview" />
