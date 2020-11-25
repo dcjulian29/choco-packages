@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2020.11.25.1</version>
+    <version>2020.11.25.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -12,7 +12,6 @@
       <dependency id="winpcap" />
       <dependency id="wireshark" />
       <dependency id="tightvnc" />
-      <dependency id="nmap" />
       <dependency id="nuget.commandline" />
       <dependency id="nugetpackageexplorer" />
       <dependency id="netresview" />
