@@ -20,6 +20,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\mycomputers-personal-laptop\tools\chocolateyInstall.ps1"
+    <file src="..\mydevices-laptop\tools\chocolateyInstall.ps1"
           target="tools" />
   </files></package>
