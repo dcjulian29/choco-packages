@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2020.11.25.2</version>
+    <version>2020.11.27.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -29,8 +29,6 @@
       <dependency id="docker-kitematic" />
       <dependency id="kubernetes-cli" />
       <dependency id="kubernetes-kompose" />
-      <dependency id="octopustools" />
-      <dependency id="scriptcs" />
       <dependency id="mysettings-syncthing" />
       <dependency id="teracopy" />
       <dependency id="mysettings-minikube" />
