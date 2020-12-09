@@ -17,7 +17,7 @@
       <dependency id="nodejs" />
       <dependency id="nuget.commandline" />
       <dependency id="nugetpackageexplorer" />
-      <dependency id="docker-for-windows" />
+      <dependency id="docker-desktop" />
       <dependency id="docker-compose" />
       <dependency id="kubernetes-cli" />
       <dependency id="pester" />

@@ -24,7 +24,7 @@
       <dependency id="angryip" />
       <dependency id="iperf" />
       <dependency id="xmlquire" />
-      <dependency id="docker-for-windows" />
+      <dependency id="docker-desktop" />
       <dependency id="docker-compose" />
       <dependency id="docker-kitematic" />
       <dependency id="kubernetes-cli" />
