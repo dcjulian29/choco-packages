@@ -22,3 +22,8 @@ echo Starting Syncthing in %a%...
 
 start %ChocolateyInstall%\lib\syncthing\tools\%a%\syncthing.exe -no-console -no-browser
 "@
+
+New-NetFirewallRule -DisplayName 'Syncthing-Inbound-TCP' -Profile Domain -Direction Inbound `
+    -Action Allow -Protocol TCP -LocalPort 22000
+New-NetFirewallRule -DisplayName 'Syncthing-Inbound-UDP' -Profile Domain -Direction Inbound `
+    -Action Allow -Protocol UDP -LocalPort 22000
