@@ -145,7 +145,48 @@ if (-not ((Get-Item ${env:SYSTEMDRIVE}\etc).Attributes -band [IO.FileAttributes]
 
 # Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online -NoRestart
 
-Write-Output "Installing Windows Subsystem for Linux..."
+Write-Output "`n`nExcluding Ports for Common Servers so the OS doesn't reserve them..."
+
+# Web sites (8000-8099)
+netsh int ipv4 add excludedportrange protocol=tcp startport=8000 numberofports=100
+
+# SyncThing
+netsh int ipv4 add excludedportrange protocol=tcp startport=8343 numberofports=1
+netsh int ipv4 add excludedportrange protocol=tcp startport=22000 numberofports=1
+netsh int ipv4 add excludedportrange protocol=udp startport=22000 numberofports=1
+
+# ELK
+netsh int ipv4 add excludedportrange protocol=tcp startport=5000 numberofports=1
+netsh int ipv4 add excludedportrange protocol=udp startport=5000 numberofports=1
+netsh int ipv4 add excludedportrange protocol=tcp startport=5044 numberofports=1
+netsh int ipv4 add excludedportrange protocol=tcp startport=5601 numberofports=1
+netsh int ipv4 add excludedportrange protocol=tcp startport=8514 numberofports=1
+netsh int ipv4 add excludedportrange protocol=udp startport=8514 numberofports=1
+netsh int ipv4 add excludedportrange protocol=tcp startport=9200 numberofports=1
+netsh int ipv4 add excludedportrange protocol=tcp startport=9300 numberofports=1
+
+# mailhog
+netsh int ipv4 add excludedportrange protocol=tcp startport=1025 numberofports=1
+
+# mssql
+netsh int ipv4 add excludedportrange protocol=tcp startport=1433 numberofports=1
+
+# mongo
+netsh int ipv4 add excludedportrange protocol=tcp startport=27017 numberofports=1
+
+# postgresql
+netsh int ipv4 add excludedportrange protocol=tcp startport=5432 numberofports=1
+
+# mysql
+netsh int ipv4 add excludedportrange protocol=tcp startport=3306 numberofports=1
+
+# redis
+netsh int ipv4 add excludedportrange protocol=tcp startport=6379 numberofports=1
+
+netsh int ipv4 show excludedportrange tcp
+netsh int ipv4 show excludedportrange udp
+
+Write-Output "`n`nInstalling Windows Subsystem for Linux..."
 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
 
