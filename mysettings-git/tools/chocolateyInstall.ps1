@@ -8,9 +8,11 @@ if (Test-Path "${env:ProgramFiles(x86)}\Git") {
 
 $config =  Import-Csv -Path "$PSScriptRoot\config.csv"
 
-$config.Keys | ForEach-Object {
-    if (-not $_.StartsWith('#')) {
-        Write-Verbose "$_ = $($config[$_])"
-        & $git config --global --replace-all $_ $config[$_]
+$config | ForEach-Object {
+    if (-not $_.Key.StartsWith('#')) {
+        $key = ($_.Key).Trim()
+        $value = ($_.Value).Trim()
+        Write-Output "Setting '$key' to '$value'..."
+        & $git config --global --replace-all $key $value
     }
 }
