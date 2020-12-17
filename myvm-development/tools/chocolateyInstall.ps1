@@ -132,30 +132,30 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     Write-Output "Found what I'm looking for... :)"
 }
 
-if (-not (Test-Path ${env:SYSTEMDRIVE}\etc)) {
-    New-Item -ItemType Junction -Path ${env:SYSTEMDRIVE}\etc -Value ${env:SYSTEMDRIVE}\home\vm\etc
-}
-
 if (-not ((Get-Item ${env:SYSTEMDRIVE}\etc).Attributes -band [IO.FileAttributes]::ReparsePoint)) {
     Move-Item ${env:SYSTEMDRIVE}\etc ${env:SYSTEMDRIVE}\etc.bak
-    New-Item -ItemType Junction -Path ${env:SYSTEMDRIVE}\etc -Value ${env:SYSTEMDRIVE}\home\vm\etc
 }
 
-# Write-Output "Installing .Net 3.x Framework..."
-
-# Enable-WindowsOptionalFeature -All -FeatureName NetFx3 -Online -NoRestart
+if (-not (Test-Path ${env:SYSTEMDRIVE}\etc)) {
+    New-Item -ItemType Junction -Path ${env:SYSTEMDRIVE}\etc `
+        -Value ${env:SYSTEMDRIVE}\home\vm\etc | Out-Null
+}
 
 Write-Output "`n`nExcluding Ports for Common Servers so the OS doesn't reserve them..."
 
-# Web sites (8000-8099)
+if (Get-Process -Name "syncthing" -ea 0) {
+    Get-Process -Name "syncthing" | Stop-Process -Force
+}
+
+Write-Output "# Web sites (8000-8099)"
 netsh int ipv4 add excludedportrange protocol=tcp startport=8000 numberofports=100
 
-# SyncThing
+Write-Output "# SyncThing"
 netsh int ipv4 add excludedportrange protocol=tcp startport=8343 numberofports=1
 netsh int ipv4 add excludedportrange protocol=tcp startport=22000 numberofports=1
 netsh int ipv4 add excludedportrange protocol=udp startport=22000 numberofports=1
 
-# ELK
+Write-Output "# ELK"
 netsh int ipv4 add excludedportrange protocol=tcp startport=5000 numberofports=1
 netsh int ipv4 add excludedportrange protocol=udp startport=5000 numberofports=1
 netsh int ipv4 add excludedportrange protocol=tcp startport=5044 numberofports=1
@@ -165,37 +165,48 @@ netsh int ipv4 add excludedportrange protocol=udp startport=8514 numberofports=1
 netsh int ipv4 add excludedportrange protocol=tcp startport=9200 numberofports=1
 netsh int ipv4 add excludedportrange protocol=tcp startport=9300 numberofports=1
 
-# mailhog
+Write-Output "# mailhog"
 netsh int ipv4 add excludedportrange protocol=tcp startport=1025 numberofports=1
 
-# mssql
+Write-Output "# mssql"
 netsh int ipv4 add excludedportrange protocol=tcp startport=1433 numberofports=1
 
-# mongo
+Write-Output "# mongo"
 netsh int ipv4 add excludedportrange protocol=tcp startport=27017 numberofports=1
 
-# postgresql
+Write-Output "# postgresql"
 netsh int ipv4 add excludedportrange protocol=tcp startport=5432 numberofports=1
 
-# mysql
+Write-Output "# mysql"
 netsh int ipv4 add excludedportrange protocol=tcp startport=3306 numberofports=1
 
-# redis
+Write-Output "# redis"
 netsh int ipv4 add excludedportrange protocol=tcp startport=6379 numberofports=1
 
 netsh int ipv4 show excludedportrange tcp
 netsh int ipv4 show excludedportrange udp
 
-Write-Output "`n`nInstalling Windows Subsystem for Linux..."
+Write-Output "`n`nEnabling Windows Subsystem for Linux..."
 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
 
 if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
-    Write-Output "Installing Virtual Machine Platform..."
+    Write-Output "Enabling Virtual Machine Platform..."
     Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
+
+    Write-Output "Downloading WSL 2 Kernel Update..."
+    Invoke-WebRequest -Uri "https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi" `
+        -OutFile "$env:TEMP\wsl_update_x64.msi"
+
+    Start-Process "$env:TEMP\wsl_update_x64.msi" "/passive" -Wait
 }
 
-# Sometimes, Syncthing upgrades but does not restart...
+Write-Output "`n`nEnabling Windows Containers..."
+
+Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
+
+#-------------------------------------------------------------------------------------------------
+
 if (-not (Get-Process -Name "syncthing" -ea 0)) {
     Write-Output "Syncthing isn't currently running, starting the process..."
 

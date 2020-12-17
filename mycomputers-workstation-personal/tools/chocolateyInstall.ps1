@@ -50,15 +50,19 @@ if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
 
 Write-Output "`n`nExcluding Ports for Common Servers so the OS doesn't reserve them..."
 
-# Web sites (8000-8099)
+if (Get-Process -Name "syncthing" -ea 0) {
+    Get-Process -Name "syncthing" | Stop-Process -Force
+}
+
+Write-Output "# Web sites (8000-8099)"
 netsh int ipv4 add excludedportrange protocol=tcp startport=8000 numberofports=100
 
-# SyncThing
+Write-Output "# SyncThing"
 netsh int ipv4 add excludedportrange protocol=tcp startport=8343 numberofports=1
 netsh int ipv4 add excludedportrange protocol=tcp startport=22000 numberofports=1
 netsh int ipv4 add excludedportrange protocol=udp startport=22000 numberofports=1
 
-# ELK
+Write-Output "# ELK"
 netsh int ipv4 add excludedportrange protocol=tcp startport=5000 numberofports=1
 netsh int ipv4 add excludedportrange protocol=udp startport=5000 numberofports=1
 netsh int ipv4 add excludedportrange protocol=tcp startport=5044 numberofports=1
@@ -68,23 +72,24 @@ netsh int ipv4 add excludedportrange protocol=udp startport=8514 numberofports=1
 netsh int ipv4 add excludedportrange protocol=tcp startport=9200 numberofports=1
 netsh int ipv4 add excludedportrange protocol=tcp startport=9300 numberofports=1
 
-# mailhog
+Write-Output "# mailhog"
 netsh int ipv4 add excludedportrange protocol=tcp startport=1025 numberofports=1
 
-# mssql
+Write-Output "# mssql"
 netsh int ipv4 add excludedportrange protocol=tcp startport=1433 numberofports=1
 
-# mongo
+Write-Output "# mongo"
 netsh int ipv4 add excludedportrange protocol=tcp startport=27017 numberofports=1
 
-# postgresql
+Write-Output "# postgresql"
 netsh int ipv4 add excludedportrange protocol=tcp startport=5432 numberofports=1
 
-# mysql
+Write-Output "# mysql"
 netsh int ipv4 add excludedportrange protocol=tcp startport=3306 numberofports=1
 
-# redis
+Write-Output "# redis"
 netsh int ipv4 add excludedportrange protocol=tcp startport=6379 numberofports=1
 
 netsh int ipv4 show excludedportrange tcp
 netsh int ipv4 show excludedportrange udp
+
