@@ -132,8 +132,10 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     Write-Output "Found what I'm looking for... :)"
 }
 
-if (-not ((Get-Item ${env:SYSTEMDRIVE}\etc).Attributes -band [IO.FileAttributes]::ReparsePoint)) {
-    Move-Item ${env:SYSTEMDRIVE}\etc ${env:SYSTEMDRIVE}\etc.bak
+if (Test-Path ${env:SYSTEMDRIVE}\etc) {
+    if (-not ((Get-Item ${env:SYSTEMDRIVE}\etc).Attributes -band [IO.FileAttributes]::ReparsePoint)) {
+        Move-Item ${env:SYSTEMDRIVE}\etc ${env:SYSTEMDRIVE}\etc.bak
+    }
 }
 
 if (-not (Test-Path ${env:SYSTEMDRIVE}\etc)) {
