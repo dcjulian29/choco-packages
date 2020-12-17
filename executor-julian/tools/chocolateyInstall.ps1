@@ -9,4 +9,4 @@ if ($null -ne $key.GetValue("Executor", $null)) {
 New-ItemProperty -Path $location -Name Executor `
     -Value "$PSScriptRoot\executor-run.cmd" | Out-Null
 
-Start-Process -FilePath $PSScriptRoot\executor-run.cmd -NoNewWindow
+# Start-Process -FilePath $PSScriptRoot\executor-run.cmd -NoNewWindow
