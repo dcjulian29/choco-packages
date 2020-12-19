@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mydevelopvm</id>
+    <version>2012.19.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>A package to "finish" the VM I use for software development.</description>
+    <tags>mydevelopvm myvm development devvm</tags>
+    <dependencies>
+      <dependency id="myvm-development" />
+      <dependency id="mydev-scm" />
+      <dependency id="mydev-tools-personal" />
+      <dependency id="mydev-database" />
+      <dependency id="mydev-visualstudio" />
+      <dependency id="mysettings-devenv" />
+    </dependencies>
+  </metadata>
+</package>
