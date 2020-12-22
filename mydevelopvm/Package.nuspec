@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevelopvm</id>
-    <version>2012.19.1</version>
+    <version>2012.21.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>A package to "finish" the VM I use for software development.</description>
