@@ -2,11 +2,15 @@
 ##### Core Settings
 "user.name","Julian Easterling"
 
+"core.fscache","true"
+"core.symlinks","false"
 "core.autocrlf","true"
 "core.excludesfile","~/.gitignore"
 "core.safecrlf","false"
 "core.filemode","false"
 "core.editor","\""C:/Program Files/notepad++/notepad++.exe\"" -multiInst -nosession"
+
+"credential.helper","manager-core"
 
 "push.default","upstream"
 "help.format","html"
