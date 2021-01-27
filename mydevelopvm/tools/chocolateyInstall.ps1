@@ -15,14 +15,15 @@ $images = @(
     "mcr.microsoft.com/dotnet/sdk:5.0-buster-slim"
     "mcr.microsoft.com/mssql/server:2019-latest"
     "mongo:latest"
-    "mysql:latest"
-    "postgres:latest"
     "redis:latest"
 )
 
 $images | ForEach-Object {
     Pull-DockerImage -Name $_.Split(':')[0] -Tag $_.Split(':')[1]
 }
+
+#Disable Telemetry
+Set-EnvironmentVariable -Name "DOTNET_CLI_TELEMETRY_OPTOUT" -Value 1 -Scope "Machine"
 
 # DotNet Tool installs:
 dotnet tool install --global Cake.Tool
@@ -39,11 +40,15 @@ dotnet tool install --global BenchmarkDotNet.Tool
 
 # Newer installs of the Google Chrome are putting the files in Program Files instead of PF32...
 # Until, I get all of my existing systems converted to "Program Files", I'll create a link in PF32
-if (-not (Test-Path 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe')) {
-    New-Item -ItemType Directory `
-        -Path 'C:\Program Files (x86)\Google\Chrome\Application' | Out-Null
+if (Test-Path 'C:\Program Files\Google\Chrome\Application\chrome.exe') {
+    if (-not (Test-Path 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe')) {
+        New-Item -ItemType Directory `
+            -Path 'C:\Program Files (x86)\Google\Chrome\Application' | Out-Null
 
-    New-Item -ItemType SymbolicLink -Name 'chrome.exe' `
-        -Path 'C:\Program Files (x86)\Google\Chrome\Application' `
-        -Target 'C:\Program Files\Google\Chrome\Application\chrome.exe' | Out-Null
+        New-Item -ItemType SymbolicLink -Name 'chrome.exe' `
+            -Path 'C:\Program Files (x86)\Google\Chrome\Application' `
+            -Target 'C:\Program Files\Google\Chrome\Application\chrome.exe' | Out-Null
+    }
+} else {
+    Write-Warning "Google Chrome is not installed... Check to see why!"
 }
