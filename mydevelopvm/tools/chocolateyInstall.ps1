@@ -3,12 +3,12 @@
 New-Item "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.3\Client" -Force
 
 New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.3\Client" `
-    -Name "Enabled" -Value "0" –PropertyType DWORD
+    -Name "Enabled" -Value "0" -PropertyType DWORD
 
 $images = @(
-    "alpine"
-    "docker.elastic.co/elasticsearch/elasticsearch:7.10.0"
-    "docker.elastic.co/kibana/kibana:7.10.0"
+    "alpine:latest"
+    "docker.elastic.co/elasticsearch/elasticsearch:7.10.2"
+    "docker.elastic.co/kibana/kibana:7.10.2"
     "graylog/graylog:4.0"
     "mailhog/mailhog:latest"
     "mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim"
@@ -24,7 +24,7 @@ $images | ForEach-Object {
     Pull-DockerImage -Name $_.Split(':')[0] -Tag $_.Split(':')[1]
 }
 
-## DotNet Tool installs:
+# DotNet Tool installs:
 dotnet tool install --global Cake.Tool
 dotnet tool install --global dotnet-format
 dotnet tool install --global dotnet-xdt
@@ -37,7 +37,7 @@ dotnet tool install --global dotnet-outdated-tool
 dotnet tool install --global dotnet-delice
 dotnet tool install --global BenchmarkDotNet.Tool
 
-# Newer installs of the Google Chrome is putting the files in Program Files instead of PF32...
+# Newer installs of the Google Chrome are putting the files in Program Files instead of PF32...
 # Until, I get all of my existing systems converted to "Program Files", I'll create a link in PF32
 if (-not (Test-Path 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe')) {
     New-Item -ItemType Directory `
