@@ -39,11 +39,11 @@ dotnet tool install --global BenchmarkDotNet.Tool
 
 # Newer installs of the Google Chrome is putting the files in Program Files instead of PF32...
 # Until, I get all of my existing systems converted to "Program Files", I'll create a link in PF32
-if (-not (Test-Path "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")) {
+if (-not (Test-Path 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe')) {
     New-Item -ItemType Directory `
-        -Path "C:\Program Files (x86)\Google\Chrome\Application" | Out-Null
+        -Path 'C:\Program Files (x86)\Google\Chrome\Application' | Out-Null
 
-    New-Item -ItemType SymbolicLink -Name "chrome.exe" `
-        -Path "C:\Program Files (x86)\Google\Chrome\Application" `
-        -Target "C:\Program Files\Google\Chrome\Application\chrome.exe" | Out-Null
+    New-Item -ItemType SymbolicLink -Name 'chrome.exe' `
+        -Path 'C:\Program Files (x86)\Google\Chrome\Application' `
+        -Target 'C:\Program Files\Google\Chrome\Application\chrome.exe' | Out-Null
 }
