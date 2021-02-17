@@ -2,17 +2,15 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-database</id>
-    <version>2020.12.19.1</version>
+    <version>2102.16.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for database tools that I install in my Development Environments.</description>
     <tags>mydev-database mydev database</tags>
     <dependencies>
-      <!-- <dependency id="mongodb" /> -->
       <dependency id="sqlite" />
       <dependency id="sqlitebrowser" />
       <dependency id="sqlserver-odbcdriver" />
-      <!-- <dependency id="sql-server-express" /> -->
       <dependency id="sql-server-management-studio" />
       <dependency id="sqlserver-cmdlineutils" />
     </dependencies>
