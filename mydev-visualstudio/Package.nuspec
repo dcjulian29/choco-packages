@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydev-visualstudio</id>
-    <version>2102.9.1</version>
+    <version>2102.16.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for Visual Studio Development for my Development Environments.</description>
@@ -19,7 +19,6 @@
       <dependency id="visualstudio2019-workload-netcrossplat" />
       <dependency id="dotpeek.portable" />
       <dependency id="mysettings-vsix" />
-      <!-- <dependency id="webpi" /> -->
       <dependency id="mysettings-vscode" />
       <dependency id="dotnetcore-sdk" />
       <dependency id="netfx-4.8-devpack" />
