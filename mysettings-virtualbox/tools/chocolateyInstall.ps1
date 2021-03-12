@@ -18,3 +18,11 @@ $file = "$env:TEMP\Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack"
 if ($LastExitCode -ne 0) {
     throw "Extension pack installation failed with exit code '$LastExitCode'"
 }
+
+Write-Output "Changing default VM location..."
+
+if (-not (Test-Path "$env:SystemDrive\Virtual Machines\VirtualBox")) {
+    New-Item -Path "$env:SystemDrive\Virtual Machines\VirtualBox" -ItemType Directory | Out-Null
+}
+
+vboxmanage setproperty machinefolder "$env:SystemDrive\Virtual Machines\VirtualBox"
