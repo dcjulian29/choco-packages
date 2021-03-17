@@ -201,10 +201,8 @@ Write-Output "`n`nEnabling Windows Containers..."
 
 Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
 
-Write-Output "Disabling Chocolatey Checksums for the development vm..."
-Write-Output "Chrome fails often since the package isn't updated when the MSI is updated... FAIL!"
-
-choco config set --name="checksumFiles" --value "false"
+Write-Output "Temporarily disabling Chocolatey checksums to install Chrome for the development vm..."
+choco install googlechrome ---ignore-checksums -y
 
 #-------------------------------------------------------------------------------------------------
 
