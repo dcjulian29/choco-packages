@@ -15,6 +15,9 @@ Copy-Item -Path $env:TEMP\iTerm2-Color-Schemes-master\schemes\* `
     -Destination $env:ChocolateyInstall\lib\colortool\content\schemes\ `
     -Recurse -Force
 
+# Sometimes color settings get set based on subkeys in HKCU:\Console, remove them
+Remove-Item -Path HKCU:\Console\* -Recurse -Force
+
 $cmd = "$env:WINDIR\system32\reg.exe import $PSScriptRoot\registry.reg"
 
 if ([System.IntPtr]::Size -ne 4) {
