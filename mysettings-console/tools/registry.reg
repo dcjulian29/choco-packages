@@ -6,7 +6,7 @@ Windows Registry Editor Version 5.00
 "EnableColorSelection"=dword:00000000
 "ExtendedEditKey"=dword:00000000
 "ExtendedEditKeyCustom"=dword:00000000
-"FaceName"="Consolas"
+"FaceName"="Lucida Console"
 "FontFamily"=dword:00000036
 "FontSize"=dword:00100000
 "FontWeight"=dword:00000190
