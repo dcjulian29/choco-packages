@@ -32,7 +32,8 @@
                        "editor.acceptSuggestionOnEnter":  "off"
                    },
     "[yaml]":  {
-                   "editor.tabSize":  4,
+                   "editor.tabSize":  2,
                    "editor.autoIndent":  true
-               }
+               },
+    "workbench.startupEditor":  "newUntitledFile"
 }
