@@ -7,9 +7,6 @@ New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders
 
 $images = @(
     "alpine:latest"
-    "docker.elastic.co/elasticsearch/elasticsearch:7.10.2"
-    "docker.elastic.co/kibana/kibana:7.10.2"
-    "graylog/graylog:4.0"
     "mailhog/mailhog:latest"
     "mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim"
     "mcr.microsoft.com/dotnet/sdk:5.0-buster-slim"
@@ -24,6 +21,9 @@ $images | ForEach-Object {
 
 #Disable Telemetry
 Set-EnvironmentVariable -Name "DOTNET_CLI_TELEMETRY_OPTOUT" -Value 1 -Scope "Machine"
+
+# Ensure that the v3 NuGet feed is enabled
+nuget sources add -Name "NuGet Official Package Source" -Source "https://api.nuget.org/v3/index.json"
 
 # DotNet Tool installs:
 dotnet tool install --global Cake.Tool
