@@ -1,9 +1,9 @@
 $url = 'http://www.nirsoft.net/utils/searchmyfiles.zip'
-$cksum = '7d9bd7597b5d85ec21424768bf659b62c8c1057f518d40cf013fed9f645971e4'
+$cksum = '32078f2aa5e5f1f5d7784021f82b470a6eb1ef1bc0c27cf36e7bd70e100856ab'
 
 if ([Environment]::Is64BitOperatingSystem) {
     $url = 'http://www.nirsoft.net/utils/searchmyfiles-x64.zip'
-    $cksum = 'e3483c6abf4ad16e0391f5ee6a11df82b76f57c2f45b1861c17c4361f382139a'
+    $cksum = 'a5f8a906e72ea3675ec4b5128e589b5a1de0d50123933496b3b212e1e858e24f'
 }
 
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
