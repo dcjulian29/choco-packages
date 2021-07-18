@@ -10,7 +10,6 @@
     <dependencies>
       <dependency id="mysettings-git" />
       <dependency id="mysettings-gitextensions" />
-      <dependency id="lazygit" />
     </dependencies>
   </metadata>
 </package>
