@@ -99,6 +99,13 @@ Windows Registry Editor Version 5.00
 "MMTaskbarMode"=dword:00000002
 "MMTaskbarGlomLevel"=dword:00000000
 "ShowCortanaButton"=dword:00000000
+"UseCompactView"=dword:00000000
+"TaskbarDa"=dword:00000000
+"TaskbarSd"=dword:00000000
+"TaskbarMn"=dword:00000000
+"TaskbarBadges"=dword:00000000
+"Start_TrackProgs"=dword:00000000
+
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People]
 "PeopleBand"=dword:00000000
