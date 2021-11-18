@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-common</id>
-    <version>2019.12.25.1</version>
+    <version>2111.18.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that are common to all of my physical computer configurations.</description>
@@ -12,6 +12,7 @@
       <dependency id="mysettings-ipv6" />
       <dependency id="dotnetfx" />
       <dependency id="dotnetcore-runtime" />
+      <dependency id="dotnet-runtime" />
       <dependency id="powershell" />
       <dependency id="7zip" />
       <dependency id="notepadplusplus" />
