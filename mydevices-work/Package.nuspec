@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mydevices-workstation</id>
-    <version>2110.26.1</version>
+    <id>mydevices-work</id>
+    <version>2111.16.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -18,7 +18,4 @@
       <dependency id="bitwarden-edge" />
     </dependencies>
   </metadata>
-  <files>
-    <file src="..\mydevices-laptop\tools\chocolateyInstall.ps1"
-          target="tools" />
-  </files></package>
+</package>
