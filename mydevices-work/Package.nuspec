@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mydevices-workstation</id>
+    <version>2110.26.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>
+        These are the packages that I install on my personal tower workstation computer.
+    </description>
+    <tags>mydevices mycomputers tower workstation personal</tags>
+    <dependencies>
+      <dependency id="mycomputers-workstation" />
+      <dependency id="mydev-scm" />
+      <dependency id="mydev-visualstudio" />
+      <dependency id="mydev-database" />
+      <dependency id="slack" />
+      <dependency id="bitwarden-edge" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\mydevices-laptop\tools\chocolateyInstall.ps1"
+          target="tools" />
+  </files></package>
