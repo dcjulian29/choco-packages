@@ -35,5 +35,9 @@
                    "editor.tabSize":  2,
                    "editor.autoIndent":  true
                },
-    "workbench.startupEditor":  "newUntitledFile"
+    "workbench.startupEditor":  "newUntitledFile",
+    "terminal.integrated.enablePersistentSessions": false,
+    "editor.fontFamily": "'Cascadia Code'",
+    "editor.cursorBlinking": "smooth",
+    "redhat.telemetry.enabled": false
 }

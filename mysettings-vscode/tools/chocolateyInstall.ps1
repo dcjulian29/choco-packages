@@ -11,10 +11,6 @@ $code = "C:\Program Files\Microsoft VS Code\bin\code.cmd"
 $packages  = [string[]](Get-Content "$PSScriptRoot\extensions.default")
 $packages += [string[]](Get-Content "$PSScriptRoot\extensions.windows")
 
-if ($env:COMPUTERNAME.ToUpper().EndsWith("DEV")) {
-    $packages += [string[]](Get-Content "$PSScriptRoot\extensions.development")
-}
-
 foreach ($package in $packages) {
     Start-Process -FilePath $code -ArgumentList "--install-extension $package --force" -NoNewWindow -Wait
 }
@@ -26,4 +22,4 @@ if (Test-Path $settingsFile) {
     Remove-Item -Path $settingsFile -Force
 }
 
-Copy-Item -Path "$PSScriptRoot\vscode.json" -Destination $settingsFile -Force #| Out-Null
+Copy-Item -Path "$PSScriptRoot\vscode.json" -Destination $settingsFile -Force | Out-Null

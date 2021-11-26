@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>vscode-mobile</id>
+    <version>2111.25.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>My custom extension I like to use in VS Code.</description>
+    <tags>vscode ide visual studio</tags>
+    <dependencies>
+      <dependency id="mysettings-vscode" />
+    </dependencies>
+  </metadata>
+</package>
