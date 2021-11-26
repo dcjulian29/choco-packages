@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mydev-tools-personal</id>
-    <version>2107.16.1</version>
+    <id>mytools-personal</id>
+    <version>2111.26.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>These are the tools packages for my Personal Development Environments.</description>
-    <tags>mydev-tools mydev</tags>
+    <description>These are the tools packages for my personal machines.</description>
+    <tags>mytools-personal mytools</tags>
     <dependencies>
-      <dependency id="mydev-tools" />
+      <dependency id="mytools" />
       <dependency id="bind-toolsonly" />
       <dependency id="baretail" />
-      <dependency id="wmiexplorer" />
       <dependency id="xmlquire" />
-      <!-- <dependency id="linqpad" /> -->
       <dependency id="plantuml" />
       <dependency id="fiddler" />
-      <!-- <dependency id="selfcert" /> -->
-      <!-- <dependency id="ruby" /> -->
-      <!-- <dependency id="msys2" /> -->
-      <dependency id="golang" />
-      <!-- <dependency id="kubernetes-kompose" /> -->
       <dependency id="kubernetes-helm" />
       <dependency id="searchmyfiles" version="3.0.7" />
       <dependency id="mysettings-ubuntu-wsl" />

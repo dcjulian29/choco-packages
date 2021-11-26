@@ -9,6 +9,7 @@
     <tags>mydevices mycomputers laptop personal</tags>
     <dependencies>
       <dependency id="mycomputers-workstation-personal" />
+      <dependency id="googlechrome" />
       <dependency id="wirelessnetview" />
       <dependency id="mysettings-openvpn" />
       <dependency id="outlookstatview" />

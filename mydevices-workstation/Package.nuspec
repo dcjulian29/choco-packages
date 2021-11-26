@@ -11,6 +11,7 @@
     <tags>mydevices mycomputers tower workstation personal</tags>
     <dependencies>
       <dependency id="mycomputers-workstation-personal" />
+      <dependency id="googlechrome" />
       <dependency id="outlookstatview" />
       <dependency id="slack" />
       <dependency id="mysettings-ubuntu-wsl" />
