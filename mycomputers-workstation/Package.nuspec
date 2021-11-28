@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation</id>
-    <version>2020.12.16.1</version>
+    <version>2111.28.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my workstation computer configurations.</description>
@@ -12,22 +12,17 @@
       <dependency id="mysettings-console" />
       <dependency id="mysettings-explorer" />
       <dependency id="mysettings-notepadplusplus" />
-      <dependency id="powershellhere" />
       <dependency id="posh-mymodules" />
       <dependency id="powershell-core" />
       <dependency id="posh-go" />
       <dependency id="myscripts-binaries" />
-      <dependency id="keepass" />
       <dependency id="sysinternals" />
       <dependency id="executor-julian" />
-      <dependency id="python" />
       <dependency id="grepwin" />
       <dependency id="windirstat" />
       <dependency id="winmerge" />
       <dependency id="frhed" />
-      <dependency id="googlechrome" />
-      <dependency id="tomighty" />
-      <dependency id="mydev-scm" />
+      <dependency id="mytools-scm" />
       <dependency id="microsoft-windows-terminal" />
     </dependencies>
   </metadata>

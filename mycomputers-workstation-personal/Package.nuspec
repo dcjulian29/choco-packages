@@ -37,6 +37,10 @@
       <dependency id="vnc-viewer" />
       <dependency id="rsat" />
       <dependency id="searchmyfiles" version="3.0.7" />
+      <dependency id="googlechrome" />
+      <dependency id="tomighty" />
+      <dependency id="keepass" />
+      <dependency id="python" />
     </dependencies>
   </metadata>
 </package>
