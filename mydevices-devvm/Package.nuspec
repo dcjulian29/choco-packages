@@ -2,17 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-devvm</id>
-    <version>2106.12.1</version>
+    <version>2111.26.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>A package to "finish" the VM I use for software development.</description>
+    <description>A package as the base for the VM I use for software development.</description>
     <tags>mydevelopvm myvm development devvm</tags>
     <dependencies>
       <dependency id="myvm-development" />
-      <dependency id="mydev-scm" />
-      <dependency id="mydev-tools-personal" />
-      <dependency id="mydev-database" />
-      <dependency id="mydev-visualstudio" />
+      <dependency id="mytools-scm" />
+      <dependency id="mytools-personal" />
+      <dependency id="mytools-database" />
       <dependency id="mysettings-devenv" />
     </dependencies>
   </metadata>
