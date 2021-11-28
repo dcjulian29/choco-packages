@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mytools-visualstudio</id>
+    <id>dev-csharp</id>
     <version>2111.26.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>These are the common packages for Visual Studio development environments.</description>
-    <tags>mytools-visualstudio mytools</tags>
+    <description>These are the packages I use when doing C# development.</description>
+    <tags>dev-csharp mydev</tags>
     <dependencies>
+      <dependency id="dotpeek.portable" />
+      <dependency id="vscode-csharp" />
+      <dependency id="dotnetcore-sdk" />
+      <dependency id="dotnet-sdk" />
       <dependency id="visualstudio2022professional" />
       <dependency id="visualstudio2022-workload-manageddesktop" />
       <dependency id="visualstudio2022-workload-netweb" />
       <dependency id="visualstudio2022-workload-azure" />
-      <dependency id="visualstudio2022-workload-netcrossplat" />
-      <dependency id="mysettings-vsix" />
       <dependency id="netfx-4.8-devpack" />
+      <dependency id="mysettings-vsix" />
+      <dependency id="nswagstudio" />
     </dependencies>
   </metadata>
 </package>

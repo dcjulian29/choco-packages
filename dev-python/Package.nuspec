@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dev-python</id>
+    <version>2111.26.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages I use when doing Python development.</description>
+    <tags>dev-python mydev</tags>
+    <dependencies>
+      <dependency id="vscode-python" />
+      <dependency id="pycharm-community" />
+    </dependencies>
+  </metadata>
+</package>

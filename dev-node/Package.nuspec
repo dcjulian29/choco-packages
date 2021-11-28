@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dev-node</id>
+    <version>2111.26.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages I use when doing Node.JS development.</description>
+    <tags>dev-node mydev</tags>
+    <dependencies>
+      <dependency id="nodejs" />
+      <dependency id="vscode-node" />
+    </dependencies>
+  </metadata>
+</package>
