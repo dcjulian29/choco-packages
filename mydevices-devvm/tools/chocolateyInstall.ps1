@@ -37,3 +37,11 @@ dotnet tool install --global dotnet-tarball
 dotnet tool install --global dotnet-outdated-tool
 dotnet tool install --global dotnet-delice
 dotnet tool install --global BenchmarkDotNet.Tool
+
+Write-Output "Checking to see if code folder needs to be restored..."
+if (-not (Test-Path $(Get-DefaultCodeFolder)\BACKUP-CodeDirectory.bat)) {
+    if (Test-Path $env:SYSTEMDRIVE\etc\Restore-CodeDirectory.cmd) {
+        Write-Output "  - Restoring code folder..."
+        & $env:SYSTEMDRIVE\etc\Restore-CodeDirectory.cmd
+    }
+}
