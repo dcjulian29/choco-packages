@@ -21,5 +21,7 @@ $packages = @(
 )
 
 foreach ($package in $packages) {
+    Write-Output "  "
+    Write-Output "---------- $package"
     Install-VsixByName $package
 }

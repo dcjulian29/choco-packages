@@ -22,6 +22,8 @@ $packages = @(
 )
 
 foreach ($package in $packages) {
+    Write-Output "  "
+    Write-Output "---------- $package"
     Install-VsixByName -PackageName $package
 }
 
@@ -29,4 +31,6 @@ $file = "${env:TEMP}\$([Guid]::NewGuid()).vsix"
 
 Invoke-WebRequest 'https://julianscorner.com/dl/JulianSnippets.vsix' -OutFile $file
 
+Write-Output "  "
+Write-Output "---------- JulianSnippets"
 Install-VsixPackage -Path $file -Package "JulianSnippets"
