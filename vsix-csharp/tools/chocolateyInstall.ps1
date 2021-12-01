@@ -21,5 +21,5 @@ $packages = @(
 )
 
 foreach ($package in $packages) {
-    Install-VSIX $package
+    Install-VsixByName $package
 }

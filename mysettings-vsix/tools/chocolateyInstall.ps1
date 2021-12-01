@@ -22,8 +22,7 @@ $packages = @(
 )
 
 foreach ($package in $packages) {
-    Write-Output $package
-    Install-Vsix -PackageName $package
+    Install-VsixByName -PackageName $package
 }
 
 $file = "${env:TEMP}\$([Guid]::NewGuid()).vsix"
