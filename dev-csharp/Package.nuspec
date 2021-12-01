@@ -17,7 +17,7 @@
       <dependency id="visualstudio2022-workload-netweb" />
       <dependency id="visualstudio2022-workload-azure" />
       <dependency id="netfx-4.8-devpack" />
-      <dependency id="mysettings-vsix" />
+      <dependency id="vsix-csharp" />
       <dependency id="nswagstudio" />
     </dependencies>
   </metadata>
