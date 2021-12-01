@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dev-web-vs</id>
-    <version>2112.1.1</version>
+    <version>2112.1.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages I use when doing web development.</description>
-    <tags>dev-web mydev</tags>
+    <tags>dev-web mydev vs visualstudio</tags>
     <dependencies>
       <dependency id="dev-web" />
       <dependency id="visualstudio2022professional" />
