@@ -112,7 +112,7 @@ Windows Registry Editor Version 5.00
 "TaskbarMn"=dword:00000000
 "TaskbarSd"=dword:00000000
 "TaskbarSi"=dword:00000001
-"UseCompactView"=dword:00000001
+"UseCompactMode"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People]
 "PeopleBand"=dword:00000000
