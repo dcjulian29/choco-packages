@@ -2,7 +2,7 @@ Write-Output "Installing VSIX Extensions..."
 
 Get-Module -Name VisualStudio -ListAvailable | Out-Null
 
-function installPackages(string[]$packages) {
+function installPackages($packages) {
     foreach ($package in $packages) {
         Write-Output "  "
         Write-Output "---------- $package"
