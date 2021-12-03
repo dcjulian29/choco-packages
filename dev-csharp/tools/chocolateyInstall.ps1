@@ -11,8 +11,12 @@ $images | ForEach-Object {
 #Disable Telemetry
 Set-EnvironmentVariable -Name "DOTNET_CLI_TELEMETRY_OPTOUT" -Value 1 -Scope "Machine"
 
+dotnet dev-certs https --trust
+
 # Ensure that the v3 NuGet feed is enabled
 nuget sources add -Name "NuGet Official Package Source" -Source "https://api.nuget.org/v3/index.json"
+
+dotnet sdk check
 
 # DotNet Tool installs:
 dotnet tool install --global Cake.Tool
