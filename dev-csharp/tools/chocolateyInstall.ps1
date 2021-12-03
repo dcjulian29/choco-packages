@@ -4,6 +4,7 @@ $images = @(
 )
 
 $images | ForEach-Object {
+    Write-Output "-----$_"
     Pull-DockerImage -Name $_.Split(':')[0] -Tag $_.Split(':')[1]
 }
 
