@@ -29,9 +29,13 @@ gd -Key "projects" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
 [System.Environment]::SetEnvironmentVariable('CAKE_SETTINGS_SKIPPACKAGEVERSIONCHECK', 'true',[System.EnvironmentVariableTarget]::User)
 
 Write-Output "Checking to see if code folder needs to be restored..."
-if (-not (Test-Path "$(Get-DefaultCodeFolder)\BACKUP-CodeDirectory.bat")) {
+if (-not (Test-Path "$(Get-DefaultCodeFolder)\zzz.log")) {
     if (Test-Path $env:SYSTEMDRIVE\home\vm\restoreCodeDirectory.bat) {
         Write-Output "  - Restoring code folder..."
         & $env:SYSTEMDRIVE\home\vm\restoreCodeDirectory.bat
+    }
+
+    if (-not (Test-Path "$(Get-DefaultCodeFolder)\zzz.log")) {
+        Set-Content -Path "$(Get-DefaultCodeFolder)\zzz.log" -Value "" -Force
     }
 }
