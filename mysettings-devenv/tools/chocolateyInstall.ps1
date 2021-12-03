@@ -30,8 +30,8 @@ gd -Key "projects" -SelectedPath "${env:SYSTEMDRIVE}\code" -add
 
 Write-Output "Checking to see if code folder needs to be restored..."
 if (-not (Test-Path "$(Get-DefaultCodeFolder)\BACKUP-CodeDirectory.bat")) {
-    if (Test-Path $env:SYSTEMDRIVE\etc\Restore-CodeDirectory.cmd) {
+    if (Test-Path $env:SYSTEMDRIVE\home\vm\restoreCodeDirectory.bat) {
         Write-Output "  - Restoring code folder..."
-        & $env:SYSTEMDRIVE\etc\Restore-CodeDirectory.cmd
+        & $env:SYSTEMDRIVE\home\vm\restoreCodeDirectory.bat
     }
 }
