@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-vsix</id>
-    <version>2112.3.1</version>
+    <version>2112.4.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>VSIX Extensions I like to install in Visual Studio</description>

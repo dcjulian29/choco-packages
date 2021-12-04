@@ -24,6 +24,7 @@ if (Test-VisualStudioInstalledVersion 2022) {
 if (Test-VisualStudioInstalledVersion 2019) {
     Write-Output "====== Visual Studio 2019 ====="
     installPackages @(
+        "pid011.MonokaiVS"
         "ErlandR.ReAttach"
         "EWoodruff.VisualStudioSpellCheckerVS2017andLater"
         "GitHub.GitHubExtensionforVisualStudio"
