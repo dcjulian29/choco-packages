@@ -13,6 +13,7 @@ function installPackages($packages) {
 if (Test-VisualStudioInstalledVersion 2022) {
     Write-Output "====== Visual Studio 2022 ====="
     installPackages @(
+        "azemoh.onemonokai"
         "FinnGegenmantel.doxygenComments"
         "josefpihrt.Roslynator2022"
         "jsakamoto.CMethodsCodeSnippets"
@@ -27,6 +28,7 @@ if (Test-VisualStudioInstalledVersion 2022) {
 if (Test-VisualStudioInstalledVersion 2019) {
     Write-Output "====== Visual Studio 2019 ====="
     installPackages @(
+        "azemoh.onemonokai"
         "AndreasReischuck.SemanticColorizer"
         "DavidPerfors.RegionExpander"
         "DavidProthero.NgrokExtensions"
