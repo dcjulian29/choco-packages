@@ -73,6 +73,22 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
 @=""
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Start]
+"AllowPinnedFolderDocuments"=dword:00000000
+"AllowPinnedFolderDocuments_ProviderSet"=dword:00000000
+"AllowPinnedFolderDownloads"=dword:00000000
+"AllowPinnedFolderDownloads_ProviderSet"=dword:00000000
+"AllowPinnedFolderFileExplorer"=dword:00000001
+"AllowPinnedFolderFileExplorer_ProviderSet"=dword:00000001
+"AllowPinnedFolderPersonalFolder"=dword:00000000
+"AllowPinnedFolderPersonalFolder_ProviderSet"=dword:00000000
+"AllowPinnedFolderPictures"=dword:00000000
+"AllowPinnedFolderPictures_ProviderSet"=dword:00000000
+"AllowPinnedFolderSettings"=dword:00000001
+"AllowPinnedFolderSettings_ProviderSet"=dword:00000001
+"AllowPinnedFolderNetwork"=dword:00000000
+"AllowPinnedFolderNetwork_ProviderSet"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
 "EnableAutoTray"=dword:00000000
 "ShowRecent"=dword:00000000
