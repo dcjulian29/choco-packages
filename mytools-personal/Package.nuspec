@@ -2,18 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mytools-personal</id>
-    <version>2111.26.1</version>
+    <version>2112.28.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for my personal machines.</description>
     <tags>mytools-personal mytools</tags>
     <dependencies>
       <dependency id="mytools" />
-      <dependency id="bind-toolsonly" />
       <dependency id="baretail" />
       <dependency id="xmlquire" />
       <dependency id="plantuml" />
-      <dependency id="fiddler" />
       <dependency id="kubernetes-helm" />
       <dependency id="searchmyfiles" version="3.0.7" />
       <dependency id="mysettings-ubuntu-wsl" />
