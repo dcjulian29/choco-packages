@@ -201,9 +201,6 @@ Write-Output "`n`nEnabling Windows Containers..."
 
 Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
 
-Write-Output "Temporarily disabling Chocolatey checksums to install Chrome for the development vm..."
-choco install googlechrome ---ignore-checksums -y
-
 #-------------------------------------------------------------------------------------------------
 
 if (-not (Get-Process -Name "syncthing" -ea 0)) {
