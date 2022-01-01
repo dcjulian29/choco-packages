@@ -1,12 +1,15 @@
 Windows Registry Editor Version 5.00
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont]
+"3435"="CaskaydiaCove NF"
+
 [HKEY_CURRENT_USER\Console]
 "CurrentPage"=dword:00000003
 "CursorSize"=dword:00000019
 "EnableColorSelection"=dword:00000000
 "ExtendedEditKey"=dword:00000000
 "ExtendedEditKeyCustom"=dword:00000000
-"FaceName"="Lucida Console"
+"FaceName"="CaskaydiaCove NF"
 "FontFamily"=dword:00000036
 "FontSize"=dword:00100000
 "FontWeight"=dword:00000190
@@ -26,4 +29,3 @@ Windows Registry Editor Version 5.00
 "WindowPosition"=dword:00000000
 "WindowSize"=dword:002b0078
 "WordDelimiters"=dword:00000000
-
