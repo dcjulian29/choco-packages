@@ -4,19 +4,22 @@ Windows Registry Editor Version 5.00
 "3435"="CaskaydiaCove NF"
 
 [HKEY_CURRENT_USER\Console]
-"CurrentPage"=dword:00000003
+"CtrlKeyShortcutsDisabled"=dword:00000000
+"CursorColor"=dword:ffffffff
 "CursorSize"=dword:00000019
+"DefaultBackground"=dword:ffffffff
+"DefaultForeground"=dword:ffffffff
 "EnableColorSelection"=dword:00000000
-"ExtendedEditKey"=dword:00000000
 "ExtendedEditKeyCustom"=dword:00000000
 "FaceName"="CaskaydiaCove NF"
-"FontFamily"=dword:00000036
-"FontSize"=dword:00100000
-"FontWeight"=dword:00000190
+"FontSize"=dword:00140000
+"ForceV2"=dword:00000001
 "FullScreen"=dword:00000000
 "HistoryBufferSize"=dword:00000032
-"HistoryNoDup"=dword:00000000
+"HistoryNoDup"=dword:00000001
 "InsertMode"=dword:00000001
+"LineSelection"=dword:00000001
+"LineWrap"=dword:00000001
 "LoadConIme"=dword:00000001
 "NumberOfHistoryBuffers"=dword:00000004
 "PopupColors"=dword:000000f5
@@ -26,6 +29,6 @@ Windows Registry Editor Version 5.00
 "ScrollScale"=dword:00000001
 "TrimLeadingZeros"=dword:00000000
 "WindowAlpha"=dword:000000ff
-"WindowPosition"=dword:00000000
-"WindowSize"=dword:002b0078
 "WordDelimiters"=dword:00000000
+"WindowSize"=dword:00280078
+
