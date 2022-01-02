@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation</id>
-    <version>2111.28.1</version>
+    <version>2201.1.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my workstation computer configurations.</description>
@@ -23,7 +23,7 @@
       <dependency id="winmerge" />
       <dependency id="frhed" />
       <dependency id="mytools-scm" />
-      <dependency id="microsoft-windows-terminal" />
+      <dependency id="mysettings-terminal" />
     </dependencies>
   </metadata>
 </package>

@@ -1,0 +1,81 @@
+command_timeout = 3000
+scan_timeout = 100
+format = """\
+[╭╴](238)$username@$hostname:$directory\
+$git_branch\
+$git_status\
+$docker_context\
+$all\
+[╰─](238)$character"""
+
+[character]
+success_symbol = "[⌲](bold green)"
+error_symbol = "[⌲](bold red)"
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+style = "red"
+read_only = ""
+home_symbol = "~"
+
+[hostname]
+ssh_only = false
+format =  "[$hostname](bold green)"
+disabled = false
+
+[username]
+style_user = "bold yellow"
+style_root = "bold red"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+#------------------------------------------------------------------------------
+
+[docker_context]
+format = "[$context](green)"
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+
+[git_status]
+format = '[$conflicted$ahead_behind$all_status]($style) '
+conflicted = "🏳"
+ahead = "[$count](yellow)"
+behind = " [$count](red)"
+diverged = "[${ahead_count}](yellow)[${behind_count}](red)"
+up_to_date = ""
+untracked = " [ $count](blue)"
+stashed = "  $count"
+modified = " [ $count](yellow)"
+staged = " [ $count](green)"
+renamed = " 襁 $count"
+deleted = " [ $count](red)"
+
+[helm]
+format = "[ $version](bold purple)"
+
+[kubernetes]
+format = '[ $context\($namespace\)](bold purple) '
+disabled = true
+[kubernetes.context_aliases]
+"jnet-k8s-arm" = "jnet-arm"
+"jnet-k8s-production" = "prod"
+"jnet-k8s-lab" = "lab"
+
+[nodejs]
+format = "[ $version](bold green)"
+
+[python]
+symbol = " "
+python_binary = "python3"
+
+[ruby]
+format = "[ $version]($style)"
+
+[terraform]
+format = "[ terraform $version]($style) 壟 [$workspace]($style)"
+
+[vagrant]
+format = "[ $symbol$version]($style)"
