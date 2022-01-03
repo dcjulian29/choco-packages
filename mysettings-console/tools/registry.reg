@@ -1,32 +1,8 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Console]
-"CtrlKeyShortcutsDisabled"=dword:00000000
-"CursorColor"=dword:ffffffff
-"CursorSize"=dword:00000019
-"DefaultBackground"=dword:ffffffff
-"DefaultForeground"=dword:ffffffff
-"EnableColorSelection"=dword:00000000
-"ExtendedEditKeyCustom"=dword:00000000
 "FaceName"="Cascadia Code"
 "FontSize"=dword:00120008
-"ForceV2"=dword:00000001
-"FullScreen"=dword:00000000
-"HistoryBufferSize"=dword:00000032
-"HistoryNoDup"=dword:00000001
-"InsertMode"=dword:00000001
-"LineSelection"=dword:00000001
-"LineWrap"=dword:00000001
-"LoadConIme"=dword:00000001
-"NumberOfHistoryBuffers"=dword:00000004
-"PopupColors"=dword:000000f5
-"QuickEdit"=dword:00000001
-"ScreenBufferSize"=dword:0bb80078
-"ScreenColors"=dword:0000000a
-"ScrollScale"=dword:00000001
-"TrimLeadingZeros"=dword:00000000
-"WindowAlpha"=dword:000000ff
-"WordDelimiters"=dword:00000000
 "WindowSize"=dword:001e0078
 
 [HKEY_CURRENT_USER\Console\%%Startup]
