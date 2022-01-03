@@ -6,7 +6,7 @@ $git_branch\
 $git_status\
 $docker_context\
 $all\
-[╰─](238)$character"""
+[╰─](238)$character$env_var"""
 
 [character]
 success_symbol = "[⌲](bold green)"
@@ -18,6 +18,11 @@ truncate_to_repo = false
 style = "red"
 read_only = ""
 home_symbol = "~"
+
+[env_var.PromptAdmin]
+format = "$env_value "
+variable = "PromptAdmin"
+disabled = false
 
 [hostname]
 ssh_only = false
