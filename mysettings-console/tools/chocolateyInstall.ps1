@@ -11,9 +11,9 @@ cmd /c "$cmd"
   $font = "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/$_/complete/Caskaydia%20Cove%20$_%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.otf"
 
   Invoke-WebRequest -Uri $font `
-    -OutFile "$env:TEMP\Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf"
+    -OutFile "${env:TEMP}\Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf"
 
-  Install-Font -Path "$env:TEMP\Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf"
+  Install-Font -Path "${env:TEMP}\Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf"
 
-  Remove-Item -Path "$env:TEMP\Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf" -Force
+  Remove-Item -Path "${env:TEMP}\Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf" -Force
 }
