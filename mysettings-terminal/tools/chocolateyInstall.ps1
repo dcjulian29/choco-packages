@@ -11,4 +11,8 @@ if (Test-Path $starship) {
     Remove-Item -Path $starship -Force
 }
 
+if (-not (Test-Path $(Split-Path $starship -Leaf))) {
+    New-Item -Path $starship -ItemType Directory -Force | Out-Null
+}
+
 Copy-Item -Path "$PSScriptRoot\starship.toml" -Destination $starship -Force | Out-Null
