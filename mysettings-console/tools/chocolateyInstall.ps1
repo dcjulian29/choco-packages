@@ -6,15 +6,15 @@ function installFont($Path) {
   $fontName = $folder.GetDetailsOf($item, 21)
 
   switch ($Path.Extension) {
-      ".ttf" { $fontName = $fontName + [char]32 + '(TrueType)' }
-      ".otf" { $fontName = $fontName + [char]32 + '(OpenType)' }
+      ".ttf" { $fontName = "$fontName (TrueType)" }
+      ".otf" { $fontName = "$fontName (OpenType)" }
   }
 
-  if (-not (Test-Path "C:\Windows\Fonts\" + $Path.Name)) {
-    Copy-Item -Path $Path.FullName -Destination ("C:\Windows\Fonts\" + $Path.Name) `
+  if (-not (Test-Path "${env:windir}\Fonts\$($Path.Name)")) {
+    Copy-Item -Path $Path.FullName -Destination ("${env:windir}\Fonts\$($Path.Name)") `
       -ErrorAction SilentlyContinue
 
-    if ((Test-Path "C:\Windows\Fonts\" + $Path.Name)) {
+    if ((Test-Path "${env:windir}\Fonts\$($Path.Name)")) {
       Write-Output "Adding '$fontName' to registry....."
 
       if ($null -ne (Get-ItemProperty -Name $fontName `
