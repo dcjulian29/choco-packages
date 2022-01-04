@@ -49,6 +49,8 @@ function installFont($Path) {
     } else {
       Write-Error "Unable to copy '$($Path.Name)' to Windows Fonts folder!"
     }
+  } else {
+    Write-Warning "'$fontName' is already installed."
   }
 }
 
@@ -62,20 +64,6 @@ Write-Output "Adding console settings to registry..."
 cmd /c "$cmd"
 
 # Install My "Nerd" Font
-$wc = New-Object System.Net.WebClient
-@("Bold", "ExtraLight", "Light", "Regular", "SemiBold", "SemiLight") | ForEach-Object {
-  $url = 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/' `
-    + "$_" `
-    + '/complete/Caskaydia%20Cove%20' + "$_" `
-    + '%20Nerd%20Font%20Complete%20Windows%20Compatible.otf'
-  $file = "Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf"
-
-  $wc.DownloadFile("$url", "${env:TEMP}\$file")
-
-  if (Test-Path "${env:TEMP}\$file") {
-    installFont "${env:TEMP}\$file"
-    Remove-Item -Path "${env:TEMP}\$file" -Force
-  } else {
-    Write-Error "'$file' failed download!"
-  }
+(Get-ChildItem -Path "$pwd\fonts").FullName | ForEach-Object {
+  installFont $_
 }
