@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>angryip</id>
+    <version>3.7.6</version>
+    <authors>angryziber</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>http://angryip.org/</projectUrl>
+    <description>Angry IP scanner simply pings each IP address to check if it’s alive, then optionally it is resolving its hostname, determines the MAC address, scans ports, etc. The amount of gathered data about each host can be extended with plugins.</descriptiom>
+    <tags>network angryip ipscan</tags>
+    <dependencies>
+      <dependency id="AdoptOpenJDKjre" />
+    </dependencies>
+  </metadata>
+</package>
