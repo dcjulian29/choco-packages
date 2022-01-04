@@ -58,20 +58,25 @@ if ([System.IntPtr]::Size -ne 4) {
     $cmd = "$cmd /reg:64"
 }
 
+Write-Output "Adding console settings to registry..."
 cmd /c "$cmd"
 
 # Install My "Nerd" Font
 @("Bold", "ExtraLight", "Light", "Regular", "SemiBold", "SemiLight") | ForEach-Object {
-  $font = "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/$_/complete/Caskaydia%20Cove%20$_%20Nerd%20Font%20Complete%20Windows%20Compatible.otf"
 
-  Invoke-WebRequest -Uri $font `
-    -OutFile "${env:TEMP}\Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf"
+  $font = 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/' `
+    + "$_" `
+    + '/complete/Caskaydia%20Cove%20' + "$_" `
+    + '%20Nerd%20Font%20Complete%20Windows%20Compatible.otf'
 
-  if (Test-Path "${env:TEMP}\Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf") {
-    installFont `
-      -Path "${env:TEMP}\Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf"
-    Remove-Item `
-      -Path "${env:TEMP}\Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf" `
-      -Force
+  $file = "Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf"
+
+  Invoke-WebRequest -Uri $font -OutFile $file -UseBasicParsing
+
+  if (Test-Path "${env:TEMP}\$file") {
+    installFont "${env:TEMP}\$file"
+    Remove-Item -Path "${env:TEMP}\$file" -Force
+  } else {
+    Write-Error "'$file' failed download!"
   }
 }
