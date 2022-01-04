@@ -1,8 +1,8 @@
-$packageName = "iperf"
 $version = "${env:ChocolateyPackageVersion}"
-$url = "https://iperf.fr/download/windows/$($packageName)-$($version)-win64.zip"
+$url = "https://iperf.fr/download/windows/iperf-$($version)-win64.zip"
+
 $downloadPath = "$env:TEMP\$packageName"
-$appDir = "$($env:SYSTEMDRIVE)\tools\$($packageName)"
+$appDir = "$PSScriptRoot\iperf)"
 
 if (Test-Path $downloadPath) {
     Remove-Item -Path $downloadPath -Force
@@ -10,16 +10,15 @@ if (Test-Path $downloadPath) {
 
 New-Item -Type Directory -Path $downloadPath | Out-Null
 
-Download-File $url "$downloadPath\$packageName.zip"
-
-Unzip-File -File "$downloadPath\$packageName.zip" -Destination "$downloadPath\"
+Invoke-WebRequest -Uri $url -OutFile "$downloadPath\iperf.zip"
+Expand-Archive -Path "$downloadPath\iperf.zip" -Destination "$downloadPath\"
 
 if (Test-Path $appDir) {
     Write-Output "Removing previous version of package..."
-    Remove-Item "$($appDir)" -Recurse -Force
+    Remove-Item $appDir -Recurse -Force
 }
 
 New-Item -Type Directory -Path $appDir | Out-Null
     
-Copy-Item -Path "$($downloadPath)\$($packageName)-$($version)-win64\*" `
+Copy-Item -Path "$downloadPath\iperf-$version-win64\*" `
     -Destination "$appDir" -Recurse -Container
