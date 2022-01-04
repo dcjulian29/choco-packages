@@ -64,6 +64,6 @@ Write-Output "Adding console settings to registry..."
 cmd /c "$cmd"
 
 # Install My "Nerd" Font
-(Get-ChildItem -Path "$pwd\fonts").FullName | ForEach-Object {
+(Get-ChildItem -Path "$PSScriptRoot\fonts").FullName | ForEach-Object {
   installFont $_
 }
