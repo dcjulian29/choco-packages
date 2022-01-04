@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-console</id>
-    <version>2201.3.7</version>
+    <version>2201.3.8</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom settings for fonts, colors, and windows size for console windows.</description>

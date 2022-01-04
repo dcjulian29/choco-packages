@@ -62,16 +62,15 @@ Write-Output "Adding console settings to registry..."
 cmd /c "$cmd"
 
 # Install My "Nerd" Font
+$wc = New-Object System.Net.WebClient
 @("Bold", "ExtraLight", "Light", "Regular", "SemiBold", "SemiLight") | ForEach-Object {
-
-  $font = 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/' `
+  $url = 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/' `
     + "$_" `
     + '/complete/Caskaydia%20Cove%20' + "$_" `
     + '%20Nerd%20Font%20Complete%20Windows%20Compatible.otf'
-
   $file = "Caskaydia Cove $_ Nerd Font Complete Windows Compatible.otf"
 
-  Invoke-WebRequest -Uri $font -OutFile $file -UseBasicParsing
+  $wc.DownloadFile("$url", "${env:TEMP}\$file")
 
   if (Test-Path "${env:TEMP}\$file") {
     installFont "${env:TEMP}\$file"
