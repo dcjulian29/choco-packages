@@ -19,8 +19,8 @@
       <dependency id="mysettings-rainmeter" />
       <dependency id="mysettings-greenshot" />
       <dependency id="xmind" />
-      <dependency id="angryip" />
-      <dependency id="iperf" />
+      <dependency id="angryip-julian" />
+      <dependency id="iperf-julian" />
       <dependency id="xmlquire" />
       <dependency id="mysettings-wsl2" />
       <dependency id="docker-desktop" />
