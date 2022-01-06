@@ -2,7 +2,7 @@ $version = "${env:ChocolateyPackageVersion}"
 $url = "https://iperf.fr/download/windows/iperf-$($version)-win64.zip"
 
 $downloadPath = "$env:TEMP\$packageName"
-$appDir = "$PSScriptRoot\iperf)"
+$appDir = "$PSScriptRoot\iperf"
 
 if (Test-Path $downloadPath) {
     Remove-Item -Path $downloadPath -Force
@@ -19,6 +19,6 @@ if (Test-Path $appDir) {
 }
 
 New-Item -Type Directory -Path $appDir | Out-Null
-    
+
 Copy-Item -Path "$downloadPath\iperf-$version-win64\*" `
     -Destination "$appDir" -Recurse -Container
