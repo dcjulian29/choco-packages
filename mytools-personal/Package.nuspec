@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mytools-personal</id>
-    <version>2112.28.1</version>
+    <version>2201.6.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for my personal machines.</description>
@@ -13,7 +13,7 @@
       <dependency id="xmlquire" />
       <dependency id="plantuml" />
       <dependency id="kubernetes-helm" />
-      <dependency id="searchmyfiles" version="3.0.7" />
+      <dependency id="searchmyfiles-julian" />
       <dependency id="mysettings-ubuntu-wsl" />
     </dependencies>
   </metadata>
