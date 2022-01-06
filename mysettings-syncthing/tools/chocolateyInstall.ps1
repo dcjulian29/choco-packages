@@ -6,7 +6,19 @@ if ($null -ne $key.GetValue("syncthing", $null)) {
 }
 
 New-ItemProperty -Path $location -Name "syncthing" `
-    -Value "$env:ChocolateyInstall\bin\syncthing.exe -no-console -no-browser"
+    -Value "$PSScriptRoot\start-syncthing.cmd"
+
+Set-Content -Path "$PSScriptRoot\start-syncthing.cmd" -Value @"
+@echo off
+
+FOR /F "delims=" %%i IN ('dir "%ChocolateyInstall%\lib\syncthing\tools" /b /ad-h /t:c /o-d') DO (
+  SET a=%%i
+)
+
+echo Starting Syncthing in %a%...
+
+start /MIN %ChocolateyInstall%\lib\syncthing\tools\%a%\syncthing.exe --no-console --no-browser
+"@
 
 New-NetFirewallRule -DisplayName 'Syncthing-Inbound-TCP' -Profile Domain -Direction Inbound `
     -Action Allow -Protocol TCP -LocalPort 22000
