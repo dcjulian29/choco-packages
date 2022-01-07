@@ -17,6 +17,9 @@ if (Test-Path "${env:TEMP}\$file") {
 
 if (Test-Path "$poshDir\Profile.ps1") {
     Write-Output "Removing previous version of package..."
+
+    Remove-Item -Path "$poshDir/MyModules" -Recurse -Force
+
     Get-ChildItem -Path $poshDir -Recurse |
         Select-Object -ExpandProperty FullName |
         Where-Object { $_ -notlike "$poshDir\Modules*" } |
