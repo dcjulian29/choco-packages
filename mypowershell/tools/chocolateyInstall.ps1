@@ -18,7 +18,7 @@ if (Test-Path "${env:TEMP}\$file") {
 if (Test-Path "$poshDir\Profile.ps1") {
     Write-Output "Removing previous version of package..."
 
-    Remove-Item -Path "$poshDir/MyModules" -Recurse -Force
+    Remove-Item -Path "$poshDir\MyModules" -Recurse -Force
 
     Get-ChildItem -Path $poshDir -Recurse |
         Select-Object -ExpandProperty FullName |
@@ -66,14 +66,16 @@ if ((-not ($env:PSModulePath).Contains("$(Split-Path $profile)\MyModules"))) {
 
 #------------------------------------------------------------------------------
 
-if (Test-Path $downloadPath) {
-    Remove-Item $downloadPath -Recurse -Force | Out-Null
+if (Test-Path "${env:TEMP}\posh-go.zip") {
+  Remove-Item "${env:TEMP}\posh-go.zip" -Force | Out-Null
 }
-
-New-Item -Type Directory -Path $downloadPath | Out-Null
 
 Download-File "https://github.com/cameronharp/Go-Shell/archive/master.zip" `
   "${env:TEMP}\posh-go.zip"
+
+if (Test-Path "${env:TEMP}\Go-Shell-master") {
+  Remove-Item -Path "${env:TEMP}\Go-Shell-master" -Recurse -Force
+}
 
 Unzip-File "${env:TEMP}\posh-go.zip" "${env:TEMP}\"
 
