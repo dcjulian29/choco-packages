@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation</id>
-    <version>2201.1.1</version>
+    <version>2201.6.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my workstation computer configurations.</description>
@@ -12,10 +12,9 @@
       <dependency id="mysettings-console" />
       <dependency id="mysettings-explorer" />
       <dependency id="mysettings-notepadplusplus" />
-      <dependency id="posh-mymodules" />
+      <dependency id="mysettings-terminal" />
       <dependency id="powershell-core" />
-      <dependency id="posh-go" />
-      <dependency id="myscripts-binaries" />
+      <dependency id="mypowershell" />
       <dependency id="sysinternals" />
       <dependency id="executor-julian" />
       <dependency id="grepwin" />
@@ -23,7 +22,6 @@
       <dependency id="winmerge" />
       <dependency id="frhed" />
       <dependency id="mytools-scm" />
-      <dependency id="mysettings-terminal" />
     </dependencies>
   </metadata>
 </package>

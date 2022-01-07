@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mypowershell</id>
+    <version>2201.6.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>A package to setup my custom powershell environment</description>
+    <tags>myscripts scripts powershell pshell mymodules</tags>
+    <dependencies>
+      <dependency id="myscripts-binaries" />
+      <dependency id="posh-myprofile" />
+      <dependency id="posh-mymodules" />
+      <dependency id="pwsh-myprofile" />
+      <dependency id="posh-go" />
+      <dependency id="myscripts-binaries" />
+    </dependencies>
+  </metadata>
+</package>
