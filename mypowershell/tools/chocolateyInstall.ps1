@@ -96,7 +96,8 @@ Remove-Item -Path "${env:TEMP}\Go-Shell-master" -Recurse -Force
 Import-Module PackageManagement -RequiredVersion 1.0.0.1
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 
-Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+Import-Module PowerShellGet -RequiredVersion 1.0.0.1
+Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted -Force
 
 #------------------------------------------------------------------------------
 
