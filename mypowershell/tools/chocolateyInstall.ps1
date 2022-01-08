@@ -5,6 +5,7 @@ $version = "${env:ChocolateyPackageVersion}"
 $repo = "scripts-powershell"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 $file = "$repo-$version"
+$modulesDir = "$poshDir\MyModules"
 
 if (Test-Path "${env:TEMP}\$file") {
     Remove-Item "${env:TEMP}\$file" -Recurse -Force
@@ -18,13 +19,12 @@ if (Test-Path "${env:TEMP}\$file") {
 if (Test-Path "$poshDir\Profile.ps1") {
     Write-Output "Removing previous version of package..."
 
-    Remove-Item -Path "$poshDir\MyModules" -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path $modulesDir -Recurse -Force -ErrorAction SilentlyContinue
     Remove-Item -Path "$poshDir\Scripts" -Recurse -Force -ErrorAction SilentlyContinue
 
     Get-ChildItem -Path $poshDir -Recurse |
         Select-Object -ExpandProperty FullName |
-        Where-Object { $_ -notlike "$poshDir\Modules*" } |
-        Remove-Item -Force
+        Remove-Item -Force -ErrorAction SilentlyContinue
 }
 
 if (-not (Test-Path $poshDir)) {
@@ -43,20 +43,8 @@ Get-ChildItem -Path "${env:TEMP}\$file" -Recurse |
 Remove-Item -Path "${env:TEMP}\$file.zip" -Force
 Remove-Item -Path "${env:TEMP}\$file" -Recurse -Force
 
-if (-not (Test-Path "$(Split-Path $profile)\Modules")) {
-    New-Item -Type Directory -Path "$(Split-Path $profile)\Modules" | Out-Null
-}
-
-if ((-not ($env:PSModulePath).Contains("$(Split-Path $profile)\Modules"))) {
-    $env:PSModulePath = "$(Split-Path $profile)\Modules;$($env:PSModulePath)"
-
-    Get-Module -ListAvailable | Out-Null
-
-    Invoke-Expression "[Environment]::SetEnvironmentVariable('PSModulePath', '$PSModulePath', 'User')"
-}
-
-if ((-not ($env:PSModulePath).Contains("$(Split-Path $profile)\MyModules"))) {
-    $PSModulePath = "$(Split-Path $profile)\MyModules;$($env:PSModulePath)"
+if ((-not ($env:PSModulePath).Contains($myModules))) {
+    $PSModulePath = "$modulesDir;$($env:PSModulePath)"
 
     $env:PSModulePath = $PSModulePath
 
@@ -80,24 +68,32 @@ if (Test-Path "${env:TEMP}\Go-Shell-master") {
 
 Unzip-File "${env:TEMP}\posh-go.zip" "${env:TEMP}\"
 
-if (Test-Path "$poshDir\Modules\go") {
+if (Test-Path "$modulesDir\go") {
   Write-Output "Removing previous version of posh-go..."
-  Remove-Item "$poshDir\Modules\go" -Recurse -Force
+  Remove-Item "$modulesDir\go" -Recurse -Force
 }
 
-New-Item -Type Directory -Path "$poshDir\Modules\go" | Out-Null
+New-Item -Type Directory -Path "$modulesDir\go" | Out-Null
 
-Copy-Item -Path "${env:TEMP}\Go-Shell-master\*" -Destination "$poshDir\Modules\go"
+Copy-Item -Path "${env:TEMP}\Go-Shell-master\*" -Destination "$modulesDir\go"
 
 Remove-Item -Path "${env:TEMP}\posh-go.zip" -Force
 Remove-Item -Path "${env:TEMP}\Go-Shell-master" -Recurse -Force
 
 #------------------------------------------------------------------------------
 
-Import-Module PackageManagement -RequiredVersion 1.0.0.1
+Import-Module PackageManagement
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 
-Import-Module PowerShellGet -RequiredVersion 1.0.0.1
+if ((Get-Module PowershellGet -ListAvailable | Measure-Object).Count -gt 1) {
+  Import-Module PowerShellGet -RequiredVersion `
+    "$((Get-Module PowershellGet -ListAvailable `
+      | Sort-Object Version `
+      | Select-Object -First 1).Version.ToString())"
+} else {
+  Import-Module PowerShellGet
+}
+
 Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 
 #------------------------------------------------------------------------------
@@ -107,7 +103,8 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
   "PowerShellGet"
   "PSSlack"
   "BurntToast"
-  "CredentialManager"
+  "Microsoft.PowerShell.SecretManagement"
+  "Microsoft.PowerShell.SecretStore"
   "MicrosoftTeams"
   "NtpTime"
   "PSScriptAnalyzer"
@@ -119,6 +116,8 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
   "Posh-ACME"
   "PsIni"
   "PSWriteHTML"
+  "PSWriteExcel"
+  "PSWriteWord"
   "AnsibleVault"
   "PowerShellForGitHub"
   "GitlabCli"
@@ -126,8 +125,23 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
   "PSRule"
   "Grok-Test"
 ) | ForEach-Object {
-    Write-Output "Installing $_ module..."
-    Install-Module -Name $_ -AllowClobber -Force
+    Write-Output "Installing '$_' module..."
+    Install-Module -Name $_ -AllowClobber -Force -Verbose
 }
 
-Get-InstalledModule
+if (Test-Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1") {
+  Remove-Item -Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1" `
+    -Recurse -Force -ErrorAction SilentlyContinue
+}
+
+if (Test-Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PackageManagement\1.0.0.1") {
+  Remove-Item -Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PackageManagement\1.0.0.1" `
+    -Recurse -Force -ErrorAction SilentlyContinue
+}
+
+Get-Module -ListAvailable | Out-Null
+
+Get-InstalledModule `
+  | Select-Object Version,Name,PublishedDate,RepositorySourceLocation `
+  | Sort-Object PublishedDate -Descending `
+  | Format-Table
