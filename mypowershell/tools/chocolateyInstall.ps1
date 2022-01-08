@@ -18,7 +18,8 @@ if (Test-Path "${env:TEMP}\$file") {
 if (Test-Path "$poshDir\Profile.ps1") {
     Write-Output "Removing previous version of package..."
 
-    Remove-Item -Path "$poshDir\MyModules" -Recurse -Force
+    Remove-Item -Path "$poshDir\MyModules" -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path "$poshDir\Scripts" -Recurse -Force -ErrorAction SilentlyContinue
 
     Get-ChildItem -Path $poshDir -Recurse |
         Select-Object -ExpandProperty FullName |
@@ -97,7 +98,7 @@ Import-Module PackageManagement -RequiredVersion 1.0.0.1
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 
 Import-Module PowerShellGet -RequiredVersion 1.0.0.1
-Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted -Force
+Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 
 #------------------------------------------------------------------------------
 
