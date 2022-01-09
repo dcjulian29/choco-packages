@@ -96,6 +96,11 @@ if ((Get-Module PowershellGet -ListAvailable | Measure-Object).Count -gt 1) {
 
 Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 
+Register-PSRepository -Name "dcjulian29-powershell" `
+  -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2"
+
+Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
+
 #------------------------------------------------------------------------------
 
 @(
@@ -142,6 +147,6 @@ if (Test-Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PackageManagement\1
 Get-Module -ListAvailable | Out-Null
 
 Get-InstalledModule `
-  | Select-Object Version,Name,PublishedDate,RepositorySourceLocation `
+  | Select-Object Name,Version,PublishedDate,RepositorySourceLocation `
   | Sort-Object PublishedDate -Descending `
   | Format-Table
