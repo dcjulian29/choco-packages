@@ -5,7 +5,7 @@ $version = "${env:ChocolateyPackageVersion}"
 $repo = "scripts-powershell"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 $file = "$repo-$version"
-$modulesDir = "$poshDir\MyModules"
+$modulesDir = "$poshDir\Modules"
 
 if (Test-Path "${env:TEMP}\$file") {
     Remove-Item "${env:TEMP}\$file" -Recurse -Force
@@ -43,7 +43,7 @@ Get-ChildItem -Path "${env:TEMP}\$file" -Recurse |
 Remove-Item -Path "${env:TEMP}\$file.zip" -Force
 Remove-Item -Path "${env:TEMP}\$file" -Recurse -Force
 
-if ((-not ($env:PSModulePath).Contains($myModules))) {
+if ((-not ($env:PSModulePath).Contains($modulesDir))) {
     $PSModulePath = "$modulesDir;$($env:PSModulePath)"
 
     $env:PSModulePath = $PSModulePath
@@ -123,6 +123,7 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
   "PSWriteHTML"
   "PSWriteExcel"
   "PSWriteWord"
+  "PSWritePDF"
   "AnsibleVault"
   "PowerShellForGitHub"
   "GitlabCli"
