@@ -1,4 +1,3 @@
-$packageName = "mysettings-devwallpaper"
 $url = "https://julianscorner.com/downloads/codebackground.jpg"
 $wallpaper = "$($env:PUBLIC)\Pictures\wallpaper.png"
 
@@ -16,7 +15,7 @@ if (Test-Path $wallpaper) {
     Remove-Item -Path $wallpaper -Force
 }
 
-Download-File $url $wallpaper
+(New-Object System.Net.WebClient).DownloadFile($url, $wallpaper)
 
 Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name "WallPaperStyle" -Value "2"
 Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name "TileWallPaper" -Value "0"
