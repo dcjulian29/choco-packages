@@ -45,8 +45,8 @@ format = "[$context](green)"
 format = "[$symbol$branch]($style) "
 
 [git_status]
-format = '[$conflicted$ahead_behind$all_status]($style) '
-conflicted = "🏳"
+format = '$conflicted$ahead_behind$all_status '
+conflicted = "[🏳](red)"
 ahead = "[$count](yellow)"
 behind = " [$count](red)"
 diverged = "[${ahead_count}](yellow)[${behind_count}](red)"

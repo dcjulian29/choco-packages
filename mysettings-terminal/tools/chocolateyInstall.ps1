@@ -1,5 +1,6 @@
-$terminal = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
-$starship = "$env:USERPROFILE\.config\starship.toml"
+$terminal = "${env:LOCALAPPDATA}\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+$config = "${env:USERPROFILE}\.config"
+$starship = "${env:USERPROFILE}\.config\starship.toml"
 
 if (Test-Path $terminal) {
     Remove-Item -Path $terminal -Force
@@ -11,8 +12,8 @@ if (Test-Path $starship) {
     Remove-Item -Path $starship -Force
 }
 
-if (-not (Test-Path $(Split-Path $starship -Leaf))) {
-    New-Item -Path $(Split-Path $starship -Leaf) -ItemType Directory -Force | Out-Null
+if (-not (Test-Path $config)) {
+    New-Item -Path $config -ItemType Directory -Force | Out-Null
 }
 
 Copy-Item -Path "$PSScriptRoot\starship.toml" -Destination $starship -Force | Out-Null
