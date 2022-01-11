@@ -218,8 +218,6 @@ while (-not (Test-Path "$(Get-LogFolder)\zzz.log")) {
 
 Write-Output "Copying initial log files to sync folder..."
 
-Import-Module "$env:USERPROFILE\Documents\WindowsPowerShell\MyModules\Logging\Logging.psd1"
-
 $files = @(
     "choco",
     "install",
