@@ -6,15 +6,47 @@ $repo = "scripts-powershell"
 $url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
 $file = "$repo-$version"
 $modulesDir = "$poshDir\Modules"
+$binDir = "$($env:SYSTEMDRIVE)\bin"
+$binUrl = "https://github.com/dcjulian29/scripts-binaries/archive/refs/heads/master.zip"
 
-if (Test-Path "${env:TEMP}\$file") {
-    Remove-Item "${env:TEMP}\$file" -Recurse -Force
+@(
+  "${env:TEMP}\$file.zip"
+  "${env:TEMP}\$file"
+  "${env:TEMP}\scripts-binaries-master.zip"
+  "${env:TEMP}\scripts-binaries-master"
+) | ForEach-Object {
+  if (Test-Path $_) {
+      Remove-Item $_ -Recurse -Force
+  }
 }
 
 (New-Object System.Net.WebClient).DownloadFile("$url", "${env:TEMP}\$file.zip")
+(New-Object System.Net.WebClient).DownloadFile("$binUrl", "${env:TEMP}\scripts-binaries-master.zip")
 
 [System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem") | Out-Null
 [System.IO.Compression.ZipFile]::ExtractToDirectory("${env:TEMP}\$file.zip", ${env:TEMP})
+[System.IO.Compression.ZipFile]::ExtractToDirectory("${env:TEMP}\scripts-binaries-master.zip", ${env:TEMP})
+
+if (-not (Test-Path $binDir)) {
+  New-Item -Type Directory -Path $binDir | Out-Null
+}
+
+if (-not (Test-Path $poshDir)) {
+  New-Item -Path $poshDir -ItemType Directory | Out-Null
+}
+
+if (-not (Test-Path $pwshDir)) {
+  New-Item -ItemType SymbolicLink -Path $docDir -Name PowerShell -Target $poshDir
+}
+
+#------------------------------------------------------------------------------
+
+Copy-Item -Path "${env:TEMP}\scripts-binaries-master\*" -Destination $appdir -Recurse -Force
+
+Remove-Item -Path "${env:TEMP}\scripts-binaries-master" -Recurse -Force
+Remove-Item -Path "${env:TEMP}\scripts-binaries-master.zip" -Force
+
+#------------------------------------------------------------------------------
 
 if (Test-Path "$poshDir\Profile.ps1") {
     Write-Output "Removing previous version of package..."
@@ -25,14 +57,6 @@ if (Test-Path "$poshDir\Profile.ps1") {
     Get-ChildItem -Path $poshDir -Recurse |
         Select-Object -ExpandProperty FullName |
         Remove-Item -Force -ErrorAction SilentlyContinue
-}
-
-if (-not (Test-Path $poshDir)) {
-    New-Item -Path $poshDir -ItemType Directory | Out-Null
-}
-
-if (-not (Test-Path $pwshDir)) {
-    New-Item -ItemType SymbolicLink -Path $docDir -Name PowerShell -Target $poshDir
 }
 
 Get-ChildItem -Path "${env:TEMP}\$file" -Recurse |
