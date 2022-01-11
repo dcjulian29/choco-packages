@@ -68,9 +68,9 @@ Remove-Item -Path "${env:TEMP}\$file.zip" -Force
 Remove-Item -Path "${env:TEMP}\$file" -Recurse -Force
 
 if ((-not ($env:PSModulePath).Contains($modulesDir))) {
-    $PSModulePath = "$modulesDir;$($env:PSModulePath)"
+    $PSModulePath = "$modulesDir;$([Environment]::GetEnvironmentVariable('PSModulePath', 'User'))"
 
-    $env:PSModulePath = $PSModulePath
+    $env:PSModulePath = $PSModulePath + [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine')
 
     Get-Module -ListAvailable | Out-Null
 
@@ -154,6 +154,8 @@ Get-InstalledModule `
   | Select-Object Name,Version,PublishedDate,RepositorySourceLocation `
   | Sort-Object PublishedDate -Descending `
   | Format-Table | Out-String | Write-Host
+
+#------------------------------------------------------------------------------
 
 Write-Output "Making sure all runtime assemblies are pre-compiled if necessary..."
 
