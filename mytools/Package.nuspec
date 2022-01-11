@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mytools</id>
-    <version>2111.26.1</version>
+    <version>2201.11.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for all of my machines.</description>
@@ -16,9 +16,7 @@
       <dependency id="nuget.commandline" />
       <dependency id="nugetpackageexplorer" />
       <dependency id="mysettings-wsl2" />
-      <dependency id="docker-desktop" />
-      <dependency id="docker-compose" />
-      <dependency id="kubernetes-cli" />
+      <dependency id="mytools-containers" />
       <dependency id="python" />
     </dependencies>
   </metadata>

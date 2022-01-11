@@ -23,10 +23,7 @@
       <dependency id="iperf-julian" />
       <dependency id="xmlquire" />
       <dependency id="mysettings-wsl2" />
-      <dependency id="docker-desktop" />
-      <dependency id="docker-compose" />
-      <dependency id="docker-kitematic" />
-      <dependency id="kubernetes-cli" />
+      <dependency id="mytools-containers" />
       <dependency id="mysettings-syncthing" />
       <dependency id="teracopy" />
       <dependency id="vlc" />
