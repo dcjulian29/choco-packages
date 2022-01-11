@@ -103,36 +103,15 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
 
 #------------------------------------------------------------------------------
 
-@(
-  "PackageManagement"
-  "PowerShellGet"
-  "PSSlack"
-  "BurntToast"
-  "Microsoft.PowerShell.SecretManagement"
-  "Microsoft.PowerShell.SecretStore"
-  "MicrosoftTeams"
-  "NtpTime"
-  "PSScriptAnalyzer"
-  "7Zip4Powershell"
-  "SHiPS"
-  "Trackyon.Utils"
-  "VSTeam"
-  "Pscx"
-  "Posh-ACME"
-  "PsIni"
-  "PSWriteHTML"
-  "PSWriteExcel"
-  "PSWriteWord"
-  "PSWritePDF"
-  "AnsibleVault"
-  "PowerShellForGitHub"
-  "GitlabCli"
-  "Lability"
-  "PSRule"
-  "Grok-Test"
-) | ForEach-Object {
-    Write-Output "Installing '$_' module..."
+Get-Content "$PSScriptRoot\thirdparty.json" | ConvertFrom-Json | ForEach-Object {
+    Write-Output "Installing third-party '$_' module..."
     Install-Module -Name $_ -AllowClobber -Force -Verbose
+}
+
+Get-Content "$PSScriptRoot\mine.json" | ConvertFrom-Json | ForEach-Object {
+  Write-Output "Installing my '$_' module..."
+  Remove-Item "$modulesDir\$_" -Recurse -Force
+  Install-Module -Name $_ -AllowClobber -Force -Verbose
 }
 
 if (Test-Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1") {
@@ -150,4 +129,17 @@ Get-Module -ListAvailable | Out-Null
 Get-InstalledModule `
   | Select-Object Name,Version,PublishedDate,RepositorySourceLocation `
   | Sort-Object PublishedDate -Descending `
-  | Format-Table
+  | Format-Table | Out-String | Write-Host
+
+Write-Output "Making sure all runtime assemblies are pre-compiled if necessary..."
+
+$env:PATH = "$([Runtime.InteropServices.RuntimeEnvironment]::GetRuntimeDirectory());${env:PATH}"
+
+[AppDomain]::CurrentDomain.GetAssemblies() | ForEach-Object {
+  $path = $_.Location
+  if ($path) {
+    $name = Split-Path $path -Leaf
+    Write-Host -ForegroundColor Yellow "`r`nRunning ngen.exe on '$name'"
+    ngen.exe install $path /nologo
+  }
+}
