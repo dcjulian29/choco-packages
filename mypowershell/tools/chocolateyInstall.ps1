@@ -123,8 +123,10 @@ if ((Get-Module PowershellGet -ListAvailable | Measure-Object).Count -gt 1) {
 
 Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 
-Register-PSRepository -Name "dcjulian29-powershell" `
-  -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2"
+if (-not (Get-PSRepository -Name "dcjulian29-powershell" -ErrorAction SilentlyContinue)) {
+  Register-PSRepository -Name "dcjulian29-powershell" `
+    -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v3/index.json"
+}
 
 Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
 
