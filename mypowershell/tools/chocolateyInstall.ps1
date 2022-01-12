@@ -1,3 +1,5 @@
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::SystemDefault
+
 $docDir = Join-Path -Path $env:UserProfile -ChildPath Documents
 $poshDir = Join-Path -Path $docDir -ChildPath WindowsPowerShell
 $pwshDir = Join-Path -Path $docDir -ChildPath PowerShell
