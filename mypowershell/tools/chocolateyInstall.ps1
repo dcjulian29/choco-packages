@@ -49,6 +49,10 @@ Copy-Item -Path "${env:TEMP}\scripts-binaries-master\*" -Destination $binDir -Re
 Remove-Item -Path "${env:TEMP}\scripts-binaries-master" -Recurse -Force
 Remove-Item -Path "${env:TEMP}\scripts-binaries-master.zip" -Force
 
+if  (Test-Path "${env:SYSTEMDRIVE\tools\binaries" {
+  Remove-Item -Path "${env:SYSTEMDRIVE\tools\binaries" -Recurse -Force
+}
+
 #------------------------------------------------------------------------------
 
 if (Test-Path "$poshDir\Profile.ps1") {
