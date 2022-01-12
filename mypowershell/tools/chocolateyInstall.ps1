@@ -127,12 +127,12 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
 
 #------------------------------------------------------------------------------
 
-Get-Content "$PSScriptRoot\thirdparty.json" | ConvertFrom-Json | ForEach-Object {
+(Get-Content "$PSScriptRoot\thirdparty.json" | ConvertFrom-Json) | ForEach-Object {
     Write-Output "Installing third-party '$_' module..."
     Install-Module -Name $_ -AllowClobber -Force -Verbose
 }
 
-Get-Content "$PSScriptRoot\mine.json" | ConvertFrom-Json | ForEach-Object {
+(Get-Content "$PSScriptRoot\mine.json" | ConvertFrom-Json) | ForEach-Object {
   Write-Output "Installing my '$_' module..."
   Remove-Item "$modulesDir\$_" -Recurse -Force
   Install-Module -Name $_ -AllowClobber -Force -Verbose
