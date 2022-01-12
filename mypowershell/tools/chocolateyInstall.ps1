@@ -130,16 +130,23 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
 
 #------------------------------------------------------------------------------
 
+$originalProgressPreference = $ProgressPreference
+$ProgressPreference = "SilentlyContinue"
+
 (Get-Content "$PSScriptRoot\thirdparty.json" | ConvertFrom-Json) | ForEach-Object {
-    Write-Output "Installing third-party '$_' module..."
+  Write-Output "`n`n--------------------------------------"
+  Write-Output "Installing third-party '$_' module..."
     Install-Module -Name $_ -AllowClobber -Force -Verbose
 }
 
 (Get-Content "$PSScriptRoot\mine.json" | ConvertFrom-Json) | ForEach-Object {
+  Write-Output "`n`n--------------------------------------"
   Write-Output "Installing my '$_' module..."
   Remove-Item "$modulesDir\$_" -Recurse -Force
-  Install-Module -Name $_ -AllowClobber -Force -Verbose
+  Install-Module -Name $_ -Repository "dcjulian29-powershell" -AllowClobber -Force -Verbose
 }
+
+$ProgressPreference = $originalProgressPreference
 
 if (Test-Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1") {
   Remove-Item -Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1" `
@@ -152,6 +159,8 @@ if (Test-Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PackageManagement\1
 }
 
 Get-Module -ListAvailable | Out-Null
+
+Write-Output "`n`n--------------------------------------"
 
 Get-InstalledModule `
   | Select-Object Name,Version,PublishedDate,RepositorySourceLocation `
