@@ -1,13 +1,16 @@
 $docDir = Join-Path -Path $env:UserProfile -ChildPath Documents
 $poshDir = Join-Path -Path $docDir -ChildPath WindowsPowerShell
 $pwshDir = Join-Path -Path $docDir -ChildPath PowerShell
+$modulesDir = Join-Path -Path $poshDir -ChildPath Modules
+$binDir = Join-Path -Path $env:SYSTEMDRIVE -ChildPath bin
+
 $version = "${env:ChocolateyPackageVersion}"
 $repo = "scripts-powershell"
-$url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
-$file = "$repo-$version"
-$modulesDir = "$poshDir\Modules"
-$binDir = "$($env:SYSTEMDRIVE)\bin"
+
 $binUrl = "https://github.com/dcjulian29/scripts-binaries/archive/refs/heads/master.zip"
+$url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
+
+$file = "$repo-$version"
 
 @(
   "${env:TEMP}\$file.zip"
@@ -41,7 +44,7 @@ if (-not (Test-Path $pwshDir)) {
 
 #------------------------------------------------------------------------------
 
-Copy-Item -Path "${env:TEMP}\scripts-binaries-master\*" -Destination $appdir -Recurse -Force
+Copy-Item -Path "${env:TEMP}\scripts-binaries-master\*" -Destination $binDir -Recurse -Force
 
 Remove-Item -Path "${env:TEMP}\scripts-binaries-master" -Recurse -Force
 Remove-Item -Path "${env:TEMP}\scripts-binaries-master.zip" -Force
