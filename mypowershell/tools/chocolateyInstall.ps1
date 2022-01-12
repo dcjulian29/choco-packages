@@ -49,8 +49,8 @@ Copy-Item -Path "${env:TEMP}\scripts-binaries-master\*" -Destination $binDir -Re
 Remove-Item -Path "${env:TEMP}\scripts-binaries-master" -Recurse -Force
 Remove-Item -Path "${env:TEMP}\scripts-binaries-master.zip" -Force
 
-if  (Test-Path "${env:SYSTEMDRIVE\tools\binaries" {
-  Remove-Item -Path "${env:SYSTEMDRIVE\tools\binaries" -Recurse -Force
+if (Test-Path "${env:SYSTEMDRIVE}\tools\binaries") {
+  Remove-Item -Path "${env:SYSTEMDRIVE}\tools\binaries" -Recurse -Force
 }
 
 #------------------------------------------------------------------------------
@@ -75,9 +75,11 @@ Remove-Item -Path "${env:TEMP}\$file.zip" -Force
 Remove-Item -Path "${env:TEMP}\$file" -Recurse -Force
 
 if ((-not ($env:PSModulePath).Contains($modulesDir))) {
-    $PSModulePath = "$modulesDir;$([Environment]::GetEnvironmentVariable('PSModulePath', 'User'))"
+  $modulePath = $modulesDir + ";" `
+    + [Environment]::GetEnvironmentVariable('PSModulePath', 'User') + ";" `
+    + [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine')
 
-    $env:PSModulePath = $PSModulePath + [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine')
+    $env:PSModulePath = $modulePath
 
     Get-Module -ListAvailable | Out-Null
 
@@ -140,13 +142,17 @@ $originalProgressPreference = $ProgressPreference
 $ProgressPreference = "SilentlyContinue"
 
 (Get-Content "$PSScriptRoot\thirdparty.json" | ConvertFrom-Json) | ForEach-Object {
-  Write-Output "`n`n--------------------------------------"
+  Write-Output " "
+  Write-Output " "
+  Write-Output "--------------------------------------"
   Write-Output "Installing third-party '$_' module..."
     Install-Module -Name $_ -AllowClobber -Force -Verbose
 }
 
 (Get-Content "$PSScriptRoot\mine.json" | ConvertFrom-Json) | ForEach-Object {
-  Write-Output "`n`n--------------------------------------"
+  Write-Output " "
+  Write-Output " "
+  Write-Output "--------------------------------------"
   Write-Output "Installing my '$_' module..."
   Remove-Item "$modulesDir\$_" -Recurse -Force
   Install-Module -Name $_ -Repository "dcjulian29-powershell" -AllowClobber -Force -Verbose
@@ -166,12 +172,14 @@ if (Test-Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PackageManagement\1
 
 Get-Module -ListAvailable | Out-Null
 
-Write-Output "`n`n--------------------------------------"
+Write-Output " "
+Write-Output " "
+Write-Output "--------------------------------------"
 
 Get-InstalledModule `
   | Select-Object Name,Version,PublishedDate,RepositorySourceLocation `
   | Sort-Object PublishedDate -Descending `
-  | Format-Table | Out-String | Write-Host
+  | Format-Table | Out-String | Write-Information
 
 #------------------------------------------------------------------------------
 
@@ -183,7 +191,11 @@ $env:PATH = "$([Runtime.InteropServices.RuntimeEnvironment]::GetRuntimeDirectory
   $path = $_.Location
   if ($path) {
     $name = Split-Path $path -Leaf
-    Write-Host -ForegroundColor Yellow "`r`nRunning ngen.exe on '$name'"
+    Write-Output " "
+    Write-Output " "
+    Write-Output "--------------------------------------"
+    Write-Output "Running ngen.exe on '$name'"
     ngen.exe install $path /nologo
+    Write-Output " "
   }
 }
