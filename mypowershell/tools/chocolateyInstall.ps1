@@ -133,6 +133,9 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 if (-not (Get-PSRepository -Name "dcjulian29-powershell" -ErrorAction SilentlyContinue)) {
   Register-PSRepository -Name "dcjulian29-powershell" `
     -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2"
+} else {
+  Set-PSRepository -Name "dcjulian29-powershell" `
+    -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2"
 }
 
 Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
