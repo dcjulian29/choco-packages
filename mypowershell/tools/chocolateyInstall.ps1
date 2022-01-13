@@ -1,4 +1,8 @@
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::SystemDefault
+trap [System.Exception] {
+  "Exception: {0}" -f $_.Exception.Message
+  [Environment]::Exit(1)
+}
+
 $ErrorActionPreference = "Stop"
 
 $docDir = Join-Path -Path $env:UserProfile -ChildPath Documents
@@ -134,7 +138,7 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 
 if (-not (Get-PSRepository -Name "dcjulian29-powershell" -ErrorAction SilentlyContinue)) {
   Register-PSRepository -Name "dcjulian29-powershell" `
-    -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v3/index.json"
+    -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2"
 }
 
 Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
@@ -142,28 +146,38 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
 #------------------------------------------------------------------------------
 
 (Get-Content "$PSScriptRoot\thirdparty.json" | ConvertFrom-Json) | ForEach-Object {
-  Write-Output " "
-  Write-Output " "
+  Write-Output "-"
+  Write-Output "-"
   Write-Output "--------------------------------------"
-  Write-Output "Installing third-party '$_' module..."
+  if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
+    Write-Output "Updating third-party '$_' module..."
+    Update-Module -Name $_ -Force -Verbose
+  } else {
+    Write-Output "Installing third-party '$_' module..."
     Install-Module -Name $_ -AllowClobber -Force -Verbose
+  }
 }
 
 Write-Output "============================================================================"
 
 (Get-Content "$PSScriptRoot\mine.json" | ConvertFrom-Json) | ForEach-Object {
-  Write-Output " "
-  Write-Output " "
-  Write-Output "--------------------------------------"
-  Write-Output "Installing my '$_' module..."
-  Install-Module -Name $_ -Repository "dcjulian29-powershell" -AllowClobber -Force -Verbose
+  if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
+    Write-Output "Updating my '$_' module..."
+    Update-Module -Name $_ -Force -Verbose
+  } else {
+    Write-Output "Installing my '$_' module..."
+    Install-Module -Name $_ -Repository "dcjulian29-powershell" -AllowClobber -Force -Verbose
+  }
+
   Remove-Item "$modulesDir\$_" -Recurse -Force
+
+  Write-Output "-"
+  Write-Output "-"
+  Write-Output "--------------------------------------"
 }
 
 Get-Module -ListAvailable | Out-Null
 
-Write-Output " "
-Write-Output " "
 Write-Output "--------------------------------------"
 
 Write-Output (Get-InstalledModule `
@@ -171,8 +185,6 @@ Write-Output (Get-InstalledModule `
   | Sort-Object PublishedDate -Descending `
   | Format-Table | Out-String)
 
-Write-Output " "
-Write-Output " "
 Write-Output "--------------------------------------"
 
 #------------------------------------------------------------------------------
