@@ -72,8 +72,8 @@ Get-ChildItem -Path "${env:TEMP}\scripts-powershell-main" -Recurse |
     Where-Object { $_.FullName -notlike "*README.md" } |
     Copy-Item -Force -Destination { $_.FullName -replace [regex]::Escape("${env:TEMP}\scripts-powershell-main"), $poshDir }
 
-Remove-Item -Path "${env:TEMP}\scripts-binaries-main.zip" -Force
-Remove-Item -Path "${env:TEMP}\scripts-binaries-main" -Recurse -Force
+Remove-Item -Path "${env:TEMP}\scripts-powershell-main.zip" -Force
+Remove-Item -Path "${env:TEMP}\scripts-powershell-main" -Recurse -Force
 
 if ((-not ($env:PSModulePath).Contains($modulesDir))) {
   $modulePath = $modulesDir + ";" `
