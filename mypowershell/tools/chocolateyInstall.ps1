@@ -10,18 +10,12 @@ $poshDir = Join-Path -Path $docDir -ChildPath WindowsPowerShell
 $pwshDir = Join-Path -Path $docDir -ChildPath PowerShell
 $modulesDir = Join-Path -Path $poshDir -ChildPath Modules
 $binDir = Join-Path -Path $env:SYSTEMDRIVE -ChildPath bin
-
-$version = "${env:ChocolateyPackageVersion}"
-$repo = "scripts-powershell"
-
 $binUrl = "https://github.com/dcjulian29/scripts-binaries/archive/refs/heads/master.zip"
-$url = "https://github.com/dcjulian29/$repo/archive/$version.zip"
-
-$file = "$repo-$version"
+$url = "https://github.com/dcjulian29/scripts-powershell/archive/refs/heads/main.zip"
 
 @(
-  "${env:TEMP}\$file.zip"
-  "${env:TEMP}\$file"
+  "${env:TEMP}\scripts-powershell-main.zip"
+  "${env:TEMP}\scripts-powershell-main"
   "${env:TEMP}\scripts-binaries-master.zip"
   "${env:TEMP}\scripts-binaries-master"
 ) | ForEach-Object {
@@ -30,11 +24,11 @@ $file = "$repo-$version"
   }
 }
 
-(New-Object System.Net.WebClient).DownloadFile("$url", "${env:TEMP}\$file.zip")
+(New-Object System.Net.WebClient).DownloadFile("$url", "${env:TEMP}\scripts-powershell-main.zip")
 (New-Object System.Net.WebClient).DownloadFile("$binUrl", "${env:TEMP}\scripts-binaries-master.zip")
 
 [System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem") | Out-Null
-[System.IO.Compression.ZipFile]::ExtractToDirectory("${env:TEMP}\$file.zip", ${env:TEMP})
+[System.IO.Compression.ZipFile]::ExtractToDirectory("${env:TEMP}\scripts-powershell-main.zip", ${env:TEMP})
 [System.IO.Compression.ZipFile]::ExtractToDirectory("${env:TEMP}\scripts-binaries-master.zip", ${env:TEMP})
 
 if (-not (Test-Path $binDir)) {
@@ -73,13 +67,13 @@ if (Test-Path "$poshDir\Profile.ps1") {
         Remove-Item -Force -ErrorAction SilentlyContinue
 }
 
-Get-ChildItem -Path "${env:TEMP}\$file" -Recurse |
+Get-ChildItem -Path "${env:TEMP}\scripts-powershell-main" -Recurse |
     Where-Object { $_.FullName -notlike "*Test-Scripts.ps1" } |
     Where-Object { $_.FullName -notlike "*README.md" } |
-    Copy-Item -Force -Destination { $_.FullName -replace [regex]::Escape("${env:TEMP}\$file"), $poshDir }
+    Copy-Item -Force -Destination { $_.FullName -replace [regex]::Escape("${env:TEMP}\scripts-powershell-main"), $poshDir }
 
-Remove-Item -Path "${env:TEMP}\$file.zip" -Force
-Remove-Item -Path "${env:TEMP}\$file" -Recurse -Force
+Remove-Item -Path "${env:TEMP}\scripts-binaries-main.zip" -Force
+Remove-Item -Path "${env:TEMP}\scripts-binaries-main" -Recurse -Force
 
 if ((-not ($env:PSModulePath).Contains($modulesDir))) {
   $modulePath = $modulesDir + ";" `
