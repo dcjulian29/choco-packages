@@ -140,9 +140,6 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
 
 #------------------------------------------------------------------------------
 
-$originalProgressPreference = $ProgressPreference
-$ProgressPreference = "SilentlyContinue"
-
 (Get-Content "$PSScriptRoot\thirdparty.json" | ConvertFrom-Json) | ForEach-Object {
   Write-Output " "
   Write-Output " "
@@ -151,25 +148,15 @@ $ProgressPreference = "SilentlyContinue"
     Install-Module -Name $_ -AllowClobber -Force -Verbose
 }
 
+Write-Output "============================================================================"
+
 (Get-Content "$PSScriptRoot\mine.json" | ConvertFrom-Json) | ForEach-Object {
   Write-Output " "
   Write-Output " "
   Write-Output "--------------------------------------"
   Write-Output "Installing my '$_' module..."
-  Remove-Item "$modulesDir\$_" -Recurse -Force
   Install-Module -Name $_ -Repository "dcjulian29-powershell" -AllowClobber -Force -Verbose
-}
-
-$ProgressPreference = $originalProgressPreference
-
-if (Test-Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1") {
-  Remove-Item -Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1" `
-    -Recurse -Force -ErrorAction SilentlyContinue
-}
-
-if (Test-Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PackageManagement\1.0.0.1") {
-  Remove-Item -Path "${env:ProgramFiles}\WindowsPowerShell\Modules\PackageManagement\1.0.0.1" `
-    -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item "$modulesDir\$_" -Recurse -Force
 }
 
 Get-Module -ListAvailable | Out-Null
@@ -178,10 +165,14 @@ Write-Output " "
 Write-Output " "
 Write-Output "--------------------------------------"
 
-Get-InstalledModule `
+Write-Output (Get-InstalledModule `
   | Select-Object Name,Version,PublishedDate,RepositorySourceLocation `
   | Sort-Object PublishedDate -Descending `
-  | Format-Table | Out-String | Write-Information
+  | Format-Table | Out-String)
+
+Write-Output " "
+Write-Output " "
+Write-Output "--------------------------------------"
 
 #------------------------------------------------------------------------------
 
