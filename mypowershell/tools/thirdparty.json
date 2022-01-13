@@ -24,5 +24,6 @@
   "GitlabCli",
   "Lability",
   "PSRule",
-  "Grok-Test"
+  "Grok",
+  "PSScriptAnalyzer"
 ]

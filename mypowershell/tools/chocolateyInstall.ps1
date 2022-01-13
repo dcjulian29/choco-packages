@@ -151,7 +151,7 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
   Write-Output "--------------------------------------"
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
     Write-Output "Updating third-party '$_' module..."
-    Update-Module -Name $_ -Force -Verbose
+    Update-Module -Name $_ -Confirm:$false -Verbose
   } else {
     Write-Output "Installing third-party '$_' module..."
     Install-Module -Name $_ -AllowClobber -Force -Verbose
@@ -161,15 +161,15 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
 Write-Output "============================================================================"
 
 (Get-Content "$PSScriptRoot\mine.json" | ConvertFrom-Json) | ForEach-Object {
+  Remove-Item "$modulesDir\$_" -Recurse -Force
+
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
     Write-Output "Updating my '$_' module..."
-    Update-Module -Name $_ -Force -Verbose
+    Update-Module -Name $_ -Confirm:$false -Verbose
   } else {
     Write-Output "Installing my '$_' module..."
     Install-Module -Name $_ -Repository "dcjulian29-powershell" -AllowClobber -Force -Verbose
   }
-
-  Remove-Item "$modulesDir\$_" -Recurse -Force
 
   Write-Output "-"
   Write-Output "-"
