@@ -11,7 +11,7 @@ New-ItemProperty -Path $location -Name "syncthing" `
 Set-Content -Path "$PSScriptRoot\start-syncthing.cmd" -Value @"
 @echo off
 
-FOR /F "delims=" %%i IN ('dir "%ChocolateyInstall%\lib\syncthing\tools" /b /ad-h /t:c /o-d') DO (
+FOR /F "delims=" %%i IN ('dir "%ChocolateyInstall%\lib\syncthing\tools" /b /ad-h /t:c') DO (
   SET a=%%i
 )
 
