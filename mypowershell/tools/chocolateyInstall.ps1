@@ -122,7 +122,7 @@ Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 if ((Get-Module PowershellGet -ListAvailable | Measure-Object).Count -gt 1) {
   Import-Module PowerShellGet -RequiredVersion `
     "$((Get-Module PowershellGet -ListAvailable `
-      | Sort-Object Version `
+      | Sort-Object Version -Descending `
       | Select-Object -First 1).Version.ToString())"
 } else {
   Import-Module PowerShellGet
@@ -143,15 +143,13 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
 #------------------------------------------------------------------------------
 
 (Get-Content "$PSScriptRoot\thirdparty.json" | ConvertFrom-Json) | ForEach-Object {
-  Write-Output "-"
-  Write-Output "-"
   Write-Output "--------------------------------------"
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
     Write-Output "Updating third-party '$_' module..."
-    Update-Module -Name $_ -Confirm:$false -Verbose
+    Update-Module -Name $_  -Verbose -Confirm:$false
   } else {
     Write-Output "Installing third-party '$_' module..."
-    Install-Module -Name $_ -AllowClobber -Force -Verbose
+    Install-Module -Name $_ -Verbose
   }
 }
 
@@ -162,20 +160,16 @@ Write-Output "==================================================================
 
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
     Write-Output "Updating my '$_' module..."
-    Update-Module -Name $_ -Confirm:$false -Verbose
+    Update-Module -Name $_ -Verbose -Confirm:$false
   } else {
     Write-Output "Installing my '$_' module..."
-    Install-Module -Name $_ -Repository "dcjulian29-powershell" -AllowClobber -Force -Verbose
+    Install-Module -Name $_ -Repository "dcjulian29-powershell" -Verbose
   }
 
-  Write-Output "-"
-  Write-Output "-"
   Write-Output "--------------------------------------"
 }
 
 Get-Module -ListAvailable | Out-Null
-
-Write-Output "--------------------------------------"
 
 Write-Output (Get-InstalledModule `
   | Select-Object Name,Version,PublishedDate,RepositorySourceLocation `
@@ -194,11 +188,7 @@ $env:PATH = "$([Runtime.InteropServices.RuntimeEnvironment]::GetRuntimeDirectory
   $path = $_.Location
   if ($path) {
     $name = Split-Path $path -Leaf
-    Write-Output " "
-    Write-Output " "
-    Write-Output "--------------------------------------"
-    Write-Output "Running ngen.exe on '$name'"
-    ngen.exe install $path /nologo
-    Write-Output " "
+    Write-Output "Running ngen.exe on '$name'..."
+    ngen.exe install $path /nologo | Out-Null
   }
 }
