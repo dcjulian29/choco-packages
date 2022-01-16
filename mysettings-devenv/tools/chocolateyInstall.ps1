@@ -32,6 +32,7 @@ Write-Output "Checking to see if code folder needs to be restored..."
 if (-not (Test-Path "$(Get-DefaultCodeFolder)\zzz.log")) {
     if (Test-Path $env:SYSTEMDRIVE\home\vm\restoreCodeDirectory.bat) {
         Write-Output "  - Restoring code folder..."
+        Write-Output "    Enter password for user and press enter..."
         & $env:SYSTEMDRIVE\home\vm\restoreCodeDirectory.bat
     }
 
