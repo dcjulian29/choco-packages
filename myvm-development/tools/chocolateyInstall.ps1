@@ -32,7 +32,9 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
         $Cert = Read-MultiLineInput "Enter the certificate"
     }
 
-    $ApiKey = -join ((48..57) + (65..90) + (97..122) | Get-Random -Count 32 | % {[char]$_})
+    $ApiKey = -join ((48..57) + (65..90) + (97..122) `
+        | Get-Random -Count 32 `
+        | ForEach-Object {[char]$_})
 
     if (-not (Test-Path "$env:LOCALAPPDATA\Syncthing")) {
         New-Item -Path "$env:LOCALAPPDATA\Syncthing" -ItemType Directory | Out-Null
@@ -248,6 +250,14 @@ videos|$env:USERPROFILE\videos
 desktop|$env:USERPROFILE\desktop
 downloads|$env:USERPROFILE\downloads
 "@
+
+#------------------------------------------------------------------------------
+
+if (Test-Path "$PSScriptRoot\bootstrap.ps1") {
+    Write-Output "Adding 'bootstrap.ps1' to run on reboot..."
+    reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Bootstrap `
+        /t REG_SZ /d "powershell.exe -File `"$PSScriptRoot\bootstrap.ps1`"" /f
+}
 
 Write-Output "Initial Setup of Development VM Finished. Rebooting in 30 seconds..."
 
