@@ -25,5 +25,6 @@
   "Lability",
   "PSRule",
   "Grok",
-  "PSScriptAnalyzer"
+  "PSScriptAnalyzer",
+  "platyPS"
 ]

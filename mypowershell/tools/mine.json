@@ -1,5 +1,4 @@
 [
-  "ansible",
-  "docker",
-  "webcredential"
+  "VirtualBaseDisk",
+  "WebCredential"
 ]
