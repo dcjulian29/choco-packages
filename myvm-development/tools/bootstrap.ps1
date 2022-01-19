@@ -25,14 +25,22 @@ function installPackage($Package) {
   }
 }
 
+funtion getSettingsFile {
+  if (Test-Path "${env:TEMP}\julian-bootstrap.json") {
+    ConvertTo-Json @{} | Out-File "${env:TEMP}\julian-bootstrap.json"
+  }
+
+  Get-Content -Path "${env:TEMP}\julian-bootstrap.json"
+}
+
 function getSetting($Key) {
-  $settings = Get-Content -Path "${env:TEMP}\julian-bootstrap.json" | ConvertFrom-Json
+  $settings = getSettingsFile | ConvertFrom-Json
 
   return $settings.$Key
 }
 
 function setSettings($Key, $Value) {
-  $settings = Get-Content -Path "${env:TEMP}\julian-bootstrap.json" | ConvertFrom-Json
+  $settings = getSettingsFile | ConvertFrom-Json
 
   if ($settings.$Key) {
     $settings.PSObject.Properties.Remove($Key)
