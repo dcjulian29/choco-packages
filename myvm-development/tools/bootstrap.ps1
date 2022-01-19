@@ -1,28 +1,12 @@
 function installPackage($Package) {
+  if ($(getSetting $Package)) {
+    return
+  }
+
   setSettings $Package "$(Get-Date)"
 
-  $logFile = Get-LogFileName -Suffix "$env:COMPUTERNAME-$package"
-
-  Start-Transcript $logFile
-
-  Invoke-Expression "choco.exe install $Package -y"
-
-  Stop-Transcript
-
-  setSettings $Package $(Get-Date)
-
-  if (Get-Content $logFile | Select-String -Pattern "^Failures|ERROR:") {
-    Write-Warning "An error occurred during the last package ($Package) install..."
-    Write-Warning "Review the output and then decide whether to continue..."
-    Start-Sleep -Seconds 30
-  }
-
-  if (Test-PendingReboot) {
-    Write-Warning "One of the packages recently installed has set the PendingReboot flag..."
-    Write-Warning "Restarting Computer in 30 seconds..."
-    Start-Sleep -Seconds 30
-    Restart-Computer -Force
-  }
+  Write-Output "---> Starting Install of $Package..."
+  Install-DevVmPackage $Package
 }
 
 function getSettingsFile {
@@ -67,7 +51,7 @@ if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
 
 @(
   "mytools-scm"
-  "mytolls-personal"
+  "mytools-personal"
   "mytools-database"
   "mydevices-devvm"
 ) | ForEach-Object {
@@ -135,12 +119,7 @@ $form.Close()
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
   foreach ($item in $listBox.SelectedItems) {
-    $packageName = $item.Substring(0, $item.IndexOf(' ')).ToLowerInvariant()
-
-    Write-Output "---------> Installing '$packageName' development package..."
-    Write-Output " "
-
-    Install-DevVmPackage $packageName
+    installPackage ("dev-" + $item.Substring(0, $item.IndexOf(' ')).ToLowerInvariant())
   }
 }
 
@@ -151,8 +130,8 @@ Set-GitConfigValue -Key "user.email" -Value "julian@julianscorner.com" -Scope Gl
 if (-not ($(getSetting "FinishBootstrap"))) {
 
   Write-Output "Turning back on UAC..."
-  reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f 
-  
+  reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f
+
   Write-Output "Removing auto-logon from registry..."
   reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoAdminLogon /f
   reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoLogonCount /f
