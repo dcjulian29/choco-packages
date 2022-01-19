@@ -76,15 +76,15 @@ Remove-Item -Path "${env:TEMP}\scripts-powershell-main.zip" -Force
 Remove-Item -Path "${env:TEMP}\scripts-powershell-main" -Recurse -Force
 
 if ((-not ($env:PSModulePath).Contains($modulesDir))) {
-  $modulePath = $modulesDir + ";" `
-    + [Environment]::GetEnvironmentVariable('PSModulePath', 'User') + ";" `
-    + [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine')
+  $userPath = $modulesDir + ";" `
+    + [Environment]::GetEnvironmentVariable('PSModulePath', 'User') 
+  $machinePath = [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine')
 
-    $env:PSModulePath = $modulePath
+  $env:PSModulePath = $userPath + ";" + $machinePath
 
-    Get-Module -ListAvailable | Out-Null
+  Get-Module -ListAvailable | Out-Null
 
-    Invoke-Expression "[Environment]::SetEnvironmentVariable('PSModulePath', '$PSModulePath', 'User')"
+  Invoke-Expression "[Environment]::SetEnvironmentVariable('PSModulePath', '$userPath', 'User')"
 }
 
 #------------------------------------------------------------------------------
