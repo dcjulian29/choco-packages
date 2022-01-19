@@ -1,5 +1,5 @@
 function installPackage($Package) {
-  setSettings "InstallPackage" $Package
+  setSettings $Package "$(Get-Date)"
 
   $logFile = Get-LogFileName -Suffix "$env:COMPUTERNAME-$package"
 
@@ -25,8 +25,8 @@ function installPackage($Package) {
   }
 }
 
-funtion getSettingsFile {
-  if (Test-Path "${env:TEMP}\julian-bootstrap.json") {
+function getSettingsFile {
+  if (-not (Test-Path "${env:TEMP}\julian-bootstrap.json")) {
     ConvertTo-Json @{} | Out-File "${env:TEMP}\julian-bootstrap.json"
   }
 
@@ -47,11 +47,13 @@ function setSettings($Key, $Value) {
   }
 
   $settings | Add-Member -MemberType NoteProperty -Name $Key -Value $Value
+
+  $settings | ConvertTo-Json | Out-File "${env:TEMP}\julian-bootstrap.json"
 }
 
 #------------------------------------------------------------------------------
 
-if (-not ($(getSetting "FinishBootstrap") -eq "Yes" )) {
+if ((getSetting "FinishBootstrap") -eq "Yes" ) {
   Write-Warning "This bootstrap script has completed and should be removed from auto run."
   Start-Sleep -Seconds 30
   exit
@@ -59,8 +61,6 @@ if (-not ($(getSetting "FinishBootstrap") -eq "Yes" )) {
 
 if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
   setSettings "BootstrapStarted" "Yes"
-
-  Restore-ChocolateyCache
 }
 
 #------------------------------------------------------------------------------
