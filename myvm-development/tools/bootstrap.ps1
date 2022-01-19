@@ -25,7 +25,7 @@ function installPackage($Package) {
   }
 }
 
-function getSettings($Key) {
+function getSetting($Key) {
   $settings = Get-Content -Path "${env:TEMP}\julian-bootstrap.json" | ConvertFrom-Json
 
   return $settings.$Key
@@ -43,13 +43,13 @@ function setSettings($Key, $Value) {
 
 #------------------------------------------------------------------------------
 
-if (-not ($(GetSetting "FinishBootstrap") -eq "Yes" )) {
+if (-not ($(getSetting "FinishBootstrap") -eq "Yes" )) {
   Write-Warning "This bootstrap script has completed and should be removed from auto run."
   Start-Sleep -Seconds 30
   exit
 }
 
-if (-not ($(GetSetting "BootstrapStarted") -eq "Yes" )) {
+if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
   setSettings "BootstrapStarted" "Yes"
 
   Restore-ChocolateyCache
