@@ -3,10 +3,12 @@ function installPackage($Package) {
     return
   }
 
+  Write-Output "---> Starting Install of $Package..."
+
+  Install-DevVmPackage $Package
   setSettings $Package "$(Get-Date)"
 
-  Write-Output "---> Starting Install of $Package..."
-  Install-DevVmPackage $Package
+  Start-Sleep -Seconds 5
 }
 
 function getSettingsFile {
