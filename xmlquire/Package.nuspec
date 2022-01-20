@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>xmlquire</id>
-    <version>1.17</version>
+    <version>1.17.220120</version>
     <authors>Qutoric Limited</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://qutoric.com/xmlquire/</projectUrl>
