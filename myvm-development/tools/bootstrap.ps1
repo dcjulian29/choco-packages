@@ -37,6 +37,8 @@ function setSettings($Key, $Value) {
 
 #------------------------------------------------------------------------------
 
+Start-Transcript "$(Get-LogFileName -Suffix "$env:COMPUTERNAME-bootstrap")"
+
 if ((getSetting "FinishBootstrap") -eq "Yes" ) {
   Write-Warning "This bootstrap script has completed and should be removed from auto run."
   Start-Sleep -Seconds 30
@@ -47,30 +49,22 @@ if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
   setSettings "BootstrapStarted" "Yes"
 }
 
-#------------------------------------------------------------------------------
-
 @(
   "mytools-scm"
   "mytools-personal"
   "mytools-database"
   "mydevices-devvm"
-) | ForEach-Object {
-  if (-not ($(getSetting $_))) {
-    installPackage $_
-  }
-}
-
-#------------------------------------------------------------------------------
+) | ForEach-Object { installPackage $_ }
 
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
 $form = New-Object System.Windows.Forms.Form
 $form.Text = 'Select Development Packages'
-$form.Size = New-Object System.Drawing.Size(300, 200)
+$form.Size = New-Object System.Drawing.Size(300, 230)
 
 $OKButton = New-Object System.Windows.Forms.Button
-$OKButton.Location = New-Object System.Drawing.Point(75,120)
+$OKButton.Location = New-Object System.Drawing.Point(75,150)
 $OKButton.Size = New-Object System.Drawing.Size(75,23)
 $OKButton.Text = 'OK'
 $OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
@@ -78,7 +72,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 
 $CancelButton = New-Object System.Windows.Forms.Button
-$CancelButton.Location = New-Object System.Drawing.Point(150,120)
+$CancelButton.Location = New-Object System.Drawing.Point(150,150)
 $CancelButton.Size = New-Object System.Drawing.Size(75,23)
 $CancelButton.Text = 'Cancel'
 $CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
@@ -104,7 +98,7 @@ $listBox.SelectionMode = 'MultiExtended'
 [void] $listBox.Items.Add('Python ')
 [void] $listBox.Items.Add('Web (Html, CSS, Java, Vue? React?)')
 
-$listBox.Height = 70
+$listBox.Height = 100
 $form.Controls.Add($listBox)
 $form.Topmost = $true
 $form.MaximumSize = $form.Size
@@ -142,5 +136,7 @@ if (-not ($(getSetting "FinishBootstrap"))) {
   Write-Output "Removing bootstrap script from registry..."
   reg delete HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Bootstrap /f
 
-  setSetting "FinishBootstrap" $(Get-Date)
+  setSettings "FinishBootstrap" $(Get-Date)
 }
+
+Stop-Transcript
