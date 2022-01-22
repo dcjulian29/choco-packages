@@ -24,12 +24,17 @@ $url = "https://github.com/dcjulian29/scripts-powershell/archive/refs/heads/main
   }
 }
 
-(New-Object System.Net.WebClient).DownloadFile("$url", "${env:TEMP}\scripts-powershell-main.zip")
-(New-Object System.Net.WebClient).DownloadFile("$binUrl", "${env:TEMP}\scripts-binaries-master.zip")
+Invoke-WebRequest -Uri $url -UseBasicParsing `
+  -OutFile "${env:TEMP}\scripts-powershell-main.zip"
 
-[System.Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem") | Out-Null
-[System.IO.Compression.ZipFile]::ExtractToDirectory("${env:TEMP}\scripts-powershell-main.zip", ${env:TEMP})
-[System.IO.Compression.ZipFile]::ExtractToDirectory("${env:TEMP}\scripts-binaries-master.zip", ${env:TEMP})
+Invoke-WebRequest -Uri $binUrl -UseBasicParsing `
+  -OutFile "${env:TEMP}\scripts-binaries-master.zip"
+
+Expand-Archive -Path "${env:TEMP}\scripts-powershell-main.zip" `
+  -DestinationPath "${env:TEMP}" -Force
+
+Expand-Archive -Path "${env:TEMP}\scripts-binaries-master.zip" `
+  -DestinationPath "${env:TEMP}" -Force
 
 if (-not (Test-Path $binDir)) {
   New-Item -Type Directory -Path $binDir | Out-Null
