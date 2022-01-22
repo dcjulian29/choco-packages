@@ -57,8 +57,6 @@ if (Test-Path "${env:SYSTEMDRIVE}\tools\binaries") {
 #------------------------------------------------------------------------------
 
 if (Test-Path "$poshDir\Profile.ps1") {
-    Write-Output "Removing previous version of package..."
-
     Remove-Item -Path $modulesDir -Recurse -Force -ErrorAction SilentlyContinue
     Remove-Item -Path "$poshDir\Scripts" -Recurse -Force -ErrorAction SilentlyContinue
 
@@ -77,7 +75,7 @@ Remove-Item -Path "${env:TEMP}\scripts-powershell-main" -Recurse -Force
 
 if ((-not ($env:PSModulePath).Contains($modulesDir))) {
   $userPath = $modulesDir + ";" `
-    + [Environment]::GetEnvironmentVariable('PSModulePath', 'User') 
+    + [Environment]::GetEnvironmentVariable('PSModulePath', 'User')
   $machinePath = [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine')
 
   $env:PSModulePath = $userPath + ";" + $machinePath
@@ -143,30 +141,39 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
 #------------------------------------------------------------------------------
 
 (Get-Content "$PSScriptRoot\thirdparty.json" | ConvertFrom-Json) | ForEach-Object {
-  Write-Output "--------------------------------------"
+  Write-Output "`n--------------------------------------`n"
+  if (($_ -eq "PackageManagement") -or ($_ -eq "PowerShellGet")) {
+    # These two are a little different as their base version is manually installed.
+    if ((Get-Module $_ -ListAvailable).Version.ToString() -eq "1.0.0.1") {
+      Write-Output "Overriding Upgrade! Will install latest version of '$_' module...`n"
+      Install-Module -Name $_ -Verbose -Force -AllowClobber
+      continue
+    }
+  }
+
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
-    Write-Output "Updating third-party '$_' module..."
-    Update-Module -Name $_  -Verbose -Confirm:$false
+    Write-Output "Updating third-party '$_' module...`n"
+    Update-Module -Name $_  -Verbose -Confirm:$false -AllowClobber
   } else {
-    Write-Output "Installing third-party '$_' module..."
-    Install-Module -Name $_ -Verbose
+    Write-Output "Installing third-party '$_' module...`n"
+    Install-Module -Name $_ -Verbose -AllowClobber
   }
 }
 
-Write-Output "============================================================================"
+Write-Output "`n`n============================================================================`n`n"
 
 (Get-Content "$PSScriptRoot\mine.json" | ConvertFrom-Json) | ForEach-Object {
   Remove-Item "$modulesDir\$_" -Recurse -Force
 
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
     Write-Output "Updating my '$_' module..."
-    Update-Module -Name $_ -Verbose -Confirm:$false
+    Update-Module -Name $_ -Verbose -Confirm:$false -AllowClobber
   } else {
     Write-Output "Installing my '$_' module..."
-    Install-Module -Name $_ -Repository "dcjulian29-powershell" -Verbose
+    Install-Module -Name $_ -Repository "dcjulian29-powershell" -Verbose -AllowClobber
   }
 
-  Write-Output "--------------------------------------"
+  Write-Output "`n--------------------------------------`n"
 }
 
 Get-Module -ListAvailable | Out-Null
@@ -176,7 +183,7 @@ Write-Output (Get-InstalledModule `
   | Sort-Object PublishedDate -Descending `
   | Format-Table | Out-String)
 
-Write-Output "--------------------------------------"
+Write-Output "`n`n============================================================================`n`n"
 
 #------------------------------------------------------------------------------
 
