@@ -120,7 +120,7 @@ Remove-Item -Path "${env:TEMP}\Go-Shell-master" -Recurse -Force
 #------------------------------------------------------------------------------
 
 Import-Module PackageManagement
-Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Verbose
 
 if ((Get-Module PowershellGet -ListAvailable | Measure-Object).Count -gt 1) {
   Import-Module PowerShellGet -RequiredVersion `
@@ -191,6 +191,10 @@ Write-Output (Get-InstalledModule `
 Write-Output "`n`n============================================================================`n`n"
 
 #------------------------------------------------------------------------------
+
+Write-Output "Importing all available modules to make sure assemblies are loaded..."
+
+Get-Module -ListAvailable | Import-Module -ErrorAction SilentlyContinue
 
 Write-Output "Making sure all runtime assemblies are pre-compiled if necessary..."
 
