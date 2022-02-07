@@ -1,5 +1,6 @@
 [
   "Powershell",
+  "PowershellForDocker"
   "VirtualBaseDisk",
   "VirtualDevelopment",
   "WebCredential"

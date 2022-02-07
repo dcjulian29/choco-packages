@@ -16,6 +16,7 @@
   "Pscx",
   "Posh-ACME",
   "PsIni",
+  "PSParseHTML",
   "PSWriteHTML",
   "PSWriteExcel",
   "PSWriteWord",
