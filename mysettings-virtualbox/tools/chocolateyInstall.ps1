@@ -26,3 +26,5 @@ if (-not (Test-Path "$env:SystemDrive\Virtual Machines\VirtualBox")) {
 }
 
 vboxmanage setproperty machinefolder "$env:SystemDrive\Virtual Machines\VirtualBox"
+
+vagrant plugin install vagrant-reload winrm winrm-elevated
