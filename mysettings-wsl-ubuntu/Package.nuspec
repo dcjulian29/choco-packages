@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mysettings-ubuntu-wsl</id>
-    <version>2104.4.1</version>
+    <id>mysettings-wsl-ubuntu</id>
+    <version>2203.4.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>My "final" install of Ubuntu WSL</description>
-    <tags>mysettings-ubuntu-wsl ubuntu wsl</tags>
+    <description>My "final" install of Ubuntu for WSL</description>
+    <tags>mysettings-wsl-ubuntu ubuntu wsl</tags>
     <dependencies>
-      <dependency id="ubuntu-wsl" />
+      <dependency id="wsl-ubuntu" />
     </dependencies>
   </metadata>
   <files>

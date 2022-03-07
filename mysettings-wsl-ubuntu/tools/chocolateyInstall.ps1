@@ -35,7 +35,7 @@ if (-not $configured) {
         -ArgumentList "run sudo mv /tmp/wsl.conf /etc/" -NoNewWindow -Wait
 
     Start-Process -FilePath $ubuntu `
-        -ArgumentList "run curl -sSL http://dl.julianscorner.com/l/init.sh | bash" -NoNewWindow -Wait
+        -ArgumentList "run curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash" -NoNewWindow -Wait
 } else {
     Write-Output "Ubuntu is already installed and configured. Not overwriting the installed version..."
 }

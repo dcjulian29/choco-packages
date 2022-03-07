@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>ubuntu-wsl</id>
-    <version>20.04.2</version>
+    <id>wsl-ubuntu</id>
+    <version>20.04.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>Download the Ubunutu WSL files and do the pre-install</description>
-    <tags>ubuntu wsl ubuntu-wsl</tags>
+    <tags>ubuntu wsl wsl-ubuntu</tags>
     <dependencies>
       <dependency id="mysettings-wsl2" />
     </dependencies>
