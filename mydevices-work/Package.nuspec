@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-work</id>
-    <version>2201.22.1</version>
+    <version>2203.7.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -14,6 +14,16 @@
       <dependency id="microsoft-teams" />
       <dependency id="bitwarden-edge" />
       <dependency id="mysettings-syncthing" />
+      <dependency id="dotnetcore-sdk" />
+      <dependency id="dotnet-sdk" />
+      <dependency id="vscode-csharp" />
+      <dependency id="visualstudio2019professional" />
+      <dependency id="visualstudio2019-workload-manageddesktop" />
+      <dependency id="visualstudio2019-workload-netweb" />
+      <dependency id="visualstudio2019-workload-azure" />
+      <dependency id="netfx-4.8-devpack" />
+      <dependency id="vsix-csharp" />
+      <dependency id="gittfs" />
     </dependencies>
   </metadata>
 </package>
