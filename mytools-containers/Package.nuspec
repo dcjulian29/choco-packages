@@ -2,16 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mytools-containers</id>
-    <version>2201.11.1</version>
+    <version>2203.6.1</version>
     <authors>Julian Easterling</authors>
     <description>Custom packages and settings related to running containers.</description>
     <tags>settings containers docker kubernetes k8s k3s</tags>
     <dependencies>
       <dependency id="docker-desktop" />
-      <dependency id="docker-compose" />
-      <dependency id="docker-kitematic" />
-      <dependency id="kubernetes-cli" />
       <dependency id="lazydocker" />
+      <dependency id="kubernetes-cli" />
     </dependencies>
   </metadata>
 </package>
