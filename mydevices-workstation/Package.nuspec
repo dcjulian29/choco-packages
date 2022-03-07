@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-workstation</id>
-    <version>2201.11.2</version>
+    <version>2203.4.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -11,11 +11,9 @@
     <tags>mydevices mycomputers tower workstation personal</tags>
     <dependencies>
       <dependency id="mycomputers-workstation-personal" />
-      <dependency id="googlechrome" />
-      <dependency id="outlookstatview" />
       <dependency id="slack" />
       <dependency id="microsoft-teams" />
-      <dependency id="mysettings-ubuntu-wsl" />
+      <dependency id="mysettings-wsl-ubuntu" />
       <dependency id="nextcloud-client" />
       <dependency id="handbrake" />
       <dependency id="anydvd" />

@@ -2,21 +2,18 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-laptop</id>
-    <version>2201.11.1</version>
+    <version>2203.4.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal laptop computer configurations.</description>
     <tags>mydevices mycomputers laptop personal</tags>
     <dependencies>
       <dependency id="mycomputers-workstation-personal" />
-      <dependency id="googlechrome" />
       <dependency id="wirelessnetview" />
       <dependency id="mysettings-openvpn" />
-      <dependency id="outlookstatview" />
       <dependency id="slack" />
       <dependency id="microsoft-teams" />
-      <dependency id="mysettings-ubuntu-wsl" />
-      <dependency id="nextcloud-client" />
+      <dependency id="mysettings-wsl-ubuntu" />
     </dependencies>
   </metadata>
 </package>
