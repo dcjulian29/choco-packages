@@ -53,6 +53,8 @@ if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
 
 @(
   "mytools-scm"
+  "mytools-common"
+  "mytools-containers"
   "mytools-personal"
   "mytools-database"
   "mydevices-devvm"
