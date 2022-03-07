@@ -5,10 +5,32 @@ function installPackage($Package) {
 
   Write-Output "---> Starting Install of $Package..."
 
-  Install-DevVmPackage $Package
+  $logFile = Get-LogFileName -Suffix "$env:COMPUTERNAME-$package"
+  $choco = "choco.exe install $Package -y"
+
+  Get-Module -ListAvailable | Out-Null
+
+  Invoke-Expression $choco | Tee-Object -FilePath $logFile
+
   setSettings $Package "$(Get-Date)"
 
   Start-Sleep -Seconds 5
+
+  if (Get-Content $logFile | Select-String -Pattern "^Failures|ERROR:") {
+    Write-Warning "An error occurred during the last package ($package) install..."
+    Write-Warning "Review the log file: $logFile"
+    Write-Warning "And then decide whether to continue..."
+
+    Read-Host "Press enter to continue"
+  }
+
+  if (Test-PendingReboot) {
+    Write-Warning "One of the packages recently installed has set the PendingReboot flag..."
+    Write-Warning "This may cause future packages to fail silently if it check this flag."
+
+    Read-Host "Press enter to restart computer"
+    Restart-Computer -Force
+  }
 }
 
 function getSettingsFile {
