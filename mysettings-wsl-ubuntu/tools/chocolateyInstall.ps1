@@ -12,6 +12,9 @@ if (-not $configured) {
 
     Start-Process -FilePath $ubuntu -ArgumentList "install --root" -NoNewWindow -Wait
 
+    Start-Process -FilePath $ubuntu `
+        -ArgumentList "run curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash" -NoNewWindow -Wait
+
     $argument = "run adduser $($env:USERNAME) --gecos `"First,Last,RoomNumber,WorkPhone,HomePhone`" --disabled-password"
     Start-Process -FilePath $ubuntu -ArgumentList $argument -NoNewWindow -Wait
 
@@ -24,18 +27,6 @@ if (-not $configured) {
 
     Start-Process -FilePath $ubuntu `
         -ArgumentList "config --default-user $($env:USERNAME)" -NoNewWindow -Wait
-
-    Start-Process -FilePath $ubuntu `
-        -ArgumentList "run echo '[automount]' > /tmp/wsl.conf" -NoNewWindow -Wait
-
-    Start-Process -FilePath $ubuntu `
-        -ArgumentList "run echo 'options=`"metadata,umask=0033`"' >> /tmp/wsl.conf" -NoNewWindow -Wait
-
-    Start-Process -FilePath $ubuntu `
-        -ArgumentList "run sudo mv /tmp/wsl.conf /etc/" -NoNewWindow -Wait
-
-    Start-Process -FilePath $ubuntu `
-        -ArgumentList "run curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash" -NoNewWindow -Wait
 } else {
     Write-Output "Ubuntu is already installed and configured. Not overwriting the installed version..."
 }
