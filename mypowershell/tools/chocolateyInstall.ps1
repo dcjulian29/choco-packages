@@ -30,10 +30,11 @@ Invoke-WebRequest -Uri $url -UseBasicParsing `
 Invoke-WebRequest -Uri $binUrl -UseBasicParsing `
   -OutFile "${env:TEMP}\scripts-binaries-master.zip"
 
-Add-Type -AssemblyName System.IO.Compression.FileSystem
+Microsoft.PowerShell.Archive\Expand-Archive -Path "${env:TEMP}\scripts-powershell-main.zip" `
+  -DestinationPath "${env:TEMP}" -Force -ErrorAction SilentlyContinue
 
-[System.IO.Compression.ZipFile]::ExtractToDirectory("${env:TEMP}\scripts-powershell-main.zip", "${env:TEMP}")
-[System.IO.Compression.ZipFile]::ExtractToDirectory("${env:TEMP}\scripts-binaries-master.zip", "${env:TEMP}")
+Microsoft.PowerShell.Archive\Expand-Archive -Path "${env:TEMP}\scripts-binaries-master.zip" `
+  -DestinationPath "${env:TEMP}" -Force -ErrorAction SilentlyContinue
 
 if (-not (Test-Path $binDir)) {
   New-Item -Type Directory -Path $binDir | Out-Null
