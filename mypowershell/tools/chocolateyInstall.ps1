@@ -126,7 +126,15 @@ Remove-Item -Path "${env:TEMP}\Go-Shell-master" -Recurse -Force
 
 #------------------------------------------------------------------------------
 
-Import-Module PackageManagement
+if ((Get-Module PackageManagement -ListAvailable | Measure-Object).Count -gt 1) {
+  Import-Module PackageManagement -RequiredVersion `
+    "$((Get-Module PackageManagement -ListAvailable `
+      | Sort-Object Version -Descending `
+      | Select-Object -First 1).Version.ToString())"
+} else {
+  Import-Module PackageManagement
+}
+
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Verbose
 
 if ((Get-Module PowershellGet -ListAvailable | Measure-Object).Count -gt 1) {
@@ -165,7 +173,7 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
 
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
     Write-Output "Updating third-party '$_' module...`n"
-    Update-Module -Name $_  -Verbose -Confirm:$false -AllowClobber
+    Update-Module -Name $_ -Verbose -Confirm:$false
   } else {
     Write-Output "Installing third-party '$_' module...`n"
     Install-Module -Name $_ -Verbose -AllowClobber
@@ -179,7 +187,7 @@ Write-Output "`n`n==============================================================
 
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
     Write-Output "Updating my '$_' module..."
-    Update-Module -Name $_ -Verbose -Confirm:$false -AllowClobber
+    Update-Module -Name $_ -Verbose -Confirm:$false
   } else {
     Write-Output "Installing my '$_' module..."
     Install-Module -Name $_ -Repository "dcjulian29-powershell" -Verbose -AllowClobber
