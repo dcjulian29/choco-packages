@@ -71,18 +71,17 @@ if (Test-Path "$poshDir\Profile.ps1") {
 
 Write-Output "Installing profile and modules to '$poshDir' ..."
 
+$expression = [regex]::Escape("${env:TEMP}\scripts-powershell-main")
+
 Get-ChildItem -Path "${env:TEMP}\scripts-powershell-main" -Recurse |
     Where-Object { $_.FullName -notlike "*Test-Scripts.ps1" } |
     Where-Object { $_.FullName -notlike "*README.md" } | ForEach-Object {
+      $src = $_.FullName
+      $dest = $src -replace $expression, $poshDir
 
-      $dest = $_.FullName `
-        -replace [regex]::Escape("${env:TEMP}\scripts-powershell-main"), `
-          $poshDir
+      Write-Output "'$src' --> '$dest'"
 
-      Write-Output "'$_' --> '$dest'"
-
-      Copy-Item -Path $_ -Destination $dest -Force
-
+      Copy-Item -Path $src -Destination $dest -Force
     }
 
 Remove-Item -Path "${env:TEMP}\scripts-powershell-main.zip" -Force
