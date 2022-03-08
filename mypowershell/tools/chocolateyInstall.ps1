@@ -1,3 +1,5 @@
+$currentErrorAction = $ErrorAction
+$ErrorAction = "Stop"
 $docDir = Join-Path -Path $env:UserProfile -ChildPath Documents
 $poshDir = Join-Path -Path $docDir -ChildPath WindowsPowerShell
 $pwshDir = Join-Path -Path $docDir -ChildPath PowerShell
@@ -43,6 +45,8 @@ if (-not (Test-Path $pwshDir)) {
 
 #------------------------------------------------------------------------------
 
+Write-Output "Installing binary scripts to '$binDir' ..."
+
 Copy-Item -Path "${env:TEMP}\scripts-binaries-master\*" -Destination $binDir -Recurse -Force
 
 Remove-Item -Path "${env:TEMP}\scripts-binaries-master" -Recurse -Force
@@ -55,6 +59,8 @@ if (Test-Path "${env:SYSTEMDRIVE}\tools\binaries") {
 #------------------------------------------------------------------------------
 
 if (Test-Path "$poshDir\Profile.ps1") {
+    Write-Output "Removing previous installed profile..."
+
     Remove-Item -Path $modulesDir -Recurse -Force -ErrorAction SilentlyContinue
     Remove-Item -Path "$poshDir\Scripts" -Recurse -Force -ErrorAction SilentlyContinue
 
@@ -63,15 +69,30 @@ if (Test-Path "$poshDir\Profile.ps1") {
         Remove-Item -Force -ErrorAction SilentlyContinue
 }
 
+Write-Output "Installing profile and modules to '$poshDir' ..."
+
 Get-ChildItem -Path "${env:TEMP}\scripts-powershell-main" -Recurse |
     Where-Object { $_.FullName -notlike "*Test-Scripts.ps1" } |
-    Where-Object { $_.FullName -notlike "*README.md" } |
-    Copy-Item -Force -Destination { $_.FullName -replace [regex]::Escape("${env:TEMP}\scripts-powershell-main"), $poshDir }
+    Where-Object { $_.FullName -notlike "*README.md" } | ForEach-Object {
+
+      $dest = $_.FullName `
+        -replace [regex]::Escape("${env:TEMP}\scripts-powershell-main"), `
+          $poshDir
+
+      Write-Output "'$_' --> '$dest'"
+
+      Copy-Item -Path $_ -Destination $dest -Force
+
+    }
 
 Remove-Item -Path "${env:TEMP}\scripts-powershell-main.zip" -Force
 Remove-Item -Path "${env:TEMP}\scripts-powershell-main" -Recurse -Force
 
+Write-Output "Checking modules path for '$modulesDir' ..."
+
 if ((-not ($env:PSModulePath).Contains($modulesDir))) {
+  Write-Output "Adding '$modulesDir' to modules path..."
+
   $userPath = $modulesDir + ";" `
     + [Environment]::GetEnvironmentVariable('PSModulePath', 'User')
   $machinePath = [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine')
@@ -89,14 +110,15 @@ if (Test-Path "${env:TEMP}\posh-go.zip") {
   Remove-Item "${env:TEMP}\posh-go.zip" -Force | Out-Null
 }
 
-Download-File "https://github.com/cameronharp/Go-Shell/archive/master.zip" `
-  "${env:TEMP}\posh-go.zip"
+Invoke-WebRequest -Uri "https://github.com/cameronharp/Go-Shell/archive/master.zip" `
+  -UseBasicParsing -OutFile "${env:TEMP}\posh-go.zip"
 
 if (Test-Path "${env:TEMP}\Go-Shell-master") {
   Remove-Item -Path "${env:TEMP}\Go-Shell-master" -Recurse -Force
 }
 
-Unzip-File "${env:TEMP}\posh-go.zip" "${env:TEMP}\"
+Microsoft.PowerShell.Archive\Expand-Archive -Path "${env:TEMP}\posh-go.zip" `
+  -DestinationPath "${env:TEMP}\" -Force
 
 if (Test-Path "$modulesDir\go") {
   Write-Output "Removing previous version of posh-go..."
@@ -201,3 +223,5 @@ $env:PATH = "$([Runtime.InteropServices.RuntimeEnvironment]::GetRuntimeDirectory
     ngen.exe install $path /nologo | Out-Null
   }
 }
+
+$ErrorAction = $currentErrorAction
