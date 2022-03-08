@@ -1,10 +1,3 @@
-trap [System.Exception] {
-  "Exception: {0}" -f $_.Exception.Message
-  [Environment]::Exit(1)
-}
-
-$ErrorActionPreference = "Stop"
-
 $docDir = Join-Path -Path $env:UserProfile -ChildPath Documents
 $poshDir = Join-Path -Path $docDir -ChildPath WindowsPowerShell
 $pwshDir = Join-Path -Path $docDir -ChildPath PowerShell
@@ -31,10 +24,10 @@ Invoke-WebRequest -Uri $binUrl -UseBasicParsing `
   -OutFile "${env:TEMP}\scripts-binaries-master.zip"
 
 Microsoft.PowerShell.Archive\Expand-Archive -Path "${env:TEMP}\scripts-powershell-main.zip" `
-  -DestinationPath "${env:TEMP}" -Force -ErrorAction SilentlyContinue
+  -DestinationPath "${env:TEMP}\" -Force
 
 Microsoft.PowerShell.Archive\Expand-Archive -Path "${env:TEMP}\scripts-binaries-master.zip" `
-  -DestinationPath "${env:TEMP}" -Force -ErrorAction SilentlyContinue
+  -DestinationPath "${env:TEMP}\" -Force
 
 if (-not (Test-Path $binDir)) {
   New-Item -Type Directory -Path $binDir | Out-Null
