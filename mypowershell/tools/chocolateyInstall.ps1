@@ -1,5 +1,3 @@
-$currentErrorAction = $ErrorAction
-$ErrorAction = "Stop"
 $docDir = Join-Path -Path $env:UserProfile -ChildPath Documents
 $poshDir = Join-Path -Path $docDir -ChildPath WindowsPowerShell
 $pwshDir = Join-Path -Path $docDir -ChildPath PowerShell
@@ -180,8 +178,6 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
   }
 }
 
-Write-Output "`n`n============================================================================`n`n"
-
 (Get-Content "$PSScriptRoot\mine.json" | ConvertFrom-Json) | ForEach-Object {
   Remove-Item "$modulesDir\$_" -Recurse -Force
 
@@ -193,23 +189,26 @@ Write-Output "`n`n==============================================================
     Install-Module -Name $_ -Repository "dcjulian29-powershell" -Verbose -AllowClobber
   }
 
-  Write-Output "`n--------------------------------------`n"
+  Write-Output " "
 }
 
 Get-Module -ListAvailable | Out-Null
+
+Write-Output "============================================================================"
 
 Write-Output (Get-InstalledModule `
   | Select-Object Name,Version,PublishedDate,RepositorySourceLocation `
   | Sort-Object PublishedDate -Descending `
   | Format-Table | Out-String)
 
-Write-Output "`n`n============================================================================`n`n"
+Write-Output "============================================================================"
+Write-Output " "
 
 #------------------------------------------------------------------------------
 
 Write-Output "Importing all available modules to make sure assemblies are loaded..."
 
-Get-Module -ListAvailable | Import-Module -ErrorAction SilentlyContinue
+Get-Module -ListAvailable | Import-Module -ErrorAction SilentlyContinue | Out-Null
 
 Write-Output "Making sure all runtime assemblies are pre-compiled if necessary..."
 
@@ -223,5 +222,3 @@ $env:PATH = "$([Runtime.InteropServices.RuntimeEnvironment]::GetRuntimeDirectory
     ngen.exe install $path /nologo | Out-Null
   }
 }
-
-$ErrorAction = $currentErrorAction
