@@ -39,7 +39,7 @@ show_always = true
 #------------------------------------------------------------------------------
 
 [docker_context]
-format = "[$context](green)"
+format = "[$context](green) "
 
 [git_branch]
 format = "[$symbol$branch]($style) "
@@ -59,7 +59,7 @@ renamed = " 襁 $count"
 deleted = " [ $count](red)"
 
 [helm]
-format = "[ $version](bold purple)"
+format = "[ $version](bold purple) "
 
 [kubernetes]
 format = '[ $context\($namespace\)](bold purple) '
@@ -70,17 +70,17 @@ disabled = true
 "jnet-k8s-lab" = "lab"
 
 [nodejs]
-format = "[ $version](bold green)"
+format = "[ $version](bold green) "
 
 [python]
 symbol = " "
 python_binary = "python3"
 
 [ruby]
-format = "[ $version]($style)"
+format = "[ $version]($style) "
 
 [terraform]
-format = "[ terraform $version]($style) 壟 [$workspace]($style)"
+format = "[ terraform $version]($style) 壟 [$workspace]($style) "
 
 [vagrant]
-format = "[ $symbol$version]($style)"
+format = "[ $symbol$version]($style) "
