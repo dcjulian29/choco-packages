@@ -19,6 +19,7 @@
 "fetch.prune","true"
 "rebase.autoStash","false"
 "i18n.filesEncoding","us-ascii"
+"init.defaultBranch","main"
 
 ##### Command Aliases
 "alias.a","add"
