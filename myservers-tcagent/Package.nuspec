@@ -23,7 +23,6 @@
       <dependency id="visualstudio2022-workload-netweb" />
       <dependency id="visualstudio2022-workload-netcoretools" />
       <dependency id="temurin" />
-      <dependency id="teamcityagent" packageParameters="serverURL=https://teamcity.julianscorner.com agentDir=E:/buildAgent" />
     </dependencies>
   </metadata>
 </package>
