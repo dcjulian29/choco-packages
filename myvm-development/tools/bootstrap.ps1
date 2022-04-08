@@ -30,6 +30,7 @@ function installPackage($Package) {
 
     Read-Host "Press enter to restart computer"
     Restart-Computer -Force
+    Start-Sleep -Seconds 15
   }
 }
 
@@ -143,8 +144,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
   }
 }
 
-Update-AllChocolateyPackages
-
 Set-GitConfigValue -Key "user.email" -Value "julian@julianscorner.com" -Scope Global
 
 if (-not ($(getSetting "FinishBootstrap"))) {
@@ -162,7 +161,9 @@ if (-not ($(getSetting "FinishBootstrap"))) {
   Write-Output "Removing bootstrap script from registry..."
   reg delete HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Bootstrap /f
 
-  setSettings "FinishBootstrap" $(Get-Date)
+  setSettings "FinishBootstrap" "$(Get-Date)"
 }
 
 Stop-Transcript
+
+Update-AllChocolateyPackages
