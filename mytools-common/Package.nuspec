@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mytools-common</id>
-    <version>2203.6.1</version>
+    <version>2204.8.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for all of my machines.</description>
@@ -14,7 +14,7 @@
       <dependency id="frhed" />
       <dependency id="postman" />
       <dependency id="nuget.commandline" />
-      <dependency id="nugetpackageexplorer" />
+      <!-- <dependency id="nugetpackageexplorer" /> -->
       <dependency id="mysettings-wsl2" />
     </dependencies>
   </metadata>
