@@ -34,11 +34,11 @@ function installPackage($Package) {
 }
 
 function getSettingsFile {
-  if (-not (Test-Path "${env:TEMP}\julian-bootstrap.json")) {
-    ConvertTo-Json @{} | Out-File "${env:TEMP}\julian-bootstrap.json"
+  if (-not (Test-Path "${env:SYSTEMDRIVE}\etc\bootstrap.json")) {
+    ConvertTo-Json @{} | Out-File "${env:SYSTEMDRIVE}\etc\bootstrap.json"
   }
 
-  Get-Content -Path "${env:TEMP}\julian-bootstrap.json"
+  Get-Content -Path "${env:SYSTEMDRIVE}\etc\bootstrap.json"
 }
 
 function getSetting($Key) {
@@ -56,7 +56,7 @@ function setSettings($Key, $Value) {
 
   $settings | Add-Member -MemberType NoteProperty -Name $Key -Value $Value
 
-  $settings | ConvertTo-Json | Out-File "${env:TEMP}\julian-bootstrap.json"
+  $settings | ConvertTo-Json | Out-File "${env:SYSTEMDRIVE}\etc\bootstrap.json"
 }
 
 #------------------------------------------------------------------------------

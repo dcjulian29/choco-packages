@@ -253,11 +253,19 @@ downloads|$env:USERPROFILE\downloads
 
 #------------------------------------------------------------------------------
 
-if (Test-Path "$PSScriptRoot\bootstrap.ps1") {
-    Write-Output "Adding 'bootstrap.ps1' to run on reboot..."
-    reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Bootstrap `
-        /t REG_SZ /d "powershell.exe -File `"$PSScriptRoot\bootstrap.ps1`"" /f
+Write-Output "Adding 'bootstrap.ps1' to run on reboot..."
+
+if (Test-Path "${env:SYSTEMDRIVE}\etc\bootstrap.json" ) {
+    if (Test-Path "${env:SYSTEMDRIVE}\etc\bootstrap.json.old") {
+        Remove-Item "${env:SYSTEMDRIVE}\etc\bootstrap.json.old" -Force
+    }
+
+    Move-Item -Path "${env:SYSTEMDRIVE}\etc\bootstrap.json" `
+        -Destination "${env:SYSTEMDRIVE}\etc\bootstrap.json.old" -Force
 }
+
+reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Bootstrap `
+    /t REG_SZ /d "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File `"$PSScriptRoot\bootstrap.ps1`" -ExecutionPolicy Bypass" /f
 
 Write-Output "Initial Setup of Development VM Finished. Rebooting in 30 seconds..."
 
