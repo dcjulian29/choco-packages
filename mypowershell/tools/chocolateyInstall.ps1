@@ -11,6 +11,8 @@ $url = "https://github.com/dcjulian29/scripts-powershell/archive/refs/heads/main
   "${env:TEMP}\scripts-powershell-main"
   "${env:TEMP}\scripts-binaries-master.zip"
   "${env:TEMP}\scripts-binaries-master"
+  "${env:TEMP}\posh-go.zip"
+  "${env:TEMP}\Go-Shell-master"
 ) | ForEach-Object {
   if (Test-Path $_) {
       Remove-Item $_ -Recurse -Force
@@ -41,6 +43,10 @@ if (-not (Test-Path $pwshDir)) {
   New-Item -ItemType SymbolicLink -Path $docDir -Name PowerShell -Target $poshDir
 }
 
+if (-not (Test-Path $modulesDir)) {
+  New-Item -Path $modulesDir -ItemType Directory | Out-Null
+}
+
 #------------------------------------------------------------------------------
 
 Write-Output "Installing binary scripts to '$binDir' ..."
@@ -57,26 +63,31 @@ if (Test-Path "${env:SYSTEMDRIVE}\tools\binaries") {
 #------------------------------------------------------------------------------
 
 if (Test-Path "$poshDir\Profile.ps1") {
-    Write-Output "Removing previous installed profile..."
+  Write-Output "Removing previous installed profile..."
 
-    Remove-Item -Path $modulesDir -Recurse -Force -ErrorAction SilentlyContinue
-    Remove-Item -Path "$poshDir\Scripts" -Recurse -Force -ErrorAction SilentlyContinue
-
-    Get-ChildItem -Path $poshDir -Recurse |
-        Select-Object -ExpandProperty FullName |
-        Remove-Item -Force -ErrorAction SilentlyContinue
+  @(
+    "$poshDir\Microsoft.PowerShell_profile.ps1"
+    "$poshDir\Microsoft.VSCode_profile.ps1"
+    "$poshDir\profile.ps1"
+  ) | ForEach-Object {
+    if (Test-Path $_) {
+      Remove-Item -Path $_ -Force -ErrorAction SilentlyContinue
+    }
+  }
 }
 
-Write-Output "Installing profile and modules to '$poshDir' ..."
+Write-Output "Installing profile to '$poshDir' ..."
 
-Copy-Item -Path "${env:TEMP}\scripts-powershell-main\*" -Destination $poshDir -Recurse -Force
+@(
+  "${env:TEMP}\scripts-powershell-main\Microsoft.PowerShell_profile.ps1"
+  "${env:TEMP}\scripts-powershell-main\Microsoft.VSCode_profile.ps1"
+  "${env:TEMP}\scripts-powershell-main\profile.ps1"
+) | ForEach-Object {
+  Copy-Item -Path $_ -Destination $poshDir -Recurse -Force
+}
 
 Remove-Item -Path "${env:TEMP}\scripts-powershell-main.zip" -Force
 Remove-Item -Path "${env:TEMP}\scripts-powershell-main" -Recurse -Force
-
-Remove-Item -Path "$poshDir\*.md" -Force -ErrorAction SilentlyContinue
-Remove-Item -Path "$poshDir\.g*" -Force -ErrorAction SilentlyContinue
-Remove-Item -Path "$poshDir\.e*" -Force -ErrorAction SilentlyContinue
 
 Write-Output "Checking modules path for '$modulesDir' ..."
 
@@ -96,16 +107,8 @@ if ((-not ($env:PSModulePath).Contains($modulesDir))) {
 
 #------------------------------------------------------------------------------
 
-if (Test-Path "${env:TEMP}\posh-go.zip") {
-  Remove-Item "${env:TEMP}\posh-go.zip" -Force | Out-Null
-}
-
 Invoke-WebRequest -Uri "https://github.com/cameronharp/Go-Shell/archive/master.zip" `
   -UseBasicParsing -OutFile "${env:TEMP}\posh-go.zip"
-
-if (Test-Path "${env:TEMP}\Go-Shell-master") {
-  Remove-Item -Path "${env:TEMP}\Go-Shell-master" -Recurse -Force
-}
 
 Microsoft.PowerShell.Archive\Expand-Archive -Path "${env:TEMP}\posh-go.zip" `
   -DestinationPath "${env:TEMP}\" -Force
@@ -144,21 +147,23 @@ if ((Get-Module PowershellGet -ListAvailable | Measure-Object).Count -gt 1) {
   Import-Module PowerShellGet
 }
 
-Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted -Verbose
 
 if (-not (Get-PSRepository -Name "dcjulian29-powershell" -ErrorAction SilentlyContinue)) {
   Register-PSRepository -Name "dcjulian29-powershell" `
-    -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2"
+    -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2" -Verbose
 } else {
   Set-PSRepository -Name "dcjulian29-powershell" `
-    -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2"
+    -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2" -Verbose
 }
 
-Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
+Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted -Verbose
 
 #------------------------------------------------------------------------------
 
-(Get-Content "$PSScriptRoot\thirdparty.json" | ConvertFrom-Json) | ForEach-Object {
+Push-Location $PSScriptRoot
+
+(Get-Content "thirdparty.json" | ConvertFrom-Json) | ForEach-Object {
   Write-Output "`n--------------------------------------`n"
   if (($_ -eq "PackageManagement") -or ($_ -eq "PowerShellGet")) {
     # These two are a little different as their base version is manually installed.
@@ -178,19 +183,18 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
   }
 }
 
-(Get-Content "$PSScriptRoot\mine.json" | ConvertFrom-Json) | ForEach-Object {
-  Remove-Item "$modulesDir\$_" -Recurse -Force
-
+(Get-Content "mine.json" | ConvertFrom-Json) | ForEach-Object {
+  Write-Output "`n--------------------------------------`n"
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
-    Write-Output "Updating my '$_' module..."
+    Write-Output "Updating my '$_' module...`n"
     Update-Module -Name $_ -Verbose -Confirm:$false
   } else {
-    Write-Output "Installing my '$_' module..."
+    Write-Output "Installing my '$_' module...`n"
     Install-Module -Name $_ -Repository "dcjulian29-powershell" -Verbose -AllowClobber
   }
-
-  Write-Output " "
 }
+
+Pop-Location
 
 Get-Module -ListAvailable | Out-Null
 
