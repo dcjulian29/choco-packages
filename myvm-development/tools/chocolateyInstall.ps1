@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-if (Get-Command "Get-LogFolder") {
+if (Get-Command "Get-LogFolder" -ErrorAction SilentlyContinue) {
     if (Test-Path "$(Get-LogFolder)\zzz.log") {
         write-Warning "Package already installed, no need to upgrade..."
         exit
