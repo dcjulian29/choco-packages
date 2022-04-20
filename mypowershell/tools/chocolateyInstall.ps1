@@ -226,3 +226,5 @@ $env:PATH = "$([Runtime.InteropServices.RuntimeEnvironment]::GetRuntimeDirectory
     ngen.exe install $path /nologo | Out-Null
   }
 }
+
+Set-Content -Path "$poshDir\installed.txt" -Value "$(Get-Date)" -Force
