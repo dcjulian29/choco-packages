@@ -34,7 +34,7 @@ choco feature enable  -n removePackageInformationOnUninstall
 
 choco config set   --name "cacheLocation" --value "%TEMP%"
 choco config unset --name "upgradeAllExceptions"
-choco config set   --name "defaultTemplateName"
+choco config unset --name "defaultTemplateName"
 
 choco config unset --name "proxy"
 choco config unset --name "proxyUser"
