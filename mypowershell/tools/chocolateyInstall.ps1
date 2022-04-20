@@ -167,11 +167,7 @@ Push-Location $PSScriptRoot
   Write-Output "`n--------------------------------------`n"
   if (($_ -eq "PackageManagement") -or ($_ -eq "PowerShellGet")) {
     # These two are a little different as their base version is manually installed.
-    if ((Get-Module $_ -ListAvailable).Version.ToString() -eq "1.0.0.1") {
-      Write-Output "Overriding Upgrade! Will install latest version of '$_' module...`n"
-      Install-Module -Name $_ -Verbose -Force -AllowClobber
-      continue
-    }
+    continue
   }
 
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
