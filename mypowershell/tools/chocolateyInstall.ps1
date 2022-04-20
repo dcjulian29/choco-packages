@@ -107,6 +107,8 @@ if ((-not ($env:PSModulePath).Contains($modulesDir))) {
 
 #------------------------------------------------------------------------------
 
+Write-Output "Installing posh-go module..."
+
 Invoke-WebRequest -Uri "https://github.com/cameronharp/Go-Shell/archive/master.zip" `
   -UseBasicParsing -OutFile "${env:TEMP}\posh-go.zip"
 
@@ -126,6 +128,8 @@ Remove-Item -Path "${env:TEMP}\posh-go.zip" -Force
 Remove-Item -Path "${env:TEMP}\Go-Shell-master" -Recurse -Force
 
 #------------------------------------------------------------------------------
+
+Write-Output "Configuring Package Repositories..."
 
 if ((Get-Module PackageManagement -ListAvailable | Measure-Object).Count -gt 1) {
   Import-Module PackageManagement -RequiredVersion `
@@ -161,36 +165,42 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted -Verb
 
 #------------------------------------------------------------------------------
 
+Write-Output "Installing third-party modules..."
+
 Push-Location $PSScriptRoot
 
 (Get-Content "thirdparty.json" | ConvertFrom-Json) | ForEach-Object {
-  Write-Output "`n--------------------------------------`n"
+  Write-Output "--------------------------------------"
   if (($_ -eq "PackageManagement") -or ($_ -eq "PowerShellGet")) {
+    Write-Output "Ignoring $_ package..."
     # These two are a little different as their base version is manually installed.
-    continue
-  }
-
-  if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
-    Write-Output "Updating third-party '$_' module...`n"
-    Update-Module -Name $_ -Verbose -Confirm:$false
   } else {
-    Write-Output "Installing third-party '$_' module...`n"
-    Install-Module -Name $_ -Verbose -AllowClobber
+    if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
+      Write-Output "Updating third-party '$_' module..."
+      Update-Module -Name $_ -Verbose -Confirm:$false
+    } else {
+      Write-Output "Installing third-party '$_' module..."
+      Install-Module -Name $_ -Verbose -AllowClobber
+    }
   }
 }
 
+Write-Output "Installing my modules..."
+
 (Get-Content "mine.json" | ConvertFrom-Json) | ForEach-Object {
-  Write-Output "`n--------------------------------------`n"
+  Write-Output "--------------------------------------"
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
-    Write-Output "Updating my '$_' module...`n"
+    Write-Output "Updating my '$_' module..."
     Update-Module -Name $_ -Verbose -Confirm:$false
   } else {
-    Write-Output "Installing my '$_' module...`n"
+    Write-Output "Installing my '$_' module..."
     Install-Module -Name $_ -Repository "dcjulian29-powershell" -Verbose -AllowClobber
   }
 }
 
 Pop-Location
+
+Write-Output "Refreshing the list of available modules..."
 
 Get-Module -ListAvailable | Out-Null
 
