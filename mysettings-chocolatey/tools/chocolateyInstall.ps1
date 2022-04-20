@@ -15,7 +15,7 @@ choco feature disable -n useEnhancedExitCodes
 choco feature disable -n exitOnRebootDetected
 
 choco feature enable  -n ignoreInvalidOptionsSwitches
-choco feature enable  -n failOnStandardError
+choco feature disable -n failOnStandardError
 choco feature enable  -n stopOnFirstPackageFailure
 choco feature disable -n skipPackageUpgradesWhenNotInstalled
 choco feature disable -n ignoreUnfoundPackagesOnUpgradeOutdated
