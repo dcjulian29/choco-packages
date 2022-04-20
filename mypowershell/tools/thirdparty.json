@@ -1,6 +1,4 @@
 [
-  "PackageManagement",
-  "PowerShellGet",
   "PSSlack",
   "BurntToast",
   "Microsoft.PowerShell.SecretManagement",

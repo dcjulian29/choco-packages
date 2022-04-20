@@ -107,8 +107,6 @@ if ((-not ($env:PSModulePath).Contains($modulesDir))) {
 
 #------------------------------------------------------------------------------
 
-Write-Output "Installing posh-go module..."
-
 Invoke-WebRequest -Uri "https://github.com/cameronharp/Go-Shell/archive/master.zip" `
   -UseBasicParsing -OutFile "${env:TEMP}\posh-go.zip"
 
@@ -119,6 +117,8 @@ if (Test-Path "$modulesDir\go") {
   Write-Output "Removing previous version of posh-go..."
   Remove-Item "$modulesDir\go" -Recurse -Force
 }
+
+Write-Output "Installing posh-go module..."
 
 New-Item -Type Directory -Path "$modulesDir\go" | Out-Null
 
@@ -140,7 +140,7 @@ if ((Get-Module PackageManagement -ListAvailable | Measure-Object).Count -gt 1) 
   Import-Module PackageManagement
 }
 
-Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Verbose
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 
 if ((Get-Module PowershellGet -ListAvailable | Measure-Object).Count -gt 1) {
   Import-Module PowerShellGet -RequiredVersion `
@@ -151,17 +151,17 @@ if ((Get-Module PowershellGet -ListAvailable | Measure-Object).Count -gt 1) {
   Import-Module PowerShellGet
 }
 
-Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted -Verbose
+Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 
 if (-not (Get-PSRepository -Name "dcjulian29-powershell" -ErrorAction SilentlyContinue)) {
   Register-PSRepository -Name "dcjulian29-powershell" `
-    -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2" -Verbose
+    -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2"
 } else {
   Set-PSRepository -Name "dcjulian29-powershell" `
-    -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2" -Verbose
+    -SourceLocation "https://www.myget.org/F/dcjulian29-powershell/api/v2"
 }
 
-Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted -Verbose
+Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
 
 #------------------------------------------------------------------------------
 
@@ -170,17 +170,13 @@ Write-Output "Installing third-party modules..."
 Push-Location $PSScriptRoot
 
 (Get-Content "thirdparty.json" | ConvertFrom-Json) | ForEach-Object {
-  Write-Output "--------------------------------------"
-  if (($_ -eq "PackageManagement") -or ($_ -eq "PowerShellGet")) {
-    Write-Output "Ignoring $_ package..."
-    # These two are a little different as their base version is manually installed.
-  } else {
+  if (-not (($_ -eq "PackageManagement") -or ($_ -eq "PowerShellGet"))) {
     if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
       Write-Output "Updating third-party '$_' module..."
-      Update-Module -Name $_ -Verbose -Confirm:$false
+      Update-Module -Name $_ -Confirm:$false
     } else {
       Write-Output "Installing third-party '$_' module..."
-      Install-Module -Name $_ -Verbose -AllowClobber
+      Install-Module -Name $_ -AllowClobber
     }
   }
 }
@@ -188,13 +184,12 @@ Push-Location $PSScriptRoot
 Write-Output "Installing my modules..."
 
 (Get-Content "mine.json" | ConvertFrom-Json) | ForEach-Object {
-  Write-Output "--------------------------------------"
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
     Write-Output "Updating my '$_' module..."
-    Update-Module -Name $_ -Verbose -Confirm:$false
+    Update-Module -Name $_ -Confirm:$false
   } else {
     Write-Output "Installing my '$_' module..."
-    Install-Module -Name $_ -Repository "dcjulian29-powershell" -Verbose -AllowClobber
+    Install-Module -Name $_ -Repository "dcjulian29-powershell" -AllowClobber
   }
 }
 
@@ -212,13 +207,15 @@ Write-Output (Get-InstalledModule `
   | Format-Table | Out-String)
 
 Write-Output "============================================================================"
-Write-Output " "
 
 #------------------------------------------------------------------------------
 
 Write-Output "Importing all available modules to make sure assemblies are loaded..."
+Write-Output " (You can ignore any errors until the next divider."
 
 Get-Module -ListAvailable | Import-Module -ErrorAction SilentlyContinue | Out-Null
+
+Write-Output "============================================================================"
 
 Write-Output "Making sure all runtime assemblies are pre-compiled if necessary..."
 
