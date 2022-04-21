@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mytools-scm</id>
-    <version>2111.26.1</version>
+    <version>2204.20.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for Source Control that I install.</description>
@@ -12,7 +12,6 @@
       <dependency id="mysettings-winmerge" />
       <dependency id="mysettings-gitextensions" />
       <dependency id="lazygit" />
-      <dependency id="poshgit" />
     </dependencies>
   </metadata>
 </package>
