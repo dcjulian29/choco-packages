@@ -165,7 +165,7 @@ Set-PSRepository -Name "dcjulian29-powershell" -InstallationPolicy Trusted
 
 #------------------------------------------------------------------------------
 
-Write-Output "Installing third-party modules..."
+Write-Output ">>>Installing third-party modules..."
 
 Push-Location $PSScriptRoot
 
@@ -181,7 +181,7 @@ Push-Location $PSScriptRoot
   }
 }
 
-Write-Output "Installing my modules..."
+Write-Output ">>>Installing my modules..."
 
 (Get-Content "mine.json" | ConvertFrom-Json) | ForEach-Object {
   if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
@@ -211,7 +211,7 @@ Write-Output "==================================================================
 #------------------------------------------------------------------------------
 
 Write-Output "Importing all available modules to make sure assemblies are loaded..."
-Write-Output " (You can ignore any errors until the next divider."
+Write-Warning "You can ignore any errors until the next divider."
 
 Get-Module -ListAvailable | Import-Module -ErrorAction SilentlyContinue | Out-Null
 
