@@ -16,7 +16,7 @@ function installPackage($Package) {
 
   Start-Sleep -Seconds 5
 
-  if (Get-Content $logFile | Select-String -Pattern "^Failures|ERROR:") {
+  if (Get-Content $logFile | Select-String -Pattern "^Failures|ERROR:|FullyQualifiedErrorId:") {
     Write-Warning "An error occurred during the last package ($package) install..."
     Write-Warning "Review the log file: $logFile"
     Write-Warning "And then decide whether to continue..."
