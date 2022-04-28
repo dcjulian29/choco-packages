@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-workstation</id>
-    <version>2204.28.1</version>
+    <version>2204.28.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -20,6 +20,7 @@
       <dependency id="mysettings-wsl-ubuntu" />
       <dependency id="mysettings-hyperv" />
       <dependency id="mysettings-virtualbox" />
+      <dependency id="mysettings-devenv" />
     </dependencies>
   </metadata>
 </package>
