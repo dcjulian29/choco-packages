@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-workstation</id>
-    <version>2203.4.1</version>
+    <version>2204.28.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -13,14 +13,13 @@
       <dependency id="mycomputers-workstation-personal" />
       <dependency id="slack" />
       <dependency id="microsoft-teams" />
-      <dependency id="mysettings-wsl-ubuntu" />
       <dependency id="nextcloud-client" />
       <dependency id="handbrake" />
       <dependency id="anydvd" />
       <dependency id="xmind" />
+      <dependency id="mysettings-wsl-ubuntu" />
+      <dependency id="mysettings-hyperv" />
+      <dependency id="mysettings-virtualbox" />
     </dependencies>
   </metadata>
-  <files>
-    <file src="..\mydevices-laptop\tools\chocolateyInstall.ps1"
-          target="tools" />
-  </files></package>
+</package>
