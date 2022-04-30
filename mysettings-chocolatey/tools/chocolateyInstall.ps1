@@ -24,7 +24,7 @@ choco feature enable  -n usePackageRepositoryOptimizations
 choco feature disable -n useFipsCompliantChecksums
 choco feature enable  -n checksumFiles
 choco feature disable -n allowEmptyChecksums
-choco feature disable -n allowEmptyChecksumsSecure
+choco feature enable  -n allowEmptyChecksumsSecure
 choco feature disable -n allowGlobalConfirmation
 
 choco feature disable -n powershellHost
