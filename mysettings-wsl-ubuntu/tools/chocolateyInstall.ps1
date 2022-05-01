@@ -30,3 +30,8 @@ if (-not $configured) {
 } else {
     Write-Output "Ubuntu is already installed and configured. Not overwriting the installed version..."
 }
+
+Import-Module "${env:USERPROFILE}\Documents\WindowsPowerShell\Modules\go\go.psm1"
+
+gd -Key "ubuntu" -delete
+gd -Key "ubuntu" -SelectedPath "\\wsl$\Ubuntu" -add
