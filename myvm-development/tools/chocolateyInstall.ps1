@@ -16,8 +16,8 @@ if (Get-Command "Get-LogFolder" -ErrorAction SilentlyContinue) {
 }
 
 # This scripts that depends on functions that are installed via package depencies:
-Import-Module UI.psd1 -Force -Verbose
-Import-Module Logging.psd1 -Force -Verbose
+Import-Module UI -Force -Verbose
+Import-Module Logging -Force -Verbose
 
 if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm")) {
@@ -25,30 +25,38 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     }
 
     $rootPath = "${env:SystemRoot}\Setup\Scripts"
-    $c = "$rootPath\${env:COMPUTERNAME}"
-    if (Test-Path "$rootPath\server.id") {
-        $ClientID = Get-Content "$c.id"
-        $ServerID = Get-Content "$rootPath\server.id"
-        $Server = Get-Content "$rootPath\server.name"
-        $Key = Get-Content "$c.key"
-        $Cert = Get-Content "$c.cert"
-    } else {
-        $ClientID = Read-MultiLineInput "Enter the ID for this client"
-        $ServerID = Read-MultiLineInput "Enter the ID for this server"
-        $Server = Read-MultiLineInput "Enter the name of the central server"
-        $Key = Read-MultiLineInput "Enter the certificate key"
-        $Cert = Read-MultiLineInput "Enter the certificate"
-    }
-
-    $ApiKey = -join ((48..57) + (65..90) + (97..122) `
-        | Get-Random -Count 32 `
-        | ForEach-Object {[char]$_})
 
     if (-not (Test-Path "$env:LOCALAPPDATA\Syncthing")) {
         New-Item -Path "$env:LOCALAPPDATA\Syncthing" -ItemType Directory | Out-Null
     }
 
-    Set-Content -Path "$env:LOCALAPPDATA\Syncthing\config.xml" -Value @"
+    $c = "$rootPath\${env:COMPUTERNAME}"
+
+    if (Test-Path "$c.xml") {
+      $Key = Get-Content "$c.key"
+      $Cert = Get-Content "$c.cert"
+
+      Copy-Item -Path "$c.xml" -Destination "$env:LOCALAPPDATA\Syncthing\config.xml" -Force
+    } else {
+        if (Test-Path "$rootPath\server.id") {
+            $ClientID = Get-Content "$c.id"
+            $ServerID = Get-Content "$rootPath\server.id"
+            $Server = Get-Content "$rootPath\server.name"
+            $Key = Get-Content "$c.key"
+            $Cert = Get-Content "$c.cert"
+        } else {
+            $ClientID = Read-MultiLineInput "Enter the ID for this client"
+            $ServerID = Read-MultiLineInput "Enter the ID for this server"
+            $Server = Read-MultiLineInput "Enter the name of the central server"
+            $Key = Read-MultiLineInput "Enter the certificate key"
+            $Cert = Read-MultiLineInput "Enter the certificate"
+        }
+
+        $ApiKey = -join ((48..57) + (65..90) + (97..122) `
+            | Get-Random -Count 32 `
+            | ForEach-Object {[char]$_})
+
+        Set-Content -Path "$env:LOCALAPPDATA\Syncthing\config.xml" -Value @"
 <configuration version="15">
     <folder id="vm" label="" path="c:\home\vm" type="readwrite" rescanIntervalS="60" ignorePerms="false" autoNormalize="true">
         <device id="$ClientID"></device>
@@ -118,6 +126,7 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     </options>
 </configuration>
 "@
+    }
 
     Set-Content -Path "$env:LOCALAPPDATA\Syncthing\cert.pem" -Value $Cert
     Set-Content -Path "$env:LOCALAPPDATA\Syncthing\key.pem" -Value $Key
