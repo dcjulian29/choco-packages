@@ -35,4 +35,9 @@ if (-not (Test-Path "$env:SystemDrive\Virtual Machines\VirtualBox")) {
 
 & "$vbox" setproperty machinefolder "$env:SystemDrive\Virtual Machines\VirtualBox"
 
+Import-Module "${env:USERPROFILE}\Documents\WindowsPowerShell\Modules\go\go.psm1"
+
+gd -Key "virtualbox" -delete
+gd -Key "virtualbox" -SelectedPath "$env:SystemDrive\Virtual Machines\VirtualBox" -add
+
 vagrant plugin install vagrant-reload winrm winrm-elevated
