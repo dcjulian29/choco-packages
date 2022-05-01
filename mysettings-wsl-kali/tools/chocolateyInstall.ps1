@@ -13,3 +13,8 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Kali\ext4.vhdx)) {
 } else {
   Write-Output "Ubuntu is already installed and configured. Not overwriting the installed version..."
 }
+
+Import-Module "${env:USERPROFILE}\Documents\WindowsPowerShell\Modules\go\go.psm1"
+
+gd -Key "kali" -delete
+gd -Key "kali" -SelectedPath "\\wsl$\kali-linux" -add
