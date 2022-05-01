@@ -230,4 +230,25 @@ $env:PATH = "$([Runtime.InteropServices.RuntimeEnvironment]::GetRuntimeDirectory
   }
 }
 
-Set-Content -Path "$poshDir\installed.txt" -Value "$(Get-Date)" -Force
+Import-Module "${env:USERPROFILE}\Documents\WindowsPowerShell\Modules\go\go.psm1"
+
+(@{
+  "desktop" = "$env:USERPROFILE\desktop"
+  "docs" = "$env:USERPROFILE\documents"
+  "documents" = "$env:USERPROFILE\documents"
+  "downloads" = "$env:USERPROFILE\downloads"
+  "pics" = "$env:USERPROFILE\pictures"
+  "pictures" = "$env:USERPROFILE\pictures"
+  "videos" = "$env:USERPROFILE\videos"
+  "temp" = "$env:TEMP"
+  "choco-lib" = "$env:ALLUSERPROFILE\chocolatey\lib"
+}).GetEnumerator() | ForEach-Object {
+  gd -Key $_.Key -delete
+  gd -Key $_.Key -SelectedPath $_.Value -add
+}
+
+if (Test-Path "$poshDir\installed.txt") {
+  Add-Content -Path "$poshDir\installed.txt" -Value "$(Get-Date)"
+} else {
+  Set-Content -Path "$poshDir\installed.txt" -Value "$(Get-Date)"
+}
