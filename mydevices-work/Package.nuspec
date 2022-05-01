@@ -22,6 +22,10 @@
       <dependency id="visualstudio2019-workload-manageddesktop" />
       <dependency id="visualstudio2019-workload-netweb" />
       <dependency id="visualstudio2019-workload-azure" />
+      <dependency id="visualstudio2022professional" />
+      <dependency id="visualstudio2022-workload-manageddesktop" />
+      <dependency id="visualstudio2022-workload-netweb" />
+      <dependency id="visualstudio2022-workload-azure" />
       <dependency id="netfx-4.8-devpack" />
       <dependency id="vsix-csharp" />
       <dependency id="gittfs" />
