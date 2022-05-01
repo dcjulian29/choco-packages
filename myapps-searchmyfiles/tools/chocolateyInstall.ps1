@@ -1,3 +1,9 @@
+# One-time package rename
+if (Test-Path "../../searchmyfiles-julian") {
+    Remove-Item -Path "../../searchmyfiles-julian" -Recurse -Force
+    return
+}
+
 $url = 'http://www.nirsoft.net/utils/searchmyfiles.zip'
 $cksum = '6dcb957e93ceaaa388da3da62d70cde9268746340e9d9943b63df245a1dc1d4f'
 

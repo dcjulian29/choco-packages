@@ -1,4 +1,10 @@
-﻿$version = "${env:ChocolateyPackageVersion}"
+﻿# One-time package rename
+if (Test-Path "../../angryip-julian") {
+    Remove-Item -Path "../../angryip-julian" -Recurse -Force
+    return
+}
+
+$version = "${env:ChocolateyPackageVersion}"
 $url = "https://github.com/angryip/ipscan/releases/download/$version/ipscan-win64-$version.exe"
 $app = "${env:ChocolateyInstall}\bin\ipscan.exe"
 

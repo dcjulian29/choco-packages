@@ -1,3 +1,8 @@
+# One-time package rename
+if (Test-Path "../../executor-julian") {
+    Remove-Item -Path "../../executor-julian" -Recurse -Force
+}
+
 $location = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
 
 $key = Get-Item $location
@@ -8,5 +13,3 @@ if ($null -ne $key.GetValue("Executor", $null)) {
 
 New-ItemProperty -Path $location -Name Executor `
     -Value "$PSScriptRoot\executor-run.cmd" | Out-Null
-
-# Start-Process -FilePath $PSScriptRoot\executor-run.cmd -NoNewWindow

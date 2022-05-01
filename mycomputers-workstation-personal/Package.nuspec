@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2204.30.1</version>
+    <version>2205.1.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -16,9 +16,9 @@
       <dependency id="nugetpackageexplorer" />
       <dependency id="mysettings-rainmeter" />
       <dependency id="mysettings-greenshot" />
-      <dependency id="angryip-julian" />
-      <dependency id="iperf-julian" />
-      <dependency id="xmlquire" />
+      <dependency id="myapps-angryip" />
+      <dependency id="myapps-iperf" />
+      <dependency id="myapps-xmlquire" />
       <dependency id="mysettings-wsl2" />
       <dependency id="mytools-containers" />
       <dependency id="mysettings-syncthing" />
@@ -29,7 +29,7 @@
       <dependency id="firefox" />
       <dependency id="vnc-viewer" />
       <dependency id="rsat" />
-      <dependency id="searchmyfiles-julian" />
+      <dependency id="myapps-searchmyfiles" />
       <dependency id="googlechrome" />
       <dependency id="keepass" />
       <dependency id="python" />

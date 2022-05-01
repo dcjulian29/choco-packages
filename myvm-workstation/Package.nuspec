@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>myvm-workstation</id>
-    <version>2201.6.3</version>
+    <version>2205.1.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>This package gets called for the initial configuration of my workstation virtual machines.</description>
@@ -15,7 +15,7 @@
       <dependency id="mysettings-terminal" />
       <dependency id="powershell-core" />
       <dependency id="sysinternals" />
-      <dependency id="searchmyfiles-julian" />
+      <dependency id="myapps-searchmyfiles" />
     </dependencies>
   </metadata>
 </package>

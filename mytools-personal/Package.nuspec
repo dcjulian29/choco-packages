@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mytools-personal</id>
-    <version>2203.6.1</version>
+    <version>2205.1.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for my personal machines.</description>
@@ -10,10 +10,10 @@
     <dependencies>
       <dependency id="python" />
       <dependency id="baretail" />
-      <dependency id="xmlquire" />
+      <dependency id="myapps-xmlquire" />
       <dependency id="plantuml" />
       <dependency id="kubernetes-helm" />
-      <dependency id="searchmyfiles-julian" />
+      <dependency id="myapps-searchmyfiles" />
       <dependency id="mysettings-wsl-ubuntu" />
     </dependencies>
   </metadata>
