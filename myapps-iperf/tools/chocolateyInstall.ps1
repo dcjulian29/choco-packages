@@ -11,7 +11,7 @@ $downloadPath = "$env:TEMP\$packageName"
 $appDir = "$PSScriptRoot\iperf"
 
 if (Test-Path $downloadPath) {
-    Remove-Item -Path $downloadPath -Force
+    Remove-Item -Path $downloadPath -Recurse -Force
 }
 
 New-Item -Type Directory -Path $downloadPath | Out-Null
