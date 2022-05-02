@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mysettings-mstsc</id>
+    <version>2205.2.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>My custom settings for Microsoft RDP Client.</description>
+    <tags>mstsc settings custom</tags>
+  </metadata>
+</package>
