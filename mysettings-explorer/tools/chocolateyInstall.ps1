@@ -1,7 +1,4 @@
-$packageName = "mysettings-explorer"
-$toolDir = "$(Split-Path -parent $MyInvocation.MyCommand.Path)"
-
-$cmd = "$env:WINDIR\system32\reg.exe import $toolDir\registry.reg"
+$cmd = "$env:WINDIR\system32\reg.exe import '$PSScriptRoot\registry.reg'"
 
 if (Get-ProcessorBits -eq 64) {
     $cmd = "$cmd /reg:64"
@@ -9,7 +6,7 @@ if (Get-ProcessorBits -eq 64) {
 
 cmd /c "$cmd"
 
-if ($env:COMPUTERNAME -like "RMT*") {
+if ($env:COMPUTERNAME -like "*-HPS-*") {
     powercfg.exe /change monitor-timeout-ac 30 # For Work Computer, 30 minutes
 } else {
     powercfg.exe /change monitor-timeout-ac 0
