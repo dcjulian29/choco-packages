@@ -31,9 +31,9 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     }
 
     if (Test-Path "$rootPath\config.xml") {
-        Move-Item -Path "$rootPath\key.pem" -Destination "$env:LOCALAPPDATA\Syncthing\config.xml"
+        Move-Item -Path "$rootPath\key.pem" -Destination "$env:LOCALAPPDATA\Syncthing\key.pem"
         Move-Item -Path "$rootPath\cert.pem" -Destination "$env:LOCALAPPDATA\Syncthing\cert.pem"
-        Move-Item -Path "$rootPath\config.xml" -Destination "$env:LOCALAPPDATA\Syncthing\key.pem"
+        Move-Item -Path "$rootPath\config.xml" -Destination "$env:LOCALAPPDATA\Syncthing\config.xml"
     } else {
         $c = "$rootPath\${env:COMPUTERNAME}"
 
