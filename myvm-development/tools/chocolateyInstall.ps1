@@ -253,10 +253,11 @@ foreach ($file in $files) {
 
 $GoFolder = "$env:LOCALAPPDATA\Go-Shell"
 
-New-Item -Type Directory -Path $GoFolder | Out-Null
+if (-not (Test-Path $GoFolder)) {
+    New-Item -Type Directory -Path $GoFolder | Out-Null
 
-Set-Content -Path "$GoFolder\go-shell-remember-last.txt" -Value ""
-Set-Content -Path "$GoFolder\go-shell.txt" -Value @"
+    Set-Content -Path "$GoFolder\go-shell-remember-last.txt" -Value ""
+    Set-Content -Path "$GoFolder\go-shell.txt" -Value @"
 etc|C:\etc
 documents|$env:USERPROFILE\documents
 docs|$env:USERPROFILE\documents
@@ -266,18 +267,19 @@ videos|$env:USERPROFILE\videos
 desktop|$env:USERPROFILE\desktop
 downloads|$env:USERPROFILE\downloads
 "@
+}
 
 #------------------------------------------------------------------------------
 
 Write-Output "Adding 'bootstrap.ps1' to run on reboot..."
 
-if (Test-Path "${env:SYSTEMDRIVE}\etc\bootstrap.json" ) {
-    if (Test-Path "${env:SYSTEMDRIVE}\etc\bootstrap.json.old") {
-        Remove-Item "${env:SYSTEMDRIVE}\etc\bootstrap.json.old" -Force
+if (Test-Path "$PSScriptRoot\bootstrap.json" ) {
+    if (Test-Path "$PSScriptRoot\bootstrap.json.old") {
+        Remove-Item "$PSScriptRoot\bootstrap.json.old" -Force
     }
 
-    Move-Item -Path "${env:SYSTEMDRIVE}\etc\bootstrap.json" `
-        -Destination "${env:SYSTEMDRIVE}\etc\bootstrap.json.old" -Force
+    Move-Item -Path "$PSScriptRoot\bootstrap.json" `
+        -Destination "$PSScriptRoot\bootstrap.json.old" -Force
 }
 
 reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Bootstrap `
