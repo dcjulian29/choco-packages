@@ -15,7 +15,7 @@ if (Get-Command "Get-LogFolder" -ErrorAction SilentlyContinue) {
     }
 }
 
-# This scripts that depends on functions that are installed via package depencies:
+# This script depends on functions that are installed via package depencies.
 Import-Module UI -Force -Verbose
 Import-Module Logging -Force -Verbose
 
@@ -32,12 +32,12 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
 
     $c = "$rootPath\${env:COMPUTERNAME}"
 
-    if (Test-Path "$c.xml") {
-      $Key = Get-Content "$c.key"
-      $Cert = Get-Content "$c.cert"
-
-      Copy-Item -Path "$c.xml" -Destination "$env:LOCALAPPDATA\Syncthing\config.xml" -Force
+    if (Test-Path "$c\config.xml") {
+        Copy-Item -Path "$c\key.pem" -Destination "$env:LOCALAPPDATA\Syncthing\config.xml" -Force
+        Copy-Item -Path "$c\cert.pem" -Destination "$env:LOCALAPPDATA\Syncthing\cert.pem" -Force
+        Copy-Item -Path "$c\config.xml" -Destination "$env:LOCALAPPDATA\Syncthing\key.pem" -Force
     } else {
+
         if (Test-Path "$rootPath\server.id") {
             $ClientID = Get-Content "$c.id"
             $ServerID = Get-Content "$rootPath\server.id"
@@ -126,10 +126,10 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
     </options>
 </configuration>
 "@
-    }
 
-    Set-Content -Path "$env:LOCALAPPDATA\Syncthing\cert.pem" -Value $Cert
-    Set-Content -Path "$env:LOCALAPPDATA\Syncthing\key.pem" -Value $Key
+        Set-Content -Path "$env:LOCALAPPDATA\Syncthing\cert.pem" -Value $Cert
+        Set-Content -Path "$env:LOCALAPPDATA\Syncthing\key.pem" -Value $Key
+    }
 
     Start-Process -FilePath "$env:ChocolateyInstall\bin\syncthing.exe" `
         -ArgumentList "-no-restart -no-browser" -WindowStyle Minimized

@@ -1,4 +1,4 @@
-function installPackage($Package) {
+function installPackage($Package,$Reboot=$true) {
   if ($(getSetting $Package)) {
     return
   }
@@ -22,24 +22,26 @@ function installPackage($Package) {
     Write-Warning "And then decide whether to continue..."
 
     Read-Host "Press enter to continue"
+    exit
   }
 
-  if (Test-PendingReboot) {
-    Write-Warning "One of the packages recently installed has set the PendingReboot flag..."
-    Write-Warning "This may cause future packages to fail silently if it check this flag."
-
-    Read-Host "Press enter to restart computer"
-    Restart-Computer -Force
-    Start-Sleep -Seconds 15
+  if (-not $Reboot) {
+    return
   }
+
+  Restart-Computer -Force
+
+  Start-Sleep -Seconds 30
+
+  exit
 }
 
 function getSettingsFile {
-  if (-not (Test-Path "${env:SYSTEMDRIVE}\etc\bootstrap.json")) {
-    ConvertTo-Json @{} | Out-File "${env:SYSTEMDRIVE}\etc\bootstrap.json"
+  if (-not (Test-Path "$PSScriptRoot\bootstrap.json")) {
+    ConvertTo-Json @{} | Out-File "$PSScriptRoot\bootstrap.json"
   }
 
-  Get-Content -Path "${env:SYSTEMDRIVE}\etc\bootstrap.json"
+  Get-Content -Path "$PSScriptRoot\bootstrap.json"
 }
 
 function getSetting($Key) {
@@ -57,18 +59,18 @@ function setSettings($Key, $Value) {
 
   $settings | Add-Member -MemberType NoteProperty -Name $Key -Value $Value
 
-  $settings | ConvertTo-Json | Out-File "${env:SYSTEMDRIVE}\etc\bootstrap.json"
+  $settings | ConvertTo-Json | Out-File "$PSScriptRoot\bootstrap.json"
 }
 
 #------------------------------------------------------------------------------
-
-Start-Transcript "$(Get-LogFileName -Suffix "$env:COMPUTERNAME-bootstrap")"
 
 if ((getSetting "FinishBootstrap") -eq "Yes" ) {
   Write-Warning "This bootstrap script has completed and should be removed from auto run."
   Start-Sleep -Seconds 30
   exit
 }
+
+Start-Transcript "$(Get-LogFileName -Suffix "$env:COMPUTERNAME-bootstrap")"
 
 if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
   setSettings "BootstrapStarted" "Yes"
@@ -78,6 +80,7 @@ if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
   "mytools-scm"
   "mytools-common"
   "mytools-containers"
+  "rancher-desktop"
   "mytools-personal"
   "mytools-database"
   "mydevices-devvm"
@@ -140,29 +143,28 @@ $form.Close()
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
   foreach ($item in $listBox.SelectedItems) {
-    installPackage ("dev-" + $item.Substring(0, $item.IndexOf(' ')).ToLowerInvariant())
+    installPackage ("dev-" + $item.Substring(0, $item.IndexOf(' ')).ToLowerInvariant(), $false)
   }
 }
 
-Set-GitConfigValue -Key "user.email" -Value "julian@julianscorner.com" -Scope Global
-
-if (-not ($(getSetting "FinishBootstrap"))) {
-
-  Write-Output "Turning back on UAC..."
-  reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f
-
-  Write-Output "Removing auto-logon from registry..."
-  reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoAdminLogon /f
-  reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoLogonCount /f
-  reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoLogonSID /f
-  reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultDomainName /f
-  reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultUserName /f
-
-  Write-Output "Removing bootstrap script from registry..."
-  reg delete HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Bootstrap /f
-
-  setSettings "FinishBootstrap" "$(Get-Date)"
+if (Test-Path "${env:SystemDrive}\etc\local_bootstrap.ps1") {
+  Invoke-Expression $(Get-Content "${env:SystemDrive}\etc\local_bootstrap.ps1")
 }
+
+Write-Output "Turning back on UAC..."
+reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f
+
+Write-Output "Removing auto-logon from registry..."
+reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoAdminLogon /f
+reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoLogonCount /f
+reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoLogonSID /f
+reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultDomainName /f
+reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultUserName /f
+
+Write-Output "Removing bootstrap script from registry..."
+reg delete HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Bootstrap /f
+
+setSettings "FinishBootstrap" "$(Get-Date)"
 
 Stop-Transcript
 
