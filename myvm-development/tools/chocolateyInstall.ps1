@@ -30,13 +30,12 @@ if (-not (Test-Path "${env:SYSTEMDRIVE}\home\vm\.stfolder")) {
         New-Item -Path "$env:LOCALAPPDATA\Syncthing" -ItemType Directory | Out-Null
     }
 
-    $c = "$rootPath\${env:COMPUTERNAME}"
-
-    if (Test-Path "$c\config.xml") {
-        Copy-Item -Path "$c\key.pem" -Destination "$env:LOCALAPPDATA\Syncthing\config.xml" -Force
-        Copy-Item -Path "$c\cert.pem" -Destination "$env:LOCALAPPDATA\Syncthing\cert.pem" -Force
-        Copy-Item -Path "$c\config.xml" -Destination "$env:LOCALAPPDATA\Syncthing\key.pem" -Force
+    if (Test-Path "$rootPath\config.xml") {
+        Move-Item -Path "$rootPath\key.pem" -Destination "$env:LOCALAPPDATA\Syncthing\config.xml"
+        Move-Item -Path "$rootPath\cert.pem" -Destination "$env:LOCALAPPDATA\Syncthing\cert.pem"
+        Move-Item -Path "$rootPath\config.xml" -Destination "$env:LOCALAPPDATA\Syncthing\key.pem"
     } else {
+        $c = "$rootPath\${env:COMPUTERNAME}"
 
         if (Test-Path "$rootPath\server.id") {
             $ClientID = Get-Content "$c.id"
