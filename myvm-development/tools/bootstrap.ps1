@@ -1,9 +1,14 @@
-function installPackage($Package,$Reboot=$true) {
+function installPackage {
+  param (
+    [string] $Package,
+    [bool] $Reboot = $true
+  )
+
   if ($(getSetting $Package)) {
     return
   }
 
-  Write-Output "---> Starting Install of $Package..."
+  Write-Output "---> Starting Install of '$Package'"
 
   $logFile = Get-LogFileName -Suffix "$env:COMPUTERNAME-$package"
   $choco = "choco.exe install $Package -y"
@@ -25,15 +30,21 @@ function installPackage($Package,$Reboot=$true) {
     exit
   }
 
+  Write-Output "---> Finished install of '$Package'"
+
   if (-not $Reboot) {
     return
   }
 
+  Write-Output "     Rebooting in 30 seconds..."
+
+  Start-Sleep -Seconds 15
+  Stop-Transcript
+  Start-Sleep -Seconds 15
+
   Restart-Computer -Force
 
-  Start-Sleep -Seconds 30
-
-  exit
+  Start-Sleep -Seconds 600
 }
 
 function getSettingsFile {
@@ -80,75 +91,85 @@ if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
   "mytools-scm"
   "mytools-common"
   "mytools-containers"
-  "rancher-desktop"
   "mytools-personal"
   "mytools-database"
   "mydevices-devvm"
 ) | ForEach-Object { installPackage $_ }
 
-Add-Type -AssemblyName System.Windows.Forms
-Add-Type -AssemblyName System.Drawing
+#------------------------------------------------------------------------------
 
-$form = New-Object System.Windows.Forms.Form
-$form.Text = 'Select Development Packages'
-$form.Size = New-Object System.Drawing.Size(300, 230)
+if (Test-Path "${env:SystemDrive}\etc\bootstrap_default.json") {
+  (Get-Content -Raw -Path "${env:SystemDrive}\etc\bootstrap_default.json" `
+      | ConvertFrom-Json).Packages | ForEach-Object {
+    installPackage ($_, $false)
+  }
+} else {
+  Add-Type -AssemblyName System.Windows.Forms
+  Add-Type -AssemblyName System.Drawing
 
-$OKButton = New-Object System.Windows.Forms.Button
-$OKButton.Location = New-Object System.Drawing.Point(75,150)
-$OKButton.Size = New-Object System.Drawing.Size(75,23)
-$OKButton.Text = 'OK'
-$OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+  $form = New-Object System.Windows.Forms.Form
+  $form.Text = 'Select Development Packages'
+  $form.Size = New-Object System.Drawing.Size(300, 230)
 
-$CancelButton = New-Object System.Windows.Forms.Button
-$CancelButton.Location = New-Object System.Drawing.Point(150,150)
-$CancelButton.Size = New-Object System.Drawing.Size(75,23)
-$CancelButton.Text = 'Cancel'
-$CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+  $OKButton = New-Object System.Windows.Forms.Button
+  $OKButton.Location = New-Object System.Drawing.Point(75,150)
+  $OKButton.Size = New-Object System.Drawing.Size(75,23)
+  $OKButton.Text = 'OK'
+  $OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+  $form.AcceptButton = $OKButton
+  $form.Controls.Add($OKButton)
 
-$label = New-Object System.Windows.Forms.Label
-$label.Location = New-Object System.Drawing.Point(10,20)
-$label.Size = New-Object System.Drawing.Size(280,20)
-$label.Text = 'Please select development packages to install:'
-$form.Controls.Add($label)
+  $CancelButton = New-Object System.Windows.Forms.Button
+  $CancelButton.Location = New-Object System.Drawing.Point(150,150)
+  $CancelButton.Size = New-Object System.Drawing.Size(75,23)
+  $CancelButton.Text = 'Cancel'
+  $CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+  $form.CancelButton = $CancelButton
+  $form.Controls.Add($CancelButton)
 
-$listBox = New-Object System.Windows.Forms.Listbox
-$listBox.Location = New-Object System.Drawing.Point(10,40)
-$listBox.Size = New-Object System.Drawing.Size(260,20)
+  $label = New-Object System.Windows.Forms.Label
+  $label.Location = New-Object System.Drawing.Point(10,20)
+  $label.Size = New-Object System.Drawing.Size(280,20)
+  $label.Text = 'Please select development packages to install:'
+  $form.Controls.Add($label)
 
-$listBox.SelectionMode = 'MultiExtended'
+  $listBox = New-Object System.Windows.Forms.Listbox
+  $listBox.Location = New-Object System.Drawing.Point(10,40)
+  $listBox.Size = New-Object System.Drawing.Size(260,20)
 
-[void] $listBox.Items.Add('CSharp (.Net, Razor, Blazor)')
-[void] $listBox.Items.Add('Go ')
-[void] $listBox.Items.Add('Mobile Development (React Native)')
-[void] $listBox.Items.Add('Node JS')
-[void] $listBox.Items.Add('Python ')
-[void] $listBox.Items.Add('Web (Html, CSS, Java, Vue? React?)')
+  $listBox.SelectionMode = 'MultiExtended'
 
-$listBox.Height = 100
-$form.Controls.Add($listBox)
-$form.Topmost = $true
-$form.MaximumSize = $form.Size
-$form.MinimumSize = $form.Size
-$form.MaximizeBox = $false
-$form.MinimizeBox = $false
+  [void] $listBox.Items.Add('CSharp (.Net, Razor, Blazor)')
+  [void] $listBox.Items.Add('Go ')
+  [void] $listBox.Items.Add('Mobile Development (React Native)')
+  [void] $listBox.Items.Add('Node JS')
+  [void] $listBox.Items.Add('Python ')
+  [void] $listBox.Items.Add('Web (Html, CSS, Java, Vue? React?)')
 
-$result = $form.ShowDialog()
+  $listBox.Height = 100
+  $form.Controls.Add($listBox)
+  $form.Topmost = $true
+  $form.MaximumSize = $form.Size
+  $form.MinimumSize = $form.Size
+  $form.MaximizeBox = $false
+  $form.MinimizeBox = $false
 
-$form.Close()
+  $result = $form.ShowDialog()
 
-if ($result -eq [System.Windows.Forms.DialogResult]::OK)
-{
-  foreach ($item in $listBox.SelectedItems) {
-    installPackage ("dev-" + $item.Substring(0, $item.IndexOf(' ')).ToLowerInvariant(), $false)
+  $form.Close()
+
+  if ($result -eq [System.Windows.Forms.DialogResult]::OK)
+  {
+    foreach ($item in $listBox.SelectedItems) {
+      installPackage ("dev-" + $item.Substring(0, $item.IndexOf(' ')).ToLowerInvariant(), $false)
+    }
   }
 }
 
-if (Test-Path "${env:SystemDrive}\etc\local_bootstrap.ps1") {
-  Invoke-Expression $(Get-Content "${env:SystemDrive}\etc\local_bootstrap.ps1")
+#------------------------------------------------------------------------------
+
+if (Test-Path "${env:SystemDrive}\etc\bootstrap_local.ps1") {
+  Invoke-Expression $(Get-Content "${env:SystemDrive}\etc\bootstrap_local.ps1")
 }
 
 Write-Output "Turning back on UAC..."
@@ -167,5 +188,7 @@ reg delete HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Bootstrap /f
 setSettings "FinishBootstrap" "$(Get-Date)"
 
 Stop-Transcript
+
+#------------------------------------------------------------------------------
 
 Update-AllChocolateyPackages
