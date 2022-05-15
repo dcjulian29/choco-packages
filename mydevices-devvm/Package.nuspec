@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-devvm</id>
-    <version>2203.7.2</version>
+    <version>2205.15.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>A package as the base for the VM I use for software development.</description>
@@ -12,6 +12,7 @@
       <dependency id="mytools-scm" />
       <dependency id="mytools-common" />
       <dependency id="mytools-containers" />
+      <dependency id="rancher-desktop" />
       <dependency id="mytools-personal" />
       <dependency id="mytools-database" />
       <dependency id="mysettings-devenv" />
