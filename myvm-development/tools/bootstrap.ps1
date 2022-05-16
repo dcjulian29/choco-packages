@@ -91,6 +91,11 @@ if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
   "mytools-scm"
   "mytools-common"
   "mytools-containers"
+) | ForEach-Object { installPackage $_ }
+
+& "C:\Program Files\Docker\Docker\Docker Desktop.exe" -AcceptLicense
+
+@(
   "mytools-personal"
   "mytools-database"
   "mydevices-devvm"
