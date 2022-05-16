@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mytools-containers</id>
-    <version>2203.6.1</version>
+    <version>2205.15.1</version>
     <authors>Julian Easterling</authors>
     <description>Custom packages and settings related to running containers.</description>
     <tags>settings containers docker kubernetes k8s k3s</tags>

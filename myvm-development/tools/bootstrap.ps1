@@ -36,11 +36,11 @@ function installPackage {
     return
   }
 
-  Write-Output "     Rebooting in 30 seconds..."
+  Write-Output "     Rebooting in 20 seconds..."
 
-  Start-Sleep -Seconds 15
+  Start-Sleep -Seconds 10
   Stop-Transcript
-  Start-Sleep -Seconds 15
+  Start-Sleep -Seconds 10
 
   Restart-Computer -Force
 
@@ -91,11 +91,6 @@ if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
   "mytools-scm"
   "mytools-common"
   "mytools-containers"
-) | ForEach-Object { installPackage $_ }
-
-& "C:\Program Files\Docker\Docker\Docker Desktop.exe" -AcceptLicense
-
-@(
   "mytools-personal"
   "mytools-database"
   "mydevices-devvm"
