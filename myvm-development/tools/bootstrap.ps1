@@ -185,7 +185,7 @@ reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Defau
 Write-Output "Removing bootstrap script from registry..."
 reg delete HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Bootstrap /f
 
-setSettings "FinishBootstrap" "$(Get-Date)"
+setSettings "FinishBootstrap" "Yes"
 
 Stop-Transcript
 
