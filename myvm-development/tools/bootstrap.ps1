@@ -101,7 +101,7 @@ if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
 if (Test-Path "${env:SystemDrive}\etc\bootstrap_default.json") {
   (Get-Content -Raw -Path "${env:SystemDrive}\etc\bootstrap_default.json" `
       | ConvertFrom-Json).Packages | ForEach-Object {
-    installPackage ($_, $false)
+    installPackage $_ $false
   }
 } else {
   Add-Type -AssemblyName System.Windows.Forms
