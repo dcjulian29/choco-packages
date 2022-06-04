@@ -81,11 +81,13 @@ if ((getSetting "FinishBootstrap") -eq "Yes" ) {
   exit
 }
 
-Start-Transcript "$(Get-LogFileName -Suffix "$env:COMPUTERNAME-bootstrap")"
+Start-Transcript "$(Get-LogFileName -Suffix "$env:COMPUTERNAME-bootstrap-----")"
 
 if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
   setSettings "BootstrapStarted" "Yes"
 }
+
+Start-Sleep -Seconds 2
 
 @(
   "mytools-scm"
@@ -173,22 +175,39 @@ if (Test-Path "${env:SystemDrive}\etc\bootstrap_local.ps1") {
 }
 
 Write-Output "Turning back on UAC..."
-reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f
+Remove-ItemProperty -Name "EnableLUA" `
+  -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Force
+New-ItemProperty -Name "EnableLUA" `
+  -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" `
+  -PropertyType DWORD -Value 1 `
+  -Force -ErrorAction SilentlyContinue | Out-Null
+
 
 Write-Output "Removing auto-logon from registry..."
-reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoAdminLogon /f
-reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoLogonCount /f
-reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoLogonSID /f
-reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultDomainName /f
-reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultUserName /f
+Remove-ItemProperty -Name "AutoAdminLogon" `
+  -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Force
+Remove-ItemProperty -Name "AutoLogonCount" `
+  -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Force
+Remove-ItemProperty -Name "AutoLogonSID" `
+  -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Force
+Remove-ItemProperty -Name "DefaultDomainName" `
+  -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Force
+Remove-ItemProperty -Name "DefaultUserName" `
+  -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Force
 
 Write-Output "Removing bootstrap script from registry..."
-reg delete HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Bootstrap /f
+Remove-ItemProperty -Name "Bootstrap" `
+  -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -Force
 
 setSettings "FinishBootstrap" "Yes"
 
+Write-Output "                              ."
+Write-Output "     Rebooting in 20 seconds..."
+
+Start-Sleep -Seconds 10
 Stop-Transcript
+Start-Sleep -Seconds 10
 
-#------------------------------------------------------------------------------
+Restart-Computer -Force
 
-Update-AllChocolateyPackages
+Start-Sleep -Seconds 600

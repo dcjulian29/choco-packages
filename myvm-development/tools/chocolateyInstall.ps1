@@ -282,8 +282,10 @@ if (Test-Path "$PSScriptRoot\bootstrap.json" ) {
         -Destination "$PSScriptRoot\bootstrap.json.old" -Force
 }
 
-reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Bootstrap `
-    /t REG_SZ /d "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File `"$PSScriptRoot\bootstrap.ps1`" -ExecutionPolicy Bypass" /f
+New-ItemProperty -Name "Bootstrap" `
+  -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -PropertyType string `
+  -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File `"$PSScriptRoot\bootstrap.ps1`" -ExecutionPolicy Bypass" `
+  -Force -ErrorAction SilentlyContinue | Out-Null
 
 Write-Output "Initial Setup of Development VM Finished. Rebooting in 30 seconds..."
 
