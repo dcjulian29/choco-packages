@@ -16,3 +16,13 @@ $config | ForEach-Object {
         & $git config --global --replace-all $key $value
     }
 }
+
+# Adding some git commands from https://github.com/tj/git-extras
+# that I've found and use on Linux OS...
+
+$gitroot = ($(Find-Git)).Replace('\bin\git.exe', '')
+$binaries = "$gitroot\usr\bin"
+$manuals = "$gitroot\mingw64\share\doc\git-doc"
+
+Copy-Item -Path $PSScriptRoot/../contents/bin/* -Destination $binaries -Force
+Copy-Item -Path $PSScriptRoot/../contents/man/* -Destination $manuals -Force

@@ -21,3 +21,18 @@ do
 done < $INPUT
 
 IFS=$OLDIFS
+DIR=$(mktemp -t -d git-extras-install.XXXXXXXXXX)
+
+cd "$dir"
+
+echo "Setting up 'git-extras'...."
+git clone https://github.com/tj/git-extras.git
+
+cd git-extras
+git checkout
+
+$(git describe --tags $(git rev-list --tags --max-count=1)) &> /dev/null
+
+sudo make install
+
+rm -rf "$dir"
