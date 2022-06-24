@@ -52,7 +52,8 @@ choco source add --name 'dcjulian29-chocolatey' `
   --source 'https://www.myget.org/F/dcjulian29-chocolatey/api/v2' `
   --priority 2
 
-choco source add --name 'choco' --source 'https://chocolatey.org/api/v2' `
+choco source add --name 'choco' `
+  --source 'https://chocolatey.org/api/v2' `
   --priority 3
 
 #------------------------------------------------------------------------------
