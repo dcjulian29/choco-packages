@@ -10,6 +10,8 @@
 "core.filemode","false"
 "core.editor","'C:/Program Files/notepad++/notepad++.exe' -multiInst -nosession"
 
+"init.defaultbranch","main"
+
 "credential.helper","manager-core"
 
 "push.default","upstream"
