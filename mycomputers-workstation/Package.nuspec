@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation</id>
-    <version>2205.1.1</version>
+    <version>2206.27.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my workstation computer configurations.</description>
@@ -11,6 +11,7 @@
       <dependency id="mycomputers-common" />
       <dependency id="mysettings-console" />
       <dependency id="mysettings-explorer" />
+      <dependency id="mysettings-power" />
       <dependency id="mysettings-notepadplusplus" />
       <dependency id="mysettings-terminal" />
       <dependency id="powershell-core" />
