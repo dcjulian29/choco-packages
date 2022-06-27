@@ -13,3 +13,11 @@ if ($null -ne $key.GetValue("Executor", $null)) {
 
 New-ItemProperty -Path $location -Name Executor `
     -Value "$PSScriptRoot\executor-run.cmd" | Out-Null
+
+if (-not (Test-Path "${env:USERPROFILE}\.uwp")) {
+    New-Item -Path "${env:USERPROFILE}\.uwp" -ItemType Directory | Out-Null
+}
+
+if (-not (Test-Path "${env:USERPROFILE}\.url")) {
+    New-Item -Path "${env:USERPROFILE}\.url" -ItemType Directory | Out-Null
+}

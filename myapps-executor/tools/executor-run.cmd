@@ -6,34 +6,37 @@ set EXETC=%SYSTEMDRIVE%\etc\executor
 set EXDST=%TEMP%\executor
 
 if exist %EXDST% (
-    echo Stopping the running Executor process...
-    taskkill /IM executor.exe
-  
-    ping 127.0.0.1 -n 2 >NUL
+  echo Stopping the running Executor process...
+  taskkill /IM executor.exe
 
-    echo Removing existing temporary files...
+  ping 127.0.0.1 -n 2 >NUL
+
+  echo Removing existing temporary files...
+  rmdir /s /q %EXDST% >nul
+
+  ping 127.0.0.1 -n 2 >NUL
+
+  if exist %EXDST% (
+    echo ...
     rmdir /s /q %EXDST% >nul
-    ping 127.0.0.1 -n 2 >NUL
-    if exist %EXDST% (
-        echo ...
-        rmdir /s /q %EXDST% >nul
-    )
+  )
 
-    if exist %EXDST% (
-        echo A process has a lock on the directory, please remove it manually.
-        pause
-        
-        :: One more try...
-        rmdir /s /q %EXDST% >nul
-    )
+  if exist %EXDST% (
+    echo A process has a lock on the directory, please remove it manually.
+    pause
+
+    :: One more try...
+    rmdir /s /q %EXDST%/*
+    rmdir /s /q %EXDST%
+  )
 )
 
 if not exist %EXDST$ (
-    mkdir %EXDST%
+  mkdir %EXDST%
 )
 
 if exist %EXETC%\executor.ini (
-    copy /Y %EXETC%\executor.ini %EXDST% >nul
+  copy /Y %EXETC%\executor.ini %EXDST% >nul
 )
 
 copy %~dp0\executor.exe %EXDST% >nul
