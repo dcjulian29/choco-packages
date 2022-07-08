@@ -5,11 +5,11 @@ if (Test-Path "../../searchmyfiles-julian") {
 }
 
 $url = 'http://www.nirsoft.net/utils/searchmyfiles.zip'
-$cksum = '6dcb957e93ceaaa388da3da62d70cde9268746340e9d9943b63df245a1dc1d4f'
+$cksum = 'b60b59c1a8088bae4315e229b4cea7fe9606c175f31408a4803e80fe7179162b'
 
 if ([Environment]::Is64BitOperatingSystem) {
     $url = 'http://www.nirsoft.net/utils/searchmyfiles-x64.zip'
-    $cksum = 'acebecb9079c79517b2c45678e7b14f212c40d37592a58bfd793ce26728100ec'
+    $cksum = 'cd75a560ba59f0b3030c022e8919657e6eedd3f48c95dd0fc2acdfa51c33a326'
 }
 
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
