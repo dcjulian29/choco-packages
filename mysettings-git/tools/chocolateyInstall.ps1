@@ -1,11 +1,4 @@
-if (Test-Path "$env:ProgramFiles\Git") {
-    $git = "$env:ProgramFiles\Git\bin\git.exe"
-}
-
-if (Test-Path "${env:ProgramFiles(x86)}\Git") {
-    $git = "${env:ProgramFiles(x86)}\Git\bin\git.exe"
-}
-
+$git = Find-Git
 $config =  Import-Csv -Path "$PSScriptRoot\config.csv"
 
 $config | ForEach-Object {
@@ -20,7 +13,7 @@ $config | ForEach-Object {
 # Adding some git commands from https://github.com/tj/git-extras
 # that I've found and use on Linux OS...
 
-$gitroot = ($(Find-Git)).Replace('\bin\git.exe', '')
+$gitroot = $git.Replace('\bin\git.exe', '')
 $binaries = "$gitroot\usr\bin"
 $manuals = "$gitroot\mingw64\share\doc\git-doc"
 
