@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# $1 Commit SHA1 to Verify - Defualt: HEAD
+COMMIT="HEAD"
+
+test -z $1 -gt 1 > /dev/null 2>&1 && COMMIT="$1"
+
+# Get Repository's signature format
+SIGNTYPE=$(git config gpg.format)
+
+test -z $SIGNTYPE && echo "No signature mechanism in use." 1>&2 && exit 1
+
+SIGNED=$(git show --show-signature $COMMIT)
+[ $? -ne 0 ] && echo "commit isn't signed or has expired or is not yet valid." && exit 1
+
+case "$SIGNTYPE" in
+  x509)
+    git cat-file commit $COMMIT | sed -n '/BEGIN/, /END/p' | sed 's/^ //g' | sed 's/gpgsig //g' | sed 's/SIGNED MESSAGE/PKCS7/g' | openssl pkcs7 -print -print_certs -text
+    ;;
+
+  gpg)
+    echo "###Future Enhancement. Sorry." && exit 127
+    ;;
+
+  *)
+    echo "Unsupport signature mechanism in use." && exit 1
+    ;;
+esac
