@@ -20,19 +20,31 @@ do
     git config --global --replace-all $key $value
 done < $INPUT
 
+git config --global --replace-all core.editor nano
+git config --global --replace-all core.autocrlf false
+
+echo "Setting up Git Credential Manager..."
+
+wget -O /tmp/gcm.deb https://github.com/GitCredentialManager/git-credential-manager/releases/latest
+sudo dpkg -i /tmp/gcm.deb
+git-credential-manger-core configure
+
+git config --global --replace-all credential.credentialStore = secretservice
+
+echo "Setting up 'git-extras'...."
 IFS=$OLDIFS
 DIR=$(mktemp -t -d git-extras-install.XXXXXXXXXX)
 
 cd "$dir"
 
-echo "Setting up 'git-extras'...."
 git clone https://github.com/tj/git-extras.git
-
 cd git-extras
-git checkout
-
-$(git describe --tags $(git rev-list --tags --max-count=1)) &> /dev/null
+git checkout $(git describe --tags $(git rev-list --tags --max-count=1)) &> /dev/null
 
 sudo make install
-
+cd ..
 rm -rf "$dir"
+
+echo "Installing Gitflow-AVH..."
+wget https://raw.githubusercontent.com/petervanderdoes/gitflow-avh/develop/contrib/gitflow-installer.sh
+sudo bash gitflow-installer.sh install stable
