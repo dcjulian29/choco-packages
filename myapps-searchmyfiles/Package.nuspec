@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>myapps-searchmyfiles</id>
-    <version>3.20.0</version>
+    <version>3.21.0</version>
     <authors>Nir Sofer</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>http://www.nirsoft.net/utils/search_my_files.html</licenseUrl>
