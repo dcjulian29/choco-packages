@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mysettings-freecommander</id>
+    <version>2208.9.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+   <description>My custom configuration and setup for FreeCommander XE.</description>
+    <tags>freecommander file manager xplorer</tags>
+    <dependencies>
+      <dependency id="freecommander-xe.install" />
+    </dependencies>
+  </metadata>
+</package>
