@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2205.1.1</version>
+    <version>2208.9.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -33,6 +33,7 @@
       <dependency id="googlechrome" />
       <dependency id="keepass" />
       <dependency id="python" />
+      <dependency id="mysettings-freecommander"
     </dependencies>
   </metadata>
 </package>
