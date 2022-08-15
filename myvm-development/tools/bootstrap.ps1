@@ -171,7 +171,7 @@ if (Test-Path "${env:SystemDrive}\etc\bootstrap_default.json") {
 #------------------------------------------------------------------------------
 
 if (Test-Path "${env:SystemDrive}\etc\bootstrap_local.ps1") {
-  Invoke-Expression $(Get-Content "${env:SystemDrive}\etc\bootstrap_local.ps1")
+  & ${env:SystemDrive}\etc\bootstrap_local.ps1
 }
 
 Write-Output "Turning back on UAC..."
