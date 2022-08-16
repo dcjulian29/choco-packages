@@ -10,39 +10,26 @@ function installPackages($packages) {
     }
 }
 
-if (Test-VisualStudioInstalledVersion 2022) {
-    Write-Output "====== Visual Studio 2022 ====="
-    installPackages @(
-        "EWoodruff.VisualStudioSpellCheckerVS2022andLater"
-        "HaloSugar.MonokaiPro"
-        "LaurentKempe.GitDiffMargin"
-        "MadsKristensen.FileIcons"
-        "NikolayBalakin.Outputenhancer"
-    )
-}
-
-if (Test-VisualStudioInstalledVersion 2019) {
-    Write-Output "====== Visual Studio 2019 ====="
-    installPackages @(
-        "pid011.MonokaiVS"
-        "ErlandR.ReAttach"
-        "EWoodruff.VisualStudioSpellCheckerVS2017andLater"
-        "GitHub.GitHubExtensionforVisualStudio"
-        "HaloSugar.MonokaiPro"
-        "LaurentKempe.GitDiffMargin"
-        "MadsKristensen.EditorConfig"
-        "MadsKristensen.FileIcons"
-        "MadsKristensen.ignore"
-        "MadsKristensen.SyntaxHighlightingPack"
-        "MadsKristensen.TrailingWhitespaceVisualizer"
-        "NikolayBalakin.Outputenhancer"
-        "PaulHarrington.PerfWatsonMonitor-9621"
-        "SergeyVlasov.FixFileEncoding"
-        "VisualStudioPlatformTeam.FixMixedTabs"
-        "VisualStudioPlatformTeam.SolutionErrorVisualizer"
-        "VisualStudioPlatformTeam.SyntacticLineCompression"
-    )
-}
+installPackages @(
+    "AndreasReischuck.SemanticColorizer"
+    "EWoodruff.VisualStudioSpellCheckerVS2022andLater"
+    "idex.vsthemepack"
+    "ErlandR.ReAttach"
+    "GitHub.GitHubExtensionforVisualStudio"
+    "LaurentKempe.GitDiffMargin"
+    "MadsKristensen.EditorConfig"
+    "MadsKristensen.FileIcons"
+    "MadsKristensen.MarkdownEditor2"
+    "MadsKristensen.Terraform"
+    "MadsKristensen.TrailingWhitespace64"
+    "MadsKristensen.Tweaks2022"
+    "MikeWard-AnnArbor.VSColorOutput64"
+    "PaulHarrington.EditorGuidelinesPreview"
+    "SergeyVlasov.FixFileEncoding"
+    "VisualStudioPlatformTeam.FixMixedTabs2022"
+    "VisualStudioPlatformTeam.SyntacticLineCompression2022"
+    "vs-publisher-57624.GitFlowforVisualStudio2022"
+)
 
 $file = "${env:TEMP}\$([Guid]::NewGuid()).vsix"
 

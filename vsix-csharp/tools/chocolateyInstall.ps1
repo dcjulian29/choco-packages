@@ -10,39 +10,19 @@ function installPackages($packages) {
     }
 }
 
-if (Test-VisualStudioInstalledVersion 2022) {
-    Write-Output "====== Visual Studio 2022 ====="
-    installPackages @(
-        "azemoh.onemonokai"
-        "FinnGegenmantel.doxygenComments"
-        "josefpihrt.Roslynator2022"
-        "jsakamoto.CMethodsCodeSnippets"
-        "LBHSR.ParallelChecker"
-        "MattLaceyLtd.WarnAboutTODOs"
-        "RandomEngy.UnitTestBoilerplateGenerator"
-        "SonarSource.SonarLintforVisualStudio2022"
-        "SteveCadwallader.CodeMaidVS2022"
-    )
-}
-
-if (Test-VisualStudioInstalledVersion 2019) {
-    Write-Output "====== Visual Studio 2019 ====="
-    installPackages @(
-        "azemoh.onemonokai"
-        "AndreasReischuck.SemanticColorizer"
-        "DavidPerfors.RegionExpander"
-        "DavidProthero.NgrokExtensions"
-        "FinnGegenmantel.doxygenComments"
-        "josefpihrt.Roslynator2022"
-        "jsakamoto.CMethodsCodeSnippets"
-        "LBHSR.ParallelChecker"
-        "MadsKristensen.PackageSecurityAlerts"
-        "MattLaceyLtd.WarnAboutTODOs"
-        "mayerwin.DisableNoSourceAvailableTab"
-        "PumaSecurity.PumaScan"
-        "RandomEngy.UnitTestBoilerplateGenerator"
-        "sergeb.GhostDoc"
-        "SonarSource.SonarLintforVisualStudio2019"
-        "SteveCadwallader.CodeMaid"
-    )
-}
+installPackages @(
+    "FinnGegenmantel.doxygenComments"
+    "josefpihrt.Roslynator2022"
+    "jsakamoto.CMethodsCodeSnippets"
+    "LBHSR.ParallelChecker"
+    "MattLaceyLtd.WarnAboutTODOs"
+    "PumaSecurity.PumaScan2022"
+    "RandomEngy.UnitTestBoilerplateGenerator"
+    "sergeb.GhostDoc"
+    "SonarSource.SonarLintforVisualStudio2022"
+    "SteveCadwallader.CodeMaidVS2022"
+    "TechTalkSpecFlowTeam.SpecFlowForVisualStudio2022"
+    "TomEnglert.Wax"
+    "WixToolset.WixToolsetVisualStudio2022Extension"
+    "vscps.SlowCheetah-XMLTransforms-VS2022"
+)

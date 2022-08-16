@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dev-mobile</id>
-    <version>2112.1.1</version>
+    <version>2208.16.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages I use when doing Mobile development.</description>
@@ -12,11 +12,7 @@
       <dependency id="visualstudio2022professional" />
       <dependency id="visualstudio2022-workload-netcrossplat" />
       <dependency id="visualstudio2022-workload-xamarinbuildtools" />
-      <dependency id="visualstudio2019professional" />
-      <dependency id="visualstudio2019-workload-netcrossplat" />
-      <dependency id="visualstudio2019-workload-xamarinbuildtools" />
       <dependency id="mysettings-vsix" />
-      <dependency id="netfx-4.8-devpack" />
     </dependencies>
   </metadata>
 </package>

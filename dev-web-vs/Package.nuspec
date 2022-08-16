@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dev-web-vs</id>
-    <version>2112.1.2</version>
+    <version>2208.16.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages I use when doing web development.</description>
@@ -12,9 +12,6 @@
       <dependency id="visualstudio2022professional" />
       <dependency id="visualstudio2022-workload-netweb" />
       <dependency id="visualstudio2022-workload-azure" />
-      <dependency id="visualstudio2019professional" />
-      <dependency id="visualstudio2019-workload-netweb" />
-      <dependency id="visualstudio2019-workload-azure" />
       <dependency id="vsix-web" />
     </dependencies>
   </metadata>
