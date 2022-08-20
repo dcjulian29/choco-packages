@@ -17,7 +17,7 @@
       <dependency id="mysettings-syncthing" />
       <dependency id="dotnetcore-sdk" />
       <dependency id="dotnet-sdk" />
-      <dependency id="vscode-csharp" />
+      <dependency id="mysettings-vscode-csharp" />
       <dependency id="visualstudio2019professional" />
       <dependency id="visualstudio2019-workload-manageddesktop" />
       <dependency id="visualstudio2019-workload-netweb" />
