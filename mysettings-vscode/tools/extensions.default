@@ -1,11 +1,9 @@
-azemoh.one-monokai
 DavidAnson.vscode-markdownlint
 donjayamanne.githistory
 DotJoshJohnson.xml
 eamodio.gitlens
 EditorConfig.EditorConfig
 GitHub.vscode-pull-request-github
-Gruntfuggly.todo-tree
 HashiCorp.terraform
 hediet.vscode-drawio
 jebbs.plantuml
@@ -20,5 +18,4 @@ samuelcolvin.jinjahtml
 shardulm94.trailing-spaces
 streetsidesoftware.code-spell-checker
 waderyan.gitblame
-wayou.vscode-todo-highlight
 yzhang.markdown-all-in-one
