@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dev-go</id>
-    <version>2206.22.1</version>
+    <version>2208.20.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages I use when doing Go development.</description>
@@ -10,7 +10,7 @@
     <dependencies>
       <dependency id="golang" />
       <dependency id="mingw" />
-      <dependency id="vscode-go" />
+      <dependency id="mysettings-vscode-go" />
     </dependencies>
   </metadata>
 </package>
