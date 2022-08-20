@@ -8,7 +8,7 @@
     <description>These are the packages I use when doing Mobile development.</description>
     <tags>dev-mobile mydev</tags>
     <dependencies>
-      <dependency id="vscode-mobile" />
+      <dependency id="mysettings-vscode-mobile" />
       <dependency id="visualstudio2022professional" />
       <dependency id="visualstudio2022-workload-netcrossplat" />
       <dependency id="visualstudio2022-workload-xamarinbuildtools" />
