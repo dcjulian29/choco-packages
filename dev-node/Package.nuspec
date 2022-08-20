@@ -9,7 +9,7 @@
     <tags>dev-node mydev</tags>
     <dependencies>
       <dependency id="nodejs" />
-      <dependency id="vscode-node" />
+      <dependency id="mysettings-vscode-node" />
     </dependencies>
   </metadata>
 </package>

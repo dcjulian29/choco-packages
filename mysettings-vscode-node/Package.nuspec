@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>vscode-node</id>
-    <version>2111.29.1</version>
+    <id>mysettings-vscode-node</id>
+    <version>2208.20.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom extension I like to use in VS Code.</description>
