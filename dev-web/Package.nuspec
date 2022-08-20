@@ -8,7 +8,7 @@
     <description>These are the packages I use when doing web development.</description>
     <tags>dev-web mydev</tags>
     <dependencies>
-      <dependency id="vscode-web" />
+      <dependency id="mysettings-vscode-web" />
       <dependency id="nswagstudio" />
     </dependencies>
   </metadata>
