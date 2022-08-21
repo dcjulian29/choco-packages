@@ -27,7 +27,7 @@
       <dependency id="visualstudio2022-workload-netweb" />
       <dependency id="visualstudio2022-workload-azure" />
       <dependency id="netfx-4.8-devpack" />
-      <dependency id="vsix-csharp" />
+      <dependency id="mysettings-vsix-csharp" />
       <dependency id="gittfs" />
       <dependency id="temurinjre" />
       <dependency id="postman" />
