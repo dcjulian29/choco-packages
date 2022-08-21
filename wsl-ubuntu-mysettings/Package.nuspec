@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mysettings-wsl-ubuntu</id>
+    <id>wsl-ubuntu-mysettings</id>
     <version>2208.20.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My "final" install of Ubuntu for WSL</description>
-    <tags>mysettings-wsl-ubuntu ubuntu wsl</tags>
+    <tags>wsl-ubuntu-mysettings ubuntu wsl</tags>
     <dependencies>
       <dependency id="wsl-ubuntu" />
     </dependencies>
