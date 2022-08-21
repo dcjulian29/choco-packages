@@ -22,7 +22,7 @@ if (-not $configured) {
         -ArgumentList "run usermod -aG sudo $($env:USERNAME)" -NoNewWindow -Wait
 
     Start-Process -FilePath $ubuntu `
-        -ArgumentList "run echo '$($env:USERNAME) ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo" `
+        -ArgumentList "run echo '$($env:USERNAME) ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/$($env:USERNAME)" `
         -NoNewWindow -Wait
 
     Start-Process -FilePath $ubuntu `
