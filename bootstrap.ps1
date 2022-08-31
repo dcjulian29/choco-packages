@@ -24,23 +24,7 @@ FolderType=Generic
 "@
 
 attrib.exe +S +H $env:SYSTEMDRIVE\home\desktop.ini
-attrib.exe +S $env:SYSTEMDRIVE\home
-
-#------------------------------------------------------------------------------
-
-mkdir $env:SYSTEMDRIVE\tools
-
-Set-Content $env:SYSTEMDRIVE\tools\desktop.ini @"
-[.ShellClassInfo]
-IconResource=$env:WINDIR\system32\SHELL32.dll,218
-[ViewState]
-Mode=
-Vid=
-FolderType=Generic
-"@
-
-attrib.exe +S +H $env:SYSTEMDRIVE\tools\desktop.ini
-attrib.exe +S $env:SYSTEMDRIVE\tools
+attrib.exe +R $env:SYSTEMDRIVE\home
 
 #------------------------------------------------------------------------------
 

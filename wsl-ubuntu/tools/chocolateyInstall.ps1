@@ -30,8 +30,8 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
 IconResource=$env:SYSTEMDRIVE\etc\executor\ubuntu.ico,0
 "@
 
-  attrib +S +H $env:SYSTEMDRIVE\Ubuntu\desktop.ini
-  attrib +R $env:SYSTEMDRIVE\Ubuntu
+  attrib.exe +S +H $env:SYSTEMDRIVE\Ubuntu\desktop.ini
+  attrib.exe +R $env:SYSTEMDRIVE\Ubuntu
 
   Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
   Remove-Item -Path $env:TEMP\ubuntu -Recurse -Force | Out-Null

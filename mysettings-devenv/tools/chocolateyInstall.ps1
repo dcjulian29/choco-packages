@@ -17,7 +17,7 @@ FolderType=Generic
 "@
 
 attrib.exe +S +H $env:SYSTEMDRIVE\code\desktop.ini
-attrib.exe +S $env:SYSTEMDRIVE\code
+attrib.exe +R $env:SYSTEMDRIVE\code
 
 Import-Module "${env:USERPROFILE}\Documents\WindowsPowerShell\Modules\go\go.psm1"
 
