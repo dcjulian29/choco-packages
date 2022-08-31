@@ -27,11 +27,11 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
 
   Set-Content $env:SYSTEMDRIVE\Ubuntu\desktop.ini @"
 [.ShellClassInfo]
-IconResource=$env:SYSTEMDRIVE\Ubuntu\ubuntu2204.exe,0
+IconResource=$env:SYSTEMDRIVE\etc\executor\ubuntu.ico,0
 "@
 
   attrib +S +H $env:SYSTEMDRIVE\Ubuntu\desktop.ini
-  attrib +S $env:SYSTEMDRIVE\Ubuntu
+  attrib +R $env:SYSTEMDRIVE\Ubuntu
 
   Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
   Remove-Item -Path $env:TEMP\ubuntu -Recurse -Force | Out-Null
