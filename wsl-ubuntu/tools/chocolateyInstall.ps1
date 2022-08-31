@@ -27,7 +27,7 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
 
   Set-Content $env:SYSTEMDRIVE\Ubuntu\desktop.ini @"
 [.ShellClassInfo]
-IconResource=$env:SYSTEMDRIVE\Ubuntu\ubuntu2004.exe,0
+IconResource=$env:SYSTEMDRIVE\Ubuntu\ubuntu2204.exe,0
 "@
 
   attrib +S +H $env:SYSTEMDRIVE\Ubuntu\desktop.ini
