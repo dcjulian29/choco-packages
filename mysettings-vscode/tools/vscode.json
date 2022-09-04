@@ -33,13 +33,13 @@
                    },
     "[yaml]":  {
                    "editor.tabSize":  2,
-                   "editor.autoIndent":  true
+                   "editor.autoIndent":  "full"
                },
     "workbench.startupEditor":  "welcomePageInEmptyWorkbench",
     "terminal.integrated.enablePersistentSessions": false,
     "editor.fontFamily": "CaskaydiaCove NF",
     "redhat.telemetry.enabled": false,
-    "workbench.colorTheme": "One Monokai",
+    "workbench.colorTheme": "Monokai",
     "editor.tabSize": 2,
     "editor.codeLensFontSize": 11,
     "editor.inlayHints.fontSize": 11,
@@ -72,5 +72,6 @@
     "terminal.integrated.cursorStyle": "line",
     "vscode-kubernetes.kubectl-path.windows": "C:\\ProgramData\\chocolatey\\lib\\kubernetes-cli\\tools\\kubernetes\\client\\bin\\kubectl.exe",
     "terminal.integrated.fontFamily": "monospace",
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "diffEditor.ignoreTrimWhitespace": false
 }
