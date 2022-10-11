@@ -21,7 +21,7 @@ installPackages @(
     "MadsKristensen.Terraform"
     "MadsKristensen.TrailingWhitespace64"
     "MadsKristensen.Tweaks2022"
-    "MikeWard-AnnArbor.VSColorOutput64"
+    "NikolayBalakin.Outputenhancer"
     "PaulHarrington.EditorGuidelinesPreview"
     "SergeyVlasov.FixFileEncoding"
     "VisualStudioPlatformTeam.FixMixedTabs2022"
