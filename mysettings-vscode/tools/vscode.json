@@ -73,5 +73,6 @@
     "vscode-kubernetes.kubectl-path.windows": "C:\\ProgramData\\chocolatey\\lib\\kubernetes-cli\\tools\\kubernetes\\client\\bin\\kubectl.exe",
     "terminal.integrated.fontFamily": "monospace",
     "git.confirmSync": false,
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "gitlens.plusFeatures.enabled": false
 }
