@@ -244,6 +244,9 @@ $files = @(
 
 $date = Get-Date
 
+$logFile = Get-LogFileName -Date $date -Suffix "$env:COMPUTERNAME------------------------------------"
+Set-Content -Path $logFile -Value "$date" -Force
+
 foreach ($file in $files) {
     if (Test-Path "$env:WINDIR\Setup\Scripts\$file.log") {
         $logFile = Get-LogFileName -Date $date -Suffix "$env:COMPUTERNAME-$file"
