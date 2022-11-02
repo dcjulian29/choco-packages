@@ -24,8 +24,7 @@ git config --global --replace-all core.editor nano
 git config --global --replace-all core.autocrlf false
 
 echo "Setting up Git Credential Manager..."
-
-wget -O /tmp/gcm.deb https://github.com/GitCredentialManager/git-credential-manager/releases/latest
+wget -O /tmp/gcm.deb https://github.com/GitCredentialManager/git-credential-manager/releases/download/v2.0.785/gcm-linux_amd64.2.0.785.deb
 sudo dpkg -i /tmp/gcm.deb
 git-credential-manger-core configure
 
