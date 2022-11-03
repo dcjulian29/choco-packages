@@ -2,17 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mysettings-virtualbox</id>
-    <version>2204.30.1</version>
+    <version>2211.2.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My way of post configuration of Virtualbox</description>
     <tags>mysettings-virtualbox virtualbox hypervisor</tags>
     <dependencies>
-      <dependency id="virtualbox" />
+      <dependency id="myapps-virtualbox" />
       <dependency id="vagrant" />
     </dependencies>
   </metadata>
-  <files>
-    <file src="tools\chocolateyInstall.ps1" target="tools\" />
-  </files>
 </package>

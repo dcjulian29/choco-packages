@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>myapps-virtualbox</id>
+    <version>7.0.2</version>
+    <authors>Oracle Corporation</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>https://www.virtualbox.org/wiki/VirtualBox_PUEL</licenseUrl>
+    <projectUrl>https://www.virtualbox.org/</projectUrl>
+    <description>VirtualBox is a general-purpose full virtualizer for x86 hardware.</description>
+    <tags>virtualbox virtualization virtual</tags>
+  </metadata>
+</package>
