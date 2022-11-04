@@ -60,8 +60,6 @@
     "explorer.openEditors.sortOrder": "alphabetical",
     "security.workspace.trust.banner": "always",
     "security.workspace.trust.startupPrompt": "always",
-    "ansible.executionEnvironment.containerEngine": "docker",
-    "ansible.executionEnvironment.enabled": true,
     "cSpell.allowCompoundWords": true,
     "scm.inputFontSize": 11,
     "debug.console.fontSize": 12,
@@ -74,5 +72,12 @@
     "terminal.integrated.fontFamily": "monospace",
     "git.confirmSync": false,
     "diffEditor.ignoreTrimWhitespace": false,
-    "gitlens.plusFeatures.enabled": false
+    "gitlens.plusFeatures.enabled": false,
+    "ansible.ansible.path": "ansible",
+    "ansible.ansibleNavigator.path": "",
+    "ansible.executionEnvironment.containerEngine": "docker",
+    "ansible.executionEnvironment.containerOptions": "--net=host",
+    "ansible.executionEnvironment.enabled": true,
+    "ansible.python.interpreterPath": "python",
+    "ansibleServer.trace.server": "messages"
 }
