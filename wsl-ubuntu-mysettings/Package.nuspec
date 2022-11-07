@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>wsl-ubuntu-mysettings</id>
-    <version>2211.7.1</version>
+    <version>2211.7.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My "final" install of Ubuntu for WSL</description>

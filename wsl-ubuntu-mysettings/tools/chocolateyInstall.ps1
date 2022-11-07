@@ -7,7 +7,7 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu\ext4.vhdx)) {
     | Select-Object -First 1).FullName
 
   if ($null -eq $ubuntu) {
-    $ubuntu = "${env:SYSTEMDRIVE}\Ubuntu.exe"
+    $ubuntu = "${env:SYSTEMDRIVE}\Ubuntu\Ubuntu.exe"
   }
 
   if (-not (Test-Path -Path $ubuntu)) {
