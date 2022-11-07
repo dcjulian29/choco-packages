@@ -2,9 +2,17 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu\ext4.vhdx)) {
   Write-Output "Ubuntu Linux has been installed...  Starting configuration..."
 
   $ubuntu = (Get-ChildItem -Path $env:SYSTEMDRIVE\Ubuntu `
-    | Where-Object { $_.Name -match "^ubuntu\d+\.exe$" } `
+    | Where-Object { $_.Name -match "^ubuntu\d\.exe$" } `
     | Sort-Object Name -Descending `
     | Select-Object -First 1).FullName
+
+  if ($null -eq $ubuntu) {
+    $ubuntu = "${env:SYSTEMDRIVE}\Ubuntu.exe"
+  }
+
+  if (-not (Test-Path -Path $ubuntu)) {
+    throw "Unable to configure becuase '$ubuntu' is not present."
+  }
 
   Start-Process -FilePath $ubuntu -ArgumentList "install --root" -NoNewWindow -Wait
 
