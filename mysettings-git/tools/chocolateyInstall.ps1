@@ -13,7 +13,7 @@ $config | ForEach-Object {
 # Adding some git commands from https://github.com/tj/git-extras
 # that I've found and use on Linux OS...
 
-$gitroot = $git.Replace('\bin\git.exe', '')
+$gitroot = $git.Replace('\bin\git.exe', '').Replace('\cmd\git.exe', '')
 $binaries = "$gitroot\usr\bin"
 $manuals = "$gitroot\mingw64\share\doc\git-doc"
 
