@@ -1,4 +1,4 @@
-$url = "https://julianscorner.com/downloads/codebackground.jpg"
+$url = "https://julianscorner.com/dl/codebackground.jpg"
 $wallpaper = "$($env:PUBLIC)\Pictures\wallpaper.png"
 
 Add-Type @"
