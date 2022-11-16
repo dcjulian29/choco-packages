@@ -1,22 +1,12 @@
-$images = @(
-    "mcr.microsoft.com/dotnet/aspnet:6.0-bullseye-slim"
-    "mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim"
-)
-
-$images | ForEach-Object {
-    Write-Output "-----$_"
-    Pull-DockerImage -Name $_.Split(':')[0] -Tag $_.Split(':')[1]
-}
-
 #Disable Telemetry
 Set-EnvironmentVariable -Name "DOTNET_CLI_TELEMETRY_OPTOUT" -Value 1 -Scope "Machine"
-
-dotnet dev-certs https --trust
 
 # Ensure that the v3 NuGet feed is enabled
 nuget sources add -Name "NuGet Official Package Source" -Source "https://api.nuget.org/v3/index.json"
 
+Write-Output "-n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 dotnet sdk check
+Write-Output "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`n"
 
 # DotNet Tool installs:
 dotnet tool install --global Cake.Tool
