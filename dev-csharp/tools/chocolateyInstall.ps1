@@ -4,8 +4,8 @@ Set-EnvironmentVariable -Name "DOTNET_CLI_TELEMETRY_OPTOUT" -Value 1 -Scope "Mac
 # Ensure that the v3 NuGet feed is enabled
 nuget sources add -Name "NuGet Official Package Source" -Source "https://api.nuget.org/v3/index.json"
 
-Write-Output "-n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 dotnet sdk check
+
 Write-Output "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`n"
 
 # DotNet Tool installs:
