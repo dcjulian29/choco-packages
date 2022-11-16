@@ -10,6 +10,7 @@ do
     [[ $key =~ .core.editor. ]] && continue
     [[ $key =~ .*winmerge.* ]] && continue
     [[ $value =~ .*winmerge.* ]] && continue
+    [[ $key =~ .*credential.helper.* ]] && continue
 
     key=${key:1}
     key=${key:0:-1}
@@ -28,7 +29,7 @@ wget -O /tmp/gcm.deb https://github.com/GitCredentialManager/git-credential-mana
 sudo dpkg -i /tmp/gcm.deb
 git-credential-manger-core configure
 
-git config --global --replace-all credential.credentialStore = secretservice
+git config --global --replace-all credential.credentialStore secretservice
 
 echo "Setting up 'git-extras'...."
 IFS=$OLDIFS
