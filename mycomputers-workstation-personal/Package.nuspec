@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2211.12.1</version>
+    <version>2211.24.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -35,6 +35,7 @@
       <dependency id="keepass" />
       <dependency id="python" />
       <dependency id="mysettings-freecommander" />
+      <dependency id="terraform" />
     </dependencies>
   </metadata>
 </package>
