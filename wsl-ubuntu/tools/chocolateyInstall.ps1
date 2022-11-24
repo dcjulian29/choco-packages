@@ -35,6 +35,42 @@ IconResource=$env:SYSTEMDRIVE\etc\executor\ubuntu.ico,0
 
   Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
   Remove-Item -Path $env:TEMP\ubuntu -Recurse -Force | Out-Null
+
+  $ubuntu = (Get-ChildItem -Path $env:SYSTEMDRIVE\Ubuntu `
+    | Where-Object { $_.Name -match "^ubuntu\d*\.exe$" } `
+    | Sort-Object Name -Descending `
+    | Select-Object -First 1).FullName
+
+  if ($null -eq $ubuntu) {
+    $ubuntu = "${env:SYSTEMDRIVE}\Ubuntu\Ubuntu.exe"
+  }
+
+  if (-not (Test-Path -Path $ubuntu)) {
+    throw "Unable to configure becuase '$ubuntu' is not present."
+  }
+
+  Start-Process -FilePath $ubuntu -ArgumentList "install --root" -NoNewWindow -Wait
+
+  Start-Process -FilePath $ubuntu `
+    -ArgumentList "run curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash" -NoNewWindow -Wait
+
+  $argument = "run adduser $($env:USERNAME) --gecos `"First,Last,RoomNumber,WorkPhone,HomePhone`" --disabled-password"
+  Start-Process -FilePath $ubuntu -ArgumentList $argument -NoNewWindow -Wait
+
+  Start-Process -FilePath $ubuntu `
+    -ArgumentList "run usermod -aG sudo $($env:USERNAME)" -NoNewWindow -Wait
+
+  Start-Process -FilePath $ubuntu `
+    -ArgumentList "run echo '$($env:USERNAME) ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/$($env:USERNAME)" `
+  -NoNewWindow -Wait
+
+  Start-Process -FilePath $ubuntu `
+    -ArgumentList "config --default-user $($env:USERNAME)" -NoNewWindow -Wait
+
+  Import-Module "${env:USERPROFILE}\Documents\WindowsPowerShell\Modules\go\go.psm1"
+
+  gd -Key "ubuntu" -delete
+  gd -Key "ubuntu" -SelectedPath "\\wsl$\Ubuntu-22.04" -add
 } else {
   Write-Output "A version of Ubuntu is already installed. Not overwriting the installed version..."
 }
