@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-workstation</id>
-    <version>2208.20.1</version>
+    <version>2301.16.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -17,7 +17,7 @@
       <dependency id="handbrake" />
       <dependency id="anydvd" />
       <dependency id="xmind" />
-      <dependency id="wsl-ubuntu-mysettings" />
+      <dependency id="wsl-ubuntu" />
       <dependency id="mysettings-hyperv" />
       <dependency id="mysettings-virtualbox" />
       <dependency id="mysettings-devenv" />

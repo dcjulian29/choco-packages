@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mytools-personal</id>
-    <version>2211.16.1</version>
+    <version>2301.16.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the tools packages for my personal machines.</description>
@@ -12,7 +12,7 @@
       <dependency id="baretail" />
       <dependency id="myapps-xmlquire" />
       <dependency id="myapps-searchmyfiles" />
-      <dependency id="wsl-ubuntu-mysettings" />
+      <dependency id="wsl-ubuntu" />
     </dependencies>
   </metadata>
 </package>
