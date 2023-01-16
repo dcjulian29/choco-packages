@@ -17,12 +17,13 @@ $props = @(
 
 Push-Location $env:TEMP
 
-Invoke-WebRequest -Uri $url -OutFile "${env:TEMP}\virtualbox.exe"
+Invoke-WebRequest -Uri $url -OutFile "virtualbox.exe"
 
-if (-not (Test-Path -Path "${env:TEMP}\virtualbox.exe")) {
+if (-not (Test-Path -Path "./virtualbox.exe")) {
   throw "Error downloading virtualbox!"
 }
-Invoke-Expression "virtualbox.exe -extract -silent"
+
+Invoke-Expression "./virtualbox.exe -extract -silent"
 
 Invoke-Expression "msiexec.exe $($props -join ' ')"
 
