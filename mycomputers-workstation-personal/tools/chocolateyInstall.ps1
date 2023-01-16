@@ -28,6 +28,8 @@ if (-not (Test-Path "$env:SystemDrive\Virtual Machines\ISO")) {
   New-Item -Path "$env:SystemDrive\Virtual Machines\Hyper-V" -ItemType Directory | Out-Null
 }
 
+Add-FavoriteFolder -Key "iso" -Path "$env:SystemDrive\Virtual Machines\ISO" -Force
+
 if (-not $containers) {
     Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
 }

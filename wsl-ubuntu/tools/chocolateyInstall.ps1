@@ -67,10 +67,7 @@ IconResource=$env:SYSTEMDRIVE\etc\executor\ubuntu.ico,0
   Start-Process -FilePath $ubuntu `
     -ArgumentList "config --default-user $($env:USERNAME)" -NoNewWindow -Wait
 
-  Import-Module "${env:USERPROFILE}\Documents\WindowsPowerShell\Modules\go\go.psm1"
-
-  gd -Key "ubuntu" -delete
-  gd -Key "ubuntu" -SelectedPath "\\wsl$\Ubuntu-22.04" -add
+  Add-FavoriteFolder -Key "ubuntu" -Path "\\wsl$\Ubuntu-22.04" -Force
 } else {
   Write-Output "A version of Ubuntu is already installed. Not overwriting the installed version..."
 }
