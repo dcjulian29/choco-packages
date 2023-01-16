@@ -28,11 +28,6 @@ if (-not (Test-Path "$env:SystemDrive\Virtual Machines\ISO")) {
   New-Item -Path "$env:SystemDrive\Virtual Machines\Hyper-V" -ItemType Directory | Out-Null
 }
 
-Import-Module "${env:USERPROFILE}\Documents\WindowsPowerShell\Modules\go\go.psm1"
-
-gd -Key "iso" -delete
-gd -Key "iso" -SelectedPath "$env:SystemDrive\Virtual Machines\ISO" -add
-
 if (-not $containers) {
     Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
 }
