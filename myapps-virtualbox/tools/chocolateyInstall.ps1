@@ -1,5 +1,6 @@
-﻿$version = "7.0.2"
-$build = 154219
+﻿$version = "7.0.4"
+$build = 154605
+
 $log = "virtualbox-$(([Guid]::NewGuid()).Guid).log"
 $url = "https://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$build-Win.exe"
 $props = @(
@@ -18,6 +19,9 @@ Push-Location $env:TEMP
 
 Invoke-WebRequest -Uri $url -OutFile "${env:TEMP}\virtualbox.exe"
 
+if (-not (Test-Path -Path "${env:TEMP}\virtualbox.exe")) {
+  throw "Error downloading virtualbox!"
+}
 Invoke-Expression "virtualbox.exe -extract -silent"
 
 Invoke-Expression "msiexec.exe $($props -join ' ')"
