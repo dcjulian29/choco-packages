@@ -1,7 +1,5 @@
 Set-ExecutionPolicy -Scope LocalMachine RemoteSigned -Force
 
-reg.exe add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartPage /v OpenAtLogon /t REG_DWORD /d 0 /f
-
 if (Test-Path "${env:SYSTEMDRIVE}\Program Files (x86)") {
     $PF32 = "${env:SYSTEMDRIVE}\Program Files (x86)"
 } else {
