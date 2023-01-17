@@ -2,13 +2,19 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2301.17.1</version>
+    <version>2301.17.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
     <tags>mycomputers-workstation-personal mycomputers workstation personal</tags>
     <dependencies>
       <dependency id="mycomputers-workstation" />
+      <dependency id="mysettings-wsl2" />
+      <dependency id="mytools-personal" />
+      <dependency id="docker-desktop" />
+      <dependency id="mytools-containers" />
+      <dependency id="bitwarden" />
+      <dependency id="bitwarden-edge" />
       <dependency id="myapps-wireshark" />
       <dependency id="tightvnc" />
       <dependency id="nuget.commandline" />
@@ -17,21 +23,15 @@
       <dependency id="mysettings-greenshot" />
       <dependency id="myapps-angryip" />
       <dependency id="myapps-iperf" />
-      <dependency id="myapps-xmlquire" />
-      <dependency id="mysettings-wsl2" />
-      <dependency id="docker-desktop" />
-      <dependency id="mytools-containers" />
       <dependency id="mysettings-syncthing" />
       <dependency id="teracopy" />
       <dependency id="vlc" />
-      <dependency id="aescrypt" />
       <dependency id="mysettings-vscode" />
-      <dependency id="firefox" />
       <dependency id="vnc-viewer" />
       <dependency id="rsat" />
       <dependency id="googlechrome" />
+      <dependency id="firefox" />
       <dependency id="keepass" />
-      <dependency id="mytools-personal" />
       <dependency id="mysettings-freecommander" />
       <dependency id="terraform" />
     </dependencies>

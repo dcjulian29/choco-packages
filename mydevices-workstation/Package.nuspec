@@ -2,25 +2,22 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-workstation</id>
-    <version>2301.16.1</version>
+    <version>2301.17.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>
-        These are the packages that I install on my personal tower workstation computer.
-    </description>
+    <description>These are the packages that I install on my personal tower workstation computer.</description>
     <tags>mydevices mycomputers tower workstation personal</tags>
     <dependencies>
       <dependency id="mycomputers-workstation-personal" />
       <dependency id="slack" />
       <dependency id="thunderbird" />
+      <dependency id="mysettings-hyperv" />
+      <dependency id="mysettings-virtualbox" />
+      <dependency id="mysettings-devenv" />
       <dependency id="nextcloud-client" />
       <dependency id="handbrake" />
       <dependency id="anydvd" />
       <dependency id="xmind" />
-      <dependency id="wsl-ubuntu" />
-      <dependency id="mysettings-hyperv" />
-      <dependency id="mysettings-virtualbox" />
-      <dependency id="mysettings-devenv" />
     </dependencies>
   </metadata>
 </package>
