@@ -12,8 +12,7 @@
 
 "gpg.x509.program","smimesign"
 "gpg.format","x509"
-
-"init.defaultbranch","main"
+"commit.gpgSign", "false"
 
 "credential.helper","manager-core"
 
