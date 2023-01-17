@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mysettings-rainmeter</id>
-    <version>2018.7.25.1</version>
+    <id>myapps-rainmeter</id>
+    <version>4.5.17</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>My custom settings for Rainmeter.</description>
+    <description>My install and custom settings for Rainmeter.</description>
     <tags>rainmeter settings custom</tags>
-    <dependencies>
-      <dependency id="rainmeter" />
-    </dependencies>
   </metadata>
 </package>

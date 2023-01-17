@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2301.16.2</version>
+    <version>2301.16.3</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -14,7 +14,7 @@
       <dependency id="tightvnc" />
       <dependency id="nuget.commandline" />
       <dependency id="nugetpackageexplorer" />
-      <dependency id="mysettings-rainmeter" />
+      <dependency id="myapps-rainmeter" />
       <dependency id="mysettings-greenshot" />
       <dependency id="myapps-angryip" />
       <dependency id="myapps-iperf" />
