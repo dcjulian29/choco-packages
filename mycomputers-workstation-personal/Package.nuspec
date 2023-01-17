@@ -2,15 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2301.16.3</version>
+    <version>2301.17.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
     <tags>mycomputers-workstation-personal mycomputers workstation personal</tags>
     <dependencies>
       <dependency id="mycomputers-workstation" />
-      <dependency id="winpcap" />
-      <dependency id="wireshark" />
+      <dependency id="myapps-wireshark" />
       <dependency id="tightvnc" />
       <dependency id="nuget.commandline" />
       <dependency id="nugetpackageexplorer" />
