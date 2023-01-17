@@ -37,7 +37,7 @@
                },
     "workbench.startupEditor":  "welcomePageInEmptyWorkbench",
     "terminal.integrated.enablePersistentSessions": false,
-    "editor.fontFamily": "CaskaydiaCove NF",
+    "editor.fontFamily": "'CaskaydiaCove NF','CaskaydiaCove Nerd Font Mono'",
     "redhat.telemetry.enabled": false,
     "workbench.colorTheme": "Monokai",
     "editor.tabSize": 2,
@@ -79,5 +79,6 @@
     "ansible.executionEnvironment.containerOptions": "--net=host",
     "ansible.executionEnvironment.enabled": true,
     "ansible.python.interpreterPath": "python",
-    "ansibleServer.trace.server": "messages"
+    "ansibleServer.trace.server": "messages",
+    "editor.fontLigatures": true
 }
