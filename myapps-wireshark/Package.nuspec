@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>myapps-wireshark</id>
+    <version>4.0.2</version>
+    <authors>Gerald Combs and the Wireshark Team</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>https://gitlab.com/wireshark/wireshark/-/blob/master/COPYING</licenseUrl>
+    <projectUrl>https://gitlab.com/wireshark/wireshark/-/tree/master</projectUrl>
+    <description>Wireshark is the world’s foremost and widely-used network protocol analyzer.</description>
+    <dependencies>
+      <dependency id="vcredist140" />
+    </dependencies>
+    <tags>wireshark network sniffer</tags>
+  </metadata>
+</package>
