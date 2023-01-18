@@ -22,7 +22,7 @@ Invoke-WebRequest -Uri $url -OutFile "virtualbox.exe"
 # For some stupid reason, Oracle causes the first attempt to fail randomly...
 if (Test-Path -Path "./virtualbox.exe") {
   # Download package have been over 75MB for a long time so if not, re-download.
-  if ((Get-Item ".\virtualbox.exe").Length - lt 78643200)) {
+  if ((Get-Item ".\virtualbox.exe").Length -lt 78643200) {
     Remove-Item -Path "./virtualbox.exe" -Force
     Invoke-WebRequest -Uri $url -OutFile "virtualbox.exe"
   }
@@ -32,7 +32,7 @@ if (-not (Test-Path -Path "./virtualbox.exe")) {
   throw "Error downloading virtualbox!"
 }
 
-if ((Get-Item ".\virtualbox.exe").Length - lt 78643200)) {
+if ((Get-Item ".\virtualbox.exe").Length -lt 78643200) {
   throw "Downloaded package is not big enough!"
 }
 
