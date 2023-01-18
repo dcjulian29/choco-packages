@@ -23,8 +23,7 @@ IconResource=$env:SYSTEMDRIVE\Ubuntu\folder-ubuntu.ico,0
     Remove-Item -Path $env:TEMP\ubuntu -Recurse -Force | Out-Null
   }
 
-  Invoke-WebRequest -Uri https://aka.ms/wslubuntu2204 `
-    -OutFile $env:TEMP\Ubuntu.zip -UseBasicParsing
+  Download-File -Url "https://aka.ms/wslubuntu2204" -Destination $env:TEMP\Ubuntu.zip
 
   Expand-Archive $env:TEMP\Ubuntu.zip $env:TEMP\Ubuntu\
 
@@ -53,6 +52,13 @@ IconResource=$env:SYSTEMDRIVE\Ubuntu\folder-ubuntu.ico,0
     throw "Unable to configure becuase '$ubuntu' is not present."
   }
 
+  $wsl = Invoke-Expression -Command "wsl.exe --list"
+
+  if ($wsl.Contains("Ubuntu-22.04")) {
+    Write-Warning "Found previously registered instance..."
+    Invoke-Expression -Command "wsl.exe --unregister Ubuntu-22.04"
+  }
+
   Start-Process -FilePath $ubuntu -ArgumentList "install --root" -NoNewWindow -Wait
 
   $argument = "run adduser $($env:USERNAME) --gecos `"First,Last,RoomNumber,WorkPhone,HomePhone`" --disabled-password"
@@ -70,6 +76,22 @@ IconResource=$env:SYSTEMDRIVE\Ubuntu\folder-ubuntu.ico,0
 
   Start-Process -FilePath $ubuntu `
     -ArgumentList "run curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash" -NoNewWindow -Wait
+
+  if (-not (Test-Path "\\wsl$\Ubuntu-22.04")) {
+    Write-Warning "Ubuntu was installed not using its version in the distribution name, let's rename it."
+
+    if (-not (Invoke-Expression -Command "wsl.exe --list").Contains("Ubuntu")) {
+      throw "Unknown distribution install... aborting!!!"
+    }
+
+    Invoke-Expression -Command "wsl.exe --export Ubuntu ${env:TEMP}\ubuntu.tar"
+
+    Invoke-Expression -Command "wsl.exe --unregister Ubuntu"
+    Invoke-Expression -Command `
+      "wsl.exe --import Ubuntu-22.04 `"$((Get-item $ubuntu).DirectoryName)`" `"${env:TEMP}\ubuntu.tar`""
+
+    Remove-Item -Path "${env:TEMP}\ubuntu.tar" -Force
+  }
 
   Add-FavoriteFolder -Key "ubuntu" -Path "\\wsl$\Ubuntu-22.04" -Force
 } else {
