@@ -7,7 +7,7 @@ set EXDST=%TEMP%\executor
 
 if exist %EXDST% (
   echo Stopping the running Executor process...
-  taskkill /IM executor.exe /T /F
+  taskkill /IM executor.exe /F
 
   ping 127.0.0.1 -n 2 >NUL
 
