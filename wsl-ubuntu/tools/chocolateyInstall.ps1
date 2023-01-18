@@ -1,99 +1,62 @@
-if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
-  Write-Output "Downloading and installing Ubuntu 22.04 ..."
+$DistroName = "Ubuntu-22.04"
+$InstallFolder = "${env:USERPROFILE}\.wsl\$DistroName"
 
-  New-Item -Type Directory -Path $env:SYSTEMDRIVE\Ubuntu | Out-Null
+if (-not (Test-Path $InstallFolder)) {
+  Write-Output "Downloading and installing $DistroName..."
 
-  Invoke-WebRequest -Uri https://julianscorner.com/dl/folder-ubuntu.ico `
-    -OutFile $env:SYSTEMDRIVE\Ubuntu\folder-ubuntu.ico -UseBasicParsing
+  New-Folder -Path $InstallFolder
 
-  Set-Content $env:SYSTEMDRIVE\Ubuntu\desktop.ini @"
+  Download-File -Url "https://julianscorner.com/dl/folder-ubuntu.ico" `
+    -Destination "$InstallFolder\folder-ubuntu.ico"
+
+  Set-Content "$InstallFolder\desktop.ini" @"
 [.ShellClassInfo]
-IconResource=$env:SYSTEMDRIVE\Ubuntu\folder-ubuntu.ico,0
+IconResource=$InstallFolder\folder-ubuntu.ico,0
 "@
 
-  attrib.exe +S +H $env:SYSTEMDRIVE\Ubuntu\folder-ubuntu.ico
-  attrib.exe +S +H $env:SYSTEMDRIVE\Ubuntu\desktop.ini
-  attrib.exe +R $env:SYSTEMDRIVE\Ubuntu
+  attrib.exe +S +H $InstallFolder\folder-ubuntu.ico
+  attrib.exe +S +H $InstallFolder\desktop.ini
+  attrib.exe +R $InstallFolder
 
-  if (Test-Path $env:TEMP\ubuntu.zip) {
-    Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
+  if (Test-Path "${env:TEMP}\Ubuntu.tar.gz") {
+    Remove-Item -Path "${env:TEMP}\Ubuntu.tar.gz" -Force | Out-Null
   }
 
-  if (Test-Path $env:TEMP\ubuntu) {
-    Remove-Item -Path $env:TEMP\ubuntu -Recurse -Force | Out-Null
-  }
+  $baseUrl = "https://cloud-images.ubuntu.com/wsl/jammy/current"
+  $url = "$baseUrl/ubuntu-jammy-wsl-amd64-wsl.rootfs.tar.gz"
 
-  Download-File -Url "https://aka.ms/wslubuntu2204" -Destination $env:TEMP\Ubuntu.zip
-
-  Expand-Archive $env:TEMP\Ubuntu.zip $env:TEMP\Ubuntu\
-
-  $package = (Get-ChildItem -Path $env:TEMP\Ubuntu\ `
-      | Where-Object { $_.Name -match "^Ubuntu.+_x64\.appx$" } `
-      | Sort-Object Name -Descending `
-      | Select-Object -First 1).FullName
-
-  Rename-Item $package $env:TEMP\Ubuntu\Ubuntu.zip
-
-  Expand-Archive $env:TEMP\Ubuntu\Ubuntu.zip $env:SYSTEMDRIVE\Ubuntu
-
-  Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
-  Remove-Item -Path $env:TEMP\ubuntu -Recurse -Force | Out-Null
-
-  $ubuntu = (Get-ChildItem -Path $env:SYSTEMDRIVE\Ubuntu `
-    | Where-Object { $_.Name -match "^ubuntu\d+\.exe$" } `
-    | Sort-Object Name -Descending `
-    | Select-Object -First 1).FullName
-
-  if ($null -eq $ubuntu) {
-    $ubuntu = "${env:SYSTEMDRIVE}\Ubuntu\Ubuntu.exe"
-  }
-
-  if (-not (Test-Path -Path $ubuntu)) {
-    throw "Unable to configure becuase '$ubuntu' is not present."
-  }
+  Download-File -Url $url -Destination "${env:TEMP}\Ubuntu.tar.gz"
 
   $wsl = Invoke-Expression -Command "wsl.exe --list"
 
-  if ($wsl.Contains("Ubuntu-22.04")) {
+  if ($wsl.Contains($DistroName)) {
     Write-Warning "Found previously registered instance..."
-    Invoke-Expression -Command "wsl.exe --unregister Ubuntu-22.04"
+    Invoke-Expression -Command "wsl.exe --unregister $DistroName"
   }
 
-  Start-Process -FilePath $ubuntu -ArgumentList "install --root" -NoNewWindow -Wait
+  Invoke-Expression -Command `
+    "wsl.exe --import $DistroName `"$InstallFolder`" `"${env:TEMP}\ubuntu.tar.gz`""
 
-  $argument = "run adduser $($env:USERNAME) --gecos `"First,Last,RoomNumber,WorkPhone,HomePhone`" --disabled-password"
-  Start-Process -FilePath $ubuntu -ArgumentList $argument -NoNewWindow -Wait
+  $ubuntu = "wsl.exe -d $DistroName"
 
-  Start-Process -FilePath $ubuntu `
-    -ArgumentList "run usermod -aG sudo $($env:USERNAME)" -NoNewWindow -Wait
+  Invoke-Expression -Command `
+    "$ubuntu /usr/sbin/adduser $($env:USERNAME) --gecos `"First,Last,RoomNumber,WorkPhone,HomePhone`" --disabled-password"
 
-  Start-Process -FilePath $ubuntu `
-    -ArgumentList "run echo '$($env:USERNAME) ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/$($env:USERNAME)" `
-  -NoNewWindow -Wait
+  Invoke-Expression -Command "$ubuntu /usr/sbin/usermod -aG sudo $($env:USERNAME)"
 
-  Start-Process -FilePath $ubuntu `
-    -ArgumentList "config --default-user $($env:USERNAME)" -NoNewWindow -Wait
+  Invoke-Expression -Command `
+    "$ubuntu /bin/bash -c `"echo -e '$($env:USERNAME) ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/$($env:USERNAME)`""
 
-  Start-Process -FilePath $ubuntu `
-    -ArgumentList "run curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash" -NoNewWindow -Wait
+  Invoke-Expression -Command `
+    "$ubuntu /bin/bash -c `"echo -e '[user]\ndefault=$($env:USERNAME)' > /etc/wsl.conf`""
 
-  if (-not (Test-Path "\\wsl$\Ubuntu-22.04")) {
-    Write-Warning "Ubuntu was installed not using its version in the distribution name, let's rename it."
+  Invoke-Expression -Command "$ubuntu /bin/curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | /bin/bash"
 
-    if (-not (Invoke-Expression -Command "wsl.exe --list").Contains("Ubuntu")) {
-      throw "Unknown distribution install... aborting!!!"
-    }
-
-    Invoke-Expression -Command "wsl.exe --export Ubuntu ${env:TEMP}\ubuntu.tar"
-
-    Invoke-Expression -Command "wsl.exe --unregister Ubuntu"
-    Invoke-Expression -Command `
-      "wsl.exe --import Ubuntu-22.04 `"$((Get-item $ubuntu).DirectoryName)`" `"${env:TEMP}\ubuntu.tar`""
-
-    Remove-Item -Path "${env:TEMP}\ubuntu.tar" -Force
+  if (Test-Path "\\wsl$\$DistroName") {
+    Add-FavoriteFolder -Key "ubuntu" -Path "\\wsl$\$DistroName" -Force
   }
 
-  Add-FavoriteFolder -Key "ubuntu" -Path "\\wsl$\Ubuntu-22.04" -Force
+  Remove-Item -Path "${env:TEMP}\Ubuntu.tar.gz" -Force
 } else {
   Write-Output "A version of Ubuntu is already installed. Not overwriting the installed version..."
 }
