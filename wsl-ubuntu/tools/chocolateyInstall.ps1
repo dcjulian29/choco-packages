@@ -3,6 +3,18 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
 
   New-Item -Type Directory -Path $env:SYSTEMDRIVE\Ubuntu | Out-Null
 
+  Invoke-WebRequest -Uri https://julianscorner.com/dl/folder-ubuntu.ico `
+    -OutFile $env:SYSTEMDRIVE\Ubuntu\folder-ubuntu.ico -UseBasicParsing
+
+  Set-Content $env:SYSTEMDRIVE\Ubuntu\desktop.ini @"
+[.ShellClassInfo]
+IconResource=$env:SYSTEMDRIVE\Ubuntu\folder-ubuntu.ico,0
+"@
+
+  attrib.exe +S +H $env:SYSTEMDRIVE\Ubuntu\folder-ubuntu.ico
+  attrib.exe +S +H $env:SYSTEMDRIVE\Ubuntu\desktop.ini
+  attrib.exe +R $env:SYSTEMDRIVE\Ubuntu
+
   if (Test-Path $env:TEMP\ubuntu.zip) {
     Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
   }
@@ -25,19 +37,11 @@ if (-not (Test-Path $env:SYSTEMDRIVE\Ubuntu)) {
 
   Expand-Archive $env:TEMP\Ubuntu\Ubuntu.zip $env:SYSTEMDRIVE\Ubuntu
 
-  Set-Content $env:SYSTEMDRIVE\Ubuntu\desktop.ini @"
-[.ShellClassInfo]
-IconResource=$env:SYSTEMDRIVE\etc\executor\ubuntu.ico,0
-"@
-
-  attrib.exe +S +H $env:SYSTEMDRIVE\Ubuntu\desktop.ini
-  attrib.exe +R $env:SYSTEMDRIVE\Ubuntu
-
   Remove-Item -Path $env:TEMP\ubuntu.zip -Force | Out-Null
   Remove-Item -Path $env:TEMP\ubuntu -Recurse -Force | Out-Null
 
   $ubuntu = (Get-ChildItem -Path $env:SYSTEMDRIVE\Ubuntu `
-    | Where-Object { $_.Name -match "^ubuntu\d*\.exe$" } `
+    | Where-Object { $_.Name -match "^ubuntu\d+\.exe$" } `
     | Sort-Object Name -Descending `
     | Select-Object -First 1).FullName
 
@@ -51,9 +55,6 @@ IconResource=$env:SYSTEMDRIVE\etc\executor\ubuntu.ico,0
 
   Start-Process -FilePath $ubuntu -ArgumentList "install --root" -NoNewWindow -Wait
 
-  Start-Process -FilePath $ubuntu `
-    -ArgumentList "run curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash" -NoNewWindow -Wait
-
   $argument = "run adduser $($env:USERNAME) --gecos `"First,Last,RoomNumber,WorkPhone,HomePhone`" --disabled-password"
   Start-Process -FilePath $ubuntu -ArgumentList $argument -NoNewWindow -Wait
 
@@ -66,6 +67,9 @@ IconResource=$env:SYSTEMDRIVE\etc\executor\ubuntu.ico,0
 
   Start-Process -FilePath $ubuntu `
     -ArgumentList "config --default-user $($env:USERNAME)" -NoNewWindow -Wait
+
+  Start-Process -FilePath $ubuntu `
+    -ArgumentList "run curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash" -NoNewWindow -Wait
 
   Add-FavoriteFolder -Key "ubuntu" -Path "\\wsl$\Ubuntu-22.04" -Force
 } else {
