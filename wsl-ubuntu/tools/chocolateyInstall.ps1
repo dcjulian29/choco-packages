@@ -50,7 +50,7 @@ IconResource=$InstallFolder\folder-ubuntu.ico,0
   Invoke-Expression -Command `
     "$ubuntu /bin/bash -c `"echo -e '[user]\ndefault=$($env:USERNAME)' > /etc/wsl.conf`""
 
-  Invoke-Expression -Command "$ubuntu /bin/curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | /bin/bash"
+  Invoke-Expression -Command "$ubuntu /bin/bash -c `"curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash`""
 
   if (Test-Path "\\wsl$\$DistroName") {
     Add-FavoriteFolder -Key "ubuntu" -Path "\\wsl$\$DistroName" -Force
