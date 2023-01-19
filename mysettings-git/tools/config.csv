@@ -8,13 +8,13 @@
 "core.excludesfile","~/.gitignore"
 "core.safecrlf","false"
 "core.filemode","false"
-"core.editor", \"C:/Program Files/notepad++/notepad++.exe\" -multiInst -nosession
+"core.editor","\"C:/Program Files/notepad++/notepad++.exe\" -multiInst -nosession"
 
 "gpg.x509.program","smimesign"
 "gpg.format","x509"
 "commit.gpgSign", "false"
 
-"credential.helper","manager-core"
+"credential.helper","manager"
 
 "push.default","upstream"
 "help.format","html"
