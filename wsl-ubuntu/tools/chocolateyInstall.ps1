@@ -57,6 +57,8 @@ IconResource=$InstallFolder\folder-ubuntu.ico,0
   }
 
   Remove-Item -Path "${env:TEMP}\Ubuntu.tar.gz" -Force
+
+  Invoke-Expression -Command "wsl.exe --setdefault $DistroName"
 } else {
   Write-Output "A version of Ubuntu is already installed. Not overwriting the installed version..."
 }
