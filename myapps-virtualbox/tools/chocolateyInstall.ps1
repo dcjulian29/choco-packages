@@ -17,14 +17,14 @@ $props = @(
 
 Push-Location $env:TEMP
 
-Invoke-WebRequest -Uri $url -OutFile "virtualbox.exe"
+Download-File -Url $url -Destination "virtualbox.exe"
 
-# For some stupid reason, Oracle causes the first attempt to fail randomly...
+# For some stupid reason, Oracle sometimes causes the first attempt to fail randomly...
 if (Test-Path -Path "./virtualbox.exe") {
   # Download package have been over 75MB for a long time so if not, re-download.
   if ((Get-Item ".\virtualbox.exe").Length -lt 78643200) {
     Remove-Item -Path "./virtualbox.exe" -Force
-    Invoke-WebRequest -Uri $url -OutFile "virtualbox.exe"
+    Download-File -Url $url -Destination "virtualbox.exe"
   }
 }
 
@@ -42,7 +42,8 @@ if (-not (Test-Path -Path "${env:TEMP}\VirtualBox-$version-r$build.msi")) {
   throw "Error extracting virtualbox installer from package!"
 }
 
-Invoke-Expression "msiexec.exe $($props -join ' ')"
+#Invoke-Expression "msiexec.exe $($props -join ' ')"
+Start-Process -FilePath "msiexec.exe" -ArgumentList $props -NoNewWindow -Wait
 
 Get-Content $log
 
