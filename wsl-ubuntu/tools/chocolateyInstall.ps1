@@ -47,8 +47,11 @@ IconResource=$InstallFolder\folder-ubuntu.ico,0
   Invoke-Expression -Command `
     "$ubuntu /bin/bash -c `"echo -e '$($env:USERNAME) ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/$($env:USERNAME)`""
 
-  Invoke-Expression -Command `
-    "$ubuntu /bin/bash -c `"echo -e '[user]\ndefault=$($env:USERNAME)' > /etc/wsl.conf`""
+  $keys = Get-ChildItem -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss"
+
+  Get-ItemProperty Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\*\ DistributionName `
+    | Where-Object -Property DistributionName -eq $DistroName `
+    | Set-ItemProperty -Name DefaultUid -Value "1000"
 
   Invoke-Expression -Command "$ubuntu /bin/bash -c `"curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash`""
 
