@@ -80,5 +80,6 @@
     "ansible.executionEnvironment.enabled": true,
     "ansible.python.interpreterPath": "python",
     "ansibleServer.trace.server": "messages",
-    "editor.fontLigatures": true
+    "editor.fontLigatures": true,
+    "editor.accessibilitySupport": "off"
 }
