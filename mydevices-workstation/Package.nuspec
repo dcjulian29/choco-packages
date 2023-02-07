@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-workstation</id>
-    <version>2301.17.1</version>
+    <version>2302.7.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal tower workstation computer.</description>
@@ -17,7 +17,7 @@
       <dependency id="nextcloud-client" />
       <dependency id="handbrake" />
       <dependency id="anydvd" />
-      <dependency id="xmind" />
+      <dependency id="myapps-xmind" />
     </dependencies>
   </metadata>
 </package>
