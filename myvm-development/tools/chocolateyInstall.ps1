@@ -206,18 +206,32 @@ netsh int ipv4 add excludedportrange protocol=tcp startport=6379 numberofports=1
 netsh int ipv4 show excludedportrange tcp
 netsh int ipv4 show excludedportrange udp
 
-Write-Output "`n`nEnabling Windows Subsystem for Linux..."
+$wsl = (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux).State -eq "Enabled"
 
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
-
-if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
-    Write-Output "Enabling Virtual Machine Platform..."
-    Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
+if (-not $wsl) {
+  Write-Output "`n`nEnabling Windows Subsystem for Linux..."
+  Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
 }
 
-Write-Output "`n`nEnabling Windows Containers..."
+if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
+  $vmp = (Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform).State -eq "Enabled"
 
-Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
+  if (-not $vmp) {
+    Write-Output "Enabling Virtual Machine Platform..."
+    Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
+  }
+}
+
+if ([System.Environment]::OSVersion.Version.Build -ge 22621) {
+  & wsl.exe --install
+}
+
+$wcon = (Get-WindowsOptionalFeature -Online -FeatureName Containers).State -eq "Enabled"
+
+if (-not $wcon) {
+  Write-Output "`n`nEnabling Windows Containers..."
+  Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
+}
 
 #-------------------------------------------------------------------------------------------------
 
