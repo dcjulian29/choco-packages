@@ -206,6 +206,8 @@ netsh int ipv4 add excludedportrange protocol=tcp startport=6379 numberofports=1
 netsh int ipv4 show excludedportrange tcp
 netsh int ipv4 show excludedportrange udp
 
+$ErrorActionPreference = "Continue"
+
 $wsl = (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux).State -eq "Enabled"
 
 if (-not $wsl) {
@@ -232,6 +234,8 @@ if (-not $wcon) {
   Write-Output "`n`nEnabling Windows Containers..."
   Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
 }
+
+$ErrorActionPreference = "Stop"
 
 #-------------------------------------------------------------------------------------------------
 
