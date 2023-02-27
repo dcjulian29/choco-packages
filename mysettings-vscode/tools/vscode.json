@@ -66,9 +66,8 @@
     "debug.console.lineHeight": 12,
     "terminal.integrated.fontSize": 12,
     "editor.cursorBlinking": "expand",
-    "editor.cursorStyle": "line-thin",
     "terminal.integrated.cursorStyle": "line",
-    "vscode-kubernetes.kubectl-path.windows": "C:\\ProgramData\\chocolatey\\lib\\kubernetes-cli\\tools\\kubernetes\\client\\bin\\kubectl.exe",
+    "vscode-kubernetes.kubectl-path.windows": "C:\\ProgramData\\chocolatey\\bin\\kubectl.exe",
     "terminal.integrated.fontFamily": "monospace",
     "git.confirmSync": false,
     "diffEditor.ignoreTrimWhitespace": false,
@@ -81,5 +80,15 @@
     "ansible.python.interpreterPath": "python",
     "ansibleServer.trace.server": "messages",
     "editor.fontLigatures": true,
-    "editor.accessibilitySupport": "off"
+    "editor.accessibilitySupport": "off",
+    "editor.autoIndent": "none",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.rulers": [
+        80,
+        100,
+        120
+    ],
+    "[python]": {
+        "editor.formatOnType": true
+    }
 }
