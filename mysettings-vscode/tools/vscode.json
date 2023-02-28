@@ -22,27 +22,14 @@
     "debug.openExplorerOnEnd":  true,
     "git.autofetch":  true,
     "git.enableCommitSigning":  false,
-    "[typescript]":  {
-                         "editor.formatOnSave":  true,
-                         "editor.formatOnPaste":  true
-                     },
-    "[markdown]":  {
-                       "editor.formatOnSave":  true,
-                       "editor.renderWhitespace":  "boundary",
-                       "editor.acceptSuggestionOnEnter":  "off"
-                   },
-    "[yaml]":  {
-                   "editor.tabSize":  2,
-                   "editor.autoIndent":  "full"
-               },
     "workbench.startupEditor":  "welcomePageInEmptyWorkbench",
     "terminal.integrated.enablePersistentSessions": false,
     "editor.fontFamily": "'CaskaydiaCove NF','CaskaydiaCove Nerd Font Mono'",
     "redhat.telemetry.enabled": false,
     "workbench.colorTheme": "Monokai",
     "editor.tabSize": 2,
-    "editor.codeLensFontSize": 11,
-    "editor.inlayHints.fontSize": 11,
+    "editor.codeLensFontSize": 9,
+    "editor.inlayHints.fontSize": 9,
     "editor.mouseWheelZoom": true,
     "editor.wrappingIndent": "deepIndent",
     "editor.suggestFontSize": 11,
@@ -72,16 +59,8 @@
     "git.confirmSync": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "gitlens.plusFeatures.enabled": false,
-    "ansible.ansible.path": "ansible",
-    "ansible.ansibleNavigator.path": "",
-    "ansible.executionEnvironment.containerEngine": "docker",
-    "ansible.executionEnvironment.containerOptions": "--net=host",
-    "ansible.executionEnvironment.enabled": true,
-    "ansible.python.interpreterPath": "python",
-    "ansibleServer.trace.server": "messages",
     "editor.fontLigatures": true,
     "editor.accessibilitySupport": "off",
-    "editor.autoIndent": "none",
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.rulers": [
         80,
