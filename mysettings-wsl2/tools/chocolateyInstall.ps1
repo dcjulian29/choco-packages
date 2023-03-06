@@ -12,7 +12,7 @@ if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
   }
 
   if ([System.Environment]::OSVersion.Version.Build -ge 22621) {
-    & wsl.exe --install
+    & wsl.exe --update
   } else {
     Write-Output "Downloading WSL 2 Kernel Update..."
     Invoke-WebRequest -Uri "https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi" `
