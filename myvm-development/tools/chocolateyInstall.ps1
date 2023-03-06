@@ -225,7 +225,7 @@ if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
 }
 
 if ([System.Environment]::OSVersion.Version.Build -ge 22621) {
-  & wsl.exe --install
+  & wsl.exe --update
 }
 
 $wcon = (Get-WindowsOptionalFeature -Online -FeatureName Containers).State -eq "Enabled"
