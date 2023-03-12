@@ -9,7 +9,6 @@ ms-python.isort
 ms-vscode.PowerShell
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
-redhat.ansible
 redhat.vscode-yaml
 samuelcolvin.jinjahtml
 shardulm94.trailing-spaces
