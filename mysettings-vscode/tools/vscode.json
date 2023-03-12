@@ -68,6 +68,47 @@
         120
     ],
     "[python]": {
-        "editor.formatOnType": true
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      },
+    },
+    "isort.args":["--profile", "black"],
+    "githubPullRequests.queries": [
+    {
+        "label": "Waiting For My Review",
+        "query": "is:open review-requested:${user}"
+    },
+    {
+        "label": "Assigned To Me",
+        "query": "is:open assignee:${user}"
+    },
+    {
+        "label": "Created By Me",
+        "query": "is:open author:${user}"
+    },
+    {
+        "label": "Mentioned Me",
+        "query": "is:open mentions:${user}"
+    }
+    ],
+    "markdownlint.config": {
+        "default": true,
+        "MD003": { "style": "atx" },
+        "MD007": { "indent": 2 },
+        "no-hard-tabs": true
+    },
+    "markdownlint.focusMode": 2,
+    "yaml.yamlVersion": "1.2",
+    "yaml.format.enable": true,
+    "yaml.format.singleQuote": true,
+    "yaml.format.bracketSpacing": true,
+    "yaml.validate": true,
+    "yaml.completion": true,
+    "yaml.schemaStore.enable": true,
+    "[yaml]": {
+      "editor.tabSize": 2,
+      "editor.formatOnType": true
     }
 }
