@@ -45,7 +45,7 @@
             "font":
             {
                 "face": "CaskaydiaCove NF",
-                "size": 10
+                "size": 10.0
             },
             "padding": "5"
         },
@@ -309,6 +309,7 @@
             "yellow": "#808000"
         }
     ],
+    "themes": [],
     "useAcrylicInTabRow": true,
     "windowingBehavior": "useNew"
 }
