@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>myapps-angryip</id>
-    <version>3.9.0</version>
+    <version>3.9.1</version>
     <authors>angryziber</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>http://angryip.org/</projectUrl>
