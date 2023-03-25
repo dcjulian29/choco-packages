@@ -26,6 +26,6 @@ jobs:
         if: startsWith(github.ref, 'refs/heads/main')
         run: >
           nuget push .packages/*.nupkg
-            -Source 'https://nuget.pkg.github.com/dcjulian29/index.json'
-            -ApiKey ${{secrets.NUGET_API_KEY}}
-            -skipDuplicate
+          -Source 'https://nuget.pkg.github.com/dcjulian29/index.json'
+          -ApiKey ${{secrets.NUGET_API_KEY}}
+          -skipDuplicate
