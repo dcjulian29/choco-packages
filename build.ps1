@@ -22,7 +22,7 @@ if (Get-Command -Name "nuget") {
   }
 }
 
-$packDir = Join-Path -Path $env:TEMP -ChildPath "packages"
+$packDir = Join-Path -Path $baseDir -ChildPath ".packages"
 
 if (-not (Test-Path $packDir)) {
   New-Item -Path $packDir -ItemType Directory | Out-Null
