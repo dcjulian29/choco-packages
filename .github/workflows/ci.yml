@@ -23,8 +23,8 @@ jobs:
 
       - name: Publish Packages
         if: startsWith(github.ref, 'refs/heads/main')
-        uses: EasyDesk/action-nuget-push@v1.0.0
-        with:
-          nuget-api-key: '${{secrets.NUGET_API_KEY}}'
-          nuget-url: 'https://nuget.pkg.github.com/dcjulian29/index.json'
-          publish-dir: './.packages/'
+        run: >
+          dotnet nuget push "./.packages/*.nupkg"
+          -k '${{ secrets.NUGET_API_KEY }}'
+          -s 'https://nuget.pkg.github.com/dcjulian29/index.json'
+          --skip-duplicate
