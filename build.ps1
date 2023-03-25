@@ -15,11 +15,11 @@ if (-not (Test-Path $packDir)) {
 if (Get-Command -Name "nuget") {
   $nuget = (Get-Command -Name "nuget").Source
 } else {
-  $nuget = Join-Path -Path $TOOLS_DIR -ChildPath "nuget.exe"
+  $nuget = Join-Path -Path $toolDir -ChildPath "nuget.exe"
 
   if (-not (Test-Path -Path $nuget)) {
     if (-not (Test-Path $toolDir)) {
-      New-Item -Path $TOOLS_DIR -Type Directory | Out-Null
+      New-Item -Path $toolDir -Type Directory | Out-Null
     }
 
     Invoke-WebRequest -Uri "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" `
