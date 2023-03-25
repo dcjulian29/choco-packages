@@ -27,4 +27,4 @@ jobs:
         with:
           nuget-api-key: '${{secrets.NUGET_API_KEY}}'
           nuget-url: 'https://nuget.pkg.github.com/dcjulian29/index.json'
-          publish-dir: '.packages/*.nupkg'
+          publish-dir: '.packages/'
