@@ -5,12 +5,7 @@ trap [System.Exception] {
 
 $ErrorActionPreference = "Stop"
 $baseDir = (Resolve-Path $("$PSScriptRoot")).Path
-$packDir = Join-Path -Path $baseDir -ChildPath ".packages"
 $toolDir = Join-Path -Path $baseDir -ChildPath ".tools"
-
-if (-not (Test-Path $packDir)) {
-  New-Item -Path $packDir -ItemType Directory | Out-Null
-}
 
 if (Get-Command -Name "nuget") {
   $nuget = (Get-Command -Name "nuget").Source
@@ -25,6 +20,12 @@ if (Get-Command -Name "nuget") {
     Invoke-WebRequest -Uri "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" `
       -OutFile $nuget
   }
+}
+
+$packDir = Join-Path -Path $env:TEMP -ChildPath "packages"
+
+if (-not (Test-Path $packDir)) {
+  New-Item -Path $packDir -ItemType Directory | Out-Null
 }
 
 #------------------------------------------------------------------------------
