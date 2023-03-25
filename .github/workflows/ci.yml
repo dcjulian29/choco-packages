@@ -29,3 +29,4 @@ jobs:
           -Source 'https://nuget.pkg.github.com/dcjulian29/index.json'
           -ApiKey ${{secrets.NUGET_API_KEY}}
           -skipDuplicate
+          -NonInteractive
