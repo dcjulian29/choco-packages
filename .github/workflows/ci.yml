@@ -19,12 +19,12 @@ jobs:
         uses: NuGet/setup-nuget@v1.1.1
 
       - name: Create Packages
-        run: |
+        run: >
           ./build.ps1
 
       - name: Publish Packages
         if: startsWith(github.ref, 'refs/heads/main')
-        run: |
+        run: >
           nuget push .packages/*.nupkg
             -Source 'https://nuget.pkg.github.com/dcjulian29/index.json'
             -ApiKey ${{secrets.NUGET_API_KEY}}
