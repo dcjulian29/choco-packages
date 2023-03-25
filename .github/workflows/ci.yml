@@ -26,5 +26,5 @@ jobs:
         uses: EasyDesk/action-nuget-push@v1.0.0
         with:
           nuget-api-key: '${{secrests.NUGET_API_KEY}}'
-          nuget-url: https://nuget.pkg.github.com/dcjulian29/index.json
-          publish-dir: .packages/*.nupkg
+          nuget-url: 'https://nuget.pkg.github.com/dcjulian29/index.json'
+          publish-dir: '.packages/*.nupkg'
