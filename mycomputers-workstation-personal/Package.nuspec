@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2301.17.3</version>
+    <version>2303.26.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -26,7 +26,7 @@
       <dependency id="teracopy" />
       <dependency id="vlc" />
       <dependency id="mysettings-vscode" />
-      <dependency id="vnc-viewer" />
+      <dependency id="rustdesk" />
       <dependency id="rsat" />
       <dependency id="googlechrome" />
       <dependency id="firefox" />

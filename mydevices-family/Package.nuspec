@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-family</id>
-    <version>2201.13.1</version>
+    <version>2303.26.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my family computer configurations.</description>
@@ -10,7 +10,7 @@
     <dependencies>
       <dependency id="mycomputers-common" />
       <dependency id="tightvnc" />
-      <dependency id="teamviewer" />
+      <dependency id="rustdesk" />
       <dependency id="googlechrome" />
     </dependencies>
   </metadata>
