@@ -24,7 +24,7 @@ jobs:
       - name: Publish Packages
         if: startsWith(github.ref, 'refs/heads/main')
         run: >
-          dotnet nuget push **/*.nupkg
+          dotnet nuget push D:\a\choco-packages\choco-packages\.packages\dev-csharp.2211.16.1.nupkg
           -k '${{ secrets.NUGET_API_KEY }}'
           -s 'https://nuget.pkg.github.com/dcjulian29/index.json'
           --skip-duplicate
