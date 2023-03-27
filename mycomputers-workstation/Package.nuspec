@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation</id>
-    <version>2206.27.1</version>
+    <version>2303.26.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my workstation computer configurations.</description>
@@ -19,7 +19,6 @@
       <dependency id="sysinternals" />
       <dependency id="myapps-executor" />
       <dependency id="grepwin" />
-      <dependency id="windirstat" />
       <dependency id="winmerge" />
       <dependency id="frhed" />
       <dependency id="mytools-scm" />
