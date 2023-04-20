@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.apps.ansible-dev</id>
+    <version>0.2.0</version>
+    <authors>dcjulian29</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://github.com/dcjulian29/ansible-dev/</projectUrl>
+    <description>ansible-dev integrates with Vagrant to enable users to define, develop, and test Ansible
+      playbooks, roles, and modules. It allows users to define and manage infrastructure resources and
+      uses the providers automation engine to provision and run plays.
+
+      By utilizing Ansible's playbooks, roles, and modules, developers can automate the deployment of
+      software applications across multiple hosting providers, reducing the time and effort required to
+      manage complex infrastructure environments. These playbooks, roles, and modules enable developers to
+      create, manage, and provision infrastructure resources like virtual machines, load balancers, and
+      databases.</description>
+    <tags>dcjulian29 apps ansible-dev ansible</tags>
+  </metadata>
+</package>
