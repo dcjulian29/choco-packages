@@ -12,7 +12,7 @@
       <dependency id="slack" />
       <dependency id="thunderbird" />
       <dependency id="mysettings-hyperv" />
-      <dependency id="mysettings-virtualbox" />
+      <dependency id="dcjulian29.settings.virtualbox" />
       <dependency id="mysettings-devenv" />
       <dependency id="wirelessnetview" />
       <dependency id="wireguard" />
