@@ -1,6 +1,6 @@
-﻿$version = "7.0.4"
-$build = 154605
-
+﻿$version = "7.0.8"
+$build = 156879
+$cksum = "8a2da26ca69c1ddfc50fb65ee4fa8f269e692302046df4e2f48948775ba6339a"
 $log = "virtualbox-$(([Guid]::NewGuid()).Guid).log"
 $url = "https://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$build-Win.exe"
 $props = @(
@@ -36,13 +36,17 @@ if ((Get-Item ".\virtualbox.exe").Length -lt 78643200) {
   throw "Downloaded package is not big enough!"
 }
 
+$hash = (Get-FileHash -Path "./virtualbox.exe" -Algorithm SHA256).Hash
+if ($cksum -ne $hash) {
+  throw "Downloaded package does not match checksum ($cksum != $hash)"
+}
+
 Invoke-Expression "./virtualbox.exe -extract -silent"
 
 if (-not (Test-Path -Path "${env:TEMP}\VirtualBox-$version-r$build.msi")) {
   throw "Error extracting virtualbox installer from package!"
 }
 
-#Invoke-Expression "msiexec.exe $($props -join ' ')"
 Start-Process -FilePath "msiexec.exe" -ArgumentList $props -NoNewWindow -Wait
 
 Get-Content $log
