@@ -6,7 +6,7 @@
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>https://raw.githubusercontent.com/dcjulian29/choco-packages/main/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/dcjulian29/choco-packages/
+    <projectUrl>https://github.com/dcjulian29/choco-packages/</projectUrl>
     <description>My way of post configuration of Virtualbox</description>
     <tags>dcjulian29 settings virtualbox hypervisor</tags>
     <dependencies>
