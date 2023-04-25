@@ -44,8 +44,12 @@ Get-ChildItem -Path $baseDir -Directory | ForEach-Object {
       "-NoDefaultExcludes"
     )
 
-    Start-Process -FilePath $nuget -ArgumentList $al -NoNewWindow -Wait
-  }
+    $p = Start-Process -FilePath $nuget -ArgumentList $al -NoNewWindow -Wait -PassThru
 
-  Pop-Location
+    Pop-Location
+
+    if ($p.ExitCode -ne 0) {
+      throw "Failure creating package '$($_.BaseName)' with status code $($p.ExitCode)"
+    }
+  }
 }
