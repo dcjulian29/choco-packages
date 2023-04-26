@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mydevices-workstation</id>
-    <version>2304.25.1</version>
+    <id>dcjulian29.devices.hermes</id>
+    <version>2304.26.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>These are the packages that I install on my personal tower workstation computer.</description>
-    <tags>mydevices mycomputers tower workstation personal</tags>
+    <description>These are the packages that I install on my workstation computer.</description>
+    <tags>dcjulian29 devices hermes workstation personal</tags>
     <dependencies>
       <dependency id="mycomputers-workstation-personal" />
       <dependency id="slack" />
@@ -18,6 +18,10 @@
       <dependency id="handbrake" />
       <dependency id="anydvd" />
       <dependency id="myapps-xmind" />
+      <dependency id="ansible-via-docker" />
+      <dependency id="ansible-host" />
+      <dependency id="ansible-dev" />
+      <dependency id="openssl-via-docker" />
     </dependencies>
   </metadata>
 </package>
