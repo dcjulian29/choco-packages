@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.hermes</id>
-    <version>2304.27.2</version>
+    <version>2304.28.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my workstation computer.</description>
@@ -20,6 +20,8 @@
       <dependency id="dcjulian29.apps.ansible-dev" />
       <dependency id="dcjulian29.apps.openssl-via-docker" />
       <dependency id="dcjulian29.apps.bind-via-docker" />
+      <dependency id="dcjulian29.apps.hugo-via-docker" />
+      <dependency id="dcjulian29.apps.nmap-via-docker" />
     </dependencies>
   </metadata>
 </package>
