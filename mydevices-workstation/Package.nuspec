@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mydevices-workstation</id>
+    <version>2304.27.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages that I install on my workstation computer.</description>
+    <tags>mydevices mycomputers tower workstation personal</tags>
+    <dependencies>
+      <dependency id="slack" />
+      <dependency id="thunderbird" />
+      <dependency id="mysettings-hyperv" />
+      <dependency id="dcjulian29.devices.hermes" />
+    </dependencies>
+  </metadata>
+</package>

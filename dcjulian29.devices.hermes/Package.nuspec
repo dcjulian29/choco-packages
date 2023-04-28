@@ -2,16 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.hermes</id>
-    <version>2304.26.2</version>
+    <version>2304.27.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my workstation computer.</description>
     <tags>dcjulian29 devices hermes workstation personal</tags>
     <dependencies>
       <dependency id="mycomputers-workstation-personal" />
-      <dependency id="slack" />
-      <dependency id="thunderbird" />
-      <dependency id="mysettings-hyperv" />
       <dependency id="dcjulian29.settings.virtualbox" />
       <dependency id="mysettings-devenv" />
       <dependency id="nextcloud-client" />
@@ -22,6 +19,7 @@
       <dependency id="ansible-host" />
       <dependency id="ansible-dev" />
       <dependency id="openssl-via-docker" />
+      <dependency id="bind-via-docker" />
     </dependencies>
   </metadata>
 </package>
