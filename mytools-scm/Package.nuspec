@@ -2,19 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mytools-scm</id>
-    <version>2304.3.1</version>
+    <version>2304.29.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages for Source Control that I install.</description>
     <tags>mytools-scm mytools scm</tags>
     <dependencies>
-      <dependency id="mysettings-git" />
-      <dependency id="mysettings-winmerge" />
-      <dependency id="lazygit" />
-      <dependency id="github-desktop" />
-      <dependency id="gh" />
-      <dependency id="glab" />
-      <dependency id="act-cli" />
+      <dependency id="dcjulian29.groups.scm" />
     </dependencies>
   </metadata>
 </package>
