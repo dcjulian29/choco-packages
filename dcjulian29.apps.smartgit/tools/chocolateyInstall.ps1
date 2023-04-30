@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop';
 
-$version = $env:chocolateyPackageVersion -replace '.', '_'
+$version = $env:chocolateyPackageVersion -replace '\.', '_'
 $packageName = $env:chocolateyPackageName
 
 $packageArgs = @{
