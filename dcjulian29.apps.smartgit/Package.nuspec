@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.apps.ansible-host</id>
+    <version>21.1.5</version>
+    <title>SmartGit</title>
+    <owners>syntevo GmbH</owners>
+    <authors>Julian Easterling</authors>
+    <projectUrl>http://www.syntevo.com/smartgit/</projectUrl>
+    <licenseUrl>http://www.syntevo.com/smartgit/license.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SmartGit assists Git newbies as well as it makes experienced developers more productive and has the same user interface on Windows, macOS and Linux.</description>
+    <tags>dcjulian29 smartgit git scm</tags>
+  </metadata>
+</package>
