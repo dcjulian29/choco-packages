@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.devices.bender</id>
+    <version>2305.19.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages that I install on my laptop computer.</description>
+    <tags>dcjulian29 devices bender laptop personal</tags>
+    <dependencies>
+      <dependency id="mycomputers-workstation-personal" />
+      <dependency id="dcjulian29.settings.virtualbox" />
+      <dependency id="mysettings-devenv" />
+      <dependency id="wirelessnetview" />
+      <dependency id="wireguard" />
+      <dependency id="dcjulian29.apps.ansible-via-docker" />
+      <dependency id="dcjulian29.apps.ansible-host" />
+      <dependency id="dcjulian29.apps.ansible-dev" />
+      <dependency id="dcjulian29.apps.openssl-via-docker" />
+      <dependency id="dcjulian29.apps.bind-via-docker" />
+      <dependency id="dcjulian29.apps.hugo-via-docker" />
+      <dependency id="dcjulian29.apps.nmap-via-docker" />
+      <dependency id="dcjulian29.apps.unix-tools" />
+    </dependencies>
+  </metadata>
+</package>

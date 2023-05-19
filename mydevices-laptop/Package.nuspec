@@ -2,20 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-laptop</id>
-    <version>2304.25.1</version>
+    <version>2305.19.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal laptop computer configurations.</description>
     <tags>mydevices mycomputers laptop personal</tags>
     <dependencies>
-      <dependency id="mycomputers-workstation-personal" />
       <dependency id="slack" />
       <dependency id="thunderbird" />
       <dependency id="mysettings-hyperv" />
-      <dependency id="dcjulian29.settings.virtualbox" />
-      <dependency id="mysettings-devenv" />
-      <dependency id="wirelessnetview" />
-      <dependency id="wireguard" />
+      <dependency id="dcjulian29.devices.bender" />
     </dependencies>
   </metadata>
 </package>
