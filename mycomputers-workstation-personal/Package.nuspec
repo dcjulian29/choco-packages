@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mycomputers-workstation-personal</id>
-    <version>2304.18.1</version>
+    <version>2306.6.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -29,7 +29,6 @@
       <dependency id="rustdesk" />
       <dependency id="rsat" />
       <dependency id="googlechrome" />
-      <dependency id="keepass" />
       <dependency id="mysettings-freecommander" />
       <dependency id="terraform" />
     </dependencies>
