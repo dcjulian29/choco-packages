@@ -17,5 +17,9 @@ Install-ChocolateyPackage @packageArgs
 
 # CLI
 
-Invoke-WebRequest -Uri "https://github.com/loft-sh/devpod/releases/v$version/devpod-windows-amd64.exe" `
-  -OutFile $PSScriptRoot\devpod.exe
+$requestArgs = @{
+  Uri = "https://github.com/loft-sh/devpod/releases/download/v$version/devpod-windows-amd64.exe"
+  OutFile = "$PSScriptRoot\devpod.exe"
+}
+
+Invoke-WebRequest @requestArgs
