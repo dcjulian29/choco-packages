@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.hermes</id>
-    <version>2306.6.2</version>
+    <version>2306.25.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my workstation computer.</description>
@@ -14,7 +14,7 @@
       <dependency id="nextcloud-client" />
       <dependency id="handbrake" />
       <dependency id="anydvd" />
-      <dependency id="myapps-xmind" />
+      <dependency id="dcjulian29.apps.xmind" />
       <dependency id="dcjulian29.apps.ansible-via-docker" />
       <dependency id="dcjulian29.apps.ansible-host" />
       <dependency id="dcjulian29.apps.ansible-dev" />

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>myapps-xmind</id>
-    <version>22.11.3656</version>
+    <id>dcjulian29.apps.xmind</id>
+    <version>22.11.3771</version>
     <authors>Xmind Ltd.</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>https://xmind.app/pricing</licenseUrl>
