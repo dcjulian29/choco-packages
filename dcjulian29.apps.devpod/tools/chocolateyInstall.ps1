@@ -8,7 +8,7 @@ $packageArgs = @{
   fileType       = "msi"
   silentArgs     = "/PASSIVE /NORESTART"
   url64bit       = "https://github.com/loft-sh/devpod/releases/download/v$version/DevPod_windows_x64_en-US.msi"
-  checksum64     = "a0add47e59a653e4465ac885a323ef0accd013d9b69736234d44cb91a2761a82"
+  checksum64     = "59610E40D43CBE12B59D5E9DA0A8A19B1AC0480775897F6340BC2DF6E107C095"
   checksumType64 = "sha256"
   validExitCodes = @(0)
 }
