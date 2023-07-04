@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mycomputers-workstation</id>
-    <version>2303.26.1</version>
+    <id>dcjulian29.groups.workstation</id>
+    <version>2307.4.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>These are the packages that I install on my workstation computer configurations.</description>
-    <tags>mycomputers-workstation mycomputers workstation</tags>
+    <description>These are the packages that I install on workstation computers.</description>
+    <tags>dcjulian29 groups workstation</tags>
     <dependencies>
-      <dependency id="mycomputers-common" />
+      <dependency id="dcjulian29.groups.common" />
       <dependency id="mysettings-console" />
       <dependency id="mysettings-explorer" />
       <dependency id="mysettings-power" />
@@ -21,7 +21,7 @@
       <dependency id="grepwin" />
       <dependency id="winmerge" />
       <dependency id="frhed" />
-      <dependency id="mytools-scm" />
+      <dependency id="dcjulian29.groups.scm" />
     </dependencies>
   </metadata>
 </package>
