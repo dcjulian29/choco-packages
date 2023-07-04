@@ -98,7 +98,7 @@ if (-not ([bool](Get-FavoriteFolder -Key "projects"))) {
 
 #-------------------------------------------------------------------------------
 
-if (-not ($Global:DoingUpgrade)) {
+if (-not (Test-Path -Path "${env:TEMP}\dcjulian29.groups.personal.update.txt")) {
   Write-Output "`n`nExcluding Ports for Common Servers so the OS doesn't reserve them..."
 
   if (Get-Process -Name "syncthing" -ea 0) {
@@ -144,3 +144,5 @@ if (-not ($Global:DoingUpgrade)) {
   netsh int ipv4 show excludedportrange tcp
   netsh int ipv4 show excludedportrange udp
 }
+
+Remove-Item -Path "${env:TEMP}\dcjulian29.groups.personal.update.txt" -Force
