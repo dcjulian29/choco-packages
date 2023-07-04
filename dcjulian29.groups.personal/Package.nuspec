@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mycomputers-workstation-personal</id>
-    <version>2306.6.1</version>
+    <id>dcjulian29.groups.personal</id>
+    <version>2307.4.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
-    <tags>mycomputers-workstation-personal mycomputers workstation personal</tags>
+    <tags>dcjulian29 groups personal</tags>
     <dependencies>
-      <dependency id="mycomputers-workstation" />
+      <dependency id="dcjulian29.groups.workstation" />
       <dependency id="mysettings-wsl2" />
       <dependency id="mytools-personal" />
       <dependency id="docker-desktop" />
