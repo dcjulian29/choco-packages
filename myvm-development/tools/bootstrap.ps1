@@ -90,8 +90,8 @@ if (-not ($(getSetting "BootstrapStarted") -eq "Yes" )) {
 Start-Sleep -Seconds 2
 
 @(
-  "mytools-scm"
-  "mytools-common"
+  "dcjulian29.groups.scm"
+  "dcjulian29.groups.common"
   "mytools-containers"
   "mytools-personal"
   "mytools-database"

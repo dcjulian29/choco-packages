@@ -2,15 +2,15 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-devvm</id>
-    <version>2211.15.1</version>
+    <version>2307.4.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>A package as the base for the VM I use for software development.</description>
     <tags>mydevelopvm myvm development devvm</tags>
     <dependencies>
       <dependency id="myvm-development" />
-      <dependency id="mytools-scm" />
-      <dependency id="mytools-common" />
+      <dependency id="dcjulian29.groups.scm" />
+      <dependency id="dcjulian29.groups.common" />
       <dependency id="docker-desktop" />
       <dependency id="mytools-containers" />
       <dependency id="mytools-personal" />

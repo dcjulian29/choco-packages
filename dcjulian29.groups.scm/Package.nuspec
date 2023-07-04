@@ -6,7 +6,7 @@
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>This is the group of packages for Source Control that I typically install.</description>
-    <tags>dcjulian29 mytools-scm mytools scm</tags>
+    <tags>dcjulian29 groups scm</tags>
     <dependencies>
       <dependency id="mysettings-git" />
       <dependency id="mysettings-winmerge" />
