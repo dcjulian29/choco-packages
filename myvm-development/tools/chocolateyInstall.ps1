@@ -4,7 +4,7 @@ $docDir = Join-Path -Path $env:UserProfile -ChildPath Documents
 $poshDir = Join-Path -Path $docDir -ChildPath WindowsPowerShell
 
 if (-not (Test-Path "$poshDir\installed.txt")) {
-    throw "Dependant MyPowershell Not Installed properly! Can't Continue!"
+    throw "Dependant Powershell package Not Installed properly! Can't Continue!"
     exit
 }
 

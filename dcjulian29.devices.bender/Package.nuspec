@@ -2,19 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.bender</id>
-    <version>2307.4.2</version>
+    <version>2307.4.3</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my laptop computer.</description>
     <tags>dcjulian29 devices bender laptop personal</tags>
     <dependencies>
       <dependency id="dcjulian29.groups.personal" />
-      <dependency id="dcjulian29.pshell.profile" />
-      <dependency id="dcjulian29.pshell.modules" />
-      <dependency id="dcjulian29.pwsh.profile" />
-      <dependency id="dcjulian29.pwsh.modules" />
       <dependency id="dcjulian29.settings.virtualbox" />
-      <dependency id="mysettings-devenv" />
       <dependency id="wirelessnetview" />
       <dependency id="wireguard" />
       <dependency id="dcjulian29.apps.ansible-via-docker" />
@@ -30,7 +25,6 @@
       <dependency id="age.portable" />
       <dependency id="slack" />
       <dependency id="thunderbird" />
-      <dependency id="mysettings-hyperv" />
     </dependencies>
   </metadata>
 </package>

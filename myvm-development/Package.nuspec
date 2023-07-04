@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>myvm-development</id>
-    <version>2303.6.1</version>
+    <version>2307.4.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>This package gets called for the initial configuration of my development virtual machines.</description>
@@ -11,7 +11,9 @@
       <dependency id="myvm-workstation" />
       <dependency id="mysettings-devwallpaper" />
       <dependency id="myapps-executor" />
-      <dependency id="mypowershell" />
+      <dependency id="dcjulian29.pshell.profile" />
+      <dependency id="dcjulian29.pwsh.profile" />
+      <dependency id="dcjulian29.pwsh.modules" />
       <dependency id="mysettings-syncthing" />
     </dependencies>
   </metadata>

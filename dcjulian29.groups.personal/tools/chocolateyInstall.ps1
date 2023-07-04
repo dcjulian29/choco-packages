@@ -1,13 +1,5 @@
-$psremote = ([bool](Invoke-Command -ComputerName $env:COMPUTERNAME `
-  -ScriptBlock {IPConfig} -ErrorAction SilentlyContinue))
-
-$hyperv = (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V).State -eq "Enabled"
-
-$containers = (Get-WindowsOptionalFeature -Online -FeatureName Containers).State -eq "Enabled"
-
-$wsl = (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux).State -eq "Enabled"
-
-if (-not $psremote) {
+if (-not ([bool](Invoke-Command -ComputerName $env:COMPUTERNAME `
+    -ScriptBlock {IPConfig} -ErrorAction SilentlyContinue))) {
   Write-Output "Enabling Remote Management..."
 
   Enable-PSRemoting -Force -SkipNetworkProfileCheck
@@ -16,41 +8,95 @@ if (-not $psremote) {
   Set-NetFirewallRule -Name 'WINRM-HTTP-In-TCP'  -Enabled True -Profile Private
 }
 
-if (-not $hyperv) {
+if (-not (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V).State -eq "Enabled") {
   Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart
 }
 
-if (-not (Test-Path "$env:SystemDrive\Virtual Machines")) {
-  New-Item -Path "$env:SystemDrive\Virtual Machines" -ItemType Directory | Out-Null
-}
-
-if (-not (Test-Path "$env:SystemDrive\Virtual Machines\ISO")) {
-  New-Item -Path "$env:SystemDrive\Virtual Machines\Hyper-V" -ItemType Directory | Out-Null
-}
-
-Add-FavoriteFolder -Key "iso" -Path "$env:SystemDrive\Virtual Machines\ISO" -Force
-
-if (-not $containers) {
+if (-not (Get-WindowsOptionalFeature -Online -FeatureName Containers).State -eq "Enabled") {
   Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
 }
 
-if (-not $wsl) {
+if (-not (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux).State `
+    -eq "Enabled") {
   Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
 
   Write-Warning "You must reboot before using the Linux Subsystem..."
 }
 
 if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
-  $vmp = (Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform).State -eq "Enabled"
-
-  if (-not $vmp) {
+  if (-not (Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform).State `
+      -eq "Enabled") {
     Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
 
     Write-Warning "You may need to reboot before using the Virtual Machine Platform..."
   }
 } else {
-  Write-Output "WSL 2 is not available on this build of Windows: $([System.Environment]::OSVersion.Version.Build) "
+  Write-Output "WSL 2 is not available on this build of Windows: " `
+    + "$([System.Environment]::OSVersion.Version.Build)"
 }
+
+#-------------------------------------------------------------------------------
+
+if (-not (Test-Path "${env:SystemDrive}\Virtual Machines")) {
+  New-Item -Path "${env:SystemDrive}\Virtual Machines" -ItemType Directory | Out-Null
+}
+
+if (-not ([bool](Get-FavoriteFolder -Key "vm"))) {
+  Add-FavoriteFolder -Key "vm" -Path "$env:SystemDrive\Virtual Machines" -Force
+}
+
+if (-not (Test-Path "${env:SystemDrive}\Virtual Machines\ISO")) {
+  New-Item -Path "${env:SystemDrive}\Virtual Machines\Hyper-V" -ItemType Directory | Out-Null
+}
+
+if (-not ([bool](Get-FavoriteFolder -Key "iso"))) {
+  Add-FavoriteFolder -Key "iso" -Path "$env:SystemDrive\Virtual Machines\ISO" -Force
+}
+
+if (-not (Get-VMSwitch -Name LAB -ErrorAction SilentlyContinue)) {
+  New-VMSwitch -Name LAB -SwitchType Internal
+  New-NetIPAddress -IPAddress 10.10.10.11 -PrefixLength 24 -InterfaceAlias "vEthernet (LAB)"
+  Set-NetConnectionProfile `
+    -InterfaceIndex $((Get-NetConnectionProfile -InterfaceAlias "vEthernet (LAB)").InterfaceIndex) `
+    -NetworkCategory Private
+}
+
+if (-not (Test-Path "${env:SystemDrive}\Virtual Machines\Hyper-V")) {
+  New-Item -Path "${env:SystemDrive}\Virtual Machines\Hyper-V" -ItemType Directory | Out-Null
+}
+
+Set-VMHost -VirtualMachinePath "${env:SystemDrive}\Virtual Machines\Hyper-V"
+Set-VMHost -VirtualHardDiskPath "${env:SystemDrive}\Virtual Machines\Hyper-V\Discs"
+
+if (-not ([bool](Get-FavoriteFolder -Key "hyperv"))) {
+  Add-FavoriteFolder -Key "hyperv" -Path "${env:SystemDrive}\Virtual Machines\Hyper-V" -Force
+}
+
+if (-not (Test-Path "${env:USERPROFILE}\code")) {
+  New-Item -Type Directory -Path "${env:USERPROFILE}\code" | Out-Null
+}
+
+Set-Content -Path "${env:USERPROFILE}\code\desktop.ini" -Value @"
+[.ShellClassInfo]
+IconResource=${env:SYSTEMDRIVE}\etc\executor\folder-development.ico,0
+[ViewState]
+Mode=
+Vid=
+FolderType=Generic
+"@
+
+attrib.exe +S +H $env:USERPROFILE\code\desktop.ini
+attrib.exe +R $env:USERPROFILE\code
+
+if (-not ([bool](Get-FavoriteFolder -Key "code"))) {
+  Add-FavoriteFolder -Key "code" -Path "${env:USERPROFILE}\code" -Force
+}
+
+if (-not ([bool](Get-FavoriteFolder -Key "projects"))) {
+  Add-FavoriteFolder -Key "projects" -Path "${env:USERPROFILE}\code" -Force
+}
+
+#-------------------------------------------------------------------------------
 
 if (-not ($Global:DoingUpgrade)) {
   Write-Output "`n`nExcluding Ports for Common Servers so the OS doesn't reserve them..."
