@@ -2,13 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dev-mobile</id>
-    <version>2208.20.1</version>
+    <version>2307.16.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages I use when doing Mobile development.</description>
     <tags>dev-mobile mydev</tags>
     <dependencies>
-      <dependency id="mysettings-vscode-mobile" />
       <dependency id="visualstudio2022professional" />
       <dependency id="visualstudio2022-workload-netcrossplat" />
       <dependency id="visualstudio2022-workload-xamarinbuildtools" />

@@ -2,14 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dev-csharp</id>
-    <version>2211.16.1</version>
+    <version>2307.16.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages I use when doing C# development.</description>
     <tags>dev-csharp mydev</tags>
     <dependencies>
       <dependency id="dotpeek.portable" />
-      <dependency id="mysettings-vscode-csharp" />
       <dependency id="dotnetcore-sdk" />
       <dependency id="dotnet-sdk" />
       <dependency id="visualstudio2022professional" />
