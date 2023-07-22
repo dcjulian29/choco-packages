@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-devvm</id>
-    <version>2307.22.2</version>
+    <version>2307.22.3</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>A package as the base for the VM I use for software development.</description>
@@ -19,7 +19,10 @@
       <dependency id="baretail" />
       <dependency id="myapps-searchmyfiles" />
       <dependency id="wsl-ubuntu" />
-      <dependency id="mytools-database" />
+      <dependency id="sqlite" />
+      <dependency id="sqlitebrowser" />
+      <dependency id="sql-server-management-studio" />
+      <dependency id="sqlserver-cmdlineutils" />
     </dependencies>
   </metadata>
 </package>

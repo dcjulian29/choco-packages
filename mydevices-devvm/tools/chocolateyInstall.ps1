@@ -31,3 +31,24 @@ if (-not ([bool](Get-FavoriteFolder -Key "projects"))) {
 }
 
 [System.Environment]::SetEnvironmentVariable('CAKE_SETTINGS_SKIPPACKAGEVERSIONCHECK', 'true',[System.EnvironmentVariableTarget]::User)
+
+#--------------- Database development stuff...
+
+Import-Module PackageManagement
+
+Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
+
+Import-Module PowerShellGet
+
+Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+
+@(
+  "SqlServer"
+  "dbatools"
+) | ForEach-Object {
+  if (Get-Module -Name $_ -ListAvailable -ErrorAction SilentlyContinue) {
+    Update-Module -Name $_ -Confirm:$false
+  } else {
+    Install-Module -Name $_ -AllowClobber -Force
+  }
+}

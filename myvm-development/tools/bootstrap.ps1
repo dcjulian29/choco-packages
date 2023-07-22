@@ -92,7 +92,6 @@ Start-Sleep -Seconds 2
 @(
   "dcjulian29.groups.scm"
   "dcjulian29.groups.common"
-  "mytools-database"
   "mydevices-devvm"
 ) | ForEach-Object { installPackage $_ }
 
