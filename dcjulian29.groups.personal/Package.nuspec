@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2307.22.2</version>
+    <version>2307.22.3</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -38,6 +38,7 @@
       <dependency id="googlechrome" />
       <dependency id="mysettings-freecommander" />
       <dependency id="terraform" />
+      <dependency id="golang" />
     </dependencies>
   </metadata>
 </package>
