@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>mydevices-devvm</id>
-    <version>2307.22.1</version>
+    <version>2307.22.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>A package as the base for the VM I use for software development.</description>
@@ -12,7 +12,9 @@
       <dependency id="dcjulian29.groups.scm" />
       <dependency id="dcjulian29.groups.common" />
       <dependency id="docker-desktop" />
-      <dependency id="mytools-containers" />
+      <dependency id="lazydocker" />
+      <dependency id="kubernetes-cli" />
+      <dependency id="kubernetes-helm" />
       <dependency id="python" />
       <dependency id="baretail" />
       <dependency id="myapps-searchmyfiles" />
