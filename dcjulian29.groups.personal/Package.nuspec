@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2307.16.1</version>
+    <version>2307.22.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computer configurations.</description>
@@ -12,7 +12,10 @@
       <dependency id="dcjulian29.pshell.modules" />
       <dependency id="dcjulian29.pwsh.modules" />
       <dependency id="mysettings-wsl2" />
-      <dependency id="mytools-personal" />
+      <dependency id="python" />
+      <dependency id="baretail" />
+      <dependency id="myapps-searchmyfiles" />
+      <dependency id="wsl-ubuntu" />
       <dependency id="docker-desktop" />
       <dependency id="mytools-containers" />
       <dependency id="bitwarden" />

@@ -92,10 +92,6 @@ if (-not ([bool](Get-FavoriteFolder -Key "code"))) {
   Add-FavoriteFolder -Key "code" -Path "${env:USERPROFILE}\code" -Force
 }
 
-if (-not ([bool](Get-FavoriteFolder -Key "projects"))) {
-  Add-FavoriteFolder -Key "projects" -Path "${env:USERPROFILE}\code" -Force
-}
-
 #-------------------------------------------------------------------------------
 
 if (-not (Test-Path -Path "${env:TEMP}\dcjulian29.groups.personal.update.txt")) {
