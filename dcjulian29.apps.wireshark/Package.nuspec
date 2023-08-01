@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>myapps-wireshark</id>
-    <version>4.0.2</version>
+    <id>dcjulian29.apps.wireshark</id>
+    <version>4.0.7</version>
     <authors>Gerald Combs and the Wireshark Team</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>https://gitlab.com/wireshark/wireshark/-/blob/master/COPYING</licenseUrl>
