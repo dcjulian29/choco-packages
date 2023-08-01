@@ -2,15 +2,15 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2307.22.4</version>
+    <version>2307.31.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>These are the packages that I install on my personal workstation computer configurations.</description>
+    <description>These are the packages that I install on my personal workstation computers.</description>
     <tags>dcjulian29 groups personal</tags>
     <dependencies>
       <dependency id="dcjulian29.groups.workstation" />
-      <dependency id="dcjulian29.pshell.modules" />
-      <dependency id="dcjulian29.pwsh.modules" />
+      <dependency id="dcjulian29.psmodules" />
+      <dependency id="dcjulian29.settings.virtualbox" />
       <dependency id="mysettings-wsl2" />
       <dependency id="python" />
       <dependency id="baretail" />
@@ -27,7 +27,6 @@
       <dependency id="nugetpackageexplorer" />
       <dependency id="myapps-rainmeter" />
       <dependency id="mysettings-greenshot" />
-      <dependency id="myapps-angryip" />
       <dependency id="myapps-iperf" />
       <dependency id="mysettings-syncthing" />
       <dependency id="teracopy" />
@@ -39,6 +38,19 @@
       <dependency id="mysettings-freecommander" />
       <dependency id="terraform" />
       <dependency id="golang" />
+      <dependency id="age.portable" />
+      <dependency id="dcjulian29.apps.ansible-via-docker" />
+      <dependency id="dcjulian29.apps.ansible-host" />
+      <dependency id="dcjulian29.apps.ansible-dev" />
+      <dependency id="dcjulian29.apps.openssl-via-docker" />
+      <dependency id="dcjulian29.apps.bind-via-docker" />
+      <dependency id="dcjulian29.apps.hugo-via-docker" />
+      <dependency id="dcjulian29.apps.nmap-via-docker" />
+      <dependency id="dcjulian29.apps.unix-tools" />
+      <dependency id="dcjulian29.apps.cert-auth" />
+      <dependency id="dcjulian29.apps.devpod" />
+      <dependency id="dcjulian29.apps.dns-scan" />
+      <dependency id="dcjulian29.apps.ip-scan" />
     </dependencies>
   </metadata>
 </package>
