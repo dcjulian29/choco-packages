@@ -1,8 +1,18 @@
-Download-File -Url "https://github.com/rainmeter/rainmeter/releases/download/v4.5.17.3700/Rainmeter-4.5.17.exe" `
-  -Destination $env:TEMP\rainmeter.exe
+# ---- Install
 
-Start-Process -FilePath $env:TEMP\rainmeter.exe -ArgumentList @(
-   "/S", "/AUTOSTARTUP=1", "/RESTART=0" ) -NoNewWindow -Wait
+$installArgs = @{
+  PackageName    = $env:chocolateyPackageName
+  FileType       = "EXE"
+  SilentArgs     = "/S /AUTOSTARTUP=1 /RESTART=0"
+  url            = "https://github.com/rainmeter/rainmeter/releases/download/v4.5.18.3727/Rainmeter-4.5.18.exe"
+  checksum       = "5ac959e5dee9884512f4a34623bbad2c08be427669015b917a750f7cbfbb0a75"
+  checksumType   = "sha256"
+  ValidExitCodes = @(0, 3010)
+}
+
+Install-ChocolateyPackage @installArgs
+
+# ---- Configuration
 
 if (-not (Test-Path $env:APPDATA\Rainmeter)) {
   New-Item -Path $env:APPDATA\Rainmeter -ItemType Directory | Out-Null
