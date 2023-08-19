@@ -332,7 +332,7 @@
         }
     ],
     "showTerminalTitleInTitlebar": false,
-    "tabWidthMode": "titleLength",
+    "tabWidthMode": "equal",
     "theme": "system",
     "themes": 
     [
