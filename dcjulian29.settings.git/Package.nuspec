@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mysettings-git</id>
-    <version>2301.18.1</version>
+    <id>dcjulian29.settings.git</id>
+    <version>2308.19.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom configuration and aliases for the Git SCM tool.</description>
-    <tags>git configuration custom</tags>
+    <tags>dcjulian29 git configuration aliases</tags>
     <dependencies>
       <dependency id="git" />
       <dependency id="smimesign" />

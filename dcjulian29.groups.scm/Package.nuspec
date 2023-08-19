@@ -2,13 +2,15 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.scm</id>
-    <version>2304.29.1</version>
+    <version>2308.19.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>This is the group of packages for Source Control that I typically install.</description>
-    <tags>dcjulian29 groups scm</tags>
+    <description>
+      This is the group of packages for source control management that I typically install.
+    </description>
+    <tags>dcjulian29 source control vcs scm</tags>
     <dependencies>
-      <dependency id="mysettings-git" />
+      <dependency id="dcjulian29.settings.git" />
       <dependency id="mysettings-winmerge" />
       <dependency id="lazygit" />
       <dependency id="gh" />

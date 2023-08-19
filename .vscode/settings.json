@@ -1,8 +1,29 @@
 {
   "cSpell.words": [
     "asmv",
+    "autocrlf",
+    "autosetuprebase",
+    "Cblue",
+    "Cgreen",
+    "Creset",
     "dword",
+    "ffdx",
+    "fscache",
+    "gfff",
+    "gffs",
+    "gfrf",
+    "gfrs",
+    "gitk",
     "HKEY",
-    "nupkg"
+    "numstat",
+    "nupkg",
+    "packageid",
+    "ploa",
+    "plog",
+    "safecrlf",
+    "smimesign",
+    "unstage",
+    "wdiff",
+    "winmergeu"
   ]
 }
