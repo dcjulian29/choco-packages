@@ -91,7 +91,7 @@
 "alias.lastcommit","log --max-count=1"
 "alias.lq","log --pretty=format:'%Cred%h%Creset %s'"
 "alias.lqa","log --pretty=format:'%Cred%h%Creset %Cgreen(%an)%Creset %s'"
-"alias.lqc","""!f() { git log $1..$2 --pretty=format:'* %s %Cred%h%Creset - %C(bold blue)%an' --no-merges; }; f""
+"alias.lqc","""!f() { git log $1..$2 --pretty=format:'* %s %Cred%h%Creset - %C(bold blue)%an' --no-merges; }; f"""
 "alias.lqd","log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %s' --date=short"
 "alias.standup","!git log --since yesterday --author `git config user.email` --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
 "alias.who","shortlog -s -e --"
