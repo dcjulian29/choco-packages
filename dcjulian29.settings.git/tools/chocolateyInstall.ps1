@@ -5,7 +5,7 @@ $config | ForEach-Object {
     if (-not $_.Key.StartsWith('#')) {
         $key = ($_.Key).Trim()
         $value = ($_.Value).Trim()
-        Write-Output "Setting '$key' to '$value'..."
+        Write-Output "Setting $key to $value..."
         & $git config --global --replace-all $key $value
     }
 }
