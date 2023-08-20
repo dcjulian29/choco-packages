@@ -8,7 +8,7 @@
 "core.excludesfile","~/.gitignore"
 "core.safecrlf","false"
 "core.filemode","false"
-"core.editor","\"C:/Program Files/notepad++/notepad++.exe\" -multiInst -nosession"
+"core.editor","""C:/Program Files/notepad++/notepad++.exe"" -multiInst -nosession"
 
 "gpg.x509.program","smimesign"
 "gpg.format","x509"
@@ -134,10 +134,10 @@
 "diff.guitool","winmerge"
 
 "difftool.winmerge.path", "C:/Program Files/WinMerge/winmergeu.exe"
-"difftool.winmerge.cmd", \"C:/Program Files/WinMerge/winmergeu.exe\" -e -u \"$LOCAL\" \"$REMOTE\"
+"difftool.winmerge.cmd", "C:/Program Files/WinMerge/winmergeu.exe"" -e -u ""$LOCAL"" ""$REMOTE"""
 
 "difftool.vscode.path", "C:/Program Files/Microsoft VS Code/code.exe"
-"difftool.vscode.cmd", \"C:/Program Files/Microsoft VS Code/code.exe\" --wait --diff \"$LOCAL\" \"$REMOTE\"
+"difftool.vscode.cmd", "C:/Program Files/Microsoft VS Code/code.exe"" --wait --diff ""$LOCAL"" ""$REMOTE"""
 
 "merge.tool","winmerge"
 "merge.guitool","winmerge"
@@ -147,7 +147,7 @@
 "mergetool.keepTemporaries","false"
 
 "mergetool.winmerge.path", "C:/Program Files/WinMerge/winmergeu.exe"
-"mergetool.winmerge.cmd", \"C:/Program Files/WinMerge/winmergeu.exe\" -e -u  -wl -wr -fm -dl \"Mine: $LOCAL\" -dm \"Merged: $BASE\" -dr \"Theirs: $REMOTE\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" -o \"$MERGED\"
+"mergetool.winmerge.cmd", "C:/Program Files/WinMerge/winmergeu.exe"" -e -u  -wl -wr -fm -dl ""Mine: $LOCAL"" -dm ""Merged: $BASE"" -dr ""Theirs: $REMOTE"" ""$LOCAL"" ""$BASE"" ""$REMOTE"" -o ""$MERGED"""
 
 "mergetool.vscode.path", "C:/Program Files/Microsoft VS Code/code.exe"
-"mergetool.vscode.cmd", \"C:/Program Files/Microsoft VS Code/code.exe\" --wait \"$MERGED\"
+"mergetool.vscode.cmd", "C:/Program Files/Microsoft VS Code/code.exe"" --wait ""$MERGED"""
