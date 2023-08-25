@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mydevices-family</id>
-    <version>2307.4.1</version>
+    <id>dcjulian29.devices.family</id>
+    <version>2308.25.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>These are the packages that I install on my family computer configurations.</description>
-    <tags>mydevices mycomputers family</tags>
+    <description>These are the packages that I install on family computer configurations.</description>
+    <tags>dcjulian29 devices family</tags>
     <dependencies>
       <dependency id="dcjulian29.groups.common" />
       <dependency id="tightvnc" />
