@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.apps.rustdesk</id>
+    <version>1.2.2</version>
+    <title>RustDesk</title>
+    <owners>Purslane Ltd.</owners>
+    <authors>Julian Easterling</authors>
+    <projectUrl>https://rustdesk.com/</projectUrl>
+    <licenseUrl>hhttps://github.com/rustdesk/rustdesk/blob/master/LICENCE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Yet another remote desktop software, written in Rust. Works out of the box, no configuration required. You have full control of your data, with no concerns about security. You can use the public RustDesk or self-hosted rendezvous/relay server, or write a custom rendezvous/relay server.</description>
+    <tags>dcjulian29 rustdesk rdp vnc teamviewer</tags>
+  </metadata>
+</package>
