@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2308.29.1</version>
+    <version>2308.31.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computers.</description>
@@ -35,7 +35,6 @@
       <dependency id="dcjulian29.apps.rustdesk" />
       <dependency id="rsat" />
       <dependency id="googlechrome" />
-      <dependency id="mysettings-freecommander" />
       <dependency id="terraform" />
       <dependency id="golang" />
       <dependency id="age.portable" />
@@ -48,7 +47,6 @@
       <dependency id="dcjulian29.apps.nmap-via-docker" />
       <dependency id="dcjulian29.apps.unix-tools" />
       <dependency id="dcjulian29.apps.cert-auth" />
-      <dependency id="dcjulian29.apps.devpod" />
       <dependency id="dcjulian29.apps.dns-scan" />
       <dependency id="dcjulian29.apps.ip-scan" />
     </dependencies>
