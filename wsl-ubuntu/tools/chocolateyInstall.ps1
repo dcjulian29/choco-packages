@@ -55,10 +55,6 @@ IconResource=$InstallFolder\folder-ubuntu.ico,0
 
   Invoke-Expression -Command "$ubuntu /bin/bash -c `"curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash`""
 
-  if (Test-Path "\\wsl$\$DistroName") {
-    Add-FavoriteFolder -Key "ubuntu" -Path "\\wsl$\$DistroName" -Force
-  }
-
   Remove-Item -Path "${env:TEMP}\Ubuntu.tar.gz" -Force
 
   Invoke-Expression -Command "wsl.exe --setdefault $DistroName"
