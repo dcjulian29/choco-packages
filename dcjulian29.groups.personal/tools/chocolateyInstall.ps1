@@ -9,7 +9,7 @@ if (-not ([bool](Invoke-Command -ComputerName $env:COMPUTERNAME `
 }
 
 if (-not (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V).State -eq "Enabled") {
-  Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart
+  Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All -NoRestart
 }
 
 if (-not (Get-WindowsOptionalFeature -Online -FeatureName Containers).State -eq "Enabled") {
@@ -41,16 +41,8 @@ if (-not (Test-Path "${env:SystemDrive}\Virtual Machines")) {
   New-Item -Path "${env:SystemDrive}\Virtual Machines" -ItemType Directory | Out-Null
 }
 
-if (-not ([bool](Get-FavoriteFolder -Key "vm"))) {
-  Add-FavoriteFolder -Key "vm" -Path "$env:SystemDrive\Virtual Machines" -Force
-}
-
 if (-not (Test-Path "${env:SystemDrive}\Virtual Machines\ISO")) {
   New-Item -Path "${env:SystemDrive}\Virtual Machines\Hyper-V" -ItemType Directory | Out-Null
-}
-
-if (-not ([bool](Get-FavoriteFolder -Key "iso"))) {
-  Add-FavoriteFolder -Key "iso" -Path "$env:SystemDrive\Virtual Machines\ISO" -Force
 }
 
 if (-not (Get-VMSwitch -Name LAB -ErrorAction SilentlyContinue)) {
@@ -68,10 +60,6 @@ if (-not (Test-Path "${env:SystemDrive}\Virtual Machines\Hyper-V")) {
 Set-VMHost -VirtualMachinePath "${env:SystemDrive}\Virtual Machines\Hyper-V"
 Set-VMHost -VirtualHardDiskPath "${env:SystemDrive}\Virtual Machines\Hyper-V\Discs"
 
-if (-not ([bool](Get-FavoriteFolder -Key "hyperv"))) {
-  Add-FavoriteFolder -Key "hyperv" -Path "${env:SystemDrive}\Virtual Machines\Hyper-V" -Force
-}
-
 if (-not (Test-Path "${env:USERPROFILE}\code")) {
   New-Item -Type Directory -Path "${env:USERPROFILE}\code" | Out-Null
 }
@@ -88,57 +76,22 @@ FolderType=Generic
 attrib.exe +S +H $env:USERPROFILE\code\desktop.ini
 attrib.exe +R $env:USERPROFILE\code
 
-if (-not ([bool](Get-FavoriteFolder -Key "code"))) {
-  Add-FavoriteFolder -Key "code" -Path "${env:USERPROFILE}\code" -Force
-}
-
-#-------------------------------------------------------------------------------
+# ~~~ Prevent Windows from taking known ports
 
 if (-not (Test-Path -Path "${env:TEMP}\dcjulian29.groups.personal.update.txt")) {
-  Write-Output "`n`nExcluding Ports for Common Servers so the OS doesn't reserve them..."
-
   if (Get-Process -Name "syncthing" -ea 0) {
     Get-Process -Name "syncthing" | Stop-Process -Force
   }
 
-  Write-Output "# Web sites (8000-8099)"
+  # Generic web sites (3000,8000-8099,9000)
+  netsh int ipv4 add excludedportrange protocol=tcp startport=3000 numberofports=1
   netsh int ipv4 add excludedportrange protocol=tcp startport=8000 numberofports=100
+  netsh int ipv4 add excludedportrange protocol=tcp startport=9000 numberofports=1
 
-  Write-Output "# SyncThing"
-  netsh int ipv4 add excludedportrange protocol=tcp startport=8343 numberofports=1
+  # SyncThing
+  netsh int ipv4 add excludedportrange protocol=tcp startport=8384 numberofports=1
   netsh int ipv4 add excludedportrange protocol=tcp startport=22000 numberofports=1
   netsh int ipv4 add excludedportrange protocol=udp startport=22000 numberofports=1
-
-  Write-Output "# ELK"
-  netsh int ipv4 add excludedportrange protocol=tcp startport=5000 numberofports=1
-  netsh int ipv4 add excludedportrange protocol=udp startport=5000 numberofports=1
-  netsh int ipv4 add excludedportrange protocol=tcp startport=5044 numberofports=1
-  netsh int ipv4 add excludedportrange protocol=tcp startport=5601 numberofports=1
-  netsh int ipv4 add excludedportrange protocol=tcp startport=8514 numberofports=1
-  netsh int ipv4 add excludedportrange protocol=udp startport=8514 numberofports=1
-  netsh int ipv4 add excludedportrange protocol=tcp startport=9200 numberofports=1
-  netsh int ipv4 add excludedportrange protocol=tcp startport=9300 numberofports=1
-
-  Write-Output "# mailhog"
-  netsh int ipv4 add excludedportrange protocol=tcp startport=1025 numberofports=1
-
-  Write-Output "# mssql"
-  netsh int ipv4 add excludedportrange protocol=tcp startport=1433 numberofports=1
-
-  Write-Output "# mongo"
-  netsh int ipv4 add excludedportrange protocol=tcp startport=27017 numberofports=1
-
-  Write-Output "# postgresql"
-  netsh int ipv4 add excludedportrange protocol=tcp startport=5432 numberofports=1
-
-  Write-Output "# mysql"
-  netsh int ipv4 add excludedportrange protocol=tcp startport=3306 numberofports=1
-
-  Write-Output "# redis"
-  netsh int ipv4 add excludedportrange protocol=tcp startport=6379 numberofports=1
-
-  netsh int ipv4 show excludedportrange tcp
-  netsh int ipv4 show excludedportrange udp
 }
 
 # ~~~ Go language development stuff...
