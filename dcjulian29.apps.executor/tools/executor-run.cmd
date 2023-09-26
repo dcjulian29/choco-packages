@@ -45,8 +45,7 @@ copy %~dp0\hookwinr.dll %EXDST% >nul
 
 pushd %EXDST%
 
-:: "touch" all of the files so that they do not appear to be "older than 7 days" when the
-:: dir-clean-temp script runs...
+:: "touch" all of the files so that they do not appear to be "old" temp files...
 
 for /R "." %%G in (.) do (
   pushd %%G

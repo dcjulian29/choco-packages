@@ -10,7 +10,7 @@
     <dependencies>
       <dependency id="myvm-workstation" />
       <dependency id="mysettings-devwallpaper" />
-      <dependency id="myapps-executor" />
+      <dependency id="dcjulian29.apps.executor" />
       <dependency id="dcjulian29.pshell.profile" />
       <dependency id="dcjulian29.pwsh.profile" />
       <dependency id="dcjulian29.pwsh.modules" />
