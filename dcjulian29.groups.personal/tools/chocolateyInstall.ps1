@@ -8,10 +8,6 @@ if (-not ([bool](Invoke-Command -ComputerName $env:COMPUTERNAME `
   Set-NetFirewallRule -Name 'WINRM-HTTP-In-TCP'  -Enabled True -Profile Private
 }
 
-if (-not (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V).State -eq "Enabled") {
-  Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All -NoRestart
-}
-
 if (-not (Get-WindowsOptionalFeature -Online -FeatureName Containers).State -eq "Enabled") {
   Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
 }
@@ -35,30 +31,7 @@ if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
     + "$([System.Environment]::OSVersion.Version.Build)"
 }
 
-#-------------------------------------------------------------------------------
-
-if (-not (Test-Path "${env:SystemDrive}\Virtual Machines")) {
-  New-Item -Path "${env:SystemDrive}\Virtual Machines" -ItemType Directory | Out-Null
-}
-
-if (-not (Test-Path "${env:SystemDrive}\Virtual Machines\ISO")) {
-  New-Item -Path "${env:SystemDrive}\Virtual Machines\Hyper-V" -ItemType Directory | Out-Null
-}
-
-if (-not (Get-VMSwitch -Name LAB -ErrorAction SilentlyContinue)) {
-  New-VMSwitch -Name LAB -SwitchType Internal
-  New-NetIPAddress -IPAddress 10.10.10.11 -PrefixLength 24 -InterfaceAlias "vEthernet (LAB)"
-  Set-NetConnectionProfile `
-    -InterfaceIndex $((Get-NetConnectionProfile -InterfaceAlias "vEthernet (LAB)").InterfaceIndex) `
-    -NetworkCategory Private
-}
-
-if (-not (Test-Path "${env:SystemDrive}\Virtual Machines\Hyper-V")) {
-  New-Item -Path "${env:SystemDrive}\Virtual Machines\Hyper-V" -ItemType Directory | Out-Null
-}
-
-Set-VMHost -VirtualMachinePath "${env:SystemDrive}\Virtual Machines\Hyper-V"
-Set-VMHost -VirtualHardDiskPath "${env:SystemDrive}\Virtual Machines\Hyper-V\Discs"
+# ~~~ Make sure my personal "code" folder looks right
 
 if (-not (Test-Path "${env:USERPROFILE}\code")) {
   New-Item -Type Directory -Path "${env:USERPROFILE}\code" | Out-Null
