@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2309.11.1</version>
+    <version>2310.5.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computers.</description>
@@ -38,6 +38,7 @@
       <dependency id="terraform" />
       <dependency id="golang" />
       <dependency id="age.portable" />
+      <dependency id="powertoys" />
       <dependency id="dcjulian29.apps.ansible-via-docker" />
       <dependency id="dcjulian29.apps.ansible-host" />
       <dependency id="dcjulian29.apps.ansible-dev" />
@@ -49,6 +50,9 @@
       <dependency id="dcjulian29.apps.cert-auth" />
       <dependency id="dcjulian29.apps.dns-scan" />
       <dependency id="dcjulian29.apps.ip-scan" />
+      <dependency id="dcjulian29.apps.dns-resolve" />
+      <dependency id="dcjulian29.apps.git-repostatus" />
+      <dependency id="dcjulian29.apps.git-reposync" />
     </dependencies>
   </metadata>
 </package>
