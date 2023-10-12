@@ -48,3 +48,5 @@ rm -rf "$dir"
 echo "Installing Gitflow-AVH..."
 wget https://raw.githubusercontent.com/petervanderdoes/gitflow-avh/develop/contrib/gitflow-installer.sh
 sudo bash gitflow-installer.sh install stable
+
+sudo apt install -y git-filter-repo
