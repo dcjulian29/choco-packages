@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.apps.dive</id>
+    <version>0.11.7</version>
+    <title>dcjulian29.apps.dive</title>
+    <authors>Julian Easterling</authors>
+    <owners>Alex Goodman</owners>
+    <authors>Julian Easterling</authors>
+    <projectUrl>https://github.com/wagoodman/dive/</projectUrl>
+    <licenseUrl>https://github.com/wagoodman/dive/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your Docker/OCI image.</description>
+    <tags>dcjulian29 docker dive</tags>
+  </metadata>
+</package>
