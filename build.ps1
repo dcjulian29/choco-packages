@@ -1,6 +1,6 @@
 trap [System.Exception] {
   "Exception: {0}" -f $_.Exception.Message
-  [Environment]::Exit(1)
+  return
 }
 
 $ErrorActionPreference = "Stop"
@@ -44,7 +44,9 @@ Get-ChildItem -Path $baseDir -Directory | ForEach-Object {
       "-NoDefaultExcludes"
     )
 
-    $p = Start-Process -FilePath $nuget -ArgumentList $al -NoNewWindow -Wait -PassThru
+    $p = Start-Process -FilePath $nuget -ArgumentList $al -NoNewWindow -PassThru
+    $h = $p.Handle
+    $p.WaitForExit()
 
     Pop-Location
 
