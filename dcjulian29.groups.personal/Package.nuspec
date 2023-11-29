@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2311.17.1</version>
+    <version>2311.29.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computers.</description>
@@ -54,6 +54,8 @@
       <dependency id="dcjulian29.apps.git-repostatus" />
       <dependency id="dcjulian29.apps.git-reposync" />
       <dependency id="dcjulian29.apps.dive" />
+      <dependency id="dcjulian29.apps.k8s-dev" />
+      <dependency id="k9s" />
     </dependencies>
   </metadata>
 </package>
