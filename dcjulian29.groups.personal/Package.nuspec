@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2311.29.1</version>
+    <version>2311.30.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computers.</description>
@@ -16,16 +16,11 @@
       <dependency id="baretail" />
       <dependency id="myapps-searchmyfiles" />
       <dependency id="wsl-ubuntu" />
-      <dependency id="docker-desktop" />
-      <dependency id="lazydocker" />
-      <dependency id="kubernetes-cli" />
-      <dependency id="kubernetes-helm" />
       <dependency id="bitwarden" />
       <dependency id="dcjulian29.apps.wireshark" />
       <dependency id="tightvnc" />
       <dependency id="nuget.commandline" />
       <dependency id="nugetpackageexplorer" />
-      <dependency id="dcjulian29.apps.rainmeter" />
       <dependency id="mysettings-greenshot" />
       <dependency id="myapps-iperf" />
       <dependency id="mysettings-syncthing" />
@@ -39,6 +34,7 @@
       <dependency id="golang" />
       <dependency id="age.portable" />
       <dependency id="powertoys" />
+      <dependency id="dcjulian29.groups.containers" />
       <dependency id="dcjulian29.apps.ansible-via-docker" />
       <dependency id="dcjulian29.apps.ansible-host" />
       <dependency id="dcjulian29.apps.ansible-dev" />
@@ -53,9 +49,6 @@
       <dependency id="dcjulian29.apps.dns-resolve" />
       <dependency id="dcjulian29.apps.git-repostatus" />
       <dependency id="dcjulian29.apps.git-reposync" />
-      <dependency id="dcjulian29.apps.dive" />
-      <dependency id="dcjulian29.apps.k8s-dev" />
-      <dependency id="k9s" />
     </dependencies>
   </metadata>
 </package>

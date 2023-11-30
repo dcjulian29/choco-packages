@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.groups.containers</id>
+    <version>2311.30.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>
+      This is the group of packages for container management that I typically install.
+    </description>
+    <tags>dcjulian29 kubernetes docker container</tags>
+    <dependencies>
+      <dependency id="docker-desktop" />
+      <dependency id="lazydocker" />
+      <dependency id="kubernetes-cli" />
+      <dependency id="kubernetes-helm" />
+      <dependency id="minikube" />
+      <dependency id="dcjulian29.apps.dive" />
+      <dependency id="dcjulian29.apps.k8s-dev" />
+      <dependency id="k9s" />
+    </dependencies>
+  </metadata>
+</package>
