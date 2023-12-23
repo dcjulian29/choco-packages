@@ -81,6 +81,7 @@ alias.upstream,log HEAD..HEAD@{upstream}
 alias.upstream-name,!git remote | egrep -o '(upstream|origin)' | tail -1
 alias.wdiff,diff --word-diff
 alias.who,shortlog -s -e --
+alias.whoami,!git config --get user.name && git config --get user.email
 alias.whorank,shortlog --summary --numbered --no-merges
 branch.autosetuprebase,always
 color.branch,auto
@@ -129,6 +130,7 @@ mergetool.vscode.cmd," ""'C:/Program Files/Microsoft VS Code/code.exe' --wait '$
 mergetool.vscode.path," ""'C:/Program Files/Microsoft VS Code/code.exe'"""
 mergetool.winmerge.cmd," ""'C:/Program Files/WinMerge/winmergeu.exe' -e -u  -wl -wr -fm -dl 'Mine: $LOCAL' -dm 'Merged: $BASE' -dr 'Theirs: $REMOTE' $LOCAL $BASE $REMOTE -o $MERGED"""
 mergetool.winmerge.path," ""'C:/Program Files/WinMerge/winmergeu.exe'"""
+pager.diff,less -FX
 pull.rebase,"true"
 push.default,upstream
 rebase.autoStash,"false"
