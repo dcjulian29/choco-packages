@@ -38,13 +38,13 @@ alias.incoming,!git remote update -p; git whatchanged ..@{u}
 alias.lastcommit,log --max-count=1
 alias.lastref,rev-parse --short HEAD
 alias.lasttag,describe --tags --abbrev=0
-alias.l,"log --pretty=format:'%C(auto,red)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=15"
-alias.la,"l --pretty=format:'%C(auto,red)%h%Creset %C(auto,yellow)%d%Creset %s %C(auto,green)(%an)'"
-alias.ld,"l --pretty=format:'%C(auto,red)%h%Creset %C(auto,yellow)%d%Creset %s %C(auto,green)(%cr)' --date=relative"
+alias.l,"log --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=15"
+alias.la,"l --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s %C(auto,green)(%an)'"
+alias.ld,"l --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s %C(auto,green)(%cr)' --date=relative"
 alias.ll,l --numstat --max-count=10
-alias.lp,"log --graph --pretty=format:'%C(auto,red)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=99 --branches"
-alias.lpa,"lp --pretty=format:'%C(auto,red)%h%Creset -%C(auto,yellow)%d%Creset %s %C(auto,green)(%an)'"
-alias.lpd,"lp --pretty=format:'%C(auto,red)%h%Creset -%C(auto,yellow)%d%Creset %s %C(auto,green)(%cr)' --date=relative"
+alias.lp,"log --graph --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=99 --branches"
+alias.lpa,"lp --pretty=format:'%C(auto,yellow)%h%Creset -%C(auto,yellow)%d%Creset %s %C(auto,green)(%an)'"
+alias.lpd,"lp --pretty=format:'%C(auto,yellow)%h%Creset -%C(auto,yellow)%d%Creset %s %C(auto,green)(%cr)' --date=relative"
 alias.ls-ignored,ls-files -o -i
 alias.ls-untracked,ls-files -o --exclude-standard
 alias.open,!start `git config remote.origin.url`
@@ -53,7 +53,7 @@ alias.orphans,fsck --full
 alias.outgoing,whatchanged ..@{u}
 alias.p,push
 alias.pop,stash pop
-alias.pp,!git update && git push
+alias.pp,!git up && git push
 alias.prune,fetch --prune
 alias.prune-all,!git prune --expire=now && git reflog expire --expire-unreachable=now --rewrite --all
 alias.prune-merged,!git fetch -p && git branch -vv | grep ': gone]' | gawk '{print $1}' | xargs git branch -D
@@ -72,11 +72,11 @@ alias.stats,diff --stat
 alias.sync,pp
 alias.tags,tag
 alias.today,log --stat --since='1 day ago' --graph --pretty=oneline --abbrev-commit --date=relative
-alias.topic-start,!f() { git update; git cob $1; git push -u origin $1;}; f
-alias.topic-update,!f() { git update; git merge --no-ff `git head-branch`; git push -u origin `git upstream-name`}; f
+alias.topic-start,!f() { git up; git cob $1; git push -u origin $1;}; f
+alias.topic-update,!f() { git up; git merge --no-ff `git head-branch`; git push -u origin `git upstream-name`}; f
 alias.undo-commit,reset --soft HEAD~1
 alias.unstage,reset HEAD --
-alias.update,pull --rebase --prune
+alias.up,pull --rebase --prune
 alias.upstream,log HEAD..HEAD@{upstream}
 alias.upstream-name,!git remote | egrep -o '(upstream|origin)' | tail -1
 alias.wdiff,diff --word-diff
