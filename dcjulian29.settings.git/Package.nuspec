@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.settings.git</id>
-    <version>2312.22.6</version>
+    <version>2312.22.7</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>My custom configuration and aliases for the Git SCM tool.</description>

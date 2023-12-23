@@ -38,10 +38,11 @@ alias.incoming,!git remote update -p; git whatchanged ..@{u}
 alias.lastcommit,log --max-count=1
 alias.lastref,rev-parse --short HEAD
 alias.lasttag,describe --tags --abbrev=0
-alias.l,"log --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=15"
+alias.l,"log --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=20"
 alias.la,"l --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s %C(auto,green)(%an)'"
 alias.ld,"l --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s %C(auto,green)(%cr)' --date=relative"
 alias.ll,l --numstat --max-count=10
+alias.lo,log --oneline --max-count=20
 alias.lp,"log --graph --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=99 --branches"
 alias.lpa,"lp --pretty=format:'%C(auto,yellow)%h%Creset -%C(auto,yellow)%d%Creset %s %C(auto,green)(%an)'"
 alias.lpd,"lp --pretty=format:'%C(auto,yellow)%h%Creset -%C(auto,yellow)%d%Creset %s %C(auto,green)(%cr)' --date=relative"
