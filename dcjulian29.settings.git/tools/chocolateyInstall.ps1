@@ -19,3 +19,7 @@ $manuals = "$gitroot\mingw64\share\doc\git-doc"
 
 Copy-Item -Path $PSScriptRoot/../contents/bin/* -Destination $binaries -Force
 Copy-Item -Path $PSScriptRoot/../contents/man/* -Destination $manuals -Force
+
+$editor = "'C:/Program Files/notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+[System.Environment]::SetEnvironmentVariable('EDITOR', $editor, 'User')
