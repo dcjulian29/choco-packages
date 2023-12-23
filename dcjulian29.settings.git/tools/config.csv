@@ -103,7 +103,7 @@ core.autocrlf,"true"
 core.excludesfile,~/.gitignore
 core.filemode,"false"
 core.fscache,"true"
-core.pager,"''"
+core.pager,""
 core.safecrlf,"false"
 core.symlinks,"false"
 credential.helper,manager
