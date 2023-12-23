@@ -1,4 +1,4 @@
-Key,Values
+Key,Value
 alias.a,add
 alias.ap,add --patch
 alias.aliases,!git config --get-regexp 'alias.*' | sort
