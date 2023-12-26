@@ -1,8 +1,8 @@
 Key,Value
 alias.a,add
-alias.ap,add --patch
 alias.aliases,!git config --get-regexp 'alias.*' | sort
 alias.amend,commit --amend
+alias.ap,add --patch
 alias.assume,update-index --assume-unchanged
 alias.assumed,!git ls-files -v | grep ^h | cut -c 3-
 alias.b,branch
@@ -13,8 +13,8 @@ alias.c,commit
 alias.ca,commit --amend
 alias.cane,commit --amend --no-edit
 alias.changed,status -sb
-alias.changes,diff --stat -r
 alias.change-log,!f() { git log ${1:-`git rev-list --max-parents=0 HEAD`}..${2:-HEAD} --pretty=format:'* %s %Cred%h%Creset - %C(bold blue)%an' --no-merges; }; f
+alias.changes,diff --stat -r
 alias.ci,commit
 alias.clean,clean -d -f
 alias.cm,commit --message
@@ -24,32 +24,32 @@ alias.d,diff
 alias.dc,diff --cached
 alias.discard,reset HEAD --hard
 alias.f,fetch
-alias.feature-start,topic-start
+alias.feature-start,!git topic-start feature/$1
 alias.find,!git rev-list --all | xargs git grep -F
 alias.gfff,flow feature finish
 alias.gffs,flow feature start
-alias.ghfs,!git topic-start feature/$1
 alias.gfrf,flow release finish
 alias.gfrs,flow release start
+alias.ghfs,feature-start
 alias.graph,l -graph
 alias.head-branch,!git remote show $(git upstream-name) | awk '/.*HEAD branch:/{print $NF}'
-alias.ignored,ls-files --others --exclude-standard --ignored
+alias.ignored,ls-ignored
 alias.incoming,!git remote update -p; git whatchanged ..@{u}
+alias.l,"log --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=20"
+alias.la,"l --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s %C(auto,green)(%an)'"
 alias.lastcommit,log --max-count=1
 alias.lastref,rev-parse --short HEAD
 alias.lasttag,describe --tags --abbrev=0
-alias.l,"log --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=20"
-alias.la,"l --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s %C(auto,green)(%an)'"
 alias.ld,"l --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s %C(auto,green)(%cr)' --date=relative"
 alias.ll,l --numstat --max-count=10
 alias.lo,log --oneline --max-count=20
-alias.lp,"log --graph --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=99 --branches"
+alias.lp,"log --graph --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=99 --branches,"
 alias.lpa,"lp --pretty=format:'%C(auto,yellow)%h%Creset -%C(auto,yellow)%d%Creset %s %C(auto,green)(%an)'"
 alias.lpd,"lp --pretty=format:'%C(auto,yellow)%h%Creset -%C(auto,yellow)%d%Creset %s %C(auto,green)(%cr)' --date=relative"
-alias.ls-ignored,ls-files -o -i
+alias.ls-ignored,ls-files --others --ignored
 alias.ls-untracked,ls-files -o --exclude-standard
 alias.open,!start `git config remote.origin.url`
-alias.optimize,"!""git orphans; git prune-all; git repack-all"""
+alias.optimize,!git orphans; git prune-all; git repack-all
 alias.orphans,fsck --full
 alias.outgoing,whatchanged ..@{u}
 alias.p,push
@@ -67,7 +67,7 @@ alias.remotes,remote -v show
 alias.repack-all,repack -a -d -f --depth=300 --window=300 --window-memory=1g
 alias.reset,clean -f -d -X
 alias.s,status --show-stash --ahead-behind
-alias.standup,!git log --since yesterday --author `git config user.email` --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
+alias.standup,"!git log --since yesterday --author `git config user.email` --graph --pretty=format:'%C(auto,red)%h%Creset -%C(auto,yellow)%d%Creset %s %C(auto,green)(%cr)%Creset' --date=relative"
 alias.stashes,stash list
 alias.stats,diff --stat
 alias.sync,pp
@@ -105,7 +105,7 @@ core.autocrlf,"true"
 core.excludesfile,~/.gitignore
 core.filemode,"false"
 core.fscache,"true"
-core.pager,"cat"
+core.pager,cat
 core.safecrlf,"false"
 core.symlinks,"false"
 credential.helper,manager
