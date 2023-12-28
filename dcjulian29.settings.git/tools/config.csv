@@ -59,10 +59,11 @@ alias.prune,f --prune
 alias.prune-all,!git prune --expire=now && git reflog expire --expire-unreachable=now --rewrite --all
 alias.prune-merged,!git fetch -p && git branch -vv | grep ': gone]' | gawk '{print $1}' | xargs git branch -D
 alias.pt,push --tags
-alias.pu,push -u origin $(git upstream-name)
-alias.put,push -u origin $(git upstream-name) --tags
-alias.refs-by-date,for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
-alias.release-notes,!git lqc `git describe --tags --abbrev=0` HEAD
+alias.pu,push -u `git upstream-name`
+alias.put,push -u `git upstream-name` --tags
+alias.refs-by-author = for-each-ref --sort=-authorname --format='%(if)%(HEAD)%(then)%(color:yellow)* %(else)  %(end)%(refname:short) %(color:green)%(authorname) %(authoremail)'
+alias.refs-by-date = for-each-ref --sort=-authordate --format='%(if)%(HEAD)%(then)%(color:yellow)* %(else)  %(end)%(refname:short) %(color:green)%(authordate:relative)'
+alias.release-notes,!git change-log `git lasttag` HEAD
 alias.remotes,remote -v show
 alias.repack-all,repack -a -d -f --depth=300 --window=300 --window-memory=1g
 alias.reset,clean -f -d -X
