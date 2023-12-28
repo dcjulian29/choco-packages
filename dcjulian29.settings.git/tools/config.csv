@@ -76,7 +76,9 @@ alias.today,log --stat --since='1 day ago' --graph --pretty=oneline --abbrev-com
 alias.topic-start,!f() { git up; git cob $1; git push -u origin $1;}; f
 alias.topic-update,!f() { git up; git merge --no-ff `git head-branch`; git pu}; f
 alias.undo-commit,reset --soft HEAD~1
+alias.unreachable,fsck --unreachable
 alias.unstage,reset HEAD --
+alias.untracked,ls-untracked
 alias.up,pull --rebase --prune
 alias.upstream,log HEAD..HEAD@{upstream}
 alias.upstream-name,!git remote | egrep -o '(upstream|origin)' | tail -1
