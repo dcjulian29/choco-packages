@@ -32,7 +32,7 @@ alias.gfrf,flow release finish
 alias.gfrs,flow release start
 alias.ghfs,feature-start
 alias.graph,l --graph
-alias.head-branch,!git remote show $(git upstream-name) | awk '/.*HEAD branch:/{print $NF}'
+alias.head-branch,!git remote show `git upstream-name` | awk '/.*HEAD branch:/{print $NF}'
 alias.ignored,ls-ignored
 alias.incoming,!git remote update --prune; git whatchanged ..@{u}
 alias.l,"log --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=20"
@@ -51,7 +51,7 @@ alias.ls-untracked,ls-files -o --exclude-standard
 alias.open,!start `git config remote.origin.url`
 alias.optimize,!git orphans; git prune-all; git repack-all
 alias.orphans,fsck --full
-alias.outgoing,whatchanged ..@{u}
+alias.outgoing,!git whatchanged `git upstream-name`..HEAD
 alias.p,push
 alias.pop,stash pop
 alias.pp,!git up && git push
