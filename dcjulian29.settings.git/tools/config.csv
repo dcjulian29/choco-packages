@@ -34,7 +34,7 @@ alias.ghfs,feature-start
 alias.graph,l --graph
 alias.head-branch,!git remote show $(git upstream-name) | awk '/.*HEAD branch:/{print $NF}'
 alias.ignored,ls-ignored
-alias.incoming,!git remote update -p; git whatchanged ..@{u}
+alias.incoming,!git remote update --prune; git whatchanged ..@{u}
 alias.l,"log --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s' --max-count=20"
 alias.la,"l --pretty=format:'%C(auto,yellow)%h%Creset %C(auto,yellow)%d%Creset %s %C(auto,green)(%an)'"
 alias.lastcommit,log --max-count=1
