@@ -31,7 +31,7 @@ alias.gffs,flow feature start
 alias.gfrf,flow release finish
 alias.gfrs,flow release start
 alias.ghfs,feature-start
-alias.graph,l -graph
+alias.graph,l --graph
 alias.head-branch,!git remote show $(git upstream-name) | awk '/.*HEAD branch:/{print $NF}'
 alias.ignored,ls-ignored
 alias.incoming,!git remote update -p; git whatchanged ..@{u}
