@@ -13,7 +13,7 @@ alias.c,commit
 alias.ca,commit --amend
 alias.cane,commit --amend --no-edit
 alias.changed,status -sb
-alias.change-log,"!f() { git log ${1:-`git head-branch`} ${2:-HEAD} --pretty=format:'* %s %C(auto,yellow)%h%Creset - %C(auto,green)%an %ae%Creset' --no-merges; }; f"
+alias.change-log,"!f() { git log ^${1:-`git head-branch`} ${2:-HEAD} --pretty=format:'* %s %C(auto,yellow)%h%Creset - %C(auto,green)%an %ae%Creset' --no-merges; }; f"
 alias.changes,diff --stat -r
 alias.ci,commit
 alias.clean,clean -d -f
@@ -61,8 +61,8 @@ alias.prune-merged,!git fetch -p && git branch -vv | grep ': gone]' | gawk '{pri
 alias.pt,push --tags
 alias.pu,push -u `git upstream-name`
 alias.put,push -u `git upstream-name` --tags
-alias.refs-by-author = for-each-ref --sort=-authorname --format='%(if)%(HEAD)%(then)%(color:yellow)* %(else)  %(end)%(refname:short) %(color:green)%(authorname) %(authoremail)'
-alias.refs-by-date = for-each-ref --sort=-authordate --format='%(if)%(HEAD)%(then)%(color:yellow)* %(else)  %(end)%(refname:short) %(color:green)%(authordate:relative)'
+alias.refs-by-author,for-each-ref --sort=-authorname --format='%(if)%(HEAD)%(then)%(color:yellow)* %(else)  %(end)%(refname:short) %(color:green)%(authorname) %(authoremail)'
+alias.refs-by-date,for-each-ref --sort=-authordate --format='%(if)%(HEAD)%(then)%(color:yellow)* %(else)  %(end)%(refname:short) %(color:green)%(authordate:relative)'
 alias.release-notes,!git change-log `git lasttag` HEAD
 alias.remotes,remote -v show
 alias.repack-all,repack -a -d -f --depth=300 --window=300 --window-memory=1g
@@ -73,7 +73,7 @@ alias.stashes,stash list
 alias.stats,diff --stat
 alias.sync,pp
 alias.tags,tag
-alias.today,log --stat --since='1 day ago' --graph --pretty=oneline --abbrev-commit --date=relative
+alias.today,log --stat --since=yesterday --graph --pretty=oneline --abbrev-commit --date=relative
 alias.topic-start,!f() { git up; git cob $1; git push -u origin $1;}; f
 alias.topic-update,!f() { git up; git merge --no-ff `git head-branch`; git pu}; f
 alias.undo-commit,reset --soft HEAD~1
