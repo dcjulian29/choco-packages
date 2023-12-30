@@ -1,5 +1,6 @@
 Key,Value
 alias.a,add
+alias.actions,!start `git config remote.origin.url`/actions
 alias.aliases,!git config --get-regexp 'alias.*' | sort
 alias.amend,commit --amend
 alias.ap,add --patch
@@ -30,7 +31,10 @@ alias.gfff,flow feature finish
 alias.gffs,flow feature start
 alias.gfrf,flow release finish
 alias.gfrs,flow release start
+alias.ghactions,!start `git config remote.origin.url`/actions
 alias.ghfs,feature-start
+alias.ghissues,!start `git config remote.origin.url`/issues
+alias.ghpr,!start `git config remote.origin.url`/pulls
 alias.graph,l --graph
 alias.head-branch,!git remote show `git upstream-name` | awk '/.*HEAD branch:/{print $NF}'
 alias.ignored,ls-ignored
