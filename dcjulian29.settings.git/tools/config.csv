@@ -1,6 +1,5 @@
 Key,Value
 alias.a,add
-alias.actions,!start `git config remote.origin.url`/actions
 alias.aliases,!git config --get-regexp 'alias.*' | sort
 alias.amend,commit --amend
 alias.ap,add --patch
@@ -13,8 +12,8 @@ alias.branches,branch -a
 alias.c,commit
 alias.ca,commit --amend
 alias.cane,commit --amend --no-edit
-alias.changed,status -sb
 alias.change-log,"!f() { git log ^${1:-`git head-branch`} ${2:-HEAD} --pretty=format:'* %s %C(auto,yellow)%h%Creset - %C(auto,green)%an %ae%Creset' --no-merges; }; f"
+alias.changed,status -sb
 alias.changes,diff --stat -r
 alias.ci,commit
 alias.clean,clean -d -f
@@ -52,7 +51,7 @@ alias.lpa,"lp --pretty=format:'%C(auto,yellow)%h%Creset -%C(auto,yellow)%d%Crese
 alias.lpd,"lp --pretty=format:'%C(auto,yellow)%h%Creset -%C(auto,yellow)%d%Creset %s %C(auto,green)(%cr)' --date=relative"
 alias.ls-ignored,ls-files --others --ignored --exclude-standard
 alias.ls-untracked,ls-files -o --exclude-standard
-alias.open,!start `git config remote.origin.url`
+alias.open,!start `git upstream-url`
 alias.optimize,!git prune-all; git repack-all
 alias.orphans,fsck --full
 alias.outgoing,!git whatchanged `git upstream-name`..HEAD
@@ -78,15 +77,16 @@ alias.stats,diff --stat
 alias.sync,pp
 alias.tags,tag
 alias.today,log --stat --since=yesterday --graph --pretty=oneline --abbrev-commit --date=relative
-alias.topic-start,!f() { git up; git cob $1; git push -u origin $1;}; f
-alias.topic-update,!f() { git up; git merge --no-ff `git head-branch`; git pu}; f
+alias.topic-start,!f() { git f; git cob $1; git push -u `git upstream-name` $1;}; f
+alias.topic-pr,!start `git upstream-url`/pull/new/`git branch --show-current`
+alias.topic-update,!f() { git f; git merge --no-ff `git head-branch`; git pu;}; f
 alias.undo-commit,reset --soft HEAD~1
 alias.unreachable,fsck --unreachable
 alias.unstage,reset HEAD --
 alias.untracked,ls-untracked
 alias.up,pull --rebase --prune
-alias.upstream,log HEAD..HEAD@{upstream}
 alias.upstream-name,!git remote | egrep -o '(upstream|origin)' | tail -1
+alias.upstream-url,!git remote get-url --push `git upstream-name` | sed -E 's/\\.git//'
 alias.wdiff,diff --word-diff
 alias.who,shortlog -s -e --
 alias.whoami,!git config --get user.name && git config --get user.email
