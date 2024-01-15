@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.apps.dotfiles</id>
+    <version>0.2.2</version>
+    <authors>rhysd</authors>
+    <owners>Julian Easterling</owners>
+    <projectUrl>https://github.com/rhysd/dotfiles</projectUrl>
+    <licenseUrl>https://github.com/rhysd/dotfiles/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>dotfiles symbolic links management CLI</description>
+    <tags>dcjulian29 rhysd dotfiles</tags>
+  </metadata>
+</package>

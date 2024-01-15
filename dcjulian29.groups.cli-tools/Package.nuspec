@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.groups.cli-tools</id>
+    <version>2401.15.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>
+      These are the packages that I install containing all of my cli-tools projects.
+    </description>
+    <tags>dcjulian29 groups cli-tools</tags>
+    <dependencies>
+      <dependency id="dcjulian29.apps.dns-resolve" />
+      <dependency id="dcjulian29.apps.dns-scan" />
+      <dependency id="dcjulian29.apps.git-repostatus" />
+      <dependency id="dcjulian29.apps.git-reposync" />
+      <dependency id="dcjulian29.apps.ini-file" />
+      <dependency id="dcjulian29.apps.ip-scan" />
+      <dependency id="dcjulian29.apps.provision-test" />
+      <dependency id="dcjulian29.apps.unix-tools" />
+    </dependencies>
+  </metadata>
+</package>
