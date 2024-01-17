@@ -38,6 +38,8 @@ choco source add --name 'choco' `
   --source 'https://chocolatey.org/api/v2' `
   --priority 3
 
+choco config set --name "commandExecutionTimeoutSeconds" --value "3600"
+
 #------------------------------------------------------------------------------
 
 Write-Output "Restarting Device in 30 seconds..."

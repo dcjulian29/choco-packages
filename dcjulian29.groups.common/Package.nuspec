@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.common</id>
-    <version>2307.4.1</version>
+    <version>2401.16.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that are common to all of my computer configurations.</description>
@@ -10,12 +10,9 @@
     <dependencies>
       <dependency id="mysettings-ntfs" />
       <dependency id="mysettings-ipv6" />
-      <dependency id="dotnetfx" />
-      <dependency id="dotnetcore-runtime" />
       <dependency id="dotnet-runtime" />
       <dependency id="7zip" />
       <dependency id="notepadplusplus" />
-      <dependency id="mysettings-chocolatey" />
     </dependencies>
   </metadata>
 </package>
