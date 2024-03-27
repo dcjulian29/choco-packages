@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2403.9.1</version>
+    <version>2403.27.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computers.</description>
@@ -31,6 +31,7 @@
       <dependency id="golang" />
       <dependency id="age.portable" />
       <dependency id="powertoys" />
+      <dependency id="packer" />
       <dependency id="dcjulian29.groups.containers" />
       <dependency id="dcjulian29.groups.cli-tools" />
       <dependency id="dcjulian29.apps.ansible-via-docker" />
