@@ -3,7 +3,7 @@
   FileType       = "EXE"
   SilentArgs     = "/S /EXTRACOMPONENTS=sshdump,udpdump,etwdump,wifidump /DESKTOPICON=no /QUICKLAUNCHICON=no"
   url            = "https://2.na.dl.wireshark.org/win64/Wireshark-4.2.0-x64.exe"
-  checksum       = "a68a8298662af5cc4bb4a454c66f49d0bcc0bacfd16e00e818b4c77ae8281c26"
+  checksum       = "b621718ffe64748590ea9568fbbed0f3d86b0939906dc9f7fe064e20ce385492"
   checksumType   = "sha256"
   ValidExitCodes = @(0, 3010)
 }
