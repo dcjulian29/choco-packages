@@ -11,4 +11,18 @@ echo Backing up original executor.ini file...
 copy %EXDIR%\executor.ini %EXDIR%\backup\%BVER%.ini
 
 echo.
+echo Copying new master executor.ini file...
+for /f "usebackq delims=" %%O in (`dir /b /ad %USERPROFILE%`) do (
+  if [%%O] EQU [etc] (
+      if exist "%USERPROFILE%\%%O\executor" (
+        copy /V %EXECUTOR%\executor.ini %USERPROFILE%\%%O\executor\executor.ini
+        echo %EXECUTOR%\executor.ini --^> %USERPROFILE%\%%O\executor\executor.ini
+      )
+    )
+  )
+)
+
+:EOF
+
+echo.
 pause
