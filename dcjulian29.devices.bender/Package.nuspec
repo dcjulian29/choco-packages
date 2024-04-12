@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.bender</id>
-    <version>2307.31.1</version>
+    <version>2404.11.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my laptop computer.</description>
@@ -12,7 +12,6 @@
       <dependency id="wirelessnetview" />
       <dependency id="wireguard" />
       <dependency id="slack" />
-      <dependency id="thunderbird" />
     </dependencies>
   </metadata>
 </package>
