@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.settings.git</id>
-    <version>2401.5.1</version>
+    <version>2404.12.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>My custom configuration and aliases for the Git SCM tool.</description>
+    <description>Extra Git stuff for my configuration and aliases for the Git SCM tool.</description>
     <tags>dcjulian29 git configuration aliases</tags>
     <dependencies>
       <dependency id="git" />

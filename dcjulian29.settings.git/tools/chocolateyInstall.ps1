@@ -1,25 +1,18 @@
-$git = Find-Git
-$config =  Import-Csv -Path "$PSScriptRoot\config.csv"
+Write-Output "Adding some Git commands from https://github.com/tj/git-extras...`n"
 
-$config | ForEach-Object {
-    if (-not $_.Key.StartsWith('#')) {
-        $key = ($_.Key).Trim()
-        $value = ($_.Value).Trim()
-        Write-Output "Setting $key to $value..."
-        & $git config --global --replace-all $key $value
-    }
-}
+Push-Location $env:TEMP
 
-# Adding some git commands from https://github.com/tj/git-extras
-# that I've found and use on Linux OS...
+git clone https://github.com/tj/git-extras.git
 
-$gitroot = $git.Replace('\bin\git.exe', '').Replace('\cmd\git.exe', '')
-$binaries = "$gitroot\usr\bin"
-$manuals = "$gitroot\mingw64\share\doc\git-doc"
+Push-Location git-extras
 
-Copy-Item -Path $PSScriptRoot/../contents/bin/* -Destination $binaries -Force
-Copy-Item -Path $PSScriptRoot/../contents/man/* -Destination $manuals -Force
+cmd.exe /C install.cmd
 
-$editor = "'C:/Program Files/notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+Pop-Location
+Pop-Location
+
+Write-Output "Setting default editor for Git...`n"
+
+$editor = "'$($env:PROGRAMFILES.Replace("\", "/"))/notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 
 [System.Environment]::SetEnvironmentVariable('EDITOR', $editor, 'User')
