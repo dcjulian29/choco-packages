@@ -1,6 +1,6 @@
 ﻿$version = "7.0.14"
 $build = 161095
-$cksum = "9769bae970244249e043bde9c74d704d25a80773acced5c59a04df64a10a5db7"
+$cksum = "4719b38e7a276b43099ce4d6349e6bfc80edf644ee59d9dafd264bc7ed7691f4"
 $log = "virtualbox-$(([Guid]::NewGuid()).Guid).log"
 $url = "https://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$build-Win.exe"
 $props = @(
