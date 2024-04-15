@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mysettings-wsl2</id>
-    <version>2303.5.1</version>
+    <id>dcjulian29.settings.wsl</id>
+    <version>2304.14.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>This package installs .</description>
-    <tags>mysettings wsl2</tags>
+    <description>This package installs Ubuntu 22.04 into WSL.</description>
+    <tags>mysettings wsl2 ubuntu</tags>
   </metadata>
 </package>
