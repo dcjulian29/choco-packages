@@ -67,13 +67,26 @@ Windows Registry Editor Version 5.00
   00,63,00,75,00,72,00,00,00
 
 [HKEY_CURRENT_USER\Control Panel\Mouse]
-"MouseSensitivity"="15"
-"MouseTrails"="0"
-
-[HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}]
-
-[HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
-@=""
+"ActiveWindowTracking"=dword:00000000
+"Beep"="No"
+"DoubleClickHeight"="4"
+"DoubleClickSpeed"="500"
+"DoubleClickWidth"="4"
+"ExtendedSounds"="No"
+"MouseHoverHeight"="4"
+"MouseHoverTime"="400"
+"MouseHoverWidth"="4"
+"MouseSensitivity"="20"
+"MouseSpeed"="1"
+"MouseThreshold1"="6"
+"MouseThreshold2"="10"
+"MouseTrails"="7"
+"SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,15,6e,00,00,00,00,00,00,00,40,\
+  01,00,00,00,00,00,29,dc,03,00,00,00,00,00,00,00,28,00,00,00,00,00
+"SmoothMouseYCurve"=hex:00,00,00,00,00,00,00,00,fd,11,01,00,00,00,00,00,00,24,\
+  04,00,00,00,00,00,00,fc,12,00,00,00,00,00,00,c0,bb,01,00,00,00,00
+"SnapToDefaultButton"="0"
+"SwapMouseButtons"="0"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Start]
 "AllowPinnedFolderDocuments"=dword:00000000
@@ -82,55 +95,88 @@ Windows Registry Editor Version 5.00
 "AllowPinnedFolderDownloads_ProviderSet"=dword:00000000
 "AllowPinnedFolderFileExplorer"=dword:00000001
 "AllowPinnedFolderFileExplorer_ProviderSet"=dword:00000001
+"AllowPinnedFolderNetwork"=dword:00000000
+"AllowPinnedFolderNetwork_ProviderSet"=dword:00000000
 "AllowPinnedFolderPersonalFolder"=dword:00000000
 "AllowPinnedFolderPersonalFolder_ProviderSet"=dword:00000000
 "AllowPinnedFolderPictures"=dword:00000000
 "AllowPinnedFolderPictures_ProviderSet"=dword:00000000
 "AllowPinnedFolderSettings"=dword:00000001
 "AllowPinnedFolderSettings_ProviderSet"=dword:00000001
-"AllowPinnedFolderNetwork"=dword:00000000
-"AllowPinnedFolderNetwork_ProviderSet"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
 "EnableAutoTray"=dword:00000000
-"ShowRecent"=dword:00000000
-"ShowFrequent"=dword:00000000
+"IconUnderline"=dword:00000003
+"ShowCloudFilesInQuickAccess"=dword:00000001
+"ShowFrequent"=dword:00000001
+"ShowRecent"=dword:00000001
+"ShowRecommendations"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent]
 "AccentColor"=dword:00000e1e
 "AccentColorMenu"=dword:ff484a4c
+"AccentPalette"=hex:eb,de,bc,00,d0,bd,9c,00,a7,84,5f,00,90,6e,4f,00,78,56,3e,\
+  00,59,37,28,00,35,14,0e,00,88,17,98,00
 "StartColor"=dword:ff000000
 "StartColorMenu"=dword:ff333536
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "AutoCheckSelect"=dword:00000000
+"DisablePreviewDesktop"=dword:00000001
+"DontPrettyPath"=dword:00000000
 "DontUsePowerShellOnWinX"=dword:00000000
 "EnableSnapAssistFlyout"=dword:00000001
+"Filter"=dword:00000000
 "Hidden"=dword:00000001
 "HideFileExt"=dword:00000000
-"HideIcons"=dword:00000001
+"HideIcons"=dword:00000000
+"HideMergeConflicts"=dword:00000000
 "IconsOnly"=dword:00000000
-"LaunchTo"=dword:00000001
+"LaunchTo"=dword:00000002
+"ListviewAlphaSelect"=dword:00000001
+"ListviewShadow"=dword:00000001
+"MapNetDrvBtn"=dword:00000000
 "MMTaskbarEnabled"=dword:00000001
 "MMTaskbarGlomLevel"=dword:00000000
 "MMTaskbarMode"=dword:00000002
 "NavPaneExpandToCurrentFolder"=dword:00000001
+"NavPaneShowAllCloudStates"=dword:00000001
 "NavPaneShowAllFolders"=dword:00000001
+"ReindexedProfile"=dword:00000001
 "SharingWizardOn"=dword:00000000
+"ShellMigrationLevel"=dword:00000003
+"ShowCompColor"=dword:00000001
+"ShowCopilotButton"=dword:00000000
 "ShowCortanaButton"=dword:00000000
 "ShowEncryptCompressedColor"=dword:00000001
+"ShowInfoTip"=dword:00000001
+"ShowStatusBar"=dword:00000001
+"ShowSuperHidden"=dword:00000000
 "ShowTaskViewButton"=dword:00000000
 "ShowTypeOverlay"=dword:00000001
-"SeparateProcess"=dword:00000001
-"StartMenuInit"=dword:00000004
+"SeparateProcess"=dword:00000000
+"ServerAdminUI"=dword:00000000
+"StartMenuInit"=dword:0000000d
+"StartMigratedBrowserPin"=dword:00000001
+"StartShownOnUpgrade"=dword:00000001
+"Start_Layout"=dword:00000001
+"Start_SearchFiles"=dword:00000002
 "Start_TrackProgs"=dword:00000000
 "TaskbarAl"=dword:00000000
+"TaskbarAnimations"=dword:00000001
+"TaskbarAutoHideInTabletMode"=dword:00000000
 "TaskbarBadges"=dword:00000000
 "TaskbarDa"=dword:00000000
+"TaskbarFlashing"=dword:00000001
+"TaskbarGlomLevel"=dword:00000000
 "TaskbarMn"=dword:00000000
 "TaskbarSd"=dword:00000000
 "TaskbarSi"=dword:00000001
+"TaskbarSizeMove"=dword:00000000
+"TaskbarSmallIcons"=dword:00000000
 "UseCompactMode"=dword:00000001
+"WebView"=dword:00000001
+"WinXMigrationLevel"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People]
 "PeopleBand"=dword:00000000
@@ -141,8 +187,11 @@ Windows Registry Editor Version 5.00
 "MakeAllAppsDefault"=dword:00000001
 "OpenAtLogon"=dword:00000000
 
-[[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\Grid]
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\Grid]
 "LauncherSortOption"=dword:00000002
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\DetailsPane]
+"PaneState"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 "SearchboxTaskbarMode"=dword:00000000
@@ -169,11 +218,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PenWorkspace]
 "PenWorkspaceButtonDesiredVisibility"=dword:00000000
 
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\ShowJumpView]
-"Microsoft.WindowsStore_8wekyb3d8bbwe!App"=dword:0x00000001
-"microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowslive.mail"=dword:0x00000001
-"Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge"=dword:0x00000001
-
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
-"AppsUseLightTheme"=dword:0x00000001
-"SystemUsesLightTheme"=dword:0x00000001
+"AppsUseLightTheme"=dword:0x00000000
+"ColorPrevalence"=dword:00000001
+"EnableTransparency"=dword:00000001
+"SystemUsesLightTheme"=dword:0x00000000

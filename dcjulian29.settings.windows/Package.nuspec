@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.settings.windows</id>
+    <version>2404.18.q</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>
+      My custom settings for explorer, fonts, colors, window sizes
+      network, file system, and power
+      for Windows operating systems.
+    </description>
+    <tags>console explorer ipv6 tunnel network ntfs disk power settings custom</tags>
+  </metadata>
+</package>
