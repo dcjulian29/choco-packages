@@ -7,7 +7,7 @@ $installArgs = @{
     checksum64     = "3c3db693c1bdcc902ca9198fc716339373658233b3392ffe3d467f7695762cd1"
     checksum64Type = "sha256"
     UnzipLocation  = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-    specificFolder = "iperf-${env:ChocolateyPackageVersion}-*"
+    specificFolder = "iperf-${env:ChocolateyPackageVersion}-$(if ([IntPtr]::Size -ne 4) { 'Win32' } else { 'Win64' })"
 }
 
 Install-ChocolateyZipPackage @installArgs
