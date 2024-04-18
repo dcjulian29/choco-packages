@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2404.14.1</version>
+    <version>2404.17.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computers.</description>
@@ -13,14 +13,14 @@
       <dependency id="dcjulian29.settings.virtualbox" />
       <dependency id="python" />
       <dependency id="baretail" />
-      <dependency id="myapps-searchmyfiles" />
+      <dependency id="dcjulian29.apps.searchmyfiles" />
       <dependency id="dcjulian29.settings.wsl" />
       <dependency id="bitwarden" />
       <dependency id="tightvnc" />
       <dependency id="nuget.commandline" />
       <dependency id="nugetpackageexplorer" />
       <dependency id="mysettings-greenshot" />
-      <dependency id="myapps-iperf" />
+      <dependency id="dcjulian29.apps.iperf" />
       <dependency id="mysettings-syncthing" />
       <dependency id="teracopy" />
       <dependency id="vlc" />
