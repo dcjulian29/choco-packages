@@ -5,5 +5,5 @@ if ($null -ne $key.GetValue("syncthing", $null)) {
   Remove-ItemProperty -Path $location -Name "syncthing" -Force
 }
 
-Remove-NetFirewallRule -DisplayName 'Syncthing-Inbound-TCP' -Profile Domain
-Remove-NetFirewallRule -DisplayName 'Syncthing-Inbound-UDP' -Profile Domain
+Remove-NetFirewallRule -DisplayName 'Syncthing-Inbound-TCP'
+Remove-NetFirewallRule -DisplayName 'Syncthing-Inbound-UDP'
