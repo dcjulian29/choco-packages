@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.settings.notepadplusplus</id>
+    <version>2404.18.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>My custom settings for Notepad++.</description>
+    <tags>notepad++ notepadplusplus notepad-plus-plus notepad editor settings custom</tags>
+    <dependencies>
+      <dependency id="notepadplusplus" />
+    </dependencies>
+  </metadata>
+</package>

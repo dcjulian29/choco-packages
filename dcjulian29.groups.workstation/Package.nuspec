@@ -9,7 +9,7 @@
     <tags>dcjulian29 groups workstation</tags>
     <dependencies>
       <dependency id="dcjulian29.groups.common" />
-      <dependency id="mysettings-notepadplusplus" />
+      <dependency id="dcjulian29.settings.notepadplusplus" />
       <dependency id="dcjulian29.settings.terminal" />
       <dependency id="powershell-core" />
       <dependency id="sysinternals" />
