@@ -8,24 +8,6 @@ if (Test-Path "${env:SYSTEMDRIVE}\Program Files (x86)") {
 
 setx.exe /m PF32 $PF32
 
-#------------------------------------------------------------------------------
-
-mkdir $env:SYSTEMDRIVE\home
-
-Set-Content $env:SYSTEMDRIVE\home\desktop.ini @"
-[.ShellClassInfo]
-IconResource=$env:WINDIR\system32\SHELL32.dll,150
-[ViewState]
-Mode=
-Vid=
-FolderType=Generic
-"@
-
-attrib.exe +S +H $env:SYSTEMDRIVE\home\desktop.ini
-attrib.exe +R $env:SYSTEMDRIVE\home
-
-#------------------------------------------------------------------------------
-
 Invoke-WebRequest "https://chocolatey.org/install.ps1" -UseBasicParsing | Invoke-Expression
 
 choco source remove -n"chocolatey"
@@ -39,9 +21,3 @@ choco source add --name 'choco' `
   --priority 3
 
 choco config set --name "commandExecutionTimeoutSeconds" --value "3600"
-
-#------------------------------------------------------------------------------
-
-Write-Output "Restarting Device in 30 seconds..."
-Start-Sleep -Seconds 30
-Restart-Computer
