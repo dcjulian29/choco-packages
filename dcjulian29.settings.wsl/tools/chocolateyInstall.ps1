@@ -15,9 +15,9 @@ if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
   & wsl.exe --set-default-version 2
 }
 
-$wsl = Invoke-Expression -Command "wsl.exe --list"
+$wsl = Test-Path -Path "\\wsl.localhost\Ubuntu-22.04"
 
-if ($wsl.Contains("Ubuntu-22.04")) {
+if ($wsl) {
   Write-Warning "Found previously registered Ubuntu 22.04 instance..."
   Write-Output "Not overwriting the installed version..."
 } else {
