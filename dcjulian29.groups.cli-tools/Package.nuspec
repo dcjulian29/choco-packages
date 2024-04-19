@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.cli-tools</id>
-    <version>2401.15.1</version>
+    <version>2404.19.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -10,6 +10,7 @@
     </description>
     <tags>dcjulian29 groups cli-tools</tags>
     <dependencies>
+      <dependency id="dcjulian29.apps.build-project" />
       <dependency id="dcjulian29.apps.dns-resolve" />
       <dependency id="dcjulian29.apps.dns-scan" />
       <dependency id="dcjulian29.apps.git-repostatus" />
