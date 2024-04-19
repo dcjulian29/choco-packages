@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.workstation</id>
-    <version>2404.18.2</version>
+    <version>2404.19.</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on workstation computers.</description>
@@ -16,7 +16,6 @@
       <dependency id="sysinternals" />
       <dependency id="dcjulian29.apps.executor" />
       <dependency id="grepwin" />
-      <dependency id="winmerge" />
       <dependency id="frhed" />
       <dependency id="dcjulian29.groups.scm" />
     </dependencies>
