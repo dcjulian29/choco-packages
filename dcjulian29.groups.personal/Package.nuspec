@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2404.19.1</version>
+    <version>2404.19.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computers.</description>
@@ -19,7 +19,7 @@
       <dependency id="tightvnc" />
       <dependency id="nuget.commandline" />
       <dependency id="nugetpackageexplorer" />
-      <dependency id="dcjulian29.settings-greenshot" />
+      <dependency id="dcjulian29.settings.greenshot" />
       <dependency id="dcjulian29.apps.iperf" />
       <dependency id="dcjulian29.settings.syncthing" />
       <dependency id="teracopy" />
