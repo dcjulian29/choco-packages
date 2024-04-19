@@ -8,6 +8,15 @@
             "keys": "ctrl+shift+f"
         },
         {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        },
+        {
             "command": "paste",
             "keys": "ctrl+v"
         },
@@ -18,21 +27,14 @@
                 "singleLine": false
             },
             "keys": "ctrl+c"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
         }
     ],
+    "alwaysShowTabs": true,
+    "centerOnLaunch": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-    "experimental.rendering.forceFullRepaint": false,
+    "experimental.rendering.forceFullRepaint": true,
     "initialCols": 130,
     "initialRows": 45,
     "newTabMenu": 
@@ -41,14 +43,20 @@
             "type": "remainingProfiles"
         }
     ],
-    "newTabPosition": "afterCurrentTab",
+    "newTabPosition": "afterLastTab",
     "profiles": 
     {
         "defaults": 
         {
+            "adjustIndistinguishableColors": "indexed",
             "antialiasingMode": "cleartype",
             "backgroundImage": null,
             "backgroundImageStretchMode": "uniformToFill",
+            "bellStyle": 
+            [
+                "audible",
+                "window"
+            ],
             "colorScheme": "Campbell",
             "cursorShape": "emptyBox",
             "font": 
@@ -64,7 +72,7 @@
         "list": 
         [
             {
-                "adjustIndistinguishableColors": "always",
+                "adjustIndistinguishableColors": "indexed",
                 "colorScheme": "Campbell Powershell",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
@@ -72,8 +80,8 @@
                 "name": "Windows PowerShell"
             },
             {
-                "adjustIndistinguishableColors": "always",
-                "colorScheme": "Tango Dark",
+                "adjustIndistinguishableColors": "indexed",
+                "colorScheme": "Vintage",
                 "cursorShape": "vintage",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
@@ -81,7 +89,7 @@
                 "name": "Command Prompt"
             },
             {
-                "adjustIndistinguishableColors": "always",
+                "adjustIndistinguishableColors": "indexed",
                 "colorScheme": "One Half Dark",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
@@ -94,7 +102,8 @@
                 "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
                 "hidden": false,
                 "name": "Ubuntu-22.04",
-                "source": "Windows.Terminal.Wsl"
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": null
             }
         ]
     },
@@ -331,54 +340,12 @@
             "yellow": "#808000"
         }
     ],
-    "showTerminalTitleInTitlebar": true,
+    "showTabsInTitlebar": false,
+    "showTerminalTitleInTitlebar": false,
+    "tabSwitcherMode": "disabled",
     "tabWidthMode": "equal",
     "theme": "system",
-    "themes": 
-    [
-        {
-            "name": "legacyDark",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "dark",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacyLight",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "light",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacySystem",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "system",
-                "useMica": false
-            }
-        }
-    ],
+    "themes": [],
     "useAcrylicInTabRow": true,
     "windowingBehavior": "useExisting"
 }

@@ -10,7 +10,7 @@
     <dependencies>
       <dependency id="dcjulian29.groups.common" />
       <dependency id="mysettings-notepadplusplus" />
-      <dependency id="mysettings-terminal" />
+      <dependency id="dcjulian29.settings.terminal" />
       <dependency id="powershell-core" />
       <dependency id="sysinternals" />
       <dependency id="dcjulian29.apps.executor" />
