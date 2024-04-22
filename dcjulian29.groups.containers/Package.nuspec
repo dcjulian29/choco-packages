@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.containers</id>
-    <version>2311.30.1</version>
+    <version>2404.21.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -11,6 +11,7 @@
     <tags>dcjulian29 kubernetes docker container</tags>
     <dependencies>
       <dependency id="docker-desktop" />
+      <dependency id="rancher-desktop" />
       <dependency id="lazydocker" />
       <dependency id="kubernetes-cli" />
       <dependency id="kubernetes-helm" />
