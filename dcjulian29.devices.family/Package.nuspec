@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.family</id>
-    <version>2308.29.1</version>
+    <version>2404.21.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on family computer configurations.</description>
