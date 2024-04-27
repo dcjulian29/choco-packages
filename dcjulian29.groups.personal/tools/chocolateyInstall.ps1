@@ -33,11 +33,11 @@ if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
 
 # ~~~ Make sure my personal "code" folder looks right
 
-if (-not (Test-Path "${env:USERPROFILE}\code")) {
-  New-Item -Type Directory -Path "${env:USERPROFILE}\code" | Out-Null
+if (-not (Test-Path "${env:USERPROFILE}\Code")) {
+  New-Item -Type Directory -Path "${env:USERPROFILE}\Code" | Out-Null
 }
 
-Set-Content -Path "${env:USERPROFILE}\code\desktop.ini" -Value @"
+Set-Content -Path "${env:USERPROFILE}\Code\desktop.ini" -Value @"
 [.ShellClassInfo]
 IconResource=${env:SYSTEMDRIVE}\etc\executor\folder-development.ico,0
 [ViewState]
@@ -46,8 +46,8 @@ Vid=
 FolderType=Generic
 "@
 
-attrib.exe +S +H $env:USERPROFILE\code\desktop.ini
-attrib.exe +R $env:USERPROFILE\code
+attrib.exe +S +H $env:USERPROFILE\Code\desktop.ini
+attrib.exe +R $env:USERPROFILE\Code
 
 # ~~~ Prevent Windows from taking known ports
 
