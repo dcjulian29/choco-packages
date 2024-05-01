@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.scm</id>
-    <version>2404.18.1</version>
+    <version>2405.1.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -16,6 +16,7 @@
       <dependency id="gh" />
       <dependency id="glab" />
       <dependency id="act-cli" />
+      <dependency id="dcjulian29.apps.gitnuro" />
     </dependencies>
   </metadata>
 </package>
