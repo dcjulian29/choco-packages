@@ -50,7 +50,7 @@ if ($cksum -ne $hash) {
   throw "Downloaded package does not match checksum ($cksum != $hash)"
 }
 
-Start-Process -FilePath $install -ArgumentList $extract -NoNewWindow -Wait
+Start-Process -FilePath $env:TEMP\$install -ArgumentList $extract -NoNewWindow -Wait
 
 if (-not (Test-Path -Path "VirtualBox-$version-r$build.msi")) {
   throw "Error extracting virtualbox installer from package!"
