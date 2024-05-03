@@ -340,12 +340,12 @@
             "yellow": "#808000"
         }
     ],
-    "showTabsInTitlebar": false,
+    "showTabsInTitlebar": true,
     "showTerminalTitleInTitlebar": false,
     "tabSwitcherMode": "disabled",
     "tabWidthMode": "equal",
     "theme": "system",
     "themes": [],
     "useAcrylicInTabRow": true,
-    "windowingBehavior": "useExisting"
+    "windowingBehavior": "useNew"
 }
