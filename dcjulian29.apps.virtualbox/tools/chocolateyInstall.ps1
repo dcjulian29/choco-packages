@@ -1,8 +1,9 @@
 ﻿$version = $env:chocolateyPackageVersion
 $build = 162988
 $cksum = "4c83894c00aa9f55f7e0f70807210896ba32e1222d4ff1d0b9487af81f328f36"
+$install = "VirtualBox-$version-$build-Win.exe"
 $log = "virtualbox-$version-$build.log"
-$url = "https://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$build-Win.exe"
+$url = "https://download.virtualbox.org/virtualbox/$version/$install"
 $props = @(
     "/i"
     "${env:TEMP}\VirtualBox-$version-r$build.msi"
@@ -18,33 +19,33 @@ $props = @(
 Push-Location $env:TEMP
 
 Write-Output "Attempting to download installer package..."
-Remove-Item -Path "./virtualbox.exe" -Force -ErrorAction SilentlyContinue
-Invoke-WebRequest -Uri $url -OutFile "virtualbox.exe"
+Remove-Item -Path $install -Force -ErrorAction SilentlyContinue
+Invoke-WebRequest -Uri $url -OutFile $install
 
 # For some stupid reason, Oracle sometimes causes the first attempt to fail randomly...
-if (Test-Path -Path "./virtualbox.exe") {
+if (Test-Path -Path $install) {
   # Download package have been over 75MB for a long time so if not, re-download.
-  if ((Get-Item ".\virtualbox.exe").Length -lt 78643200) {
+  if ((Get-Item $install).Length -lt 78643200) {
     Write-Output "Validation failed... Attempting to download installer package again..."
 
-    Remove-Item -Path "./virtualbox.exe" -Force
-    Invoke-WebRequest -Uri $url -OutFile "virtualbox.exe"
+    Remove-Item -Path $install -Force
+    Invoke-WebRequest -Uri $url -OutFile $install
   }
 }
 
-if (-not (Test-Path -Path "./virtualbox.exe")) {
-  if ((Get-Item ".\virtualbox.exe").Length -lt 78643200) {
+if (-not (Test-Path -Path $install)) {
+  if ((Get-Item ".\$install").Length -lt 78643200) {
     throw "Validation failed again...Couldn't download installer package!"
   }
 }
 
-$hash = (Get-FileHash -Path "./virtualbox.exe" -Algorithm SHA256).Hash.ToLowerInvariant()
+$hash = (Get-FileHash -Path $install -Algorithm SHA256).Hash.ToLowerInvariant()
 
 if ($cksum -ne $hash) {
   throw "Downloaded package does not match checksum ($cksum != $hash)"
 }
 
-Invoke-Expression "./virtualbox.exe -extract -silent"
+Invoke-Expression "./$install --extract"
 
 if (-not (Test-Path -Path "${env:TEMP}\VirtualBox-$version-r$build.msi")) {
   throw "Error extracting virtualbox installer from package!"
