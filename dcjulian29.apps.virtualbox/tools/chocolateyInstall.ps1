@@ -5,15 +5,20 @@ $install = "VirtualBox-$version-$build-Win.exe"
 $log = "virtualbox-$version-$build.log"
 $url = "https://download.virtualbox.org/virtualbox/$version/$install"
 $props = @(
-    "/i"
-    "${env:TEMP}\VirtualBox-$version-r$build.msi"
-    "/passive"
-    "/norestart"
-    "/l* $log"
-    "VBOX_INSTALLDESKTOPSHORTCUT=0"
-    "VBOX_INSTALLQUICKLAUNCHSHORTCUT=0"
-    "VBOX_REGISTERFILEEXTENSIONS=1"
-    "VBOX_START=0"
+  "/i"
+  "VirtualBox-$version-r$build.msi"
+  "/passive"
+  "/norestart"
+  "/l* $log"
+  "VBOX_INSTALLDESKTOPSHORTCUT=0"
+  "VBOX_INSTALLQUICKLAUNCHSHORTCUT=0"
+  "VBOX_REGISTERFILEEXTENSIONS=1"
+  "VBOX_START=0"
+)
+
+$extract = @(
+  "--extract"
+  "--silent"
 )
 
 Push-Location $env:TEMP
@@ -45,9 +50,9 @@ if ($cksum -ne $hash) {
   throw "Downloaded package does not match checksum ($cksum != $hash)"
 }
 
-Invoke-Expression "./$install --extract --silent"
+Start-Process -FilePath $install -ArgumentList $extract -NoNewWindow -Wait
 
-if (-not (Test-Path -Path "${env:TEMP}\VirtualBox-$version-r$build.msi")) {
+if (-not (Test-Path -Path "VirtualBox-$version-r$build.msi")) {
   throw "Error extracting virtualbox installer from package!"
 }
 
