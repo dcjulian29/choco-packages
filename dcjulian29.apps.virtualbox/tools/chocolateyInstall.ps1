@@ -22,7 +22,7 @@ Write-Output "Attempting to download installer package..."
 Remove-Item -Path $install -Force -ErrorAction SilentlyContinue
 Invoke-WebRequest -Uri $url -OutFile $install
 
-# For some stupid reason, Oracle sometimes causes the first attempt to fail randomly...
+# For some reason, Oracle sometimes causes the first attempt to fail...
 if (Test-Path -Path $install) {
   # Download package have been over 75MB for a long time so if not, re-download.
   if ((Get-Item $install).Length -lt 78643200) {
@@ -45,13 +45,17 @@ if ($cksum -ne $hash) {
   throw "Downloaded package does not match checksum ($cksum != $hash)"
 }
 
-Invoke-Expression "./$install --extract"
+Invoke-Expression "./$install --extract --silent"
 
 if (-not (Test-Path -Path "${env:TEMP}\VirtualBox-$version-r$build.msi")) {
   throw "Error extracting virtualbox installer from package!"
 }
 
 Start-Process -FilePath "msiexec.exe" -ArgumentList $props -NoNewWindow -Wait
+
+if (-not (Test-Path -Path $log)) {
+  throw "Error installing virtualbox from MSI!"
+}
 
 Get-Content $log
 
