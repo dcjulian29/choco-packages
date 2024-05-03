@@ -1,7 +1,7 @@
-﻿$version = "7.0.16"
-$build = 162802
-$cksum = "2fb44977d3329e55e8b61408ab4af5239ecd3d80c5990fb5cd6bd0c91a854d62"
-$log = "virtualbox-$(([Guid]::NewGuid()).Guid).log"
+﻿$version = $env:chocolateyPackageVersion
+$build = 162988
+$cksum = "4c83894c00aa9f55f7e0f70807210896ba32e1222d4ff1d0b9487af81f328f36"
+$log = "virtualbox-$version-$build.log"
 $url = "https://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$build-Win.exe"
 $props = @(
     "/i"
