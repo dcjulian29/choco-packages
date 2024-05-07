@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2404.19.2</version>
+    <version>2405.7.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computers.</description>
@@ -45,6 +45,7 @@
       <dependency id="dcjulian29.apps.rustdesk" />
       <dependency id="dcjulian29.apps.wireshark" />
       <dependency id="localsend" />
+      <dependency id="dcjulian29.apps.smartgit" />
     </dependencies>
   </metadata>
 </package>
