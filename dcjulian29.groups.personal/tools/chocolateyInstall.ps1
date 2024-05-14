@@ -31,24 +31,6 @@ if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
     + "$([System.Environment]::OSVersion.Version.Build)"
 }
 
-# ~~~ Make sure my personal "code" folder looks right
-
-if (-not (Test-Path "${env:USERPROFILE}\Code")) {
-  New-Item -Type Directory -Path "${env:USERPROFILE}\Code" | Out-Null
-}
-
-Set-Content -Path "${env:USERPROFILE}\Code\desktop.ini" -Value @"
-[.ShellClassInfo]
-IconResource=${env:SYSTEMDRIVE}\etc\executor\folder-development.ico,0
-[ViewState]
-Mode=
-Vid=
-FolderType=Generic
-"@
-
-attrib.exe +S +H $env:USERPROFILE\Code\desktop.ini
-attrib.exe +R $env:USERPROFILE\Code
-
 # ~~~ Prevent Windows from taking known ports
 
 if (-not (Test-Path -Path "${env:TEMP}\dcjulian29.groups.personal.update.txt")) {
