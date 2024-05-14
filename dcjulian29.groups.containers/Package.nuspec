@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.containers</id>
-    <version>2404.21.1</version>
+    <version>2405.13.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -19,6 +19,7 @@
       <dependency id="dcjulian29.apps.dive" />
       <dependency id="dcjulian29.apps.k8s-dev" />
       <dependency id="k9s" />
+      <dependency id="octant" />
     </dependencies>
   </metadata>
 </package>
