@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.apps.dotfiles</id>
-    <version>0.2.2</version>
+    <version>0.2.3</version>
     <authors>rhysd</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://github.com/rhysd/dotfiles</projectUrl>
