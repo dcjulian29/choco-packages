@@ -6,7 +6,7 @@
     <authors>Gerald Combs and the Wireshark Team</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>https://gitlab.com/wireshark/wireshark/-/blob/master/COPYING</licenseUrl>
-    <projectUrl>https://gitlab.com/wireshark/wireshark/-/tree/master</projectUrl>
+    <projectUrl>https://www.wireshark.org</projectUrl>
     <description>Wireshark is the world’s foremost and widely-used network protocol analyzer.</description>
     <dependencies>
       <dependency id="vcredist140" />
