@@ -1,11 +1,15 @@
+$version = $env:chocolateyPackageVersion
+$revision = 3727
+$sha256 = "5ac959e5dee9884512f4a34623bbad2c08be427669015b917a750f7cbfbb0a75"
+
 # ---- Install
 
 $installArgs = @{
   PackageName    = $env:chocolateyPackageName
   FileType       = "EXE"
   SilentArgs     = "/S /AUTOSTARTUP=1 /RESTART=0"
-  url            = "https://github.com/rainmeter/rainmeter/releases/download/v4.5.18.3727/Rainmeter-4.5.18.exe"
-  checksum       = "5ac959e5dee9884512f4a34623bbad2c08be427669015b917a750f7cbfbb0a75"
+  url            = "https://github.com/rainmeter/rainmeter/releases/download/v$version.$revision/Rainmeter-$version.exe"
+  checksum       = $sha256
   checksumType   = "sha256"
   ValidExitCodes = @(0, 3010)
 }
