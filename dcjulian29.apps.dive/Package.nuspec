@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.apps.dive</id>
-    <version>0.11.7</version>
+    <version>0.12.0</version>
     <authors>Alex Goodman</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://github.com/wagoodman/dive/</projectUrl>
