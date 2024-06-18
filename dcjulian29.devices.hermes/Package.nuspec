@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.hermes</id>
-    <version>2404.27.1</version>
+    <version>2406.18.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my workstation computer.</description>
@@ -13,7 +13,6 @@
       <dependency id="nextcloud-client" />
       <dependency id="handbrake" />
       <dependency id="anydvd" />
-      <dependency id="tailscale" />
     </dependencies>
   </metadata>
 </package>
