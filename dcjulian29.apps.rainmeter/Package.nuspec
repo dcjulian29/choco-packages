@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.apps.rainmeter</id>
-    <version>4.5.18</version>
+    <version>4.5.19</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://github.com/rainmeter/rainmeter</projectUrl>
