@@ -1,6 +1,6 @@
 $version = $env:chocolateyPackageVersion
-$revision = 3753
-$sha256 = "6ab256e981c846937bb79d701140504d1e077987a211b72780dcb4d18355317d"
+$revision = 3803
+$sha256 = "9024b3b01b3883af3e12c3023ca9f7569893d25bb8154d785ac5737c7fff3ac9"
 
 # ---- Install
 
