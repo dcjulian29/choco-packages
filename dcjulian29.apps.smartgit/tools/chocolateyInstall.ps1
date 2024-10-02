@@ -9,7 +9,7 @@ $packageArgs = @{
   unzipLocation  = $PSScriptRoot
   fileType       = "exe"
   url64bit       = $url
-  checksum64     = "324572f2ea37085f69b382e43e8a81ed2287cf907e4feb464978df418760a6cd"
+  checksum64     = "629ffad833ee8a41d26bcf115cfdd27bb51db5815dfbc36792464474c75a638b"
   checksumType64 = "sha256"
 }
 
