@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.devices.morbo</id>
+    <version>2411.14.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages that I install on my "morbo" work computer.</description>
+    <tags>dcjulian29 devices morbo work personal</tags>
+    <dependencies>
+      <dependency id="dcjulian29.groups.workstation" />
+      <dependency id="baretail" />
+      <dependency id="dcjulian29.apps.searchmyfiles" />
+      <dependency id="dcjulian29.settings.wsl" />
+      <dependency id="bitwarden" />
+      <dependency id="dcjulian29.settings.syncthing" />
+      <dependency id="vscode" />
+      <dependency id="googlechrome" />
+      <dependency id="golang" />
+      <dependency id="dcjulian29.groups.cli-tools" />
+      <dependency id="dcjulian29.apps.ansible-via-docker" />
+      <dependency id="dcjulian29.apps.ansible-host" />
+      <dependency id="dcjulian29.apps.ansible-dev" />
+      <dependency id="dcjulian29.apps.dotfiles" />
+      <dependency id="dcjulian29.apps.openssl-via-docker" />
+    </dependencies>
+  </metadata>
+</package>
