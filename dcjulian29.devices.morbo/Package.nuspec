@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.morbo</id>
-    <version>2411.14.1</version>
+    <version>2411.14.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my "morbo" work computer.</description>
@@ -20,7 +20,6 @@
       <dependency id="dcjulian29.groups.cli-tools" />
       <dependency id="dcjulian29.apps.ansible-via-docker" />
       <dependency id="dcjulian29.apps.ansible-host" />
-      <dependency id="dcjulian29.apps.ansible-dev" />
       <dependency id="dcjulian29.apps.dotfiles" />
       <dependency id="dcjulian29.apps.openssl-via-docker" />
     </dependencies>
