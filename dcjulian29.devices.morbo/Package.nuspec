@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.morbo</id>
-    <version>2411.17.1</version>
+    <version>2411.18.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my "morbo" work computer.</description>
@@ -11,9 +11,9 @@
       <dependency id="dcjulian29.groups.workstation" />
       <dependency id="baretail" />
       <dependency id="dcjulian29.apps.searchmyfiles" />
-      <dependency id="dcjulian29.settings.wsl" />
       <dependency id="bitwarden" />
       <dependency id="dcjulian29.settings.syncthing" />
+      <dependency id="teracopy" />
       <dependency id="vscode" />
       <dependency id="googlechrome" />
       <dependency id="golang" />
