@@ -27,7 +27,7 @@ if ($wsl) {
     Remove-Item -Path "${env:TEMP}\Ubuntu.tar.gz" -Force | Out-Null
   }
 
-  $baseUrl = "https://cloud-images.ubuntu.com/wsl/nobile/current"
+  $baseUrl = "https://cloud-images.ubuntu.com/wsl/noble/current"
   $url = "$baseUrl/ubuntu-noble-wsl-amd64-ubuntu.rootfs.tar.gz"
 
   Invoke-WebRequest $url -OutFile $env:TEMP\Ubuntu.tar.gz
