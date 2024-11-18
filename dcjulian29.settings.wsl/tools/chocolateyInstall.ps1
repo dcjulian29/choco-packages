@@ -15,29 +15,29 @@ if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
   & wsl.exe --set-default-version 2
 }
 
-$wsl = Test-Path -Path "\\wsl.localhost\Ubuntu-22.04"
+$wsl = Test-Path -Path "\\wsl.localhost\Ubuntu-24.04"
 
 if ($wsl) {
-  Write-Warning "Found previously registered Ubuntu 22.04 instance..."
+  Write-Warning "Found previously registered Ubuntu 24.04 instance..."
   Write-Output "Not overwriting the installed version..."
 } else {
-  Write-Output "Downloading and installing Ubuntu 22.04...`n"
+  Write-Output "Downloading and installing Ubuntu 24.04...`n"
 
   if (Test-Path "${env:TEMP}\Ubuntu.tar.gz") {
     Remove-Item -Path "${env:TEMP}\Ubuntu.tar.gz" -Force | Out-Null
   }
 
-  $baseUrl = "https://cloud-images.ubuntu.com/wsl/jammy/current"
-  $url = "$baseUrl/ubuntu-jammy-wsl-amd64-wsl.rootfs.tar.gz"
+  $baseUrl = "https://cloud-images.ubuntu.com/wsl/nobile/current"
+  $url = "$baseUrl/ubuntu-noble-wsl-amd64-ubuntu.rootfs.tar.gz"
 
   Invoke-WebRequest $url -OutFile $env:TEMP\Ubuntu.tar.gz
 
   $InstallFolder = "$($env:USERPROFILE)\AppData\Local\Packages\Ubuntu"
 
   Invoke-Expression -Command `
-    "wsl.exe --import Ubuntu-22.04 `"$InstallFolder`" `"${env:TEMP}\Ubuntu.tar.gz`""
+    "wsl.exe --import Ubuntu-24.04 `"$InstallFolder`" `"${env:TEMP}\Ubuntu.tar.gz`""
 
-  $exe = "wsl.exe -d Ubuntu-22.04"
+  $exe = "wsl.exe -d Ubuntu-24.04"
 
   Invoke-Expression -Command `
     "$exe /usr/sbin/adduser $($env:USERNAME) --gecos `"First,Last,RoomNumber,WorkPhone,HomePhone`" --disabled-password"
@@ -51,7 +51,7 @@ if ($wsl) {
   | Where-Object -Property DistributionName -eq "Ubuntu-22.04" `
   | Set-ItemProperty -Name DefaultUid -Value "1000"
 
-  & wsl.exe -d "Ubuntu-22.04" /bin/bash -c "curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash"
+  & wsl.exe -d "Ubuntu-24.04" /bin/bash -c "curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash"
 
-  & wsl.exe --setdefault "Ubuntu-22.04"
+  & wsl.exe --setdefault "Ubuntu-24.04"
 }
