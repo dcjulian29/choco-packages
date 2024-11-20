@@ -6,6 +6,7 @@
     "Cblue",
     "Cgreen",
     "Creset",
+    "dcjulian",
     "dword",
     "ffdx",
     "fscache",
@@ -22,7 +23,9 @@
     "ploa",
     "plog",
     "safecrlf",
+    "searchmyfiles",
     "smimesign",
+    "teracopy",
     "unstage",
     "wdiff",
     "winmergeu"
