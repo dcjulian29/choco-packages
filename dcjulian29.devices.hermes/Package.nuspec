@@ -2,14 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.hermes</id>
-    <version>2407.30.1</version>
+    <version>2412.2.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my workstation computer.</description>
     <tags>dcjulian29 devices hermes workstation personal</tags>
     <dependencies>
       <dependency id="dcjulian29.groups.personal" />
-      <dependency id="dcjulian29.apps.xmind" />
       <dependency id="nextcloud-client" />
     </dependencies>
   </metadata>
