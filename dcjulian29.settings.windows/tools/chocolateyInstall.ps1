@@ -65,7 +65,7 @@ if ([System.IntPtr]::Size -ne 4) {
 Push-Location $PSScriptRoot
 (Get-childItem -Path "./"  -Filter "*.reg").Name | ForEach-Object {
   Write-Output "Adding to registry: $($_)"
-  cmd /c "$cmd $($_) $reg"
+  cmd /c "$cmd $($_) /f $reg"
 }
 
 Pop-Location

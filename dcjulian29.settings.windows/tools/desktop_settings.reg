@@ -1,0 +1,18 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\Grid]
+"LauncherSortOption"=dword:00000002
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
+"AccentColor"=dword:00484a4c
+"ColorizationColor"=dword:c44c4a48
+"ColorizationAfterglow"=dword: 0xc44c4a48
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PenWorkspace]
+"PenWorkspaceButtonDesiredVisibility"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+"AppsUseLightTheme"=dword:0x00000000
+"ColorPrevalence"=dword:00000001
+"EnableTransparency"=dword:00000001
+"SystemUsesLightTheme"=dword:0x00000000
