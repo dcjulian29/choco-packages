@@ -60,9 +60,9 @@ if ([System.IntPtr]::Size -ne 4) {
     $cmd = "$cmd /reg:64"
 }
 
-(Get-childItem -Path "."  -Filter "*.reg").FullName | ForEach-Object {
-  Write-Output "Adding to registry: $_"
-  cmd /c "$cmd $_"
+(Get-childItem -Path "$PSscriptRoot"  -Filter "*.reg").FullName | ForEach-Object {
+  Write-Output "Adding to registry: $($_)"
+  cmd /c "$cmd $($_)"
 }
 
 ## Fonts
