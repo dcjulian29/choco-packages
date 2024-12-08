@@ -56,14 +56,19 @@ function installFont($Path) {
 
 ### Registry Settings
 
+$reg = ""
+
 if ([System.IntPtr]::Size -ne 4) {
-    $cmd = "$cmd /reg:64"
+    $reg = "/reg:64"
 }
 
-(Get-childItem -Path "$PSscriptRoot"  -Filter "*.reg").FullName | ForEach-Object {
+Push-Location $PSScriptRoot
+(Get-childItem -Path "./"  -Filter "*.reg").Name | ForEach-Object {
   Write-Output "Adding to registry: $($_)"
-  cmd /c "$cmd $($_)"
+  cmd /c "$cmd $($_) $reg"
 }
+
+Pop-Location
 
 ## Fonts
 
