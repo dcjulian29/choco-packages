@@ -18,6 +18,10 @@ if (!(Test-Path $file_path)) {
   throw "Can't download CaskaydiaCove Nerd Font"
 }
 
+if (Test-Path $extract_path) {
+  Remove-Item -Path $extract_path -Recurse -Force
+}
+
 Unzip-File -File $file_path -Destination $extract_path
 
 (Get-ChildItem -Path $extract_path -Filter "*.ttf").FullName | ForEach-Object {
