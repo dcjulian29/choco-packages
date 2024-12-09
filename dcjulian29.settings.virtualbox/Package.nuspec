@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.settings.virtualbox</id>
+    <version>2412.9.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <licenseUrl>https://raw.githubusercontent.com/dcjulian29/choco-packages/main/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/dcjulian29/choco-packages/</projectUrl>
+    <description>My way of post configuration of Virtualbox</description>
+    <tags>dcjulian29 settings virtualbox hypervisor</tags>
+    <dependencies>
+      <dependency id="dcjulian29.apps.virtualbox" />
+      <dependency id="dcjulian29.apps.virtualboxextpack" />
+      <dependency id="vagrant" />
+    </dependencies>
+  </metadata>
+</package>

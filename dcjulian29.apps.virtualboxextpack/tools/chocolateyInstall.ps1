@@ -1,19 +1,17 @@
 ﻿$version = $env:chocolateyPackageVersion
 $checksum = '9dd60ef3c52c2a318fbbb6faace5862a299b61f678a579988869865dcf7390b6'
-$vbox_msi = Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' `
+$installLocation = Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' `
   VBOX_MSI_INSTALL_PATH -ea 0 | Select-Object -expand VBOX_MSI_INSTALL_PATH
 
-if (!$vbox_msi) {
+if (!$installLocation) {
   throw "Could not find VirtualBox"
 }
 
-if ($vbox_msi -and $vbox_msi.EndsWith('\')) {
-  $vbox_msi = $vbox_msi -replace '.$'
+if ($installLocation -and $installLocation.EndsWith('\')) {
+  $installLocation = $installLocation -replace '.$'
 }
 
-if (Test-Path $installLocation) {
-  $installLocation=$vbox_msi
-} else {
+if (!(Test-Path $installLocation)) {
   throw "VirtualBox directory does not exist"
 }
 

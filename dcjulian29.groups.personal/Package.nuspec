@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2412.8.1</version>
+    <version>2412.9.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computers.</description>
@@ -10,7 +10,7 @@
     <dependencies>
       <dependency id="dcjulian29.groups.workstation" />
       <dependency id="dcjulian29.psmodules" />
-      <dependency id="dcjulian29.apps.virtualboxextpack" />
+      <dependency id="dcjulian29.settings.virtualbox" />
       <dependency id="python" />
       <dependency id="baretail" />
       <dependency id="dcjulian29.apps.searchmyfiles" />
