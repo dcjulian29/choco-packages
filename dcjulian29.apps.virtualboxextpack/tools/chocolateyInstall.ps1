@@ -20,10 +20,10 @@ Write-Output "Installing VirtualBox Extension Pack..."
 Write-Warning "*** THIS IS A NON-COMMERCIAL EXTENSION AND CAN INCURE SIGNIFICANT FINANCIAL COSTS ***"
 
 $url = "https://download.virtualbox.org/virtualbox/$version/Oracle_VirtualBox_Extension_Pack-$version.vbox-extpack"
-$file_path = $env:TEMP + '\' + ($url_ep -split '/' | Select-Object -Last 1)
+$file_path = $env:TEMP + '\' + ($url -split '/' | Select-Object -Last 1)
 
 Get-ChocolateyWebFile `
-  -PackageName    'virtualbox-extensionpack' `
+  -PackageName    $env:chocolateyPackageName `
   -FileFullPath   $file_path `
   -Url            $url `
   -Url64bit       $url `
