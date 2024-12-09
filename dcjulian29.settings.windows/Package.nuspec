@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.settings.windows</id>
-    <version>2412.9.1</version>
+    <version>2412.9.2</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -12,7 +12,7 @@
     </description>
     <tags>console explorer ipv6 tunnel network ntfs disk power settings custom</tags>
     <dependencies>
-      <dependency id="dcjulian29.settings.caskaydiacovenerdfont" />
+      <dependency id="dcjulian29.font.caskaydiacovenerdfont" />
     </dependencies>
   </metadata>
 </package>
