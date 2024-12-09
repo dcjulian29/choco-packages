@@ -5,7 +5,7 @@
     <version>7.1.4</version>
     <authors>Oracle Corporation</authors>
     <owners>Julian Easterling</owners>
-    <licenseUrl>https://www.virtualbox.org/wiki/VirtualBox_PUEL</licenseUrl>
+    <licenseUrl>https://www.virtualbox.org/wiki/GPL</licenseUrl>
     <projectUrl>https://www.virtualbox.org/</projectUrl>
     <description>VirtualBox is a general-purpose full virtualizer for x86 hardware.</description>
     <tags>dcjulian29 apps virtualbox hypervisor</tags>
