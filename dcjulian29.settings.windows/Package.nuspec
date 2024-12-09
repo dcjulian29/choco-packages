@@ -2,14 +2,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.settings.windows</id>
-    <version>2412.8.1</version>
+    <version>2412.9.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
-      My custom settings for explorer, fonts, colors, window sizes
+      My custom settings for explorer, colors, window sizes
       network, file system, and power
       for Windows operating systems.
     </description>
     <tags>console explorer ipv6 tunnel network ntfs disk power settings custom</tags>
+    <dependencies>
+      <dependency id="dcjulian29.settings.cascadiacodenerdfont" />
+    </dependencies>
   </metadata>
 </package>

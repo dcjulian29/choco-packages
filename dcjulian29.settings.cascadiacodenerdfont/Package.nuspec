@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.settings.cascadiacodenerdfont</id>
+    <version>3.3.0</version>
+    <authors>Ryan L McIntyre</authors>
+    <owners>Julian Easterling</owners>
+    <description>
+      Nerd Fonts patches developer targeted fonts with a high number of glyphs (icons).
+      Specifically to add a high number of extra glyphs from popular ‘iconic fonts’
+      such as Font Awesome, Devicons, Octicons, and others.
+    </description>
+    <tags>dcjulian29 fonts settings custom</tags>
+  </metadata>
+</package>
