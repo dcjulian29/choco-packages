@@ -20,17 +20,12 @@ if (!(Test-Path $file_path)) {
 
 Unzip-File -File $file_path -Destination $extract_path
 
-(Get-ChildItem -Path $extract_path).FullName | ForEach-Object {
+(Get-ChildItem -Path $extract_path -Filter "*.ttf").FullName | ForEach-Object {
   $font_path = Get-Item (Resolve-Path $_)
   $shell = New-Object -COM Shell.Application
   $folder = $shell.namespace($font_path.DirectoryName)
   $item = $folder.Items().Item($font_path.Name)
-  $font_name = $folder.GetDetailsOf($item, 21)
-
-  switch ($font_path.Extension) {
-    ".ttf" { $font_name = "$font_name (TrueType)" }
-    ".otf" { $font_name = "$font_name (OpenType)" }
-  }
+  $font_name = $folder.GetDetailsOf($item, 21) + " (TrueType)"
 
   Copy-Item -Path $font_path.FullName -Destination ("${env:windir}\Fonts\$($font_path.Name)") `
     -Force -ErrorAction SilentlyContinue
