@@ -17,7 +17,7 @@ Pop-Location
 
 ### Power Settings
 
-Write-Output "On AC - monitor off at 30 minutes, standby never, hibernate never..."
+Write-Output "On AC - monitor off at 30 minutes, standby never, hibernate at 60..."
 
 powercfg.exe /change monitor-timeout-ac 20
 powercfg.exe /change standby-timeout-ac 0
