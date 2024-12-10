@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.cli-tools</id>
-    <version>2411.14.1</version>
+    <version>2412.9.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -17,7 +17,7 @@
       <dependency id="dcjulian29.apps.download" />
       <dependency id="dcjulian29.apps.git-repostatus" />
       <dependency id="dcjulian29.apps.git-reposync" />
-      <dependency id="dcjulian29.apps.ini-file" />
+      <!-- <dependency id="dcjulian29.apps.ini-file" /> -->
       <dependency id="dcjulian29.apps.ip-scan" />
       <dependency id="dcjulian29.apps.muffet" />
       <dependency id="dcjulian29.apps.provision-test" />
