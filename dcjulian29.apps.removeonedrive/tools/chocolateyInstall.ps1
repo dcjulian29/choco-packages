@@ -1,6 +1,8 @@
 Write-Output "Removing OneDrive - Personal..."
 
-taskkill.exe /f /im OneDrive.exe
+if (Get-Process -Name OneDrive) {
+  taskkill.exe /f /im OneDrive.exe
+}
 
 if ([System.IntPtr]::Size -ne 4) {
     Start-Process -FilePath "$env:SystemDrive\SysWOW64\OneDriveSetup.exe" -ArgumentList "/uninstall" -Wait
@@ -28,4 +30,6 @@ New-ItemProperty -Name "@" `
     -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\NonEnum" `
     -PropertyType dword -Value 1 -Force
 
-Remove-Item -Path "$env:USERPROFILE\OneDrive" -Recurse -Force
+if (Test-Path -Path "$env:USERPROFILE\OneDrive") {
+  Remove-Item -Path "$env:USERPROFILE\OneDrive" -Recurse -Force
+}
