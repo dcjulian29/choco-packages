@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.apps.removeonedrive</id>
-    <version>2412.12.1</version>
+    <version>2412.12.2</version>
     <authors>Microsoft</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage</projectUrl>

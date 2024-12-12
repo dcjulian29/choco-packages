@@ -4,18 +4,21 @@ if (Get-Process -Name OneDrive -ErrorAction SilentlyContinue) {
   taskkill.exe /f /im OneDrive.exe
 }
 
-if ([System.IntPtr]::Size -ne 4) {
-    Start-Process -FilePath "$env:SystemDrive\SysWOW64\OneDriveSetup.exe" -ArgumentList "/uninstall" -Wait
-} else {
-    Start-Process -FilePath "$env:SystemDrive\System32\OneDriveSetup.exe" -ArgumentList "/uninstall" -Wait
+
+if ((Test-Path "$env:SystemDrive\System32\OneDriveSetup.exe") -or (Test-Path "$env:SystemDrive\System32\OneDriveSetup.exe")) {
+    if ([System.IntPtr]::Size -ne 4) {
+        Start-Process -FilePath "$env:SystemDrive\SysWOW64\OneDriveSetup.exe" -ArgumentList "/uninstall" -Wait
+    } else {
+        Start-Process -FilePath "$env:SystemDrive\System32\OneDriveSetup.exe" -ArgumentList "/uninstall" -Wait
+    }
 }
 
 New-ItemProperty -Name "@" `
-    -Path "HKCR:\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" `
+    -Path "Registry::HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" `
     -PropertyType string -Value "OneDrive - Personal" -Force
 
 New-ItemProperty -Name "System.IsPinnedToNameSpaceTree" `
-    -Path "HKCR:\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" `
+    -Path "Registry::HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" `
     -PropertyType dword -Value 0 -Force
 
 New-ItemProperty -Name "@" `
