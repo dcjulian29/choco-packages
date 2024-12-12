@@ -2,13 +2,15 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.apps.removeonedrive</id>
-    <version>2412.11.1</version>
+    <version>2412.12.1</version>
     <authors>Microsoft</authors>
     <owners>Julian Easterling</owners>
     <projectUrl>https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage</projectUrl>
     <iconUrl>https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/apps-one-drive-fy-24</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>OneDrive is cloud-based file storage software. On some systems, the personal version of OneDrive needs to be uninstalled from the OS.</description>
+    <description>
+      OneDrive is cloud-based file storage software. On some systems, the personal
+      version of OneDrive needs to be uninstalled from the OS.</description>
     <tags>onedrive files folders</tags>
   </metadata>
 </package>

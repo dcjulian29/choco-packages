@@ -1,6 +1,6 @@
 Write-Output "Removing OneDrive - Personal..."
 
-if (Get-Process -Name OneDrive) {
+if (Get-Process -Name OneDrive -ErrorAction SilentlyContinue) {
   taskkill.exe /f /im OneDrive.exe
 }
 
