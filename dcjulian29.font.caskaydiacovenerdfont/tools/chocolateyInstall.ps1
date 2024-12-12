@@ -22,7 +22,7 @@ if (Test-Path $extract_path) {
   Remove-Item -Path $extract_path -Recurse -Force
 }
 
-Unzip-File -File $file_path -Destination $extract_path
+Expand-Archive -Path $file_path -Destination $extract_path -Force
 
 (Get-ChildItem -Path $extract_path -Filter "*.ttf").FullName | ForEach-Object {
   $font_path = Get-Item (Resolve-Path $_)
