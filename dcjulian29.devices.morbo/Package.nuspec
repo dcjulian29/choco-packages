@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.morbo</id>
-    <version>2412.12.1</version>
+    <version>2412.13.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my "morbo" work computer.</description>
@@ -30,10 +30,6 @@
       <dependency id="dcjulian29.apps.openssl-via-docker" />
       <dependency id="slack" />
       <dependency id="dcjulian29.apps.removeonedrive" />
-      <dependency id="office365business" />
-      <dependency id="zoom" />
-      <dependency id="zoom-outlook" />
-      <dependency id="onenote" />
     </dependencies>
   </metadata>
 </package>
