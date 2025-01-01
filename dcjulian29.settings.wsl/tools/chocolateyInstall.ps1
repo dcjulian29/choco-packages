@@ -1,4 +1,6 @@
-$version = "24.04"
+$version     = "24.04"
+$version_old = "22.04"
+
 $wsl = (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux).State -eq "Enabled"
 
 if (-not $wsl) {
@@ -55,4 +57,6 @@ if ($wsl) {
   & wsl.exe -d "Ubuntu-24.04" /bin/bash -c "curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash"
 
   & wsl.exe --setdefault "Ubuntu-$version"
+
+  & wsl.exe --unregister "Ubuntu-$version_old"
 }
