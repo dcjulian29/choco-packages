@@ -49,7 +49,7 @@ if ($wsl) {
     "$exe /bin/bash -c `"echo -e '$($env:USERNAME) ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/$($env:USERNAME)`""
 
   Get-ItemProperty Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\*\ DistributionName `
-  | Where-Object -Property DistributionName -eq "Ubuntu-22.04" `
+  | Where-Object -Property DistributionName -eq "Ubuntu-$version" `
   | Set-ItemProperty -Name DefaultUid -Value "1000"
 
   & wsl.exe -d "Ubuntu-24.04" /bin/bash -c "curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash"
