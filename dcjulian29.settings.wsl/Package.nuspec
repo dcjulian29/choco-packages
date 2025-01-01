@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.settings.wsl</id>
-    <version>2411.18.1</version>
+    <version>2501.1.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
-    <description>This package installs Ubuntu 24.04 into WSL.</description>
+    <description>This package installs latest available Ubuntu OS into WSL.</description>
     <tags>mysettings wsl2 ubuntu</tags>
   </metadata>
 </package>

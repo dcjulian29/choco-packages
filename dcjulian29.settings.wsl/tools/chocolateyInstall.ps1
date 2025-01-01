@@ -1,3 +1,4 @@
+$version = "24.04"
 $wsl = (Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux).State -eq "Enabled"
 
 if (-not $wsl) {
@@ -15,13 +16,13 @@ if ([System.Environment]::OSVersion.Version.Build -ge 19041) {
   & wsl.exe --set-default-version 2
 }
 
-$wsl = Test-Path -Path "\\wsl.localhost\Ubuntu-24.04"
+$wsl = Test-Path -Path "\\wsl.localhost\Ubuntu-$version"
 
 if ($wsl) {
-  Write-Warning "Found previously registered Ubuntu 24.04 instance..."
+  Write-Warning "Found previously registered Ubuntu $version instance..."
   Write-Output "Not overwriting the installed version..."
 } else {
-  Write-Output "Downloading and installing Ubuntu 24.04...`n"
+  Write-Output "Downloading and installing Ubuntu $version...`n"
 
   if (Test-Path "${env:TEMP}\Ubuntu.tar.gz") {
     Remove-Item -Path "${env:TEMP}\Ubuntu.tar.gz" -Force | Out-Null
@@ -32,7 +33,7 @@ if ($wsl) {
 
   Invoke-WebRequest $url -OutFile $env:TEMP\Ubuntu.tar.gz
 
-  $InstallFolder = "$($env:USERPROFILE)\AppData\Local\Packages\Ubuntu"
+  $InstallFolder = "$($env:USERPROFILE)\AppData\Local\Packages\Ubuntu\$version"
 
   Invoke-Expression -Command `
     "wsl.exe --import Ubuntu-24.04 `"$InstallFolder`" `"${env:TEMP}\Ubuntu.tar.gz`""
@@ -53,5 +54,5 @@ if ($wsl) {
 
   & wsl.exe -d "Ubuntu-24.04" /bin/bash -c "curl -sSL https://julianscorner.com/dl/l/init-wsl.sh | bash"
 
-  & wsl.exe --setdefault "Ubuntu-24.04"
+  & wsl.exe --setdefault "Ubuntu-$version"
 }
