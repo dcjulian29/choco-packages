@@ -1,6 +1,6 @@
 ﻿$version = $env:chocolateyPackageVersion
-$build = 165100
-$cksum = "f970e275f59eeeb129aab88a78dae80784370742b5051650a7926c9ea64afeac"
+$build = 167084
+$cksum = "35c42c98b784974a965c358a9bda63b6cb4edde80db83f87daa2fee83e6cfad6"
 $install = "VirtualBox-$version-$build-Win.exe"
 $log = "virtualbox-$version-$build.log"
 $url = "https://download.virtualbox.org/virtualbox/$version/$install"

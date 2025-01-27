@@ -1,5 +1,5 @@
 ﻿$version = $env:chocolateyPackageVersion
-$checksum = '9dd60ef3c52c2a318fbbb6faace5862a299b61f678a579988869865dcf7390b6'
+$checksum = 'c13e47d3fb2c849019accb03353c7d04ffb9c264920075972ed2e2befe3cdd8b'
 $installLocation = Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' `
   VBOX_MSI_INSTALL_PATH -ea 0 | Select-Object -expand VBOX_MSI_INSTALL_PATH
 
