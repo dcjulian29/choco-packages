@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.scm</id>
-    <version>2405.7.1</version>
+    <version>2501.31.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>
@@ -14,8 +14,6 @@
       <dependency id="winmerge" />
       <dependency id="lazygit" />
       <dependency id="gh" />
-      <dependency id="glab" />
-      <dependency id="act-cli" />
     </dependencies>
   </metadata>
 </package>
