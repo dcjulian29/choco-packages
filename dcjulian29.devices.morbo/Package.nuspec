@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.morbo</id>
-    <version>2412.13.1</version>
+    <version>2501.31.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my "morbo" work computer.</description>
@@ -12,23 +12,19 @@
       <dependency id="dcjulian29.settings.julianca" />
       <dependency id="dcjulian29.apps.searchmyfiles" />
       <dependency id="baretail" />
-      <dependency id="dcjulian29.apps.searchmyfiles" />
       <dependency id="bitwarden" />
       <dependency id="dcjulian29.settings.syncthing" />
       <dependency id="teracopy" />
       <dependency id="vscode" />
       <dependency id="googlechrome" />
-      <dependency id="golang" />
       <dependency id="powertoys" />
       <dependency id="docker-desktop" />
       <dependency id="lazydocker" />
-      <dependency id="dcjulian29.apps.dive" />
       <dependency id="dcjulian29.groups.cli-tools" />
       <dependency id="dcjulian29.apps.ansible-via-docker" />
       <dependency id="dcjulian29.apps.ansible-host" />
       <dependency id="dcjulian29.apps.dotfiles" />
       <dependency id="dcjulian29.apps.openssl-via-docker" />
-      <dependency id="slack" />
       <dependency id="dcjulian29.apps.removeonedrive" />
     </dependencies>
   </metadata>
