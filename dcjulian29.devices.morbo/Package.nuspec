@@ -21,8 +21,6 @@
       <dependency id="docker-desktop" />
       <dependency id="lazydocker" />
       <dependency id="dcjulian29.groups.cli-tools" />
-      <dependency id="dcjulian29.apps.ansible-via-docker" />
-      <dependency id="dcjulian29.apps.ansible-host" />
       <dependency id="dcjulian29.apps.dotfiles" />
       <dependency id="dcjulian29.apps.openssl-via-docker" />
       <dependency id="dcjulian29.apps.removeonedrive" />
