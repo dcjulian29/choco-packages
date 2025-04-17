@@ -6,7 +6,7 @@
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my "morbo" work computer.</description>
-    <tags>dcjulian29 devices morbo work personal</tags>
+    <tags>dcjulian29 devices morbo work</tags>
     <dependencies>
       <dependency id="dcjulian29.groups.workstation" />
       <dependency id="dcjulian29.settings.julianca" />
