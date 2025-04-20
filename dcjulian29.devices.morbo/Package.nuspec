@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.morbo</id>
-    <version>2501.31.1</version>
+    <version>2504.20.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my "morbo" work computer.</description>
@@ -20,10 +20,16 @@
       <dependency id="powertoys" />
       <dependency id="docker-desktop" />
       <dependency id="lazydocker" />
-      <dependency id="dcjulian29.groups.cli-tools" />
+      <dependency id="dcjulian29.apps.dns-resolve" />
+      <dependency id="dcjulian29.apps.doggo" />
       <dependency id="dcjulian29.apps.dotfiles" />
+      <dependency id="dcjulian29.apps.git-repostatus" />
+      <dependency id="dcjulian29.apps.git-reposync" />
+      <dependency id="dcjulian29.apps.ip-scan" />
+      <dependency id="dcjulian29.apps.muffet" />
       <dependency id="dcjulian29.apps.openssl-via-docker" />
       <dependency id="dcjulian29.apps.removeonedrive" />
+      <dependency id="dcjulian29.apps.unix-tools" />
     </dependencies>
   </metadata>
 </package>
