@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>dcjulian29.apps.wireshark</id>
-    <version>4.2.5</version>
+    <version>4.4.7</version>
     <authors>Gerald Combs and the Wireshark Team</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>https://gitlab.com/wireshark/wireshark/-/blob/master/COPYING</licenseUrl>
