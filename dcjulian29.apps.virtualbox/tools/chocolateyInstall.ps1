@@ -1,5 +1,5 @@
 ﻿$version = $env:chocolateyPackageVersion
-$build = 168469
+$build = 169112
 $cksum = "193de3f5890b4653e2b05f95221c681f96749e7f10f7f38d1ddbd3895b3eca70"
 $install = "VirtualBox-$version-$build-Win.exe"
 $log = "virtualbox-$version-$build.log"
