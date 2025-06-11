@@ -10,6 +10,7 @@
     <dependencies>
       <dependency id="dcjulian29.groups.personal" />
       <dependency id="nextcloud-client" />
+      <dependency id="dcjulian29.wsl.ubuntu" />
     </dependencies>
   </metadata>
 </package>

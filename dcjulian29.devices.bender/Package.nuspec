@@ -14,6 +14,7 @@
       <dependency id="nextcloud-client" />
       <dependency id="slack" />
       <dependency id="discord" />
+      <dependency id="dcjulian29.wsl.ubuntu" />
     </dependencies>
   </metadata>
 </package>

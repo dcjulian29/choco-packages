@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.wsl.ubuntu</id>
+    <version>24.04.0</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>This package installs Ubuntu OS into WSL</description>
+    <tags>dcjulian29 wsl ubuntu</tags>
+    <dependencies>
+      <dependency id="dcjulian29.settings.wsl" />
+    </dependencies>
+  </metadata>
+</package>
