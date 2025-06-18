@@ -38,7 +38,7 @@ if (!(Test-Path $file_path)) {
 
 Set-Alias vboxmanage $installLocation\VBoxManage.exe
 
-vboxmanage extpack install --replace $file_path --accept-license=$checksum
+"y" | vboxmanage extpack install --replace $file_path --accept-license=$checksum
 
 if ($LastExitCode -ne 0) {
   throw "Extension pack installation failed with exit code $LastExitCode"
