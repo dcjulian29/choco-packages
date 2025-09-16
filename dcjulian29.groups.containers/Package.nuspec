@@ -16,7 +16,6 @@
       <dependency id="kubernetes-cli" />
       <dependency id="kubernetes-helm" />
       <dependency id="minikube" />
-      <dependency id="dcjulian29.apps.dive" />
       <dependency id="dcjulian29.apps.k8s-dev" />
       <dependency id="k3d" />
       <dependency id="k9s" />
