@@ -17,7 +17,7 @@ Install-ChocolateyZipPackage @packageArgs
 
 $installArgs = @{
   packageName    = $packageName
-  file           = $(Join-Path -Path $PSScriptRoot -ChildPath "smartgit-$version-setup.exe")
+  file           = $(Join-Path -Path $PSScriptRoot -ChildPath "smartgit-0$version-setup.exe")
 
   silentArgs     = "/SILENT /SUPPRESSMSGBOXES /NORESTART /SP-"
   validExitCodes = @(0)
