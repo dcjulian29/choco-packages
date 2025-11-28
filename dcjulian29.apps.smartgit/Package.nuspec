@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.apps.smartgit</id>
-    <version>25.1.93</version>
+    <version>25.1.100</version>
     <title>SmartGit</title>
     <owners>syntevo GmbH</owners>
     <authors>Julian Easterling</authors>
