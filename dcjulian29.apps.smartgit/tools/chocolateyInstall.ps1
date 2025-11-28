@@ -2,7 +2,7 @@
 
 $version = $env:chocolateyPackageVersion -replace '\.', '_'
 $packageName = $env:chocolateyPackageName
-$url = "https://julianscorner.com/dl/smartgit-$version.zip"
+$url = "https://julianscorner.com/dl/smartgit-$version-win-installer.zip"
 
 $packageArgs = @{
   packageName    = $packageName
