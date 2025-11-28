@@ -2,7 +2,9 @@
 
 $version = $env:chocolateyPackageVersion -replace '\.', '_'
 $packageName = $env:chocolateyPackageName
-$url = "https://julianscorner.com/dl/smartgit-win-$version.zip"
+$package_zip = "smartgit-win-$version.zip"
+$package_setup = "smartgit-0$version-setup.exe"
+$url = "https://julianscorner.com/dl/$package_zip"
 
 $packageArgs = @{
   packageName    = $packageName
@@ -17,7 +19,7 @@ Install-ChocolateyZipPackage @packageArgs
 
 $installArgs = @{
   packageName    = $packageName
-  file           = $(Join-Path -Path $PSScriptRoot -ChildPath "smartgit-0$version-setup.exe")
+  file           = $(Join-Path -Path $PSScriptRoot -ChildPath $package_setup)
 
   silentArgs     = "/SILENT /SUPPRESSMSGBOXES /NORESTART /SP-"
   validExitCodes = @(0)
