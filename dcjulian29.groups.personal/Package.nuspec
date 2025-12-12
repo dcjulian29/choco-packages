@@ -19,7 +19,6 @@
       <dependency id="tightvnc" />
       <dependency id="nuget.commandline" />
       <dependency id="nugetpackageexplorer" />
-      <dependency id="dcjulian29.settings.greenshot" />
       <dependency id="dcjulian29.apps.iperf" />
       <dependency id="dcjulian29.settings.syncthing" />
       <dependency id="teracopy" />
