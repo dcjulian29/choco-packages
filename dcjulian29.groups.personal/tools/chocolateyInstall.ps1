@@ -51,9 +51,9 @@ if (-not (Test-Path -Path "${env:TEMP}\dcjulian29.groups.personal.update.txt")) 
 
 # ~~~ Go language development stuff...
 
-go install github.com/goreleaser/goreleaser/v2@latest
 go install github.com/spf13/cobra-cli@latest
 go install golang.org/x/lint/golint@latest
+go install github.com/securego/gosec/v2/cmd/gosec@latest
 
 # ~~~ EOF
 

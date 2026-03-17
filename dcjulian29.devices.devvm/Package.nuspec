@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.devices.devvm</id>
+    <version>2603.16.1</version>
+    <authors>Julian Easterling</authors>
+    <owners>Julian Easterling</owners>
+    <description>These are the packages that I install on my development VM.</description>
+    <tags>dcjulian29 devices devvm development</tags>
+    <dependencies>
+      <dependency id="dcjulian29.groups.workstation" />
+      <dependency id="dcjulian29.apps.build-project" />
+      <dependency id="dcjulian29.apps.dotfiles" />
+      <dependency id="dcjulian29.apps.git-repostatus" />
+      <dependency id="dcjulian29.apps.git-reposync" />
+      <dependency id="dcjulian29.apps.openssl-via-docker" />
+      <dependency id="dcjulian29.apps.searchmyfiles" />
+      <dependency id="dcjulian29.apps.smartgit" />
+      <dependency id="dcjulian29.apps.unix-tools" />
+      <dependency id="dcjulian29.settings.syncthing" />
+      <dependency id="dcjulian29.psmodules" />
+      <dependency id="baretail" />
+      <dependency id="golang" />
+      <dependency id="golangci-lint" />
+      <dependency id="googlechrome" />
+      <dependency id="goreleaser" />
+      <dependency id="lazydocker" />
+      <dependency id="nuget.commandline" />
+      <dependency id="nugetpackageexplorer" />
+      <dependency id="python" />
+      <dependency id="teracopy" />
+      <dependency id="dcjulian29.scripts.reboot" />
+      <dependency id="visualstudio2026professional" />
+      <dependency id="visualstudio2026-workload-manageddesktop" />
+      <dependency id="visualstudio2026-workload-netweb" />
+      <dependency id="vscode" />
+      <dependency id="wireguard" />
+    </dependencies>
+  </metadata>
+</package>
