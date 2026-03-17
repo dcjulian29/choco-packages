@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.groups.personal</id>
-    <version>2512.12.1</version>
+    <version>2603.17.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my personal workstation computers.</description>
@@ -10,25 +10,27 @@
     <dependencies>
       <dependency id="dcjulian29.groups.workstation" />
       <dependency id="dcjulian29.psmodules" />
+      <dependency id="dcjulian29.settings.syncthing" />
       <dependency id="dcjulian29.settings.virtualbox" />
+      <dependency id="dcjulian29.settings.wsl" />
       <dependency id="python" />
       <dependency id="baretail" />
-      <dependency id="dcjulian29.apps.searchmyfiles" />
-      <dependency id="dcjulian29.settings.wsl" />
       <dependency id="bitwarden" />
       <dependency id="tightvnc" />
       <dependency id="nuget.commandline" />
       <dependency id="nugetpackageexplorer" />
-      <dependency id="dcjulian29.apps.iperf" />
-      <dependency id="dcjulian29.settings.syncthing" />
       <dependency id="teracopy" />
       <dependency id="vlc" />
       <dependency id="vscode" />
       <dependency id="googlechrome" />
-      <dependency id="terraform" />
       <dependency id="golang" />
+      <dependency id="golangci-lint" />
+      <dependency id="goreleaser" />
       <dependency id="age.portable" />
       <dependency id="powertoys" />
+      <dependency id="dotnet-sdk" />
+      <dependency id="joplin" />
+      <dependency id="hugo" />
       <dependency id="dcjulian29.groups.containers" />
       <dependency id="dcjulian29.apps.ansible-via-docker" />
       <dependency id="dcjulian29.apps.ansible-host" />
@@ -36,17 +38,23 @@
       <dependency id="dcjulian29.apps.bind-via-docker" />
       <dependency id="dcjulian29.apps.build-project" />
       <dependency id="dcjulian29.apps.cert-auth" />
+      <dependency id="dcjulian29.apps.disk-usage" />
       <dependency id="dcjulian29.apps.dns-resolve" />
       <dependency id="dcjulian29.apps.dotfiles" />
-      <dependency id="dcjulian29.apps.hugo-via-docker" />
-      <dependency id="dcjulian29.apps.muffet" />
+      <dependency id="dcjulian29.apps.git-repostatus" />
+      <dependency id="dcjulian29.apps.git-reposync" />
+      <dependency id="dcjulian29.apps.iperf" />
+      <dependency id="dcjulian29.apps.ip-scan" />
+      <dependency id="dcjulian29.apps.new-dev-vm" />
       <dependency id="dcjulian29.apps.nmap-via-docker" />
       <dependency id="dcjulian29.apps.openssl-via-docker" />
       <dependency id="dcjulian29.apps.provision-test" />
+      <dependency id="dcjulian29.apps.rainmeter" />
       <dependency id="dcjulian29.apps.rustdesk" />
       <dependency id="dcjulian29.apps.wireshark" />
+      <dependency id="dcjulian29.apps.searchmyfiles" />
       <dependency id="dcjulian29.apps.smartgit" />
-      <dependency id="dotnet-10.0-sdk" />
+      <dependency id="dcjulian29.apps.unix-tools" />
     </dependencies>
   </metadata>
 </package>
