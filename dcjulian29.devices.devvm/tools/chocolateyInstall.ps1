@@ -117,11 +117,3 @@ Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name "WallPaperStyle" -Valu
 Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name "TileWallPaper" -Value "0"
 
 [Win32Api]::SystemParametersInfo(20, 0, $wallpaper, 3);
-
-# ~~~ Finished Setup of Development VM
-
-Write-Output "Finished Setup of Development VM Finished. Rebooting in 30 seconds..."
-
-Start-Sleep -Seconds 30
-
-Restart-Computer -Force
