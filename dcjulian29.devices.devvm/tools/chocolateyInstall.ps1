@@ -30,9 +30,9 @@ if (!(Test-Path "HKLM:\$registryPath")) {
 # ~~~ Folders, Icons, and Links
 
 $files = @{
-  bin  = "C:\WINDOWS\System32\SHELL32.dll,212"
-  code   = "$env:USERPROFILE\executor\folder-development.ico,0"
-  etc  = "C:\WINDOWS\System32\SHELL32.dll,314"
+  bin  = "$env:USERPROFILE\executor\icons\folder_bin.ico,0"
+  code = "$env:USERPROFILE\executor\icons\folder_code.ico,0"
+  etc  = "$env:USERPROFILE\executor\icons\folder_etc.ico,0"
 }
 
 $files.Keys | ForEach-Object {
