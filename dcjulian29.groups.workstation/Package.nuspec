@@ -8,16 +8,16 @@
     <description>These are the packages that I install on workstation computers.</description>
     <tags>dcjulian29 groups workstation</tags>
     <dependencies>
+      <dependency id="dcjulian29.apps.executor" />
       <dependency id="dcjulian29.groups.common" />
+      <dependency id="dcjulian29.groups.scm" />
       <dependency id="dcjulian29.settings.windows" />
       <dependency id="dcjulian29.settings.notepadplusplus" />
       <dependency id="dcjulian29.settings.terminal" />
+      <dependency id="frhed" />
+      <dependency id="grepwin" />
       <dependency id="powershell-core" />
       <dependency id="sysinternals" />
-      <dependency id="dcjulian29.apps.executor" />
-      <dependency id="grepwin" />
-      <dependency id="frhed" />
-      <dependency id="dcjulian29.groups.scm" />
     </dependencies>
   </metadata>
 </package>

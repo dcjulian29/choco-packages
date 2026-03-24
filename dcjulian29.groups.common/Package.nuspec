@@ -8,8 +8,8 @@
     <description>These are the packages that are common to all of my computer configurations.</description>
     <tags>dcjulian29 groups common</tags>
     <dependencies>
-      <dependency id="dotnet-runtime" />
       <dependency id="7zip" />
+      <dependency id="dotnet-runtime" />
       <dependency id="notepadplusplus" />
     </dependencies>
   </metadata>
