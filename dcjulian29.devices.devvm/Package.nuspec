@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.devvm</id>
-    <version>2603.18.1</version>
+    <version>2603.24.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my development VM.</description>
@@ -29,10 +29,6 @@
       <dependency id="nugetpackageexplorer" />
       <dependency id="python" />
       <dependency id="teracopy" />
-      <dependency id="dcjulian29.scripts.reboot" />
-      <dependency id="visualstudio2026professional" />
-      <dependency id="visualstudio2026-workload-manageddesktop" />
-      <dependency id="visualstudio2026-workload-netweb" />
       <dependency id="vscode" />
       <dependency id="wireguard" />
     </dependencies>

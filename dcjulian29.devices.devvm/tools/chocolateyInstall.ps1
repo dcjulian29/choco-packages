@@ -117,3 +117,9 @@ Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name "WallPaperStyle" -Valu
 Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name "TileWallPaper" -Value "0"
 
 [Win32Api]::SystemParametersInfo(20, 0, $wallpaper, 3);
+
+# ~~~ Reboot Computer to complete package installations
+
+Start-Sleep -Seconds 5
+
+Restart-Computer -Force
