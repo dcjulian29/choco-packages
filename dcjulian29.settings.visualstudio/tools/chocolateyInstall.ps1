@@ -108,6 +108,15 @@ function installPackages($packages) {
   }
 }
 
+Write-Output "Installing Visual Studio Workloads..."
+
+@(
+  "visualstudio2026-workload-manageddesktop"
+  "visualstudio2026-workload-netweb"
+) | ForEach-Object {
+  choco install -y $_
+}
+
 Write-Output "Installing VSIX Extensions..."
 
 installPackages @(
