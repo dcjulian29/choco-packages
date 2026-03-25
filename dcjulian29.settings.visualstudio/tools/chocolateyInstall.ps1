@@ -1,7 +1,7 @@
 $script:downloadSession = $null
 
 function installVsixByName($name) {
-  baseURL = "https://marketplace.visualstudio.com"
+  $baseURL = "https://marketplace.visualstudio.com"
   $url = "$baseURL/items?itemName=$Name"
   $href = ""
 

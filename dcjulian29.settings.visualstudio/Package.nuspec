@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.settings.visualstudio</id>
-    <version>2603.24.2</version>
+    <version>2603.24.3</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <licenseUrl>https://raw.githubusercontent.com/dcjulian29/choco-packages/main/LICENSE</licenseUrl>
