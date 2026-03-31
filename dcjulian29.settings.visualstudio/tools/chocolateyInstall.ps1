@@ -42,8 +42,8 @@ function installVsixByName($name) {
 }
 
 function installVsixPackage($Name, $Path) {
-  $vsix = 'C:\Program Files' `
-    + 'Microsoft Visual Studio\2026\Professional\Common7\IDE\VSIXInstaller.exe'
+  $vsix = 'C:\Program Files\' `
+    + 'Microsoft Visual Studio\18\Professional\Common7\IDE\VSIXInstaller.exe'
 
   if (-not ($vsix)) {
     throw "The VSIX installer was not found."
@@ -104,7 +104,7 @@ function installPackages($packages) {
   foreach ($package in $packages) {
     Write-Output "  "
     Write-Output "---------- $package"
-    installVsixByName -PackageName $package
+    installVsixByName $package
   }
 }
 
@@ -119,6 +119,48 @@ Write-Output "Installing Visual Studio Workloads..."
 
 Write-Output "Installing VSIX Extensions..."
 
+# Popular VSIX
+installPackages @(
+  "MadsKristensen.FileIcons"
+  "NikolayBalakin.Outputenhancer"
+  "LaurentKempe.GitDiffMargin"
+  "MadsKristensen.MarkdownEditor2"
+  "ErlandR.ReAttach"
+  "PaulHarrington.EditorGuidelinesPreview"
+  "MadsKristensen.TrailingWhitespace64"
+  "AndreasReischuck.SemanticColorizer"
+  "SergeyVlasov.FixFileEncoding"
+  "MadsKristensen.Tweaks2022"
+  "VisualStudioPlatformTeam.FixMixedTabs2022"
+)
+
+# Other VSIX
 installPackages @(
   "EWoodruff.VisualStudioSpellCheckerVS2022andLater"
+  "idex.vsthemepack"
+  "VisualStudioPlatformTeam.SyntacticLineCompression2022"
+  "FortuneNgwenya.FineCodeCoverage2022"
+  "MikeWard-AnnArbor.VSColorOutput64"
+  "TimHeuer.GitHubActionsVS"
+)
+
+# CSharp VSIX
+installPackages @(
+  "josefpihrt.Roslynator2022"
+  "jsakamoto.CMethodsCodeSnippets"
+  "LBHSR.ParallelChecker"
+  "MattLaceyLtd.WarnAboutTODOs"
+  "PumaSecurity.PumaScan2022"
+  "RandomEngy.UnitTestBoilerplateGenerator"
+  "sergeb.GhostDoc"
+  "SonarSource.SonarLintforVisualStudio2022"
+  "SteveCadwallader.CodeMaidVS2022"
+  "TomEnglert.Wax"
+)
+
+# Web VSIX
+installPackages @(
+  "MadsKristensen.EditorEnhancements64"
+  "MadsKristensen.HTMLSnippetPack"
+  "MadsKristensen.JavaScriptSnippetPack"
 )
