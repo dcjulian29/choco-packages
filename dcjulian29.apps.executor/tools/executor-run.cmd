@@ -39,9 +39,11 @@ if exist %EXETC%\executor.ini (
   copy /Y %EXETC%\executor.ini %EXDST% >nul
 )
 
-copy %~dp0\executor.exe %EXDST% >nul
+copy %~dp0\browseractive.bmp  %EXDST% >nul
 copy %~dp0\defaulticon.ico %EXDST% >nul
+copy %~dp0\executor.exe %EXDST% >nul
 copy %~dp0\hookwinr.dll %EXDST% >nul
+copy %~dp0\WebView2Loader.dll  %EXDST% >nul
 
 pushd %EXDST%
 
