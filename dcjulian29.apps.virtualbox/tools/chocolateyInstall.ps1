@@ -2,11 +2,12 @@
 $build = 173730
 $cksum = "ae5415cc968c0e8acddd99358c21d267a2c31ac4ff5182861aab9e6931001606"
 $install = "VirtualBox-$version-$build-Win.exe"
+$msi = "VirtualBox-$version-r$build-MultiArch_amd64.msi"
 $log = "virtualbox-$version-$build.log"
 $url = "https://download.virtualbox.org/virtualbox/$version/$install"
 $props = @(
   "/i"
-  "VirtualBox-$version-r$build.msi"
+  "$msi"
   "/passive"
   "/norestart"
   "/l* $log"
@@ -52,7 +53,7 @@ if ($cksum -ne $hash) {
 
 Start-Process -FilePath $env:TEMP\$install -ArgumentList $extract -NoNewWindow -Wait
 
-if (-not (Test-Path -Path "VirtualBox-$version-r$build.msi")) {
+if (-not (Test-Path -Path $msi)) {
   throw "Error extracting virtualbox installer from package!"
 }
 
