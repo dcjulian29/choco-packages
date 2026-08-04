@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.devvm</id>
-    <version>2603.24.1</version>
+    <version>2608.4.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my development VM.</description>
@@ -11,8 +11,7 @@
       <dependency id="dcjulian29.groups.workstation" />
       <dependency id="dcjulian29.apps.build-project" />
       <dependency id="dcjulian29.apps.dotfiles" />
-      <dependency id="dcjulian29.apps.git-repostatus" />
-      <dependency id="dcjulian29.apps.git-reposync" />
+      <dependency id="dcjulian29.apps.git-repo" />
       <dependency id="dcjulian29.apps.openssl-via-docker" />
       <dependency id="dcjulian29.apps.searchmyfiles" />
       <dependency id="dcjulian29.apps.smartgit" />
