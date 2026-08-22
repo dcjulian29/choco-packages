@@ -1,6 +1,6 @@
 ﻿$version = $env:chocolateyPackageVersion
-$build = 173730
-$cksum = "ae5415cc968c0e8acddd99358c21d267a2c31ac4ff5182861aab9e6931001606"
+$build = 174877
+$cksum = "9383a42bffa5c0ac4bc5f1c7d820478d84380d3a17b65aa9b43e6778cbdb615a"
 $install = "VirtualBox-$version-$build-Win.exe"
 $msi = "VirtualBox-$version-r$build-MultiArch_amd64.msi"
 $log = "virtualbox-$version-$build.log"
