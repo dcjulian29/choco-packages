@@ -2,24 +2,24 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.devices.nibbler</id>
-    <version>2412.19.1</version>
+    <version>2609.21.1</version>
     <authors>Julian Easterling</authors>
     <owners>Julian Easterling</owners>
     <description>These are the packages that I install on my "nibbler" computer.</description>
     <tags>dcjulian29 devices nibbler work personal</tags>
     <dependencies>
+      <dependency id="dcjulian29.apps.rustdesk" />
+      <dependency id="dcjulian29.apps.chrome" />
+      <dependency id="dcjulian29.apps.removeonedrive" />
       <dependency id="dcjulian29.groups.common" />
       <dependency id="dcjulian29.settings.julianca" />
-      <dependency id="dcjulian29.settings.windows" />
-      <dependency id="tightvnc" />
-      <dependency id="dcjulian29.apps.rustdesk" />
-      <dependency id="googlechrome" />
-      <dependency id="dcjulian29.apps.removeonedrive" />
-      <dependency id="zoom" />
-      <dependency id="treesizefree" />
-      <dependency id="sysinternals" />
       <dependency id="dcjulian29.settings.notepadplusplus" />
       <dependency id="dcjulian29.settings.terminal" />
+      <dependency id="dcjulian29.settings.windows" />
+      <dependency id="tightvnc" />
+      <dependency id="treesizefree" />
+      <dependency id="zoom" />
+      <dependency id="sysinternals" />
     </dependencies>
   </metadata>
 </package>

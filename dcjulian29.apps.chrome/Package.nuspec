@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dcjulian29.apps.chrome</id>
+    <version>2609.21.1</version>
+    <title>dcjulian29.apps.chrome</title>
+    <owners>Google LLC</owners>
+    <authors>Julian Easterling</authors>
+    <projectUrl>https://www.google.com/chrome/browser</projectUrl>
+    <licenseUrl>https://www.google.it/intl/en/chrome/browser/privacy/eula_text.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Chrome is a fast, simple, and secure web browser, built for the modern web.
+      And since the chocolatey-community package can't keep up with the released versions
+      and is constantly breaking upgrades as a result, This package replaces my need for the
+      community package and simply installs Chrome one time and lets Chrome handle it's own
+      upgrades instead of relying on the constant broken packages provided
+      by the chocolatey-community provider. BIG F**KING FAIL on their part!</description>
+    <tags>dcjulian29 google chrome web internet browser</tags>
+  </metadata>
+</package>
