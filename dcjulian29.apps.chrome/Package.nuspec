@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dcjulian29.apps.chrome</id>
-    <version>2609.21.1</version>
+    <version>2609.24.1</version>
     <title>dcjulian29.apps.chrome</title>
     <owners>Google LLC</owners>
     <authors>Julian Easterling</authors>
